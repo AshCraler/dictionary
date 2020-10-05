@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace dictionary
 {
-    public partial class Form1 : Form
+    public partial class mainForm : Form
     {
-        public Form1()
+        public mainForm()
         {
             InitializeComponent();
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void optionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
