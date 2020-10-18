@@ -487,6 +487,11 @@
 		<Meaning>mô tả</Meaning>
 		<Explaination>..</Explaination>
 	</WordData>
+	<WordData>
+		<Key>conjunction</Key>
+		<Meaning>..</Meaning>
+		<Explaination>..</Explaination>
+	</WordData>
     <WordData>
       <Key>dispose</Key>
       <Meaning>vứt bỏ</Meaning>
