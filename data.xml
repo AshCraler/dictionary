@@ -4,22 +4,42 @@
     <WordData>
       <Key>Hello</Key>
       <Meaning>Xin chào</Meaning>
-      <Explaination>Từ mang ý nghĩa chào hỏi. Có thể dùng mỗi khi gặp một ai đó.</Explaination>
+      <Explaination>
+		  hello
+		  exclamation, noun
+		  UK  /heˈləʊ/ US  /heˈloʊ/
+		  (also mainly UK hallo); (hullo)
+
+		  A1
+		  used when meeting or greeting someone:
+		  Hello, Paul. I haven't seen you for ages.
+		  I know her vaguely - we've exchanged hellos a few times.
+		  I just thought I'd call by and say hello.
+		  And a big hello (= welcome) to all the parents who've come to see the show.
+		  Từ mang ý nghĩa chào hỏi. Có thể dùng mỗi khi gặp một ai đó.</Explaination>
     </WordData>
-    <WordData>
-      <Key>Good bye</Key>
-      <Meaning>Chào tạm biệt</Meaning>
-      <Explaination>Từ mang ý nghĩa chào tạm biệt. Có thể dùng mỗi khi tạm biệt một ai đó.</Explaination>
-    </WordData>
+ 
     <WordData>
       <Key>Program</Key>
       <Meaning>Chương trình</Meaning>
-      <Explaination>Một tập hợp những câu lệnh được nạp vào máy tính để thực thi một tác vụ cụ thể</Explaination>
+      <Explaination>
+		  a series of instructions that can be put into a computer in order to make it perform an operation:
+		  a computer program
+		  She's written a program to find words that frequently occur together.
+		  Một tập hợp những câu lệnh được nạp vào máy tính để thực thi một tác vụ cụ thể</Explaination>
     </WordData>
     <WordData>
       <Key>Computer</Key>
       <Meaning>Máy tính</Meaning>
-      <Explaination>Thiết bị hay hệ thống thực hiện tự động các phép toán số học dưới dạng số hoặc phép toán logic</Explaination>
+      <Explaination>
+		  an electronic machine that is used for storing, organizing, and finding words, numbers, and pictures, for doing calculations, and for controlling other machines:
+		  a personal/home computer
+		  All our customer orders are handled by computer.
+		  We've put all our records on computer.
+		  computer software/hardware
+		  computer graphics
+		  a computer program
+		  Thiết bị hay hệ thống thực hiện tự động các phép toán số học dưới dạng số hoặc phép toán logic</Explaination>
     </WordData>
     <WordData>
       <Key>Student</Key>
@@ -29,198 +49,380 @@
     <WordData>
       <Key>abbreviated</Key>
       <Meaning>Viết tắt</Meaning>
-      <Explaination>Cách viết ngắn gọn</Explaination>
+      <Explaination>
+		  shorter than usual or shorter than expected:
+		  They exchanged a passionate, but abbreviated, kiss.
+		  The students were given an abbreviated intelligence test.
+		  Cách viết ngắn gọn</Explaination>
     </WordData>
     <WordData>
       <Key>absence</Key>
       <Meaning>vắng mặt</Meaning>
-      <Explaination>Không thể xuất hiện tại một nơi nào đó</Explaination>
+      <Explaination>
+	he fact of not being where you are usually expected to be:
+A new manager was appointed during/in her absence.
+She has had repeated absences from work this year.
+ Thêm các ví dụ
+The smell of cigarette smoke confirmed what he had suspected: there had been a party in his absence.
+I'm deputizing for the director during his absence.
+Unbeknown to me, he'd gone and rented out the apartment in my absence.
+Can you account for your absence last Friday?
+A new manager was appointed during/in her absence.	  
+	Không thể xuất hiện tại một nơi nào đó</Explaination>
     </WordData>
     <WordData>
       <Key>accomplish</Key>
       <Meaning>Đạt được</Meaning>
-      <Explaination>Có 1 thành tựu nào đó</Explaination>
+      <Explaination>
+		 to finish something successfully or to achieve something:
+The students accomplished the task in less than ten minutes.
+She accomplished such a lot during her visit.
+I feel as if I've accomplished nothing since I left my job. 
+	  Có 1 thành tựu nào đó</Explaination>
     </WordData>
     <WordData>
       <Key>admire</Key>
       <Meaning>Ngưỡng mộ</Meaning>
-      <Explaination>Thể hiện sự trầm trồ với một ai đó</Explaination>
+      <Explaination>
+		to find someone or something attractive and pleasant to look at:
+We stood for a few moments, admiring the view.
+I was just admiring your jacket, Delia.  
+	  Thể hiện sự trầm trồ với một ai đó</Explaination>
     </WordData>
     <WordData>
       <Key>adoration</Key>
       <Meaning>Yêu mến</Meaning>
-      <Explaination>Có tình cảm đặc biệt với một ai đó</Explaination>
+      <Explaination>
+		  very strong love or worship for someone:
+her complete adoration of her brother
+The painting depicts the Three Wise Men kneeling in adoration of the baby Jesus.
+	  Có tình cảm đặc biệt với một ai đó</Explaination>
     </WordData>
     <WordData>
       <Key>advocate</Key>
       <Meaning>Biện hộ</Meaning>
-      <Explaination>Cố tình bào chữa cho việc mình làm sai</Explaination>
+      <Explaination>
+		to publicly support or suggest an idea, development, or way of doing something:
+[ + -ing verb ] She advocates taking a more long-term view.
+He advocates the return of capital punishment.  
+	  Cố tình bào chữa cho việc mình làm sai</Explaination>
     </WordData>
     <WordData>
       <Key>affiliate</Key>
       <Meaning>liên kết</Meaning>
-      <Explaination>Có một sự kết nối giữa các vật thể</Explaination>
+      <Explaination>
+		  to cause a group to become part of or form a close relationship with another, usually larger, group, or organization:
+a college affiliated to the University of Mumbai
+The school is affiliated with a national association of driving schools.
+	  Có một sự kết nối giữa các vật thể</Explaination>
     </WordData>
     <WordData>
       <Key>aggressive</Key>
       <Meaning>Xâm lược</Meaning>
-      <Explaination>Chiếm một cách trái phép của ai đó cái gì đó</Explaination>
+      <Explaination>
+		  behaving in an angry and violent way towards another person:
+The stereotype is that men tend to be more aggressive than women.
+If I criticize him, he gets aggressive and starts shouting.
+	  Chiếm một cách trái phép của ai đó cái gì đó</Explaination>
     </WordData>
     <WordData>
       <Key>aim</Key>
       <Meaning>mục đích</Meaning>
-      <Explaination>Một điều hướng tới của bản thân trong tương lai</Explaination>
+      <Explaination>
+		 a result that your plans or actions are intended to achieve:
+My main aim in life is to be a good husband and father.
+Our short-term aim is to deal with our current financial difficulties, but our long-term aim is to improve the company's profitability.
+The leaflet has been produced with the aim of increasing public awareness of the disease. 
+	  Một điều hướng tới của bản thân trong tương lai</Explaination>
     </WordData>
     <WordData>
       <Key>alias</Key>
       <Meaning>Bí danh</Meaning>
-      <Explaination>Tên gọi bí mật hoặc ít người biết</Explaination>
+      <Explaination>
+		  used when giving the name that a person is generally known by, after giving their real name:
+	  Tên gọi bí mật hoặc ít người biết</Explaination>
     </WordData>
     <WordData>
       <Key>ambiguous</Key>
       <Meaning>mơ hồ</Meaning>
-      <Explaination>Một trạng thái mông lung không rõ ràng</Explaination>
+      <Explaination>
+		  having or expressing more than one possible meaning, sometimes intentionally:
+His reply to my question was somewhat ambiguous.
+The wording of the agreement is ambiguous.
+The government has been ambiguous on this issue.
+	    Một trạng thái mông lung không rõ ràng</Explaination>
     </WordData>
     <WordData>
       <Key>analogy</Key>
       <Meaning>sự giống nhau</Meaning>
-      <Explaination>Không có sự khác biệt</Explaination>
+      <Explaination>
+		a comparison between things that have similar features, often used to help explain a principle or idea:
+He drew an analogy between the brain and a vast computer.
+It is sometimes easier to illustrate an abstract concept by analogy with (= by comparing it with) something concrete.  
+	  Không có sự khác biệt</Explaination>
     </WordData>
     <WordData>
       <Key>angel</Key>
       <Meaning>Thiên thần</Meaning>
-      <Explaination>Thường ngự trị trên thiên đường</Explaination>
+      <Explaination>
+		  a spiritual being in some religions who is believed to be a messenger of God, usually represented as having a human form with wings:
+According to the Bible, an angel told Mary that she would have God's son, Jesus.
+ 
+someone who is very good, helpful, or kind:
+Be an angel and help me with this.
+	Thường ngự trị trên thiên đường</Explaination>
     </WordData>
     <WordData>
       <Key>antidote</Key>
-      <Meaning>thuốc độc</Meaning>
+      <Meaning>
+		 a chemical, especially a drug, that limits the effects of a poison:
+Sales of nerve gas antidotes increased dramatically before the war.
+ 
+a way of preventing or acting against something bad:
+Regular exercise is the best antidote to tiredness and depression. 
+	thuốc độc</Meaning>
       <Explaination>Một loại thuốc có thể gây chết người</Explaination>
     </WordData>
     <WordData>
       <Key>append</Key>
       <Meaning>nối thêm</Meaning>
-      <Explaination>kéo dài, thêm vào một cái gì đó</Explaination>
+      <Explaination>
+		to add something to the end of a piece of writing:
+The author appends a short footnote to the text explaining the point.  
+	kéo dài, thêm vào một cái gì đó</Explaination>
     </WordData>
     <WordData>
       <Key>approach</Key>
       <Meaning>tiếp cận</Meaning>
-      <Explaination>Đến gần một sự vật nào đó</Explaination>
+      <Explaination>
+		  to come near or nearer to something or someone in space, time, quality, or amount:
+We could just see the train approaching in the distance.
+If you look out of the window on the left, you'll see that we're now approaching the Eiffel Tower.
+I see it's approaching lunchtime, so let's take a break.
+In my opinion, no other composers even begin to approach (= come near in quality to) Mozart.
+The total amount raised so far is approaching (= almost) $1,000.
+He's very active for a man approaching 80 (= who is almost 80 years old).
+	  Đến gần một sự vật nào đó</Explaination>
     </WordData>
     <WordData>
       <Key>argument</Key>
       <Meaning>tranh luận</Meaning>
-      <Explaination>Trình bày và bảo vệ những quan điểm khác nhau về một vấn đề gì đó</Explaination>
+      <Explaination>
+		a disagreement, or the process of disagreeing:
+The children had an argument about/over what game to play.
+He got into an argument with Jeff in the pub last night.
+A decision was finally made after some heated argument.  
+	  Trình bày và bảo vệ những quan điểm khác nhau về một vấn đề gì đó</Explaination>
     </WordData>
     <WordData>
       <Key>art</Key>
       <Meaning>nghệ thuật</Meaning>
-      <Explaination>Từ dùng chung cho âm nhạc, điện ảnh, hội họa,..</Explaination>
+      <Explaination>
+		the making of objects, images, music, etc. that are beautiful or that express feelings:
+Can television and pop music really be considered art?
+I enjoyed the ballet, but it wasn't really great art.  
+	  Từ dùng chung cho âm nhạc, điện ảnh, hội họa,..</Explaination>
     </WordData>
     <WordData>
       <Key>aware</Key>
       <Meaning>nhận biết</Meaning>
-      <Explaination>Có ý thức về một điều gì đó</Explaination>
+      <Explaination>
+		 knowing that something exists, or having knowledge or experience of a particular thing:
+[ + that ] I wasn't even aware that he was ill.
+Were you aware of the risks at the time?
+She was well (= very) aware that he was married.
+"Has Claude paid the phone bill?" "Not as far as I'm aware." (= I don't think so)
+I suddenly became aware of (= started to notice) him looking at me. 
+	  Có ý thức về một điều gì đó</Explaination>
     </WordData>
     <WordData>
       <Key>backbone</Key>
       <Meaning>xương sống</Meaning>
-      <Explaination>Là xương quan trọng nhất cơ thể, chạy dọc theo lưng</Explaination>
+      <Explaination>
+	the line of bones down the centre of the back that provides support for the body:
+She stood with her backbone rigid.	  
+	Là xương quan trọng nhất cơ thể, chạy dọc theo lưng</Explaination>
     </WordData>
   </Data>
   <WordData>
       <Key>bandwidth</Key>
       <Meaning>băng thông</Meaning>
-      <Explaination>Lưu lượng dữ liệu truyền tải trong mạng</Explaination>
+      <Explaination>
+		  a measurement of the amount of information that can be sent between computers, through a phone line, etc.:
+The system will handle signals that need high bandwidth, for instance those that encode TV pictures.
+high-bandwidth services/applications
+	Lưu lượng dữ liệu truyền tải trong mạng</Explaination>
     </WordData>
     <WordData>
       <Key>barely</Key>
       <Meaning>vừa đủ</Meaning>
-      <Explaination>Một trạng thái không thừa không thiếu</Explaination>
+      <Explaination>
+	by the smallest amount:
+They have barely enough (= no more than what is needed) to pay the rent this month.
+She was barely (= only just) 15 when she won her first championship.	  
+	Một trạng thái không thừa không thiếu</Explaination>
     </WordData>
     <WordData>
       <Key>blessing</Key>
       <Meaning>phước lành</Meaning>
-      <Explaination>Những điều an lành chúng ta thường cầu nguyện</Explaination>
+      <Explaination>
+	a request by a priest for God to take care of a particular person or a group of people, or God's act of doing this:
+The mass always ends with a blessing.
+We ask God's blessing on Joan at this difficult time.	  
+	Những điều an lành chúng ta thường cầu nguyện</Explaination>
     </WordData>
     <WordData>
-      <Key>breat</Key>
+      <Key>breath</Key>
       <Meaning>hơi thở</Meaning>
-      <Explaination>Sự hô hấp của con người</Explaination>
+      <Explaination>
+	the air that goes into and out of your lungs:
+Her breath smelled of garlic.
+She was dizzy and short of breath (= unable to breathe in enough air).
+He burst into the room, red-faced and out of breath (= unable to breathe comfortably because of tiredness or excitement).	  
+	Sự hô hấp của con người</Explaination>
     </WordData>
     <WordData>
       <Key>Chalk</Key>
       <Meaning>Phấn</Meaning>
-      <Explaination>Dụng cụ để viết lên bảng sử dụng trong giảng dạy và học tập</Explaination>
+      <Explaination>
+	a type of soft white rock	  
+	Dụng cụ để viết lên bảng sử dụng trong giảng dạy và học tập</Explaination>
     </WordData>
     <WordData>
       <Key>claw</Key>
       <Meaning>Móng vuốt</Meaning>
-      <Explaination>Vật sắt nhọn có ở chân ở một số loài động vật</Explaination>
+      <Explaination>
+		  one of the sharp curved nails at the end of each of the toes of some animals and birds:
+Our cat likes to sharpen her claws on the legs of the dining table.
+	Vật sắt nhọn có ở chân ở một số loài động vật</Explaination>
     </WordData>
     <WordData>
       <Key>collaboration</Key>
       <Meaning>Sự hợp tác</Meaning>
-      <Explaination>Nhiều người cũng làm chung một việc gì đó</Explaination>
+      <Explaination>
+		the situation of two or more people working together to create or achieve the same thing:
+The two playwrights worked in close collaboration (with each other) on the script.
+The new airport is a collaboration between two of the best architects in the country.  
+	Nhiều người cũng làm chung một việc gì đó</Explaination>
     </WordData>
     <WordData>
       <Key>collide</Key>
       <Meaning>va chạm </Meaning>
-      <Explaination>sự tác động lực vào nhau của hai hay nhiều vật</Explaination>
+      <Explaination>
+	(especially of moving objects) to hit something violently:
+The two vans collided at the crossroads.
+It was predicted that a comet would collide with one of the planets.	  
+	sự tác động lực vào nhau của hai hay nhiều vật</Explaination>
     </WordData>
     <WordData>
       <Key>colonize</Key>
       <Meaning>thuộc địa hóa</Meaning>
-      <Explaination>chiếm đất, đàn áp người dân ở 1 vùng nào đó</Explaination>
+      <Explaination>
+	to send people to live in and govern another country:
+Peru was colonized by the Spanish in the 16th century.	  
+	chiếm đất, đàn áp người dân ở 1 vùng nào đó</Explaination>
     </WordData>
     <WordData>
       <Key>commit</Key>
       <Meaning>cam kết</Meaning>
-      <Explaination>thực hiện một giao kèo với ai đó</Explaination>
+      <Explaination>
+		to do something illegal or something that is considered wrong:
+He was sent to prison for a crime that he didn't commit.
+to commit adultery/murder
+to commit an offence  
+	thực hiện một giao kèo với ai đó</Explaination>
     </WordData>
     <WordData>
       <Key>companion</Key>
       <Meaning>Đồng hành </Meaning>
-      <Explaination>Cùng thực hiện một điều gì đó với người khác</Explaination>
+      <Explaination>
+	a person you spend a lot of time with often because you are friends or because you are travelling together:
+The dog has been her constant companion these past ten years.
+a travelling companion	  
+	Cùng thực hiện một điều gì đó với người khác</Explaination>
     </WordData>
     <WordData>
       <Key>complexion</Key>
       <Meaning>nước da</Meaning>
-      <Explaination>Màu sắc trên da</Explaination>
+      <Explaination>
+	the natural appearance of the skin on a person's face, especially its colour or quality:
+a dark/fair complexion
+a healthy/clear/spotty complexion	  
+	Màu sắc trên da</Explaination>
     </WordData>
     <WordData>
-      <Key>componet</Key>
+      <Key>component</Key>
       <Meaning>thành phần </Meaning>
-      <Explaination>Bộ phận, chi tiết của một vật nào đó</Explaination>
+      <Explaination>
+	a part that combines with other parts to form something bigger:
+television/aircraft/computer components
+The factory supplies electrical components for cars.
+The course has four main components: business law, finance, computing and management skills.
+Fresh fruit and vegetables are an essential component of a healthy diet.
+The control of inflation is a key component of the government's economic policy.	  
+	Bộ phận, chi tiết của một vật nào đó</Explaination>
     </WordData>
     <WordData>
       <Key>comprehend</Key>
       <Meaning>hiểu</Meaning>
-      <Explaination>rõ ràng trong suy nghĩ về một điều gì đó</Explaination>
+      <Explaination>
+	to understand something completely:
+I fail to comprehend their attitude.
+He doesn't seem to comprehend the scale of the problem
+[ + question word ] I'll never comprehend why she did what she did.
+[ + that ] I don't think he fully comprehends that she won't be here to help him.	  
+	rõ ràng trong suy nghĩ về một điều gì đó</Explaination>
     </WordData>
     <WordData>
       <Key>comprehendsive</Key>
       <Meaning>toàn diện </Meaning>
-      <Explaination>đa năng, không bị thiếu sót một mảng nào</Explaination>
+      <Explaination>
+		  complete and including everything that is necessary:
+We offer you a comprehensive training in all aspects of the business.
+Is this list comprehensive or are there some names missing?
+He has written a fully comprehensive guide to Rome.
+		  đa năng, không bị thiếu sót một mảng nào</Explaination>
     </WordData>
     <WordData>
       <Key>windpipe</Key>
       <Meaning>khí quản</Meaning>
-      <Explaination>bộ phận nằm ở cổ, hỗ trợ hô hấp cho cơ phể người</Explaination>
+      <Explaination>
+	the tube in the body that carries air that has been breathed in from the upper end of the throat to the lungs:
+She coughed and choked when a piece of food went down her windpipe.	  
+	bộ phận nằm ở cổ, hỗ trợ hô hấp cho cơ phể người</Explaination>
     </WordData>
     <WordData>
       <Key>window</Key>
       <Meaning>cửa sổ</Meaning>
-      <Explaination>cửa nhỏ, lấy gió và ánh sáng cho nhà</Explaination>
+      <Explaination>
+		  a space usually filled with glass in the wall of a building or in a vehicle, to allow light and air in and to allow people inside the building to see out:
+Is it all right if I open/close the window?
+He caught me staring out of the window.
+I saw a child's face at the window.
+She has some wonderful plants in the window (= on a surface at the bottom of the window).
+I was admiring the cathedral's stained-glass windows.
+Have you paid the window cleaner (= person whose job is to clean the outside of windows)?
+window frames
+	cửa nhỏ, lấy gió và ánh sáng cho nhà</Explaination>
     </WordData>
     <WordData>
       <Key>wheel</Key>
       <Meaning>bánh xe</Meaning>
-      <Explaination>các bánh xe giúp xe di chuyển trên mặt đường</Explaination>
+      <Explaination>
+		a circular object connected at the centre to a bar, used for making vehicles or parts of machines move:
+I got my bag caught in the wheel of my bicycle.
+He lost control of his car when a front/rear wheel hit a rock as he approached the first bend.  
+	các bánh xe giúp xe di chuyển trên mặt đường</Explaination>
     </WordData>
     <WordData>
       <Key>vulnerable</Key>
       <Meaning>dễ bị tổn thương</Meaning>
-      <Explaination>...</Explaination>
+      <Explaination>
+		  able to be easily physically, emotionally, or mentally hurt, influenced, or attacked:
+I felt very vulnerable, standing there without any clothes on.
+It is on economic policy that the government is most vulnerable.
+Tourists are more vulnerable to attack, because they do not know which areas of the city to avoid.
+	  </Explaination>
     </WordData>
     <WordData>
       <Key>Vibrate</Key>
