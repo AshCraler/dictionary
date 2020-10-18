@@ -26,5 +26,10 @@ namespace dictionary
         {
 
         }
+
+        private void translateButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
