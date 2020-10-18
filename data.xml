@@ -482,6 +482,11 @@
       <Meaning>phân biệt</Meaning>
       <Explaination>..</Explaination>
     </WordData>
+	<WordData>
+		<Key>discription</Key>
+		<Meaning>mô tả</Meaning>
+		<Explaination>..</Explaination>
+	</WordData>
     <WordData>
       <Key>dispose</Key>
       <Meaning>vứt bỏ</Meaning>
