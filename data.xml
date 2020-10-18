@@ -1,0 +1,525 @@
+<?xml version="1.0"?>
+<DictionaryItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Data>
+    <WordData>
+      <Key>Hello</Key>
+      <Meaning>Xin chào</Meaning>
+      <Explaination>Từ mang ý nghĩa chào hỏi. Có thể dùng mỗi khi gặp một ai đó.</Explaination>
+    </WordData>
+    <WordData>
+      <Key>Good bye</Key>
+      <Meaning>Chào tạm biệt</Meaning>
+      <Explaination>Từ mang ý nghĩa chào tạm biệt. Có thể dùng mỗi khi tạm biệt một ai đó.</Explaination>
+    </WordData>
+    <WordData>
+      <Key>Program</Key>
+      <Meaning>Chương trình</Meaning>
+      <Explaination>Một tập hợp những câu lệnh được nạp vào máy tính để thực thi một tác vụ cụ thể</Explaination>
+    </WordData>
+    <WordData>
+      <Key>Computer</Key>
+      <Meaning>Máy tính</Meaning>
+      <Explaination>Thiết bị hay hệ thống thực hiện tự động các phép toán số học dưới dạng số hoặc phép toán logic</Explaination>
+    </WordData>
+    <WordData>
+      <Key>Student</Key>
+      <Meaning>Học sinh, sinh viên</Meaning>
+      <Explaination>Những người đang được đi học tại các trường tiểu học, THCS, THPT hoặc các cơ sở giáo dục đại học, cao đẳng(sinh viên)</Explaination>
+    </WordData>
+    <WordData>
+      <Key>abbreviated</Key>
+      <Meaning>Viết tắt</Meaning>
+      <Explaination>Cách viết ngắn gọn</Explaination>
+    </WordData>
+    <WordData>
+      <Key>absence</Key>
+      <Meaning>vắng mặt</Meaning>
+      <Explaination>Không thể xuất hiện tại một nơi nào đó</Explaination>
+    </WordData>
+    <WordData>
+      <Key>accomplish</Key>
+      <Meaning>Đạt được</Meaning>
+      <Explaination>Có 1 thành tựu nào đó</Explaination>
+    </WordData>
+    <WordData>
+      <Key>admire</Key>
+      <Meaning>Ngưỡng mộ</Meaning>
+      <Explaination>Thể hiện sự trầm trồ với một ai đó</Explaination>
+    </WordData>
+    <WordData>
+      <Key>adoration</Key>
+      <Meaning>Yêu mến</Meaning>
+      <Explaination>Có tình cảm đặc biệt với một ai đó</Explaination>
+    </WordData>
+    <WordData>
+      <Key>advocate</Key>
+      <Meaning>Biện hộ</Meaning>
+      <Explaination>Cố tình bào chữa cho việc mình làm sai</Explaination>
+    </WordData>
+    <WordData>
+      <Key>affiliate</Key>
+      <Meaning>liên kết</Meaning>
+      <Explaination>Có một sự kết nối giữa các vật thể</Explaination>
+    </WordData>
+    <WordData>
+      <Key>aggressive</Key>
+      <Meaning>Xâm lược</Meaning>
+      <Explaination>Chiếm một cách trái phép của ai đó cái gì đó</Explaination>
+    </WordData>
+    <WordData>
+      <Key>aim</Key>
+      <Meaning>mục đích</Meaning>
+      <Explaination>Một điều hướng tới của bản thân trong tương lai</Explaination>
+    </WordData>
+    <WordData>
+      <Key>alias</Key>
+      <Meaning>Bí danh</Meaning>
+      <Explaination>Tên gọi bí mật hoặc ít người biết</Explaination>
+    </WordData>
+    <WordData>
+      <Key>ambiguous</Key>
+      <Meaning>mơ hồ</Meaning>
+      <Explaination>Một trạng thái mông lung không rõ ràng</Explaination>
+    </WordData>
+    <WordData>
+      <Key>analogy</Key>
+      <Meaning>sự giống nhau</Meaning>
+      <Explaination>Không có sự khác biệt</Explaination>
+    </WordData>
+    <WordData>
+      <Key>angel</Key>
+      <Meaning>Thiên thần</Meaning>
+      <Explaination>Thường ngự trị trên thiên đường</Explaination>
+    </WordData>
+    <WordData>
+      <Key>antidote</Key>
+      <Meaning>thuốc độc</Meaning>
+      <Explaination>Một loại thuốc có thể gây chết người</Explaination>
+    </WordData>
+    <WordData>
+      <Key>append</Key>
+      <Meaning>nối thêm</Meaning>
+      <Explaination>kéo dài, thêm vào một cái gì đó</Explaination>
+    </WordData>
+    <WordData>
+      <Key>approach</Key>
+      <Meaning>tiếp cận</Meaning>
+      <Explaination>Đến gần một sự vật nào đó</Explaination>
+    </WordData>
+    <WordData>
+      <Key>argument</Key>
+      <Meaning>tranh luận</Meaning>
+      <Explaination>Trình bày và bảo vệ những quan điểm khác nhau về một vấn đề gì đó</Explaination>
+    </WordData>
+    <WordData>
+      <Key>art</Key>
+      <Meaning>nghệ thuật</Meaning>
+      <Explaination>Từ dùng chung cho âm nhạc, điện ảnh, hội họa,..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>aware</Key>
+      <Meaning>nhận biết</Meaning>
+      <Explaination>Có ý thức về một điều gì đó</Explaination>
+    </WordData>
+    <WordData>
+      <Key>backbone</Key>
+      <Meaning>xương sống</Meaning>
+      <Explaination>Là xương quan trọng nhất cơ thể, chạy dọc theo lưng</Explaination>
+    </WordData>
+  </Data>
+  <WordData>
+      <Key>bandwidth</Key>
+      <Meaning>băng thông</Meaning>
+      <Explaination>Lưu lượng dữ liệu truyền tải trong mạng</Explaination>
+    </WordData>
+    <WordData>
+      <Key>barely</Key>
+      <Meaning>vừa đủ</Meaning>
+      <Explaination>Một trạng thái không thừa không thiếu</Explaination>
+    </WordData>
+    <WordData>
+      <Key>blessing</Key>
+      <Meaning>phước lành</Meaning>
+      <Explaination>Những điều an lành chúng ta thường cầu nguyện</Explaination>
+    </WordData>
+    <WordData>
+      <Key>breat</Key>
+      <Meaning>hơi thở</Meaning>
+      <Explaination>Sự hô hấp của con người</Explaination>
+    </WordData>
+    <WordData>
+      <Key>Chalk</Key>
+      <Meaning>Phấn</Meaning>
+      <Explaination>Dụng cụ để viết lên bảng sử dụng trong giảng dạy và học tập</Explaination>
+    </WordData>
+    <WordData>
+      <Key>claw</Key>
+      <Meaning>Móng vuốt</Meaning>
+      <Explaination>Vật sắt nhọn có ở chân ở một số loài động vật</Explaination>
+    </WordData>
+    <WordData>
+      <Key>collaboration</Key>
+      <Meaning>Sự hợp tác</Meaning>
+      <Explaination>Nhiều người cũng làm chung một việc gì đó</Explaination>
+    </WordData>
+    <WordData>
+      <Key>collide</Key>
+      <Meaning>va chạm </Meaning>
+      <Explaination>sự tác động lực vào nhau của hai hay nhiều vật</Explaination>
+    </WordData>
+    <WordData>
+      <Key>colonize</Key>
+      <Meaning>thuộc địa hóa</Meaning>
+      <Explaination>chiếm đất, đàn áp người dân ở 1 vùng nào đó</Explaination>
+    </WordData>
+    <WordData>
+      <Key>commit</Key>
+      <Meaning>cam kết</Meaning>
+      <Explaination>thực hiện một giao kèo với ai đó</Explaination>
+    </WordData>
+    <WordData>
+      <Key>companion</Key>
+      <Meaning>Đồng hành </Meaning>
+      <Explaination>Cùng thực hiện một điều gì đó với người khác</Explaination>
+    </WordData>
+    <WordData>
+      <Key>complexion</Key>
+      <Meaning>nước da</Meaning>
+      <Explaination>Màu sắc trên da</Explaination>
+    </WordData>
+    <WordData>
+      <Key>componet</Key>
+      <Meaning>thành phần </Meaning>
+      <Explaination>Bộ phận, chi tiết của một vật nào đó</Explaination>
+    </WordData>
+    <WordData>
+      <Key>comprehend</Key>
+      <Meaning>hiểu</Meaning>
+      <Explaination>rõ ràng trong suy nghĩ về một điều gì đó</Explaination>
+    </WordData>
+    <WordData>
+      <Key>comprehendsive</Key>
+      <Meaning>toàn diện </Meaning>
+      <Explaination>đa năng, không bị thiếu sót một mảng nào</Explaination>
+    </WordData>
+    <WordData>
+      <Key>windpipe</Key>
+      <Meaning>khí quản</Meaning>
+      <Explaination>bộ phận nằm ở cổ, hỗ trợ hô hấp cho cơ phể người</Explaination>
+    </WordData>
+    <WordData>
+      <Key>window</Key>
+      <Meaning>cửa sổ</Meaning>
+      <Explaination>cửa nhỏ, lấy gió và ánh sáng cho nhà</Explaination>
+    </WordData>
+    <WordData>
+      <Key>wheel</Key>
+      <Meaning>bánh xe</Meaning>
+      <Explaination>các bánh xe giúp xe di chuyển trên mặt đường</Explaination>
+    </WordData>
+    <WordData>
+      <Key>vulnerable</Key>
+      <Meaning>dễ bị tổn thương</Meaning>
+      <Explaination>...</Explaination>
+    </WordData>
+    <WordData>
+      <Key>Vibrate</Key>
+      <Meaning>rung</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>unusual</Key>
+      <Meaning>bất thường</Meaning>
+      <Explaination>Không bình thường</Explaination>
+    </WordData>
+    <WordData>
+      <Key>unintended</Key>
+      <Meaning>Ngoài ý muốn</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>trigger</Key>
+      <Meaning>Kích hoạt</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>Transmission</Key>
+      <Meaning>Truyền</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>trait</Key>
+      <Meaning>đặc điểm</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>tractor</Key>
+      <Meaning>máy kéo</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>toss</Key>
+      <Meaning>quăng</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>synchronize</Key>
+      <Meaning>đồng bộ</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>symestry</Key>
+      <Meaning>đối xứng</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>sweat</Key>
+      <Meaning>mồ hôi</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>summer</Key>
+      <Meaning>mùa hè</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>summary</Key>
+      <Meaning>tóm lược</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>suffocate</Key>
+      <Meaning>chết ngạt</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>suffer</Key>
+      <Meaning>đau khổ</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>subversion</Key>
+      <Meaning>lật đồ</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>subset</Key>
+      <Meaning>tập con</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>stuff</Key>
+      <Meaning>đồ đạc</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>stubborn</Key>
+      <Meaning>bướng bỉnh</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>strategy</Key>
+      <Meaning>chiến lược </Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>sterible</Key>
+      <Meaning>khử trùng</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>spit</Key>
+      <Meaning>khạc nhổ</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>spectacualarly</Key>
+      <Meaning>ngoạn mục</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>sparingly</Key>
+      <Meaning>tiết kiệm</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>sow</Key>
+      <Meaning>gieo</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>sincerity</Key>
+      <Meaning>sự chân thành</Meaning>
+      <Explaination></Explaination>
+    </WordData>
+    <WordData>
+      <Key>shelter</Key>
+      <Meaning>nơi trú ẩn</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>section</Key>
+      <Meaning>phần</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>screw</Key>
+      <Meaning>đinh ốc</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>scratch</Key>
+      <Meaning>vết trầy</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>schema</Key>
+      <Meaning>lược đồ</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>scar</Key>
+      <Meaning>vết sẹo </Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>scalable</Key>
+      <Meaning>có thể mở rộng</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>rust</Key>
+      <Meaning>rỉ sét</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>restraint</Key>
+      <Meaning>kiềm chế</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>repository</Key>
+      <Meaning>kho</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>reponsible</Key>
+      <Meaning>chịu trách nhiệm</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>report</Key>
+      <Meaning>báo cáo</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>reminded</Key>
+      <Meaning>nhắc nhở</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>refuse</Key>
+      <Meaning>từ chối</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>reflection</Key>
+      <Meaning>sự phản chiếu</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>refactoring</Key>
+      <Meaning>tái cấu trúc</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>reduntdant</Key>
+      <Meaning>dư thừa</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>rebase</Key>
+      <Meaning>phục hồi</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>ratio</Key>
+      <Meaning>tỉ lệ</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>radical</Key>
+      <Meaning>căn bản</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>quantity</Key>
+      <Meaning>định lượng</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>quality</Key>
+      <Meaning>chất lượng</Meaning>
+      <Explaination></Explaination>
+    </WordData>
+    <WordData>
+      <Key>pursue</Key>
+      <Meaning>theo đuổi</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>purpose</Key>
+      <Meaning>mục đích</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>disturb</Key>
+      <Meaning>làm phiền</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>distinguish</Key>
+      <Meaning>phân biệt</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>dispose</Key>
+      <Meaning>vứt bỏ</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>diagram</Key>
+      <Meaning>biểu đồ</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>devotion</Key>
+      <Meaning>sự tận tâm</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>devoted</Key>
+      <Meaning>hết lòng</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>despair</Key>
+      <Meaning>tuyệt vọng</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>ease</Key>
+      <Meaning>giảm bớt</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>entire</Key>
+      <Meaning>toàn bộ</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+    <WordData>
+      <Key>entity</Key>
+      <Meaning>thực thể</Meaning>
+      <Explaination>..</Explaination>
+    </WordData>
+</DictionaryItem>
