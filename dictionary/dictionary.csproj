@@ -52,6 +52,12 @@
     <Compile Include="CustomizeLinkLabel.cs" />
     <Compile Include="DictionaryItem.cs" />
     <Compile Include="DictionaryManager.cs" />
+    <Compile Include="History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="History.Designer.cs">
+      <DependentUpon>History.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="bin\Debug\maindata.xml" />
+    <None Include="Resources\close-circular-button-symbol.png" />
+    <None Include="Resources\languages.png" />
+    <None Include="Resources\vocabulary.png" />
     <None Include="Resources\speakers.png" />
     <None Include="Resources\CTBMMN.png" />
     <None Include="Resources\loupe.png" />
