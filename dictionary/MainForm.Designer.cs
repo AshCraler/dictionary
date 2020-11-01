@@ -38,16 +38,20 @@
             this.suggestedWordComboBox = new System.Windows.Forms.ComboBox();
             this.suggenstionPanel = new System.Windows.Forms.Panel();
             this.speakButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.suggenstionPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // wordTextBox
             // 
             this.wordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wordTextBox.Location = new System.Drawing.Point(25, 152);
+            this.wordTextBox.Location = new System.Drawing.Point(12, 79);
+            this.wordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.wordTextBox.Multiline = true;
             this.wordTextBox.Name = "wordTextBox";
-            this.wordTextBox.Size = new System.Drawing.Size(429, 51);
+            this.wordTextBox.Size = new System.Drawing.Size(216, 28);
             this.wordTextBox.TabIndex = 0;
             this.wordTextBox.TextChanged += new System.EventHandler(this.wordTextBox_TextChanged);
             // 
@@ -56,17 +60,19 @@
             this.nameLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.nameLabel.Font = new System.Drawing.Font("Segoe Script", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.Location = new System.Drawing.Point(0, 0);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(928, 144);
+            this.nameLabel.Size = new System.Drawing.Size(464, 75);
             this.nameLabel.TabIndex = 1;
             this.nameLabel.Text = "Dictionary";
             this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // translateButton
             // 
-            this.translateButton.Location = new System.Drawing.Point(472, 152);
+            this.translateButton.Location = new System.Drawing.Point(236, 79);
+            this.translateButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.translateButton.Name = "translateButton";
-            this.translateButton.Size = new System.Drawing.Size(177, 51);
+            this.translateButton.Size = new System.Drawing.Size(88, 27);
             this.translateButton.TabIndex = 5;
             this.translateButton.Text = "Dịch";
             this.translateButton.UseVisualStyleBackColor = true;
@@ -79,9 +85,10 @@
             this.optionComboBox.Items.AddRange(new object[] {
             "Anh - Việt",
             "Việt - Anh"});
-            this.optionComboBox.Location = new System.Drawing.Point(679, 152);
+            this.optionComboBox.Location = new System.Drawing.Point(340, 79);
+            this.optionComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.optionComboBox.Name = "optionComboBox";
-            this.optionComboBox.Size = new System.Drawing.Size(212, 41);
+            this.optionComboBox.Size = new System.Drawing.Size(108, 26);
             this.optionComboBox.TabIndex = 6;
             this.optionComboBox.Text = "Anh - Việt";
             this.optionComboBox.SelectedIndexChanged += new System.EventHandler(this.optionComboBox_SelectedIndexChanged);
@@ -95,10 +102,11 @@
             // meaningRichTextBox
             // 
             this.meaningRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.meaningRichTextBox.Location = new System.Drawing.Point(232, 301);
+            this.meaningRichTextBox.Location = new System.Drawing.Point(116, 157);
+            this.meaningRichTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.meaningRichTextBox.Name = "meaningRichTextBox";
             this.meaningRichTextBox.ReadOnly = true;
-            this.meaningRichTextBox.Size = new System.Drawing.Size(659, 377);
+            this.meaningRichTextBox.Size = new System.Drawing.Size(332, 198);
             this.meaningRichTextBox.TabIndex = 8;
             this.meaningRichTextBox.Text = "";
             // 
@@ -106,9 +114,10 @@
             // 
             this.suggestedWordComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.suggestedWordComboBox.FormattingEnabled = true;
-            this.suggestedWordComboBox.Location = new System.Drawing.Point(2, 3);
+            this.suggestedWordComboBox.Location = new System.Drawing.Point(1, 2);
+            this.suggestedWordComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.suggestedWordComboBox.Name = "suggestedWordComboBox";
-            this.suggestedWordComboBox.Size = new System.Drawing.Size(170, 375);
+            this.suggestedWordComboBox.Size = new System.Drawing.Size(87, 197);
             this.suggestedWordComboBox.TabIndex = 0;
             this.suggestedWordComboBox.SelectedIndexChanged += new System.EventHandler(this.suggestedWordComboBox_SelectedIndexChanged);
             // 
@@ -116,29 +125,61 @@
             // 
             this.suggenstionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.suggenstionPanel.Controls.Add(this.suggestedWordComboBox);
-            this.suggenstionPanel.Location = new System.Drawing.Point(23, 301);
+            this.suggenstionPanel.Location = new System.Drawing.Point(12, 157);
+            this.suggenstionPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.suggenstionPanel.Name = "suggenstionPanel";
-            this.suggenstionPanel.Size = new System.Drawing.Size(180, 377);
+            this.suggenstionPanel.Size = new System.Drawing.Size(90, 196);
             this.suggenstionPanel.TabIndex = 7;
             // 
             // speakButton
             // 
             this.speakButton.BackgroundImage = global::dictionary.Properties.Resources.speakers;
             this.speakButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.speakButton.Location = new System.Drawing.Point(23, 213);
+            this.speakButton.Location = new System.Drawing.Point(12, 111);
+            this.speakButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.speakButton.Name = "speakButton";
-            this.speakButton.Size = new System.Drawing.Size(68, 74);
+            this.speakButton.Size = new System.Drawing.Size(34, 38);
             this.speakButton.TabIndex = 9;
             this.speakButton.UseVisualStyleBackColor = true;
             this.speakButton.Click += new System.EventHandler(this.speakButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(124, 165);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(248, 125);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(928, 709);
+            this.ClientSize = new System.Drawing.Size(464, 369);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.speakButton);
             this.Controls.Add(this.meaningRichTextBox);
             this.Controls.Add(this.optionComboBox);
@@ -146,6 +187,7 @@
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.wordTextBox);
             this.Controls.Add(this.suggenstionPanel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.Text = "Dictionary";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -166,6 +208,9 @@
         private System.Windows.Forms.ComboBox suggestedWordComboBox;
         private System.Windows.Forms.Panel suggenstionPanel;
         private System.Windows.Forms.Button speakButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 
