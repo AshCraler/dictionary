@@ -172,11 +172,11 @@
             // labelTitleChildForm
             // 
             this.labelTitleChildForm.AutoSize = true;
-            this.labelTitleChildForm.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleChildForm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelTitleChildForm.Location = new System.Drawing.Point(51, 32);
             this.labelTitleChildForm.Name = "labelTitleChildForm";
-            this.labelTitleChildForm.Size = new System.Drawing.Size(43, 17);
+            this.labelTitleChildForm.Size = new System.Drawing.Size(47, 17);
             this.labelTitleChildForm.TabIndex = 1;
             this.labelTitleChildForm.Text = "Home";
             // 

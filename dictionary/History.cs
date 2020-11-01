@@ -16,5 +16,10 @@ namespace dictionary
         {
             InitializeComponent();
         }
+
+        private void Search_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
