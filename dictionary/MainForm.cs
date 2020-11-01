@@ -16,14 +16,14 @@ namespace dictionary
        
         public MainForm()
         {
-            InitializeComponent();
+             InitializeComponent();
 
-            myDictionary = new DictionaryManager();
+           /* myDictionary = new DictionaryManager();
             
             myDictionary.loadFirstDataToSuggestionPanel(suggestedWordComboBox);
 
             this.Controls.Add(myDictionary.VN);
-            this.Controls.Add(myDictionary.EN);          
+            this.Controls.Add(myDictionary.EN);      */    
         }
 
         
@@ -84,7 +84,7 @@ namespace dictionary
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            myDictionary.serialize();
+            //myDictionary.serialize();
         }
 
         private void speakButton_Click(object sender, EventArgs e)
@@ -106,6 +106,27 @@ namespace dictionary
         }
 
         private void wordTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }

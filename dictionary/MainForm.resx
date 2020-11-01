@@ -117,39 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="wordTextBox.Locked" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="nameLabel.Locked" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="translateButton.Locked" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="optionComboBox.Locked" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="illustrationImageList.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="illustrationImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </data>
-  <data name="meaningRichTextBox.Locked" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="suggestedWordComboBox.Locked" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="suggenstionPanel.Locked" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="speakButton.Locked" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="$this.Locked" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
-  </data>
+  </metadata>
 </root>
