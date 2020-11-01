@@ -38,9 +38,6 @@
             this.suggestedWordComboBox = new System.Windows.Forms.ComboBox();
             this.suggenstionPanel = new System.Windows.Forms.Panel();
             this.speakButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.suggenstionPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,33 +140,6 @@
             this.speakButton.UseVisualStyleBackColor = true;
             this.speakButton.Click += new System.EventHandler(this.speakButton_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(124, 165);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(248, 125);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,9 +147,6 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(464, 369);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.speakButton);
             this.Controls.Add(this.meaningRichTextBox);
             this.Controls.Add(this.optionComboBox);
@@ -208,9 +175,6 @@
         private System.Windows.Forms.ComboBox suggestedWordComboBox;
         private System.Windows.Forms.Panel suggenstionPanel;
         private System.Windows.Forms.Button speakButton;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
     }
 }
 
