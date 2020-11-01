@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Search = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.labelSearch = new System.Windows.Forms.Label();
             this.iconButtonSearch = new FontAwesome.Sharp.IconButton();
+            this.labelSearch = new System.Windows.Forms.Label();
+            this.Search = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +46,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(810, 462);
             this.panel1.TabIndex = 1;
+            // 
+            // iconButtonSearch
+            // 
+            this.iconButtonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSearch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.iconButtonSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconButtonSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSearch.IconSize = 25;
+            this.iconButtonSearch.Location = new System.Drawing.Point(491, 44);
+            this.iconButtonSearch.Name = "iconButtonSearch";
+            this.iconButtonSearch.Rotation = 0D;
+            this.iconButtonSearch.Size = new System.Drawing.Size(41, 39);
+            this.iconButtonSearch.TabIndex = 2;
+            this.iconButtonSearch.UseVisualStyleBackColor = true;
+            // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearch.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSearch.Location = new System.Drawing.Point(3, 34);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(95, 30);
+            this.labelSearch.TabIndex = 1;
+            this.labelSearch.Text = "Search";
             // 
             // Search
             // 
@@ -66,33 +93,6 @@
             this.Search.TabIndex = 0;
             this.Search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Search.OnValueChanged += new System.EventHandler(this.Search_OnValueChanged);
-            // 
-            // labelSearch
-            // 
-            this.labelSearch.AutoSize = true;
-            this.labelSearch.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearch.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelSearch.Location = new System.Drawing.Point(3, 34);
-            this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(95, 30);
-            this.labelSearch.TabIndex = 1;
-            this.labelSearch.Text = "Search";
-            // 
-            // iconButtonSearch
-            // 
-            this.iconButtonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonSearch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.iconButtonSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.iconButtonSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
-            this.iconButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonSearch.IconSize = 25;
-            this.iconButtonSearch.Location = new System.Drawing.Point(491, 44);
-            this.iconButtonSearch.Name = "iconButtonSearch";
-            this.iconButtonSearch.Rotation = 0D;
-            this.iconButtonSearch.Size = new System.Drawing.Size(41, 39);
-            this.iconButtonSearch.TabIndex = 2;
-            this.iconButtonSearch.UseVisualStyleBackColor = true;
             // 
             // History
             // 

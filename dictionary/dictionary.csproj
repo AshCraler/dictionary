@@ -107,6 +107,8 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="bin\Debug\maindata.xml" />
+    <None Include="Resources\vietnam.png" />
+    <None Include="Resources\united-kingdom.png" />
     <None Include="Resources\close-circular-button-symbol.png" />
     <None Include="Resources\languages.png" />
     <None Include="Resources\vocabulary.png" />

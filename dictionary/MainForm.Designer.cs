@@ -41,7 +41,10 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.labelTitleChildForm = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.speakButton = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelEnglish = new System.Windows.Forms.Label();
+            this.btnPlay = new FontAwesome.Sharp.IconButton();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.btnFeedback = new FontAwesome.Sharp.IconButton();
             this.btnHelp = new FontAwesome.Sharp.IconButton();
@@ -54,6 +57,8 @@
             this.panel2.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.panelDesktop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.SuspendLayout();
@@ -61,17 +66,18 @@
             // wordTextBox
             // 
             this.wordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wordTextBox.Location = new System.Drawing.Point(415, 94);
+            this.wordTextBox.Location = new System.Drawing.Point(288, 44);
             this.wordTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.wordTextBox.Multiline = true;
             this.wordTextBox.Name = "wordTextBox";
-            this.wordTextBox.Size = new System.Drawing.Size(216, 28);
+            this.wordTextBox.Size = new System.Drawing.Size(298, 28);
             this.wordTextBox.TabIndex = 0;
             this.wordTextBox.TextChanged += new System.EventHandler(this.wordTextBox_TextChanged);
             // 
             // translateButton
             // 
-            this.translateButton.Location = new System.Drawing.Point(299, 92);
+            this.translateButton.ForeColor = System.Drawing.Color.Black;
+            this.translateButton.Location = new System.Drawing.Point(608, 44);
             this.translateButton.Margin = new System.Windows.Forms.Padding(2);
             this.translateButton.Name = "translateButton";
             this.translateButton.Size = new System.Drawing.Size(88, 27);
@@ -87,7 +93,7 @@
             this.optionComboBox.Items.AddRange(new object[] {
             "Anh - Việt",
             "Việt - Anh"});
-            this.optionComboBox.Location = new System.Drawing.Point(34, 94);
+            this.optionComboBox.Location = new System.Drawing.Point(11, 45);
             this.optionComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.optionComboBox.Name = "optionComboBox";
             this.optionComboBox.Size = new System.Drawing.Size(108, 26);
@@ -104,11 +110,11 @@
             // meaningRichTextBox
             // 
             this.meaningRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.meaningRichTextBox.Location = new System.Drawing.Point(299, 155);
+            this.meaningRichTextBox.Location = new System.Drawing.Point(288, 88);
             this.meaningRichTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.meaningRichTextBox.Name = "meaningRichTextBox";
             this.meaningRichTextBox.ReadOnly = true;
-            this.meaningRichTextBox.Size = new System.Drawing.Size(332, 198);
+            this.meaningRichTextBox.Size = new System.Drawing.Size(475, 194);
             this.meaningRichTextBox.TabIndex = 8;
             this.meaningRichTextBox.Text = "";
             // 
@@ -116,10 +122,10 @@
             // 
             this.suggestedWordComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.suggestedWordComboBox.FormattingEnabled = true;
-            this.suggestedWordComboBox.Location = new System.Drawing.Point(34, 155);
+            this.suggestedWordComboBox.Location = new System.Drawing.Point(11, 88);
             this.suggestedWordComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.suggestedWordComboBox.Name = "suggestedWordComboBox";
-            this.suggestedWordComboBox.Size = new System.Drawing.Size(87, 202);
+            this.suggestedWordComboBox.Size = new System.Drawing.Size(108, 202);
             this.suggestedWordComboBox.TabIndex = 0;
             this.suggestedWordComboBox.SelectedIndexChanged += new System.EventHandler(this.suggestedWordComboBox_SelectedIndexChanged);
             // 
@@ -128,10 +134,10 @@
             this.suggenstionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.suggenstionPanel.BackColor = System.Drawing.Color.White;
             this.suggenstionPanel.ForeColor = System.Drawing.Color.GhostWhite;
-            this.suggenstionPanel.Location = new System.Drawing.Point(167, 155);
+            this.suggenstionPanel.Location = new System.Drawing.Point(144, 88);
             this.suggenstionPanel.Margin = new System.Windows.Forms.Padding(2);
             this.suggenstionPanel.Name = "suggenstionPanel";
-            this.suggenstionPanel.Size = new System.Drawing.Size(90, 198);
+            this.suggenstionPanel.Size = new System.Drawing.Size(106, 194);
             this.suggenstionPanel.TabIndex = 7;
             // 
             // panelMenu
@@ -183,10 +189,13 @@
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panelDesktop.Controls.Add(this.pictureBox2);
+            this.panelDesktop.Controls.Add(this.pictureBox1);
+            this.panelDesktop.Controls.Add(this.labelEnglish);
+            this.panelDesktop.Controls.Add(this.btnPlay);
             this.panelDesktop.Controls.Add(this.translateButton);
             this.panelDesktop.Controls.Add(this.suggenstionPanel);
             this.panelDesktop.Controls.Add(this.suggestedWordComboBox);
-            this.panelDesktop.Controls.Add(this.speakButton);
             this.panelDesktop.Controls.Add(this.wordTextBox);
             this.panelDesktop.Controls.Add(this.optionComboBox);
             this.panelDesktop.Controls.Add(this.meaningRichTextBox);
@@ -195,17 +204,54 @@
             this.panelDesktop.Size = new System.Drawing.Size(784, 390);
             this.panelDesktop.TabIndex = 12;
             // 
-            // speakButton
+            // pictureBox2
             // 
-            this.speakButton.BackgroundImage = global::dictionary.Properties.Resources.speakers;
-            this.speakButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.speakButton.Location = new System.Drawing.Point(187, 92);
-            this.speakButton.Margin = new System.Windows.Forms.Padding(2);
-            this.speakButton.Name = "speakButton";
-            this.speakButton.Size = new System.Drawing.Size(34, 38);
-            this.speakButton.TabIndex = 9;
-            this.speakButton.UseVisualStyleBackColor = true;
-            this.speakButton.Click += new System.EventHandler(this.speakButton_Click);
+            this.pictureBox2.Image = global::dictionary.Properties.Resources.vietnam;
+            this.pictureBox2.Location = new System.Drawing.Point(199, 40);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(51, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::dictionary.Properties.Resources.united_kingdom;
+            this.pictureBox1.Location = new System.Drawing.Point(144, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // labelEnglish
+            // 
+            this.labelEnglish.AutoSize = true;
+            this.labelEnglish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelEnglish.Image = global::dictionary.Properties.Resources.united_kingdom;
+            this.labelEnglish.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelEnglish.Location = new System.Drawing.Point(151, 40);
+            this.labelEnglish.Name = "labelEnglish";
+            this.labelEnglish.Size = new System.Drawing.Size(0, 13);
+            this.labelEnglish.TabIndex = 11;
+            this.labelEnglish.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // btnPlay
+            // 
+            this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlay.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btnPlay.IconChar = FontAwesome.Sharp.IconChar.PlayCircle;
+            this.btnPlay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPlay.IconSize = 35;
+            this.btnPlay.Location = new System.Drawing.Point(701, 41);
+            this.btnPlay.Name = "btnPlay";
+            this.btnPlay.Rotation = 0D;
+            this.btnPlay.Size = new System.Drawing.Size(50, 35);
+            this.btnPlay.TabIndex = 10;
+            this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // iconCurrentChildForm
             // 
@@ -403,6 +449,8 @@
             this.panelTitleBar.PerformLayout();
             this.panelDesktop.ResumeLayout(false);
             this.panelDesktop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.ResumeLayout(false);
@@ -418,7 +466,6 @@
         private System.Windows.Forms.RichTextBox meaningRichTextBox;
         private System.Windows.Forms.ComboBox suggestedWordComboBox;
         private System.Windows.Forms.Panel suggenstionPanel;
-        private System.Windows.Forms.Button speakButton;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnHelp;
@@ -427,11 +474,15 @@
         private FontAwesome.Sharp.IconButton btnHistory;
         private FontAwesome.Sharp.IconButton btnFeedback;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.Panel panelTitleBar;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private System.Windows.Forms.Label labelTitleChildForm;
         private System.Windows.Forms.Panel panelDesktop;
+        private FontAwesome.Sharp.IconButton btnPlay;
+        private System.Windows.Forms.Label labelEnglish;
+        private System.Windows.Forms.PictureBox btnHome;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

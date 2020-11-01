@@ -138,7 +138,23 @@ namespace dictionary
             }
             
         }
-
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            if (wordTextBox.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
+            }
+            if (myDictionary.getStatus() == true)
+            {
+                //EN
+                myDictionary.myVoice.speak(myDictionary.EN, wordTextBox.Text);
+            }
+            else
+            {
+                //VN
+                myDictionary.myVoice.speak(myDictionary.VN, wordTextBox.Text);
+            }
+        }
         private void translateButton_Click(object sender, EventArgs e)
         {
             if (wordTextBox.Text == "")
@@ -180,23 +196,7 @@ namespace dictionary
             //myDictionary.serialize();
         }
 
-        private void speakButton_Click(object sender, EventArgs e)
-        {
-            if(wordTextBox.Text=="")
-            {
-                MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
-            }
-            if(myDictionary.getStatus() == true)
-            {
-                //EN
-                myDictionary.myVoice.speak(myDictionary.EN, wordTextBox.Text);
-            }
-            else
-            {
-                //VN
-                myDictionary.myVoice.speak(myDictionary.VN, wordTextBox.Text);
-            }
-        }
+       
 
         private void wordTextBox_TextChanged(object sender, EventArgs e){}
         private void nameLabel_Click(object sender, EventArgs e){}
@@ -258,13 +258,14 @@ namespace dictionary
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
         /* private void Reset()
 {
-    DisableButton();
-    leftBorderBtn.Visible = false;
-    iconCurrentChildForm.IconChar = IconChar.Home;
-    iconCurrentChildForm.IconColor = Color.MediumPurple;
-    lblTitleChildForm.Text = "Home";
+DisableButton();
+leftBorderBtn.Visible = false;
+iconCurrentChildForm.IconChar = IconChar.Home;
+iconCurrentChildForm.IconColor = Color.MediumPurple;
+lblTitleChildForm.Text = "Home";
 }*/
     }
 }
