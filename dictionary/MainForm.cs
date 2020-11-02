@@ -36,12 +36,12 @@ namespace dictionary
 
 
 
-        /* myDictionary = new DictionaryManager();
+        myDictionary = new DictionaryManager();
 
          myDictionary.loadFirstDataToSuggestionPanel(suggestedWordComboBox);
 
          this.Controls.Add(myDictionary.VN);
-         this.Controls.Add(myDictionary.EN);      */
+         this.Controls.Add(myDictionary.EN);      
     }
         protected override void OnLoad(EventArgs e)
 
@@ -193,10 +193,38 @@ namespace dictionary
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //myDictionary.serialize();
+            myDictionary.serialize();
         }
 
        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void wordTextBox_TextChanged(object sender, EventArgs e){}
         private void nameLabel_Click(object sender, EventArgs e){}
@@ -224,21 +252,25 @@ namespace dictionary
         private void btn_Bookmark_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new Bookmark());
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
+            OpenChildForm(new Settings());
         }
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
+            OpenChildForm(new Help());
         }
 
         private void btnFeedback_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
+            OpenChildForm(new Feedback());
         }
 
         private void btnHome_Click(object sender, EventArgs e)

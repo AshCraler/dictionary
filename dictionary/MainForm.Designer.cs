@@ -37,30 +37,30 @@
             this.suggestedWordComboBox = new System.Windows.Forms.ComboBox();
             this.suggenstionPanel = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.labelTitleChildForm = new System.Windows.Forms.Label();
-            this.panelDesktop = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelEnglish = new System.Windows.Forms.Label();
-            this.btnPlay = new FontAwesome.Sharp.IconButton();
-            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.btnFeedback = new FontAwesome.Sharp.IconButton();
             this.btnHelp = new FontAwesome.Sharp.IconButton();
             this.btn_Bookmark = new FontAwesome.Sharp.IconButton();
             this.btnSettings = new FontAwesome.Sharp.IconButton();
             this.btnHistory = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
+            this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.labelTitleChildForm = new System.Windows.Forms.Label();
+            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
+            this.panelDesktop = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelEnglish = new System.Windows.Forms.Label();
+            this.btnPlay = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             this.panelDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.SuspendLayout();
             // 
             // wordTextBox
@@ -122,10 +122,10 @@
             // 
             this.suggestedWordComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.suggestedWordComboBox.FormattingEnabled = true;
-            this.suggestedWordComboBox.Location = new System.Drawing.Point(11, 88);
+            this.suggestedWordComboBox.Location = new System.Drawing.Point(13, 88);
             this.suggestedWordComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.suggestedWordComboBox.Name = "suggestedWordComboBox";
-            this.suggestedWordComboBox.Size = new System.Drawing.Size(108, 202);
+            this.suggestedWordComboBox.Size = new System.Drawing.Size(237, 202);
             this.suggestedWordComboBox.TabIndex = 0;
             this.suggestedWordComboBox.SelectedIndexChanged += new System.EventHandler(this.suggestedWordComboBox_SelectedIndexChanged);
             // 
@@ -156,116 +156,6 @@
             this.panelMenu.Size = new System.Drawing.Size(190, 472);
             this.panelMenu.TabIndex = 10;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnHome);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(190, 122);
-            this.panel2.TabIndex = 0;
-            // 
-            // panelTitleBar
-            // 
-            this.panelTitleBar.Controls.Add(this.labelTitleChildForm);
-            this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
-            this.panelTitleBar.Location = new System.Drawing.Point(190, 0);
-            this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(784, 82);
-            this.panelTitleBar.TabIndex = 11;
-            this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
-            // 
-            // labelTitleChildForm
-            // 
-            this.labelTitleChildForm.AutoSize = true;
-            this.labelTitleChildForm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelTitleChildForm.Location = new System.Drawing.Point(51, 32);
-            this.labelTitleChildForm.Name = "labelTitleChildForm";
-            this.labelTitleChildForm.Size = new System.Drawing.Size(47, 17);
-            this.labelTitleChildForm.TabIndex = 1;
-            this.labelTitleChildForm.Text = "Home";
-            // 
-            // panelDesktop
-            // 
-            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panelDesktop.Controls.Add(this.pictureBox2);
-            this.panelDesktop.Controls.Add(this.pictureBox1);
-            this.panelDesktop.Controls.Add(this.labelEnglish);
-            this.panelDesktop.Controls.Add(this.btnPlay);
-            this.panelDesktop.Controls.Add(this.translateButton);
-            this.panelDesktop.Controls.Add(this.suggenstionPanel);
-            this.panelDesktop.Controls.Add(this.suggestedWordComboBox);
-            this.panelDesktop.Controls.Add(this.wordTextBox);
-            this.panelDesktop.Controls.Add(this.optionComboBox);
-            this.panelDesktop.Controls.Add(this.meaningRichTextBox);
-            this.panelDesktop.Location = new System.Drawing.Point(190, 79);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(784, 390);
-            this.panelDesktop.TabIndex = 12;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::dictionary.Properties.Resources.vietnam;
-            this.pictureBox2.Location = new System.Drawing.Point(199, 40);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::dictionary.Properties.Resources.united_kingdom;
-            this.pictureBox1.Location = new System.Drawing.Point(144, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
-            // labelEnglish
-            // 
-            this.labelEnglish.AutoSize = true;
-            this.labelEnglish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelEnglish.Image = global::dictionary.Properties.Resources.united_kingdom;
-            this.labelEnglish.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelEnglish.Location = new System.Drawing.Point(151, 40);
-            this.labelEnglish.Name = "labelEnglish";
-            this.labelEnglish.Size = new System.Drawing.Size(0, 13);
-            this.labelEnglish.TabIndex = 11;
-            this.labelEnglish.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // btnPlay
-            // 
-            this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlay.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnPlay.IconChar = FontAwesome.Sharp.IconChar.PlayCircle;
-            this.btnPlay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPlay.IconSize = 35;
-            this.btnPlay.Location = new System.Drawing.Point(701, 41);
-            this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Rotation = 0D;
-            this.btnPlay.Size = new System.Drawing.Size(50, 35);
-            this.btnPlay.TabIndex = 10;
-            this.btnPlay.UseVisualStyleBackColor = true;
-            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
-            // 
-            // iconCurrentChildForm
-            // 
-            this.iconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.iconCurrentChildForm.ForeColor = System.Drawing.Color.MediumPurple;
-            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconCurrentChildForm.IconColor = System.Drawing.Color.MediumPurple;
-            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCurrentChildForm.IconSize = 35;
-            this.iconCurrentChildForm.Location = new System.Drawing.Point(17, 23);
-            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
-            this.iconCurrentChildForm.Size = new System.Drawing.Size(39, 35);
-            this.iconCurrentChildForm.TabIndex = 0;
-            this.iconCurrentChildForm.TabStop = false;
             // 
             // btnFeedback
             // 
@@ -411,6 +301,14 @@
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnHome);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(190, 122);
+            this.panel2.TabIndex = 0;
+            // 
             // btnHome
             // 
             this.btnHome.Image = global::dictionary.Properties.Resources.languages;
@@ -421,6 +319,108 @@
             this.btnHome.TabIndex = 0;
             this.btnHome.TabStop = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // panelTitleBar
+            // 
+            this.panelTitleBar.Controls.Add(this.labelTitleChildForm);
+            this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
+            this.panelTitleBar.Location = new System.Drawing.Point(190, 0);
+            this.panelTitleBar.Name = "panelTitleBar";
+            this.panelTitleBar.Size = new System.Drawing.Size(784, 82);
+            this.panelTitleBar.TabIndex = 11;
+            this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // labelTitleChildForm
+            // 
+            this.labelTitleChildForm.AutoSize = true;
+            this.labelTitleChildForm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelTitleChildForm.Location = new System.Drawing.Point(51, 32);
+            this.labelTitleChildForm.Name = "labelTitleChildForm";
+            this.labelTitleChildForm.Size = new System.Drawing.Size(47, 17);
+            this.labelTitleChildForm.TabIndex = 1;
+            this.labelTitleChildForm.Text = "Home";
+            // 
+            // iconCurrentChildForm
+            // 
+            this.iconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.iconCurrentChildForm.ForeColor = System.Drawing.Color.MediumPurple;
+            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconCurrentChildForm.IconColor = System.Drawing.Color.MediumPurple;
+            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconCurrentChildForm.IconSize = 35;
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(17, 23);
+            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
+            this.iconCurrentChildForm.Size = new System.Drawing.Size(39, 35);
+            this.iconCurrentChildForm.TabIndex = 0;
+            this.iconCurrentChildForm.TabStop = false;
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panelDesktop.Controls.Add(this.suggestedWordComboBox);
+            this.panelDesktop.Controls.Add(this.pictureBox2);
+            this.panelDesktop.Controls.Add(this.pictureBox1);
+            this.panelDesktop.Controls.Add(this.labelEnglish);
+            this.panelDesktop.Controls.Add(this.btnPlay);
+            this.panelDesktop.Controls.Add(this.translateButton);
+            this.panelDesktop.Controls.Add(this.suggenstionPanel);
+            this.panelDesktop.Controls.Add(this.wordTextBox);
+            this.panelDesktop.Controls.Add(this.optionComboBox);
+            this.panelDesktop.Controls.Add(this.meaningRichTextBox);
+            this.panelDesktop.Location = new System.Drawing.Point(190, 79);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(784, 390);
+            this.panelDesktop.TabIndex = 12;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::dictionary.Properties.Resources.vietnam;
+            this.pictureBox2.Location = new System.Drawing.Point(199, 40);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(51, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::dictionary.Properties.Resources.united_kingdom;
+            this.pictureBox1.Location = new System.Drawing.Point(144, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // labelEnglish
+            // 
+            this.labelEnglish.AutoSize = true;
+            this.labelEnglish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelEnglish.Image = global::dictionary.Properties.Resources.united_kingdom;
+            this.labelEnglish.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelEnglish.Location = new System.Drawing.Point(151, 40);
+            this.labelEnglish.Name = "labelEnglish";
+            this.labelEnglish.Size = new System.Drawing.Size(0, 13);
+            this.labelEnglish.TabIndex = 11;
+            this.labelEnglish.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // btnPlay
+            // 
+            this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlay.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btnPlay.IconChar = FontAwesome.Sharp.IconChar.PlayCircle;
+            this.btnPlay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPlay.IconSize = 35;
+            this.btnPlay.Location = new System.Drawing.Point(701, 41);
+            this.btnPlay.Name = "btnPlay";
+            this.btnPlay.Rotation = 0D;
+            this.btnPlay.Size = new System.Drawing.Size(50, 35);
+            this.btnPlay.TabIndex = 10;
+            this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // MainForm
             // 
@@ -445,14 +445,14 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             this.panelDesktop.ResumeLayout(false);
             this.panelDesktop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.ResumeLayout(false);
 
         }
