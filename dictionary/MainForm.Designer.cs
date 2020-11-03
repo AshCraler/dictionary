@@ -29,13 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.wordTextBox = new System.Windows.Forms.TextBox();
-            this.translateButton = new System.Windows.Forms.Button();
-            this.optionComboBox = new System.Windows.Forms.ComboBox();
             this.illustrationImageList = new System.Windows.Forms.ImageList(this.components);
             this.meaningRichTextBox = new System.Windows.Forms.RichTextBox();
             this.suggestedWordComboBox = new System.Windows.Forms.ComboBox();
-            this.suggenstionPanel = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnFeedback = new FontAwesome.Sharp.IconButton();
             this.btnHelp = new FontAwesome.Sharp.IconButton();
@@ -49,8 +45,11 @@
             this.labelTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonSwitch = new FontAwesome.Sharp.IconButton();
+            this.buttonSearch = new FontAwesome.Sharp.IconButton();
+            this.textboxSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.pictureBoxFlagRight = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFlagLeft = new System.Windows.Forms.PictureBox();
             this.labelEnglish = new System.Windows.Forms.Label();
             this.btnPlay = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
@@ -59,47 +58,9 @@
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             this.panelDesktop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagLeft)).BeginInit();
             this.SuspendLayout();
-            // 
-            // wordTextBox
-            // 
-            this.wordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wordTextBox.Location = new System.Drawing.Point(288, 44);
-            this.wordTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.wordTextBox.Multiline = true;
-            this.wordTextBox.Name = "wordTextBox";
-            this.wordTextBox.Size = new System.Drawing.Size(298, 28);
-            this.wordTextBox.TabIndex = 0;
-            this.wordTextBox.TextChanged += new System.EventHandler(this.wordTextBox_TextChanged);
-            // 
-            // translateButton
-            // 
-            this.translateButton.ForeColor = System.Drawing.Color.Black;
-            this.translateButton.Location = new System.Drawing.Point(608, 44);
-            this.translateButton.Margin = new System.Windows.Forms.Padding(2);
-            this.translateButton.Name = "translateButton";
-            this.translateButton.Size = new System.Drawing.Size(88, 27);
-            this.translateButton.TabIndex = 5;
-            this.translateButton.Text = "Dịch";
-            this.translateButton.UseVisualStyleBackColor = true;
-            this.translateButton.Click += new System.EventHandler(this.translateButton_Click);
-            // 
-            // optionComboBox
-            // 
-            this.optionComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionComboBox.FormattingEnabled = true;
-            this.optionComboBox.Items.AddRange(new object[] {
-            "Anh - Việt",
-            "Việt - Anh"});
-            this.optionComboBox.Location = new System.Drawing.Point(11, 45);
-            this.optionComboBox.Margin = new System.Windows.Forms.Padding(2);
-            this.optionComboBox.Name = "optionComboBox";
-            this.optionComboBox.Size = new System.Drawing.Size(108, 26);
-            this.optionComboBox.TabIndex = 6;
-            this.optionComboBox.Text = "Anh - Việt";
-            this.optionComboBox.SelectedIndexChanged += new System.EventHandler(this.optionComboBox_SelectedIndexChanged);
             // 
             // illustrationImageList
             // 
@@ -110,35 +71,29 @@
             // meaningRichTextBox
             // 
             this.meaningRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.meaningRichTextBox.Location = new System.Drawing.Point(288, 88);
+            this.meaningRichTextBox.BackColor = System.Drawing.Color.White;
+            this.meaningRichTextBox.Location = new System.Drawing.Point(282, 96);
             this.meaningRichTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.meaningRichTextBox.Name = "meaningRichTextBox";
             this.meaningRichTextBox.ReadOnly = true;
-            this.meaningRichTextBox.Size = new System.Drawing.Size(475, 194);
+            this.meaningRichTextBox.Size = new System.Drawing.Size(464, 194);
             this.meaningRichTextBox.TabIndex = 8;
             this.meaningRichTextBox.Text = "";
+            this.meaningRichTextBox.TextChanged += new System.EventHandler(this.meaningRichTextBox_TextChanged);
             // 
             // suggestedWordComboBox
             // 
+            this.suggestedWordComboBox.BackColor = System.Drawing.Color.White;
             this.suggestedWordComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.suggestedWordComboBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suggestedWordComboBox.ForeColor = System.Drawing.Color.Gainsboro;
             this.suggestedWordComboBox.FormattingEnabled = true;
-            this.suggestedWordComboBox.Location = new System.Drawing.Point(13, 88);
+            this.suggestedWordComboBox.Location = new System.Drawing.Point(17, 96);
             this.suggestedWordComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.suggestedWordComboBox.Name = "suggestedWordComboBox";
-            this.suggestedWordComboBox.Size = new System.Drawing.Size(237, 202);
+            this.suggestedWordComboBox.Size = new System.Drawing.Size(239, 202);
             this.suggestedWordComboBox.TabIndex = 0;
             this.suggestedWordComboBox.SelectedIndexChanged += new System.EventHandler(this.suggestedWordComboBox_SelectedIndexChanged);
-            // 
-            // suggenstionPanel
-            // 
-            this.suggenstionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.suggenstionPanel.BackColor = System.Drawing.Color.White;
-            this.suggenstionPanel.ForeColor = System.Drawing.Color.GhostWhite;
-            this.suggenstionPanel.Location = new System.Drawing.Point(144, 88);
-            this.suggenstionPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.suggenstionPanel.Name = "suggenstionPanel";
-            this.suggenstionPanel.Size = new System.Drawing.Size(106, 194);
-            this.suggenstionPanel.TabIndex = 7;
             // 
             // panelMenu
             // 
@@ -358,40 +313,95 @@
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panelDesktop.Controls.Add(this.buttonSwitch);
+            this.panelDesktop.Controls.Add(this.buttonSearch);
+            this.panelDesktop.Controls.Add(this.textboxSearch);
             this.panelDesktop.Controls.Add(this.suggestedWordComboBox);
-            this.panelDesktop.Controls.Add(this.pictureBox2);
-            this.panelDesktop.Controls.Add(this.pictureBox1);
+            this.panelDesktop.Controls.Add(this.pictureBoxFlagRight);
+            this.panelDesktop.Controls.Add(this.pictureBoxFlagLeft);
             this.panelDesktop.Controls.Add(this.labelEnglish);
             this.panelDesktop.Controls.Add(this.btnPlay);
-            this.panelDesktop.Controls.Add(this.translateButton);
-            this.panelDesktop.Controls.Add(this.suggenstionPanel);
-            this.panelDesktop.Controls.Add(this.wordTextBox);
-            this.panelDesktop.Controls.Add(this.optionComboBox);
             this.panelDesktop.Controls.Add(this.meaningRichTextBox);
             this.panelDesktop.Location = new System.Drawing.Point(190, 79);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(784, 390);
             this.panelDesktop.TabIndex = 12;
             // 
-            // pictureBox2
+            // buttonSwitch
             // 
-            this.pictureBox2.Image = global::dictionary.Properties.Resources.vietnam;
-            this.pictureBox2.Location = new System.Drawing.Point(199, 40);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
+            this.buttonSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSwitch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.buttonSwitch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.buttonSwitch.IconChar = FontAwesome.Sharp.IconChar.ExchangeAlt;
+            this.buttonSwitch.IconColor = System.Drawing.Color.Gainsboro;
+            this.buttonSwitch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonSwitch.IconSize = 25;
+            this.buttonSwitch.Location = new System.Drawing.Point(699, 41);
+            this.buttonSwitch.Name = "buttonSwitch";
+            this.buttonSwitch.Rotation = 0D;
+            this.buttonSwitch.Size = new System.Drawing.Size(37, 31);
+            this.buttonSwitch.TabIndex = 16;
+            this.buttonSwitch.UseVisualStyleBackColor = true;
+            this.buttonSwitch.Click += new System.EventHandler(this.buttonSwitch_Click);
             // 
-            // pictureBox1
+            // buttonSearch
             // 
-            this.pictureBox1.Image = global::dictionary.Properties.Resources.united_kingdom;
-            this.pictureBox1.Location = new System.Drawing.Point(144, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.buttonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.buttonSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.buttonSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.buttonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonSearch.IconSize = 35;
+            this.buttonSearch.Location = new System.Drawing.Point(557, 41);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Rotation = 0D;
+            this.buttonSearch.Size = new System.Drawing.Size(39, 38);
+            this.buttonSearch.TabIndex = 15;
+            this.buttonSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // textboxSearch
+            // 
+            this.textboxSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textboxSearch.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxSearch.ForeColor = System.Drawing.Color.Gainsboro;
+            this.textboxSearch.HintForeColor = System.Drawing.Color.Gainsboro;
+            this.textboxSearch.HintText = "Search English";
+            this.textboxSearch.isPassword = false;
+            this.textboxSearch.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.textboxSearch.LineIdleColor = System.Drawing.Color.Gainsboro;
+            this.textboxSearch.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.textboxSearch.LineThickness = 3;
+            this.textboxSearch.Location = new System.Drawing.Point(17, 28);
+            this.textboxSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.textboxSearch.Name = "textboxSearch";
+            this.textboxSearch.Size = new System.Drawing.Size(542, 39);
+            this.textboxSearch.TabIndex = 14;
+            this.textboxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textboxSearch.OnValueChanged += new System.EventHandler(this.textboxSearch_OnValueChanged);
+            this.textboxSearch.DoubleClick += new System.EventHandler(this.textboxSearch_DoubleClick);
+            // 
+            // pictureBoxFlagRight
+            // 
+            this.pictureBoxFlagRight.Image = global::dictionary.Properties.Resources.vietnam;
+            this.pictureBoxFlagRight.Location = new System.Drawing.Point(658, 40);
+            this.pictureBoxFlagRight.Name = "pictureBoxFlagRight";
+            this.pictureBoxFlagRight.Size = new System.Drawing.Size(49, 32);
+            this.pictureBoxFlagRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxFlagRight.TabIndex = 13;
+            this.pictureBoxFlagRight.TabStop = false;
+            // 
+            // pictureBoxFlagLeft
+            // 
+            this.pictureBoxFlagLeft.Image = global::dictionary.Properties.Resources.united_kingdom;
+            this.pictureBoxFlagLeft.Location = new System.Drawing.Point(616, 40);
+            this.pictureBoxFlagLeft.Name = "pictureBoxFlagLeft";
+            this.pictureBoxFlagLeft.Size = new System.Drawing.Size(46, 32);
+            this.pictureBoxFlagLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxFlagLeft.TabIndex = 12;
+            this.pictureBoxFlagLeft.TabStop = false;
             // 
             // labelEnglish
             // 
@@ -414,7 +424,7 @@
             this.btnPlay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPlay.IconSize = 35;
-            this.btnPlay.Location = new System.Drawing.Point(701, 41);
+            this.btnPlay.Location = new System.Drawing.Point(260, 326);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Rotation = 0D;
             this.btnPlay.Size = new System.Drawing.Size(50, 35);
@@ -451,21 +461,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             this.panelDesktop.ResumeLayout(false);
             this.panelDesktop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagLeft)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox wordTextBox;
-        private System.Windows.Forms.Button translateButton;
-        private System.Windows.Forms.ComboBox optionComboBox;
         private System.Windows.Forms.ImageList illustrationImageList;
         private System.Windows.Forms.RichTextBox meaningRichTextBox;
         private System.Windows.Forms.ComboBox suggestedWordComboBox;
-        private System.Windows.Forms.Panel suggenstionPanel;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnHelp;
@@ -481,8 +486,11 @@
         private FontAwesome.Sharp.IconButton btnPlay;
         private System.Windows.Forms.Label labelEnglish;
         private System.Windows.Forms.PictureBox btnHome;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxFlagRight;
+        private System.Windows.Forms.PictureBox pictureBoxFlagLeft;
+        private FontAwesome.Sharp.IconButton buttonSearch;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textboxSearch;
+        private FontAwesome.Sharp.IconButton buttonSwitch;
     }
 }
 

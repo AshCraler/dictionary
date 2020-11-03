@@ -19,8 +19,10 @@ namespace dictionary
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        private bool ktSwitch = false;
+        bool firstClick = true;
 
-        
+
         //Constructor  
         public MainForm()
         {
@@ -28,6 +30,7 @@ namespace dictionary
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7,34);
             panelMenu.Controls.Add(leftBorderBtn);
+          
             //Form
           /*  this.Text = string.Empty;
             this.ControlBox = false;
@@ -36,12 +39,12 @@ namespace dictionary
 
 
 
-        myDictionary = new DictionaryManager();
+            myDictionary = new DictionaryManager();
 
-         myDictionary.loadFirstDataToSuggestionPanel(suggestedWordComboBox);
+            myDictionary.loadFirstDataToSuggestionPanel(suggestedWordComboBox);
 
-         this.Controls.Add(myDictionary.VN);
-         this.Controls.Add(myDictionary.EN);      
+            this.Controls.Add(myDictionary.VN);
+            this.Controls.Add(myDictionary.EN);      
     }
         protected override void OnLoad(EventArgs e)
 
@@ -118,62 +121,29 @@ namespace dictionary
             childForm.Show();
           //  lblTitleChildForm.Text = childForm.Text;
         }
+        
 
-
-        private void optionComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            myDictionary.changeStatus();
-
-            if (myDictionary.getStatus()==false)
-            {
-                translateButton.Text = "Translate";
-                
-                suggestedWordComboBox.DisplayMember = "Meaning";
-            }
-            else
-            {
-                translateButton.Text = "Dịch";
-                
-                suggestedWordComboBox.DisplayMember = "Key";
-            }
-            
-        }
+        
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            if (wordTextBox.Text == "")
+            if (textboxSearch.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
             }
             if (myDictionary.getStatus() == true)
             {
                 //EN
-                myDictionary.myVoice.speak(myDictionary.EN, wordTextBox.Text);
+                myDictionary.myVoice.speak(myDictionary.EN, textboxSearch.Text);
             }
             else
             {
                 //VN
-                myDictionary.myVoice.speak(myDictionary.VN, wordTextBox.Text);
+                myDictionary.myVoice.speak(myDictionary.VN, textboxSearch.Text);
             }
         }
         private void translateButton_Click(object sender, EventArgs e)
         {
-            if (wordTextBox.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
-            }
-            else
-            {
-                WordData result = myDictionary.Item.Data.Find(x => x.Key == wordTextBox.Text);
-                if (result == null)
-                {
-                    MessageBox.Show("No words found! I'm sorry.");
-                }
-                else
-                {
-                    meaningRichTextBox.Text = result.Meaning + "\n";
-                    meaningRichTextBox.Text += result.Explaination;
-                }
-            }
+        
         }
 
         private void suggestedWordComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -184,7 +154,6 @@ namespace dictionary
                 return;
 
             WordData data = cb.SelectedItem as WordData;
-
             meaningRichTextBox.Text = data.Meaning + "\n";
             meaningRichTextBox.Text += data.Explaination;
             
@@ -226,7 +195,7 @@ namespace dictionary
 
 
 
-        private void wordTextBox_TextChanged(object sender, EventArgs e){}
+        private void textboxSearch_TextChanged(object sender, EventArgs e){}
         private void nameLabel_Click(object sender, EventArgs e){}
 
         private void iconButton3_Click(object sender, EventArgs e){}
@@ -290,6 +259,75 @@ namespace dictionary
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            if (textboxSearch.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
+            }
+            else
+            {
+                WordData result = myDictionary.Item.Data.Find(x => x.Key == textboxSearch.Text);
+                if (result == null)
+                {
+                    MessageBox.Show("No words found! I'm sorry.");
+                }
+                else
+                {
+                    meaningRichTextBox.Text = result.Meaning + "\n";
+                    meaningRichTextBox.Text += result.Explaination;
+                }
+            }
+        }
+
+        private void meaningRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textboxSearch_OnValueChanged(object sender, EventArgs e)
+        {
+            if (textboxSearch.Text != string.Empty)
+            {
+                textboxSearch.LineIdleColor = RGBColors.color1;
+            }
+            if (textboxSearch.Text == string.Empty)
+            {
+                textboxSearch.LineIdleColor = textboxSearch.HintForeColor ;
+            }
+        }
+
+        private void buttonSwitch_Click(object sender, EventArgs e)
+        {
+            if (ktSwitch == false)
+            {
+                ktSwitch = true;
+                suggestedWordComboBox.DisplayMember = "Meaning";
+                pictureBoxFlagLeft.Image = dictionary.Properties.Resources.vietnam;
+                pictureBoxFlagRight.Image = dictionary.Properties.Resources.united_kingdom;
+                textboxSearch.HintText = "Search VietNamese";
+                textboxSearch.Text = "Search VietNamese";
+            }
+            else
+            {
+                ktSwitch = false;
+                suggestedWordComboBox.DisplayMember = "Key";
+                pictureBoxFlagLeft.Image = dictionary.Properties.Resources.united_kingdom;
+                pictureBoxFlagRight.Image = dictionary.Properties.Resources.vietnam;
+                textboxSearch.HintText = "Search English";
+                textboxSearch.Text = "Search English";
+            }
+        }
+
+        private void textboxSearch_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
 
         /* private void Reset()
 {
