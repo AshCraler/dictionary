@@ -64,6 +64,7 @@ namespace dictionary
             public static Color color4 = Color.FromArgb(95, 77, 221);
             public static Color color5 = Color.FromArgb(249, 88, 155);
             public static Color color6 = Color.FromArgb(24, 161, 251);
+            public static Color color7 = Color.FromArgb(255, 244, 79);
         }
         
         //Method
@@ -141,10 +142,7 @@ namespace dictionary
                 myDictionary.myVoice.speak(myDictionary.VN, textboxSearch.Text);
             }
         }
-        private void translateButton_Click(object sender, EventArgs e)
-        {
-        
-        }
+       
 
         private void suggestedWordComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -324,6 +322,46 @@ namespace dictionary
         {
 
         }
+
+        private void labelHint1_MouseHover(object sender, EventArgs e)
+        {
+            labelHint1.ForeColor = RGBColors.color1;
+        }
+        private void labelHint1_MouseLeave(object sender, EventArgs e)
+        {
+            labelHint1.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+
+        private void labelHint2_MouseHover(object sender, EventArgs e)
+        {
+            labelHint2.ForeColor = RGBColors.color1;
+        }
+
+        private void labelHint2_MouseLeave(object sender, EventArgs e)
+        {
+            labelHint2.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+
+        private void labelHint3_MouseHover(object sender, EventArgs e)
+        {
+            labelHint3.ForeColor = RGBColors.color1;
+        }
+
+        private void labelHint3_MouseLeave(object sender, EventArgs e)
+        {
+            labelHint3.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+
+        private void labelHint4_MouseHover(object sender, EventArgs e)
+        {
+            labelHint4.ForeColor = RGBColors.color1;
+        }
+
+        private void labelHint4_MouseLeave(object sender, EventArgs e)
+        {
+            labelHint4.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+
 
 
 

@@ -143,6 +143,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="bin\Debug\maindata.xml" />
+    <None Include="Resources\idea.png" />
     <None Include="Resources\vietnam.png" />
     <None Include="Resources\united-kingdom.png" />
     <None Include="Resources\close-circular-button-symbol.png" />
