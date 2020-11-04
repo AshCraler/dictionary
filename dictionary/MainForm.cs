@@ -8,20 +8,21 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.Framework.UI;
 using FontAwesome.Sharp;
 
 namespace dictionary
 {
     public partial class MainForm : Form
     {
-        DictionaryManager myDictionary;
+        public DictionaryManager myDictionary;
         //Fields
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
         private bool ktSwitch = false;
         bool firstClick = true;
-
+      
 
         //Constructor  
         public MainForm()
@@ -45,7 +46,7 @@ namespace dictionary
 
             this.Controls.Add(myDictionary.VN);
             this.Controls.Add(myDictionary.EN);      
-    }
+        }
         protected override void OnLoad(EventArgs e)
 
         {
@@ -280,9 +281,7 @@ namespace dictionary
         }
 
         private void meaningRichTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        {}
 
         private void textboxSearch_OnValueChanged(object sender, EventArgs e)
         {
@@ -325,7 +324,7 @@ namespace dictionary
 
         private void labelHint1_MouseHover(object sender, EventArgs e)
         {
-            labelHint1.ForeColor = RGBColors.color1;
+            labelHint1.ForeColor = RGBColors.color7;
         }
         private void labelHint1_MouseLeave(object sender, EventArgs e)
         {
@@ -334,7 +333,7 @@ namespace dictionary
 
         private void labelHint2_MouseHover(object sender, EventArgs e)
         {
-            labelHint2.ForeColor = RGBColors.color1;
+            labelHint2.ForeColor = RGBColors.color7;
         }
 
         private void labelHint2_MouseLeave(object sender, EventArgs e)
@@ -344,7 +343,7 @@ namespace dictionary
 
         private void labelHint3_MouseHover(object sender, EventArgs e)
         {
-            labelHint3.ForeColor = RGBColors.color1;
+            labelHint3.ForeColor = RGBColors.color7;
         }
 
         private void labelHint3_MouseLeave(object sender, EventArgs e)
@@ -354,7 +353,7 @@ namespace dictionary
 
         private void labelHint4_MouseHover(object sender, EventArgs e)
         {
-            labelHint4.ForeColor = RGBColors.color1;
+            labelHint4.ForeColor = RGBColors.color7;
         }
 
         private void labelHint4_MouseLeave(object sender, EventArgs e)
@@ -362,6 +361,13 @@ namespace dictionary
             labelHint4.ForeColor = System.Drawing.Color.Gainsboro;
         }
 
+        private void buttonTranslate_Click(object sender, EventArgs e)
+        {
+
+            ActivateButton(sender, RGBColors.color7);
+            OpenChildForm(new Translate());
+        }
+        
 
 
 
