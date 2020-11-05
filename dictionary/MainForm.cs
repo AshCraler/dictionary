@@ -42,15 +42,13 @@ namespace dictionary
             this.Controls.Add(myDictionary.VN);
             this.Controls.Add(myDictionary.EN);      
         }
-        /* protected override void OnLoad(EventArgs e)
-
+        protected override void OnLoad(EventArgs e)
         {
 
             base.OnLoad(e);
-
             this.BeginInvoke(new MethodInvoker(delegate () { iconButton1.PerformClick(); }));
 
-        }*/
+        }
         //Structs
         private struct RGBColors
         {
@@ -210,9 +208,8 @@ namespace dictionary
         private void btnHistory_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            //  OpenChildForm(new History());
-            History formHistory = new History();
-            formHistory.Show();
+            OpenChildForm(new History());
+            
         }
 
         private void btn_Bookmark_Click(object sender, EventArgs e)
@@ -298,7 +295,7 @@ namespace dictionary
             if (ktSwitch == false)
             {
                 ktSwitch = true;
-                suggestedWordComboBox.DisplayMember = "Meaning";
+          //      suggestedWordComboBox.DisplayMember = "Meaning";
                 pictureBoxFlagLeft.Image = dictionary.Properties.Resources.vietnam;
                 pictureBoxFlagRight.Image = dictionary.Properties.Resources.united_kingdom;
                 textboxSearch.HintText = "Search VietNamese";
@@ -307,7 +304,7 @@ namespace dictionary
             else
             {
                 ktSwitch = false;
-                suggestedWordComboBox.DisplayMember = "Key";
+     //           suggestedWordComboBox.DisplayMember = "Key";
                 pictureBoxFlagLeft.Image = dictionary.Properties.Resources.united_kingdom;
                 pictureBoxFlagRight.Image = dictionary.Properties.Resources.vietnam;
                 textboxSearch.HintText = "Search English";
@@ -365,7 +362,32 @@ namespace dictionary
             ActivateButton(sender, RGBColors.color7);
             OpenChildForm(new Translate());
         }
-        
+
+        private void iconCurrentChildForm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelHint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelHint2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 

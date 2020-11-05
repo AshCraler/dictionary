@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Translate));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.bunifuTextbox1 = new Bunifu.Framework.UI.BunifuTextbox();
             this.textBoxMeaning = new System.Windows.Forms.TextBox();
             this.labelMeaning = new System.Windows.Forms.Label();
             this.btnPlay = new FontAwesome.Sharp.IconButton();
@@ -40,24 +42,40 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.bunifuTextbox1);
             this.panel1.Controls.Add(this.textBoxMeaning);
             this.panel1.Controls.Add(this.labelMeaning);
             this.panel1.Controls.Add(this.btnPlay);
             this.panel1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.panel1.Location = new System.Drawing.Point(-2, -5);
+            this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(804, 454);
+            this.panel1.Size = new System.Drawing.Size(800, 439);
             this.panel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 13);
+            this.label1.Location = new System.Drawing.Point(32, 227);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 24);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Type your word";
+            this.label1.Size = new System.Drawing.Size(104, 24);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Example:";
+            // 
+            // bunifuTextbox1
+            // 
+            this.bunifuTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.bunifuTextbox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox1.BackgroundImage")));
+            this.bunifuTextbox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuTextbox1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.bunifuTextbox1.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox1.Icon")));
+            this.bunifuTextbox1.Location = new System.Drawing.Point(13, 18);
+            this.bunifuTextbox1.Name = "bunifuTextbox1";
+            this.bunifuTextbox1.Size = new System.Drawing.Size(250, 42);
+            this.bunifuTextbox1.TabIndex = 15;
+            this.bunifuTextbox1.text = "Type your word here";
+            this.bunifuTextbox1.OnTextChange += new System.EventHandler(this.bunifuTextbox1_OnTextChange);
+            this.bunifuTextbox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuTextbox1_MouseClick);
             // 
             // textBoxMeaning
             // 
@@ -65,21 +83,22 @@
             this.textBoxMeaning.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxMeaning.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMeaning.ForeColor = System.Drawing.Color.Gainsboro;
-            this.textBoxMeaning.Location = new System.Drawing.Point(34, 92);
+            this.textBoxMeaning.Location = new System.Drawing.Point(52, 126);
             this.textBoxMeaning.Name = "textBoxMeaning";
-            this.textBoxMeaning.Size = new System.Drawing.Size(512, 24);
+            this.textBoxMeaning.Size = new System.Drawing.Size(594, 24);
             this.textBoxMeaning.TabIndex = 13;
-            this.textBoxMeaning.Text = "-Word meaning";
+            this.textBoxMeaning.TextChanged += new System.EventHandler(this.textBoxMeaning_TextChanged);
             // 
             // labelMeaning
             // 
             this.labelMeaning.AutoSize = true;
             this.labelMeaning.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMeaning.Location = new System.Drawing.Point(17, 52);
+            this.labelMeaning.Location = new System.Drawing.Point(32, 85);
             this.labelMeaning.Name = "labelMeaning";
-            this.labelMeaning.Size = new System.Drawing.Size(105, 24);
+            this.labelMeaning.Size = new System.Drawing.Size(164, 24);
             this.labelMeaning.TabIndex = 12;
-            this.labelMeaning.Text = "Meaning:";
+            this.labelMeaning.Text = "Word Meaning:";
+            this.labelMeaning.Click += new System.EventHandler(this.labelMeaning_Click);
             // 
             // btnPlay
             // 
@@ -90,7 +109,7 @@
             this.btnPlay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPlay.IconSize = 35;
-            this.btnPlay.Location = new System.Drawing.Point(201, 11);
+            this.btnPlay.Location = new System.Drawing.Point(269, 25);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Rotation = 0D;
             this.btnPlay.Size = new System.Drawing.Size(50, 35);
@@ -102,7 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(799, 439);
             this.Controls.Add(this.panel1);
             this.Name = "Translate";
             this.Text = "Translate";
@@ -116,8 +135,9 @@
 
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton btnPlay;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxMeaning;
         private System.Windows.Forms.Label labelMeaning;
+        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox1;
+        private System.Windows.Forms.Label label1;
     }
 }

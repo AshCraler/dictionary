@@ -79,8 +79,8 @@ namespace dictionary
         public void loadFirstDataToSuggestionPanel(ComboBox inputComboBox)
         {
             //function content
-            inputComboBox.DataSource = suggestedItems().Data;
-            inputComboBox.DisplayMember = "Key";
+      //      inputComboBox.DataSource = suggestedItems().Data;
+     //       inputComboBox.DisplayMember = "Key";
             
             
         }

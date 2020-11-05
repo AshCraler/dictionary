@@ -35,5 +35,34 @@ namespace dictionary
                 myDictionary.myVoice.speak(myDictionary.VN, textboxSearch.Text);
             }*/
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelMeaning_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuTextbox1_OnTextChange(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxMeaning_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+  
+
+        private void bunifuTextbox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            bunifuTextbox1.text = "";
+        }
+
+       
     }
 }
