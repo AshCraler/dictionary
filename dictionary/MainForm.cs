@@ -271,6 +271,10 @@ namespace dictionary
                 {
                     meaningRichTextBox.Text = result.Meaning + "\n";
                     meaningRichTextBox.Text += result.Explaination;
+                    typedWord.Visible = true;
+                    typedWord.Text = textboxSearch.Text;
+                    labelResult.Visible = true;
+                    btnPlay.Visible = true;
                 }
             }
         }
@@ -384,6 +388,11 @@ namespace dictionary
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelHint3_Click(object sender, EventArgs e)
         {
 
         }
