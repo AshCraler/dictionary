@@ -21,7 +21,7 @@ namespace dictionary
         private Panel leftBorderBtn;
         private Form currentChildForm;
         private bool ktSwitch = false;
-        bool firstClick = true;
+ 
       
 
         //Constructor  
@@ -37,17 +37,12 @@ namespace dictionary
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;*/
-
-
-
             myDictionary = new DictionaryManager();
-
             myDictionary.loadFirstDataToSuggestionPanel(suggestedWordComboBox);
-
             this.Controls.Add(myDictionary.VN);
             this.Controls.Add(myDictionary.EN);      
         }
-        protected override void OnLoad(EventArgs e)
+        /* protected override void OnLoad(EventArgs e)
 
         {
 
@@ -55,7 +50,7 @@ namespace dictionary
 
             this.BeginInvoke(new MethodInvoker(delegate () { iconButton1.PerformClick(); }));
 
-        }
+        }*/
         //Structs
         private struct RGBColors
         {
@@ -203,18 +198,21 @@ namespace dictionary
 
         private void MainForm_Load(object sender, EventArgs e){}
 
-        private void iconButton1_Click(object sender, EventArgs e)// Button Translate
+        private void iconButton1_Click(object sender, EventArgs e)// Button Home
         {
             ActivateButton(sender, RGBColors.color1);
             if (currentChildForm != null)
             {
                 currentChildForm.Close();
+              //  Reset();
             }
         }
         private void btnHistory_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new History());
+            //  OpenChildForm(new History());
+            History formHistory = new History();
+            formHistory.Show();
         }
 
         private void btn_Bookmark_Click(object sender, EventArgs e)

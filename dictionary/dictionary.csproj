@@ -60,6 +60,7 @@
       <DependentUpon>Bookmark.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomizeLinkLabel.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="DictionaryItem.cs" />
     <Compile Include="DictionaryManager.cs" />
     <Compile Include="Feedback.cs">

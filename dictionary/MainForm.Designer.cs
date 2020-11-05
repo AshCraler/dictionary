@@ -82,7 +82,7 @@
             this.meaningRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.meaningRichTextBox.BackColor = System.Drawing.Color.White;
             this.meaningRichTextBox.Font = new System.Drawing.Font("Microsoft JhengHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.meaningRichTextBox.Location = new System.Drawing.Point(467, 96);
+            this.meaningRichTextBox.Location = new System.Drawing.Point(467, 93);
             this.meaningRichTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.meaningRichTextBox.Name = "meaningRichTextBox";
             this.meaningRichTextBox.ReadOnly = true;
@@ -388,12 +388,12 @@
             // 
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.buttonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.buttonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.buttonSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.buttonSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.buttonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buttonSearch.IconSize = 30;
-            this.buttonSearch.Location = new System.Drawing.Point(560, 24);
+            this.buttonSearch.Location = new System.Drawing.Point(559, 24);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Rotation = 0D;
             this.buttonSearch.Size = new System.Drawing.Size(39, 38);
@@ -426,7 +426,7 @@
             // 
             this.buttonSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSwitch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.buttonSwitch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.buttonSwitch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.buttonSwitch.IconChar = FontAwesome.Sharp.IconChar.ExchangeAlt;
             this.buttonSwitch.IconColor = System.Drawing.Color.Gainsboro;
             this.buttonSwitch.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -456,7 +456,7 @@
             this.panelDesktop.ForeColor = System.Drawing.Color.Gainsboro;
             this.panelDesktop.Location = new System.Drawing.Point(190, 79);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(784, 393);
+            this.panelDesktop.Size = new System.Drawing.Size(781, 390);
             this.panelDesktop.TabIndex = 12;
             // 
             // pictureBox1
@@ -549,7 +549,7 @@
             this.btnPlay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPlay.IconSize = 35;
-            this.btnPlay.Location = new System.Drawing.Point(692, 99);
+            this.btnPlay.Location = new System.Drawing.Point(692, 96);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Rotation = 0D;
             this.btnPlay.Size = new System.Drawing.Size(50, 35);
@@ -616,7 +616,7 @@
         private System.Windows.Forms.PictureBox pictureBoxFlagRight;
         private System.Windows.Forms.PictureBox pictureBoxFlagLeft;
         private FontAwesome.Sharp.IconButton buttonSearch;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox textboxSearch;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textboxSearch;
         private FontAwesome.Sharp.IconButton buttonSwitch;
         private FontAwesome.Sharp.IconButton buttonTranslate;
         private System.Windows.Forms.Label labelHint4;
