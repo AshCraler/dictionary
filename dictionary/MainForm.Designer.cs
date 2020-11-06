@@ -507,6 +507,7 @@
             this.labelHint1.Size = new System.Drawing.Size(74, 22);
             this.labelHint1.TabIndex = 18;
             this.labelHint1.Text = "admire";
+            this.labelHint1.Click += new System.EventHandler(this.labelHint1_Click);
             this.labelHint1.MouseLeave += new System.EventHandler(this.labelHint1_MouseLeave);
             this.labelHint1.MouseHover += new System.EventHandler(this.labelHint1_MouseHover);
             // 

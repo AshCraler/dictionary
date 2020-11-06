@@ -360,6 +360,11 @@ namespace dictionary
             }
         }
         #endregion
+
+        private void labelHint1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
