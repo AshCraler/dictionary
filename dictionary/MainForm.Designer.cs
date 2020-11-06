@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.illustrationImageList = new System.Windows.Forms.ImageList(this.components);
-            this.meaningRichTextBox = new System.Windows.Forms.RichTextBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnFeedback = new FontAwesome.Sharp.IconButton();
@@ -50,27 +49,7 @@
             this.pictureBoxFlagRight = new System.Windows.Forms.PictureBox();
             this.buttonSwitch = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.typedWord = new System.Windows.Forms.Label();
-            this.pictureBoxResult = new System.Windows.Forms.PictureBox();
-            this.btnPlay = new FontAwesome.Sharp.IconButton();
-            this.labelResult = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.labelBookmark4 = new System.Windows.Forms.Label();
-            this.labelBookmark3 = new System.Windows.Forms.Label();
-            this.labelBookmark1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.labelBookmark2 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.labelHistory4 = new System.Windows.Forms.Label();
-            this.labelHistory3 = new System.Windows.Forms.Label();
-            this.labelHistory1 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelHistory2 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.panelSuggestion = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelHint = new System.Windows.Forms.Label();
             this.labelHint3 = new System.Windows.Forms.Label();
@@ -78,8 +57,28 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelHint1 = new System.Windows.Forms.Label();
             this.labelHint2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.labelHistory4 = new System.Windows.Forms.Label();
+            this.labelHistory3 = new System.Windows.Forms.Label();
+            this.labelHistory1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelHistory2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.labelBookmark4 = new System.Windows.Forms.Label();
+            this.labelBookmark3 = new System.Windows.Forms.Label();
+            this.labelBookmark1 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.labelBookmark2 = new System.Windows.Forms.Label();
+            this.panelResult = new System.Windows.Forms.Panel();
+            this.typedWord = new System.Windows.Forms.Label();
+            this.pictureBoxResult = new System.Windows.Forms.PictureBox();
+            this.btnPlay = new FontAwesome.Sharp.IconButton();
+            this.labelResult = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.labelEnglish = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -88,15 +87,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagRight)).BeginInit();
             this.panelDesktop.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelSuggestion.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel6.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panelResult.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
             this.SuspendLayout();
             // 
             // illustrationImageList
@@ -104,23 +103,6 @@
             this.illustrationImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.illustrationImageList.ImageSize = new System.Drawing.Size(16, 16);
             this.illustrationImageList.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // meaningRichTextBox
-            // 
-            this.meaningRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.meaningRichTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.meaningRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.meaningRichTextBox.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.meaningRichTextBox.ForeColor = System.Drawing.Color.Gainsboro;
-            this.meaningRichTextBox.Location = new System.Drawing.Point(545, 384);
-            this.meaningRichTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.meaningRichTextBox.Name = "meaningRichTextBox";
-            this.meaningRichTextBox.ReadOnly = true;
-            this.meaningRichTextBox.Size = new System.Drawing.Size(207, 89);
-            this.meaningRichTextBox.TabIndex = 8;
-            this.meaningRichTextBox.Text = "";
-            this.meaningRichTextBox.Visible = false;
-            this.meaningRichTextBox.TextChanged += new System.EventHandler(this.meaningRichTextBox_TextChanged);
             // 
             // panelMenu
             // 
@@ -372,7 +354,6 @@
             this.textboxSearch.TabIndex = 14;
             this.textboxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textboxSearch.OnValueChanged += new System.EventHandler(this.textboxSearch_OnValueChanged);
-            this.textboxSearch.DoubleClick += new System.EventHandler(this.textboxSearch_DoubleClick);
             // 
             // buttonSearch
             // 
@@ -433,279 +414,27 @@
             // 
             this.panelDesktop.AutoScroll = true;
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(77)))));
-            this.panelDesktop.Controls.Add(this.panel6);
-            this.panelDesktop.Controls.Add(this.panel5);
+            this.panelDesktop.Controls.Add(this.panelSuggestion);
+            this.panelDesktop.Controls.Add(this.panelResult);
             this.panelDesktop.Controls.Add(this.label13);
             this.panelDesktop.Controls.Add(this.label8);
             this.panelDesktop.Controls.Add(this.labelEnglish);
-            this.panelDesktop.Controls.Add(this.meaningRichTextBox);
             this.panelDesktop.ForeColor = System.Drawing.Color.Gainsboro;
             this.panelDesktop.Location = new System.Drawing.Point(190, 68);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(784, 650);
             this.panelDesktop.TabIndex = 12;
             // 
-            // panel5
+            // panelSuggestion
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.panel5.Controls.Add(this.typedWord);
-            this.panel5.Controls.Add(this.pictureBoxResult);
-            this.panel5.Controls.Add(this.btnPlay);
-            this.panel5.Controls.Add(this.labelResult);
-            this.panel5.Location = new System.Drawing.Point(0, 214);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(781, 433);
-            this.panel5.TabIndex = 33;
-            // 
-            // typedWord
-            // 
-            this.typedWord.AutoSize = true;
-            this.typedWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.typedWord.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typedWord.Location = new System.Drawing.Point(21, 68);
-            this.typedWord.Name = "typedWord";
-            this.typedWord.Size = new System.Drawing.Size(114, 22);
-            this.typedWord.TabIndex = 30;
-            this.typedWord.Text = "typedWord";
-            this.typedWord.Visible = false;
-            // 
-            // pictureBoxResult
-            // 
-            this.pictureBoxResult.ErrorImage = global::dictionary.Properties.Resources.examination;
-            this.pictureBoxResult.Image = global::dictionary.Properties.Resources.analysis;
-            this.pictureBoxResult.Location = new System.Drawing.Point(154, 22);
-            this.pictureBoxResult.Name = "pictureBoxResult";
-            this.pictureBoxResult.Size = new System.Drawing.Size(35, 25);
-            this.pictureBoxResult.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxResult.TabIndex = 32;
-            this.pictureBoxResult.TabStop = false;
-            // 
-            // btnPlay
-            // 
-            this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlay.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnPlay.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.btnPlay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPlay.IconSize = 35;
-            this.btnPlay.Location = new System.Drawing.Point(247, 65);
-            this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Rotation = 0D;
-            this.btnPlay.Size = new System.Drawing.Size(43, 33);
-            this.btnPlay.TabIndex = 10;
-            this.btnPlay.UseVisualStyleBackColor = true;
-            this.btnPlay.Visible = false;
-            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
-            // 
-            // labelResult
-            // 
-            this.labelResult.AutoSize = true;
-            this.labelResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelResult.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResult.Location = new System.Drawing.Point(12, 23);
-            this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(140, 24);
-            this.labelResult.TabIndex = 31;
-            this.labelResult.Text = "Search result";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Controls.Add(this.labelBookmark4);
-            this.panel4.Controls.Add(this.labelBookmark3);
-            this.panel4.Controls.Add(this.labelBookmark1);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.labelBookmark2);
-            this.panel4.Location = new System.Drawing.Point(508, 6);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(254, 189);
-            this.panel4.TabIndex = 29;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::dictionary.Properties.Resources.bookmark__1_;
-            this.pictureBox3.Location = new System.Drawing.Point(211, -3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 29);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 26;
-            this.pictureBox3.TabStop = false;
-            // 
-            // labelBookmark4
-            // 
-            this.labelBookmark4.AutoSize = true;
-            this.labelBookmark4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelBookmark4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBookmark4.Location = new System.Drawing.Point(16, 162);
-            this.labelBookmark4.Name = "labelBookmark4";
-            this.labelBookmark4.Size = new System.Drawing.Size(131, 22);
-            this.labelBookmark4.TabIndex = 20;
-            this.labelBookmark4.Text = "collaboration";
-            this.labelBookmark4.MouseLeave += new System.EventHandler(this.labelBookmark4_MouseLeave);
-            this.labelBookmark4.MouseHover += new System.EventHandler(this.labelBookmark4_MouseHover);
-            // 
-            // labelBookmark3
-            // 
-            this.labelBookmark3.AutoSize = true;
-            this.labelBookmark3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelBookmark3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBookmark3.Location = new System.Drawing.Point(16, 123);
-            this.labelBookmark3.Name = "labelBookmark3";
-            this.labelBookmark3.Size = new System.Drawing.Size(77, 22);
-            this.labelBookmark3.TabIndex = 21;
-            this.labelBookmark3.Text = "despair";
-            this.labelBookmark3.MouseLeave += new System.EventHandler(this.labelBookmark3_MouseLeave);
-            this.labelBookmark3.MouseHover += new System.EventHandler(this.labelBookmark3_MouseHover);
-            // 
-            // labelBookmark1
-            // 
-            this.labelBookmark1.AutoSize = true;
-            this.labelBookmark1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelBookmark1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBookmark1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelBookmark1.Location = new System.Drawing.Point(16, 43);
-            this.labelBookmark1.Name = "labelBookmark1";
-            this.labelBookmark1.Size = new System.Drawing.Size(74, 22);
-            this.labelBookmark1.TabIndex = 18;
-            this.labelBookmark1.Text = "admire";
-            this.labelBookmark1.MouseLeave += new System.EventHandler(this.labelBookmark1_MouseLeave);
-            this.labelBookmark1.MouseHover += new System.EventHandler(this.labelBookmark1_MouseHover);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 3);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(212, 24);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Recently bookmark";
-            // 
-            // labelBookmark2
-            // 
-            this.labelBookmark2.AutoSize = true;
-            this.labelBookmark2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelBookmark2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBookmark2.Location = new System.Drawing.Point(16, 83);
-            this.labelBookmark2.Name = "labelBookmark2";
-            this.labelBookmark2.Size = new System.Drawing.Size(80, 22);
-            this.labelBookmark2.TabIndex = 19;
-            this.labelBookmark2.Text = "blessing";
-            this.labelBookmark2.MouseLeave += new System.EventHandler(this.labelBookmark2_MouseLeave);
-            this.labelBookmark2.MouseHover += new System.EventHandler(this.labelBookmark2_MouseHover);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label13.Image = global::dictionary.Properties.Resources.united_kingdom;
-            this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label13.Location = new System.Drawing.Point(430, 214);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(0, 13);
-            this.label13.TabIndex = 28;
-            this.label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.labelHistory4);
-            this.panel3.Controls.Add(this.labelHistory3);
-            this.panel3.Controls.Add(this.labelHistory1);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.labelHistory2);
-            this.panel3.Location = new System.Drawing.Point(247, 6);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(218, 189);
-            this.panel3.TabIndex = 27;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::dictionary.Properties.Resources.history;
-            this.pictureBox2.Location = new System.Drawing.Point(170, -1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 29);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 25;
-            this.pictureBox2.TabStop = false;
-            // 
-            // labelHistory4
-            // 
-            this.labelHistory4.AutoSize = true;
-            this.labelHistory4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelHistory4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHistory4.Location = new System.Drawing.Point(16, 162);
-            this.labelHistory4.Name = "labelHistory4";
-            this.labelHistory4.Size = new System.Drawing.Size(131, 22);
-            this.labelHistory4.TabIndex = 20;
-            this.labelHistory4.Text = "collaboration";
-            this.labelHistory4.MouseLeave += new System.EventHandler(this.labelHistory4_MouseLeave);
-            this.labelHistory4.MouseHover += new System.EventHandler(this.labelHistory4_MouseHover);
-            // 
-            // labelHistory3
-            // 
-            this.labelHistory3.AutoSize = true;
-            this.labelHistory3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelHistory3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHistory3.Location = new System.Drawing.Point(16, 123);
-            this.labelHistory3.Name = "labelHistory3";
-            this.labelHistory3.Size = new System.Drawing.Size(77, 22);
-            this.labelHistory3.TabIndex = 21;
-            this.labelHistory3.Text = "despair";
-            this.labelHistory3.MouseLeave += new System.EventHandler(this.labelHistory3_MouseLeave);
-            this.labelHistory3.MouseHover += new System.EventHandler(this.labelHistory3_MouseHover);
-            // 
-            // labelHistory1
-            // 
-            this.labelHistory1.AutoSize = true;
-            this.labelHistory1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelHistory1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHistory1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelHistory1.Location = new System.Drawing.Point(16, 43);
-            this.labelHistory1.Name = "labelHistory1";
-            this.labelHistory1.Size = new System.Drawing.Size(74, 22);
-            this.labelHistory1.TabIndex = 18;
-            this.labelHistory1.Text = "admire";
-            this.labelHistory1.MouseLeave += new System.EventHandler(this.labelHistory1_MouseLeave);
-            this.labelHistory1.MouseHover += new System.EventHandler(this.labelHistory1_MouseHover);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 24);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Recently history";
-            // 
-            // labelHistory2
-            // 
-            this.labelHistory2.AutoSize = true;
-            this.labelHistory2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelHistory2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHistory2.Location = new System.Drawing.Point(16, 83);
-            this.labelHistory2.Name = "labelHistory2";
-            this.labelHistory2.Size = new System.Drawing.Size(80, 22);
-            this.labelHistory2.TabIndex = 19;
-            this.labelHistory2.Text = "blessing";
-            this.labelHistory2.MouseLeave += new System.EventHandler(this.labelHistory2_MouseLeave);
-            this.labelHistory2.MouseHover += new System.EventHandler(this.labelHistory2_MouseHover);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label8.Image = global::dictionary.Properties.Resources.united_kingdom;
-            this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label8.Location = new System.Drawing.Point(424, 127);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 13);
-            this.label8.TabIndex = 26;
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.panelSuggestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
+            this.panelSuggestion.Controls.Add(this.panel1);
+            this.panelSuggestion.Controls.Add(this.panel3);
+            this.panelSuggestion.Controls.Add(this.panel4);
+            this.panelSuggestion.Location = new System.Drawing.Point(0, 3);
+            this.panelSuggestion.Name = "panelSuggestion";
+            this.panelSuggestion.Size = new System.Drawing.Size(781, 208);
+            this.panelSuggestion.TabIndex = 34;
             // 
             // panel1
             // 
@@ -794,6 +523,268 @@
             this.labelHint2.MouseLeave += new System.EventHandler(this.labelHint2_MouseLeave);
             this.labelHint2.MouseHover += new System.EventHandler(this.labelHint2_MouseHover);
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.labelHistory4);
+            this.panel3.Controls.Add(this.labelHistory3);
+            this.panel3.Controls.Add(this.labelHistory1);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.labelHistory2);
+            this.panel3.Location = new System.Drawing.Point(247, 6);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(218, 189);
+            this.panel3.TabIndex = 27;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::dictionary.Properties.Resources.history;
+            this.pictureBox2.Location = new System.Drawing.Point(170, -1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 25;
+            this.pictureBox2.TabStop = false;
+            // 
+            // labelHistory4
+            // 
+            this.labelHistory4.AutoSize = true;
+            this.labelHistory4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelHistory4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHistory4.Location = new System.Drawing.Point(16, 162);
+            this.labelHistory4.Name = "labelHistory4";
+            this.labelHistory4.Size = new System.Drawing.Size(131, 22);
+            this.labelHistory4.TabIndex = 20;
+            this.labelHistory4.Text = "collaboration";
+            this.labelHistory4.MouseLeave += new System.EventHandler(this.labelHistory4_MouseLeave);
+            this.labelHistory4.MouseHover += new System.EventHandler(this.labelHistory4_MouseHover);
+            // 
+            // labelHistory3
+            // 
+            this.labelHistory3.AutoSize = true;
+            this.labelHistory3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelHistory3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHistory3.Location = new System.Drawing.Point(16, 123);
+            this.labelHistory3.Name = "labelHistory3";
+            this.labelHistory3.Size = new System.Drawing.Size(77, 22);
+            this.labelHistory3.TabIndex = 21;
+            this.labelHistory3.Text = "despair";
+            this.labelHistory3.MouseLeave += new System.EventHandler(this.labelHistory3_MouseLeave);
+            this.labelHistory3.MouseHover += new System.EventHandler(this.labelHistory3_MouseHover);
+            // 
+            // labelHistory1
+            // 
+            this.labelHistory1.AutoSize = true;
+            this.labelHistory1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelHistory1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHistory1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelHistory1.Location = new System.Drawing.Point(16, 43);
+            this.labelHistory1.Name = "labelHistory1";
+            this.labelHistory1.Size = new System.Drawing.Size(74, 22);
+            this.labelHistory1.TabIndex = 18;
+            this.labelHistory1.Text = "admire";
+            this.labelHistory1.MouseLeave += new System.EventHandler(this.labelHistory1_MouseLeave);
+            this.labelHistory1.MouseHover += new System.EventHandler(this.labelHistory1_MouseHover);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(169, 24);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Recently history";
+            // 
+            // labelHistory2
+            // 
+            this.labelHistory2.AutoSize = true;
+            this.labelHistory2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelHistory2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHistory2.Location = new System.Drawing.Point(16, 83);
+            this.labelHistory2.Name = "labelHistory2";
+            this.labelHistory2.Size = new System.Drawing.Size(80, 22);
+            this.labelHistory2.TabIndex = 19;
+            this.labelHistory2.Text = "blessing";
+            this.labelHistory2.MouseLeave += new System.EventHandler(this.labelHistory2_MouseLeave);
+            this.labelHistory2.MouseHover += new System.EventHandler(this.labelHistory2_MouseHover);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.pictureBox3);
+            this.panel4.Controls.Add(this.labelBookmark4);
+            this.panel4.Controls.Add(this.labelBookmark3);
+            this.panel4.Controls.Add(this.labelBookmark1);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.labelBookmark2);
+            this.panel4.Location = new System.Drawing.Point(508, 6);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(254, 189);
+            this.panel4.TabIndex = 29;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::dictionary.Properties.Resources.bookmark__1_;
+            this.pictureBox3.Location = new System.Drawing.Point(211, -3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 26;
+            this.pictureBox3.TabStop = false;
+            // 
+            // labelBookmark4
+            // 
+            this.labelBookmark4.AutoSize = true;
+            this.labelBookmark4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelBookmark4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookmark4.Location = new System.Drawing.Point(16, 162);
+            this.labelBookmark4.Name = "labelBookmark4";
+            this.labelBookmark4.Size = new System.Drawing.Size(131, 22);
+            this.labelBookmark4.TabIndex = 20;
+            this.labelBookmark4.Text = "collaboration";
+            this.labelBookmark4.MouseLeave += new System.EventHandler(this.labelBookmark4_MouseLeave);
+            this.labelBookmark4.MouseHover += new System.EventHandler(this.labelBookmark4_MouseHover);
+            // 
+            // labelBookmark3
+            // 
+            this.labelBookmark3.AutoSize = true;
+            this.labelBookmark3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelBookmark3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookmark3.Location = new System.Drawing.Point(16, 123);
+            this.labelBookmark3.Name = "labelBookmark3";
+            this.labelBookmark3.Size = new System.Drawing.Size(77, 22);
+            this.labelBookmark3.TabIndex = 21;
+            this.labelBookmark3.Text = "despair";
+            this.labelBookmark3.MouseLeave += new System.EventHandler(this.labelBookmark3_MouseLeave);
+            this.labelBookmark3.MouseHover += new System.EventHandler(this.labelBookmark3_MouseHover);
+            // 
+            // labelBookmark1
+            // 
+            this.labelBookmark1.AutoSize = true;
+            this.labelBookmark1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelBookmark1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookmark1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelBookmark1.Location = new System.Drawing.Point(16, 43);
+            this.labelBookmark1.Name = "labelBookmark1";
+            this.labelBookmark1.Size = new System.Drawing.Size(74, 22);
+            this.labelBookmark1.TabIndex = 18;
+            this.labelBookmark1.Text = "admire";
+            this.labelBookmark1.MouseLeave += new System.EventHandler(this.labelBookmark1_MouseLeave);
+            this.labelBookmark1.MouseHover += new System.EventHandler(this.labelBookmark1_MouseHover);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(212, 24);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Recently bookmark";
+            // 
+            // labelBookmark2
+            // 
+            this.labelBookmark2.AutoSize = true;
+            this.labelBookmark2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelBookmark2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookmark2.Location = new System.Drawing.Point(16, 83);
+            this.labelBookmark2.Name = "labelBookmark2";
+            this.labelBookmark2.Size = new System.Drawing.Size(80, 22);
+            this.labelBookmark2.TabIndex = 19;
+            this.labelBookmark2.Text = "blessing";
+            this.labelBookmark2.MouseLeave += new System.EventHandler(this.labelBookmark2_MouseLeave);
+            this.labelBookmark2.MouseHover += new System.EventHandler(this.labelBookmark2_MouseHover);
+            // 
+            // panelResult
+            // 
+            this.panelResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.panelResult.Controls.Add(this.typedWord);
+            this.panelResult.Controls.Add(this.pictureBoxResult);
+            this.panelResult.Controls.Add(this.btnPlay);
+            this.panelResult.Controls.Add(this.labelResult);
+            this.panelResult.Location = new System.Drawing.Point(0, 214);
+            this.panelResult.Name = "panelResult";
+            this.panelResult.Size = new System.Drawing.Size(781, 433);
+            this.panelResult.TabIndex = 33;
+            // 
+            // typedWord
+            // 
+            this.typedWord.AutoSize = true;
+            this.typedWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.typedWord.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typedWord.Location = new System.Drawing.Point(21, 68);
+            this.typedWord.Name = "typedWord";
+            this.typedWord.Size = new System.Drawing.Size(114, 22);
+            this.typedWord.TabIndex = 30;
+            this.typedWord.Text = "typedWord";
+            this.typedWord.Visible = false;
+            // 
+            // pictureBoxResult
+            // 
+            this.pictureBoxResult.ErrorImage = global::dictionary.Properties.Resources.examination;
+            this.pictureBoxResult.Image = global::dictionary.Properties.Resources.analysis;
+            this.pictureBoxResult.Location = new System.Drawing.Point(154, 22);
+            this.pictureBoxResult.Name = "pictureBoxResult";
+            this.pictureBoxResult.Size = new System.Drawing.Size(35, 25);
+            this.pictureBoxResult.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxResult.TabIndex = 32;
+            this.pictureBoxResult.TabStop = false;
+            // 
+            // btnPlay
+            // 
+            this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlay.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btnPlay.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
+            this.btnPlay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPlay.IconSize = 35;
+            this.btnPlay.Location = new System.Drawing.Point(247, 65);
+            this.btnPlay.Name = "btnPlay";
+            this.btnPlay.Rotation = 0D;
+            this.btnPlay.Size = new System.Drawing.Size(43, 33);
+            this.btnPlay.TabIndex = 10;
+            this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Visible = false;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
+            // 
+            // labelResult
+            // 
+            this.labelResult.AutoSize = true;
+            this.labelResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelResult.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResult.Location = new System.Drawing.Point(12, 23);
+            this.labelResult.Name = "labelResult";
+            this.labelResult.Size = new System.Drawing.Size(140, 24);
+            this.labelResult.TabIndex = 31;
+            this.labelResult.Text = "Search result";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label13.Image = global::dictionary.Properties.Resources.united_kingdom;
+            this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label13.Location = new System.Drawing.Point(430, 214);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(0, 13);
+            this.label13.TabIndex = 28;
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label8.Image = global::dictionary.Properties.Resources.united_kingdom;
+            this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label8.Location = new System.Drawing.Point(424, 127);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 13);
+            this.label8.TabIndex = 26;
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // labelEnglish
             // 
             this.labelEnglish.AutoSize = true;
@@ -805,17 +796,6 @@
             this.labelEnglish.Size = new System.Drawing.Size(0, 13);
             this.labelEnglish.TabIndex = 11;
             this.labelEnglish.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
-            this.panel6.Controls.Add(this.panel1);
-            this.panel6.Controls.Add(this.panel3);
-            this.panel6.Controls.Add(this.panel4);
-            this.panel6.Location = new System.Drawing.Point(0, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(781, 208);
-            this.panel6.TabIndex = 34;
             // 
             // MainForm
             // 
@@ -836,7 +816,6 @@
             this.ShowInTaskbar = false;
             this.Text = "Dictionary";
             this.TransparencyKey = System.Drawing.Color.DarkSlateBlue;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -848,27 +827,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagRight)).EndInit();
             this.panelDesktop.ResumeLayout(false);
             this.panelDesktop.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelSuggestion.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel6.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panelResult.ResumeLayout(false);
+            this.panelResult.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.ImageList illustrationImageList;
-        private System.Windows.Forms.RichTextBox meaningRichTextBox;
-        private System.Windows.Forms.ComboBox suggestedWordComboBox;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnHelp;
@@ -916,8 +893,8 @@
         private System.Windows.Forms.PictureBox pictureBoxResult;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panelResult;
+        private System.Windows.Forms.Panel panelSuggestion;
     }
 }
 

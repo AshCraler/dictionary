@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -15,39 +16,13 @@ namespace dictionary
 {
     public partial class MainForm : Form
     {
+        #region Declaration and Initialize
         public DictionaryManager myDictionary;
-        //Fields
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
         private bool ktSwitch = false;
-        //Constructor  
-        public MainForm()
-        {
-            InitializeComponent();
-            leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7,34);
-            panelMenu.Controls.Add(leftBorderBtn);          
-            //Form
-            /*
-            this.Text = string.Empty;
-            this.ControlBox = false;
-            this.DoubleBuffered = true;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            */
-            myDictionary = new DictionaryManager();
-            myDictionary.loadFirstDataToSuggestionPanel(suggestedWordComboBox);
-            this.Controls.Add(myDictionary.VN);
-            this.Controls.Add(myDictionary.EN);      
-        }
-        protected override void OnLoad(EventArgs e)
-        {
 
-            base.OnLoad(e);
-            this.BeginInvoke(new MethodInvoker(delegate () { iconButton1.PerformClick(); }));
-
-        }
-        //Structs
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -58,8 +33,40 @@ namespace dictionary
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.FromArgb(255, 244, 79);
         }
-        
-        //Method
+        //Drag Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        //Constructor  
+        public MainForm()
+        {
+            InitializeComponent();
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(7, 34);
+            panelMenu.Controls.Add(leftBorderBtn);
+            //Form
+            /*
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            */
+            myDictionary = new DictionaryManager();
+            this.Controls.Add(myDictionary.VN);
+            this.Controls.Add(myDictionary.EN);
+        }
+        /*  
+           protected override void OnLoad(EventArgs e)
+           {
+               base.OnLoad(e);
+               this.BeginInvoke(new MethodInvoker(delegate () { iconButton1.PerformClick(); }));
+           }*/
+
+        //Method       
+        #endregion
+        #region panelMenu
         private void ActivateButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -95,78 +102,20 @@ namespace dictionary
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-
-        private void OpenChildForm(Form childForm)
-        {
-            //open only form
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
-            currentChildForm = childForm;
-            //End
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(childForm);
-            panelDesktop.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-          //  lblTitleChildForm.Text = childForm.Text;
-        }
-        
-
-        
-        private void btnPlay_Click(object sender, EventArgs e)
-        {
-            if (textboxSearch.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
-            }
-            if (myDictionary.getStatus() == true)
-            {
-                //EN
-                myDictionary.myVoice.speak(myDictionary.EN, textboxSearch.Text);
-            }
-            else
-            {
-                //VN
-                myDictionary.myVoice.speak(myDictionary.VN, textboxSearch.Text);
-            }
-        }
-       
-
-        private void suggestedWordComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ComboBox cb = sender as ComboBox;
-
-            if (cb.DataSource == null)
-                return;
-
-            WordData data = cb.SelectedItem as WordData;
-            meaningRichTextBox.Text = data.Meaning + "\n";
-            meaningRichTextBox.Text += data.Explaination;
-            
-            
-        }
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            myDictionary.serialize();
-        }
         private void iconButton1_Click(object sender, EventArgs e)// Button Home
         {
             ActivateButton(sender, RGBColors.color1);
             if (currentChildForm != null)
             {
                 currentChildForm.Close();
-              //  Reset();
+                //  Reset();
             }
         }
         private void btnHistory_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
             OpenChildForm(new History());
-            
+
         }
 
         private void btn_Bookmark_Click(object sender, EventArgs e)
@@ -192,18 +141,31 @@ namespace dictionary
             ActivateButton(sender, RGBColors.color6);
             OpenChildForm(new Feedback());
         }
-        //Drag Form
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
+        #endregion
+        #region workWithChildForm
+        private void OpenChildForm(Form childForm)
+        {
+            //open only form
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(childForm);
+            panelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            //lblTitleChildForm.Text = childForm.Text;
+        }
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             if (textboxSearch.Text == "")
@@ -219,8 +181,6 @@ namespace dictionary
                 }
                 else
                 {
-                    meaningRichTextBox.Text = result.Meaning + "\n";
-                    meaningRichTextBox.Text += result.Explaination;
                     typedWord.Visible = true;
                     typedWord.Text = textboxSearch.Text;
                     labelResult.Visible = true;
@@ -228,10 +188,6 @@ namespace dictionary
                 }
             }
         }
-
-        private void meaningRichTextBox_TextChanged(object sender, EventArgs e)
-        {}
-
         private void textboxSearch_OnValueChanged(object sender, EventArgs e)
         {
             if (textboxSearch.Text != string.Empty)
@@ -240,7 +196,7 @@ namespace dictionary
             }
             if (textboxSearch.Text == string.Empty)
             {
-                textboxSearch.LineIdleColor = textboxSearch.HintForeColor ;
+                textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
             }
         }
 
@@ -249,7 +205,7 @@ namespace dictionary
             if (ktSwitch == false)
             {
                 ktSwitch = true;
-          //      suggestedWordComboBox.DisplayMember = "Meaning";
+                //      suggestedWordComboBox.DisplayMember = "Meaning";
                 pictureBoxFlagLeft.Image = dictionary.Properties.Resources.vietnam;
                 pictureBoxFlagRight.Image = dictionary.Properties.Resources.united_kingdom;
                 textboxSearch.HintText = "Search VietNamese";
@@ -258,18 +214,15 @@ namespace dictionary
             else
             {
                 ktSwitch = false;
-     //           suggestedWordComboBox.DisplayMember = "Key";
+                //           suggestedWordComboBox.DisplayMember = "Key";
                 pictureBoxFlagLeft.Image = dictionary.Properties.Resources.united_kingdom;
                 pictureBoxFlagRight.Image = dictionary.Properties.Resources.vietnam;
                 textboxSearch.HintText = "Search English";
                 textboxSearch.Text = "Search English";
             }
         }
-
-        private void textboxSearch_DoubleClick(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
+        #region panelSuggestion
 
         private void labelHint1_MouseHover(object sender, EventArgs e)
         {
@@ -350,7 +303,6 @@ namespace dictionary
         {
             labelHistory4.ForeColor = System.Drawing.Color.Gainsboro;
         }
-
         private void labelBookmark1_MouseHover(object sender, EventArgs e)
         {
             labelBookmark1.ForeColor = RGBColors.color2;
@@ -389,5 +341,26 @@ namespace dictionary
         {
             labelBookmark4.ForeColor = System.Drawing.Color.Gainsboro;
         }
+        #endregion
+        #region panelResult
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            if (textboxSearch.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
+            }
+            if (myDictionary.getStatus() == true)
+            {
+                //EN
+                myDictionary.myVoice.speak(myDictionary.EN, textboxSearch.Text);
+            }
+            else
+            {
+                //VN
+                myDictionary.myVoice.speak(myDictionary.VN, textboxSearch.Text);
+            }
+        }
+        #endregion
     }
 }
+
