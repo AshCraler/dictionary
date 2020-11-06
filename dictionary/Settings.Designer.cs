@@ -39,7 +39,7 @@
             this.panel1.Controls.Add(this.checkboxSound);
             this.panel1.Location = new System.Drawing.Point(-5, -6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(808, 459);
+            this.panel1.Size = new System.Drawing.Size(808, 750);
             this.panel1.TabIndex = 0;
             // 
             // checkboxSound
@@ -60,7 +60,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 727);
             this.Controls.Add(this.panel1);
             this.Name = "Settings";
             this.Text = "Settings";

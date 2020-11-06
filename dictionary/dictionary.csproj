@@ -153,6 +153,10 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="bin\Debug\maindata.xml" />
+    <None Include="Resources\bookmark %281%29.png" />
+    <None Include="Resources\bookmark.png" />
+    <None Include="Resources\history.png" />
+    <None Include="Resources\time.png" />
     <None Include="Resources\analysis.png" />
     <None Include="Resources\examination.png" />
     <None Include="Resources\idea.png" />

@@ -207,14 +207,14 @@ namespace dictionary
         }
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color2);
+            ActivateButton(sender, RGBColors.color3);
             OpenChildForm(new History());
             
         }
 
         private void btn_Bookmark_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
+            ActivateButton(sender, RGBColors.color2);
             OpenChildForm(new Bookmark());
         }
 
@@ -397,6 +397,82 @@ namespace dictionary
 
         }
 
+        private void labelHistory1_MouseHover(object sender, EventArgs e)
+        {
+            labelHistory1.ForeColor = RGBColors.color3;
+        }
+
+        private void labelHistory1_MouseLeave(object sender, EventArgs e)
+        {
+            labelHistory1.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+
+        private void labelHistory2_MouseHover(object sender, EventArgs e)
+        {
+            labelHistory2.ForeColor = RGBColors.color3;
+        }
+
+        private void labelHistory2_MouseLeave(object sender, EventArgs e)
+        {
+            labelHistory2.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+        private void labelHistory3_MouseHover(object sender, EventArgs e)
+        {
+            labelHistory3.ForeColor = RGBColors.color3;
+        }
+        private void labelHistory3_MouseLeave(object sender, EventArgs e)
+        {
+            labelHistory3.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+        private void labelHistory4_MouseHover(object sender, EventArgs e)
+        {
+            labelHistory4.ForeColor = RGBColors.color3;
+        }
+        private void labelHistory4_MouseLeave(object sender, EventArgs e)
+        {
+            labelHistory4.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+
+        private void labelBookmark1_MouseHover(object sender, EventArgs e)
+        {
+            labelBookmark1.ForeColor = RGBColors.color2;
+        }
+
+        private void labelBookmark1_MouseLeave(object sender, EventArgs e)
+        {
+            labelBookmark1.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+
+        private void labelBookmark2_MouseHover(object sender, EventArgs e)
+        {
+            labelBookmark2.ForeColor = RGBColors.color2;
+        }
+
+        private void labelBookmark2_MouseLeave(object sender, EventArgs e)
+        {
+            labelBookmark2.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+
+        private void labelBookmark3_MouseHover(object sender, EventArgs e)
+        {
+            labelBookmark3.ForeColor = RGBColors.color2;
+        }
+
+        private void labelBookmark3_MouseLeave(object sender, EventArgs e)
+        {
+            labelBookmark3.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+
+        private void labelBookmark4_MouseHover(object sender, EventArgs e)
+        {
+            labelBookmark4.ForeColor = RGBColors.color2;
+        }
+
+        private void labelBookmark4_MouseLeave(object sender, EventArgs e)
+        {
+            labelBookmark4.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+    }
 
 
 
@@ -410,5 +486,5 @@ iconCurrentChildForm.IconChar = IconChar.Home;
 iconCurrentChildForm.IconColor = Color.MediumPurple;
 lblTitleChildForm.Text = "Home";
 }*/
-    }
+    
 }
