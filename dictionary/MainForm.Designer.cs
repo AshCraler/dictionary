@@ -447,7 +447,6 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(784, 650);
             this.panelDesktop.TabIndex = 12;
-            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
             // panel5
             // 
@@ -685,7 +684,6 @@
             this.label1.Size = new System.Drawing.Size(169, 24);
             this.label1.TabIndex = 24;
             this.label1.Text = "Recently history";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelHistory2
             // 
@@ -735,7 +733,6 @@
             this.labelHint.Size = new System.Drawing.Size(120, 24);
             this.labelHint.TabIndex = 17;
             this.labelHint.Text = "Suggestion";
-            this.labelHint.Click += new System.EventHandler(this.labelHint_Click);
             // 
             // labelHint3
             // 
@@ -747,7 +744,6 @@
             this.labelHint3.Size = new System.Drawing.Size(131, 22);
             this.labelHint3.TabIndex = 20;
             this.labelHint3.Text = "collaboration";
-            this.labelHint3.Click += new System.EventHandler(this.labelHint3_Click);
             this.labelHint3.MouseLeave += new System.EventHandler(this.labelHint3_MouseLeave);
             this.labelHint3.MouseHover += new System.EventHandler(this.labelHint3_MouseHover);
             // 
@@ -798,7 +794,6 @@
             this.labelHint2.Size = new System.Drawing.Size(80, 22);
             this.labelHint2.TabIndex = 19;
             this.labelHint2.Text = "blessing";
-            this.labelHint2.Click += new System.EventHandler(this.labelHint2_Click);
             this.labelHint2.MouseLeave += new System.EventHandler(this.labelHint2_MouseLeave);
             this.labelHint2.MouseHover += new System.EventHandler(this.labelHint2_MouseHover);
             // 

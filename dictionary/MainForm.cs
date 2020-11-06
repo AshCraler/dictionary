@@ -21,22 +21,20 @@ namespace dictionary
         private Panel leftBorderBtn;
         private Form currentChildForm;
         private bool ktSwitch = false;
- 
-      
-
         //Constructor  
         public MainForm()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7,34);
-            panelMenu.Controls.Add(leftBorderBtn);
-          
+            panelMenu.Controls.Add(leftBorderBtn);          
             //Form
-          /*  this.Text = string.Empty;
+            /*
+            this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;*/
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            */
             myDictionary = new DictionaryManager();
             myDictionary.loadFirstDataToSuggestionPanel(suggestedWordComboBox);
             this.Controls.Add(myDictionary.VN);
@@ -151,51 +149,10 @@ namespace dictionary
             
             
         }
-
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             myDictionary.serialize();
         }
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        private void textboxSearch_TextChanged(object sender, EventArgs e){}
-        private void nameLabel_Click(object sender, EventArgs e){}
-
-        private void iconButton3_Click(object sender, EventArgs e){}
-
-        private void panel1_Paint(object sender, PaintEventArgs e){}
-
-        private void MainForm_Load(object sender, EventArgs e){}
-
         private void iconButton1_Click(object sender, EventArgs e)// Button Home
         {
             ActivateButton(sender, RGBColors.color1);
@@ -235,13 +192,6 @@ namespace dictionary
             ActivateButton(sender, RGBColors.color6);
             OpenChildForm(new Feedback());
         }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-           // Reset();
-        }
-
-
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -359,44 +309,12 @@ namespace dictionary
         {
             labelHint4.ForeColor = System.Drawing.Color.Gainsboro;
         }
-
         private void buttonTranslate_Click(object sender, EventArgs e)
         {
 
             ActivateButton(sender, RGBColors.color7);
             OpenChildForm(new Translate());
         }
-
-        private void iconCurrentChildForm_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelHint_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelHint2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelDesktop_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelHint3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void labelHistory1_MouseHover(object sender, EventArgs e)
         {
             labelHistory1.ForeColor = RGBColors.color3;
@@ -467,24 +385,9 @@ namespace dictionary
         {
             labelBookmark4.ForeColor = RGBColors.color2;
         }
-
         private void labelBookmark4_MouseLeave(object sender, EventArgs e)
         {
             labelBookmark4.ForeColor = System.Drawing.Color.Gainsboro;
         }
     }
-
-
-
-
-
-        /* private void Reset()
-{
-DisableButton();
-leftBorderBtn.Visible = false;
-iconCurrentChildForm.IconChar = IconChar.Home;
-iconCurrentChildForm.IconColor = Color.MediumPurple;
-lblTitleChildForm.Text = "Home";
-}*/
-    
 }
