@@ -64,7 +64,7 @@ namespace dictionary
                this.BeginInvoke(new MethodInvoker(delegate () { iconButton1.PerformClick(); }));
            }*/
 
-            
+
         #endregion
         #region panelMenu
         private void ActivateButton(object senderBtn, Color color)
@@ -165,6 +165,21 @@ namespace dictionary
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        private void buttonSearchOnClick()
+        {
+            WordData result = myDictionary.Item.Data.Find(x => x.Key == textboxSearch.Text);
+            if (result == null)
+            {
+                MessageBox.Show("No words found! I'm sorry.");
+            }
+            else
+            {
+                typedWord.Visible = true;
+                typedWord.Text = textboxSearch.Text;
+                labelResult.Visible = true;
+                btnPlay.Visible = true;
+            }
+        }
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             if (textboxSearch.Text == "")
@@ -173,18 +188,7 @@ namespace dictionary
             }
             else
             {
-                WordData result = myDictionary.Item.Data.Find(x => x.Key == textboxSearch.Text);
-                if (result == null)
-                {
-                    MessageBox.Show("No words found! I'm sorry.");
-                }
-                else
-                {
-                    typedWord.Visible = true;
-                    typedWord.Text = textboxSearch.Text;
-                    labelResult.Visible = true;
-                    btnPlay.Visible = true;
-                }
+                buttonSearchOnClick();
             }
         }
         private void textboxSearch_OnValueChanged(object sender, EventArgs e)
@@ -227,9 +231,16 @@ namespace dictionary
         {
             labelHint1.ForeColor = RGBColors.color7;
         }
+
         private void labelHint1_MouseLeave(object sender, EventArgs e)
         {
             labelHint1.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+
+        private void labelHint1_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelHint1.Text;
+            buttonSearchOnClick();
         }
 
         private void labelHint2_MouseHover(object sender, EventArgs e)
@@ -242,6 +253,12 @@ namespace dictionary
             labelHint2.ForeColor = System.Drawing.Color.Gainsboro;
         }
 
+        private void labelHint2_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelHint2.Text;
+            buttonSearchOnClick();
+        }
+
         private void labelHint3_MouseHover(object sender, EventArgs e)
         {
             labelHint3.ForeColor = RGBColors.color7;
@@ -250,6 +267,11 @@ namespace dictionary
         private void labelHint3_MouseLeave(object sender, EventArgs e)
         {
             labelHint3.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+        private void labelHint3_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelHint3.Text;
+            buttonSearchOnClick();
         }
 
         private void labelHint4_MouseHover(object sender, EventArgs e)
@@ -261,11 +283,10 @@ namespace dictionary
         {
             labelHint4.ForeColor = System.Drawing.Color.Gainsboro;
         }
-        private void buttonTranslate_Click(object sender, EventArgs e)
+        private void labelHint4_Click(object sender, EventArgs e)
         {
-
-            ActivateButton(sender, RGBColors.color7);
-            OpenChildForm(new Translate());
+            textboxSearch.Text = labelHint4.Text;
+            buttonSearchOnClick();
         }
         private void labelHistory1_MouseHover(object sender, EventArgs e)
         {
@@ -275,6 +296,11 @@ namespace dictionary
         private void labelHistory1_MouseLeave(object sender, EventArgs e)
         {
             labelHistory1.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+        private void labelHistory1_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelHistory1.Text;
+            buttonSearchOnClick();
         }
 
         private void labelHistory2_MouseHover(object sender, EventArgs e)
@@ -286,6 +312,11 @@ namespace dictionary
         {
             labelHistory2.ForeColor = System.Drawing.Color.Gainsboro;
         }
+        private void labelHistory2_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelHistory2.Text;
+            buttonSearchOnClick();
+        }
         private void labelHistory3_MouseHover(object sender, EventArgs e)
         {
             labelHistory3.ForeColor = RGBColors.color3;
@@ -294,6 +325,11 @@ namespace dictionary
         {
             labelHistory3.ForeColor = System.Drawing.Color.Gainsboro;
         }
+        private void labelHistory3_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelHistory3.Text;
+            buttonSearchOnClick();
+        }
         private void labelHistory4_MouseHover(object sender, EventArgs e)
         {
             labelHistory4.ForeColor = RGBColors.color3;
@@ -301,6 +337,11 @@ namespace dictionary
         private void labelHistory4_MouseLeave(object sender, EventArgs e)
         {
             labelHistory4.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+        private void labelHistory4_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelHistory4.Text;
+            buttonSearchOnClick();
         }
         private void labelBookmark1_MouseHover(object sender, EventArgs e)
         {
@@ -311,7 +352,11 @@ namespace dictionary
         {
             labelBookmark1.ForeColor = System.Drawing.Color.Gainsboro;
         }
-
+        private void labelBookmark1_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelBookmark1.Text;
+            buttonSearchOnClick();
+        }
         private void labelBookmark2_MouseHover(object sender, EventArgs e)
         {
             labelBookmark2.ForeColor = RGBColors.color2;
@@ -321,7 +366,11 @@ namespace dictionary
         {
             labelBookmark2.ForeColor = System.Drawing.Color.Gainsboro;
         }
-
+        private void labelBookmark2_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelBookmark2.Text;
+            buttonSearchOnClick();
+        }
         private void labelBookmark3_MouseHover(object sender, EventArgs e)
         {
             labelBookmark3.ForeColor = RGBColors.color2;
@@ -331,7 +380,11 @@ namespace dictionary
         {
             labelBookmark3.ForeColor = System.Drawing.Color.Gainsboro;
         }
-
+        private void labelBookmark3_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelBookmark3.Text;
+            buttonSearchOnClick();
+        }
         private void labelBookmark4_MouseHover(object sender, EventArgs e)
         {
             labelBookmark4.ForeColor = RGBColors.color2;
@@ -339,6 +392,11 @@ namespace dictionary
         private void labelBookmark4_MouseLeave(object sender, EventArgs e)
         {
             labelBookmark4.ForeColor = System.Drawing.Color.Gainsboro;
+        }
+        private void labelBookmark4_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelBookmark4.Text;
+            buttonSearchOnClick();
         }
         #endregion
         #region panelResult
@@ -359,12 +417,15 @@ namespace dictionary
                 myDictionary.myVoice.speak(myDictionary.VN, textboxSearch.Text);
             }
         }
+
+
+
+
+
+
+
         #endregion
 
-        private void labelHint1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 
