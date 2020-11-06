@@ -108,7 +108,6 @@ namespace dictionary
             if (currentChildForm != null)
             {
                 currentChildForm.Close();
-                //  Reset();
             }
         }
         private void btnHistory_Click(object sender, EventArgs e)
