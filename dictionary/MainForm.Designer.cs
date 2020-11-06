@@ -137,7 +137,6 @@
             this.panelMenu.Padding = new System.Windows.Forms.Padding(15, 0, 25, 0);
             this.panelMenu.Size = new System.Drawing.Size(190, 718);
             this.panelMenu.TabIndex = 10;
-            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // iconButton1
             // 
@@ -313,7 +312,6 @@
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnHome.TabIndex = 0;
             this.btnHome.TabStop = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panelTitleBar
             // 
@@ -354,7 +352,6 @@
             this.iconCurrentChildForm.Size = new System.Drawing.Size(39, 35);
             this.iconCurrentChildForm.TabIndex = 0;
             this.iconCurrentChildForm.TabStop = false;
-            this.iconCurrentChildForm.Click += new System.EventHandler(this.iconCurrentChildForm_Click);
             // 
             // textboxSearch
             // 
@@ -840,7 +837,6 @@
             this.Text = "Dictionary";
             this.TransparencyKey = System.Drawing.Color.DarkSlateBlue;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
