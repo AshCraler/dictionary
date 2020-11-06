@@ -14,7 +14,7 @@ namespace dictionary
     {
         #region properties
 
-        private string dictionaryDataPath = "maindata.xml";
+        private string dictionaryDataPath = "data.xml";
         private string demoDataPath = "data.xml";
         private DictionaryItem item;
         private bool isStatusEN_VN;
@@ -69,14 +69,18 @@ namespace dictionary
             FileStream fs = new FileStream(demoDataPath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
             XmlSerializer sr = new XmlSerializer(typeof(DictionaryItem));
-            return (DictionaryItem)sr.Deserialize(fs);
+
+            
+            DictionaryItem result = (DictionaryItem)sr.Deserialize(fs);
+            fs.Close();
+            return result;
         }
         
         public void loadFirstDataToSuggestionPanel(ComboBox inputComboBox)
         {
             //function content
-            inputComboBox.DataSource = suggestedItems().Data;
-            inputComboBox.DisplayMember = "Key";
+      //      inputComboBox.DataSource = suggestedItems().Data;
+     //       inputComboBox.DisplayMember = "Key";
             
             
         }
@@ -107,6 +111,7 @@ namespace dictionary
 
             object obj = sr.Deserialize(fs);
 
+            
             fs.Close();
             return obj;
         }
