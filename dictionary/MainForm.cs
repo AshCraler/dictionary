@@ -64,7 +64,7 @@ namespace dictionary
                this.BeginInvoke(new MethodInvoker(delegate () { iconButton1.PerformClick(); }));
            }*/
 
-        //Method       
+            
         #endregion
         #region panelMenu
         private void ActivateButton(object senderBtn, Color color)
