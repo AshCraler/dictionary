@@ -170,7 +170,7 @@ namespace dictionary
 
         private void buttonSwitchOnClick()
         {
-            if (ktSwitch == false)
+            if (ktSwitch == true)
             {
                 pictureBoxFlagLeft.Image = dictionary.Properties.Resources.vietnam;
                 pictureBoxFlagRight.Image = dictionary.Properties.Resources.united_kingdom;
