@@ -308,7 +308,6 @@
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(784, 72);
             this.panelTitleBar.TabIndex = 11;
-            this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // labelTitleChildForm
             // 
@@ -382,6 +381,7 @@
             this.pictureBoxFlagLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFlagLeft.TabIndex = 12;
             this.pictureBoxFlagLeft.TabStop = false;
+            this.pictureBoxFlagLeft.Visible = false;
             // 
             // pictureBoxFlagRight
             // 
@@ -392,6 +392,7 @@
             this.pictureBoxFlagRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFlagRight.TabIndex = 13;
             this.pictureBoxFlagRight.TabStop = false;
+            this.pictureBoxFlagRight.Visible = false;
             // 
             // buttonSwitch
             // 
@@ -408,6 +409,7 @@
             this.buttonSwitch.Size = new System.Drawing.Size(37, 31);
             this.buttonSwitch.TabIndex = 16;
             this.buttonSwitch.UseVisualStyleBackColor = true;
+            this.buttonSwitch.Visible = false;
             this.buttonSwitch.Click += new System.EventHandler(this.buttonSwitch_Click);
             // 
             // panelDesktop
@@ -433,7 +435,7 @@
             this.panelSuggestion.Controls.Add(this.panel4);
             this.panelSuggestion.Location = new System.Drawing.Point(0, 3);
             this.panelSuggestion.Name = "panelSuggestion";
-            this.panelSuggestion.Size = new System.Drawing.Size(781, 208);
+            this.panelSuggestion.Size = new System.Drawing.Size(781, 224);
             this.panelSuggestion.TabIndex = 34;
             // 
             // panel1
@@ -444,9 +446,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.labelHint1);
             this.panel1.Controls.Add(this.labelHint2);
-            this.panel1.Location = new System.Drawing.Point(9, 6);
+            this.panel1.Location = new System.Drawing.Point(5, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(212, 189);
+            this.panel1.Size = new System.Drawing.Size(213, 204);
             this.panel1.TabIndex = 23;
             // 
             // labelHint
@@ -454,7 +456,7 @@
             this.labelHint.AutoSize = true;
             this.labelHint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelHint.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHint.Location = new System.Drawing.Point(6, 3);
+            this.labelHint.Location = new System.Drawing.Point(8, 14);
             this.labelHint.Name = "labelHint";
             this.labelHint.Size = new System.Drawing.Size(120, 24);
             this.labelHint.TabIndex = 17;
@@ -465,11 +467,12 @@
             this.labelHint3.AutoSize = true;
             this.labelHint3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelHint3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHint3.Location = new System.Drawing.Point(16, 162);
+            this.labelHint3.Location = new System.Drawing.Point(19, 174);
             this.labelHint3.Name = "labelHint3";
             this.labelHint3.Size = new System.Drawing.Size(131, 22);
             this.labelHint3.TabIndex = 20;
             this.labelHint3.Text = "collaboration";
+            this.labelHint3.Click += new System.EventHandler(this.labelHint3_Click);
             this.labelHint3.MouseLeave += new System.EventHandler(this.labelHint3_MouseLeave);
             this.labelHint3.MouseHover += new System.EventHandler(this.labelHint3_MouseHover);
             // 
@@ -478,20 +481,21 @@
             this.labelHint4.AutoSize = true;
             this.labelHint4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelHint4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHint4.Location = new System.Drawing.Point(16, 123);
+            this.labelHint4.Location = new System.Drawing.Point(19, 134);
             this.labelHint4.Name = "labelHint4";
             this.labelHint4.Size = new System.Drawing.Size(77, 22);
             this.labelHint4.TabIndex = 21;
             this.labelHint4.Text = "despair";
+            this.labelHint4.Click += new System.EventHandler(this.labelHint4_Click);
             this.labelHint4.MouseLeave += new System.EventHandler(this.labelHint4_MouseLeave);
             this.labelHint4.MouseHover += new System.EventHandler(this.labelHint4_MouseHover);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::dictionary.Properties.Resources.idea;
-            this.pictureBox1.Location = new System.Drawing.Point(124, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(129, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 27);
+            this.pictureBox1.Size = new System.Drawing.Size(36, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
@@ -502,11 +506,12 @@
             this.labelHint1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelHint1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHint1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelHint1.Location = new System.Drawing.Point(16, 43);
+            this.labelHint1.Location = new System.Drawing.Point(19, 54);
             this.labelHint1.Name = "labelHint1";
             this.labelHint1.Size = new System.Drawing.Size(74, 22);
             this.labelHint1.TabIndex = 18;
             this.labelHint1.Text = "admire";
+            this.labelHint1.Click += new System.EventHandler(this.labelHint1_Click);
             this.labelHint1.MouseLeave += new System.EventHandler(this.labelHint1_MouseLeave);
             this.labelHint1.MouseHover += new System.EventHandler(this.labelHint1_MouseHover);
             // 
@@ -515,11 +520,12 @@
             this.labelHint2.AutoSize = true;
             this.labelHint2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelHint2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHint2.Location = new System.Drawing.Point(16, 83);
+            this.labelHint2.Location = new System.Drawing.Point(19, 94);
             this.labelHint2.Name = "labelHint2";
             this.labelHint2.Size = new System.Drawing.Size(80, 22);
             this.labelHint2.TabIndex = 19;
             this.labelHint2.Text = "blessing";
+            this.labelHint2.Click += new System.EventHandler(this.labelHint2_Click);
             this.labelHint2.MouseLeave += new System.EventHandler(this.labelHint2_MouseLeave);
             this.labelHint2.MouseHover += new System.EventHandler(this.labelHint2_MouseHover);
             // 
@@ -531,17 +537,17 @@
             this.panel3.Controls.Add(this.labelHistory1);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.labelHistory2);
-            this.panel3.Location = new System.Drawing.Point(247, 6);
+            this.panel3.Location = new System.Drawing.Point(247, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(218, 189);
+            this.panel3.Size = new System.Drawing.Size(218, 204);
             this.panel3.TabIndex = 27;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::dictionary.Properties.Resources.history;
-            this.pictureBox2.Location = new System.Drawing.Point(170, -1);
+            this.pictureBox2.Location = new System.Drawing.Point(180, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox2.Size = new System.Drawing.Size(33, 33);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 25;
             this.pictureBox2.TabStop = false;
@@ -551,11 +557,12 @@
             this.labelHistory4.AutoSize = true;
             this.labelHistory4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelHistory4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHistory4.Location = new System.Drawing.Point(16, 162);
+            this.labelHistory4.Location = new System.Drawing.Point(19, 174);
             this.labelHistory4.Name = "labelHistory4";
             this.labelHistory4.Size = new System.Drawing.Size(131, 22);
             this.labelHistory4.TabIndex = 20;
             this.labelHistory4.Text = "collaboration";
+            this.labelHistory4.Click += new System.EventHandler(this.labelHistory4_Click);
             this.labelHistory4.MouseLeave += new System.EventHandler(this.labelHistory4_MouseLeave);
             this.labelHistory4.MouseHover += new System.EventHandler(this.labelHistory4_MouseHover);
             // 
@@ -564,11 +571,12 @@
             this.labelHistory3.AutoSize = true;
             this.labelHistory3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelHistory3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHistory3.Location = new System.Drawing.Point(16, 123);
+            this.labelHistory3.Location = new System.Drawing.Point(19, 134);
             this.labelHistory3.Name = "labelHistory3";
             this.labelHistory3.Size = new System.Drawing.Size(77, 22);
             this.labelHistory3.TabIndex = 21;
             this.labelHistory3.Text = "despair";
+            this.labelHistory3.Click += new System.EventHandler(this.labelHistory3_Click);
             this.labelHistory3.MouseLeave += new System.EventHandler(this.labelHistory3_MouseLeave);
             this.labelHistory3.MouseHover += new System.EventHandler(this.labelHistory3_MouseHover);
             // 
@@ -578,11 +586,12 @@
             this.labelHistory1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelHistory1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHistory1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelHistory1.Location = new System.Drawing.Point(16, 43);
+            this.labelHistory1.Location = new System.Drawing.Point(19, 54);
             this.labelHistory1.Name = "labelHistory1";
             this.labelHistory1.Size = new System.Drawing.Size(74, 22);
             this.labelHistory1.TabIndex = 18;
             this.labelHistory1.Text = "admire";
+            this.labelHistory1.Click += new System.EventHandler(this.labelHistory1_Click);
             this.labelHistory1.MouseLeave += new System.EventHandler(this.labelHistory1_MouseLeave);
             this.labelHistory1.MouseHover += new System.EventHandler(this.labelHistory1_MouseHover);
             // 
@@ -591,7 +600,7 @@
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Location = new System.Drawing.Point(8, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 24);
             this.label1.TabIndex = 24;
@@ -602,11 +611,12 @@
             this.labelHistory2.AutoSize = true;
             this.labelHistory2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelHistory2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHistory2.Location = new System.Drawing.Point(16, 83);
+            this.labelHistory2.Location = new System.Drawing.Point(19, 94);
             this.labelHistory2.Name = "labelHistory2";
             this.labelHistory2.Size = new System.Drawing.Size(80, 22);
             this.labelHistory2.TabIndex = 19;
             this.labelHistory2.Text = "blessing";
+            this.labelHistory2.Click += new System.EventHandler(this.labelHistory2_Click);
             this.labelHistory2.MouseLeave += new System.EventHandler(this.labelHistory2_MouseLeave);
             this.labelHistory2.MouseHover += new System.EventHandler(this.labelHistory2_MouseHover);
             // 
@@ -618,17 +628,17 @@
             this.panel4.Controls.Add(this.labelBookmark1);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.labelBookmark2);
-            this.panel4.Location = new System.Drawing.Point(508, 6);
+            this.panel4.Location = new System.Drawing.Point(508, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(254, 189);
+            this.panel4.Size = new System.Drawing.Size(264, 204);
             this.panel4.TabIndex = 29;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::dictionary.Properties.Resources.bookmark__1_;
-            this.pictureBox3.Location = new System.Drawing.Point(211, -3);
+            this.pictureBox3.Location = new System.Drawing.Point(214, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox3.Size = new System.Drawing.Size(40, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 26;
             this.pictureBox3.TabStop = false;
@@ -638,11 +648,12 @@
             this.labelBookmark4.AutoSize = true;
             this.labelBookmark4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelBookmark4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBookmark4.Location = new System.Drawing.Point(16, 162);
+            this.labelBookmark4.Location = new System.Drawing.Point(16, 174);
             this.labelBookmark4.Name = "labelBookmark4";
             this.labelBookmark4.Size = new System.Drawing.Size(131, 22);
             this.labelBookmark4.TabIndex = 20;
             this.labelBookmark4.Text = "collaboration";
+            this.labelBookmark4.Click += new System.EventHandler(this.labelBookmark4_Click);
             this.labelBookmark4.MouseLeave += new System.EventHandler(this.labelBookmark4_MouseLeave);
             this.labelBookmark4.MouseHover += new System.EventHandler(this.labelBookmark4_MouseHover);
             // 
@@ -651,11 +662,12 @@
             this.labelBookmark3.AutoSize = true;
             this.labelBookmark3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelBookmark3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBookmark3.Location = new System.Drawing.Point(16, 123);
+            this.labelBookmark3.Location = new System.Drawing.Point(16, 134);
             this.labelBookmark3.Name = "labelBookmark3";
             this.labelBookmark3.Size = new System.Drawing.Size(77, 22);
             this.labelBookmark3.TabIndex = 21;
             this.labelBookmark3.Text = "despair";
+            this.labelBookmark3.Click += new System.EventHandler(this.labelBookmark3_Click);
             this.labelBookmark3.MouseLeave += new System.EventHandler(this.labelBookmark3_MouseLeave);
             this.labelBookmark3.MouseHover += new System.EventHandler(this.labelBookmark3_MouseHover);
             // 
@@ -665,11 +677,12 @@
             this.labelBookmark1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelBookmark1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBookmark1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelBookmark1.Location = new System.Drawing.Point(16, 43);
+            this.labelBookmark1.Location = new System.Drawing.Point(16, 54);
             this.labelBookmark1.Name = "labelBookmark1";
             this.labelBookmark1.Size = new System.Drawing.Size(74, 22);
             this.labelBookmark1.TabIndex = 18;
             this.labelBookmark1.Text = "admire";
+            this.labelBookmark1.Click += new System.EventHandler(this.labelBookmark1_Click);
             this.labelBookmark1.MouseLeave += new System.EventHandler(this.labelBookmark1_MouseLeave);
             this.labelBookmark1.MouseHover += new System.EventHandler(this.labelBookmark1_MouseHover);
             // 
@@ -678,7 +691,7 @@
             this.label11.AutoSize = true;
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 3);
+            this.label11.Location = new System.Drawing.Point(3, 14);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(212, 24);
             this.label11.TabIndex = 24;
@@ -689,11 +702,12 @@
             this.labelBookmark2.AutoSize = true;
             this.labelBookmark2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelBookmark2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBookmark2.Location = new System.Drawing.Point(16, 83);
+            this.labelBookmark2.Location = new System.Drawing.Point(16, 94);
             this.labelBookmark2.Name = "labelBookmark2";
             this.labelBookmark2.Size = new System.Drawing.Size(80, 22);
             this.labelBookmark2.TabIndex = 19;
             this.labelBookmark2.Text = "blessing";
+            this.labelBookmark2.Click += new System.EventHandler(this.labelBookmark2_Click);
             this.labelBookmark2.MouseLeave += new System.EventHandler(this.labelBookmark2_MouseLeave);
             this.labelBookmark2.MouseHover += new System.EventHandler(this.labelBookmark2_MouseHover);
             // 
@@ -714,7 +728,7 @@
             this.typedWord.AutoSize = true;
             this.typedWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.typedWord.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typedWord.Location = new System.Drawing.Point(21, 68);
+            this.typedWord.Location = new System.Drawing.Point(24, 75);
             this.typedWord.Name = "typedWord";
             this.typedWord.Size = new System.Drawing.Size(114, 22);
             this.typedWord.TabIndex = 30;
@@ -725,7 +739,7 @@
             // 
             this.pictureBoxResult.ErrorImage = global::dictionary.Properties.Resources.examination;
             this.pictureBoxResult.Image = global::dictionary.Properties.Resources.analysis;
-            this.pictureBoxResult.Location = new System.Drawing.Point(154, 22);
+            this.pictureBoxResult.Location = new System.Drawing.Point(159, 29);
             this.pictureBoxResult.Name = "pictureBoxResult";
             this.pictureBoxResult.Size = new System.Drawing.Size(35, 25);
             this.pictureBoxResult.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -736,12 +750,12 @@
             // 
             this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlay.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btnPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.btnPlay.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
             this.btnPlay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPlay.IconSize = 35;
-            this.btnPlay.Location = new System.Drawing.Point(247, 65);
+            this.btnPlay.Location = new System.Drawing.Point(247, 72);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Rotation = 0D;
             this.btnPlay.Size = new System.Drawing.Size(43, 33);
@@ -755,7 +769,7 @@
             this.labelResult.AutoSize = true;
             this.labelResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelResult.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResult.Location = new System.Drawing.Point(12, 23);
+            this.labelResult.Location = new System.Drawing.Point(13, 30);
             this.labelResult.Name = "labelResult";
             this.labelResult.Size = new System.Drawing.Size(140, 24);
             this.labelResult.TabIndex = 31;
@@ -803,7 +817,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.ClientSize = new System.Drawing.Size(970, 721);
+            this.ClientSize = new System.Drawing.Size(980, 721);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
