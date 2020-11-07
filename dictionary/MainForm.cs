@@ -16,7 +16,7 @@ namespace dictionary
 {
     public partial class MainForm : Form
     {
-      #region Declaration and Initialize 
+        #region Declaration and Initialize 
 
         public DictionaryManager myDictionary;
         private IconButton currentBtn;
@@ -39,6 +39,11 @@ namespace dictionary
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.FromArgb(255, 244, 79);
         }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            this.BeginInvoke(new MethodInvoker(delegate () { iconButton1.PerformClick(); }));
+        }
 
         public MainForm()
         {
@@ -47,29 +52,24 @@ namespace dictionary
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 34);
             panelMenu.Controls.Add(leftBorderBtn);
-            
+            ActivateMenuButton(iconButton1, RGBColors.color1);
+
             // Initialize Database
             myDictionary = new DictionaryManager();
             this.Controls.Add(myDictionary.VN);
             this.Controls.Add(myDictionary.EN);
         }
-        
+
         /* //Deleter windows bar
         this.Text = string.Empty;
         this.ControlBox = false;
         this.DoubleBuffered = true;
         this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         */
-        /* //protected override void OnLoad(EventArgs e)
-           protected override void OnLoad(EventArgs e)
-           {
-               base.OnLoad(e);
-               this.BeginInvoke(new MethodInvoker(delegate () { iconButton1.PerformClick(); }));
-           }*/
-        
-      #endregion
 
-      #region Menu
+        #endregion
+
+        #region Menu and Titlebar
 
         private void OpenChildForm(Form childForm)
         {
@@ -87,31 +87,28 @@ namespace dictionary
             childForm.Show();
         }
 
-        private void ActivateButton(object senderBtn, Color color)
+        private void ActivateMenuButton(object senderBtn, Color color)
         {
-            if (senderBtn != null)
-            {
-                DisableButton();
-                //Button
-                currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
-                currentBtn.ForeColor = color;
-                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
-                currentBtn.IconColor = color;
-                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
-                //Left border button
-                leftBorderBtn.BackColor = color;
-                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
-                leftBorderBtn.Visible = true;
-                leftBorderBtn.BringToFront();
-                iconCurrentChildForm.IconChar = currentBtn.IconChar;
-                iconCurrentChildForm.IconColor = color;
-                labelTitleChildForm.Text = currentBtn.Text;
-            }
+            DisableMenuButton();
+            //Button
+            currentBtn = (IconButton)senderBtn;
+            currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+            currentBtn.ForeColor = color;
+            currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+            currentBtn.IconColor = color;
+            currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+            currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+            //Left border button
+            leftBorderBtn.BackColor = color;
+            leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+            leftBorderBtn.Visible = true;
+            leftBorderBtn.BringToFront();
+            iconCurrentChildForm.IconChar = currentBtn.IconChar;
+            iconCurrentChildForm.IconColor = color;
+            labelTitleChildForm.Text = currentBtn.Text;
         }
 
-        private void DisableButton()
+        private void DisableMenuButton()
         {
             if (currentBtn != null)
             {
@@ -124,49 +121,31 @@ namespace dictionary
             }
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)// Button Home
+        private void activatePictureBoxAndSwitchButton()
         {
-            ActivateButton(sender, RGBColors.color1);
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
+            pictureBoxFlagLeft.Visible = true;
+            pictureBoxFlagRight.Visible = true;
+            buttonSwitch.Visible = true;
         }
 
-        private void btnHistory_Click(object sender, EventArgs e)
+        private void disablePictureBoxAndSwitchButton()
         {
-            ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new History());
-
+            pictureBoxFlagLeft.Visible = false;
+            pictureBoxFlagRight.Visible = false;
+            buttonSwitch.Visible = false;
         }
 
-        private void btn_Bookmark_Click(object sender, EventArgs e)
+        private void activateSearch()
         {
-            ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new Bookmark());
+            textboxSearch.Visible = true;
+            buttonSearch.Visible = true;
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
+        private void disableSearch()
         {
-            ActivateButton(sender, RGBColors.color4);
-            OpenChildForm(new Settings());
+            textboxSearch.Visible = false;
+            buttonSearch.Visible = false;
         }
-
-        private void btnHelp_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color5);
-            OpenChildForm(new Help());
-        }
-
-        private void btnFeedback_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color6);
-            OpenChildForm(new Feedback());
-        }
-        
-        #endregion
-
-      #region TitleBar
 
         private void buttonSearchOnClick()
         {
@@ -181,6 +160,29 @@ namespace dictionary
                 typedWord.Text = textboxSearch.Text;
                 labelResult.Visible = true;
                 btnPlay.Visible = true;
+            }
+        }
+
+        private void customizeTitleBar()
+        {
+
+        }
+
+        private void buttonSwitchOnClick()
+        {
+            if (ktSwitch == false)
+            {
+                pictureBoxFlagLeft.Image = dictionary.Properties.Resources.vietnam;
+                pictureBoxFlagRight.Image = dictionary.Properties.Resources.united_kingdom;
+                textboxSearch.HintText = "Search VietNamese";
+                textboxSearch.Text = "Search VietNamese";
+            }
+            else
+            {
+                pictureBoxFlagLeft.Image = dictionary.Properties.Resources.united_kingdom;
+                pictureBoxFlagRight.Image = dictionary.Properties.Resources.vietnam;
+                textboxSearch.HintText = "Search English";
+                textboxSearch.Text = "Search English";
             }
         }
 
@@ -211,21 +213,76 @@ namespace dictionary
         private void buttonSwitch_Click(object sender, EventArgs e)
         {
             if (ktSwitch == false)
-            {
                 ktSwitch = true;
-                pictureBoxFlagLeft.Image = dictionary.Properties.Resources.vietnam;
-                pictureBoxFlagRight.Image = dictionary.Properties.Resources.united_kingdom;
-                textboxSearch.HintText = "Search VietNamese";
-                textboxSearch.Text = "Search VietNamese";
-            }
-            else
+            else ktSwitch = false;
+            buttonSwitchOnClick();
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)// Translate Button
+        {
+            if (currentChildForm != null)
             {
-                ktSwitch = false;
-                pictureBoxFlagLeft.Image = dictionary.Properties.Resources.united_kingdom;
-                pictureBoxFlagRight.Image = dictionary.Properties.Resources.vietnam;
-                textboxSearch.HintText = "Search English";
-                textboxSearch.Text = "Search English";
+                currentChildForm.Close();
             }
+            ActivateMenuButton(sender, RGBColors.color1);
+            activatePictureBoxAndSwitchButton();
+            buttonSwitchOnClick();
+            activatePictureBoxAndSwitchButton();
+            activateSearch();
+            textboxSearch.Text = textboxSearch.HintText;
+            textboxSearch.LineFocusedColor = RGBColors.color1;
+            textboxSearch.LineMouseHoverColor = RGBColors.color1;
+            buttonSearch.IconColor = RGBColors.color1;
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            ActivateMenuButton(sender, RGBColors.color3);
+            OpenChildForm(new History());
+            disablePictureBoxAndSwitchButton();
+            activateSearch();
+            textboxSearch.HintText = "Search history";
+            textboxSearch.Text = textboxSearch.HintText;
+            textboxSearch.LineFocusedColor = RGBColors.color3;
+            textboxSearch.LineMouseHoverColor = RGBColors.color3;
+            buttonSearch.IconColor = RGBColors.color3;
+        }
+
+        private void btn_Bookmark_Click(object sender, EventArgs e)
+        {
+            ActivateMenuButton(sender, RGBColors.color2);
+            OpenChildForm(new Bookmark());
+            disablePictureBoxAndSwitchButton();
+            activateSearch();
+            textboxSearch.HintText = "Search bookmark";
+            textboxSearch.Text = textboxSearch.HintText;
+            textboxSearch.LineFocusedColor = RGBColors.color2;
+            textboxSearch.LineMouseHoverColor = RGBColors.color2;
+            buttonSearch.IconColor = RGBColors.color2;
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            ActivateMenuButton(sender, RGBColors.color4);
+            OpenChildForm(new Settings());
+            disableSearch();
+            disablePictureBoxAndSwitchButton();
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            ActivateMenuButton(sender, RGBColors.color5);
+            OpenChildForm(new Help());
+            disableSearch();
+            disablePictureBoxAndSwitchButton();
+        }
+
+        private void btnFeedback_Click(object sender, EventArgs e)
+        {
+            ActivateMenuButton(sender, RGBColors.color6);
+            OpenChildForm(new Feedback());
+            disableSearch();
+            disablePictureBoxAndSwitchButton();
         }
 
         /* panelTitleBar_MouseDown
@@ -235,9 +292,9 @@ namespace dictionary
            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }*/
 
-      #endregion
+        #endregion
 
-      #region Suggestion
+        #region Suggestion History Bookmark
 
         private void labelHint1_MouseHover(object sender, EventArgs e)
         {
@@ -328,45 +385,45 @@ namespace dictionary
         {
             labelHistory2.ForeColor = System.Drawing.Color.Gainsboro;
         }
-        
+
         private void labelHistory2_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelHistory2.Text;
             buttonSearchOnClick();
         }
-        
+
         private void labelHistory3_MouseHover(object sender, EventArgs e)
         {
             labelHistory3.ForeColor = RGBColors.color3;
         }
-        
+
         private void labelHistory3_MouseLeave(object sender, EventArgs e)
         {
             labelHistory3.ForeColor = System.Drawing.Color.Gainsboro;
         }
-        
+
         private void labelHistory3_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelHistory3.Text;
             buttonSearchOnClick();
         }
-        
+
         private void labelHistory4_MouseHover(object sender, EventArgs e)
         {
             labelHistory4.ForeColor = RGBColors.color3;
         }
-        
+
         private void labelHistory4_MouseLeave(object sender, EventArgs e)
         {
             labelHistory4.ForeColor = System.Drawing.Color.Gainsboro;
         }
-        
+
         private void labelHistory4_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelHistory4.Text;
             buttonSearchOnClick();
         }
-        
+
         private void labelBookmark1_MouseHover(object sender, EventArgs e)
         {
             labelBookmark1.ForeColor = RGBColors.color2;
@@ -376,13 +433,13 @@ namespace dictionary
         {
             labelBookmark1.ForeColor = System.Drawing.Color.Gainsboro;
         }
-        
+
         private void labelBookmark1_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelBookmark1.Text;
             buttonSearchOnClick();
         }
-        
+
         private void labelBookmark2_MouseHover(object sender, EventArgs e)
         {
             labelBookmark2.ForeColor = RGBColors.color2;
@@ -392,13 +449,13 @@ namespace dictionary
         {
             labelBookmark2.ForeColor = System.Drawing.Color.Gainsboro;
         }
-        
+
         private void labelBookmark2_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelBookmark2.Text;
             buttonSearchOnClick();
         }
-        
+
         private void labelBookmark3_MouseHover(object sender, EventArgs e)
         {
             labelBookmark3.ForeColor = RGBColors.color2;
@@ -408,32 +465,32 @@ namespace dictionary
         {
             labelBookmark3.ForeColor = System.Drawing.Color.Gainsboro;
         }
-        
+
         private void labelBookmark3_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelBookmark3.Text;
             buttonSearchOnClick();
         }
-        
+
         private void labelBookmark4_MouseHover(object sender, EventArgs e)
         {
             labelBookmark4.ForeColor = RGBColors.color2;
         }
-        
+
         private void labelBookmark4_MouseLeave(object sender, EventArgs e)
         {
             labelBookmark4.ForeColor = System.Drawing.Color.Gainsboro;
         }
-        
+
         private void labelBookmark4_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelBookmark4.Text;
             buttonSearchOnClick();
         }
-        
-      #endregion
 
-      #region Result
+        #endregion
+
+        #region Search_Result
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
@@ -453,7 +510,7 @@ namespace dictionary
             }
         }
 
-      #endregion
+        #endregion
     }
 }
 

@@ -308,7 +308,6 @@
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(784, 72);
             this.panelTitleBar.TabIndex = 11;
-          //  this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // labelTitleChildForm
             // 
@@ -382,6 +381,7 @@
             this.pictureBoxFlagLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFlagLeft.TabIndex = 12;
             this.pictureBoxFlagLeft.TabStop = false;
+            this.pictureBoxFlagLeft.Visible = false;
             // 
             // pictureBoxFlagRight
             // 
@@ -392,6 +392,7 @@
             this.pictureBoxFlagRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFlagRight.TabIndex = 13;
             this.pictureBoxFlagRight.TabStop = false;
+            this.pictureBoxFlagRight.Visible = false;
             // 
             // buttonSwitch
             // 
@@ -408,6 +409,7 @@
             this.buttonSwitch.Size = new System.Drawing.Size(37, 31);
             this.buttonSwitch.TabIndex = 16;
             this.buttonSwitch.UseVisualStyleBackColor = true;
+            this.buttonSwitch.Visible = false;
             this.buttonSwitch.Click += new System.EventHandler(this.buttonSwitch_Click);
             // 
             // panelDesktop
