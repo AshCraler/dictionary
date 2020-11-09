@@ -67,10 +67,7 @@ namespace dictionary
             work on the item
              */
             FileStream fs = new FileStream(demoDataPath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-
-            XmlSerializer sr = new XmlSerializer(typeof(DictionaryItem));
-
-            
+            XmlSerializer sr = new XmlSerializer(typeof(DictionaryItem)); 
             DictionaryItem result = (DictionaryItem)sr.Deserialize(fs);
             fs.Close();
             return result;

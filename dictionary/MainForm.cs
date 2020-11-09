@@ -16,7 +16,7 @@ namespace dictionary
 {
     public partial class MainForm : Form
     {
-        #region Declaration and Initialize 
+        #region Declaration and Initialization
 
         public DictionaryManager myDictionary;
         private IconButton currentBtn;
@@ -294,7 +294,7 @@ namespace dictionary
 
         #endregion
 
-        #region Suggestion History Bookmark
+        #region Suggestion, History, Bookmark
 
         private void labelHint1_MouseHover(object sender, EventArgs e)
         {
