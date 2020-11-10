@@ -11,9 +11,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.Framework.UI;
 using FontAwesome.Sharp;
+using System.Speech.Synthesis;
 
 namespace dictionary
 {
+
     public partial class MainForm : Form
     {
         #region Declaration and Initialization
@@ -498,15 +500,16 @@ namespace dictionary
             {
                 MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
             }
-            if (myDictionary.getStatus() == true)
-            {
-                //EN
-                myDictionary.myVoice.speak(myDictionary.EN, textboxSearch.Text);
-            }
             else
             {
-                //VN
-                myDictionary.myVoice.speak(myDictionary.VN, textboxSearch.Text);
+                // Initialize a new instance of the SpeechSynthesizer.  
+                SpeechSynthesizer synth = new SpeechSynthesizer();
+
+                // Configure the audio output.   
+                synth.SetOutputToDefaultAudioDevice();
+
+                // Speak a string.  
+                synth.Speak(textboxSearch.Text);
             }
         }
 
