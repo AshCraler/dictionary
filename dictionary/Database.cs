@@ -8,6 +8,6 @@ namespace dictionary
 {
     static class Database
     {
-
+        private static int now;
     }
 }

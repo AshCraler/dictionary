@@ -11,25 +11,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.Framework.UI;
 using FontAwesome.Sharp;
+using System.Speech.Synthesis;
 
 namespace dictionary
 {
+
     public partial class MainForm : Form
     {
-        #region Declaration and Initialize 
-
-        public DictionaryManager myDictionary;
-        private IconButton currentBtn;
-        private Panel leftBorderBtn;
-        private Form currentChildForm;
-        private bool ktSwitch = false;
-
+        #region Declaration 
+        
+        public DictionaryManager myDictionary; 
+        private IconButton currentBtn; // Button đang được chọn hiện tại
+        private Panel leftBorderBtn; // Panel chứa các chức năng chính
+        private Form currentChildForm; // Child form đang được mở hiện tại 
+        private bool ktSwitch = false; // Kiểm tra chế độ Anh Việt hay Việt Anh
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        private struct RGBColors
+        private struct RGBColors // Struct các mã màu 
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
             public static Color color2 = Color.FromArgb(238, 26, 74);
@@ -39,57 +39,37 @@ namespace dictionary
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.FromArgb(255, 244, 79);
         }
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-            this.BeginInvoke(new MethodInvoker(delegate () { iconButton1.PerformClick(); }));
-        }
 
-        public MainForm()
-        {
-            //Initial GUI
-            InitializeComponent();
-            leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 34);
-            panelMenu.Controls.Add(leftBorderBtn);
-            ActivateMenuButton(iconButton1, RGBColors.color1);
-
-            // Initialize Database
-            myDictionary = new DictionaryManager();
-            this.Controls.Add(myDictionary.VN);
-            this.Controls.Add(myDictionary.EN);
-        }
-
-        /* //Deleter windows bar
-        this.Text = string.Empty;
-        this.ControlBox = false;
-        this.DoubleBuffered = true;
-        this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-        */
 
         #endregion
 
         #region Menu and Titlebar
-
-        private void OpenChildForm(Form childForm)
+  
+        private void displaySearch() // Hiển thị chức năng tìm kiếm
         {
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
-            currentChildForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(childForm);
-            panelDesktop.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+            textboxSearch.Visible = true;
+            buttonSearch.Visible = true;
         }
-
-        private void ActivateMenuButton(object senderBtn, Color color)
+        private void hideSearch() // Ẩn chức năng tìm kiếm
         {
-            DisableMenuButton();
+            textboxSearch.Visible = false;
+            buttonSearch.Visible = false;
+        }
+        private void displaySwitch() // Hiển thị chức năng chuyển ngôn ngữ
+        {
+             buttonSwitch.Visible = true;
+             pictureBoxFlagLeft.Visible = true;
+             pictureBoxFlagRight.Visible = true;
+        }
+        private void hideSwitch() // Ẩn chức năng chuyển ngôn ngữ
+        {
+            pictureBoxFlagLeft.Visible = false;
+            pictureBoxFlagRight.Visible = false;
+            buttonSwitch.Visible = false;
+        }
+        private void activateMenuButton(object senderBtn, Color color) // Kích hoạt menuButton 
+        {
+            disableMenuButton();
             //Button
             currentBtn = (IconButton)senderBtn;
             currentBtn.BackColor = Color.FromArgb(37, 36, 81);
@@ -107,8 +87,7 @@ namespace dictionary
             iconCurrentChildForm.IconColor = color;
             labelTitleChildForm.Text = currentBtn.Text;
         }
-
-        private void DisableMenuButton()
+        private void disableMenuButton()  // Tắt menuButton 
         {
             if (currentBtn != null)
             {
@@ -120,34 +99,7 @@ namespace dictionary
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-
-        private void activatePictureBoxAndSwitchButton()
-        {
-            pictureBoxFlagLeft.Visible = true;
-            pictureBoxFlagRight.Visible = true;
-            buttonSwitch.Visible = true;
-        }
-
-        private void disablePictureBoxAndSwitchButton()
-        {
-            pictureBoxFlagLeft.Visible = false;
-            pictureBoxFlagRight.Visible = false;
-            buttonSwitch.Visible = false;
-        }
-
-        private void activateSearch()
-        {
-            textboxSearch.Visible = true;
-            buttonSearch.Visible = true;
-        }
-
-        private void disableSearch()
-        {
-            textboxSearch.Visible = false;
-            buttonSearch.Visible = false;
-        }
-
-        private void buttonSearchOnClick()
+        private void activateSearchButton() // Kích hoạt searchButton
         {
             WordData result = myDictionary.Item.Data.Find(x => x.Key == textboxSearch.Text);
             if (result == null)
@@ -162,13 +114,7 @@ namespace dictionary
                 btnPlay.Visible = true;
             }
         }
-
-        private void customizeTitleBar()
-        {
-
-        }
-
-        private void buttonSwitchOnClick()
+        private void activateSwitchButton() // Kích hoạt switchButton 
         {
             if (ktSwitch == true)
             {
@@ -185,20 +131,47 @@ namespace dictionary
                 textboxSearch.Text = "Search English";
             }
         }
-
-        private void buttonSearch_Click(object sender, EventArgs e)
+        private void openChildForm(Form childForm) // Mở childForm mới
         {
-            if (textboxSearch.Text == "")
+            if (currentChildForm != null)
             {
-                MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
+                currentChildForm.Close();
             }
-            else
-            {
-                buttonSearchOnClick();
-            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(childForm);
+            panelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
 
-        private void textboxSearch_OnValueChanged(object sender, EventArgs e)
+
+
+
+        public MainForm() // Kích hoạt MainForm
+        {
+            //Initial GUI
+            InitializeComponent();
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(7, 34);
+            panelMenu.Controls.Add(leftBorderBtn);
+            activateMenuButton(iconButton1, RGBColors.color1);
+
+            // Initialize Database
+            myDictionary = new DictionaryManager();
+            this.Controls.Add(myDictionary.VN);
+            this.Controls.Add(myDictionary.EN);
+        }
+
+        protected override void OnLoad(EventArgs e)  //On Load
+        {
+            base.OnLoad(e);
+            this.BeginInvoke(new MethodInvoker(delegate () { iconButton1.PerformClick(); }));
+        }
+
+        private void textboxSearch_OnValueChanged(object sender, EventArgs e) // Khi thay đổi giá trị textboxSearch 
         {
             if (textboxSearch.Text != string.Empty)
             {
@@ -210,37 +183,48 @@ namespace dictionary
             }
         }
 
-        private void buttonSwitch_Click(object sender, EventArgs e)
+        private void buttonSearch_Click(object sender, EventArgs e) // Khi click vào searchButton
+        {
+            if (textboxSearch.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
+            }
+            else
+            {
+                activateSearchButton();
+            }
+        }
+
+        private void buttonSwitch_Click(object sender, EventArgs e) // Khi click vào switchButton
         {
             if (ktSwitch == false)
                 ktSwitch = true;
             else ktSwitch = false;
-            buttonSwitchOnClick();
-        }
+            activateSwitchButton();
+        } 
 
-        private void iconButton1_Click(object sender, EventArgs e)// Translate Button
+        private void iconButton1_Click(object sender, EventArgs e) // Khi click vào translateButton
         {
             if (currentChildForm != null)
             {
                 currentChildForm.Close();
             }
-            ActivateMenuButton(sender, RGBColors.color1);
-            activatePictureBoxAndSwitchButton();
-            buttonSwitchOnClick();
-            activatePictureBoxAndSwitchButton();
-            activateSearch();
+            activateMenuButton(sender, RGBColors.color1);
+            displaySwitch();
+            activateSwitchButton();
+            displaySearch();
             textboxSearch.Text = textboxSearch.HintText;
             textboxSearch.LineFocusedColor = RGBColors.color1;
             textboxSearch.LineMouseHoverColor = RGBColors.color1;
             buttonSearch.IconColor = RGBColors.color1;
         }
 
-        private void btnHistory_Click(object sender, EventArgs e)
+        private void btnHistory_Click(object sender, EventArgs e) // Khi click vào historyButton
         {
-            ActivateMenuButton(sender, RGBColors.color3);
-            OpenChildForm(new History());
-            disablePictureBoxAndSwitchButton();
-            activateSearch();
+            activateMenuButton(sender, RGBColors.color3);
+            openChildForm(new History());
+            hideSwitch();
+            displaySearch();
             textboxSearch.HintText = "Search history";
             textboxSearch.Text = textboxSearch.HintText;
             textboxSearch.LineFocusedColor = RGBColors.color3;
@@ -248,12 +232,12 @@ namespace dictionary
             buttonSearch.IconColor = RGBColors.color3;
         }
 
-        private void btn_Bookmark_Click(object sender, EventArgs e)
+        private void btn_Bookmark_Click(object sender, EventArgs e) // Khi click vào bookmarkButton
         {
-            ActivateMenuButton(sender, RGBColors.color2);
-            OpenChildForm(new Bookmark());
-            disablePictureBoxAndSwitchButton();
-            activateSearch();
+            activateMenuButton(sender, RGBColors.color2);
+            openChildForm(new Bookmark());
+            hideSwitch();
+            displaySearch();
             textboxSearch.HintText = "Search bookmark";
             textboxSearch.Text = textboxSearch.HintText;
             textboxSearch.LineFocusedColor = RGBColors.color2;
@@ -261,40 +245,36 @@ namespace dictionary
             buttonSearch.IconColor = RGBColors.color2;
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
+        private void btnSettings_Click(object sender, EventArgs e) // Khi click vào settingsButton
         {
-            ActivateMenuButton(sender, RGBColors.color4);
-            OpenChildForm(new Settings());
-            disableSearch();
-            disablePictureBoxAndSwitchButton();
+            activateMenuButton(sender, RGBColors.color4);
+            openChildForm(new Settings());
+            hideSearch();
+            hideSwitch();
         }
 
-        private void btnHelp_Click(object sender, EventArgs e)
+        private void btnHelp_Click(object sender, EventArgs e) // Khi click vào helpButton
         {
-            ActivateMenuButton(sender, RGBColors.color5);
-            OpenChildForm(new Help());
-            disableSearch();
-            disablePictureBoxAndSwitchButton();
+            activateMenuButton(sender, RGBColors.color5);
+            openChildForm(new Help());
+            hideSearch();
+            hideSwitch();
         }
 
-        private void btnFeedback_Click(object sender, EventArgs e)
+        private void btnFeedback_Click(object sender, EventArgs e) // Khi click vào feedbackButton
         {
-            ActivateMenuButton(sender, RGBColors.color6);
-            OpenChildForm(new Feedback());
-            disableSearch();
-            disablePictureBoxAndSwitchButton();
+            activateMenuButton(sender, RGBColors.color6);
+            openChildForm(new Feedback());
+            hideSearch();
+            hideSwitch();
         }
 
-        /* panelTitleBar_MouseDown
-        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
-        {
-           ReleaseCapture();
-           SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }*/
-
+        
         #endregion
 
-        #region Suggestion History Bookmark
+        #region Suggestion, History, Bookmark
+
+        #region Suggestion
 
         private void labelHint1_MouseHover(object sender, EventArgs e)
         {
@@ -309,7 +289,7 @@ namespace dictionary
         private void labelHint1_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelHint1.Text;
-            buttonSearchOnClick();
+            activateSearchButton();
         }
 
         private void labelHint2_MouseHover(object sender, EventArgs e)
@@ -325,7 +305,7 @@ namespace dictionary
         private void labelHint2_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelHint2.Text;
-            buttonSearchOnClick();
+            activateSearchButton();
         }
 
         private void labelHint3_MouseHover(object sender, EventArgs e)
@@ -341,7 +321,7 @@ namespace dictionary
         private void labelHint3_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelHint3.Text;
-            buttonSearchOnClick();
+            activateSearchButton();
         }
 
         private void labelHint4_MouseHover(object sender, EventArgs e)
@@ -357,8 +337,13 @@ namespace dictionary
         private void labelHint4_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelHint4.Text;
-            buttonSearchOnClick();
+            activateSearchButton();
         }
+
+
+        #endregion Suggestion
+
+        #region History
 
         private void labelHistory1_MouseHover(object sender, EventArgs e)
         {
@@ -373,7 +358,7 @@ namespace dictionary
         private void labelHistory1_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelHistory1.Text;
-            buttonSearchOnClick();
+            activateSearchButton();
         }
 
         private void labelHistory2_MouseHover(object sender, EventArgs e)
@@ -389,7 +374,7 @@ namespace dictionary
         private void labelHistory2_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelHistory2.Text;
-            buttonSearchOnClick();
+            activateSearchButton();
         }
 
         private void labelHistory3_MouseHover(object sender, EventArgs e)
@@ -405,7 +390,7 @@ namespace dictionary
         private void labelHistory3_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelHistory3.Text;
-            buttonSearchOnClick();
+            activateSearchButton();
         }
 
         private void labelHistory4_MouseHover(object sender, EventArgs e)
@@ -421,8 +406,13 @@ namespace dictionary
         private void labelHistory4_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelHistory4.Text;
-            buttonSearchOnClick();
+            activateSearchButton();
         }
+
+    
+        #endregion History
+
+        #region Bookmark
 
         private void labelBookmark1_MouseHover(object sender, EventArgs e)
         {
@@ -437,7 +427,7 @@ namespace dictionary
         private void labelBookmark1_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelBookmark1.Text;
-            buttonSearchOnClick();
+            activateSearchButton();
         }
 
         private void labelBookmark2_MouseHover(object sender, EventArgs e)
@@ -453,7 +443,7 @@ namespace dictionary
         private void labelBookmark2_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelBookmark2.Text;
-            buttonSearchOnClick();
+            activateSearchButton();
         }
 
         private void labelBookmark3_MouseHover(object sender, EventArgs e)
@@ -469,7 +459,7 @@ namespace dictionary
         private void labelBookmark3_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelBookmark3.Text;
-            buttonSearchOnClick();
+            activateSearchButton();
         }
 
         private void labelBookmark4_MouseHover(object sender, EventArgs e)
@@ -485,10 +475,13 @@ namespace dictionary
         private void labelBookmark4_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = labelBookmark4.Text;
-            buttonSearchOnClick();
+            activateSearchButton();
         }
 
-        #endregion
+        
+        #endregion Bookmark
+
+        #endregion Suggestion, History, Bookmark
 
         #region Search_Result
 
@@ -498,19 +491,21 @@ namespace dictionary
             {
                 MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
             }
-            if (myDictionary.getStatus() == true)
-            {
-                //EN
-                myDictionary.myVoice.speak(myDictionary.EN, textboxSearch.Text);
-            }
             else
             {
-                //VN
-                myDictionary.myVoice.speak(myDictionary.VN, textboxSearch.Text);
+                // Initialize a new instance of the SpeechSynthesizer.  
+                SpeechSynthesizer synth = new SpeechSynthesizer();
+
+                // Configure the audio output.   
+                synth.SetOutputToDefaultAudioDevice();
+
+                // Speak a string.  
+                synth.Speak(textboxSearch.Text);
             }
         }
 
-        #endregion
+
+        #endregion Search_Result
     }
 }
 
