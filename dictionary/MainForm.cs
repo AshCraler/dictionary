@@ -12,15 +12,14 @@ using System.Windows.Forms;
 using Bunifu.Framework.UI;
 using FontAwesome.Sharp;
 using System.Speech.Synthesis;
-
+//////
 namespace dictionary
 {
-
     public partial class MainForm : Form
     {
         #region Declaration 
         
-        public DictionaryManager myDictionary; 
+        public DictionaryManager myDictionary;
         private IconButton currentBtn; // Button đang được chọn hiện tại
         private Panel leftBorderBtn; // Panel chứa các chức năng chính
         private Form currentChildForm; // Child form đang được mở hiện tại 
@@ -39,7 +38,7 @@ namespace dictionary
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.FromArgb(255, 244, 79);
         }
-
+        
 
         #endregion
 
@@ -269,7 +268,6 @@ namespace dictionary
             hideSwitch();
         }
 
-        
         #endregion
 
         #region Suggestion, History, Bookmark
