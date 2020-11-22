@@ -72,6 +72,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.labelBookmark2 = new System.Windows.Forms.Label();
             this.panelResult = new System.Windows.Forms.Panel();
+            this.bookmarkButton = new FontAwesome.Sharp.IconButton();
             this.typedWord = new System.Windows.Forms.Label();
             this.pictureBoxResult = new System.Windows.Forms.PictureBox();
             this.btnPlay = new FontAwesome.Sharp.IconButton();
@@ -714,6 +715,7 @@
             // panelResult
             // 
             this.panelResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.panelResult.Controls.Add(this.bookmarkButton);
             this.panelResult.Controls.Add(this.typedWord);
             this.panelResult.Controls.Add(this.pictureBoxResult);
             this.panelResult.Controls.Add(this.btnPlay);
@@ -722,6 +724,24 @@
             this.panelResult.Name = "panelResult";
             this.panelResult.Size = new System.Drawing.Size(781, 433);
             this.panelResult.TabIndex = 33;
+            // 
+            // bookmarkButton
+            // 
+            this.bookmarkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bookmarkButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.bookmarkButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.bookmarkButton.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.bookmarkButton.IconColor = System.Drawing.Color.Gainsboro;
+            this.bookmarkButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bookmarkButton.IconSize = 35;
+            this.bookmarkButton.Location = new System.Drawing.Point(628, 68);
+            this.bookmarkButton.Name = "bookmarkButton";
+            this.bookmarkButton.Rotation = 0D;
+            this.bookmarkButton.Size = new System.Drawing.Size(43, 41);
+            this.bookmarkButton.TabIndex = 33;
+            this.bookmarkButton.UseVisualStyleBackColor = true;
+            this.bookmarkButton.Visible = false;
+            this.bookmarkButton.Click += new System.EventHandler(this.bookmarkButton_Click);
             // 
             // typedWord
             // 
@@ -909,6 +929,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panelResult;
         private System.Windows.Forms.Panel panelSuggestion;
+        private FontAwesome.Sharp.IconButton bookmarkButton;
     }
 }
 
