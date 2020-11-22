@@ -17,6 +17,7 @@ namespace dictionary
 {
     public partial class MainForm : Form
     {
+        
         #region Declaration 
         
         public DictionaryManager myDictionary;
@@ -24,6 +25,7 @@ namespace dictionary
         private Panel leftBorderBtn; // Panel chứa các chức năng chính
         private Form currentChildForm; // Child form đang được mở hiện tại 
         private bool ktSwitch = false; // Kiểm tra chế độ Anh Việt hay Việt Anh
+        private bool ktBookmark = false; // Kiểm tra bookmark hay chưa
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -111,6 +113,7 @@ namespace dictionary
                 typedWord.Text = textboxSearch.Text;
                 labelResult.Visible = true;
                 btnPlay.Visible = true;
+                bookmarkButton.Visible = true;
             }
         }
         private void activateSwitchButton() // Kích hoạt switchButton 
@@ -502,8 +505,24 @@ namespace dictionary
             }
         }
 
+        private void bookmarkButton_Click(object sender, EventArgs e)
+        {
+            if (ktBookmark == false)
+            {
+                ktBookmark = true;
+                bookmarkButton.IconColor = RGBColors.color7;
+            }
+            else
+            {
+                ktBookmark = false;
+                bookmarkButton.IconColor = Color.Gainsboro;
+            }
+            
+    }
+
 
         #endregion Search_Result
+
     }
 }
 
