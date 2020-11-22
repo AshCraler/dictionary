@@ -46,7 +46,26 @@ namespace dictionary
                     "meaning",
                     "22/11/2020"
                 }
+                
+                ) ;
+            bunifuCustomDataGrid1.Rows.Add(
+                new object[]
+                {
+                    "word2",
+                    "meaning",
+                    "22/11/2020"
+                }
+
                 );
+            bunifuCustomDataGrid1.Rows.Add(
+               new object[]
+               {
+                    "word2",
+                    "meaning",
+                    "22/11/2020"
+               }
+
+               );
         }
     }
 }
