@@ -36,5 +36,17 @@ namespace dictionary
         {
 
         }
+
+        private void History_Shown(object sender, EventArgs e)
+        {
+            bunifuCustomDataGrid1.Rows.Add(
+                new object[]
+                {
+                    "word1",
+                    "meaning",
+                    "22/11/2020"
+                }
+                );
+        }
     }
 }
