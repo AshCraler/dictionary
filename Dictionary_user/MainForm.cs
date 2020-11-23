@@ -101,20 +101,13 @@ namespace Dictionary_user
             }
         }
         private void activateSearchButton() // Kích hoạt searchButton
-        {
-            WordData result = myDictionary.Item.Data.Find(x => x.Key == textboxSearch.Text);
-            if (result == null)
-            {
-                MessageBox.Show("No words found! I'm sorry.");
-            }
-            else
-            {
+        {  
                 typedWord.Visible = true;
                 typedWord.Text = textboxSearch.Text;
                 labelResult.Visible = true;
                 btnPlay.Visible = true;
                 bookmarkButton.Visible = true;
-            }
+                wordMeaning.Visible = true;
         }
         private void activateSwitchButton() // Kích hoạt switchButton 
         {
@@ -523,6 +516,10 @@ namespace Dictionary_user
 
         #endregion Search_Result
 
+        private void panelResult_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

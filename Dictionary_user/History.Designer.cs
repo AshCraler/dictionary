@@ -37,10 +37,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Word = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Meaning = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Remove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBoxFlagLeft = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -53,6 +49,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.Word = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Meaning = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bookmark = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
@@ -110,7 +110,7 @@
             this.Word,
             this.Meaning,
             this.Date,
-            this.Remove});
+            this.Bookmark});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,32 +132,6 @@
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(788, 671);
             this.bunifuCustomDataGrid1.TabIndex = 0;
             this.bunifuCustomDataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellContentClick);
-            // 
-            // Word
-            // 
-            this.Word.HeaderText = "Word";
-            this.Word.Name = "Word";
-            // 
-            // Meaning
-            // 
-            this.Meaning.HeaderText = "Meaning";
-            this.Meaning.Name = "Meaning";
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            // 
-            // Remove
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.Remove.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Remove.HeaderText = "Remove";
-            this.Remove.Name = "Remove";
-            this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Remove.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // panel2
             // 
@@ -309,6 +283,32 @@
             this.bunifuElipse1.ElipseRadius = 7;
             this.bunifuElipse1.TargetControl = this.bunifuCustomDataGrid1;
             // 
+            // Word
+            // 
+            this.Word.HeaderText = "Word";
+            this.Word.Name = "Word";
+            // 
+            // Meaning
+            // 
+            this.Meaning.HeaderText = "Meaning";
+            this.Meaning.Name = "Meaning";
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            // 
+            // Bookmark
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.Bookmark.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Bookmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bookmark.HeaderText = "Bookmark";
+            this.Bookmark.Name = "Bookmark";
+            this.Bookmark.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Bookmark.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,10 +346,10 @@
         private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBoxFlagLeft;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Word;
         private System.Windows.Forms.DataGridViewTextBoxColumn Meaning;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewButtonColumn Remove;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.DataGridViewButtonColumn Bookmark;
     }
 }
