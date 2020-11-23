@@ -150,10 +150,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Bunifu_UI_v1.52.dll" />
     <Content Include="bin\Debug\data.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="bin\Debug\maindata.xml" />
+    <None Include="Resources\statistics.png" />
     <None Include="Resources\calendar.png" />
     <None Include="Resources\date.png" />
     <None Include="Resources\cubes.png" />
