@@ -12,14 +12,17 @@ using System.Windows.Forms;
 using Bunifu.Framework.UI;
 using FontAwesome.Sharp;
 using System.Speech.Synthesis;
+using System.Data;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 //////
 namespace Dictionary_user
 {
     public partial class MainForm : Form
     {
-        
+
         #region Declaration 
-        
+
         public DictionaryManager myDictionary;
         private IconButton currentBtn; // Button đang được chọn hiện tại
         private Panel leftBorderBtn; // Panel chứa các chức năng chính
@@ -40,12 +43,12 @@ namespace Dictionary_user
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.FromArgb(255, 244, 79);
         }
-        
+
 
         #endregion
 
         #region Menu and Titlebar
-  
+
         private void displaySearch() // Hiển thị chức năng tìm kiếm
         {
             textboxSearch.Visible = true;
@@ -58,9 +61,9 @@ namespace Dictionary_user
         }
         private void displaySwitch() // Hiển thị chức năng chuyển ngôn ngữ
         {
-             buttonSwitch.Visible = true;
-             pictureBoxFlagLeft.Visible = true;
-             pictureBoxFlagRight.Visible = true;
+            buttonSwitch.Visible = true;
+            pictureBoxFlagLeft.Visible = true;
+            pictureBoxFlagRight.Visible = true;
         }
         private void hideSwitch() // Ẩn chức năng chuyển ngôn ngữ
         {
@@ -101,13 +104,37 @@ namespace Dictionary_user
             }
         }
         private void activateSearchButton() // Kích hoạt searchButton
-        {  
-                typedWord.Visible = true;
-                typedWord.Text = textboxSearch.Text;
-                labelResult.Visible = true;
-                btnPlay.Visible = true;
-                bookmarkButton.Visible = true;
-                wordMeaning.Visible = true;
+        {
+            typedWord.Visible = true;
+            typedWord.Text = textboxSearch.Text;
+            labelResult.Visible = true;
+            btnPlay.Visible = true;
+            bookmarkButton.Visible = true;
+            wordMeaning.Visible = true;
+            string MyConnectionString = "Server=localhost;Database=sql_invoicing;Uid=root;Pwd=phUcke,.,2411;";
+            MySqlConnection connection = new MySqlConnection(MyConnectionString);
+            connection.Open();
+            try
+            {
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = " SELECT VieMeaning from mytable where English = "+"\""+textboxSearch.Text.ToString()+"\"";
+                MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
+                DataSet data = new DataSet();
+                adap.Fill(data);
+                string meaning = data.Tables[0].Rows[0]["VieMeaning"].ToString();
+                wordMeaning.Text = meaning;
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection.State==ConnectionState.Open)
+                {
+                    connection.Clone();
+                }
+            }
         }
         private void activateSwitchButton() // Kích hoạt switchButton 
         {
@@ -196,7 +223,7 @@ namespace Dictionary_user
                 ktSwitch = true;
             else ktSwitch = false;
             activateSwitchButton();
-        } 
+        }
 
         private void iconButton1_Click(object sender, EventArgs e) // Khi click vào translateButton
         {
@@ -403,7 +430,7 @@ namespace Dictionary_user
             activateSearchButton();
         }
 
-    
+
         #endregion History
 
         #region Bookmark
@@ -472,7 +499,7 @@ namespace Dictionary_user
             activateSearchButton();
         }
 
-        
+
         #endregion Bookmark
 
         #endregion Suggestion, History, Bookmark
@@ -510,16 +537,12 @@ namespace Dictionary_user
                 ktBookmark = false;
                 bookmarkButton.IconColor = Color.Gainsboro;
             }
-            
-    }
+
+        }
 
 
         #endregion Search_Result
 
-        private void panelResult_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
 
