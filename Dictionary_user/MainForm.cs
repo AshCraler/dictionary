@@ -49,6 +49,7 @@ namespace Dictionary_user
 
         #region Menu and Titlebar
 
+       
         private void displaySearch() // Hiển thị chức năng tìm kiếm
         {
             textboxSearch.Visible = true;
@@ -111,30 +112,12 @@ namespace Dictionary_user
             btnPlay.Visible = true;
             bookmarkButton.Visible = true;
             wordMeaning.Visible = true;
-            string MyConnectionString = "Server=localhost;Database=sql_invoicing;Uid=root;Pwd=MyNewPass";
-            MySqlConnection connection = new MySqlConnection(MyConnectionString);
-            connection.Open();
-            try
-            {
-                MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = " SELECT VieMeaning from mytable where English = "+"\""+textboxSearch.Text.ToString()+"\"";
-                MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
-                DataSet data = new DataSet();
-                adap.Fill(data);
-                string meaning = data.Tables[0].Rows[0]["VieMeaning"].ToString();
-                wordMeaning.Text = meaning;
-            }
-            catch(Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                if (connection.State==ConnectionState.Open)
-                {
-                    connection.Clone();
-                }
-            }
+            string command= " SELECT VieMeaning from mytable where English = " + "\"" + textboxSearch.Text.ToString() + "\"";
+            Database.load(command);
+            if (Database.loadData.Tables[0].Rows.Count > 0)
+                wordMeaning.Text = Database.loadData.Tables[0].Rows[0]["VieMeaning"].ToString();
+            else
+                wordMeaning.Text = "This word meaning doesn't have in Database";
         }
         private void activateSwitchButton() // Kích hoạt switchButton 
         {
@@ -203,6 +186,25 @@ namespace Dictionary_user
             {
                 textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
             }
+            string command = "Use sql_invoicing; SELECT English from mytable where English like "+"'"+textboxSearch.Text+"%'";
+            Database.load(command);
+            int num = Database.loadData.Tables[0].Rows.Count;
+            if (num > 0)
+                labelHint1.Text = Database.loadData.Tables[0].Rows[0]["English"].ToString();
+            else 
+                labelHint1.Text = "";
+            if (num > 1)
+                labelHint2.Text = Database.loadData.Tables[0].Rows[1]["English"].ToString();
+            else labelHint2.Text = "";
+            if (num > 2)
+                labelHint3.Text = Database.loadData.Tables[0].Rows[2]["English"].ToString();
+            else
+                labelHint3.Text = "";
+            if (num > 3)
+                labelHint4.Text = Database.loadData.Tables[0].Rows[2]["English"].ToString();
+            else
+                labelHint4.Text = "";
+
         }
 
         private void buttonSearch_Click(object sender, EventArgs e) // Khi click vào searchButton
