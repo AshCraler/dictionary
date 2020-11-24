@@ -4,20 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace Dictionary_user
 {
     static class Database
     {
-        private static int now;
-        public static string connString = @"DESKTOP-I4FVPU0\E:\Data.sql;Database=Data;User Id=sa;Password=123456789;";
-        public static void connect()
+        public static DataSet loadData;
+        public static void load(string command)
         {
-            SqlConnection connection = new SqlConnection(connString);
+            string MyConnectionString = "Server=localhost;Database=sql_invoicing;Uid=root;Pwd=MyNewPass";
+            MySqlConnection connection = new MySqlConnection(MyConnectionString);
             connection.Open();
-            string sqlQuery = "SELECT * FROM Data WHERE English=";
-            SqlCommand command = new SqlCommand(sqlQuery, connection);
-            SqlDataReader reader = command.ExecuteReader();
-        }      
+            try
+            {
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = command;
+                MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
+                loadData = new DataSet();
+                adap.Fill(loadData);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Clone();
+                }
+            }
+        }
     }
 }

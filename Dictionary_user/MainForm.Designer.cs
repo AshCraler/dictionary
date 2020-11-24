@@ -81,6 +81,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelEnglish = new System.Windows.Forms.Label();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -716,6 +717,7 @@
             // panelResult
             // 
             this.panelResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.panelResult.Controls.Add(this.iconButton2);
             this.panelResult.Controls.Add(this.wordMeaning);
             this.panelResult.Controls.Add(this.bookmarkButton);
             this.panelResult.Controls.Add(this.typedWord);
@@ -734,9 +736,9 @@
             this.wordMeaning.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordMeaning.Location = new System.Drawing.Point(24, 120);
             this.wordMeaning.Name = "wordMeaning";
-            this.wordMeaning.Size = new System.Drawing.Size(133, 23);
+            this.wordMeaning.Size = new System.Drawing.Size(394, 23);
             this.wordMeaning.TabIndex = 36;
-            this.wordMeaning.Text = "Word meaning";
+            this.wordMeaning.Text = "This word meaning doesn\'t have in Database";
             this.wordMeaning.Visible = false;
             // 
             // bookmarkButton
@@ -845,6 +847,23 @@
             this.labelEnglish.TabIndex = 11;
             this.labelEnglish.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // iconButton2
+            // 
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
+            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 35;
+            this.iconButton2.Location = new System.Drawing.Point(625, 120);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Rotation = 0D;
+            this.iconButton2.Size = new System.Drawing.Size(43, 33);
+            this.iconButton2.TabIndex = 37;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -945,6 +964,7 @@
         private System.Windows.Forms.Panel panelSuggestion;
         private FontAwesome.Sharp.IconButton bookmarkButton;
         private System.Windows.Forms.Label wordMeaning;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }
 
