@@ -16,37 +16,10 @@ namespace Dictionary_user
         {
             InitializeComponent();
         }
-
-        private void Search_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void History_Shown(object sender, EventArgs e)
         {
-            bunifuCustomDataGrid1.Rows.Add(
-                new object[]
-                {
-                    "word1",
-                    "meaning",
-                    "22/11/2020"
-                }
-                );
+           Database.load("SELECT Anh,Viet,English,VieMeaning from mytable");
+           bunifuCustomDataGrid1.DataSource = Database.loadData.Tables[0];
         }
     }
 }
