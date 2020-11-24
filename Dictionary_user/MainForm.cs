@@ -111,7 +111,7 @@ namespace Dictionary_user
             btnPlay.Visible = true;
             bookmarkButton.Visible = true;
             wordMeaning.Visible = true;
-            string MyConnectionString = "Server=localhost;Database=sql_invoicing;Uid=root;Pwd=phUcke,.,2411;";
+            string MyConnectionString = "Server=localhost;Database=sql_invoicing;Uid=root;Pwd=MyNewPass";
             MySqlConnection connection = new MySqlConnection(MyConnectionString);
             connection.Open();
             try

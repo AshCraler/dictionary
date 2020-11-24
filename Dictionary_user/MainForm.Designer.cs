@@ -732,7 +732,7 @@
             this.wordMeaning.AutoSize = true;
             this.wordMeaning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.wordMeaning.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wordMeaning.Location = new System.Drawing.Point(24, 124);
+            this.wordMeaning.Location = new System.Drawing.Point(24, 120);
             this.wordMeaning.Name = "wordMeaning";
             this.wordMeaning.Size = new System.Drawing.Size(133, 23);
             this.wordMeaning.TabIndex = 36;
@@ -748,7 +748,7 @@
             this.bookmarkButton.IconColor = System.Drawing.Color.Gainsboro;
             this.bookmarkButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.bookmarkButton.IconSize = 35;
-            this.bookmarkButton.Location = new System.Drawing.Point(628, 68);
+            this.bookmarkButton.Location = new System.Drawing.Point(625, 68);
             this.bookmarkButton.Name = "bookmarkButton";
             this.bookmarkButton.Rotation = 0D;
             this.bookmarkButton.Size = new System.Drawing.Size(43, 41);
@@ -761,10 +761,10 @@
             // 
             this.typedWord.AutoSize = true;
             this.typedWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.typedWord.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typedWord.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.typedWord.Location = new System.Drawing.Point(24, 75);
             this.typedWord.Name = "typedWord";
-            this.typedWord.Size = new System.Drawing.Size(114, 22);
+            this.typedWord.Size = new System.Drawing.Size(99, 23);
             this.typedWord.TabIndex = 30;
             this.typedWord.Text = "typedWord";
             this.typedWord.Visible = false;
