@@ -72,6 +72,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.labelBookmark2 = new System.Windows.Forms.Label();
             this.panelResult = new System.Windows.Forms.Panel();
+            this.btnPlay2 = new FontAwesome.Sharp.IconButton();
             this.wordMeaning = new System.Windows.Forms.Label();
             this.bookmarkButton = new FontAwesome.Sharp.IconButton();
             this.typedWord = new System.Windows.Forms.Label();
@@ -81,7 +82,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelEnglish = new System.Windows.Forms.Label();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -717,7 +717,7 @@
             // panelResult
             // 
             this.panelResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.panelResult.Controls.Add(this.iconButton2);
+            this.panelResult.Controls.Add(this.btnPlay2);
             this.panelResult.Controls.Add(this.wordMeaning);
             this.panelResult.Controls.Add(this.bookmarkButton);
             this.panelResult.Controls.Add(this.typedWord);
@@ -728,6 +728,24 @@
             this.panelResult.Name = "panelResult";
             this.panelResult.Size = new System.Drawing.Size(781, 433);
             this.panelResult.TabIndex = 33;
+            // 
+            // btnPlay2
+            // 
+            this.btnPlay2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlay2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnPlay2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.btnPlay2.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
+            this.btnPlay2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.btnPlay2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPlay2.IconSize = 35;
+            this.btnPlay2.Location = new System.Drawing.Point(625, 120);
+            this.btnPlay2.Name = "btnPlay2";
+            this.btnPlay2.Rotation = 0D;
+            this.btnPlay2.Size = new System.Drawing.Size(43, 33);
+            this.btnPlay2.TabIndex = 37;
+            this.btnPlay2.UseVisualStyleBackColor = true;
+            this.btnPlay2.Visible = false;
+            this.btnPlay2.Click += new System.EventHandler(this.btnPlay2_Click);
             // 
             // wordMeaning
             // 
@@ -847,23 +865,6 @@
             this.labelEnglish.TabIndex = 11;
             this.labelEnglish.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // iconButton2
-            // 
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 35;
-            this.iconButton2.Location = new System.Drawing.Point(625, 120);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Rotation = 0D;
-            this.iconButton2.Size = new System.Drawing.Size(43, 33);
-            this.iconButton2.TabIndex = 37;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Visible = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -964,7 +965,7 @@
         private System.Windows.Forms.Panel panelSuggestion;
         private FontAwesome.Sharp.IconButton bookmarkButton;
         private System.Windows.Forms.Label wordMeaning;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnPlay2;
     }
 }
 

@@ -11,6 +11,7 @@ namespace Dictionary_user
 {
     static class Database
     {
+        public static int nowForm;
         public static DataSet loadData;
         public static void load(string command)
         {
@@ -35,6 +36,31 @@ namespace Dictionary_user
                 {
                     connection.Clone();
                 }
+            }
+        }
+        public static void insertHistory(string word,string meaning,string date,string check)
+        {
+            string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
+
+            MySqlConnection connection = null;
+            try
+            {
+                connection = new MySqlConnection(connectionString);
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = "INSERT INTO historysearch(Word,Meaning,searchDate,Bookmark) VALUES(@Word,@Meaning,@searchDate,@Bookmark)";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@Word", word);
+                cmd.Parameters.AddWithValue("@Meaning", meaning);
+                cmd.Parameters.AddWithValue("@searchDate", date);
+                cmd.Parameters.AddWithValue("@Bookmark", check);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
             }
         }
     }
