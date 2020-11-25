@@ -91,5 +91,25 @@ namespace Dictionary_user
                     connection.Close();
             }
         }
+
+        public static void deleteBookmark(string command)
+        {
+            string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
+            MySqlConnection connection = null;
+            try
+            {
+                connection = new MySqlConnection(connectionString);
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = command;
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
+        }
     }
 }

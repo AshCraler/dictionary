@@ -620,14 +620,14 @@ namespace Dictionary_user
                 ktBookmark = true;
                 bookmarkButton.IconColor = RGBColors.color7;
                 Database.insertBookmark(textboxSearch.Text, wordMeaning.Text, hint, time);
-
             }
             else
             {
                 ktBookmark = false;
                 bookmarkButton.IconColor = Color.Gainsboro;
-            }
-            
+                command= "delete from bookmark where word ="+"'"+typedWord.Text+"'";
+                Database.deleteBookmark(command);
+            }        
         }
 
 
