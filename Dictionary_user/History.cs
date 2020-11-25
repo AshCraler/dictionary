@@ -15,11 +15,10 @@ namespace Dictionary_user
         public History()
         {
             InitializeComponent();
-        }
-        private void History_Shown(object sender, EventArgs e)
-        {
+            if (Database.acction=="showList")
+                Database.load("SELECT Word,Meaning,searchDate,Bookmark from historysearch ORDER BY id DESC");
             bunifuCustomDataGrid1.DefaultCellStyle.Format = "dd/MM/yyyy";
-            bunifuCustomDataGrid1.DataSource = Database.loadData.Tables[0];
+            bunifuCustomDataGrid1.DataSource = Database.loadData;
         }
     }
 }
