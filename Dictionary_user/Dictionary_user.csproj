@@ -61,10 +61,7 @@
     <Compile Include="Bookmark.Designer.cs">
       <DependentUpon>Bookmark.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomizeLinkLabel.cs" />
     <Compile Include="Database.cs" />
-    <Compile Include="DictionaryItem.cs" />
-    <Compile Include="DictionaryManager.cs" />
     <Compile Include="Feedback.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,12 +95,6 @@
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Speaker.cs" />
-    <Compile Include="Translate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Translate.Designer.cs">
-      <DependentUpon>Translate.cs</DependentUpon>
-    </Compile>
     <Compile Include="WordData.cs" />
     <EmbeddedResource Include="Bookmark.resx">
       <DependentUpon>Bookmark.cs</DependentUpon>
@@ -132,9 +123,6 @@
     </Compile>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Translate.resx">
-      <DependentUpon>Translate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

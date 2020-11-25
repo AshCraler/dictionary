@@ -23,7 +23,7 @@ namespace Dictionary_user
 
         #region Declaration 
 
-        public DictionaryManager myDictionary;
+  
         private IconButton currentBtn; // Button đang được chọn hiện tại
         private Panel leftBorderBtn; // Panel chứa các chức năng chính
         private Form currentChildForm; // Child form đang được mở hiện tại 
@@ -134,6 +134,10 @@ namespace Dictionary_user
                     wordMeaning.Text = Database.loadData.Tables[0].Rows[0][coloumn].ToString();
                 else
                     wordMeaning.Text = "This word meaning doesn't have in Database";
+                labelHistory4.Text = labelHistory3.Text;
+                labelHistory3.Text = labelHistory2.Text;
+                labelHistory2.Text = labelHistory1.Text;
+                labelHistory1.Text = typedWord.Text;
                 string date = DateTime.Now.ToString("yyyy.MM.dd");
                 Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "NO");
             }
@@ -193,10 +197,12 @@ namespace Dictionary_user
             panelMenu.Controls.Add(leftBorderBtn);
             activateMenuButton(iconButton1, RGBColors.color1);
             Database.nowForm = 1;
-            // Initialize Database
-            myDictionary = new DictionaryManager();
-            this.Controls.Add(myDictionary.VN);
-            this.Controls.Add(myDictionary.EN);
+            // History
+            Database.load("SELECT Word,Meaning,searchDate,Bookmark from historysearch ORDER BY id DESC");
+            labelHistory1.Text=Database.loadData.Tables[0].Rows[0]["Word"].ToString();
+            labelHistory2.Text= Database.loadData.Tables[0].Rows[1]["Word"].ToString();
+            labelHistory3.Text = Database.loadData.Tables[0].Rows[2]["Word"].ToString();
+            labelHistory4.Text = Database.loadData.Tables[0].Rows[3]["Word"].ToString();
         }
 
         protected override void OnLoad(EventArgs e)  //On Load
