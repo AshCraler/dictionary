@@ -220,19 +220,32 @@ namespace Dictionary_user
             int num = Database.loadData.Tables[0].Rows.Count;
             if (num > 0)
                 labelHint1.Text = Database.loadData.Tables[0].Rows[0][hint].ToString();
-            else 
+            else
+            {
                 labelHint1.Text = "";
+                labelHint2.Text = "";
+                labelHint4.Text = "";
+                labelHint3.Text = "";
+            }
             if (num > 1)
                 labelHint2.Text = Database.loadData.Tables[0].Rows[1][hint].ToString();
-            else labelHint2.Text = "";
-            if (num > 2)
-                labelHint3.Text = Database.loadData.Tables[0].Rows[2][hint].ToString();
             else
+            {
+                labelHint2.Text = "";
+                labelHint4.Text = "";
                 labelHint3.Text = "";
-            if (num > 3)
+            }
+            if (num > 2)
                 labelHint4.Text = Database.loadData.Tables[0].Rows[2][hint].ToString();
             else
+            {
                 labelHint4.Text = "";
+                labelHint3.Text = "";
+            }
+            if (num > 3)
+                labelHint3.Text = Database.loadData.Tables[0].Rows[3][hint].ToString();
+            else
+                labelHint3.Text = "";
 
         }
 
@@ -366,33 +379,33 @@ namespace Dictionary_user
 
         private void labelHint3_MouseHover(object sender, EventArgs e)
         {
-            labelHint3.ForeColor = RGBColors.color7;
+            labelHint4.ForeColor = RGBColors.color7;
         }
 
         private void labelHint3_MouseLeave(object sender, EventArgs e)
         {
-            labelHint3.ForeColor = System.Drawing.Color.Gainsboro;
+            labelHint4.ForeColor = System.Drawing.Color.Gainsboro;
         }
 
         private void labelHint3_Click(object sender, EventArgs e)
         {
-            textboxSearch.Text = labelHint3.Text;
+            textboxSearch.Text = labelHint4.Text;
             activateSearchButton();
         }
 
         private void labelHint4_MouseHover(object sender, EventArgs e)
         {
-            labelHint4.ForeColor = RGBColors.color7;
+            labelHint3.ForeColor = RGBColors.color7;
         }
 
         private void labelHint4_MouseLeave(object sender, EventArgs e)
         {
-            labelHint4.ForeColor = System.Drawing.Color.Gainsboro;
+            labelHint3.ForeColor = System.Drawing.Color.Gainsboro;
         }
 
         private void labelHint4_Click(object sender, EventArgs e)
         {
-            textboxSearch.Text = labelHint4.Text;
+            textboxSearch.Text = labelHint3.Text;
             activateSearchButton();
         }
 
