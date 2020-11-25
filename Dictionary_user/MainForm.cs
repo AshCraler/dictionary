@@ -106,20 +106,30 @@ namespace Dictionary_user
         }
         private void activateSearchButton() // Kích hoạt searchButton
         {
-            typedWord.Visible = true;
-            typedWord.Text = textboxSearch.Text;
-            labelResult.Visible = true;
-            btnPlay.Visible = true;
-            bookmarkButton.Visible = true;
-            wordMeaning.Visible = true;
-            string command= " SELECT VieMeaning from mytable where English = " + "\"" + textboxSearch.Text.ToString() + "\"";
-            Database.load(command);
-            if (Database.loadData.Tables[0].Rows.Count > 0)
-                wordMeaning.Text = Database.loadData.Tables[0].Rows[0]["VieMeaning"].ToString();
-            else
-                wordMeaning.Text = "This word meaning doesn't have in Database";
-            string date = DateTime.Now.ToString("yyyy.MM.dd");
-            Database.insertHistory(textboxSearch.Text,wordMeaning.Text,date,"NO");
+            string command;
+            if (Database.nowForm == 1)
+            {
+                typedWord.Visible = true;
+                typedWord.Text = textboxSearch.Text;
+                labelResult.Visible = true;
+                btnPlay.Visible = true;
+                bookmarkButton.Visible = true;
+                wordMeaning.Visible = true;
+                command = " SELECT VieMeaning from mytable where English = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                Database.load(command);
+                if (Database.loadData.Tables[0].Rows.Count > 0)
+                    wordMeaning.Text = Database.loadData.Tables[0].Rows[0]["VieMeaning"].ToString();
+                else
+                    wordMeaning.Text = "This word meaning doesn't have in Database";
+                string date = DateTime.Now.ToString("yyyy.MM.dd");
+                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "NO");
+            }
+            if (Database.nowForm==2)
+            {
+                command = "select word, meaning, searchDate,Bookmark from historysearch Where word = "+ "\""+textboxSearch.Text.ToString()+"\""+" or meaning = "+"\""+textboxSearch.Text.ToString()+"\"";
+                Database.load(command);
+                openChildForm(new History());
+            }
         }
         private void activateSwitchButton() // Kích hoạt switchButton 
         {
@@ -165,7 +175,7 @@ namespace Dictionary_user
             leftBorderBtn.Size = new Size(7, 34);
             panelMenu.Controls.Add(leftBorderBtn);
             activateMenuButton(iconButton1, RGBColors.color1);
-
+            Database.nowForm = 1;
             // Initialize Database
             myDictionary = new DictionaryManager();
             this.Controls.Add(myDictionary.VN);
@@ -243,6 +253,7 @@ namespace Dictionary_user
             textboxSearch.LineFocusedColor = RGBColors.color1;
             textboxSearch.LineMouseHoverColor = RGBColors.color1;
             buttonSearch.IconColor = RGBColors.color1;
+            Database.nowForm = 1;
         }
 
         private void btnHistory_Click(object sender, EventArgs e) // Khi click vào historyButton
@@ -251,11 +262,13 @@ namespace Dictionary_user
             openChildForm(new History());
             hideSwitch();
             displaySearch();
-            textboxSearch.HintText = "Search history";
+            textboxSearch.HintText = "Search your word history";
             textboxSearch.Text = textboxSearch.HintText;
             textboxSearch.LineFocusedColor = RGBColors.color3;
             textboxSearch.LineMouseHoverColor = RGBColors.color3;
             buttonSearch.IconColor = RGBColors.color3;
+            Database.nowForm = 2;
+            Database.load("SELECT Word,Meaning,searchDate,Bookmark from historysearch ORDER BY id DESC");
         }
 
         private void btn_Bookmark_Click(object sender, EventArgs e) // Khi click vào bookmarkButton
@@ -269,6 +282,7 @@ namespace Dictionary_user
             textboxSearch.LineFocusedColor = RGBColors.color2;
             textboxSearch.LineMouseHoverColor = RGBColors.color2;
             buttonSearch.IconColor = RGBColors.color2;
+            Database.nowForm = 3;
         }
 
         private void btnSettings_Click(object sender, EventArgs e) // Khi click vào settingsButton

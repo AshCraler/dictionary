@@ -19,7 +19,6 @@ namespace Dictionary_user
         private void History_Shown(object sender, EventArgs e)
         {
             bunifuCustomDataGrid1.DefaultCellStyle.Format = "dd/MM/yyyy";
-            Database.load("SELECT Word,Meaning,searchDate,Bookmark from historysearch ORDER BY id DESC");
             bunifuCustomDataGrid1.DataSource = Database.loadData.Tables[0];
         }
     }

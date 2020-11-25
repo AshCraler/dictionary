@@ -72,6 +72,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.labelBookmark2 = new System.Windows.Forms.Label();
             this.panelResult = new System.Windows.Forms.Panel();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.wordMeaning = new System.Windows.Forms.Label();
             this.bookmarkButton = new FontAwesome.Sharp.IconButton();
             this.typedWord = new System.Windows.Forms.Label();
@@ -81,7 +82,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelEnglish = new System.Windows.Forms.Label();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -729,6 +729,23 @@
             this.panelResult.Size = new System.Drawing.Size(781, 433);
             this.panelResult.TabIndex = 33;
             // 
+            // iconButton2
+            // 
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
+            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 35;
+            this.iconButton2.Location = new System.Drawing.Point(625, 120);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Rotation = 0D;
+            this.iconButton2.Size = new System.Drawing.Size(43, 33);
+            this.iconButton2.TabIndex = 37;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Visible = false;
+            // 
             // wordMeaning
             // 
             this.wordMeaning.AutoSize = true;
@@ -846,23 +863,6 @@
             this.labelEnglish.Size = new System.Drawing.Size(0, 13);
             this.labelEnglish.TabIndex = 11;
             this.labelEnglish.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 35;
-            this.iconButton2.Location = new System.Drawing.Point(625, 120);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Rotation = 0D;
-            this.iconButton2.Size = new System.Drawing.Size(43, 33);
-            this.iconButton2.TabIndex = 37;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Visible = false;
             // 
             // MainForm
             // 

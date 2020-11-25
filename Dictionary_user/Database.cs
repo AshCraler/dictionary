@@ -11,6 +11,7 @@ namespace Dictionary_user
 {
     static class Database
     {
+        public static int nowForm;
         public static DataSet loadData;
         public static void load(string command)
         {
