@@ -32,6 +32,8 @@ namespace Dictionary_user
         private string coloumn="VieMeaning";
         private string hint = "English";
         private string command = "";
+        public  string date = DateTime.Now.ToString("yyyy.MM.dd");
+        public string time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -138,8 +140,20 @@ namespace Dictionary_user
                 labelHistory3.Text = labelHistory2.Text;
                 labelHistory2.Text = labelHistory1.Text;
                 labelHistory1.Text = typedWord.Text;
-                string date = DateTime.Now.ToString("yyyy.MM.dd");
                 Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "NO");
+                //Bookmark
+                command = " SELECT meaning from bookmark where word = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                Database.load(command);
+                if (Database.loadData.Rows.Count > 0)
+                {
+                    ktBookmark = true;
+                    bookmarkButton.IconColor = RGBColors.color7;
+                }
+                else
+                {
+                    ktBookmark = false;
+                    bookmarkButton.IconColor = Color.Gainsboro;
+                }
             }
             if (Database.nowForm==2)
             {
@@ -605,19 +619,22 @@ namespace Dictionary_user
             {
                 ktBookmark = true;
                 bookmarkButton.IconColor = RGBColors.color7;
+                Database.insertBookmark(textboxSearch.Text, wordMeaning.Text, hint, time);
+
             }
             else
             {
                 ktBookmark = false;
                 bookmarkButton.IconColor = Color.Gainsboro;
             }
-
+            
         }
+
 
 
         #endregion Search_Result
 
-        
+       
     }
 }
 
