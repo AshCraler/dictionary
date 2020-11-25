@@ -475,9 +475,9 @@
             this.labelHint3.Size = new System.Drawing.Size(131, 22);
             this.labelHint3.TabIndex = 20;
             this.labelHint3.Text = "collaboration";
-            this.labelHint3.Click += new System.EventHandler(this.labelHint3_Click);
-            this.labelHint3.MouseLeave += new System.EventHandler(this.labelHint3_MouseLeave);
-            this.labelHint3.MouseHover += new System.EventHandler(this.labelHint3_MouseHover);
+            this.labelHint3.Click += new System.EventHandler(this.labelHint4_Click);
+            this.labelHint3.MouseLeave += new System.EventHandler(this.labelHint4_MouseLeave);
+            this.labelHint3.MouseHover += new System.EventHandler(this.labelHint4_MouseHover);
             // 
             // labelHint4
             // 
@@ -489,9 +489,9 @@
             this.labelHint4.Size = new System.Drawing.Size(77, 22);
             this.labelHint4.TabIndex = 21;
             this.labelHint4.Text = "despair";
-            this.labelHint4.Click += new System.EventHandler(this.labelHint4_Click);
-            this.labelHint4.MouseLeave += new System.EventHandler(this.labelHint4_MouseLeave);
-            this.labelHint4.MouseHover += new System.EventHandler(this.labelHint4_MouseHover);
+            this.labelHint4.Click += new System.EventHandler(this.labelHint3_Click);
+            this.labelHint4.MouseLeave += new System.EventHandler(this.labelHint3_MouseLeave);
+            this.labelHint4.MouseHover += new System.EventHandler(this.labelHint3_MouseHover);
             // 
             // pictureBox1
             // 

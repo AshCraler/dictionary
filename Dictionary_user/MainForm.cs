@@ -23,7 +23,7 @@ namespace Dictionary_user
 
         #region Declaration 
 
-        public DictionaryManager myDictionary;
+  
         private IconButton currentBtn; // Button đang được chọn hiện tại
         private Panel leftBorderBtn; // Panel chứa các chức năng chính
         private Form currentChildForm; // Child form đang được mở hiện tại 
@@ -134,6 +134,10 @@ namespace Dictionary_user
                     wordMeaning.Text = Database.loadData.Tables[0].Rows[0][coloumn].ToString();
                 else
                     wordMeaning.Text = "This word meaning doesn't have in Database";
+                labelHistory4.Text = labelHistory3.Text;
+                labelHistory3.Text = labelHistory2.Text;
+                labelHistory2.Text = labelHistory1.Text;
+                labelHistory1.Text = typedWord.Text;
                 string date = DateTime.Now.ToString("yyyy.MM.dd");
                 Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "NO");
             }
@@ -193,10 +197,12 @@ namespace Dictionary_user
             panelMenu.Controls.Add(leftBorderBtn);
             activateMenuButton(iconButton1, RGBColors.color1);
             Database.nowForm = 1;
-            // Initialize Database
-            myDictionary = new DictionaryManager();
-            this.Controls.Add(myDictionary.VN);
-            this.Controls.Add(myDictionary.EN);
+            // History
+            Database.load("SELECT Word,Meaning,searchDate,Bookmark from historysearch ORDER BY id DESC");
+            labelHistory1.Text=Database.loadData.Tables[0].Rows[0]["Word"].ToString();
+            labelHistory2.Text= Database.loadData.Tables[0].Rows[1]["Word"].ToString();
+            labelHistory3.Text = Database.loadData.Tables[0].Rows[2]["Word"].ToString();
+            labelHistory4.Text = Database.loadData.Tables[0].Rows[3]["Word"].ToString();
         }
 
         protected override void OnLoad(EventArgs e)  //On Load
@@ -220,19 +226,32 @@ namespace Dictionary_user
             int num = Database.loadData.Tables[0].Rows.Count;
             if (num > 0)
                 labelHint1.Text = Database.loadData.Tables[0].Rows[0][hint].ToString();
-            else 
+            else
+            {
                 labelHint1.Text = "";
+                labelHint2.Text = "";
+                labelHint4.Text = "";
+                labelHint3.Text = "";
+            }
             if (num > 1)
                 labelHint2.Text = Database.loadData.Tables[0].Rows[1][hint].ToString();
-            else labelHint2.Text = "";
-            if (num > 2)
-                labelHint3.Text = Database.loadData.Tables[0].Rows[2][hint].ToString();
             else
+            {
+                labelHint2.Text = "";
+                labelHint4.Text = "";
                 labelHint3.Text = "";
-            if (num > 3)
+            }
+            if (num > 2)
                 labelHint4.Text = Database.loadData.Tables[0].Rows[2][hint].ToString();
             else
+            {
                 labelHint4.Text = "";
+                labelHint3.Text = "";
+            }
+            if (num > 3)
+                labelHint3.Text = Database.loadData.Tables[0].Rows[3][hint].ToString();
+            else
+                labelHint3.Text = "";
 
         }
 
@@ -366,33 +385,33 @@ namespace Dictionary_user
 
         private void labelHint3_MouseHover(object sender, EventArgs e)
         {
-            labelHint3.ForeColor = RGBColors.color7;
+            labelHint4.ForeColor = RGBColors.color7;
         }
 
         private void labelHint3_MouseLeave(object sender, EventArgs e)
         {
-            labelHint3.ForeColor = System.Drawing.Color.Gainsboro;
+            labelHint4.ForeColor = System.Drawing.Color.Gainsboro;
         }
 
         private void labelHint3_Click(object sender, EventArgs e)
         {
-            textboxSearch.Text = labelHint3.Text;
+            textboxSearch.Text = labelHint4.Text;
             activateSearchButton();
         }
 
         private void labelHint4_MouseHover(object sender, EventArgs e)
         {
-            labelHint4.ForeColor = RGBColors.color7;
+            labelHint3.ForeColor = RGBColors.color7;
         }
 
         private void labelHint4_MouseLeave(object sender, EventArgs e)
         {
-            labelHint4.ForeColor = System.Drawing.Color.Gainsboro;
+            labelHint3.ForeColor = System.Drawing.Color.Gainsboro;
         }
 
         private void labelHint4_Click(object sender, EventArgs e)
         {
-            textboxSearch.Text = labelHint4.Text;
+            textboxSearch.Text = labelHint3.Text;
             activateSearchButton();
         }
 
