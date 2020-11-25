@@ -18,8 +18,9 @@ namespace Dictionary_user
         }
         private void History_Shown(object sender, EventArgs e)
         {
-           Database.load("SELECT Anh,Viet,English,VieMeaning from mytable");
-           bunifuCustomDataGrid1.DataSource = Database.loadData.Tables[0];
+            bunifuCustomDataGrid1.DefaultCellStyle.Format = "dd/MM/yyyy";
+            Database.load("SELECT Word,Meaning,searchDate,Bookmark from historysearch ORDER BY id DESC");
+            bunifuCustomDataGrid1.DataSource = Database.loadData.Tables[0];
         }
     }
 }

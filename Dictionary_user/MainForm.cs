@@ -118,6 +118,8 @@ namespace Dictionary_user
                 wordMeaning.Text = Database.loadData.Tables[0].Rows[0]["VieMeaning"].ToString();
             else
                 wordMeaning.Text = "This word meaning doesn't have in Database";
+            string date = DateTime.Now.ToString("yyyy.MM.dd");
+            Database.insertHistory(textboxSearch.Text,wordMeaning.Text,date,"NO");
         }
         private void activateSwitchButton() // Kích hoạt switchButton 
         {
