@@ -29,6 +29,9 @@ namespace Dictionary_user
         private Form currentChildForm; // Child form đang được mở hiện tại 
         private bool ktSwitch = false; // Kiểm tra chế độ Anh Việt hay Việt Anh
         private bool ktBookmark = false; // Kiểm tra bookmark hay chưa
+        private string coloumn="VieMeaning";
+        private string hint = "English";
+        private string command = "";
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -106,19 +109,29 @@ namespace Dictionary_user
         }
         private void activateSearchButton() // Kích hoạt searchButton
         {
-            string command;
+            
             if (Database.nowForm == 1)
             {
+                if (textboxSearch.HintText == "Search English")
+                {
+                    command = " SELECT VieMeaning from mytable where English = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                    btnPlay.Visible = true;
+                    btnPlay2.Visible = false;
+                }
+                if (textboxSearch.HintText == "Search VietNamese")
+                {
+                    command = " SELECT English from mytable where VieMeaning = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                    btnPlay2.Visible = true;
+                    btnPlay.Visible = false;
+                }      
                 typedWord.Visible = true;
                 typedWord.Text = textboxSearch.Text;
                 labelResult.Visible = true;
-                btnPlay.Visible = true;
                 bookmarkButton.Visible = true;
                 wordMeaning.Visible = true;
-                command = " SELECT VieMeaning from mytable where English = " + "\"" + textboxSearch.Text.ToString() + "\"";
                 Database.load(command);
                 if (Database.loadData.Tables[0].Rows.Count > 0)
-                    wordMeaning.Text = Database.loadData.Tables[0].Rows[0]["VieMeaning"].ToString();
+                    wordMeaning.Text = Database.loadData.Tables[0].Rows[0][coloumn].ToString();
                 else
                     wordMeaning.Text = "This word meaning doesn't have in Database";
                 string date = DateTime.Now.ToString("yyyy.MM.dd");
@@ -135,17 +148,21 @@ namespace Dictionary_user
         {
             if (ktSwitch == true)
             {
-                pictureBoxFlagLeft.Image = Dictionary_user.Properties.Resources.vietnam;
-                pictureBoxFlagRight.Image = Dictionary_user.Properties.Resources.united_kingdom;
+                pictureBoxFlagLeft.Image = Properties.Resources.vietnam;
+                pictureBoxFlagRight.Image = Properties.Resources.united_kingdom;
                 textboxSearch.HintText = "Search VietNamese";
                 textboxSearch.Text = "Search VietNamese";
+                coloumn = "English";
+                hint = "VieMeaning";
             }
             else
             {
-                pictureBoxFlagLeft.Image = Dictionary_user.Properties.Resources.united_kingdom;
-                pictureBoxFlagRight.Image = Dictionary_user.Properties.Resources.vietnam;
+                pictureBoxFlagLeft.Image = Properties.Resources.united_kingdom;
+                pictureBoxFlagRight.Image = Properties.Resources.vietnam;
                 textboxSearch.HintText = "Search English";
                 textboxSearch.Text = "Search English";
+                coloumn = "VieMeaning";
+                hint = "English";
             }
         }
         private void openChildForm(Form childForm) // Mở childForm mới
@@ -198,22 +215,22 @@ namespace Dictionary_user
             {
                 textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
             }
-            string command = "Use sql_invoicing; SELECT English from mytable where English like "+"'"+textboxSearch.Text+"%'";
+            command = "Use sql_invoicing; SELECT "+hint+" from mytable where "+ hint +" like "+"'"+textboxSearch.Text+"%'";
             Database.load(command);
             int num = Database.loadData.Tables[0].Rows.Count;
             if (num > 0)
-                labelHint1.Text = Database.loadData.Tables[0].Rows[0]["English"].ToString();
+                labelHint1.Text = Database.loadData.Tables[0].Rows[0][hint].ToString();
             else 
                 labelHint1.Text = "";
             if (num > 1)
-                labelHint2.Text = Database.loadData.Tables[0].Rows[1]["English"].ToString();
+                labelHint2.Text = Database.loadData.Tables[0].Rows[1][hint].ToString();
             else labelHint2.Text = "";
             if (num > 2)
-                labelHint3.Text = Database.loadData.Tables[0].Rows[2]["English"].ToString();
+                labelHint3.Text = Database.loadData.Tables[0].Rows[2][hint].ToString();
             else
                 labelHint3.Text = "";
             if (num > 3)
-                labelHint4.Text = Database.loadData.Tables[0].Rows[2]["English"].ToString();
+                labelHint4.Text = Database.loadData.Tables[0].Rows[2][hint].ToString();
             else
                 labelHint4.Text = "";
 
@@ -539,7 +556,26 @@ namespace Dictionary_user
                 synth.SetOutputToDefaultAudioDevice();
 
                 // Speak a string.  
-                synth.Speak(textboxSearch.Text);
+                synth.Speak(typedWord.Text);
+            }
+        }
+
+        private void btnPlay2_Click(object sender, EventArgs e)
+        {
+            if (textboxSearch.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
+            }
+            else
+            {
+                // Initialize a new instance of the SpeechSynthesizer.  
+                SpeechSynthesizer synth = new SpeechSynthesizer();
+
+                // Configure the audio output.   
+                synth.SetOutputToDefaultAudioDevice();
+
+                // Speak a string.  
+                synth.Speak(wordMeaning.Text);
             }
         }
 
@@ -561,6 +597,7 @@ namespace Dictionary_user
 
         #endregion Search_Result
 
+        
     }
 }
 
