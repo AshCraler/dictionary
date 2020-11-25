@@ -12,30 +12,30 @@ namespace Dictionary_user
     static class Database
     {
         public static int nowForm;
-        public static DataSet loadData;
+        public static string acction;
+        public static DataTable loadData;
         public static void load(string command)
         {
-            string MyConnectionString = "Server=localhost;Database=sql_invoicing;Uid=root;Pwd=MyNewPass";
-            MySqlConnection connection = new MySqlConnection(MyConnectionString);
-            connection.Open();
+            string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
+
+            MySqlConnection connection = null;
+            MySqlDataReader reader = null;
             try
             {
-                MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = command;
-                MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
-                loadData = new DataSet();
-                adap.Fill(loadData);
-            }
-            catch (Exception)
-            {
-                throw;
+                connection = new MySqlConnection(connectionString);
+                connection.Open();
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+                dataAdapter.SelectCommand = new MySqlCommand(command, connection);
+                DataTable Data = new DataTable();
+                loadData = Data;
+                dataAdapter.Fill(loadData);
             }
             finally
             {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Clone();
-                }
+                if (reader != null)
+                    reader.Close();
+                if (connection != null)
+                    connection.Close();
             }
         }
         public static void insertHistory(string word,string meaning,string date,string check)
@@ -49,8 +49,9 @@ namespace Dictionary_user
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = connection;
-                cmd.CommandText = "INSERT INTO historysearch(Word,Meaning,searchDate,Bookmark) VALUES(@Word,@Meaning,@searchDate,@Bookmark)";
+                cmd.CommandText = "INSERT INTO historysearch(id,Word,Meaning,searchDate,Bookmark) VALUES(@id,@Word,@Meaning,@searchDate,@Bookmark);";
                 cmd.Prepare();
+                cmd.Parameters.AddWithValue("@id", 0);
                 cmd.Parameters.AddWithValue("@Word", word);
                 cmd.Parameters.AddWithValue("@Meaning", meaning);
                 cmd.Parameters.AddWithValue("@searchDate", date);

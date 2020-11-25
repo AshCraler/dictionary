@@ -130,8 +130,8 @@ namespace Dictionary_user
                 bookmarkButton.Visible = true;
                 wordMeaning.Visible = true;
                 Database.load(command);
-                if (Database.loadData.Tables[0].Rows.Count > 0)
-                    wordMeaning.Text = Database.loadData.Tables[0].Rows[0][coloumn].ToString();
+                if (Database.loadData.Rows.Count > 0)
+                    wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
                 else
                     wordMeaning.Text = "This word meaning doesn't have in Database";
                 labelHistory4.Text = labelHistory3.Text;
@@ -145,6 +145,7 @@ namespace Dictionary_user
             {
                 command = "select word, meaning, searchDate,Bookmark from historysearch Where word = "+ "\""+textboxSearch.Text.ToString()+"\""+" or meaning = "+"\""+textboxSearch.Text.ToString()+"\"";
                 Database.load(command);
+                Database.acction = "search";
                 openChildForm(new History());
             }
         }
@@ -199,10 +200,10 @@ namespace Dictionary_user
             Database.nowForm = 1;
             // History
             Database.load("SELECT Word,Meaning,searchDate,Bookmark from historysearch ORDER BY id DESC");
-            labelHistory1.Text=Database.loadData.Tables[0].Rows[0]["Word"].ToString();
-            labelHistory2.Text= Database.loadData.Tables[0].Rows[1]["Word"].ToString();
-            labelHistory3.Text = Database.loadData.Tables[0].Rows[2]["Word"].ToString();
-            labelHistory4.Text = Database.loadData.Tables[0].Rows[3]["Word"].ToString();
+            labelHistory1.Text=Database.loadData.Rows[0]["Word"].ToString();
+            labelHistory2.Text= Database.loadData.Rows[1]["Word"].ToString();
+            labelHistory3.Text = Database.loadData.Rows[2]["Word"].ToString();
+            labelHistory4.Text = Database.loadData.Rows[3]["Word"].ToString();
         }
 
         protected override void OnLoad(EventArgs e)  //On Load
@@ -223,9 +224,9 @@ namespace Dictionary_user
             }
             command = "Use sql_invoicing; SELECT "+hint+" from mytable where "+ hint +" like "+"'"+textboxSearch.Text+"%'";
             Database.load(command);
-            int num = Database.loadData.Tables[0].Rows.Count;
+            int num = Database.loadData.Rows.Count;
             if (num > 0)
-                labelHint1.Text = Database.loadData.Tables[0].Rows[0][hint].ToString();
+                labelHint1.Text = Database.loadData.Rows[0][hint].ToString();
             else
             {
                 labelHint1.Text = "";
@@ -234,7 +235,7 @@ namespace Dictionary_user
                 labelHint3.Text = "";
             }
             if (num > 1)
-                labelHint2.Text = Database.loadData.Tables[0].Rows[1][hint].ToString();
+                labelHint2.Text = Database.loadData.Rows[1][hint].ToString();
             else
             {
                 labelHint2.Text = "";
@@ -242,14 +243,14 @@ namespace Dictionary_user
                 labelHint3.Text = "";
             }
             if (num > 2)
-                labelHint4.Text = Database.loadData.Tables[0].Rows[2][hint].ToString();
+                labelHint4.Text = Database.loadData.Rows[2][hint].ToString();
             else
             {
                 labelHint4.Text = "";
                 labelHint3.Text = "";
             }
             if (num > 3)
-                labelHint3.Text = Database.loadData.Tables[0].Rows[3][hint].ToString();
+                labelHint3.Text = Database.loadData.Rows[3][hint].ToString();
             else
                 labelHint3.Text = "";
 
@@ -294,8 +295,6 @@ namespace Dictionary_user
 
         private void btnHistory_Click(object sender, EventArgs e) // Khi click vào historyButton
         {
-            activateMenuButton(sender, RGBColors.color3);
-            openChildForm(new History());
             hideSwitch();
             displaySearch();
             textboxSearch.HintText = "Search your word history";
@@ -304,7 +303,9 @@ namespace Dictionary_user
             textboxSearch.LineMouseHoverColor = RGBColors.color3;
             buttonSearch.IconColor = RGBColors.color3;
             Database.nowForm = 2;
-            Database.load("SELECT Word,Meaning,searchDate,Bookmark from historysearch ORDER BY id DESC");
+            Database.acction = "showList";
+            activateMenuButton(sender, RGBColors.color3);
+            openChildForm(new History());
         }
 
         private void btn_Bookmark_Click(object sender, EventArgs e) // Khi click vào bookmarkButton
