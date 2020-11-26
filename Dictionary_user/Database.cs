@@ -91,7 +91,6 @@ namespace Dictionary_user
                     connection.Close();
             }
         }
-
         public static void deleteBookmark(string command)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";

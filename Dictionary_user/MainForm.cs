@@ -392,15 +392,13 @@ namespace Dictionary_user
             textboxSearch.LineMouseHoverColor = RGBColors.color3;
             buttonSearch.IconColor = RGBColors.color3;
             Database.nowForm = 2;
-            Database.acction = "showList";
+            Database.acction = "showHistoryList";
             activateMenuButton(sender, RGBColors.color3);
             openChildForm(new History());
         }
 
         private void btn_Bookmark_Click(object sender, EventArgs e) // Khi click vào bookmarkButton
         {
-            activateMenuButton(sender, RGBColors.color2);
-            openChildForm(new Bookmark());
             hideSwitch();
             displaySearch();
             textboxSearch.HintText = "Search bookmark";
@@ -409,6 +407,9 @@ namespace Dictionary_user
             textboxSearch.LineMouseHoverColor = RGBColors.color2;
             buttonSearch.IconColor = RGBColors.color2;
             Database.nowForm = 3;
+            Database.acction = "showBookmarkList";
+            activateMenuButton(sender, RGBColors.color2);
+            openChildForm(new Bookmark());
         }
 
         private void btnSettings_Click(object sender, EventArgs e) // Khi click vào settingsButton
