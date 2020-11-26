@@ -14,6 +14,7 @@ namespace Dictionary_user
         public static int nowForm;
         public static string acction;
         public static DataTable loadData;
+        
         public static void load(string command)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
@@ -56,6 +57,52 @@ namespace Dictionary_user
                 cmd.Parameters.AddWithValue("@Meaning", meaning);
                 cmd.Parameters.AddWithValue("@searchDate", date);
                 cmd.Parameters.AddWithValue("@Bookmark", check);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
+        }
+        public static void insertBookmark(string word, string meaning, string languages, string savedtime)
+        {
+            string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
+
+            MySqlConnection connection = null;
+            try
+            {
+                connection = new MySqlConnection(connectionString);
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = "INSERT INTO bookmark(id,Word,Meaning,languages,savedtime) VALUES(@id,@Word,@Meaning,@languages,@savedtime);";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@id", 0);
+                cmd.Parameters.AddWithValue("@word", word);
+                cmd.Parameters.AddWithValue("@meaning", meaning);
+                cmd.Parameters.AddWithValue("@languages", languages);
+                cmd.Parameters.AddWithValue("@savedtime", savedtime);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
+        }
+
+        public static void deleteBookmark(string command)
+        {
+            string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
+            MySqlConnection connection = null;
+            try
+            {
+                connection = new MySqlConnection(connectionString);
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = command;
                 cmd.ExecuteNonQuery();
             }
             finally
