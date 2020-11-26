@@ -22,5 +22,16 @@ namespace Dictionary_user.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-MFH0KDH\\SQLEXPRESS;Initial Catalog=DictionaryDB;Integrated Se" +
+            "curity=True")]
+        public string DictionaryDBConnectionString {
+            get {
+                return ((string)(this["DictionaryDBConnectionString"]));
+            }
+        }
     }
 }
