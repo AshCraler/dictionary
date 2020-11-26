@@ -39,7 +39,7 @@ namespace Dictionary_user
                     connection.Close();
             }
         }
-        public static void insertHistory(string word,string meaning,string date,string check)
+        public static void insertHistory(string word,string meaning,string date,string check,string translate)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
 
@@ -50,19 +50,47 @@ namespace Dictionary_user
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = connection;
-                cmd.CommandText = "INSERT INTO historysearch(id,Word,Meaning,searchDate,Bookmark) VALUES(@id,@Word,@Meaning,@searchDate,@Bookmark);";
+                cmd.CommandText = "INSERT INTO historysearch(id,Word,Meaning,TimeSearch,Bookmark,Translate) VALUES(@id,@Word,@Meaning,@TimeSearch,@Bookmark,@Translate);";
                 cmd.Prepare();
                 cmd.Parameters.AddWithValue("@id", 0);
                 cmd.Parameters.AddWithValue("@Word", word);
                 cmd.Parameters.AddWithValue("@Meaning", meaning);
-                cmd.Parameters.AddWithValue("@searchDate", date);
+                cmd.Parameters.AddWithValue("@TimeSearch", date);
                 cmd.Parameters.AddWithValue("@Bookmark", check);
+                cmd.Parameters.AddWithValue("@Translate", translate);
                 cmd.ExecuteNonQuery();
             }
             finally
             {
                 if (connection != null)
                     connection.Close();
+            }
+        }
+        public static void updateHistory(string command)
+        {
+            string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
+            MySqlConnection conn = null;
+            MySqlTransaction tr = null;
+            try
+            {
+                conn = new MySqlConnection(connectionString);
+                conn.Open();
+                tr = conn.BeginTransaction();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.Transaction = tr;
+                cmd.CommandText = command;
+                cmd.ExecuteNonQuery();
+                tr.Commit();
+            }
+            catch (MySqlException ex )
+            {
+                tr.Rollback();
+            }
+            finally
+            {
+                if (conn != null)
+                    conn.Close();
             }
         }
         public static void insertBookmark(string word, string meaning, string languages, string savedtime)

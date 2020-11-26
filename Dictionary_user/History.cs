@@ -16,7 +16,7 @@ namespace Dictionary_user
         {
             InitializeComponent();
             if (Database.acction=="showHistoryList")
-                Database.load("SELECT Word,Meaning,searchDate,Bookmark from historysearch ORDER BY id DESC");
+                Database.load("SELECT Word,Meaning,Translate,TimeSearch AS Date ,Bookmark from historysearch ORDER BY id DESC");
             bunifuCustomDataGrid1.DefaultCellStyle.Format = "dd/MM/yyyy";
             bunifuCustomDataGrid1.DataSource = Database.loadData;
         }

@@ -772,9 +772,9 @@
             this.typedWord.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.typedWord.Location = new System.Drawing.Point(24, 75);
             this.typedWord.Name = "typedWord";
-            this.typedWord.Size = new System.Drawing.Size(99, 23);
+            this.typedWord.Size = new System.Drawing.Size(133, 23);
             this.typedWord.TabIndex = 30;
-            this.typedWord.Text = "typedWord";
+            this.typedWord.Text = "Search English";
             this.typedWord.Visible = false;
             // 
             // pictureBoxResult

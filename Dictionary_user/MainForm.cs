@@ -126,27 +126,34 @@ namespace Dictionary_user
                 if (textboxSearch.HintText == "Search English")
                 {
                     command = " SELECT VieMeaning from mytable where English = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                    Database.load(command);
+                    typedWord.Text = textboxSearch.Text;
+                    if (Database.loadData.Rows.Count > 0)
+                        wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
+                    else
+                        wordMeaning.Text = "This word meaning doesn't have in Database";
+                    Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Eng-Vie");
                     btnPlay.Visible = true;
                     btnPlay2.Visible = false;
                 }
                 if (textboxSearch.HintText == "Search VietNamese")
                 {
                     command = " SELECT English from mytable where VieMeaning = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                    Database.load(command);
+                    typedWord.Text = textboxSearch.Text;
+                    if (Database.loadData.Rows.Count > 0)
+                        wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
+                    else
+                        wordMeaning.Text = "This word meaning doesn't have in Database";
+                    Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Vie-Eng");
                     btnPlay2.Visible = true;
                     btnPlay.Visible = false;
                 }      
-                typedWord.Text = textboxSearch.Text;
-                Database.load(command);
-                if (Database.loadData.Rows.Count > 0)
-                    wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
-                else
-                    wordMeaning.Text = "This word meaning doesn't have in Database";
                 labelHistory4.Text = labelHistory3.Text;
                 labelHistory3.Text = labelHistory2.Text;
                 labelHistory2.Text = labelHistory1.Text;
                 labelHistory1.Text = typedWord.Text;
-                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "NO");
-                
+    
                 //Bookmark
                 command = " SELECT meaning from bookmark where word = " + "\"" + textboxSearch.Text.ToString() + "\""+"and languages= "+"'"+hint+"'";
                 Database.load(command);
@@ -163,7 +170,7 @@ namespace Dictionary_user
             }
             if (Database.nowForm==2)
             {
-                command = "select word, meaning, searchDate,Bookmark from historysearch Where word = "+ "\""+textboxSearch.Text.ToString()+"\""+" or meaning = "+"\""+textboxSearch.Text.ToString()+"\"";
+                command = "select Word, Meaning, Translate,TimeSearch,Bookmark from historysearch Where word = "+ "\""+textboxSearch.Text.ToString()+"\""+" or meaning = "+"\""+textboxSearch.Text.ToString()+"\"";
                 Database.load(command);
                 Database.acction = "search";
                 openChildForm(new History());
@@ -189,8 +196,6 @@ namespace Dictionary_user
                 coloumn = "VieMeaning";
                 hint = "English";
             }
-            setVisibleResult(false);
-            loadRecentlyBookmark();
             labelHint1.Text = "";
             labelHint2.Text = "";
             labelHint3.Text = "";
@@ -362,6 +367,8 @@ namespace Dictionary_user
             if (ktSwitch == false)
                 ktSwitch = true;
             else ktSwitch = false;
+            setVisibleResult(false);
+            loadRecentlyBookmark();
             activateSwitchButton();
         }
 
@@ -370,23 +377,24 @@ namespace Dictionary_user
             if (currentChildForm != null)
             {
                 currentChildForm.Close();
+                currentChildForm = null;
             }
             activateMenuButton(sender, RGBColors.color1);
             displaySwitch();
             activateSwitchButton();
             displaySearch();
-            textboxSearch.Text = textboxSearch.HintText;
             textboxSearch.LineFocusedColor = RGBColors.color1;
             textboxSearch.LineMouseHoverColor = RGBColors.color1;
             buttonSearch.IconColor = RGBColors.color1;
             Database.nowForm = 1;
+            textboxSearch.Text = typedWord.Text;
         }
 
         private void btnHistory_Click(object sender, EventArgs e) // Khi click vào historyButton
         {
             hideSwitch();
             displaySearch();
-            textboxSearch.HintText = "Search your word history";
+            textboxSearch.HintText = "Search history";
             textboxSearch.Text = textboxSearch.HintText;
             textboxSearch.LineFocusedColor = RGBColors.color3;
             textboxSearch.LineMouseHoverColor = RGBColors.color3;
@@ -696,6 +704,7 @@ namespace Dictionary_user
                 ktBookmark = true;
                 bookmarkButton.IconColor = RGBColors.color7;
                 Database.insertBookmark(textboxSearch.Text, wordMeaning.Text, hint, time);
+                Database.updateHistory("update historysearch set Bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + textboxSearch.Text + "'");
                 loadRecentlyBookmark();
             }
             else
@@ -704,6 +713,7 @@ namespace Dictionary_user
                 bookmarkButton.IconColor = Color.Gainsboro;
                 command= "delete from bookmark where word ="+"'"+typedWord.Text+"'"+"AND languages="+"'"+hint+"'";
                 Database.deleteBookmark(command);
+                Database.updateHistory("update historysearch set Bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + textboxSearch.Text + "'");
                 loadRecentlyBookmark();
             }        
         }
