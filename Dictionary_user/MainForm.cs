@@ -77,6 +77,14 @@ namespace Dictionary_user
             pictureBoxFlagRight.Visible = false;
             buttonSwitch.Visible = false;
         }
+        private void setVisibleResult(bool set)
+        {
+            typedWord.Visible = set;
+            bookmarkButton.Visible = set;
+            wordMeaning.Visible = set;
+            btnPlay.Visible = set;
+            btnPlay2.Visible = set;
+        }
         private void activateMenuButton(object senderBtn, Color color) // Kích hoạt menuButton 
         {
             disableMenuButton();
@@ -114,6 +122,7 @@ namespace Dictionary_user
             
             if (Database.nowForm == 1)
             {
+                setVisibleResult(true);
                 if (textboxSearch.HintText == "Search English")
                 {
                     command = " SELECT VieMeaning from mytable where English = " + "\"" + textboxSearch.Text.ToString() + "\"";
@@ -126,11 +135,7 @@ namespace Dictionary_user
                     btnPlay2.Visible = true;
                     btnPlay.Visible = false;
                 }      
-                typedWord.Visible = true;
                 typedWord.Text = textboxSearch.Text;
-                labelResult.Visible = true;
-                bookmarkButton.Visible = true;
-                wordMeaning.Visible = true;
                 Database.load(command);
                 if (Database.loadData.Rows.Count > 0)
                     wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
@@ -141,8 +146,9 @@ namespace Dictionary_user
                 labelHistory2.Text = labelHistory1.Text;
                 labelHistory1.Text = typedWord.Text;
                 Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "NO");
+                
                 //Bookmark
-                command = " SELECT meaning from bookmark where word = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                command = " SELECT meaning from bookmark where word = " + "\"" + textboxSearch.Text.ToString() + "\""+"and languages= "+"'"+hint+"'";
                 Database.load(command);
                 if (Database.loadData.Rows.Count > 0)
                 {
@@ -183,6 +189,8 @@ namespace Dictionary_user
                 coloumn = "VieMeaning";
                 hint = "English";
             }
+            setVisibleResult(false);
+            loadRecentlyBookmark();
         }
         private void openChildForm(Form childForm) // Mở childForm mới
         {
@@ -199,9 +207,77 @@ namespace Dictionary_user
             childForm.BringToFront();
             childForm.Show();
         }
-
-
-
+        private void loadRecentlyBookmark()
+        {
+            command = "SELECT Word from bookmark where languages="+"'"+hint+"'"+" ORDER BY id DESC";
+            Database.load(command);
+            if (Database.loadData.Rows.Count > 0)
+                labelBookmark1.Text = Database.loadData.Rows[0]["Word"].ToString();
+            else
+            {
+                labelBookmark1.Text = "";
+                labelBookmark2.Text = "";
+                labelBookmark3.Text = "";
+                labelBookmark4.Text = "";
+            }
+            if (Database.loadData.Rows.Count > 1)
+                labelBookmark2.Text = Database.loadData.Rows[1]["Word"].ToString();
+            else
+            {
+                labelBookmark2.Text = "";
+                labelBookmark3.Text = "";
+                labelBookmark4.Text = "";
+            }
+            if (Database.loadData.Rows.Count > 2)
+                labelBookmark3.Text = Database.loadData.Rows[2]["Word"].ToString();
+            else
+            {
+                labelBookmark3.Text = "";
+                labelBookmark4.Text = "";
+            }
+            if (Database.loadData.Rows.Count > 3)
+                labelBookmark4.Text = Database.loadData.Rows[3]["Word"].ToString();
+            else
+                labelBookmark4.Text = "";
+        }
+        private void loadRecentlyHistory()
+        {
+            command = "SELECT Word from historysearch ORDER BY id DESC";
+            Database.load(command);
+            if (Database.loadData.Rows.Count > 0)
+                labelHistory1.Text = Database.loadData.Rows[0]["Word"].ToString();
+            else
+            {
+                labelHistory1.Text = "";
+                labelHistory2.Text = "";
+                labelHistory3.Text = "";
+                labelHistory4.Text = "";
+            }
+            if (Database.loadData.Rows.Count > 1)
+                labelHistory2.Text = Database.loadData.Rows[1]["Word"].ToString();
+            else
+            {
+                labelHistory2.Text = "";
+                labelHistory3.Text = "";
+                labelHistory4.Text = "";
+            }
+            if (Database.loadData.Rows.Count > 2)
+                labelHistory3.Text = Database.loadData.Rows[2]["Word"].ToString();
+            else
+            {
+                labelHistory3.Text = "";
+                labelHistory4.Text = "";
+            }
+            if (Database.loadData.Rows.Count > 3)
+                labelHistory4.Text = Database.loadData.Rows[3]["Word"].ToString();
+            else
+                labelHistory4.Text = "";
+        }
+        private void loadRecently()
+        {   
+            loadRecentlyHistory();
+            loadRecentlyBookmark();
+        }
 
         public MainForm() // Kích hoạt MainForm
         {
@@ -211,13 +287,8 @@ namespace Dictionary_user
             leftBorderBtn.Size = new Size(7, 34);
             panelMenu.Controls.Add(leftBorderBtn);
             activateMenuButton(iconButton1, RGBColors.color1);
+            loadRecently();
             Database.nowForm = 1;
-            // History
-            Database.load("SELECT Word,Meaning,searchDate,Bookmark from historysearch ORDER BY id DESC");
-            labelHistory1.Text=Database.loadData.Rows[0]["Word"].ToString();
-            labelHistory2.Text= Database.loadData.Rows[1]["Word"].ToString();
-            labelHistory3.Text = Database.loadData.Rows[2]["Word"].ToString();
-            labelHistory4.Text = Database.loadData.Rows[3]["Word"].ToString();
         }
 
         protected override void OnLoad(EventArgs e)  //On Load
@@ -620,13 +691,15 @@ namespace Dictionary_user
                 ktBookmark = true;
                 bookmarkButton.IconColor = RGBColors.color7;
                 Database.insertBookmark(textboxSearch.Text, wordMeaning.Text, hint, time);
+                loadRecentlyBookmark();
             }
             else
             {
                 ktBookmark = false;
                 bookmarkButton.IconColor = Color.Gainsboro;
-                command= "delete from bookmark where word ="+"'"+typedWord.Text+"'";
+                command= "delete from bookmark where word ="+"'"+typedWord.Text+"'"+"AND languages="+"'"+hint+"'";
                 Database.deleteBookmark(command);
+                loadRecentlyBookmark();
             }        
         }
 
