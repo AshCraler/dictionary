@@ -13,7 +13,7 @@ namespace DataAccessTier
     public class DBConnection
     {
         protected SqlConnection conn;
-        public string connectionStr = @"Data Source = DESKTOP - MFH0KDH\SQLEXPRESS;Initial Catalog = TestData; Integrated Security = True";
+        public string connectionStr = @"Data Source=ashcraler.database.windows.net;Initial Catalog=Dictionary;Persist Security Info=True;User ID=ashcraler;Password=admin123$%^";
         
         private string pushFeedBackCommand = "INSERT INTO tbFeedBack VALUES (@Email, @FullName, @PhoneNumber, @Content)";
         public DBConnection()
@@ -38,7 +38,7 @@ namespace DataAccessTier
                 {
                     cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = fb.email;
                     cmd.Parameters.Add("@FullName", SqlDbType.NVarChar).Value = fb.fullName;
-                    cmd.Parameters.Add("@PhoneNumber", SqlDbType.VarBinary).Value = fb.phoneNumber;
+                    cmd.Parameters.Add("@PhoneNumber", SqlDbType.VarChar).Value = fb.phoneNumber;
                     cmd.Parameters.Add("@Content", SqlDbType.NText).Value = fb.content;
 
                     cmd.ExecuteNonQuery();
@@ -52,6 +52,8 @@ namespace DataAccessTier
 
             return false;
         }
+
+
 
         public string getHelp()
         {

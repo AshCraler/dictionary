@@ -13,12 +13,16 @@ namespace BusinessLogicTier
     {
         public DBConnection objConn = new DBConnection();
 
-        public void feedBack(FeedBack fb)
+        public bool feedBack(FeedBack fb)
         {
             if (objConn.pushFeedBack(fb) == false)
+            {
                 MessageBox.Show("FeedBack failed");
+                return false;
+            }
             else
-                return;
+                return true;
+                
         }
 
         public void getHelp()

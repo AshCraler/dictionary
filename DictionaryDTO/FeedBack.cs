@@ -14,5 +14,13 @@ namespace DictionaryDTO
         public string content;
 
         public FeedBack() { }
+
+        public FeedBack(string e, string name, string number, string cont)
+        {
+            email = e;
+            fullName = name;
+            phoneNumber = number;
+            content = cont;
+        }
     }
 }

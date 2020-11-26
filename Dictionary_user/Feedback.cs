@@ -15,24 +15,26 @@ namespace Dictionary_user
     public partial class Feedback : Form
     {
         public Connection_BUS objFeedBack = new Connection_BUS();
+        private DictionaryDTO.FeedBack fb = new DictionaryDTO.FeedBack();
+        
+
         public Feedback()
         {
             InitializeComponent();
         }
 
-        private void bunifuCustomTextbox1_TextChanged(object sender, EventArgs e)
+        
+        private void buttonSendFeedBack_Click(object sender, EventArgs e)
         {
+            fb.email = textBoxEmail.Text;
+            fb.fullName = textBoxName.Text;
+            fb.phoneNumber = textBoxPhoneNumber.Text;
+            fb.content = textBoxContent.Text;
 
+            if (objFeedBack.feedBack(fb))
+                MessageBox.Show("Success");
         }
 
-        private void textBoxEmail_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

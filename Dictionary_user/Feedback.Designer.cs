@@ -29,25 +29,27 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelYourOpinion = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
-            this.bunifuCustomTextbox1 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.textBoxContent = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.textBoxName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.textBoxPhoneNumber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.textBoxEmail = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.buttonSendFeedBack = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.buttonSendFeedBack);
+            this.panel1.Controls.Add(this.labelYourOpinion);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.labelEmail);
-            this.panel1.Controls.Add(this.bunifuCustomTextbox1);
+            this.panel1.Controls.Add(this.textBoxContent);
             this.panel1.Controls.Add(this.textBoxName);
             this.panel1.Controls.Add(this.textBoxPhoneNumber);
             this.panel1.Controls.Add(this.textBoxEmail);
@@ -57,18 +59,18 @@
             this.panel1.Size = new System.Drawing.Size(1618, 1562);
             this.panel1.TabIndex = 0;
             // 
-            // label3
+            // labelYourOpinion
             // 
-            this.label3.AutoSize = true;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(135, 552);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(253, 44);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Your opinion: ";
+            this.labelYourOpinion.AutoSize = true;
+            this.labelYourOpinion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelYourOpinion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelYourOpinion.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelYourOpinion.Location = new System.Drawing.Point(135, 552);
+            this.labelYourOpinion.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelYourOpinion.Name = "labelYourOpinion";
+            this.labelYourOpinion.Size = new System.Drawing.Size(253, 44);
+            this.labelYourOpinion.TabIndex = 24;
+            this.labelYourOpinion.Text = "Your opinion: ";
             // 
             // label2
             // 
@@ -95,7 +97,6 @@
             this.label1.Size = new System.Drawing.Size(232, 44);
             this.label1.TabIndex = 22;
             this.label1.Text = "Your Name: ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelEmail
             // 
@@ -110,18 +111,17 @@
             this.labelEmail.TabIndex = 21;
             this.labelEmail.Text = "Email: ";
             // 
-            // bunifuCustomTextbox1
+            // textBoxContent
             // 
-            this.bunifuCustomTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.bunifuCustomTextbox1.BorderColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomTextbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomTextbox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuCustomTextbox1.Location = new System.Drawing.Point(456, 552);
-            this.bunifuCustomTextbox1.Multiline = true;
-            this.bunifuCustomTextbox1.Name = "bunifuCustomTextbox1";
-            this.bunifuCustomTextbox1.Size = new System.Drawing.Size(1022, 482);
-            this.bunifuCustomTextbox1.TabIndex = 20;
-            this.bunifuCustomTextbox1.TextChanged += new System.EventHandler(this.bunifuCustomTextbox1_TextChanged);
+            this.textBoxContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.textBoxContent.BorderColor = System.Drawing.Color.SeaGreen;
+            this.textBoxContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxContent.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBoxContent.Location = new System.Drawing.Point(456, 552);
+            this.textBoxContent.Multiline = true;
+            this.textBoxContent.Name = "textBoxContent";
+            this.textBoxContent.Size = new System.Drawing.Size(1022, 482);
+            this.textBoxContent.TabIndex = 20;
             // 
             // textBoxName
             // 
@@ -179,7 +179,32 @@
             this.textBoxEmail.Size = new System.Drawing.Size(1022, 81);
             this.textBoxEmail.TabIndex = 15;
             this.textBoxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxEmail.OnValueChanged += new System.EventHandler(this.textBoxEmail_OnValueChanged);
+            // 
+            // buttonSendFeedBack
+            // 
+            this.buttonSendFeedBack.AutoSize = true;
+            this.buttonSendFeedBack.FlatAppearance.BorderSize = 0;
+            this.buttonSendFeedBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSendFeedBack.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.buttonSendFeedBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSendFeedBack.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonSendFeedBack.IconChar = FontAwesome.Sharp.IconChar.PaperPlane;
+            this.buttonSendFeedBack.IconColor = System.Drawing.Color.Gainsboro;
+            this.buttonSendFeedBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonSendFeedBack.IconSize = 50;
+            this.buttonSendFeedBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSendFeedBack.Location = new System.Drawing.Point(1099, 1091);
+            this.buttonSendFeedBack.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonSendFeedBack.Name = "buttonSendFeedBack";
+            this.buttonSendFeedBack.Padding = new System.Windows.Forms.Padding(16, 0, 30, 0);
+            this.buttonSendFeedBack.Rotation = 0D;
+            this.buttonSendFeedBack.Size = new System.Drawing.Size(390, 65);
+            this.buttonSendFeedBack.TabIndex = 25;
+            this.buttonSendFeedBack.Text = "Send Feedback";
+            this.buttonSendFeedBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSendFeedBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonSendFeedBack.UseVisualStyleBackColor = true;
+            this.buttonSendFeedBack.Click += new System.EventHandler(this.buttonSendFeedBack_Click);
             // 
             // Feedback
             // 
@@ -202,10 +227,11 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxEmail;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxName;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxPhoneNumber;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox bunifuCustomTextbox1;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox textBoxContent;
         private System.Windows.Forms.Label labelEmail;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelYourOpinion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton buttonSendFeedBack;
     }
 }
