@@ -32,33 +32,33 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.iconButton31 = new FontAwesome.Sharp.IconButton();
             this.iconButton30 = new FontAwesome.Sharp.IconButton();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
+            this.labelMeaning1 = new System.Windows.Forms.Label();
+            this.labelWord1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.iconButton29 = new FontAwesome.Sharp.IconButton();
             this.iconButton17 = new FontAwesome.Sharp.IconButton();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelWord13 = new System.Windows.Forms.Label();
+            this.labelWord12 = new System.Windows.Forms.Label();
+            this.labelWord11 = new System.Windows.Forms.Label();
+            this.labelWord10 = new System.Windows.Forms.Label();
+            this.labelWord9 = new System.Windows.Forms.Label();
+            this.labelWord8 = new System.Windows.Forms.Label();
+            this.labelWord7 = new System.Windows.Forms.Label();
+            this.labelWord6 = new System.Windows.Forms.Label();
+            this.labelWord5 = new System.Windows.Forms.Label();
+            this.labelWord4 = new System.Windows.Forms.Label();
+            this.labelWord3 = new System.Windows.Forms.Label();
+            this.labelMeaning13 = new System.Windows.Forms.Label();
+            this.labelMeaning12 = new System.Windows.Forms.Label();
+            this.labelMeaning11 = new System.Windows.Forms.Label();
+            this.labelMeaning10 = new System.Windows.Forms.Label();
+            this.labelMeaning9 = new System.Windows.Forms.Label();
+            this.labelMeaning8 = new System.Windows.Forms.Label();
+            this.labelMeaning7 = new System.Windows.Forms.Label();
+            this.labelMeaning6 = new System.Windows.Forms.Label();
+            this.labelMeaning5 = new System.Windows.Forms.Label();
+            this.labelMeaning4 = new System.Windows.Forms.Label();
+            this.labelMeaning3 = new System.Windows.Forms.Label();
             this.iconButton28 = new FontAwesome.Sharp.IconButton();
             this.iconButton27 = new FontAwesome.Sharp.IconButton();
             this.iconButton26 = new FontAwesome.Sharp.IconButton();
@@ -82,9 +82,9 @@
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelMeaning2 = new System.Windows.Forms.Label();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.typedWord = new System.Windows.Forms.Label();
+            this.labelWord2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxFlagLeft = new System.Windows.Forms.PictureBox();
@@ -119,33 +119,33 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.panel3.Controls.Add(this.iconButton31);
             this.panel3.Controls.Add(this.iconButton30);
-            this.panel3.Controls.Add(this.label28);
-            this.panel3.Controls.Add(this.label27);
+            this.panel3.Controls.Add(this.labelMeaning1);
+            this.panel3.Controls.Add(this.labelWord1);
             this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.iconButton29);
             this.panel3.Controls.Add(this.iconButton17);
-            this.panel3.Controls.Add(this.label26);
-            this.panel3.Controls.Add(this.label25);
-            this.panel3.Controls.Add(this.label24);
-            this.panel3.Controls.Add(this.label23);
-            this.panel3.Controls.Add(this.label22);
-            this.panel3.Controls.Add(this.label21);
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.label19);
-            this.panel3.Controls.Add(this.label18);
-            this.panel3.Controls.Add(this.label17);
-            this.panel3.Controls.Add(this.label16);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.labelWord13);
+            this.panel3.Controls.Add(this.labelWord12);
+            this.panel3.Controls.Add(this.labelWord11);
+            this.panel3.Controls.Add(this.labelWord10);
+            this.panel3.Controls.Add(this.labelWord9);
+            this.panel3.Controls.Add(this.labelWord8);
+            this.panel3.Controls.Add(this.labelWord7);
+            this.panel3.Controls.Add(this.labelWord6);
+            this.panel3.Controls.Add(this.labelWord5);
+            this.panel3.Controls.Add(this.labelWord4);
+            this.panel3.Controls.Add(this.labelWord3);
+            this.panel3.Controls.Add(this.labelMeaning13);
+            this.panel3.Controls.Add(this.labelMeaning12);
+            this.panel3.Controls.Add(this.labelMeaning11);
+            this.panel3.Controls.Add(this.labelMeaning10);
+            this.panel3.Controls.Add(this.labelMeaning9);
+            this.panel3.Controls.Add(this.labelMeaning8);
+            this.panel3.Controls.Add(this.labelMeaning7);
+            this.panel3.Controls.Add(this.labelMeaning6);
+            this.panel3.Controls.Add(this.labelMeaning5);
+            this.panel3.Controls.Add(this.labelMeaning4);
+            this.panel3.Controls.Add(this.labelMeaning3);
             this.panel3.Controls.Add(this.iconButton28);
             this.panel3.Controls.Add(this.iconButton27);
             this.panel3.Controls.Add(this.iconButton26);
@@ -169,14 +169,13 @@
             this.panel3.Controls.Add(this.iconButton7);
             this.panel3.Controls.Add(this.iconButton6);
             this.panel3.Controls.Add(this.iconButton5);
-            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.labelMeaning2);
             this.panel3.Controls.Add(this.iconButton4);
-            this.panel3.Controls.Add(this.typedWord);
-            this.panel3.Location = new System.Drawing.Point(3, 82);
+            this.panel3.Controls.Add(this.labelWord2);
+            this.panel3.Location = new System.Drawing.Point(3, 86);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(804, 615);
+            this.panel3.Size = new System.Drawing.Size(804, 611);
             this.panel3.TabIndex = 39;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // iconButton31
             // 
@@ -184,9 +183,9 @@
             this.iconButton31.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.iconButton31.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton31.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButton31.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButton31.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton31.IconSize = 35;
+            this.iconButton31.IconSize = 32;
             this.iconButton31.Location = new System.Drawing.Point(580, -2);
             this.iconButton31.Name = "iconButton31";
             this.iconButton31.Rotation = 0D;
@@ -199,40 +198,40 @@
             this.iconButton30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton30.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton30.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.iconButton30.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton30.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.iconButton30.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButton30.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton30.IconSize = 35;
-            this.iconButton30.Location = new System.Drawing.Point(721, -2);
+            this.iconButton30.IconSize = 32;
+            this.iconButton30.Location = new System.Drawing.Point(721, -1);
             this.iconButton30.Name = "iconButton30";
             this.iconButton30.Rotation = 0D;
-            this.iconButton30.Size = new System.Drawing.Size(43, 33);
+            this.iconButton30.Size = new System.Drawing.Size(43, 32);
             this.iconButton30.TabIndex = 87;
             this.iconButton30.UseVisualStyleBackColor = true;
             // 
-            // label28
+            // labelMeaning1
             // 
-            this.label28.AutoSize = true;
-            this.label28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label28.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label28.Location = new System.Drawing.Point(309, 1);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(92, 22);
-            this.label28.TabIndex = 86;
-            this.label28.Text = "meaning";
+            this.labelMeaning1.AutoSize = true;
+            this.labelMeaning1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelMeaning1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeaning1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelMeaning1.Location = new System.Drawing.Point(309, 1);
+            this.labelMeaning1.Name = "labelMeaning1";
+            this.labelMeaning1.Size = new System.Drawing.Size(92, 22);
+            this.labelMeaning1.TabIndex = 86;
+            this.labelMeaning1.Text = "meaning";
             // 
-            // label27
+            // labelWord1
             // 
-            this.label27.AutoSize = true;
-            this.label27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label27.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label27.Location = new System.Drawing.Point(24, 1);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(116, 22);
-            this.label27.TabIndex = 85;
-            this.label27.Text = "savedWord";
+            this.labelWord1.AutoSize = true;
+            this.labelWord1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelWord1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWord1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelWord1.Location = new System.Drawing.Point(24, 1);
+            this.labelWord1.Name = "labelWord1";
+            this.labelWord1.Size = new System.Drawing.Size(116, 22);
+            this.labelWord1.TabIndex = 85;
+            this.labelWord1.Text = "savedWord";
             // 
             // label15
             // 
@@ -254,8 +253,8 @@
             this.iconButton29.IconChar = FontAwesome.Sharp.IconChar.StepBackward;
             this.iconButton29.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.iconButton29.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton29.IconSize = 35;
-            this.iconButton29.Location = new System.Drawing.Point(580, 505);
+            this.iconButton29.IconSize = 30;
+            this.iconButton29.Location = new System.Drawing.Point(588, 505);
             this.iconButton29.Name = "iconButton29";
             this.iconButton29.Rotation = 0D;
             this.iconButton29.Size = new System.Drawing.Size(35, 33);
@@ -270,277 +269,277 @@
             this.iconButton17.IconChar = FontAwesome.Sharp.IconChar.StepForward;
             this.iconButton17.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.iconButton17.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton17.IconSize = 35;
-            this.iconButton17.Location = new System.Drawing.Point(730, 505);
+            this.iconButton17.IconSize = 30;
+            this.iconButton17.Location = new System.Drawing.Point(721, 505);
             this.iconButton17.Name = "iconButton17";
             this.iconButton17.Rotation = 0D;
             this.iconButton17.Size = new System.Drawing.Size(34, 33);
             this.iconButton17.TabIndex = 82;
             this.iconButton17.UseVisualStyleBackColor = true;
             // 
-            // label26
+            // labelWord13
             // 
-            this.label26.AutoSize = true;
-            this.label26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label26.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label26.Location = new System.Drawing.Point(24, 469);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(116, 22);
-            this.label26.TabIndex = 81;
-            this.label26.Text = "savedWord";
+            this.labelWord13.AutoSize = true;
+            this.labelWord13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelWord13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWord13.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelWord13.Location = new System.Drawing.Point(24, 469);
+            this.labelWord13.Name = "labelWord13";
+            this.labelWord13.Size = new System.Drawing.Size(116, 22);
+            this.labelWord13.TabIndex = 81;
+            this.labelWord13.Text = "savedWord";
             // 
-            // label25
+            // labelWord12
             // 
-            this.label25.AutoSize = true;
-            this.label25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label25.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label25.Location = new System.Drawing.Point(24, 430);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(116, 22);
-            this.label25.TabIndex = 80;
-            this.label25.Text = "savedWord";
+            this.labelWord12.AutoSize = true;
+            this.labelWord12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelWord12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWord12.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelWord12.Location = new System.Drawing.Point(24, 430);
+            this.labelWord12.Name = "labelWord12";
+            this.labelWord12.Size = new System.Drawing.Size(116, 22);
+            this.labelWord12.TabIndex = 80;
+            this.labelWord12.Text = "savedWord";
             // 
-            // label24
+            // labelWord11
             // 
-            this.label24.AutoSize = true;
-            this.label24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label24.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label24.Location = new System.Drawing.Point(24, 391);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(116, 22);
-            this.label24.TabIndex = 79;
-            this.label24.Text = "savedWord";
+            this.labelWord11.AutoSize = true;
+            this.labelWord11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelWord11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWord11.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelWord11.Location = new System.Drawing.Point(24, 391);
+            this.labelWord11.Name = "labelWord11";
+            this.labelWord11.Size = new System.Drawing.Size(116, 22);
+            this.labelWord11.TabIndex = 79;
+            this.labelWord11.Text = "savedWord";
             // 
-            // label23
+            // labelWord10
             // 
-            this.label23.AutoSize = true;
-            this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label23.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label23.Location = new System.Drawing.Point(24, 352);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(116, 22);
-            this.label23.TabIndex = 78;
-            this.label23.Text = "savedWord";
+            this.labelWord10.AutoSize = true;
+            this.labelWord10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelWord10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWord10.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelWord10.Location = new System.Drawing.Point(24, 352);
+            this.labelWord10.Name = "labelWord10";
+            this.labelWord10.Size = new System.Drawing.Size(116, 22);
+            this.labelWord10.TabIndex = 78;
+            this.labelWord10.Text = "savedWord";
             // 
-            // label22
+            // labelWord9
             // 
-            this.label22.AutoSize = true;
-            this.label22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label22.Location = new System.Drawing.Point(24, 313);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(116, 22);
-            this.label22.TabIndex = 77;
-            this.label22.Text = "savedWord";
+            this.labelWord9.AutoSize = true;
+            this.labelWord9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelWord9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWord9.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelWord9.Location = new System.Drawing.Point(24, 313);
+            this.labelWord9.Name = "labelWord9";
+            this.labelWord9.Size = new System.Drawing.Size(116, 22);
+            this.labelWord9.TabIndex = 77;
+            this.labelWord9.Text = "savedWord";
             // 
-            // label21
+            // labelWord8
             // 
-            this.label21.AutoSize = true;
-            this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label21.Location = new System.Drawing.Point(24, 274);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(116, 22);
-            this.label21.TabIndex = 76;
-            this.label21.Text = "savedWord";
+            this.labelWord8.AutoSize = true;
+            this.labelWord8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelWord8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWord8.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelWord8.Location = new System.Drawing.Point(24, 274);
+            this.labelWord8.Name = "labelWord8";
+            this.labelWord8.Size = new System.Drawing.Size(116, 22);
+            this.labelWord8.TabIndex = 76;
+            this.labelWord8.Text = "savedWord";
             // 
-            // label20
+            // labelWord7
             // 
-            this.label20.AutoSize = true;
-            this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label20.Location = new System.Drawing.Point(24, 235);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(116, 22);
-            this.label20.TabIndex = 75;
-            this.label20.Text = "savedWord";
+            this.labelWord7.AutoSize = true;
+            this.labelWord7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelWord7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWord7.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelWord7.Location = new System.Drawing.Point(24, 235);
+            this.labelWord7.Name = "labelWord7";
+            this.labelWord7.Size = new System.Drawing.Size(116, 22);
+            this.labelWord7.TabIndex = 75;
+            this.labelWord7.Text = "savedWord";
             // 
-            // label19
+            // labelWord6
             // 
-            this.label19.AutoSize = true;
-            this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label19.Location = new System.Drawing.Point(24, 196);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(116, 22);
-            this.label19.TabIndex = 74;
-            this.label19.Text = "savedWord";
+            this.labelWord6.AutoSize = true;
+            this.labelWord6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelWord6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWord6.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelWord6.Location = new System.Drawing.Point(24, 196);
+            this.labelWord6.Name = "labelWord6";
+            this.labelWord6.Size = new System.Drawing.Size(116, 22);
+            this.labelWord6.TabIndex = 74;
+            this.labelWord6.Text = "savedWord";
             // 
-            // label18
+            // labelWord5
             // 
-            this.label18.AutoSize = true;
-            this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label18.Location = new System.Drawing.Point(24, 157);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(116, 22);
-            this.label18.TabIndex = 73;
-            this.label18.Text = "savedWord";
+            this.labelWord5.AutoSize = true;
+            this.labelWord5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelWord5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWord5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelWord5.Location = new System.Drawing.Point(24, 157);
+            this.labelWord5.Name = "labelWord5";
+            this.labelWord5.Size = new System.Drawing.Size(116, 22);
+            this.labelWord5.TabIndex = 73;
+            this.labelWord5.Text = "savedWord";
             // 
-            // label17
+            // labelWord4
             // 
-            this.label17.AutoSize = true;
-            this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label17.Location = new System.Drawing.Point(24, 118);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(116, 22);
-            this.label17.TabIndex = 72;
-            this.label17.Text = "savedWord";
+            this.labelWord4.AutoSize = true;
+            this.labelWord4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelWord4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWord4.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelWord4.Location = new System.Drawing.Point(24, 118);
+            this.labelWord4.Name = "labelWord4";
+            this.labelWord4.Size = new System.Drawing.Size(116, 22);
+            this.labelWord4.TabIndex = 72;
+            this.labelWord4.Text = "savedWord";
             // 
-            // label16
+            // labelWord3
             // 
-            this.label16.AutoSize = true;
-            this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label16.Location = new System.Drawing.Point(24, 79);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(116, 22);
-            this.label16.TabIndex = 71;
-            this.label16.Text = "savedWord";
+            this.labelWord3.AutoSize = true;
+            this.labelWord3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelWord3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWord3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelWord3.Location = new System.Drawing.Point(24, 79);
+            this.labelWord3.Name = "labelWord3";
+            this.labelWord3.Size = new System.Drawing.Size(116, 22);
+            this.labelWord3.TabIndex = 71;
+            this.labelWord3.Text = "savedWord";
             // 
-            // label14
+            // labelMeaning13
             // 
-            this.label14.AutoSize = true;
-            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label14.Location = new System.Drawing.Point(309, 469);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(92, 22);
-            this.label14.TabIndex = 69;
-            this.label14.Text = "meaning";
+            this.labelMeaning13.AutoSize = true;
+            this.labelMeaning13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelMeaning13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeaning13.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelMeaning13.Location = new System.Drawing.Point(309, 469);
+            this.labelMeaning13.Name = "labelMeaning13";
+            this.labelMeaning13.Size = new System.Drawing.Size(92, 22);
+            this.labelMeaning13.TabIndex = 69;
+            this.labelMeaning13.Text = "meaning";
             // 
-            // label13
+            // labelMeaning12
             // 
-            this.label13.AutoSize = true;
-            this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label13.Location = new System.Drawing.Point(309, 430);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(92, 22);
-            this.label13.TabIndex = 68;
-            this.label13.Text = "meaning";
+            this.labelMeaning12.AutoSize = true;
+            this.labelMeaning12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelMeaning12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeaning12.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelMeaning12.Location = new System.Drawing.Point(309, 430);
+            this.labelMeaning12.Name = "labelMeaning12";
+            this.labelMeaning12.Size = new System.Drawing.Size(92, 22);
+            this.labelMeaning12.TabIndex = 68;
+            this.labelMeaning12.Text = "meaning";
             // 
-            // label12
+            // labelMeaning11
             // 
-            this.label12.AutoSize = true;
-            this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label12.Location = new System.Drawing.Point(309, 391);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 22);
-            this.label12.TabIndex = 67;
-            this.label12.Text = "meaning";
+            this.labelMeaning11.AutoSize = true;
+            this.labelMeaning11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelMeaning11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeaning11.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelMeaning11.Location = new System.Drawing.Point(309, 391);
+            this.labelMeaning11.Name = "labelMeaning11";
+            this.labelMeaning11.Size = new System.Drawing.Size(92, 22);
+            this.labelMeaning11.TabIndex = 67;
+            this.labelMeaning11.Text = "meaning";
             // 
-            // label11
+            // labelMeaning10
             // 
-            this.label11.AutoSize = true;
-            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label11.Location = new System.Drawing.Point(309, 352);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(92, 22);
-            this.label11.TabIndex = 66;
-            this.label11.Text = "meaning";
+            this.labelMeaning10.AutoSize = true;
+            this.labelMeaning10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelMeaning10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeaning10.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelMeaning10.Location = new System.Drawing.Point(309, 352);
+            this.labelMeaning10.Name = "labelMeaning10";
+            this.labelMeaning10.Size = new System.Drawing.Size(92, 22);
+            this.labelMeaning10.TabIndex = 66;
+            this.labelMeaning10.Text = "meaning";
             // 
-            // label10
+            // labelMeaning9
             // 
-            this.label10.AutoSize = true;
-            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label10.Location = new System.Drawing.Point(309, 313);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 22);
-            this.label10.TabIndex = 65;
-            this.label10.Text = "meaning";
+            this.labelMeaning9.AutoSize = true;
+            this.labelMeaning9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelMeaning9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeaning9.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelMeaning9.Location = new System.Drawing.Point(309, 313);
+            this.labelMeaning9.Name = "labelMeaning9";
+            this.labelMeaning9.Size = new System.Drawing.Size(92, 22);
+            this.labelMeaning9.TabIndex = 65;
+            this.labelMeaning9.Text = "meaning";
             // 
-            // label9
+            // labelMeaning8
             // 
-            this.label9.AutoSize = true;
-            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label9.Location = new System.Drawing.Point(309, 274);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 22);
-            this.label9.TabIndex = 64;
-            this.label9.Text = "meaning";
+            this.labelMeaning8.AutoSize = true;
+            this.labelMeaning8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelMeaning8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeaning8.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelMeaning8.Location = new System.Drawing.Point(309, 274);
+            this.labelMeaning8.Name = "labelMeaning8";
+            this.labelMeaning8.Size = new System.Drawing.Size(92, 22);
+            this.labelMeaning8.TabIndex = 64;
+            this.labelMeaning8.Text = "meaning";
             // 
-            // label8
+            // labelMeaning7
             // 
-            this.label8.AutoSize = true;
-            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label8.Location = new System.Drawing.Point(309, 235);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 22);
-            this.label8.TabIndex = 63;
-            this.label8.Text = "meaning";
+            this.labelMeaning7.AutoSize = true;
+            this.labelMeaning7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelMeaning7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeaning7.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelMeaning7.Location = new System.Drawing.Point(309, 235);
+            this.labelMeaning7.Name = "labelMeaning7";
+            this.labelMeaning7.Size = new System.Drawing.Size(92, 22);
+            this.labelMeaning7.TabIndex = 63;
+            this.labelMeaning7.Text = "meaning";
             // 
-            // label7
+            // labelMeaning6
             // 
-            this.label7.AutoSize = true;
-            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label7.Location = new System.Drawing.Point(309, 196);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 22);
-            this.label7.TabIndex = 62;
-            this.label7.Text = "meaning";
+            this.labelMeaning6.AutoSize = true;
+            this.labelMeaning6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelMeaning6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeaning6.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelMeaning6.Location = new System.Drawing.Point(309, 196);
+            this.labelMeaning6.Name = "labelMeaning6";
+            this.labelMeaning6.Size = new System.Drawing.Size(92, 22);
+            this.labelMeaning6.TabIndex = 62;
+            this.labelMeaning6.Text = "meaning";
             // 
-            // label6
+            // labelMeaning5
             // 
-            this.label6.AutoSize = true;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label6.Location = new System.Drawing.Point(309, 157);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 22);
-            this.label6.TabIndex = 61;
-            this.label6.Text = "meaning";
+            this.labelMeaning5.AutoSize = true;
+            this.labelMeaning5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelMeaning5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeaning5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelMeaning5.Location = new System.Drawing.Point(309, 157);
+            this.labelMeaning5.Name = "labelMeaning5";
+            this.labelMeaning5.Size = new System.Drawing.Size(92, 22);
+            this.labelMeaning5.TabIndex = 61;
+            this.labelMeaning5.Text = "meaning";
             // 
-            // label5
+            // labelMeaning4
             // 
-            this.label5.AutoSize = true;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label5.Location = new System.Drawing.Point(309, 118);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 22);
-            this.label5.TabIndex = 60;
-            this.label5.Text = "meaning";
+            this.labelMeaning4.AutoSize = true;
+            this.labelMeaning4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelMeaning4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeaning4.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelMeaning4.Location = new System.Drawing.Point(309, 118);
+            this.labelMeaning4.Name = "labelMeaning4";
+            this.labelMeaning4.Size = new System.Drawing.Size(92, 22);
+            this.labelMeaning4.TabIndex = 60;
+            this.labelMeaning4.Text = "meaning";
             // 
-            // label4
+            // labelMeaning3
             // 
-            this.label4.AutoSize = true;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(309, 79);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 22);
-            this.label4.TabIndex = 59;
-            this.label4.Text = "meaning";
+            this.labelMeaning3.AutoSize = true;
+            this.labelMeaning3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelMeaning3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeaning3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelMeaning3.Location = new System.Drawing.Point(309, 79);
+            this.labelMeaning3.Name = "labelMeaning3";
+            this.labelMeaning3.Size = new System.Drawing.Size(92, 22);
+            this.labelMeaning3.TabIndex = 59;
+            this.labelMeaning3.Text = "meaning";
             // 
             // iconButton28
             // 
@@ -548,9 +547,9 @@
             this.iconButton28.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.iconButton28.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton28.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButton28.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButton28.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton28.IconSize = 35;
+            this.iconButton28.IconSize = 32;
             this.iconButton28.Location = new System.Drawing.Point(580, 466);
             this.iconButton28.Name = "iconButton28";
             this.iconButton28.Rotation = 0D;
@@ -564,9 +563,9 @@
             this.iconButton27.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.iconButton27.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton27.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButton27.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButton27.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton27.IconSize = 35;
+            this.iconButton27.IconSize = 32;
             this.iconButton27.Location = new System.Drawing.Point(580, 427);
             this.iconButton27.Name = "iconButton27";
             this.iconButton27.Rotation = 0D;
@@ -580,9 +579,9 @@
             this.iconButton26.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.iconButton26.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton26.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButton26.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButton26.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton26.IconSize = 35;
+            this.iconButton26.IconSize = 32;
             this.iconButton26.Location = new System.Drawing.Point(580, 388);
             this.iconButton26.Name = "iconButton26";
             this.iconButton26.Rotation = 0D;
@@ -596,9 +595,9 @@
             this.iconButton25.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.iconButton25.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton25.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButton25.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButton25.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton25.IconSize = 35;
+            this.iconButton25.IconSize = 32;
             this.iconButton25.Location = new System.Drawing.Point(580, 349);
             this.iconButton25.Name = "iconButton25";
             this.iconButton25.Rotation = 0D;
@@ -612,9 +611,9 @@
             this.iconButton24.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.iconButton24.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton24.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButton24.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButton24.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton24.IconSize = 35;
+            this.iconButton24.IconSize = 32;
             this.iconButton24.Location = new System.Drawing.Point(580, 310);
             this.iconButton24.Name = "iconButton24";
             this.iconButton24.Rotation = 0D;
@@ -628,9 +627,9 @@
             this.iconButton23.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.iconButton23.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton23.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButton23.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButton23.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton23.IconSize = 35;
+            this.iconButton23.IconSize = 32;
             this.iconButton23.Location = new System.Drawing.Point(580, 271);
             this.iconButton23.Name = "iconButton23";
             this.iconButton23.Rotation = 0D;
@@ -644,9 +643,9 @@
             this.iconButton22.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.iconButton22.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton22.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButton22.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButton22.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton22.IconSize = 35;
+            this.iconButton22.IconSize = 32;
             this.iconButton22.Location = new System.Drawing.Point(580, 232);
             this.iconButton22.Name = "iconButton22";
             this.iconButton22.Rotation = 0D;
@@ -660,9 +659,9 @@
             this.iconButton21.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.iconButton21.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton21.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButton21.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButton21.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton21.IconSize = 35;
+            this.iconButton21.IconSize = 32;
             this.iconButton21.Location = new System.Drawing.Point(580, 193);
             this.iconButton21.Name = "iconButton21";
             this.iconButton21.Rotation = 0D;
@@ -676,9 +675,9 @@
             this.iconButton20.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.iconButton20.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton20.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButton20.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButton20.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton20.IconSize = 35;
+            this.iconButton20.IconSize = 32;
             this.iconButton20.Location = new System.Drawing.Point(580, 154);
             this.iconButton20.Name = "iconButton20";
             this.iconButton20.Rotation = 0D;
@@ -692,9 +691,9 @@
             this.iconButton19.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.iconButton19.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton19.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButton19.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButton19.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton19.IconSize = 35;
+            this.iconButton19.IconSize = 32;
             this.iconButton19.Location = new System.Drawing.Point(580, 115);
             this.iconButton19.Name = "iconButton19";
             this.iconButton19.Rotation = 0D;
@@ -708,9 +707,9 @@
             this.iconButton18.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.iconButton18.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton18.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButton18.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButton18.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton18.IconSize = 35;
+            this.iconButton18.IconSize = 32;
             this.iconButton18.Location = new System.Drawing.Point(580, 76);
             this.iconButton18.Name = "iconButton18";
             this.iconButton18.Rotation = 0D;
@@ -723,10 +722,10 @@
             this.iconButton16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton16.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton16.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.iconButton16.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton16.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.iconButton16.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButton16.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton16.IconSize = 35;
+            this.iconButton16.IconSize = 32;
             this.iconButton16.Location = new System.Drawing.Point(721, 466);
             this.iconButton16.Name = "iconButton16";
             this.iconButton16.Rotation = 0D;
@@ -739,10 +738,10 @@
             this.iconButton15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton15.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton15.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.iconButton15.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton15.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.iconButton15.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButton15.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton15.IconSize = 35;
+            this.iconButton15.IconSize = 32;
             this.iconButton15.Location = new System.Drawing.Point(721, 427);
             this.iconButton15.Name = "iconButton15";
             this.iconButton15.Rotation = 0D;
@@ -755,10 +754,10 @@
             this.iconButton14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton14.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton14.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.iconButton14.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton14.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.iconButton14.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButton14.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton14.IconSize = 35;
+            this.iconButton14.IconSize = 32;
             this.iconButton14.Location = new System.Drawing.Point(721, 388);
             this.iconButton14.Name = "iconButton14";
             this.iconButton14.Rotation = 0D;
@@ -771,10 +770,10 @@
             this.iconButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton13.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton13.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.iconButton13.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton13.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.iconButton13.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButton13.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton13.IconSize = 35;
+            this.iconButton13.IconSize = 32;
             this.iconButton13.Location = new System.Drawing.Point(721, 349);
             this.iconButton13.Name = "iconButton13";
             this.iconButton13.Rotation = 0D;
@@ -787,10 +786,10 @@
             this.iconButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton12.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton12.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.iconButton12.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton12.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.iconButton12.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButton12.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton12.IconSize = 35;
+            this.iconButton12.IconSize = 32;
             this.iconButton12.Location = new System.Drawing.Point(721, 310);
             this.iconButton12.Name = "iconButton12";
             this.iconButton12.Rotation = 0D;
@@ -803,10 +802,10 @@
             this.iconButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton11.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton11.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.iconButton11.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton11.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.iconButton11.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButton11.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton11.IconSize = 35;
+            this.iconButton11.IconSize = 32;
             this.iconButton11.Location = new System.Drawing.Point(721, 271);
             this.iconButton11.Name = "iconButton11";
             this.iconButton11.Rotation = 0D;
@@ -819,10 +818,10 @@
             this.iconButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton10.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton10.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.iconButton10.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton10.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.iconButton10.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButton10.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton10.IconSize = 35;
+            this.iconButton10.IconSize = 32;
             this.iconButton10.Location = new System.Drawing.Point(721, 232);
             this.iconButton10.Name = "iconButton10";
             this.iconButton10.Rotation = 0D;
@@ -835,10 +834,10 @@
             this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton9.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.iconButton9.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.iconButton9.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton9.IconSize = 35;
+            this.iconButton9.IconSize = 32;
             this.iconButton9.Location = new System.Drawing.Point(721, 193);
             this.iconButton9.Name = "iconButton9";
             this.iconButton9.Rotation = 0D;
@@ -851,10 +850,10 @@
             this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton8.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.iconButton8.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.iconButton8.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton8.IconSize = 35;
+            this.iconButton8.IconSize = 32;
             this.iconButton8.Location = new System.Drawing.Point(721, 154);
             this.iconButton8.Name = "iconButton8";
             this.iconButton8.Rotation = 0D;
@@ -867,10 +866,10 @@
             this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton7.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.iconButton7.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.iconButton7.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 35;
+            this.iconButton7.IconSize = 32;
             this.iconButton7.Location = new System.Drawing.Point(721, 115);
             this.iconButton7.Name = "iconButton7";
             this.iconButton7.Rotation = 0D;
@@ -883,10 +882,10 @@
             this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton6.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.iconButton6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.iconButton6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 35;
+            this.iconButton6.IconSize = 32;
             this.iconButton6.Location = new System.Drawing.Point(721, 76);
             this.iconButton6.Name = "iconButton6";
             this.iconButton6.Rotation = 0D;
@@ -899,10 +898,10 @@
             this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton5.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.iconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.iconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 35;
+            this.iconButton5.IconSize = 32;
             this.iconButton5.Location = new System.Drawing.Point(721, 37);
             this.iconButton5.Name = "iconButton5";
             this.iconButton5.Rotation = 0D;
@@ -910,17 +909,17 @@
             this.iconButton5.TabIndex = 34;
             this.iconButton5.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // labelMeaning2
             // 
-            this.label3.AutoSize = true;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(309, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 22);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "meaning";
+            this.labelMeaning2.AutoSize = true;
+            this.labelMeaning2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelMeaning2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeaning2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelMeaning2.Location = new System.Drawing.Point(309, 40);
+            this.labelMeaning2.Name = "labelMeaning2";
+            this.labelMeaning2.Size = new System.Drawing.Size(92, 22);
+            this.labelMeaning2.TabIndex = 33;
+            this.labelMeaning2.Text = "meaning";
             // 
             // iconButton4
             // 
@@ -928,9 +927,9 @@
             this.iconButton4.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButton4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 35;
+            this.iconButton4.IconSize = 32;
             this.iconButton4.Location = new System.Drawing.Point(580, 37);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Rotation = 0D;
@@ -938,17 +937,17 @@
             this.iconButton4.TabIndex = 32;
             this.iconButton4.UseVisualStyleBackColor = true;
             // 
-            // typedWord
+            // labelWord2
             // 
-            this.typedWord.AutoSize = true;
-            this.typedWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.typedWord.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typedWord.ForeColor = System.Drawing.Color.Gainsboro;
-            this.typedWord.Location = new System.Drawing.Point(24, 40);
-            this.typedWord.Name = "typedWord";
-            this.typedWord.Size = new System.Drawing.Size(116, 22);
-            this.typedWord.TabIndex = 31;
-            this.typedWord.Text = "savedWord";
+            this.labelWord2.AutoSize = true;
+            this.labelWord2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelWord2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWord2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelWord2.Location = new System.Drawing.Point(24, 40);
+            this.labelWord2.Name = "labelWord2";
+            this.labelWord2.Size = new System.Drawing.Size(116, 22);
+            this.labelWord2.TabIndex = 31;
+            this.labelWord2.Text = "savedWord";
             // 
             // panel2
             // 
@@ -1132,22 +1131,22 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.PictureBox pictureBoxFlagLeft;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label typedWord;
+        private System.Windows.Forms.Label labelWord2;
         private FontAwesome.Sharp.IconButton iconButton4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelMeaning2;
+        private System.Windows.Forms.Label labelWord4;
+        private System.Windows.Forms.Label labelWord3;
+        private System.Windows.Forms.Label labelMeaning13;
+        private System.Windows.Forms.Label labelMeaning12;
+        private System.Windows.Forms.Label labelMeaning11;
+        private System.Windows.Forms.Label labelMeaning10;
+        private System.Windows.Forms.Label labelMeaning9;
+        private System.Windows.Forms.Label labelMeaning8;
+        private System.Windows.Forms.Label labelMeaning7;
+        private System.Windows.Forms.Label labelMeaning6;
+        private System.Windows.Forms.Label labelMeaning5;
+        private System.Windows.Forms.Label labelMeaning4;
+        private System.Windows.Forms.Label labelMeaning3;
         private FontAwesome.Sharp.IconButton iconButton28;
         private FontAwesome.Sharp.IconButton iconButton27;
         private FontAwesome.Sharp.IconButton iconButton26;
@@ -1171,21 +1170,21 @@
         private FontAwesome.Sharp.IconButton iconButton7;
         private FontAwesome.Sharp.IconButton iconButton6;
         private FontAwesome.Sharp.IconButton iconButton5;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label labelWord13;
+        private System.Windows.Forms.Label labelWord12;
+        private System.Windows.Forms.Label labelWord11;
+        private System.Windows.Forms.Label labelWord10;
+        private System.Windows.Forms.Label labelWord9;
+        private System.Windows.Forms.Label labelWord8;
+        private System.Windows.Forms.Label labelWord7;
+        private System.Windows.Forms.Label labelWord6;
+        private System.Windows.Forms.Label labelWord5;
         private FontAwesome.Sharp.IconButton iconButton29;
         private FontAwesome.Sharp.IconButton iconButton17;
         private System.Windows.Forms.Label label15;
         private FontAwesome.Sharp.IconButton iconButton31;
         private FontAwesome.Sharp.IconButton iconButton30;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label labelMeaning1;
+        private System.Windows.Forms.Label labelWord1;
     }
 }
