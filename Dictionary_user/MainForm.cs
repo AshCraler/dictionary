@@ -191,6 +191,10 @@ namespace Dictionary_user
             }
             setVisibleResult(false);
             loadRecentlyBookmark();
+            labelHint1.Text = "";
+            labelHint2.Text = "";
+            labelHint3.Text = "";
+            labelHint4.Text = "";
         }
         private void openChildForm(Form childForm) // Mở childForm mới
         {
