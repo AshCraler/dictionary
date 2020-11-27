@@ -96,12 +96,65 @@
             this.btnPlay = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Reload = new FontAwesome.Sharp.IconButton();
+            this.engFlag2 = new System.Windows.Forms.PictureBox();
+            this.engFlag1 = new System.Windows.Forms.PictureBox();
+            this.engFlag3 = new System.Windows.Forms.PictureBox();
+            this.engFlag4 = new System.Windows.Forms.PictureBox();
+            this.engFlag5 = new System.Windows.Forms.PictureBox();
+            this.engFlag6 = new System.Windows.Forms.PictureBox();
+            this.engFlag7 = new System.Windows.Forms.PictureBox();
+            this.engFlag8 = new System.Windows.Forms.PictureBox();
+            this.engFlag9 = new System.Windows.Forms.PictureBox();
+            this.engFlag10 = new System.Windows.Forms.PictureBox();
+            this.engFlag11 = new System.Windows.Forms.PictureBox();
+            this.engFlag12 = new System.Windows.Forms.PictureBox();
+            this.engFlag13 = new System.Windows.Forms.PictureBox();
+            this.vieFlag1 = new System.Windows.Forms.PictureBox();
+            this.vieFlag2 = new System.Windows.Forms.PictureBox();
+            this.vieFlag3 = new System.Windows.Forms.PictureBox();
+            this.vieFlag4 = new System.Windows.Forms.PictureBox();
+            this.vieFlag5 = new System.Windows.Forms.PictureBox();
+            this.vieFlag6 = new System.Windows.Forms.PictureBox();
+            this.vieFlag7 = new System.Windows.Forms.PictureBox();
+            this.vieFlag8 = new System.Windows.Forms.PictureBox();
+            this.vieFlag9 = new System.Windows.Forms.PictureBox();
+            this.vieFlag10 = new System.Windows.Forms.PictureBox();
+            this.vieFlag11 = new System.Windows.Forms.PictureBox();
+            this.vieFlag12 = new System.Windows.Forms.PictureBox();
+            this.vieFlag13 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag13)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -117,6 +170,33 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.panel3.Controls.Add(this.vieFlag13);
+            this.panel3.Controls.Add(this.vieFlag12);
+            this.panel3.Controls.Add(this.vieFlag11);
+            this.panel3.Controls.Add(this.vieFlag10);
+            this.panel3.Controls.Add(this.vieFlag9);
+            this.panel3.Controls.Add(this.vieFlag8);
+            this.panel3.Controls.Add(this.vieFlag7);
+            this.panel3.Controls.Add(this.vieFlag6);
+            this.panel3.Controls.Add(this.vieFlag5);
+            this.panel3.Controls.Add(this.vieFlag4);
+            this.panel3.Controls.Add(this.vieFlag3);
+            this.panel3.Controls.Add(this.vieFlag2);
+            this.panel3.Controls.Add(this.vieFlag1);
+            this.panel3.Controls.Add(this.engFlag13);
+            this.panel3.Controls.Add(this.engFlag12);
+            this.panel3.Controls.Add(this.engFlag11);
+            this.panel3.Controls.Add(this.engFlag10);
+            this.panel3.Controls.Add(this.engFlag9);
+            this.panel3.Controls.Add(this.engFlag8);
+            this.panel3.Controls.Add(this.engFlag7);
+            this.panel3.Controls.Add(this.engFlag6);
+            this.panel3.Controls.Add(this.engFlag5);
+            this.panel3.Controls.Add(this.engFlag4);
+            this.panel3.Controls.Add(this.engFlag3);
+            this.panel3.Controls.Add(this.engFlag1);
+            this.panel3.Controls.Add(this.engFlag2);
+            this.panel3.Controls.Add(this.Reload);
             this.panel3.Controls.Add(this.speaker1);
             this.panel3.Controls.Add(this.Bookmark1);
             this.panel3.Controls.Add(this.labelMeaning1);
@@ -211,6 +291,7 @@
             this.Bookmark1.TabIndex = 87;
             this.Bookmark1.UseVisualStyleBackColor = true;
             this.Bookmark1.Visible = false;
+            this.Bookmark1.Click += new System.EventHandler(this.Bookmark1_Click);
             // 
             // labelMeaning1
             // 
@@ -218,10 +299,11 @@
             this.labelMeaning1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelMeaning1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMeaning1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelMeaning1.Location = new System.Drawing.Point(309, 1);
+            this.labelMeaning1.Location = new System.Drawing.Point(217, 2);
             this.labelMeaning1.Name = "labelMeaning1";
-            this.labelMeaning1.Size = new System.Drawing.Size(0, 22);
+            this.labelMeaning1.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning1.TabIndex = 86;
+            this.labelMeaning1.Text = "meaning";
             // 
             // labelWord1
             // 
@@ -255,7 +337,7 @@
             this.Preview.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.Preview.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Preview.IconSize = 30;
-            this.Preview.Location = new System.Drawing.Point(588, 505);
+            this.Preview.Location = new System.Drawing.Point(689, 506);
             this.Preview.Name = "Preview";
             this.Preview.Rotation = 0D;
             this.Preview.Size = new System.Drawing.Size(35, 33);
@@ -271,7 +353,7 @@
             this.Next.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.Next.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Next.IconSize = 30;
-            this.Next.Location = new System.Drawing.Point(721, 505);
+            this.Next.Location = new System.Drawing.Point(730, 506);
             this.Next.Name = "Next";
             this.Next.Rotation = 0D;
             this.Next.Size = new System.Drawing.Size(34, 33);
@@ -405,10 +487,11 @@
             this.labelMeaning13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelMeaning13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMeaning13.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelMeaning13.Location = new System.Drawing.Point(309, 469);
+            this.labelMeaning13.Location = new System.Drawing.Point(217, 469);
             this.labelMeaning13.Name = "labelMeaning13";
-            this.labelMeaning13.Size = new System.Drawing.Size(0, 22);
+            this.labelMeaning13.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning13.TabIndex = 69;
+            this.labelMeaning13.Text = "meaning";
             // 
             // labelMeaning12
             // 
@@ -416,10 +499,11 @@
             this.labelMeaning12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelMeaning12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMeaning12.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelMeaning12.Location = new System.Drawing.Point(309, 430);
+            this.labelMeaning12.Location = new System.Drawing.Point(217, 430);
             this.labelMeaning12.Name = "labelMeaning12";
-            this.labelMeaning12.Size = new System.Drawing.Size(0, 22);
+            this.labelMeaning12.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning12.TabIndex = 68;
+            this.labelMeaning12.Text = "meaning";
             // 
             // labelMeaning11
             // 
@@ -427,10 +511,11 @@
             this.labelMeaning11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelMeaning11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMeaning11.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelMeaning11.Location = new System.Drawing.Point(309, 391);
+            this.labelMeaning11.Location = new System.Drawing.Point(217, 391);
             this.labelMeaning11.Name = "labelMeaning11";
-            this.labelMeaning11.Size = new System.Drawing.Size(0, 22);
+            this.labelMeaning11.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning11.TabIndex = 67;
+            this.labelMeaning11.Text = "meaning";
             // 
             // labelMeaning10
             // 
@@ -438,10 +523,11 @@
             this.labelMeaning10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelMeaning10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMeaning10.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelMeaning10.Location = new System.Drawing.Point(309, 352);
+            this.labelMeaning10.Location = new System.Drawing.Point(217, 352);
             this.labelMeaning10.Name = "labelMeaning10";
-            this.labelMeaning10.Size = new System.Drawing.Size(0, 22);
+            this.labelMeaning10.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning10.TabIndex = 66;
+            this.labelMeaning10.Text = "meaning";
             // 
             // labelMeaning9
             // 
@@ -449,10 +535,11 @@
             this.labelMeaning9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelMeaning9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMeaning9.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelMeaning9.Location = new System.Drawing.Point(309, 313);
+            this.labelMeaning9.Location = new System.Drawing.Point(217, 313);
             this.labelMeaning9.Name = "labelMeaning9";
-            this.labelMeaning9.Size = new System.Drawing.Size(0, 22);
+            this.labelMeaning9.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning9.TabIndex = 65;
+            this.labelMeaning9.Text = "meaning";
             // 
             // labelMeaning8
             // 
@@ -460,10 +547,11 @@
             this.labelMeaning8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelMeaning8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMeaning8.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelMeaning8.Location = new System.Drawing.Point(309, 274);
+            this.labelMeaning8.Location = new System.Drawing.Point(217, 274);
             this.labelMeaning8.Name = "labelMeaning8";
-            this.labelMeaning8.Size = new System.Drawing.Size(0, 22);
+            this.labelMeaning8.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning8.TabIndex = 64;
+            this.labelMeaning8.Text = "meaning";
             // 
             // labelMeaning7
             // 
@@ -471,10 +559,11 @@
             this.labelMeaning7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelMeaning7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMeaning7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelMeaning7.Location = new System.Drawing.Point(309, 235);
+            this.labelMeaning7.Location = new System.Drawing.Point(217, 235);
             this.labelMeaning7.Name = "labelMeaning7";
-            this.labelMeaning7.Size = new System.Drawing.Size(0, 22);
+            this.labelMeaning7.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning7.TabIndex = 63;
+            this.labelMeaning7.Text = "meaning";
             // 
             // labelMeaning6
             // 
@@ -482,10 +571,11 @@
             this.labelMeaning6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelMeaning6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMeaning6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelMeaning6.Location = new System.Drawing.Point(309, 196);
+            this.labelMeaning6.Location = new System.Drawing.Point(217, 196);
             this.labelMeaning6.Name = "labelMeaning6";
-            this.labelMeaning6.Size = new System.Drawing.Size(0, 22);
+            this.labelMeaning6.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning6.TabIndex = 62;
+            this.labelMeaning6.Text = "meaning";
             // 
             // labelMeaning5
             // 
@@ -493,10 +583,11 @@
             this.labelMeaning5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelMeaning5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMeaning5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelMeaning5.Location = new System.Drawing.Point(309, 157);
+            this.labelMeaning5.Location = new System.Drawing.Point(217, 157);
             this.labelMeaning5.Name = "labelMeaning5";
-            this.labelMeaning5.Size = new System.Drawing.Size(0, 22);
+            this.labelMeaning5.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning5.TabIndex = 61;
+            this.labelMeaning5.Text = "meaning";
             // 
             // labelMeaning4
             // 
@@ -504,10 +595,11 @@
             this.labelMeaning4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelMeaning4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMeaning4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelMeaning4.Location = new System.Drawing.Point(309, 118);
+            this.labelMeaning4.Location = new System.Drawing.Point(217, 118);
             this.labelMeaning4.Name = "labelMeaning4";
-            this.labelMeaning4.Size = new System.Drawing.Size(0, 22);
+            this.labelMeaning4.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning4.TabIndex = 60;
+            this.labelMeaning4.Text = "meaning";
             // 
             // labelMeaning3
             // 
@@ -515,10 +607,11 @@
             this.labelMeaning3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelMeaning3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMeaning3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelMeaning3.Location = new System.Drawing.Point(309, 79);
+            this.labelMeaning3.Location = new System.Drawing.Point(217, 79);
             this.labelMeaning3.Name = "labelMeaning3";
-            this.labelMeaning3.Size = new System.Drawing.Size(0, 22);
+            this.labelMeaning3.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning3.TabIndex = 59;
+            this.labelMeaning3.Text = "meaning";
             // 
             // speaker13
             // 
@@ -734,6 +827,7 @@
             this.Bookmark13.TabIndex = 45;
             this.Bookmark13.UseVisualStyleBackColor = true;
             this.Bookmark13.Visible = false;
+            this.Bookmark13.Click += new System.EventHandler(this.Bookmark13_Click);
             // 
             // Bookmark12
             // 
@@ -751,6 +845,7 @@
             this.Bookmark12.TabIndex = 44;
             this.Bookmark12.UseVisualStyleBackColor = true;
             this.Bookmark12.Visible = false;
+            this.Bookmark12.Click += new System.EventHandler(this.Bookmark12_Click);
             // 
             // Bookmark11
             // 
@@ -768,6 +863,7 @@
             this.Bookmark11.TabIndex = 43;
             this.Bookmark11.UseVisualStyleBackColor = true;
             this.Bookmark11.Visible = false;
+            this.Bookmark11.Click += new System.EventHandler(this.Bookmark11_Click);
             // 
             // Bookmark10
             // 
@@ -785,6 +881,7 @@
             this.Bookmark10.TabIndex = 42;
             this.Bookmark10.UseVisualStyleBackColor = true;
             this.Bookmark10.Visible = false;
+            this.Bookmark10.Click += new System.EventHandler(this.Bookmark10_Click);
             // 
             // Bookmark9
             // 
@@ -802,6 +899,7 @@
             this.Bookmark9.TabIndex = 41;
             this.Bookmark9.UseVisualStyleBackColor = true;
             this.Bookmark9.Visible = false;
+            this.Bookmark9.Click += new System.EventHandler(this.Bookmark9_Click);
             // 
             // Bookmark8
             // 
@@ -819,6 +917,7 @@
             this.Bookmark8.TabIndex = 40;
             this.Bookmark8.UseVisualStyleBackColor = true;
             this.Bookmark8.Visible = false;
+            this.Bookmark8.Click += new System.EventHandler(this.Bookmark8_Click);
             // 
             // Bookmark7
             // 
@@ -836,6 +935,7 @@
             this.Bookmark7.TabIndex = 39;
             this.Bookmark7.UseVisualStyleBackColor = true;
             this.Bookmark7.Visible = false;
+            this.Bookmark7.Click += new System.EventHandler(this.Bookmark7_Click);
             // 
             // Bookmark6
             // 
@@ -853,6 +953,7 @@
             this.Bookmark6.TabIndex = 38;
             this.Bookmark6.UseVisualStyleBackColor = true;
             this.Bookmark6.Visible = false;
+            this.Bookmark6.Click += new System.EventHandler(this.Bookmark6_Click);
             // 
             // Bookmark5
             // 
@@ -870,6 +971,7 @@
             this.Bookmark5.TabIndex = 37;
             this.Bookmark5.UseVisualStyleBackColor = true;
             this.Bookmark5.Visible = false;
+            this.Bookmark5.Click += new System.EventHandler(this.Bookmark5_Click);
             // 
             // Bookmark4
             // 
@@ -887,6 +989,7 @@
             this.Bookmark4.TabIndex = 36;
             this.Bookmark4.UseVisualStyleBackColor = true;
             this.Bookmark4.Visible = false;
+            this.Bookmark4.Click += new System.EventHandler(this.Bookmark4_Click);
             // 
             // Bookmark3
             // 
@@ -904,6 +1007,7 @@
             this.Bookmark3.TabIndex = 35;
             this.Bookmark3.UseVisualStyleBackColor = true;
             this.Bookmark3.Visible = false;
+            this.Bookmark3.Click += new System.EventHandler(this.Bookmark3_Click);
             // 
             // Bookmark2
             // 
@@ -921,6 +1025,7 @@
             this.Bookmark2.TabIndex = 34;
             this.Bookmark2.UseVisualStyleBackColor = true;
             this.Bookmark2.Visible = false;
+            this.Bookmark2.Click += new System.EventHandler(this.Bookmark2_Click);
             // 
             // labelMeaning2
             // 
@@ -928,10 +1033,11 @@
             this.labelMeaning2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelMeaning2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMeaning2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelMeaning2.Location = new System.Drawing.Point(309, 40);
+            this.labelMeaning2.Location = new System.Drawing.Point(217, 40);
             this.labelMeaning2.Name = "labelMeaning2";
-            this.labelMeaning2.Size = new System.Drawing.Size(0, 22);
+            this.labelMeaning2.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning2.TabIndex = 33;
+            this.labelMeaning2.Text = "meaning";
             // 
             // speaker2
             // 
@@ -1109,6 +1215,309 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Alphabet";
             // 
+            // Reload
+            // 
+            this.Reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reload.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.Reload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.Reload.IconChar = FontAwesome.Sharp.IconChar.Sync;
+            this.Reload.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.Reload.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Reload.IconSize = 30;
+            this.Reload.Location = new System.Drawing.Point(580, 506);
+            this.Reload.Name = "Reload";
+            this.Reload.Rotation = 0D;
+            this.Reload.Size = new System.Drawing.Size(35, 33);
+            this.Reload.TabIndex = 89;
+            this.Reload.UseVisualStyleBackColor = true;
+            this.Reload.Click += new System.EventHandler(this.Reload_Click);
+            // 
+            // engFlag2
+            // 
+            this.engFlag2.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag2.Location = new System.Drawing.Point(419, 37);
+            this.engFlag2.Name = "engFlag2";
+            this.engFlag2.Size = new System.Drawing.Size(40, 30);
+            this.engFlag2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag2.TabIndex = 90;
+            this.engFlag2.TabStop = false;
+            this.engFlag2.Visible = false;
+            // 
+            // engFlag1
+            // 
+            this.engFlag1.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag1.Location = new System.Drawing.Point(419, 0);
+            this.engFlag1.Name = "engFlag1";
+            this.engFlag1.Size = new System.Drawing.Size(40, 30);
+            this.engFlag1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag1.TabIndex = 91;
+            this.engFlag1.TabStop = false;
+            this.engFlag1.Visible = false;
+            // 
+            // engFlag3
+            // 
+            this.engFlag3.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag3.Location = new System.Drawing.Point(419, 76);
+            this.engFlag3.Name = "engFlag3";
+            this.engFlag3.Size = new System.Drawing.Size(40, 30);
+            this.engFlag3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag3.TabIndex = 92;
+            this.engFlag3.TabStop = false;
+            this.engFlag3.Visible = false;
+            // 
+            // engFlag4
+            // 
+            this.engFlag4.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag4.Location = new System.Drawing.Point(419, 115);
+            this.engFlag4.Name = "engFlag4";
+            this.engFlag4.Size = new System.Drawing.Size(40, 30);
+            this.engFlag4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag4.TabIndex = 93;
+            this.engFlag4.TabStop = false;
+            this.engFlag4.Visible = false;
+            // 
+            // engFlag5
+            // 
+            this.engFlag5.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag5.Location = new System.Drawing.Point(419, 154);
+            this.engFlag5.Name = "engFlag5";
+            this.engFlag5.Size = new System.Drawing.Size(40, 30);
+            this.engFlag5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag5.TabIndex = 94;
+            this.engFlag5.TabStop = false;
+            this.engFlag5.Visible = false;
+            // 
+            // engFlag6
+            // 
+            this.engFlag6.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag6.Location = new System.Drawing.Point(419, 193);
+            this.engFlag6.Name = "engFlag6";
+            this.engFlag6.Size = new System.Drawing.Size(40, 30);
+            this.engFlag6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag6.TabIndex = 95;
+            this.engFlag6.TabStop = false;
+            this.engFlag6.Visible = false;
+            // 
+            // engFlag7
+            // 
+            this.engFlag7.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag7.Location = new System.Drawing.Point(419, 232);
+            this.engFlag7.Name = "engFlag7";
+            this.engFlag7.Size = new System.Drawing.Size(40, 30);
+            this.engFlag7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag7.TabIndex = 96;
+            this.engFlag7.TabStop = false;
+            this.engFlag7.Visible = false;
+            // 
+            // engFlag8
+            // 
+            this.engFlag8.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag8.Location = new System.Drawing.Point(419, 271);
+            this.engFlag8.Name = "engFlag8";
+            this.engFlag8.Size = new System.Drawing.Size(40, 30);
+            this.engFlag8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag8.TabIndex = 97;
+            this.engFlag8.TabStop = false;
+            this.engFlag8.Visible = false;
+            // 
+            // engFlag9
+            // 
+            this.engFlag9.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag9.Location = new System.Drawing.Point(419, 310);
+            this.engFlag9.Name = "engFlag9";
+            this.engFlag9.Size = new System.Drawing.Size(40, 30);
+            this.engFlag9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag9.TabIndex = 98;
+            this.engFlag9.TabStop = false;
+            this.engFlag9.Visible = false;
+            // 
+            // engFlag10
+            // 
+            this.engFlag10.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag10.Location = new System.Drawing.Point(419, 349);
+            this.engFlag10.Name = "engFlag10";
+            this.engFlag10.Size = new System.Drawing.Size(40, 30);
+            this.engFlag10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag10.TabIndex = 99;
+            this.engFlag10.TabStop = false;
+            this.engFlag10.Visible = false;
+            // 
+            // engFlag11
+            // 
+            this.engFlag11.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag11.Location = new System.Drawing.Point(419, 388);
+            this.engFlag11.Name = "engFlag11";
+            this.engFlag11.Size = new System.Drawing.Size(40, 30);
+            this.engFlag11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag11.TabIndex = 100;
+            this.engFlag11.TabStop = false;
+            this.engFlag11.Visible = false;
+            // 
+            // engFlag12
+            // 
+            this.engFlag12.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag12.Location = new System.Drawing.Point(419, 427);
+            this.engFlag12.Name = "engFlag12";
+            this.engFlag12.Size = new System.Drawing.Size(40, 30);
+            this.engFlag12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag12.TabIndex = 101;
+            this.engFlag12.TabStop = false;
+            this.engFlag12.Visible = false;
+            // 
+            // engFlag13
+            // 
+            this.engFlag13.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag13.Location = new System.Drawing.Point(419, 466);
+            this.engFlag13.Name = "engFlag13";
+            this.engFlag13.Size = new System.Drawing.Size(40, 30);
+            this.engFlag13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag13.TabIndex = 102;
+            this.engFlag13.TabStop = false;
+            this.engFlag13.Visible = false;
+            // 
+            // vieFlag1
+            // 
+            this.vieFlag1.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag1.Location = new System.Drawing.Point(465, -2);
+            this.vieFlag1.Name = "vieFlag1";
+            this.vieFlag1.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag1.TabIndex = 103;
+            this.vieFlag1.TabStop = false;
+            this.vieFlag1.Visible = false;
+            // 
+            // vieFlag2
+            // 
+            this.vieFlag2.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag2.Location = new System.Drawing.Point(465, 37);
+            this.vieFlag2.Name = "vieFlag2";
+            this.vieFlag2.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag2.TabIndex = 104;
+            this.vieFlag2.TabStop = false;
+            this.vieFlag2.Visible = false;
+            // 
+            // vieFlag3
+            // 
+            this.vieFlag3.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag3.Location = new System.Drawing.Point(465, 76);
+            this.vieFlag3.Name = "vieFlag3";
+            this.vieFlag3.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag3.TabIndex = 105;
+            this.vieFlag3.TabStop = false;
+            this.vieFlag3.Visible = false;
+            // 
+            // vieFlag4
+            // 
+            this.vieFlag4.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag4.Location = new System.Drawing.Point(465, 115);
+            this.vieFlag4.Name = "vieFlag4";
+            this.vieFlag4.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag4.TabIndex = 106;
+            this.vieFlag4.TabStop = false;
+            this.vieFlag4.Visible = false;
+            // 
+            // vieFlag5
+            // 
+            this.vieFlag5.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag5.Location = new System.Drawing.Point(465, 154);
+            this.vieFlag5.Name = "vieFlag5";
+            this.vieFlag5.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag5.TabIndex = 107;
+            this.vieFlag5.TabStop = false;
+            this.vieFlag5.Visible = false;
+            // 
+            // vieFlag6
+            // 
+            this.vieFlag6.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag6.Location = new System.Drawing.Point(465, 193);
+            this.vieFlag6.Name = "vieFlag6";
+            this.vieFlag6.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag6.TabIndex = 108;
+            this.vieFlag6.TabStop = false;
+            this.vieFlag6.Visible = false;
+            // 
+            // vieFlag7
+            // 
+            this.vieFlag7.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag7.Location = new System.Drawing.Point(465, 233);
+            this.vieFlag7.Name = "vieFlag7";
+            this.vieFlag7.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag7.TabIndex = 109;
+            this.vieFlag7.TabStop = false;
+            this.vieFlag7.Visible = false;
+            // 
+            // vieFlag8
+            // 
+            this.vieFlag8.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag8.Location = new System.Drawing.Point(465, 271);
+            this.vieFlag8.Name = "vieFlag8";
+            this.vieFlag8.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag8.TabIndex = 110;
+            this.vieFlag8.TabStop = false;
+            this.vieFlag8.Visible = false;
+            // 
+            // vieFlag9
+            // 
+            this.vieFlag9.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag9.Location = new System.Drawing.Point(465, 310);
+            this.vieFlag9.Name = "vieFlag9";
+            this.vieFlag9.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag9.TabIndex = 111;
+            this.vieFlag9.TabStop = false;
+            this.vieFlag9.Visible = false;
+            // 
+            // vieFlag10
+            // 
+            this.vieFlag10.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag10.Location = new System.Drawing.Point(465, 349);
+            this.vieFlag10.Name = "vieFlag10";
+            this.vieFlag10.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag10.TabIndex = 112;
+            this.vieFlag10.TabStop = false;
+            this.vieFlag10.Visible = false;
+            // 
+            // vieFlag11
+            // 
+            this.vieFlag11.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag11.Location = new System.Drawing.Point(465, 388);
+            this.vieFlag11.Name = "vieFlag11";
+            this.vieFlag11.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag11.TabIndex = 113;
+            this.vieFlag11.TabStop = false;
+            this.vieFlag11.Visible = false;
+            // 
+            // vieFlag12
+            // 
+            this.vieFlag12.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag12.Location = new System.Drawing.Point(465, 427);
+            this.vieFlag12.Name = "vieFlag12";
+            this.vieFlag12.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag12.TabIndex = 114;
+            this.vieFlag12.TabStop = false;
+            this.vieFlag12.Visible = false;
+            // 
+            // vieFlag13
+            // 
+            this.vieFlag13.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag13.Location = new System.Drawing.Point(465, 466);
+            this.vieFlag13.Name = "vieFlag13";
+            this.vieFlag13.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag13.TabIndex = 115;
+            this.vieFlag13.TabStop = false;
+            this.vieFlag13.Visible = false;
+            // 
             // Bookmark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1125,6 +1534,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag13)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1199,5 +1634,32 @@
         private FontAwesome.Sharp.IconButton Bookmark1;
         private System.Windows.Forms.Label labelMeaning1;
         private System.Windows.Forms.Label labelWord1;
+        private FontAwesome.Sharp.IconButton Reload;
+        private System.Windows.Forms.PictureBox engFlag13;
+        private System.Windows.Forms.PictureBox engFlag12;
+        private System.Windows.Forms.PictureBox engFlag11;
+        private System.Windows.Forms.PictureBox engFlag10;
+        private System.Windows.Forms.PictureBox engFlag9;
+        private System.Windows.Forms.PictureBox engFlag8;
+        private System.Windows.Forms.PictureBox engFlag7;
+        private System.Windows.Forms.PictureBox engFlag6;
+        private System.Windows.Forms.PictureBox engFlag5;
+        private System.Windows.Forms.PictureBox engFlag4;
+        private System.Windows.Forms.PictureBox engFlag3;
+        private System.Windows.Forms.PictureBox engFlag1;
+        private System.Windows.Forms.PictureBox engFlag2;
+        private System.Windows.Forms.PictureBox vieFlag13;
+        private System.Windows.Forms.PictureBox vieFlag12;
+        private System.Windows.Forms.PictureBox vieFlag11;
+        private System.Windows.Forms.PictureBox vieFlag10;
+        private System.Windows.Forms.PictureBox vieFlag9;
+        private System.Windows.Forms.PictureBox vieFlag8;
+        private System.Windows.Forms.PictureBox vieFlag7;
+        private System.Windows.Forms.PictureBox vieFlag6;
+        private System.Windows.Forms.PictureBox vieFlag5;
+        private System.Windows.Forms.PictureBox vieFlag4;
+        private System.Windows.Forms.PictureBox vieFlag3;
+        private System.Windows.Forms.PictureBox vieFlag2;
+        private System.Windows.Forms.PictureBox vieFlag1;
     }
 }
