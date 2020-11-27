@@ -742,9 +742,9 @@
             this.wordMeaning.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordMeaning.Location = new System.Drawing.Point(24, 120);
             this.wordMeaning.Name = "wordMeaning";
-            this.wordMeaning.Size = new System.Drawing.Size(394, 23);
+            this.wordMeaning.Size = new System.Drawing.Size(98, 23);
             this.wordMeaning.TabIndex = 36;
-            this.wordMeaning.Text = "This word meaning doesn\'t have in Database";
+            this.wordMeaning.Text = "NotFound";
             this.wordMeaning.Visible = false;
             // 
             // bookmarkButton

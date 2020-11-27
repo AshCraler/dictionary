@@ -131,7 +131,7 @@ namespace Dictionary_user
                     if (Database.loadData.Rows.Count > 0)
                         wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
                     else
-                        wordMeaning.Text = "This word meaning doesn't have in Database";
+                        wordMeaning.Text = "Not Found";
                     Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Eng-Vie");
                     btnPlay.Visible = true;
                     btnPlay2.Visible = false;
@@ -144,7 +144,7 @@ namespace Dictionary_user
                     if (Database.loadData.Rows.Count > 0)
                         wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
                     else
-                        wordMeaning.Text = "This word meaning doesn't have in Database";
+                        wordMeaning.Text = "Not Found";
                     Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Vie-Eng");
                     btnPlay2.Visible = true;
                     btnPlay.Visible = false;
@@ -200,6 +200,8 @@ namespace Dictionary_user
             labelHint2.Text = "";
             labelHint3.Text = "";
             labelHint4.Text = "";
+            loadRecentlyHistory();
+            loadRecentlyBookmark();
         }
         private void openChildForm(Form childForm) // Mở childForm mới
         {
@@ -251,7 +253,11 @@ namespace Dictionary_user
         }
         private void loadRecentlyHistory()
         {
-            command = "SELECT Word from historysearch ORDER BY id DESC";
+           
+            if (hint == "English")
+                command = "SELECT Word from historysearch where Translate='Eng-Vie' ORDER BY id DESC";
+            else
+                command = "SELECT Word from historysearch where Translate='Vie-Eng' ORDER BY id DESC";
             Database.load(command);
             if (Database.loadData.Rows.Count > 0)
                 labelHistory1.Text = Database.loadData.Rows[0]["Word"].ToString();
@@ -387,7 +393,10 @@ namespace Dictionary_user
             textboxSearch.LineMouseHoverColor = RGBColors.color1;
             buttonSearch.IconColor = RGBColors.color1;
             Database.nowForm = 1;
-            textboxSearch.Text = typedWord.Text;
+            if (hint == "VieMeaning")
+                textboxSearch.Text = "Search VietNamese";
+            else
+                textboxSearch.Text = "Search English";
         }
 
         private void btnHistory_Click(object sender, EventArgs e) // Khi click vào historyButton
