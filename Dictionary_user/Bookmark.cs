@@ -61,11 +61,19 @@ namespace Dictionary_user
             vieFlag12.Image = Properties.Resources.vietnam;
             vieFlag13.Image = Properties.Resources.vietnam;
         }
-        private void loadData()
+        private void loadDatabase()
         {
-            loadImageSource();
             if (Database.acction == "showBookmarkList")
                 Database.load("select * from bookmark order by id DESC");
+        }
+        private void loadData()
+        {   
+            loadImageSource();
+            string max;
+            if ((page + 1) * 13 < Database.loadData.Rows.Count)
+                max = ((page + 1) * 13).ToString();
+            else max = Database.loadData.Rows.Count.ToString();
+            pageInfo.Text = (page*13 + 1).ToString() + " - " + max + " / " + Database.loadData.Rows.Count.ToString() + " Vocalblary";
             if (Database.loadData.Rows.Count > 0 + 13 * page)
             {
                 labelWord1.Visible = true;
@@ -75,6 +83,7 @@ namespace Dictionary_user
                 language1 = Database.loadData.Rows[page * 13]["languages"].ToString();
                 speaker1.Visible = true;
                 Bookmark1.Visible = true;
+                Bookmark1.IconColor= Color.FromArgb(238, 26, 74);
                 engFlag1.Visible = true;
                 vieFlag1.Visible = true;
                 if (language1!="English")
@@ -100,6 +109,7 @@ namespace Dictionary_user
                 labelMeaning2.Text = Database.loadData.Rows[page * 13 + 1]["meaning"].ToString();
                 language2 = Database.loadData.Rows[page * 13 + 1]["languages"].ToString();
                 Bookmark2.Visible = true;
+                Bookmark2.IconColor = Color.FromArgb(238, 26, 74);
                 speaker2.Visible = true;
                 engFlag2.Visible = true;
                 vieFlag2.Visible = true;
@@ -126,6 +136,7 @@ namespace Dictionary_user
                 labelMeaning3.Text = Database.loadData.Rows[page * 13 + 2]["meaning"].ToString();
                 language3 = Database.loadData.Rows[page * 13 + 2]["languages"].ToString();
                 Bookmark3.Visible = true;
+                Bookmark3.IconColor = Color.FromArgb(238, 26, 74);
                 speaker3.Visible = true;
                 engFlag3.Visible = true;
                 vieFlag3.Visible = true;
@@ -152,6 +163,7 @@ namespace Dictionary_user
                 labelMeaning4.Text = Database.loadData.Rows[page * 13 + 3]["meaning"].ToString();
                 language4 = Database.loadData.Rows[page * 13 + 3]["languages"].ToString();
                 Bookmark4.Visible = true;
+                Bookmark4.IconColor = Color.FromArgb(238, 26, 74);
                 speaker4.Visible = true;
                 engFlag4.Visible = true;
                 vieFlag4.Visible = true;
@@ -178,6 +190,7 @@ namespace Dictionary_user
                 labelMeaning5.Text = Database.loadData.Rows[page * 13 + 4]["meaning"].ToString();
                 language5 = Database.loadData.Rows[page * 13 + 4]["languages"].ToString();
                 Bookmark5.Visible = true;
+                Bookmark5.IconColor = Color.FromArgb(238, 26, 74);
                 speaker5.Visible = true;
                 engFlag5.Visible = true;
                 vieFlag5.Visible = true;
@@ -204,6 +217,7 @@ namespace Dictionary_user
                 labelMeaning6.Text = Database.loadData.Rows[page * 13 + 5]["meaning"].ToString();
                 language6 = Database.loadData.Rows[page * 13 + 5]["languages"].ToString();
                 Bookmark6.Visible = true;
+                Bookmark6.IconColor = Color.FromArgb(238, 26, 74);
                 speaker6.Visible = true;
                 engFlag6.Visible = true;
                 vieFlag6.Visible = true;
@@ -230,6 +244,7 @@ namespace Dictionary_user
                 labelMeaning7.Text = Database.loadData.Rows[page * 13 + 6]["meaning"].ToString();
                 language7 = Database.loadData.Rows[page * 13 + 6]["languages"].ToString();
                 Bookmark7.Visible = true;
+                Bookmark7.IconColor = Color.FromArgb(238, 26, 74);
                 speaker7.Visible = true;
                 engFlag7.Visible = true;
                 vieFlag7.Visible = true;
@@ -256,6 +271,7 @@ namespace Dictionary_user
                 labelMeaning8.Text = Database.loadData.Rows[page * 13 + 7]["meaning"].ToString();
                 language8 = Database.loadData.Rows[page * 13 + 7]["languages"].ToString();
                 Bookmark8.Visible = true;
+                Bookmark8.IconColor = Color.FromArgb(238, 26, 74);
                 speaker8.Visible = true;
                 engFlag8.Visible = true;
                 vieFlag8.Visible = true;
@@ -282,6 +298,7 @@ namespace Dictionary_user
                 labelMeaning9.Text = Database.loadData.Rows[page * 13 + 8]["meaning"].ToString();
                 language9 = Database.loadData.Rows[page * 13 + 8]["languages"].ToString();
                 Bookmark9.Visible = true;
+                Bookmark9.IconColor = Color.FromArgb(238, 26, 74);
                 speaker9.Visible = true;
                 engFlag9.Visible = true;
                 vieFlag9.Visible = true;
@@ -308,6 +325,7 @@ namespace Dictionary_user
                 labelMeaning10.Text = Database.loadData.Rows[page * 13 + 9]["meaning"].ToString();
                 language10 = Database.loadData.Rows[page * 13 + 9]["languages"].ToString();
                 Bookmark10.Visible = true;
+                Bookmark10.IconColor = Color.FromArgb(238, 26, 74);
                 speaker10.Visible = true;
                 engFlag10.Visible = true;
                 vieFlag10.Visible = true;
@@ -332,8 +350,9 @@ namespace Dictionary_user
                 labelMeaning11.Visible = true;
                 labelWord11.Text = Database.loadData.Rows[page * 13 + 10]["Word"].ToString();
                 labelMeaning11.Text = Database.loadData.Rows[page * 13 + 10]["meaning"].ToString();
-                language11 = Database.loadData.Rows[page * 13 + 11]["languages"].ToString();
+                language11 = Database.loadData.Rows[page * 13 + 10]["languages"].ToString();
                 Bookmark11.Visible = true;
+                Bookmark11.IconColor = Color.FromArgb(238, 26, 74);
                 speaker11.Visible = true;
                 engFlag11.Visible = true;
                 vieFlag11.Visible = true;
@@ -360,6 +379,7 @@ namespace Dictionary_user
                 labelMeaning12.Text = Database.loadData.Rows[page * 13 + 11]["meaning"].ToString();
                 language12 = Database.loadData.Rows[page * 13 + 11]["languages"].ToString();
                 Bookmark12.Visible = true;
+                Bookmark12.IconColor = Color.FromArgb(238, 26, 74);
                 speaker12.Visible = true;
                 engFlag12.Visible = true;
                 vieFlag12.Visible = true;
@@ -386,6 +406,7 @@ namespace Dictionary_user
                 labelMeaning13.Text = Database.loadData.Rows[page * 13 + 12]["meaning"].ToString();
                 language13 = Database.loadData.Rows[page * 13 + 12]["languages"].ToString();
                 Bookmark13.Visible = true;
+                Bookmark13.IconColor = Color.FromArgb(238, 26, 74);
                 speaker13.Visible = true;
                 engFlag13.Visible = true;
                 vieFlag13.Visible = true;
@@ -408,6 +429,7 @@ namespace Dictionary_user
         public Bookmark()
         {
             InitializeComponent();
+            loadDatabase();
             loadData();
         }
 
@@ -531,6 +553,7 @@ namespace Dictionary_user
         private void Reload_Click(object sender, EventArgs e)
         {
             page = 0;
+            loadDatabase();
             loadData();
             Bookmark1.IconColor = Color.FromArgb(238, 26, 74);
             Bookmark2.IconColor = Color.FromArgb(238, 26, 74);
@@ -744,7 +767,8 @@ namespace Dictionary_user
 
         private void Next_Click(object sender, EventArgs e)
         {
-            page = page + 1;
+            if ((page+1)*13<=Database.loadData.Rows.Count)
+                page = page + 1;
             loadData();
         }
 
@@ -754,5 +778,7 @@ namespace Dictionary_user
                 page = page - 1;
             loadData();
         }
+
+       
     }
 }

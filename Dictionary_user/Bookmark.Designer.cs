@@ -30,11 +30,38 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.vieFlag13 = new System.Windows.Forms.PictureBox();
+            this.vieFlag12 = new System.Windows.Forms.PictureBox();
+            this.vieFlag11 = new System.Windows.Forms.PictureBox();
+            this.vieFlag10 = new System.Windows.Forms.PictureBox();
+            this.vieFlag9 = new System.Windows.Forms.PictureBox();
+            this.vieFlag8 = new System.Windows.Forms.PictureBox();
+            this.vieFlag7 = new System.Windows.Forms.PictureBox();
+            this.vieFlag6 = new System.Windows.Forms.PictureBox();
+            this.vieFlag5 = new System.Windows.Forms.PictureBox();
+            this.vieFlag4 = new System.Windows.Forms.PictureBox();
+            this.vieFlag3 = new System.Windows.Forms.PictureBox();
+            this.vieFlag2 = new System.Windows.Forms.PictureBox();
+            this.vieFlag1 = new System.Windows.Forms.PictureBox();
+            this.engFlag13 = new System.Windows.Forms.PictureBox();
+            this.engFlag12 = new System.Windows.Forms.PictureBox();
+            this.engFlag11 = new System.Windows.Forms.PictureBox();
+            this.engFlag10 = new System.Windows.Forms.PictureBox();
+            this.engFlag9 = new System.Windows.Forms.PictureBox();
+            this.engFlag8 = new System.Windows.Forms.PictureBox();
+            this.engFlag7 = new System.Windows.Forms.PictureBox();
+            this.engFlag6 = new System.Windows.Forms.PictureBox();
+            this.engFlag5 = new System.Windows.Forms.PictureBox();
+            this.engFlag4 = new System.Windows.Forms.PictureBox();
+            this.engFlag3 = new System.Windows.Forms.PictureBox();
+            this.engFlag1 = new System.Windows.Forms.PictureBox();
+            this.engFlag2 = new System.Windows.Forms.PictureBox();
+            this.Reload = new FontAwesome.Sharp.IconButton();
             this.speaker1 = new FontAwesome.Sharp.IconButton();
             this.Bookmark1 = new FontAwesome.Sharp.IconButton();
             this.labelMeaning1 = new System.Windows.Forms.Label();
             this.labelWord1 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.pageInfo = new System.Windows.Forms.Label();
             this.Preview = new FontAwesome.Sharp.IconButton();
             this.Next = new FontAwesome.Sharp.IconButton();
             this.labelWord13 = new System.Windows.Forms.Label();
@@ -96,65 +123,38 @@
             this.btnPlay = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Reload = new FontAwesome.Sharp.IconButton();
-            this.engFlag2 = new System.Windows.Forms.PictureBox();
-            this.engFlag1 = new System.Windows.Forms.PictureBox();
-            this.engFlag3 = new System.Windows.Forms.PictureBox();
-            this.engFlag4 = new System.Windows.Forms.PictureBox();
-            this.engFlag5 = new System.Windows.Forms.PictureBox();
-            this.engFlag6 = new System.Windows.Forms.PictureBox();
-            this.engFlag7 = new System.Windows.Forms.PictureBox();
-            this.engFlag8 = new System.Windows.Forms.PictureBox();
-            this.engFlag9 = new System.Windows.Forms.PictureBox();
-            this.engFlag10 = new System.Windows.Forms.PictureBox();
-            this.engFlag11 = new System.Windows.Forms.PictureBox();
-            this.engFlag12 = new System.Windows.Forms.PictureBox();
-            this.engFlag13 = new System.Windows.Forms.PictureBox();
-            this.vieFlag1 = new System.Windows.Forms.PictureBox();
-            this.vieFlag2 = new System.Windows.Forms.PictureBox();
-            this.vieFlag3 = new System.Windows.Forms.PictureBox();
-            this.vieFlag4 = new System.Windows.Forms.PictureBox();
-            this.vieFlag5 = new System.Windows.Forms.PictureBox();
-            this.vieFlag6 = new System.Windows.Forms.PictureBox();
-            this.vieFlag7 = new System.Windows.Forms.PictureBox();
-            this.vieFlag8 = new System.Windows.Forms.PictureBox();
-            this.vieFlag9 = new System.Windows.Forms.PictureBox();
-            this.vieFlag10 = new System.Windows.Forms.PictureBox();
-            this.vieFlag11 = new System.Windows.Forms.PictureBox();
-            this.vieFlag12 = new System.Windows.Forms.PictureBox();
-            this.vieFlag13 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag13)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -201,7 +201,7 @@
             this.panel3.Controls.Add(this.Bookmark1);
             this.panel3.Controls.Add(this.labelMeaning1);
             this.panel3.Controls.Add(this.labelWord1);
-            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.pageInfo);
             this.panel3.Controls.Add(this.Preview);
             this.panel3.Controls.Add(this.Next);
             this.panel3.Controls.Add(this.labelWord13);
@@ -256,6 +256,309 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(804, 611);
             this.panel3.TabIndex = 39;
+            // 
+            // vieFlag13
+            // 
+            this.vieFlag13.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag13.Location = new System.Drawing.Point(465, 466);
+            this.vieFlag13.Name = "vieFlag13";
+            this.vieFlag13.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag13.TabIndex = 115;
+            this.vieFlag13.TabStop = false;
+            this.vieFlag13.Visible = false;
+            // 
+            // vieFlag12
+            // 
+            this.vieFlag12.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag12.Location = new System.Drawing.Point(465, 427);
+            this.vieFlag12.Name = "vieFlag12";
+            this.vieFlag12.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag12.TabIndex = 114;
+            this.vieFlag12.TabStop = false;
+            this.vieFlag12.Visible = false;
+            // 
+            // vieFlag11
+            // 
+            this.vieFlag11.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag11.Location = new System.Drawing.Point(465, 388);
+            this.vieFlag11.Name = "vieFlag11";
+            this.vieFlag11.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag11.TabIndex = 113;
+            this.vieFlag11.TabStop = false;
+            this.vieFlag11.Visible = false;
+            // 
+            // vieFlag10
+            // 
+            this.vieFlag10.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag10.Location = new System.Drawing.Point(465, 349);
+            this.vieFlag10.Name = "vieFlag10";
+            this.vieFlag10.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag10.TabIndex = 112;
+            this.vieFlag10.TabStop = false;
+            this.vieFlag10.Visible = false;
+            // 
+            // vieFlag9
+            // 
+            this.vieFlag9.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag9.Location = new System.Drawing.Point(465, 310);
+            this.vieFlag9.Name = "vieFlag9";
+            this.vieFlag9.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag9.TabIndex = 111;
+            this.vieFlag9.TabStop = false;
+            this.vieFlag9.Visible = false;
+            // 
+            // vieFlag8
+            // 
+            this.vieFlag8.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag8.Location = new System.Drawing.Point(465, 271);
+            this.vieFlag8.Name = "vieFlag8";
+            this.vieFlag8.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag8.TabIndex = 110;
+            this.vieFlag8.TabStop = false;
+            this.vieFlag8.Visible = false;
+            // 
+            // vieFlag7
+            // 
+            this.vieFlag7.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag7.Location = new System.Drawing.Point(465, 233);
+            this.vieFlag7.Name = "vieFlag7";
+            this.vieFlag7.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag7.TabIndex = 109;
+            this.vieFlag7.TabStop = false;
+            this.vieFlag7.Visible = false;
+            // 
+            // vieFlag6
+            // 
+            this.vieFlag6.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag6.Location = new System.Drawing.Point(465, 193);
+            this.vieFlag6.Name = "vieFlag6";
+            this.vieFlag6.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag6.TabIndex = 108;
+            this.vieFlag6.TabStop = false;
+            this.vieFlag6.Visible = false;
+            // 
+            // vieFlag5
+            // 
+            this.vieFlag5.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag5.Location = new System.Drawing.Point(465, 154);
+            this.vieFlag5.Name = "vieFlag5";
+            this.vieFlag5.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag5.TabIndex = 107;
+            this.vieFlag5.TabStop = false;
+            this.vieFlag5.Visible = false;
+            // 
+            // vieFlag4
+            // 
+            this.vieFlag4.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag4.Location = new System.Drawing.Point(465, 115);
+            this.vieFlag4.Name = "vieFlag4";
+            this.vieFlag4.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag4.TabIndex = 106;
+            this.vieFlag4.TabStop = false;
+            this.vieFlag4.Visible = false;
+            // 
+            // vieFlag3
+            // 
+            this.vieFlag3.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag3.Location = new System.Drawing.Point(465, 76);
+            this.vieFlag3.Name = "vieFlag3";
+            this.vieFlag3.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag3.TabIndex = 105;
+            this.vieFlag3.TabStop = false;
+            this.vieFlag3.Visible = false;
+            // 
+            // vieFlag2
+            // 
+            this.vieFlag2.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag2.Location = new System.Drawing.Point(465, 37);
+            this.vieFlag2.Name = "vieFlag2";
+            this.vieFlag2.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag2.TabIndex = 104;
+            this.vieFlag2.TabStop = false;
+            this.vieFlag2.Visible = false;
+            // 
+            // vieFlag1
+            // 
+            this.vieFlag1.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.vieFlag1.Location = new System.Drawing.Point(465, -2);
+            this.vieFlag1.Name = "vieFlag1";
+            this.vieFlag1.Size = new System.Drawing.Size(49, 32);
+            this.vieFlag1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vieFlag1.TabIndex = 103;
+            this.vieFlag1.TabStop = false;
+            this.vieFlag1.Visible = false;
+            // 
+            // engFlag13
+            // 
+            this.engFlag13.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag13.Location = new System.Drawing.Point(419, 466);
+            this.engFlag13.Name = "engFlag13";
+            this.engFlag13.Size = new System.Drawing.Size(40, 30);
+            this.engFlag13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag13.TabIndex = 102;
+            this.engFlag13.TabStop = false;
+            this.engFlag13.Visible = false;
+            // 
+            // engFlag12
+            // 
+            this.engFlag12.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag12.Location = new System.Drawing.Point(419, 427);
+            this.engFlag12.Name = "engFlag12";
+            this.engFlag12.Size = new System.Drawing.Size(40, 30);
+            this.engFlag12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag12.TabIndex = 101;
+            this.engFlag12.TabStop = false;
+            this.engFlag12.Visible = false;
+            // 
+            // engFlag11
+            // 
+            this.engFlag11.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag11.Location = new System.Drawing.Point(419, 388);
+            this.engFlag11.Name = "engFlag11";
+            this.engFlag11.Size = new System.Drawing.Size(40, 30);
+            this.engFlag11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag11.TabIndex = 100;
+            this.engFlag11.TabStop = false;
+            this.engFlag11.Visible = false;
+            // 
+            // engFlag10
+            // 
+            this.engFlag10.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag10.Location = new System.Drawing.Point(419, 349);
+            this.engFlag10.Name = "engFlag10";
+            this.engFlag10.Size = new System.Drawing.Size(40, 30);
+            this.engFlag10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag10.TabIndex = 99;
+            this.engFlag10.TabStop = false;
+            this.engFlag10.Visible = false;
+            // 
+            // engFlag9
+            // 
+            this.engFlag9.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag9.Location = new System.Drawing.Point(419, 310);
+            this.engFlag9.Name = "engFlag9";
+            this.engFlag9.Size = new System.Drawing.Size(40, 30);
+            this.engFlag9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag9.TabIndex = 98;
+            this.engFlag9.TabStop = false;
+            this.engFlag9.Visible = false;
+            // 
+            // engFlag8
+            // 
+            this.engFlag8.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag8.Location = new System.Drawing.Point(419, 271);
+            this.engFlag8.Name = "engFlag8";
+            this.engFlag8.Size = new System.Drawing.Size(40, 30);
+            this.engFlag8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag8.TabIndex = 97;
+            this.engFlag8.TabStop = false;
+            this.engFlag8.Visible = false;
+            // 
+            // engFlag7
+            // 
+            this.engFlag7.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag7.Location = new System.Drawing.Point(419, 232);
+            this.engFlag7.Name = "engFlag7";
+            this.engFlag7.Size = new System.Drawing.Size(40, 30);
+            this.engFlag7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag7.TabIndex = 96;
+            this.engFlag7.TabStop = false;
+            this.engFlag7.Visible = false;
+            // 
+            // engFlag6
+            // 
+            this.engFlag6.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag6.Location = new System.Drawing.Point(419, 193);
+            this.engFlag6.Name = "engFlag6";
+            this.engFlag6.Size = new System.Drawing.Size(40, 30);
+            this.engFlag6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag6.TabIndex = 95;
+            this.engFlag6.TabStop = false;
+            this.engFlag6.Visible = false;
+            // 
+            // engFlag5
+            // 
+            this.engFlag5.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag5.Location = new System.Drawing.Point(419, 154);
+            this.engFlag5.Name = "engFlag5";
+            this.engFlag5.Size = new System.Drawing.Size(40, 30);
+            this.engFlag5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag5.TabIndex = 94;
+            this.engFlag5.TabStop = false;
+            this.engFlag5.Visible = false;
+            // 
+            // engFlag4
+            // 
+            this.engFlag4.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag4.Location = new System.Drawing.Point(419, 115);
+            this.engFlag4.Name = "engFlag4";
+            this.engFlag4.Size = new System.Drawing.Size(40, 30);
+            this.engFlag4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag4.TabIndex = 93;
+            this.engFlag4.TabStop = false;
+            this.engFlag4.Visible = false;
+            // 
+            // engFlag3
+            // 
+            this.engFlag3.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag3.Location = new System.Drawing.Point(419, 76);
+            this.engFlag3.Name = "engFlag3";
+            this.engFlag3.Size = new System.Drawing.Size(40, 30);
+            this.engFlag3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag3.TabIndex = 92;
+            this.engFlag3.TabStop = false;
+            this.engFlag3.Visible = false;
+            // 
+            // engFlag1
+            // 
+            this.engFlag1.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag1.Location = new System.Drawing.Point(419, 0);
+            this.engFlag1.Name = "engFlag1";
+            this.engFlag1.Size = new System.Drawing.Size(40, 30);
+            this.engFlag1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag1.TabIndex = 91;
+            this.engFlag1.TabStop = false;
+            this.engFlag1.Visible = false;
+            // 
+            // engFlag2
+            // 
+            this.engFlag2.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.engFlag2.Location = new System.Drawing.Point(419, 37);
+            this.engFlag2.Name = "engFlag2";
+            this.engFlag2.Size = new System.Drawing.Size(40, 30);
+            this.engFlag2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.engFlag2.TabIndex = 90;
+            this.engFlag2.TabStop = false;
+            this.engFlag2.Visible = false;
+            // 
+            // Reload
+            // 
+            this.Reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reload.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.Reload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.Reload.IconChar = FontAwesome.Sharp.IconChar.Sync;
+            this.Reload.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.Reload.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Reload.IconSize = 30;
+            this.Reload.Location = new System.Drawing.Point(583, 506);
+            this.Reload.Name = "Reload";
+            this.Reload.Rotation = 0D;
+            this.Reload.Size = new System.Drawing.Size(35, 33);
+            this.Reload.TabIndex = 89;
+            this.Reload.UseVisualStyleBackColor = true;
+            this.Reload.Click += new System.EventHandler(this.Reload_Click);
             // 
             // speaker1
             // 
@@ -316,17 +619,17 @@
             this.labelWord1.Size = new System.Drawing.Size(0, 22);
             this.labelWord1.TabIndex = 85;
             // 
-            // label15
+            // pageInfo
             // 
-            this.label15.AutoSize = true;
-            this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label15.Location = new System.Drawing.Point(24, 509);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(226, 22);
-            this.label15.TabIndex = 84;
-            this.label15.Text = "1-13 / Total volcabulary";
+            this.pageInfo.AutoSize = true;
+            this.pageInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pageInfo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pageInfo.ForeColor = System.Drawing.Color.Gainsboro;
+            this.pageInfo.Location = new System.Drawing.Point(24, 509);
+            this.pageInfo.Name = "pageInfo";
+            this.pageInfo.Size = new System.Drawing.Size(226, 22);
+            this.pageInfo.TabIndex = 84;
+            this.pageInfo.Text = "1-13 / Total volcabulary";
             // 
             // Preview
             // 
@@ -1217,309 +1520,6 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Alphabet";
             // 
-            // Reload
-            // 
-            this.Reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Reload.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.Reload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.Reload.IconChar = FontAwesome.Sharp.IconChar.Sync;
-            this.Reload.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.Reload.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Reload.IconSize = 30;
-            this.Reload.Location = new System.Drawing.Point(583, 506);
-            this.Reload.Name = "Reload";
-            this.Reload.Rotation = 0D;
-            this.Reload.Size = new System.Drawing.Size(35, 33);
-            this.Reload.TabIndex = 89;
-            this.Reload.UseVisualStyleBackColor = true;
-            this.Reload.Click += new System.EventHandler(this.Reload_Click);
-            // 
-            // engFlag2
-            // 
-            this.engFlag2.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.engFlag2.Location = new System.Drawing.Point(419, 37);
-            this.engFlag2.Name = "engFlag2";
-            this.engFlag2.Size = new System.Drawing.Size(40, 30);
-            this.engFlag2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.engFlag2.TabIndex = 90;
-            this.engFlag2.TabStop = false;
-            this.engFlag2.Visible = false;
-            // 
-            // engFlag1
-            // 
-            this.engFlag1.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.engFlag1.Location = new System.Drawing.Point(419, 0);
-            this.engFlag1.Name = "engFlag1";
-            this.engFlag1.Size = new System.Drawing.Size(40, 30);
-            this.engFlag1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.engFlag1.TabIndex = 91;
-            this.engFlag1.TabStop = false;
-            this.engFlag1.Visible = false;
-            // 
-            // engFlag3
-            // 
-            this.engFlag3.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.engFlag3.Location = new System.Drawing.Point(419, 76);
-            this.engFlag3.Name = "engFlag3";
-            this.engFlag3.Size = new System.Drawing.Size(40, 30);
-            this.engFlag3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.engFlag3.TabIndex = 92;
-            this.engFlag3.TabStop = false;
-            this.engFlag3.Visible = false;
-            // 
-            // engFlag4
-            // 
-            this.engFlag4.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.engFlag4.Location = new System.Drawing.Point(419, 115);
-            this.engFlag4.Name = "engFlag4";
-            this.engFlag4.Size = new System.Drawing.Size(40, 30);
-            this.engFlag4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.engFlag4.TabIndex = 93;
-            this.engFlag4.TabStop = false;
-            this.engFlag4.Visible = false;
-            // 
-            // engFlag5
-            // 
-            this.engFlag5.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.engFlag5.Location = new System.Drawing.Point(419, 154);
-            this.engFlag5.Name = "engFlag5";
-            this.engFlag5.Size = new System.Drawing.Size(40, 30);
-            this.engFlag5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.engFlag5.TabIndex = 94;
-            this.engFlag5.TabStop = false;
-            this.engFlag5.Visible = false;
-            // 
-            // engFlag6
-            // 
-            this.engFlag6.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.engFlag6.Location = new System.Drawing.Point(419, 193);
-            this.engFlag6.Name = "engFlag6";
-            this.engFlag6.Size = new System.Drawing.Size(40, 30);
-            this.engFlag6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.engFlag6.TabIndex = 95;
-            this.engFlag6.TabStop = false;
-            this.engFlag6.Visible = false;
-            // 
-            // engFlag7
-            // 
-            this.engFlag7.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.engFlag7.Location = new System.Drawing.Point(419, 232);
-            this.engFlag7.Name = "engFlag7";
-            this.engFlag7.Size = new System.Drawing.Size(40, 30);
-            this.engFlag7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.engFlag7.TabIndex = 96;
-            this.engFlag7.TabStop = false;
-            this.engFlag7.Visible = false;
-            // 
-            // engFlag8
-            // 
-            this.engFlag8.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.engFlag8.Location = new System.Drawing.Point(419, 271);
-            this.engFlag8.Name = "engFlag8";
-            this.engFlag8.Size = new System.Drawing.Size(40, 30);
-            this.engFlag8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.engFlag8.TabIndex = 97;
-            this.engFlag8.TabStop = false;
-            this.engFlag8.Visible = false;
-            // 
-            // engFlag9
-            // 
-            this.engFlag9.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.engFlag9.Location = new System.Drawing.Point(419, 310);
-            this.engFlag9.Name = "engFlag9";
-            this.engFlag9.Size = new System.Drawing.Size(40, 30);
-            this.engFlag9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.engFlag9.TabIndex = 98;
-            this.engFlag9.TabStop = false;
-            this.engFlag9.Visible = false;
-            // 
-            // engFlag10
-            // 
-            this.engFlag10.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.engFlag10.Location = new System.Drawing.Point(419, 349);
-            this.engFlag10.Name = "engFlag10";
-            this.engFlag10.Size = new System.Drawing.Size(40, 30);
-            this.engFlag10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.engFlag10.TabIndex = 99;
-            this.engFlag10.TabStop = false;
-            this.engFlag10.Visible = false;
-            // 
-            // engFlag11
-            // 
-            this.engFlag11.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.engFlag11.Location = new System.Drawing.Point(419, 388);
-            this.engFlag11.Name = "engFlag11";
-            this.engFlag11.Size = new System.Drawing.Size(40, 30);
-            this.engFlag11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.engFlag11.TabIndex = 100;
-            this.engFlag11.TabStop = false;
-            this.engFlag11.Visible = false;
-            // 
-            // engFlag12
-            // 
-            this.engFlag12.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.engFlag12.Location = new System.Drawing.Point(419, 427);
-            this.engFlag12.Name = "engFlag12";
-            this.engFlag12.Size = new System.Drawing.Size(40, 30);
-            this.engFlag12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.engFlag12.TabIndex = 101;
-            this.engFlag12.TabStop = false;
-            this.engFlag12.Visible = false;
-            // 
-            // engFlag13
-            // 
-            this.engFlag13.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.engFlag13.Location = new System.Drawing.Point(419, 466);
-            this.engFlag13.Name = "engFlag13";
-            this.engFlag13.Size = new System.Drawing.Size(40, 30);
-            this.engFlag13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.engFlag13.TabIndex = 102;
-            this.engFlag13.TabStop = false;
-            this.engFlag13.Visible = false;
-            // 
-            // vieFlag1
-            // 
-            this.vieFlag1.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.vieFlag1.Location = new System.Drawing.Point(465, -2);
-            this.vieFlag1.Name = "vieFlag1";
-            this.vieFlag1.Size = new System.Drawing.Size(49, 32);
-            this.vieFlag1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vieFlag1.TabIndex = 103;
-            this.vieFlag1.TabStop = false;
-            this.vieFlag1.Visible = false;
-            // 
-            // vieFlag2
-            // 
-            this.vieFlag2.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.vieFlag2.Location = new System.Drawing.Point(465, 37);
-            this.vieFlag2.Name = "vieFlag2";
-            this.vieFlag2.Size = new System.Drawing.Size(49, 32);
-            this.vieFlag2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vieFlag2.TabIndex = 104;
-            this.vieFlag2.TabStop = false;
-            this.vieFlag2.Visible = false;
-            // 
-            // vieFlag3
-            // 
-            this.vieFlag3.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.vieFlag3.Location = new System.Drawing.Point(465, 76);
-            this.vieFlag3.Name = "vieFlag3";
-            this.vieFlag3.Size = new System.Drawing.Size(49, 32);
-            this.vieFlag3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vieFlag3.TabIndex = 105;
-            this.vieFlag3.TabStop = false;
-            this.vieFlag3.Visible = false;
-            // 
-            // vieFlag4
-            // 
-            this.vieFlag4.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.vieFlag4.Location = new System.Drawing.Point(465, 115);
-            this.vieFlag4.Name = "vieFlag4";
-            this.vieFlag4.Size = new System.Drawing.Size(49, 32);
-            this.vieFlag4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vieFlag4.TabIndex = 106;
-            this.vieFlag4.TabStop = false;
-            this.vieFlag4.Visible = false;
-            // 
-            // vieFlag5
-            // 
-            this.vieFlag5.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.vieFlag5.Location = new System.Drawing.Point(465, 154);
-            this.vieFlag5.Name = "vieFlag5";
-            this.vieFlag5.Size = new System.Drawing.Size(49, 32);
-            this.vieFlag5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vieFlag5.TabIndex = 107;
-            this.vieFlag5.TabStop = false;
-            this.vieFlag5.Visible = false;
-            // 
-            // vieFlag6
-            // 
-            this.vieFlag6.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.vieFlag6.Location = new System.Drawing.Point(465, 193);
-            this.vieFlag6.Name = "vieFlag6";
-            this.vieFlag6.Size = new System.Drawing.Size(49, 32);
-            this.vieFlag6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vieFlag6.TabIndex = 108;
-            this.vieFlag6.TabStop = false;
-            this.vieFlag6.Visible = false;
-            // 
-            // vieFlag7
-            // 
-            this.vieFlag7.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.vieFlag7.Location = new System.Drawing.Point(465, 233);
-            this.vieFlag7.Name = "vieFlag7";
-            this.vieFlag7.Size = new System.Drawing.Size(49, 32);
-            this.vieFlag7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vieFlag7.TabIndex = 109;
-            this.vieFlag7.TabStop = false;
-            this.vieFlag7.Visible = false;
-            // 
-            // vieFlag8
-            // 
-            this.vieFlag8.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.vieFlag8.Location = new System.Drawing.Point(465, 271);
-            this.vieFlag8.Name = "vieFlag8";
-            this.vieFlag8.Size = new System.Drawing.Size(49, 32);
-            this.vieFlag8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vieFlag8.TabIndex = 110;
-            this.vieFlag8.TabStop = false;
-            this.vieFlag8.Visible = false;
-            // 
-            // vieFlag9
-            // 
-            this.vieFlag9.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.vieFlag9.Location = new System.Drawing.Point(465, 310);
-            this.vieFlag9.Name = "vieFlag9";
-            this.vieFlag9.Size = new System.Drawing.Size(49, 32);
-            this.vieFlag9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vieFlag9.TabIndex = 111;
-            this.vieFlag9.TabStop = false;
-            this.vieFlag9.Visible = false;
-            // 
-            // vieFlag10
-            // 
-            this.vieFlag10.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.vieFlag10.Location = new System.Drawing.Point(465, 349);
-            this.vieFlag10.Name = "vieFlag10";
-            this.vieFlag10.Size = new System.Drawing.Size(49, 32);
-            this.vieFlag10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vieFlag10.TabIndex = 112;
-            this.vieFlag10.TabStop = false;
-            this.vieFlag10.Visible = false;
-            // 
-            // vieFlag11
-            // 
-            this.vieFlag11.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.vieFlag11.Location = new System.Drawing.Point(465, 388);
-            this.vieFlag11.Name = "vieFlag11";
-            this.vieFlag11.Size = new System.Drawing.Size(49, 32);
-            this.vieFlag11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vieFlag11.TabIndex = 113;
-            this.vieFlag11.TabStop = false;
-            this.vieFlag11.Visible = false;
-            // 
-            // vieFlag12
-            // 
-            this.vieFlag12.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.vieFlag12.Location = new System.Drawing.Point(465, 427);
-            this.vieFlag12.Name = "vieFlag12";
-            this.vieFlag12.Size = new System.Drawing.Size(49, 32);
-            this.vieFlag12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vieFlag12.TabIndex = 114;
-            this.vieFlag12.TabStop = false;
-            this.vieFlag12.Visible = false;
-            // 
-            // vieFlag13
-            // 
-            this.vieFlag13.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.vieFlag13.Location = new System.Drawing.Point(465, 466);
-            this.vieFlag13.Name = "vieFlag13";
-            this.vieFlag13.Size = new System.Drawing.Size(49, 32);
-            this.vieFlag13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vieFlag13.TabIndex = 115;
-            this.vieFlag13.TabStop = false;
-            this.vieFlag13.Visible = false;
-            // 
             // Bookmark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1531,37 +1531,37 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vieFlag1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.engFlag2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.engFlag13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vieFlag13)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1631,7 +1631,7 @@
         private System.Windows.Forms.Label labelWord5;
         private FontAwesome.Sharp.IconButton Preview;
         private FontAwesome.Sharp.IconButton Next;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label pageInfo;
         private FontAwesome.Sharp.IconButton speaker1;
         private FontAwesome.Sharp.IconButton Bookmark1;
         private System.Windows.Forms.Label labelMeaning1;
