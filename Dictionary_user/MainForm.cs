@@ -176,6 +176,13 @@ namespace Dictionary_user
                 openChildForm(new History());
             }
         }
+        private void resetSuggestion()
+        {
+            labelHint1.Text = "";
+            labelHint2.Text = "";
+            labelHint3.Text = "";
+            labelHint4.Text = "";
+        }
         private void activateSwitchButton() // Kích hoạt switchButton 
         {
             if (ktSwitch == true)
@@ -196,10 +203,7 @@ namespace Dictionary_user
                 coloumn = "VieMeaning";
                 hint = "English";
             }
-            labelHint1.Text = "";
-            labelHint2.Text = "";
-            labelHint3.Text = "";
-            labelHint4.Text = "";
+            resetSuggestion();
             loadRecentlyHistory();
             loadRecentlyBookmark();
         }
@@ -293,7 +297,19 @@ namespace Dictionary_user
             loadRecentlyHistory();
             loadRecentlyBookmark();
         }
-
+        private void checkBookMark()
+        {
+            if (labelBookmark1.Text != typedWord.Text)
+            {
+                bookmarkButton.IconColor = Color.Gainsboro;
+                ktBookmark = false;
+            }
+            else
+            {
+                bookmarkButton.IconColor = RGBColors.color7;
+                ktBookmark = true;
+            }
+        }
         public MainForm() // Kích hoạt MainForm
         {
             //Initial GUI
@@ -397,6 +413,7 @@ namespace Dictionary_user
                 textboxSearch.Text = "Search VietNamese";
             else
                 textboxSearch.Text = "Search English";
+            checkBookMark();
         }
 
         private void btnHistory_Click(object sender, EventArgs e) // Khi click vào historyButton
@@ -712,8 +729,11 @@ namespace Dictionary_user
             {
                 ktBookmark = true;
                 bookmarkButton.IconColor = RGBColors.color7;
-                Database.insertBookmark(textboxSearch.Text, wordMeaning.Text, hint, time);
-                Database.updateHistory("update historysearch set Bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + textboxSearch.Text + "'");
+                Database.insertBookmark(typedWord.Text, wordMeaning.Text, hint, time);
+                if (hint=="English")
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'"+ "AND Translate='Eng-Vie'");
+                else
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
                 loadRecentlyBookmark();
             }
             else
@@ -722,7 +742,10 @@ namespace Dictionary_user
                 bookmarkButton.IconColor = Color.Gainsboro;
                 command= "delete from bookmark where word ="+"'"+typedWord.Text+"'"+"AND languages="+"'"+hint+"'";
                 Database.deleteBookmark(command);
-                Database.updateHistory("update historysearch set Bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + textboxSearch.Text + "'");
+                if (hint == "English")
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                else
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
                 loadRecentlyBookmark();
             }        
         }
