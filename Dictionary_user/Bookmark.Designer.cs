@@ -1224,7 +1224,7 @@
             this.Reload.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.Reload.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Reload.IconSize = 30;
-            this.Reload.Location = new System.Drawing.Point(580, 506);
+            this.Reload.Location = new System.Drawing.Point(583, 506);
             this.Reload.Name = "Reload";
             this.Reload.Rotation = 0D;
             this.Reload.Size = new System.Drawing.Size(35, 33);

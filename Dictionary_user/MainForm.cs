@@ -200,6 +200,8 @@ namespace Dictionary_user
             labelHint2.Text = "";
             labelHint3.Text = "";
             labelHint4.Text = "";
+            loadRecentlyHistory();
+            loadRecentlyBookmark();
         }
         private void openChildForm(Form childForm) // Mở childForm mới
         {
@@ -251,7 +253,11 @@ namespace Dictionary_user
         }
         private void loadRecentlyHistory()
         {
-            command = "SELECT Word from historysearch ORDER BY id DESC";
+           
+            if (hint == "English")
+                command = "SELECT Word from historysearch where Translate='Eng-Vie' ORDER BY id DESC";
+            else
+                command = "SELECT Word from historysearch where Translate='Vie-Eng' ORDER BY id DESC";
             Database.load(command);
             if (Database.loadData.Rows.Count > 0)
                 labelHistory1.Text = Database.loadData.Rows[0]["Word"].ToString();

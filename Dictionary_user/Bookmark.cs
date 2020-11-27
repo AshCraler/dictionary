@@ -31,8 +31,39 @@ namespace Dictionary_user
         private string command;
         public string time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
         #endregion
+        private void loadImageSource()
+        {
+            engFlag1.Image = Properties.Resources.united_kingdom;
+            engFlag2.Image = Properties.Resources.united_kingdom;
+            engFlag3.Image = Properties.Resources.united_kingdom;
+            engFlag4.Image = Properties.Resources.united_kingdom;
+            engFlag5.Image = Properties.Resources.united_kingdom;
+            engFlag6.Image = Properties.Resources.united_kingdom;
+            engFlag7.Image = Properties.Resources.united_kingdom;
+            engFlag8.Image = Properties.Resources.united_kingdom;
+            engFlag9.Image = Properties.Resources.united_kingdom;
+            engFlag10.Image = Properties.Resources.united_kingdom;
+            engFlag11.Image = Properties.Resources.united_kingdom;
+            engFlag12.Image = Properties.Resources.united_kingdom;
+            engFlag13.Image = Properties.Resources.united_kingdom;
+
+            vieFlag1.Image = Properties.Resources.vietnam;
+            vieFlag2.Image = Properties.Resources.vietnam;
+            vieFlag3.Image = Properties.Resources.vietnam;
+            vieFlag4.Image = Properties.Resources.vietnam;
+            vieFlag5.Image = Properties.Resources.vietnam;
+            vieFlag6.Image = Properties.Resources.vietnam;
+            vieFlag7.Image = Properties.Resources.vietnam;
+            vieFlag8.Image = Properties.Resources.vietnam;
+            vieFlag9.Image = Properties.Resources.vietnam;
+            vieFlag10.Image = Properties.Resources.vietnam;
+            vieFlag11.Image = Properties.Resources.vietnam;
+            vieFlag12.Image = Properties.Resources.vietnam;
+            vieFlag13.Image = Properties.Resources.vietnam;
+        }
         private void loadData()
         {
+            loadImageSource();
             if (Database.acction == "showBookmarkList")
                 Database.load("select * from bookmark order by id DESC");
             if (Database.loadData.Rows.Count > 0 + 13 * page)
@@ -44,6 +75,11 @@ namespace Dictionary_user
                 Bookmark1.Visible = true;
                 engFlag1.Visible = true;
                 vieFlag1.Visible = true;
+                if (language1!="English")
+                {
+                    engFlag1.Image = Properties.Resources.vietnam;
+                    vieFlag1.Image = Properties.Resources.united_kingdom;
+                }
             }
             else
             {
@@ -63,6 +99,11 @@ namespace Dictionary_user
                 speaker2.Visible = true;
                 engFlag2.Visible = true;
                 vieFlag2.Visible = true;
+                if (language2 != "English")
+                {
+                    engFlag2.Image = Properties.Resources.vietnam;
+                    vieFlag2.Image = Properties.Resources.united_kingdom;
+                }
             }
             else
             {
@@ -82,6 +123,11 @@ namespace Dictionary_user
                 speaker3.Visible = true;
                 engFlag3.Visible = true;
                 vieFlag3.Visible = true;
+                if (language3 != "English")
+                {
+                    engFlag3.Image = Properties.Resources.vietnam;
+                    vieFlag3.Image = Properties.Resources.united_kingdom;
+                }
             }
             else
             {
@@ -101,6 +147,11 @@ namespace Dictionary_user
                 speaker4.Visible = true;
                 engFlag4.Visible = true;
                 vieFlag4.Visible = true;
+                if (language4 != "English")
+                {
+                    engFlag4.Image = Properties.Resources.vietnam;
+                    vieFlag4.Image = Properties.Resources.united_kingdom;
+                }
             }
             else
             {
@@ -120,6 +171,11 @@ namespace Dictionary_user
                 speaker5.Visible = true;
                 engFlag5.Visible = true;
                 vieFlag5.Visible = true;
+                if (language5 != "English")
+                {
+                    engFlag5.Image = Properties.Resources.vietnam;
+                    vieFlag5.Image = Properties.Resources.united_kingdom;
+                }
             }
             else
             {
@@ -137,8 +193,13 @@ namespace Dictionary_user
                 language6 = Database.loadData.Rows[page * 13 + 5]["languages"].ToString();
                 Bookmark6.Visible = true;
                 speaker6.Visible = true;
-                engFlag6.Visible = false;
-                vieFlag6.Visible = false;
+                engFlag6.Visible = true;
+                vieFlag6.Visible = true;
+                if (language6 != "English")
+                {
+                    engFlag6.Image = Properties.Resources.vietnam;
+                    vieFlag6.Image = Properties.Resources.united_kingdom;
+                }
             }
             else
             {
@@ -158,6 +219,11 @@ namespace Dictionary_user
                 speaker7.Visible = true;
                 engFlag7.Visible = true;
                 vieFlag7.Visible = true;
+                if (language7 != "English")
+                {
+                    engFlag7.Image = Properties.Resources.vietnam;
+                    vieFlag7.Image = Properties.Resources.united_kingdom;
+                }
             }
             else
             {
@@ -175,8 +241,13 @@ namespace Dictionary_user
                 language8 = Database.loadData.Rows[page * 13 + 7]["languages"].ToString();
                 Bookmark8.Visible = true;
                 speaker8.Visible = true;
-                engFlag8.Visible = false;
-                vieFlag8.Visible = false;
+                engFlag8.Visible = true;
+                vieFlag8.Visible = true;
+                if (language8 != "English")
+                {
+                    engFlag8.Image = Properties.Resources.vietnam;
+                    vieFlag8.Image = Properties.Resources.united_kingdom;
+                }
             }
             else
             {
@@ -196,6 +267,11 @@ namespace Dictionary_user
                 speaker9.Visible = true;
                 engFlag9.Visible = true;
                 vieFlag9.Visible = true;
+                if (language9 != "English")
+                {
+                    engFlag9.Image = Properties.Resources.vietnam;
+                    vieFlag9.Image = Properties.Resources.united_kingdom;
+                }
             }
             else
             {
@@ -215,6 +291,11 @@ namespace Dictionary_user
                 speaker10.Visible = true;
                 engFlag10.Visible = true;
                 vieFlag10.Visible = true;
+                if (language10 != "English")
+                {
+                    engFlag10.Image = Properties.Resources.vietnam;
+                    vieFlag10.Image = Properties.Resources.united_kingdom;
+                }
             }
             else
             {
@@ -234,6 +315,11 @@ namespace Dictionary_user
                 speaker11.Visible = true;
                 engFlag11.Visible = true;
                 vieFlag11.Visible = true;
+                if (language11 != "English")
+                {
+                    engFlag11.Image = Properties.Resources.vietnam;
+                    vieFlag11.Image = Properties.Resources.united_kingdom;
+                }
             }
             else
             {
@@ -253,6 +339,11 @@ namespace Dictionary_user
                 speaker12.Visible = true;
                 engFlag12.Visible = true;
                 vieFlag12.Visible = true;
+                if (language12 != "English")
+                {
+                    engFlag12.Image = Properties.Resources.vietnam;
+                    vieFlag12.Image = Properties.Resources.united_kingdom;
+                }
             }
             else
             {
@@ -272,6 +363,11 @@ namespace Dictionary_user
                 speaker13.Visible = true;
                 engFlag13.Visible = true;
                 vieFlag13.Visible = true;
+                if (language13 != "English")
+                {
+                    engFlag13.Image = Properties.Resources.vietnam;
+                    vieFlag13.Image = Properties.Resources.united_kingdom;
+                }
             }
             else
             {
