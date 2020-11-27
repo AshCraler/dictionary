@@ -68,6 +68,8 @@ namespace Dictionary_user
                 Database.load("select * from bookmark order by id DESC");
             if (Database.loadData.Rows.Count > 0 + 13 * page)
             {
+                labelWord1.Visible = true;
+                labelMeaning1.Visible = true;
                 labelWord1.Text = Database.loadData.Rows[page * 13]["Word"].ToString();
                 labelMeaning1.Text = Database.loadData.Rows[page * 13]["meaning"].ToString();
                 language1 = Database.loadData.Rows[page * 13]["languages"].ToString();
@@ -92,6 +94,8 @@ namespace Dictionary_user
             }
             if (Database.loadData.Rows.Count > 1 + 13 * page)
             {
+                labelWord2.Visible = true;
+                labelMeaning2.Visible = true;
                 labelWord2.Text = Database.loadData.Rows[page * 13 + 1]["Word"].ToString();
                 labelMeaning2.Text = Database.loadData.Rows[page * 13 + 1]["meaning"].ToString();
                 language2 = Database.loadData.Rows[page * 13 + 1]["languages"].ToString();
@@ -116,6 +120,8 @@ namespace Dictionary_user
             }
             if (Database.loadData.Rows.Count > 2 + 13 * page)
             {
+                labelWord3.Visible = true;
+                labelMeaning3.Visible = true;
                 labelWord3.Text = Database.loadData.Rows[page * 13 + 2]["Word"].ToString();
                 labelMeaning3.Text = Database.loadData.Rows[page * 13 + 2]["meaning"].ToString();
                 language3 = Database.loadData.Rows[page * 13 + 2]["languages"].ToString();
@@ -140,6 +146,8 @@ namespace Dictionary_user
             }
             if (Database.loadData.Rows.Count > 3 + 13 * page)
             {
+                labelWord4.Visible = true;
+                labelMeaning4.Visible = true;
                 labelWord4.Text = Database.loadData.Rows[page * 13 + 3]["Word"].ToString();
                 labelMeaning4.Text = Database.loadData.Rows[page * 13 + 3]["meaning"].ToString();
                 language4 = Database.loadData.Rows[page * 13 + 3]["languages"].ToString();
@@ -164,6 +172,8 @@ namespace Dictionary_user
             }
             if (Database.loadData.Rows.Count > 4 + 13 * page)
             {
+                labelWord5.Visible = true;
+                labelMeaning5.Visible = true;
                 labelWord5.Text = Database.loadData.Rows[page * 13 + 4]["Word"].ToString();
                 labelMeaning5.Text = Database.loadData.Rows[page * 13 + 4]["meaning"].ToString();
                 language5 = Database.loadData.Rows[page * 13 + 4]["languages"].ToString();
@@ -188,6 +198,8 @@ namespace Dictionary_user
             }
             if (Database.loadData.Rows.Count > 5 + 13 * page)
             {
+                labelWord6.Visible = true;
+                labelMeaning6.Visible = true;
                 labelWord6.Text = Database.loadData.Rows[page * 13 + 5]["Word"].ToString();
                 labelMeaning6.Text = Database.loadData.Rows[page * 13 + 5]["meaning"].ToString();
                 language6 = Database.loadData.Rows[page * 13 + 5]["languages"].ToString();
@@ -212,6 +224,8 @@ namespace Dictionary_user
             }
             if (Database.loadData.Rows.Count > 6 + 13 * page)
             {
+                labelWord7.Visible = true;
+                labelMeaning7.Visible = true;
                 labelWord7.Text = Database.loadData.Rows[page * 13 + 6]["Word"].ToString();
                 labelMeaning7.Text = Database.loadData.Rows[page * 13 + 6]["meaning"].ToString();
                 language7 = Database.loadData.Rows[page * 13 + 6]["languages"].ToString();
@@ -236,6 +250,8 @@ namespace Dictionary_user
             }
             if (Database.loadData.Rows.Count > 7 + 13 * page)
             {
+                labelWord8.Visible = true;
+                labelMeaning8.Visible = true;
                 labelWord8.Text = Database.loadData.Rows[page * 13 + 7]["Word"].ToString();
                 labelMeaning8.Text = Database.loadData.Rows[page * 13 + 7]["meaning"].ToString();
                 language8 = Database.loadData.Rows[page * 13 + 7]["languages"].ToString();
@@ -260,6 +276,8 @@ namespace Dictionary_user
             }
             if (Database.loadData.Rows.Count > 8 + 13 * page)
             {
+                labelWord9.Visible = true;
+                labelMeaning9.Visible = true;
                 labelWord9.Text = Database.loadData.Rows[page * 13 + 8]["Word"].ToString();
                 labelMeaning9.Text = Database.loadData.Rows[page * 13 + 8]["meaning"].ToString();
                 language9 = Database.loadData.Rows[page * 13 + 8]["languages"].ToString();
@@ -284,6 +302,8 @@ namespace Dictionary_user
             }
             if (Database.loadData.Rows.Count > 9 + 13 * page)
             {
+                labelWord10.Visible = true;
+                labelMeaning10.Visible = true;
                 labelWord10.Text = Database.loadData.Rows[page * 13 + 9]["Word"].ToString();
                 labelMeaning10.Text = Database.loadData.Rows[page * 13 + 9]["meaning"].ToString();
                 language10 = Database.loadData.Rows[page * 13 + 9]["languages"].ToString();
@@ -308,6 +328,8 @@ namespace Dictionary_user
             }
             if (Database.loadData.Rows.Count > 10 + 13 * page)
             {
+                labelWord11.Visible = true;
+                labelMeaning11.Visible = true;
                 labelWord11.Text = Database.loadData.Rows[page * 13 + 10]["Word"].ToString();
                 labelMeaning11.Text = Database.loadData.Rows[page * 13 + 10]["meaning"].ToString();
                 language11 = Database.loadData.Rows[page * 13 + 11]["languages"].ToString();
@@ -332,6 +354,8 @@ namespace Dictionary_user
             }
             if (Database.loadData.Rows.Count > 11 + 13 * page)
             {
+                labelWord12.Visible = true;
+                labelMeaning12.Visible = true;
                 labelWord12.Text = Database.loadData.Rows[page * 13 + 11]["Word"].ToString();
                 labelMeaning12.Text = Database.loadData.Rows[page * 13 + 11]["meaning"].ToString();
                 language12 = Database.loadData.Rows[page * 13 + 11]["languages"].ToString();
@@ -356,6 +380,8 @@ namespace Dictionary_user
             }
             if (Database.loadData.Rows.Count > 12 + 13 * page)
             {
+                labelWord13.Visible = true;
+                labelMeaning13.Visible = true;
                 labelWord13.Text = Database.loadData.Rows[page * 13 + 12]["Word"].ToString();
                 labelMeaning13.Text = Database.loadData.Rows[page * 13 + 12]["meaning"].ToString();
                 language13 = Database.loadData.Rows[page * 13 + 12]["languages"].ToString();
@@ -714,6 +740,19 @@ namespace Dictionary_user
                 Bookmark13.IconColor = Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord13.Text, labelMeaning13.Text, language13, time);
             }
+        }
+
+        private void Next_Click(object sender, EventArgs e)
+        {
+            page = page + 1;
+            loadData();
+        }
+
+        private void Preview_Click(object sender, EventArgs e)
+        {
+            if (page>0)
+                page = page - 1;
+            loadData();
         }
     }
 }
