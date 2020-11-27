@@ -30,6 +30,7 @@ namespace Dictionary_user
         private string language13;
         private string command;
         public string time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
+        private bool[] check = new bool[100000];
         #endregion
         private void loadImageSource()
         {
@@ -61,19 +62,32 @@ namespace Dictionary_user
             vieFlag12.Image = Properties.Resources.vietnam;
             vieFlag13.Image = Properties.Resources.vietnam;
         }
+        
         private void loadDatabase()
         {
             if (Database.acction == "showBookmarkList")
                 Database.load("select * from bookmark order by id DESC");
+            for (int i = 0; i < 100000; i++)
+                check[i] = true;
         }
-        private void loadData()
-        {   
-            loadImageSource();
+        
+        private void loadPageInfo()
+        {
             string max;
             if ((page + 1) * 13 < Database.loadData.Rows.Count)
                 max = ((page + 1) * 13).ToString();
             else max = Database.loadData.Rows.Count.ToString();
-            pageInfo.Text = (page*13 + 1).ToString() + " - " + max + " / " + Database.loadData.Rows.Count.ToString() + " Vocalblary";
+            if (Database.loadData.Rows.Count == 0)
+                pageInfo.Visible = false;
+            else
+                pageInfo.Visible = true;
+            pageInfo.Text = (page * 13 + 1).ToString() + " - " + max + " / " + Database.loadData.Rows.Count.ToString() + " Vocalblary";
+        }
+
+        private void loadData()
+        {   
+            loadImageSource();
+            loadPageInfo();
             if (Database.loadData.Rows.Count > 0 + 13 * page)
             {
                 labelWord1.Visible = true;
@@ -83,7 +97,10 @@ namespace Dictionary_user
                 language1 = Database.loadData.Rows[page * 13]["languages"].ToString();
                 speaker1.Visible = true;
                 Bookmark1.Visible = true;
-                Bookmark1.IconColor= Color.FromArgb(238, 26, 74);
+                if (check[page*13+1]==true)
+                    Bookmark1.IconColor= Color.FromArgb(238, 26, 74);
+                else
+                    Bookmark1.IconColor = Color.Gainsboro;
                 engFlag1.Visible = true;
                 vieFlag1.Visible = true;
                 if (language1!="English")
@@ -109,7 +126,10 @@ namespace Dictionary_user
                 labelMeaning2.Text = Database.loadData.Rows[page * 13 + 1]["meaning"].ToString();
                 language2 = Database.loadData.Rows[page * 13 + 1]["languages"].ToString();
                 Bookmark2.Visible = true;
-                Bookmark2.IconColor = Color.FromArgb(238, 26, 74);
+                if (check[page * 13 + 2] == true)
+                    Bookmark2.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    Bookmark2.IconColor = Color.Gainsboro;
                 speaker2.Visible = true;
                 engFlag2.Visible = true;
                 vieFlag2.Visible = true;
@@ -136,7 +156,10 @@ namespace Dictionary_user
                 labelMeaning3.Text = Database.loadData.Rows[page * 13 + 2]["meaning"].ToString();
                 language3 = Database.loadData.Rows[page * 13 + 2]["languages"].ToString();
                 Bookmark3.Visible = true;
-                Bookmark3.IconColor = Color.FromArgb(238, 26, 74);
+                if (check[page * 13 + 3] == true)
+                    Bookmark3.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    Bookmark3.IconColor = Color.Gainsboro;
                 speaker3.Visible = true;
                 engFlag3.Visible = true;
                 vieFlag3.Visible = true;
@@ -161,9 +184,13 @@ namespace Dictionary_user
                 labelMeaning4.Visible = true;
                 labelWord4.Text = Database.loadData.Rows[page * 13 + 3]["Word"].ToString();
                 labelMeaning4.Text = Database.loadData.Rows[page * 13 + 3]["meaning"].ToString();
-                language4 = Database.loadData.Rows[page * 13 + 3]["languages"].ToString();
+                if (check[page * 13 + 4] == true)
+                    language4 = Database.loadData.Rows[page * 13 + 3]["languages"].ToString();
                 Bookmark4.Visible = true;
-                Bookmark4.IconColor = Color.FromArgb(238, 26, 74);
+                if (check[page*13+4]==true)
+                    Bookmark4.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    Bookmark4.IconColor = Color.Gainsboro;
                 speaker4.Visible = true;
                 engFlag4.Visible = true;
                 vieFlag4.Visible = true;
@@ -190,7 +217,10 @@ namespace Dictionary_user
                 labelMeaning5.Text = Database.loadData.Rows[page * 13 + 4]["meaning"].ToString();
                 language5 = Database.loadData.Rows[page * 13 + 4]["languages"].ToString();
                 Bookmark5.Visible = true;
-                Bookmark5.IconColor = Color.FromArgb(238, 26, 74);
+                if (check[page * 13 + 5] == true)
+                    Bookmark5.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    Bookmark5.IconColor = Color.Gainsboro;
                 speaker5.Visible = true;
                 engFlag5.Visible = true;
                 vieFlag5.Visible = true;
@@ -217,7 +247,10 @@ namespace Dictionary_user
                 labelMeaning6.Text = Database.loadData.Rows[page * 13 + 5]["meaning"].ToString();
                 language6 = Database.loadData.Rows[page * 13 + 5]["languages"].ToString();
                 Bookmark6.Visible = true;
-                Bookmark6.IconColor = Color.FromArgb(238, 26, 74);
+                if (check[page * 13 + 6] == true)
+                    Bookmark6.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    Bookmark6.IconColor = Color.Gainsboro;
                 speaker6.Visible = true;
                 engFlag6.Visible = true;
                 vieFlag6.Visible = true;
@@ -244,7 +277,10 @@ namespace Dictionary_user
                 labelMeaning7.Text = Database.loadData.Rows[page * 13 + 6]["meaning"].ToString();
                 language7 = Database.loadData.Rows[page * 13 + 6]["languages"].ToString();
                 Bookmark7.Visible = true;
-                Bookmark7.IconColor = Color.FromArgb(238, 26, 74);
+                if (check[page * 13 + 7] == true)
+                    Bookmark7.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    Bookmark7.IconColor = Color.Gainsboro;
                 speaker7.Visible = true;
                 engFlag7.Visible = true;
                 vieFlag7.Visible = true;
@@ -271,7 +307,10 @@ namespace Dictionary_user
                 labelMeaning8.Text = Database.loadData.Rows[page * 13 + 7]["meaning"].ToString();
                 language8 = Database.loadData.Rows[page * 13 + 7]["languages"].ToString();
                 Bookmark8.Visible = true;
-                Bookmark8.IconColor = Color.FromArgb(238, 26, 74);
+                if (check[page * 13 + 8] == true)
+                    Bookmark8.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    Bookmark8.IconColor = Color.Gainsboro;
                 speaker8.Visible = true;
                 engFlag8.Visible = true;
                 vieFlag8.Visible = true;
@@ -298,7 +337,10 @@ namespace Dictionary_user
                 labelMeaning9.Text = Database.loadData.Rows[page * 13 + 8]["meaning"].ToString();
                 language9 = Database.loadData.Rows[page * 13 + 8]["languages"].ToString();
                 Bookmark9.Visible = true;
-                Bookmark9.IconColor = Color.FromArgb(238, 26, 74);
+                if (check[page * 13 + 9] == true)
+                    Bookmark9.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    Bookmark9.IconColor = Color.Gainsboro;
                 speaker9.Visible = true;
                 engFlag9.Visible = true;
                 vieFlag9.Visible = true;
@@ -325,7 +367,10 @@ namespace Dictionary_user
                 labelMeaning10.Text = Database.loadData.Rows[page * 13 + 9]["meaning"].ToString();
                 language10 = Database.loadData.Rows[page * 13 + 9]["languages"].ToString();
                 Bookmark10.Visible = true;
-                Bookmark10.IconColor = Color.FromArgb(238, 26, 74);
+                if (check[page * 13 + 10] == true)
+                    Bookmark10.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    Bookmark10.IconColor = Color.Gainsboro;
                 speaker10.Visible = true;
                 engFlag10.Visible = true;
                 vieFlag10.Visible = true;
@@ -352,7 +397,10 @@ namespace Dictionary_user
                 labelMeaning11.Text = Database.loadData.Rows[page * 13 + 10]["meaning"].ToString();
                 language11 = Database.loadData.Rows[page * 13 + 10]["languages"].ToString();
                 Bookmark11.Visible = true;
-                Bookmark11.IconColor = Color.FromArgb(238, 26, 74);
+                if (check[page * 13 + 11] == true)
+                    Bookmark11.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    Bookmark11.IconColor = Color.Gainsboro;
                 speaker11.Visible = true;
                 engFlag11.Visible = true;
                 vieFlag11.Visible = true;
@@ -379,7 +427,10 @@ namespace Dictionary_user
                 labelMeaning12.Text = Database.loadData.Rows[page * 13 + 11]["meaning"].ToString();
                 language12 = Database.loadData.Rows[page * 13 + 11]["languages"].ToString();
                 Bookmark12.Visible = true;
-                Bookmark12.IconColor = Color.FromArgb(238, 26, 74);
+                if (check[page * 13 + 12] == true)
+                    Bookmark12.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    Bookmark12.IconColor = Color.Gainsboro;
                 speaker12.Visible = true;
                 engFlag12.Visible = true;
                 vieFlag12.Visible = true;
@@ -406,7 +457,10 @@ namespace Dictionary_user
                 labelMeaning13.Text = Database.loadData.Rows[page * 13 + 12]["meaning"].ToString();
                 language13 = Database.loadData.Rows[page * 13 + 12]["languages"].ToString();
                 Bookmark13.Visible = true;
-                Bookmark13.IconColor = Color.FromArgb(238, 26, 74);
+                if (check[page * 13 + 13] == true)
+                    Bookmark13.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    Bookmark13.IconColor = Color.Gainsboro;
                 speaker13.Visible = true;
                 engFlag13.Visible = true;
                 vieFlag13.Visible = true;
@@ -425,7 +479,8 @@ namespace Dictionary_user
                 engFlag13.Visible = false;
                 vieFlag13.Visible = false;
             }
-        }           
+        }
+        
         public Bookmark()
         {
             InitializeComponent();
@@ -577,11 +632,13 @@ namespace Dictionary_user
                 command = "delete from bookmark where word =" + "'" + labelWord1.Text + "'" + "AND languages=" + "'" + language1 + "'";
                 Database.deleteBookmark(command);
                 Bookmark1.IconColor = Color.Gainsboro;
+                check[page * 13 + 1] = false;
             }
             else
             {
                 Bookmark1.IconColor= Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord1.Text, labelMeaning1.Text, language1, time);
+                check[page * 13 + 1] = true;
             }
         }
 
@@ -592,11 +649,13 @@ namespace Dictionary_user
                 command = "delete from bookmark where word =" + "'" + labelWord2.Text + "'" + "AND languages=" + "'" + language2 + "'";
                 Database.deleteBookmark(command);
                 Bookmark2.IconColor = Color.Gainsboro;
+                check[page * 13 + 2] = false;
             }
             else
             {
                 Bookmark2.IconColor = Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord1.Text, labelMeaning2.Text, language2, time);
+                check[page * 13 + 2] = true;
             }
         }
 
@@ -607,11 +666,13 @@ namespace Dictionary_user
                 command = "delete from bookmark where word =" + "'" + labelWord3.Text + "'" + "AND languages=" + "'" + language3 + "'";
                 Database.deleteBookmark(command);
                 Bookmark3.IconColor = Color.Gainsboro;
+                check[page * 13 + 3] = false;
             }
             else
             {
                 Bookmark3.IconColor = Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord3.Text, labelMeaning3.Text, language3, time);
+                check[page * 13 + 3] = true;
             }
         }
 
@@ -622,11 +683,13 @@ namespace Dictionary_user
                 command = "delete from bookmark where word =" + "'" + labelWord4.Text + "'" + "AND languages=" + "'" + language4 + "'";
                 Database.deleteBookmark(command);
                 Bookmark4.IconColor = Color.Gainsboro;
+                check[page * 13 + 4] = false;
             }
             else
             {
                 Bookmark4.IconColor = Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord4.Text, labelMeaning4.Text, language4, time);
+                check[page * 13 + 4] = true;
             }
         }
 
@@ -637,11 +700,13 @@ namespace Dictionary_user
                 command = "delete from bookmark where word =" + "'" + labelWord5.Text + "'" + "AND languages=" + "'" + language5 + "'";
                 Database.deleteBookmark(command);
                 Bookmark5.IconColor = Color.Gainsboro;
+                check[page * 13 + 5] = false;
             }
             else
             {
                 Bookmark5.IconColor = Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord5.Text, labelMeaning5.Text, language5, time);
+                check[page * 13 + 5] = true;
             }
         }
 
@@ -652,11 +717,13 @@ namespace Dictionary_user
                 command = "delete from bookmark where word =" + "'" + labelWord6.Text + "'" + "AND languages=" + "'" + language6 + "'";
                 Database.deleteBookmark(command);
                 Bookmark6.IconColor = Color.Gainsboro;
+                check[page * 13 + 6] = false;
             }
             else
             {
                 Bookmark6.IconColor = Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord6.Text, labelMeaning6.Text, language6, time);
+                check[page * 13 + 6] = true;
             }
         }
 
@@ -667,11 +734,13 @@ namespace Dictionary_user
                 command = "delete from bookmark where word =" + "'" + labelWord7.Text + "'" + "AND languages=" + "'" + language7 + "'";
                 Database.deleteBookmark(command);
                 Bookmark7.IconColor = Color.Gainsboro;
+                check[page * 13 + 7] = false;
             }
             else
             {
                 Bookmark7.IconColor = Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord7.Text, labelMeaning7.Text, language7, time);
+                check[page * 13 + 7] = true;
             }
         }
 
@@ -682,11 +751,13 @@ namespace Dictionary_user
                 command = "delete from bookmark where word =" + "'" + labelWord8.Text + "'" + "AND languages=" + "'" + language8 + "'";
                 Database.deleteBookmark(command);
                 Bookmark8.IconColor = Color.Gainsboro;
+                check[page * 13 + 8] = false;
             }
             else
             {
                 Bookmark8.IconColor = Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord8.Text, labelMeaning8.Text, language8, time);
+                check[page * 13 + 8] = true;
             }
         }
 
@@ -697,11 +768,13 @@ namespace Dictionary_user
                 command = "delete from bookmark where word =" + "'" + labelWord9.Text + "'" + "AND languages=" + "'" + language9 + "'";
                 Database.deleteBookmark(command);
                 Bookmark9.IconColor = Color.Gainsboro;
+                check[page * 13 + 9] = false;
             }
             else
             {
                 Bookmark9.IconColor = Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord9.Text, labelMeaning9.Text, language9, time);
+                check[page * 13 + 9] = true;
             }
         }
 
@@ -712,11 +785,13 @@ namespace Dictionary_user
                 command = "delete from bookmark where word =" + "'" + labelWord10.Text + "'" + "AND languages=" + "'" + language10 + "'";
                 Database.deleteBookmark(command);
                 Bookmark10.IconColor = Color.Gainsboro;
+                check[page * 13 + 10] = false;
             }
             else
             {
                 Bookmark10.IconColor = Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord10.Text, labelMeaning10.Text, language10, time);
+                check[page * 13 + 10] = true;
             }
         }
 
@@ -727,11 +802,13 @@ namespace Dictionary_user
                 command = "delete from bookmark where word =" + "'" + labelWord11.Text + "'" + "AND languages=" + "'" + language11 + "'";
                 Database.deleteBookmark(command);
                 Bookmark11.IconColor = Color.Gainsboro;
+                check[page * 13 + 11] = false;
             }
             else
             {
                 Bookmark11.IconColor = Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord11.Text, labelMeaning11.Text, language11, time);
+                check[page * 13 + 11] = true;
             }
         }
 
@@ -742,11 +819,13 @@ namespace Dictionary_user
                 command = "delete from bookmark where word =" + "'" + labelWord12.Text + "'" + "AND languages=" + "'" + language12 + "'";
                 Database.deleteBookmark(command);
                 Bookmark12.IconColor = Color.Gainsboro;
+                check[page * 13 + 12] = false;
             }
             else
             {
                 Bookmark12.IconColor = Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord12.Text, labelMeaning12.Text, language12, time);
+                check[page * 13 + 12] = true;
             }
         }
 
@@ -757,26 +836,32 @@ namespace Dictionary_user
                 command = "delete from bookmark where word =" + "'" + labelWord13.Text + "'" + "AND languages=" + "'" + language13 + "'";
                 Database.deleteBookmark(command);
                 Bookmark13.IconColor = Color.Gainsboro;
+                check[page * 13 + 13] = false;
             }
             else
             {
                 Bookmark13.IconColor = Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord13.Text, labelMeaning13.Text, language13, time);
+                check[page * 13 + 13] = true;
             }
         }
 
         private void Next_Click(object sender, EventArgs e)
         {
-            if ((page+1)*13<=Database.loadData.Rows.Count)
+            if ((page + 1) * 13 <= Database.loadData.Rows.Count)
+            {
                 page = page + 1;
-            loadData();
+                loadData();
+            }
         }
 
         private void Preview_Click(object sender, EventArgs e)
         {
-            if (page>0)
+            if (page > 0)
+            {
                 page = page - 1;
-            loadData();
+                loadData();
+            }
         }
 
        

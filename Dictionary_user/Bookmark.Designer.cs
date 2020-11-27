@@ -1527,7 +1527,7 @@
             this.ClientSize = new System.Drawing.Size(800, 690);
             this.Controls.Add(this.panel1);
             this.Name = "Bookmark";
-            this.Text = "Bookmark";
+            this.Text = "-";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
