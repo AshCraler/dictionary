@@ -481,12 +481,22 @@ namespace Dictionary_user
             }
         }
         
+        private void loadSearch()
+        {
+            for (int i = 0; i < 100000; i++)
+                check[i] = true;
+            loadData();
+        }
         public Bookmark()
         {
             InitializeComponent();
-            command = "select * from bookmark order by id DESC";
-            loadDatabase(command);
-            loadData();
+            if (Database.acction != "searchBookmark")
+            {
+                command = "select * from bookmark order by id DESC";
+                loadDatabase(command);
+                loadData();
+            }
+            else loadSearch();
         }
 
         private void speaker1_Click(object sender, EventArgs e)

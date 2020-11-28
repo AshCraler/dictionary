@@ -122,6 +122,7 @@ namespace Dictionary_user
             
             if (Database.nowForm == 1)
             {
+                Database.acction = "Translate";
                 setVisibleResult(true);
                 if (textboxSearch.HintText == "Search English")
                 {
@@ -174,6 +175,13 @@ namespace Dictionary_user
                 Database.load(command);
                 Database.acction = "search";
                 openChildForm(new History());
+            }
+            if (Database.nowForm==3)
+            {
+                command = "select * from Bookmark Where word = " + "\"" + textboxSearch.Text.ToString() + "\"" + " or meaning = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                Database.load(command);
+                Database.acction = "searchBookmark";
+                openChildForm(new Bookmark());
             }
         }
         private void resetSuggestion()
