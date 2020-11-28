@@ -123,6 +123,7 @@
             this.buttonDateDesc = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.iconButtonExcel = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vieFlag13)).BeginInit();
@@ -170,6 +171,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.panel3.Controls.Add(this.iconButtonExcel);
             this.panel3.Controls.Add(this.vieFlag13);
             this.panel3.Controls.Add(this.vieFlag12);
             this.panel3.Controls.Add(this.vieFlag11);
@@ -549,10 +551,10 @@
             this.Reload.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.Reload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.Reload.IconChar = FontAwesome.Sharp.IconChar.Sync;
-            this.Reload.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.Reload.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.Reload.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Reload.IconSize = 30;
-            this.Reload.Location = new System.Drawing.Point(583, 506);
+            this.Reload.Location = new System.Drawing.Point(471, 506);
             this.Reload.Name = "Reload";
             this.Reload.Rotation = 0D;
             this.Reload.Size = new System.Drawing.Size(35, 33);
@@ -1524,6 +1526,23 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Alphabet";
             // 
+            // iconButtonExcel
+            // 
+            this.iconButtonExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonExcel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.iconButtonExcel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
+            this.iconButtonExcel.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButtonExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonExcel.IconSize = 30;
+            this.iconButtonExcel.Location = new System.Drawing.Point(585, 505);
+            this.iconButtonExcel.Name = "iconButtonExcel";
+            this.iconButtonExcel.Rotation = 0D;
+            this.iconButtonExcel.Size = new System.Drawing.Size(35, 33);
+            this.iconButtonExcel.TabIndex = 116;
+            this.iconButtonExcel.UseVisualStyleBackColor = true;
+            this.iconButtonExcel.Click += new System.EventHandler(this.iconButtonExcel_Click);
+            // 
             // Bookmark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1667,5 +1686,6 @@
         private System.Windows.Forms.PictureBox vieFlag3;
         private System.Windows.Forms.PictureBox vieFlag2;
         private System.Windows.Forms.PictureBox vieFlag1;
+        private FontAwesome.Sharp.IconButton iconButtonExcel;
     }
 }

@@ -14,7 +14,7 @@ namespace Dictionary_user
         public static int nowForm;
         public static string acction;
         public static DataTable loadData;
-        
+
         public static void load(string command)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";

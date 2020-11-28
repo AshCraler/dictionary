@@ -894,5 +894,13 @@ namespace Dictionary_user
             loadDatabase(command);
             loadData();
         }
+
+        private void iconButtonExcel_Click(object sender, EventArgs e)
+        {
+            Excel.ExcelUtlity obj = new Excel.ExcelUtlity();
+            obj.WriteDataTableToExcel(Database.loadData, "Person Details", "D:\\testPersonExceldata.xlsx", "Details");
+
+            MessageBox.Show("Excel created D:\testPersonExceldata.xlsx");
+        }
     }
 }
