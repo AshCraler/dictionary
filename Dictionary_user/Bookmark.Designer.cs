@@ -551,10 +551,10 @@
             this.Reload.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.Reload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.Reload.IconChar = FontAwesome.Sharp.IconChar.Sync;
-            this.Reload.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.Reload.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.Reload.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Reload.IconSize = 30;
-            this.Reload.Location = new System.Drawing.Point(471, 506);
+            this.Reload.Location = new System.Drawing.Point(479, 505);
             this.Reload.Name = "Reload";
             this.Reload.Rotation = 0D;
             this.Reload.Size = new System.Drawing.Size(35, 33);
@@ -642,7 +642,7 @@
             this.Preview.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.Preview.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Preview.IconSize = 30;
-            this.Preview.Location = new System.Drawing.Point(689, 506);
+            this.Preview.Location = new System.Drawing.Point(699, 505);
             this.Preview.Name = "Preview";
             this.Preview.Rotation = 0D;
             this.Preview.Size = new System.Drawing.Size(35, 33);
@@ -659,7 +659,7 @@
             this.Next.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.Next.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Next.IconSize = 30;
-            this.Next.Location = new System.Drawing.Point(730, 506);
+            this.Next.Location = new System.Drawing.Point(730, 505);
             this.Next.Name = "Next";
             this.Next.Rotation = 0D;
             this.Next.Size = new System.Drawing.Size(34, 33);
