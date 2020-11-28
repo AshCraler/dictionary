@@ -115,12 +115,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxFlagLeft = new System.Windows.Forms.PictureBox();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.buttonWorDesc = new FontAwesome.Sharp.IconButton();
+            this.buttonWordAsc = new FontAwesome.Sharp.IconButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.labelHint = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnPlay = new FontAwesome.Sharp.IconButton();
+            this.buttonDateAsc = new FontAwesome.Sharp.IconButton();
+            this.buttonDateDesc = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -1377,12 +1377,12 @@
             // 
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.pictureBoxFlagLeft);
-            this.panel2.Controls.Add(this.iconButton3);
-            this.panel2.Controls.Add(this.iconButton2);
+            this.panel2.Controls.Add(this.buttonWorDesc);
+            this.panel2.Controls.Add(this.buttonWordAsc);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.labelHint);
-            this.panel2.Controls.Add(this.iconButton1);
-            this.panel2.Controls.Add(this.btnPlay);
+            this.panel2.Controls.Add(this.buttonDateAsc);
+            this.panel2.Controls.Add(this.buttonDateDesc);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(3, 3);
@@ -1410,37 +1410,39 @@
             this.pictureBoxFlagLeft.TabIndex = 40;
             this.pictureBoxFlagLeft.TabStop = false;
             // 
-            // iconButton3
+            // buttonWorDesc
             // 
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.SortAlphaUp;
-            this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 35;
-            this.iconButton3.Location = new System.Drawing.Point(751, 23);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Rotation = 0D;
-            this.iconButton3.Size = new System.Drawing.Size(35, 32);
-            this.iconButton3.TabIndex = 39;
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.buttonWorDesc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonWorDesc.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.buttonWorDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.buttonWorDesc.IconChar = FontAwesome.Sharp.IconChar.SortAlphaUp;
+            this.buttonWorDesc.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.buttonWorDesc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonWorDesc.IconSize = 35;
+            this.buttonWorDesc.Location = new System.Drawing.Point(751, 23);
+            this.buttonWorDesc.Name = "buttonWorDesc";
+            this.buttonWorDesc.Rotation = 0D;
+            this.buttonWorDesc.Size = new System.Drawing.Size(35, 32);
+            this.buttonWorDesc.TabIndex = 39;
+            this.buttonWorDesc.UseVisualStyleBackColor = true;
+            this.buttonWorDesc.Click += new System.EventHandler(this.buttonWorDesc_Click);
             // 
-            // iconButton2
+            // buttonWordAsc
             // 
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.SortAlphaDown;
-            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 35;
-            this.iconButton2.Location = new System.Drawing.Point(710, 23);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Rotation = 0D;
-            this.iconButton2.Size = new System.Drawing.Size(35, 32);
-            this.iconButton2.TabIndex = 38;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.buttonWordAsc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonWordAsc.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.buttonWordAsc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.buttonWordAsc.IconChar = FontAwesome.Sharp.IconChar.SortAlphaDown;
+            this.buttonWordAsc.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.buttonWordAsc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonWordAsc.IconSize = 35;
+            this.buttonWordAsc.Location = new System.Drawing.Point(710, 23);
+            this.buttonWordAsc.Name = "buttonWordAsc";
+            this.buttonWordAsc.Rotation = 0D;
+            this.buttonWordAsc.Size = new System.Drawing.Size(35, 32);
+            this.buttonWordAsc.TabIndex = 38;
+            this.buttonWordAsc.UseVisualStyleBackColor = true;
+            this.buttonWordAsc.Click += new System.EventHandler(this.buttonWordAsc_Click);
             // 
             // pictureBox3
             // 
@@ -1464,37 +1466,39 @@
             this.labelHint.TabIndex = 28;
             this.labelHint.Text = "Your bookmark";
             // 
-            // iconButton1
+            // buttonDateAsc
             // 
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleDown;
-            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 35;
-            this.iconButton1.Location = new System.Drawing.Point(503, 23);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(26, 32);
-            this.iconButton1.TabIndex = 36;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.buttonDateAsc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDateAsc.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.buttonDateAsc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.buttonDateAsc.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleDown;
+            this.buttonDateAsc.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.buttonDateAsc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonDateAsc.IconSize = 35;
+            this.buttonDateAsc.Location = new System.Drawing.Point(503, 23);
+            this.buttonDateAsc.Name = "buttonDateAsc";
+            this.buttonDateAsc.Rotation = 0D;
+            this.buttonDateAsc.Size = new System.Drawing.Size(26, 32);
+            this.buttonDateAsc.TabIndex = 36;
+            this.buttonDateAsc.UseVisualStyleBackColor = true;
+            this.buttonDateAsc.Click += new System.EventHandler(this.buttonDateAsc_Click);
             // 
-            // btnPlay
+            // buttonDateDesc
             // 
-            this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlay.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.btnPlay.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleUp;
-            this.btnPlay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
-            this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPlay.IconSize = 35;
-            this.btnPlay.Location = new System.Drawing.Point(471, 23);
-            this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Rotation = 0D;
-            this.btnPlay.Size = new System.Drawing.Size(26, 32);
-            this.btnPlay.TabIndex = 35;
-            this.btnPlay.UseVisualStyleBackColor = true;
+            this.buttonDateDesc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDateDesc.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.buttonDateDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.buttonDateDesc.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleUp;
+            this.buttonDateDesc.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.buttonDateDesc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonDateDesc.IconSize = 35;
+            this.buttonDateDesc.Location = new System.Drawing.Point(471, 23);
+            this.buttonDateDesc.Name = "buttonDateDesc";
+            this.buttonDateDesc.Rotation = 0D;
+            this.buttonDateDesc.Size = new System.Drawing.Size(26, 32);
+            this.buttonDateDesc.TabIndex = 35;
+            this.buttonDateDesc.UseVisualStyleBackColor = true;
+            this.buttonDateDesc.Click += new System.EventHandler(this.buttonDateDesc_Click);
             // 
             // label2
             // 
@@ -1571,14 +1575,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label labelHint;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton btnPlay;
+        private FontAwesome.Sharp.IconButton buttonDateAsc;
+        private FontAwesome.Sharp.IconButton buttonDateDesc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel3;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton buttonWorDesc;
+        private FontAwesome.Sharp.IconButton buttonWordAsc;
         private System.Windows.Forms.PictureBox pictureBoxFlagLeft;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelWord2;

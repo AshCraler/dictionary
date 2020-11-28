@@ -63,10 +63,10 @@ namespace Dictionary_user
             vieFlag13.Image = Properties.Resources.vietnam;
         }
         
-        private void loadDatabase()
+        private void loadDatabase(string cmd)
         {
             if (Database.acction == "showBookmarkList")
-                Database.load("select * from bookmark order by id DESC");
+                Database.load(cmd);
             for (int i = 0; i < 100000; i++)
                 check[i] = true;
         }
@@ -484,7 +484,8 @@ namespace Dictionary_user
         public Bookmark()
         {
             InitializeComponent();
-            loadDatabase();
+            command = "select * from bookmark order by id DESC";
+            loadDatabase(command);
             loadData();
         }
 
@@ -608,21 +609,9 @@ namespace Dictionary_user
         private void Reload_Click(object sender, EventArgs e)
         {
             page = 0;
-            loadDatabase();
+            command = "select * from bookmark order by id DESC";
+            loadDatabase(command);
             loadData();
-            Bookmark1.IconColor = Color.FromArgb(238, 26, 74);
-            Bookmark2.IconColor = Color.FromArgb(238, 26, 74);
-            Bookmark3.IconColor = Color.FromArgb(238, 26, 74);
-            Bookmark4.IconColor = Color.FromArgb(238, 26, 74);
-            Bookmark5.IconColor = Color.FromArgb(238, 26, 74);
-            Bookmark6.IconColor = Color.FromArgb(238, 26, 74);
-            Bookmark7.IconColor = Color.FromArgb(238, 26, 74);
-            Bookmark8.IconColor = Color.FromArgb(238, 26, 74);
-            Bookmark9.IconColor = Color.FromArgb(238, 26, 74);
-            Bookmark10.IconColor = Color.FromArgb(238, 26, 74);
-            Bookmark11.IconColor = Color.FromArgb(238, 26, 74);
-            Bookmark12.IconColor = Color.FromArgb(238, 26, 74);
-            Bookmark13.IconColor = Color.FromArgb(238, 26, 74);
         }
 
         private void Bookmark1_Click(object sender, EventArgs e)
@@ -848,7 +837,7 @@ namespace Dictionary_user
 
         private void Next_Click(object sender, EventArgs e)
         {
-            if ((page + 1) * 13 <= Database.loadData.Rows.Count)
+            if ((page + 1) * 13 < Database.loadData.Rows.Count)
             {
                 page = page + 1;
                 loadData();
@@ -864,6 +853,36 @@ namespace Dictionary_user
             }
         }
 
-       
+        private void buttonDateDesc_Click(object sender, EventArgs e)
+        {
+            page = 0;
+            command = "select * from bookmark order by id DESC";
+            loadDatabase(command);
+            loadData();
+        }
+
+        private void buttonDateAsc_Click(object sender, EventArgs e)
+        {
+            page = 0;
+            command = "select * from bookmark order by id ASC";
+            loadDatabase(command);
+            loadData();
+        }
+
+        private void buttonWordAsc_Click(object sender, EventArgs e)
+        {
+            page = 0;
+            command = "select * from bookmark order by Word ASC";
+            loadDatabase(command);
+            loadData();
+        }
+
+        private void buttonWorDesc_Click(object sender, EventArgs e)
+        {
+            page = 0;
+            command = "select * from bookmark order by Word DESC";
+            loadDatabase(command);
+            loadData();
+        }
     }
 }

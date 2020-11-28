@@ -189,8 +189,6 @@ namespace Dictionary_user
             {
                 pictureBoxFlagLeft.Image = Properties.Resources.vietnam;
                 pictureBoxFlagRight.Image = Properties.Resources.united_kingdom;
-                textboxSearch.HintText = "Search VietNamese";
-                textboxSearch.Text = "Search VietNamese";
                 coloumn = "English";
                 hint = "VieMeaning";
             }
@@ -409,10 +407,6 @@ namespace Dictionary_user
             textboxSearch.LineMouseHoverColor = RGBColors.color1;
             buttonSearch.IconColor = RGBColors.color1;
             Database.nowForm = 1;
-            if (hint == "VieMeaning")
-                textboxSearch.Text = "Search VietNamese";
-            else
-                textboxSearch.Text = "Search English";
             checkBookMark();
         }
 
