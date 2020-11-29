@@ -229,6 +229,40 @@ namespace Dictionary_user
             panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+            childForm.FormClosed +=new FormClosedEventHandler(Form_Closed);
+            void Form_Closed(object sender, FormClosedEventArgs e)
+            {
+               if (Database.acction=="clickFromBookmark")
+                {
+                    activateMenuButton(iconButton1, RGBColors.color1);
+                    displaySwitch();
+                    ktSwitch = Database.setLanguages;
+                    activateSwitchButton();
+                    displaySearch();
+                    textboxSearch.LineFocusedColor = RGBColors.color1;
+                    textboxSearch.LineMouseHoverColor = RGBColors.color1;
+                    buttonSearch.IconColor = RGBColors.color1;
+                    Database.nowForm = 1;
+                    checkBookMark();
+                    textboxSearch.Text = Database.word;
+                    activateSearchButton();
+                    if (bookmarkButton.IconColor == RGBColors.color7)
+                    {
+                        if (hint == "English")
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                        else
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                    }
+                    if (bookmarkButton.IconColor == Color.Gainsboro)
+                    {
+        
+                        if (hint == "English")
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                        else
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                    }
+                }
+            }
         }
         private void loadRecentlyBookmark()
         {
@@ -474,6 +508,7 @@ namespace Dictionary_user
             hideSwitch();
         }
 
+        public void trigger() { }
         #endregion
 
         #region Suggestion, History, Bookmark

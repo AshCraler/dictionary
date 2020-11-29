@@ -56,9 +56,9 @@
             this.labelBookmark.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelBookmark.Location = new System.Drawing.Point(35, 123);
             this.labelBookmark.Name = "labelBookmark";
-            this.labelBookmark.Size = new System.Drawing.Size(179, 22);
+            this.labelBookmark.Size = new System.Drawing.Size(197, 22);
             this.labelBookmark.TabIndex = 92;
-            this.labelBookmark.Text = "Clear all Bookmark";
+            this.labelBookmark.Text = "Delete all Bookmarks";
             // 
             // labelHistory
             // 
@@ -68,9 +68,9 @@
             this.labelHistory.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelHistory.Location = new System.Drawing.Point(35, 69);
             this.labelHistory.Name = "labelHistory";
-            this.labelHistory.Size = new System.Drawing.Size(147, 22);
+            this.labelHistory.Size = new System.Drawing.Size(123, 22);
             this.labelHistory.TabIndex = 91;
-            this.labelHistory.Text = "Clear all History";
+            this.labelHistory.Text = "Clear History";
             // 
             // iconButtonHistory
             // 
@@ -93,7 +93,7 @@
             // 
             this.iconButtonBookmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonBookmark.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonBookmark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.iconButtonBookmark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.iconButtonBookmark.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.iconButtonBookmark.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButtonBookmark.IconFont = FontAwesome.Sharp.IconFont.Auto;

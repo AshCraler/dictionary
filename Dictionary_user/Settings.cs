@@ -19,25 +19,27 @@ namespace Dictionary_user
 
         private void iconButtonHistory_Click(object sender, EventArgs e)
         {
-            string message = "Do you want to delete all history";
-            string title = "Delete History";
+            string message = "Do you want to clear history";
+            string title = "Clear History";
             MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
             DialogResult result = MessageBox.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
                 Database.deleteHistory("delete from historysearch");
+                MessageBox.Show("Your history was cleared");
             }
         }
 
         private void iconButtonBookmark_Click(object sender, EventArgs e)
         {
-            string message = "Do you want to delete all history";
-            string title = "Delete History";
+            string message = "Do you want to delete all bookmarks";
+            string title = "Delete Bookmarks";
             MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
             DialogResult result = MessageBox.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
                 Database.deleteBookmark("delete from bookmark");
+                MessageBox.Show("Your bookmarks were deleted");
             }
         }
     }
