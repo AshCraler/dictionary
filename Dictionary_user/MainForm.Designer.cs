@@ -779,7 +779,7 @@
             // 
             // pictureBoxResult
             // 
-            this.pictureBoxResult.ErrorImage = global::Dictionary_user.Properties.Resources.examination;
+           
             this.pictureBoxResult.Image = global::Dictionary_user.Properties.Resources.analysis;
             this.pictureBoxResult.Location = new System.Drawing.Point(159, 29);
             this.pictureBoxResult.Name = "pictureBoxResult";
