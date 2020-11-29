@@ -626,6 +626,9 @@
             this.labelMeaning1.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning1.TabIndex = 86;
             this.labelMeaning1.Text = "meaning";
+            this.labelMeaning1.Click += new System.EventHandler(this.labelMeaning1_Click);
+            this.labelMeaning1.MouseLeave += new System.EventHandler(this.labelMeaning1_MouseLeave);
+            this.labelMeaning1.MouseHover += new System.EventHandler(this.labelMeaning1_MouseHover);
             // 
             // labelWord1
             // 
@@ -864,6 +867,9 @@
             this.labelMeaning13.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning13.TabIndex = 69;
             this.labelMeaning13.Text = "meaning";
+            this.labelMeaning13.Click += new System.EventHandler(this.labelMeaning13_Click);
+            this.labelMeaning13.MouseLeave += new System.EventHandler(this.labelMeaning13_MouseLeave);
+            this.labelMeaning13.MouseHover += new System.EventHandler(this.labelMeaning13_MouseHover);
             // 
             // labelMeaning12
             // 
@@ -876,6 +882,9 @@
             this.labelMeaning12.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning12.TabIndex = 68;
             this.labelMeaning12.Text = "meaning";
+            this.labelMeaning12.Click += new System.EventHandler(this.labelMeaning12_Click);
+            this.labelMeaning12.MouseLeave += new System.EventHandler(this.labelMeaning12_MouseLeave);
+            this.labelMeaning12.MouseHover += new System.EventHandler(this.labelMeaning12_MouseHover);
             // 
             // labelMeaning11
             // 
@@ -888,6 +897,9 @@
             this.labelMeaning11.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning11.TabIndex = 67;
             this.labelMeaning11.Text = "meaning";
+            this.labelMeaning11.Click += new System.EventHandler(this.labelMeaning11_Click);
+            this.labelMeaning11.MouseLeave += new System.EventHandler(this.labelMeaning11_MouseLeave);
+            this.labelMeaning11.MouseHover += new System.EventHandler(this.labelMeaning11_MouseHover);
             // 
             // labelMeaning10
             // 
@@ -900,6 +912,9 @@
             this.labelMeaning10.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning10.TabIndex = 66;
             this.labelMeaning10.Text = "meaning";
+            this.labelMeaning10.Click += new System.EventHandler(this.labelMeaning10_Click);
+            this.labelMeaning10.MouseLeave += new System.EventHandler(this.labelMeaning10_MouseLeave);
+            this.labelMeaning10.MouseHover += new System.EventHandler(this.labelMeaning10_MouseHover);
             // 
             // labelMeaning9
             // 
@@ -912,6 +927,9 @@
             this.labelMeaning9.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning9.TabIndex = 65;
             this.labelMeaning9.Text = "meaning";
+            this.labelMeaning9.Click += new System.EventHandler(this.labelMeaning9_Click);
+            this.labelMeaning9.MouseLeave += new System.EventHandler(this.labelMeaning9_MouseLeave);
+            this.labelMeaning9.MouseHover += new System.EventHandler(this.labelMeaning9_MouseHover);
             // 
             // labelMeaning8
             // 
@@ -924,6 +942,9 @@
             this.labelMeaning8.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning8.TabIndex = 64;
             this.labelMeaning8.Text = "meaning";
+            this.labelMeaning8.Click += new System.EventHandler(this.labelMeaning8_Click);
+            this.labelMeaning8.MouseLeave += new System.EventHandler(this.labelMeaning8_MouseLeave);
+            this.labelMeaning8.MouseHover += new System.EventHandler(this.labelMeaning8_MouseHover);
             // 
             // labelMeaning7
             // 
@@ -936,6 +957,9 @@
             this.labelMeaning7.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning7.TabIndex = 63;
             this.labelMeaning7.Text = "meaning";
+            this.labelMeaning7.Click += new System.EventHandler(this.labelMeaning7_Click);
+            this.labelMeaning7.MouseLeave += new System.EventHandler(this.labelMeaning7_MouseLeave);
+            this.labelMeaning7.MouseHover += new System.EventHandler(this.labelMeaning7_MouseHover);
             // 
             // labelMeaning6
             // 
@@ -948,6 +972,9 @@
             this.labelMeaning6.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning6.TabIndex = 62;
             this.labelMeaning6.Text = "meaning";
+            this.labelMeaning6.Click += new System.EventHandler(this.labelMeaning6_Click);
+            this.labelMeaning6.MouseLeave += new System.EventHandler(this.labelMeaning6_MouseLeave);
+            this.labelMeaning6.MouseHover += new System.EventHandler(this.labelMeaning6_MouseHover);
             // 
             // labelMeaning5
             // 
@@ -960,6 +987,9 @@
             this.labelMeaning5.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning5.TabIndex = 61;
             this.labelMeaning5.Text = "meaning";
+            this.labelMeaning5.Click += new System.EventHandler(this.labelMeaning5_Click);
+            this.labelMeaning5.MouseLeave += new System.EventHandler(this.labelMeaning5_MouseLeave);
+            this.labelMeaning5.MouseHover += new System.EventHandler(this.labelMeaning5_MouseHover);
             // 
             // labelMeaning4
             // 
@@ -972,6 +1002,9 @@
             this.labelMeaning4.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning4.TabIndex = 60;
             this.labelMeaning4.Text = "meaning";
+            this.labelMeaning4.Click += new System.EventHandler(this.labelMeaning4_Click);
+            this.labelMeaning4.MouseLeave += new System.EventHandler(this.labelMeaning4_MouseLeave);
+            this.labelMeaning4.MouseHover += new System.EventHandler(this.labelMeaning4_MouseHover);
             // 
             // labelMeaning3
             // 
@@ -984,6 +1017,9 @@
             this.labelMeaning3.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning3.TabIndex = 59;
             this.labelMeaning3.Text = "meaning";
+            this.labelMeaning3.Click += new System.EventHandler(this.labelMeaning3_Click);
+            this.labelMeaning3.MouseLeave += new System.EventHandler(this.labelMeaning3_MouseLeave);
+            this.labelMeaning3.MouseHover += new System.EventHandler(this.labelMeaning3_MouseHover);
             // 
             // speaker13
             // 
@@ -1410,6 +1446,9 @@
             this.labelMeaning2.Size = new System.Drawing.Size(92, 22);
             this.labelMeaning2.TabIndex = 33;
             this.labelMeaning2.Text = "meaning";
+            this.labelMeaning2.Click += new System.EventHandler(this.labelMeaning2_Click);
+            this.labelMeaning2.MouseLeave += new System.EventHandler(this.labelMeaning2_MouseLeave);
+            this.labelMeaning2.MouseHover += new System.EventHandler(this.labelMeaning2_MouseHover);
             // 
             // speaker2
             // 

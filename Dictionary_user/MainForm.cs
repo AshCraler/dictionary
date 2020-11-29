@@ -246,6 +246,21 @@ namespace Dictionary_user
                     checkBookMark();
                     textboxSearch.Text = Database.word;
                     activateSearchButton();
+                    if (bookmarkButton.IconColor == RGBColors.color7)
+                    {
+                        if (hint == "English")
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                        else
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                    }
+                    if (bookmarkButton.IconColor == Color.Gainsboro)
+                    {
+        
+                        if (hint == "English")
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                        else
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                    }
                 }
             }
         }
