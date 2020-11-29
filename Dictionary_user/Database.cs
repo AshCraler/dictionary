@@ -13,7 +13,9 @@ namespace Dictionary_user
     {
         public static int nowForm;
         public static string acction;
+        public static string word;
         public static DataTable loadData;
+        public static bool setLanguages;
 
         public static void load(string command)
         {
@@ -156,6 +158,11 @@ namespace Dictionary_user
                 if (connection != null)
                     connection.Close();
             }
+        }
+        
+        public static void trigger()
+        {
+            
         }
     }
 }

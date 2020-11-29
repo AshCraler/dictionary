@@ -914,131 +914,287 @@ namespace Dictionary_user
         private void labelWord1_MouseHover(object sender, EventArgs e)
         {
             labelWord1.ForeColor = Color.FromArgb(238, 26, 74);
+            labelMeaning1.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord2_MouseHover(object sender, EventArgs e)
         {
             labelWord2.ForeColor = Color.FromArgb(238, 26, 74);
+            labelMeaning2.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord3_MouseHover(object sender, EventArgs e)
         {
             labelWord3.ForeColor = Color.FromArgb(238, 26, 74);
+            labelMeaning3.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord4_MouseHover(object sender, EventArgs e)
         {
             labelWord4.ForeColor = Color.FromArgb(238, 26, 74);
+            labelMeaning4.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord5_MouseHover(object sender, EventArgs e)
         {
             labelWord5.ForeColor = Color.FromArgb(238, 26, 74);
+            labelMeaning5.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord6_MouseHover(object sender, EventArgs e)
         {
             labelWord6.ForeColor = Color.FromArgb(238, 26, 74);
+            labelMeaning6.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord7_MouseHover(object sender, EventArgs e)
         {
             labelWord7.ForeColor = Color.FromArgb(238, 26, 74);
+            labelMeaning7.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord8_MouseHover(object sender, EventArgs e)
         {
             labelWord8.ForeColor = Color.FromArgb(238, 26, 74);
+            labelMeaning8.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord9_MouseHover(object sender, EventArgs e)
         {
             labelWord9.ForeColor = Color.FromArgb(238, 26, 74);
+            labelMeaning9.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord10_MouseHover(object sender, EventArgs e)
         {
             labelWord10.ForeColor = Color.FromArgb(238, 26, 74);
+            labelMeaning10.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord11_MouseHover(object sender, EventArgs e)
         {
             labelWord11.ForeColor = Color.FromArgb(238, 26, 74);
+            labelMeaning11.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord12_MouseHover(object sender, EventArgs e)
         {
             labelWord12.ForeColor = Color.FromArgb(238, 26, 74);
+            labelMeaning12.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord13_MouseHover(object sender, EventArgs e)
         {
             labelWord13.ForeColor = Color.FromArgb(238, 26, 74);
+            labelMeaning13.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord1_MouseLeave(object sender, EventArgs e)
         {
             labelWord1.ForeColor = Color.Gainsboro;
+            labelMeaning1.ForeColor = Color.Gainsboro;
         }
 
         private void labelWord2_MouseLeave(object sender, EventArgs e)
         {
             labelWord2.ForeColor = Color.Gainsboro;
+            labelMeaning2.ForeColor = Color.Gainsboro;
         }
 
         private void labelWord3_MouseLeave(object sender, EventArgs e)
         {
             labelWord3.ForeColor = Color.Gainsboro;
+            labelMeaning3.ForeColor = Color.Gainsboro;
         }
 
         private void labelWord4_MouseLeave(object sender, EventArgs e)
         {
             labelWord4.ForeColor = Color.Gainsboro;
+            labelMeaning4.ForeColor = Color.Gainsboro;
         }
 
         private void labelWord5_MouseLeave(object sender, EventArgs e)
         {
             labelWord5.ForeColor = Color.Gainsboro;
+            labelMeaning5.ForeColor = Color.Gainsboro;
         }
 
         private void labelWord6_MouseLeave(object sender, EventArgs e)
         {
             labelWord6.ForeColor = Color.Gainsboro;
+            labelMeaning6.ForeColor = Color.Gainsboro;
         }
 
         private void labelWord7_MouseLeave(object sender, EventArgs e)
         {
             labelWord7.ForeColor = Color.Gainsboro;
+            labelMeaning7.ForeColor = Color.Gainsboro;
         }
 
         private void labelWord8_MouseLeave(object sender, EventArgs e)
         {
             labelWord8.ForeColor = Color.Gainsboro;
+            labelMeaning8.ForeColor = Color.Gainsboro;
         }
 
         private void labelWord9_MouseLeave(object sender, EventArgs e)
         {
             labelWord9.ForeColor = Color.Gainsboro;
+            labelMeaning9.ForeColor = Color.Gainsboro;
         }
 
         private void labelWord10_MouseLeave(object sender, EventArgs e)
         {
             labelWord10.ForeColor = Color.Gainsboro;
+            labelMeaning10.ForeColor = Color.Gainsboro;
         }
 
         private void labelWord11_MouseLeave(object sender, EventArgs e)
         {
             labelWord11.ForeColor = Color.Gainsboro;
+            labelMeaning11.ForeColor = Color.Gainsboro;
         }
 
         private void labelWord12_MouseLeave(object sender, EventArgs e)
         {
             labelWord12.ForeColor = Color.Gainsboro;
+            labelMeaning12.ForeColor = Color.Gainsboro;
         }
 
         private void labelWord13_MouseLeave(object sender, EventArgs e)
         {
             labelWord13.ForeColor = Color.Gainsboro;
+            labelMeaning13.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord1_Click(object sender, EventArgs e)
+        {
+            Database.acction = "clickFromBookmark";
+            Database.word = labelWord1.Text;
+            if (language1 == "English")
+                Database.setLanguages = false;
+            else Database.setLanguages = true;
+            this.Close();
+        }
+
+        private void labelWord2_Click(object sender, EventArgs e)
+        {
+            Database.acction = "clickFromBookmark";
+            Database.word = labelWord2.Text;
+            if (language2 == "English")
+                Database.setLanguages = false;
+            else Database.setLanguages = true;
+            this.Close();
+        }
+
+        private void labelWord3_Click(object sender, EventArgs e)
+        {
+            Database.acction = "clickFromBookmark";
+            Database.word = labelWord3.Text;
+            if (language3 == "English")
+                Database.setLanguages = false;
+            else Database.setLanguages = true;
+            this.Close();
+        }
+
+        private void labelWord4_Click(object sender, EventArgs e)
+        {
+            Database.acction = "clickFromBookmark";
+            Database.word = labelWord4.Text;
+            if (language4 == "English")
+                Database.setLanguages = false;
+            else Database.setLanguages = true;
+            this.Close();
+        }
+
+        private void labelWord5_Click(object sender, EventArgs e)
+        {
+            Database.acction = "clickFromBookmark";
+            Database.word = labelWord5.Text;
+            if (language5 == "English")
+                Database.setLanguages = false;
+            else Database.setLanguages = true;
+            this.Close();
+        }
+
+        private void labelWord6_Click(object sender, EventArgs e)
+        {
+            Database.acction = "clickFromBookmark";
+            Database.word = labelWord6.Text;
+            if (language6 == "English")
+                Database.setLanguages = false;
+            else Database.setLanguages = true;
+            this.Close();
+        }
+
+        private void labelWord7_Click(object sender, EventArgs e)
+        {
+            Database.acction = "clickFromBookmark";
+            Database.word = labelWord7.Text;
+            if (language7 == "English")
+                Database.setLanguages = false;
+            else Database.setLanguages = true;
+            this.Close();
+        }
+
+        private void labelWord8_Click(object sender, EventArgs e)
+        {
+            Database.acction = "clickFromBookmark";
+            Database.word = labelWord8.Text;
+            if (language8 == "English")
+                Database.setLanguages = false;
+            else Database.setLanguages = true;
+            this.Close();
+        }
+
+        private void labelWord9_Click(object sender, EventArgs e)
+        {
+            Database.acction = "clickFromBookmark";
+            Database.word = labelWord9.Text;
+            if (language9 == "English")
+                Database.setLanguages = false;
+            else Database.setLanguages = true;
+            this.Close();
+        }
+
+        private void labelWord10_Click(object sender, EventArgs e)
+        {
+            Database.acction = "clickFromBookmark";
+            Database.word = labelWord10.Text;
+            if (language10 == "English")
+                Database.setLanguages = false;
+            else Database.setLanguages = true;
+            this.Close();
+        }
+
+        private void labelWord11_Click(object sender, EventArgs e)
+        {
+            Database.acction = "clickFromBookmark";
+            Database.word = labelWord11.Text;
+            if (language11 == "English")
+                Database.setLanguages = false;
+            else Database.setLanguages = true;
+            this.Close();
+        }
+
+        private void labelWord12_Click(object sender, EventArgs e)
+        {
+            Database.acction = "clickFromBookmark";
+            Database.word = labelWord12.Text;
+            if (language12 == "English")
+                Database.setLanguages = false;
+            else Database.setLanguages = true;
+            this.Close();
+        }
+
+        private void labelWord13_Click(object sender, EventArgs e)
+        {
+            Database.acction = "clickFromBookmark";
+            Database.word = labelWord13.Text;
+            if (language13 == "English")
+                Database.setLanguages = false;
+            else Database.setLanguages = true;
+            this.Close();
         }
     }
 }

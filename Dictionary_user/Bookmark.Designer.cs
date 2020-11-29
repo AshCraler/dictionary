@@ -638,6 +638,7 @@
             this.labelWord1.Size = new System.Drawing.Size(69, 22);
             this.labelWord1.TabIndex = 85;
             this.labelWord1.Text = "Word1";
+            this.labelWord1.Click += new System.EventHandler(this.labelWord1_Click);
             this.labelWord1.MouseLeave += new System.EventHandler(this.labelWord1_MouseLeave);
             this.labelWord1.MouseHover += new System.EventHandler(this.labelWord1_MouseHover);
             // 
@@ -698,6 +699,7 @@
             this.labelWord13.Size = new System.Drawing.Size(80, 22);
             this.labelWord13.TabIndex = 81;
             this.labelWord13.Text = "Word13";
+            this.labelWord13.Click += new System.EventHandler(this.labelWord13_Click);
             this.labelWord13.MouseLeave += new System.EventHandler(this.labelWord13_MouseLeave);
             this.labelWord13.MouseHover += new System.EventHandler(this.labelWord13_MouseHover);
             // 
@@ -712,6 +714,7 @@
             this.labelWord12.Size = new System.Drawing.Size(80, 22);
             this.labelWord12.TabIndex = 80;
             this.labelWord12.Text = "Word12";
+            this.labelWord12.Click += new System.EventHandler(this.labelWord12_Click);
             this.labelWord12.MouseLeave += new System.EventHandler(this.labelWord12_MouseLeave);
             this.labelWord12.MouseHover += new System.EventHandler(this.labelWord12_MouseHover);
             // 
@@ -726,6 +729,7 @@
             this.labelWord11.Size = new System.Drawing.Size(80, 22);
             this.labelWord11.TabIndex = 79;
             this.labelWord11.Text = "Word11";
+            this.labelWord11.Click += new System.EventHandler(this.labelWord11_Click);
             this.labelWord11.MouseLeave += new System.EventHandler(this.labelWord11_MouseLeave);
             this.labelWord11.MouseHover += new System.EventHandler(this.labelWord11_MouseHover);
             // 
@@ -740,6 +744,7 @@
             this.labelWord10.Size = new System.Drawing.Size(80, 22);
             this.labelWord10.TabIndex = 78;
             this.labelWord10.Text = "Word10";
+            this.labelWord10.Click += new System.EventHandler(this.labelWord10_Click);
             this.labelWord10.MouseLeave += new System.EventHandler(this.labelWord10_MouseLeave);
             this.labelWord10.MouseHover += new System.EventHandler(this.labelWord10_MouseHover);
             // 
@@ -754,6 +759,7 @@
             this.labelWord9.Size = new System.Drawing.Size(69, 22);
             this.labelWord9.TabIndex = 77;
             this.labelWord9.Text = "Word9";
+            this.labelWord9.Click += new System.EventHandler(this.labelWord9_Click);
             this.labelWord9.MouseLeave += new System.EventHandler(this.labelWord9_MouseLeave);
             this.labelWord9.MouseHover += new System.EventHandler(this.labelWord9_MouseHover);
             // 
@@ -768,6 +774,7 @@
             this.labelWord8.Size = new System.Drawing.Size(69, 22);
             this.labelWord8.TabIndex = 76;
             this.labelWord8.Text = "Word8";
+            this.labelWord8.Click += new System.EventHandler(this.labelWord8_Click);
             this.labelWord8.MouseLeave += new System.EventHandler(this.labelWord8_MouseLeave);
             this.labelWord8.MouseHover += new System.EventHandler(this.labelWord8_MouseHover);
             // 
@@ -782,6 +789,7 @@
             this.labelWord7.Size = new System.Drawing.Size(69, 22);
             this.labelWord7.TabIndex = 75;
             this.labelWord7.Text = "Word7";
+            this.labelWord7.Click += new System.EventHandler(this.labelWord7_Click);
             this.labelWord7.MouseLeave += new System.EventHandler(this.labelWord7_MouseLeave);
             this.labelWord7.MouseHover += new System.EventHandler(this.labelWord7_MouseHover);
             // 
@@ -796,6 +804,7 @@
             this.labelWord6.Size = new System.Drawing.Size(69, 22);
             this.labelWord6.TabIndex = 74;
             this.labelWord6.Text = "Word6";
+            this.labelWord6.Click += new System.EventHandler(this.labelWord6_Click);
             this.labelWord6.MouseLeave += new System.EventHandler(this.labelWord6_MouseLeave);
             this.labelWord6.MouseHover += new System.EventHandler(this.labelWord6_MouseHover);
             // 
@@ -810,6 +819,7 @@
             this.labelWord5.Size = new System.Drawing.Size(69, 22);
             this.labelWord5.TabIndex = 73;
             this.labelWord5.Text = "Word5";
+            this.labelWord5.Click += new System.EventHandler(this.labelWord5_Click);
             this.labelWord5.MouseLeave += new System.EventHandler(this.labelWord5_MouseLeave);
             this.labelWord5.MouseHover += new System.EventHandler(this.labelWord5_MouseHover);
             // 
@@ -824,6 +834,7 @@
             this.labelWord4.Size = new System.Drawing.Size(69, 22);
             this.labelWord4.TabIndex = 72;
             this.labelWord4.Text = "Word4";
+            this.labelWord4.Click += new System.EventHandler(this.labelWord4_Click);
             this.labelWord4.MouseLeave += new System.EventHandler(this.labelWord4_MouseLeave);
             this.labelWord4.MouseHover += new System.EventHandler(this.labelWord4_MouseHover);
             // 
@@ -838,6 +849,7 @@
             this.labelWord3.Size = new System.Drawing.Size(69, 22);
             this.labelWord3.TabIndex = 71;
             this.labelWord3.Text = "Word3";
+            this.labelWord3.Click += new System.EventHandler(this.labelWord3_Click);
             this.labelWord3.MouseLeave += new System.EventHandler(this.labelWord3_MouseLeave);
             this.labelWord3.MouseHover += new System.EventHandler(this.labelWord3_MouseHover);
             // 
@@ -1428,6 +1440,7 @@
             this.labelWord2.Size = new System.Drawing.Size(69, 22);
             this.labelWord2.TabIndex = 31;
             this.labelWord2.Text = "Word2";
+            this.labelWord2.Click += new System.EventHandler(this.labelWord2_Click);
             this.labelWord2.MouseLeave += new System.EventHandler(this.labelWord2_MouseLeave);
             this.labelWord2.MouseHover += new System.EventHandler(this.labelWord2_MouseHover);
             // 

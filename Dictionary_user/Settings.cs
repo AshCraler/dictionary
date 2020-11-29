@@ -31,7 +31,7 @@ namespace Dictionary_user
 
         private void iconButtonBookmark_Click(object sender, EventArgs e)
         {
-            string message = "Do you want to delete all history";
+            string message = "Do you want to delete all bookmark";
             string title = "Delete History";
             MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
             DialogResult result = MessageBox.Show(message, title, buttons);
