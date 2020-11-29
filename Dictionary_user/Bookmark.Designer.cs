@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.iconButtonExcel = new FontAwesome.Sharp.IconButton();
             this.vieFlag13 = new System.Windows.Forms.PictureBox();
             this.vieFlag12 = new System.Windows.Forms.PictureBox();
             this.vieFlag11 = new System.Windows.Forms.PictureBox();
@@ -123,7 +124,6 @@
             this.buttonDateDesc = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.iconButtonExcel = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vieFlag13)).BeginInit();
@@ -258,6 +258,23 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(804, 611);
             this.panel3.TabIndex = 39;
+            // 
+            // iconButtonExcel
+            // 
+            this.iconButtonExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonExcel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.iconButtonExcel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
+            this.iconButtonExcel.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButtonExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonExcel.IconSize = 30;
+            this.iconButtonExcel.Location = new System.Drawing.Point(585, 505);
+            this.iconButtonExcel.Name = "iconButtonExcel";
+            this.iconButtonExcel.Rotation = 0D;
+            this.iconButtonExcel.Size = new System.Drawing.Size(35, 33);
+            this.iconButtonExcel.TabIndex = 116;
+            this.iconButtonExcel.UseVisualStyleBackColor = true;
+            this.iconButtonExcel.Click += new System.EventHandler(this.iconButtonExcel_Click);
             // 
             // vieFlag13
             // 
@@ -618,8 +635,11 @@
             this.labelWord1.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelWord1.Location = new System.Drawing.Point(24, 1);
             this.labelWord1.Name = "labelWord1";
-            this.labelWord1.Size = new System.Drawing.Size(0, 22);
+            this.labelWord1.Size = new System.Drawing.Size(69, 22);
             this.labelWord1.TabIndex = 85;
+            this.labelWord1.Text = "Word1";
+            this.labelWord1.MouseLeave += new System.EventHandler(this.labelWord1_MouseLeave);
+            this.labelWord1.MouseHover += new System.EventHandler(this.labelWord1_MouseHover);
             // 
             // pageInfo
             // 
@@ -675,8 +695,11 @@
             this.labelWord13.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelWord13.Location = new System.Drawing.Point(24, 469);
             this.labelWord13.Name = "labelWord13";
-            this.labelWord13.Size = new System.Drawing.Size(0, 22);
+            this.labelWord13.Size = new System.Drawing.Size(80, 22);
             this.labelWord13.TabIndex = 81;
+            this.labelWord13.Text = "Word13";
+            this.labelWord13.MouseLeave += new System.EventHandler(this.labelWord13_MouseLeave);
+            this.labelWord13.MouseHover += new System.EventHandler(this.labelWord13_MouseHover);
             // 
             // labelWord12
             // 
@@ -686,8 +709,11 @@
             this.labelWord12.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelWord12.Location = new System.Drawing.Point(24, 430);
             this.labelWord12.Name = "labelWord12";
-            this.labelWord12.Size = new System.Drawing.Size(0, 22);
+            this.labelWord12.Size = new System.Drawing.Size(80, 22);
             this.labelWord12.TabIndex = 80;
+            this.labelWord12.Text = "Word12";
+            this.labelWord12.MouseLeave += new System.EventHandler(this.labelWord12_MouseLeave);
+            this.labelWord12.MouseHover += new System.EventHandler(this.labelWord12_MouseHover);
             // 
             // labelWord11
             // 
@@ -697,8 +723,11 @@
             this.labelWord11.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelWord11.Location = new System.Drawing.Point(24, 391);
             this.labelWord11.Name = "labelWord11";
-            this.labelWord11.Size = new System.Drawing.Size(0, 22);
+            this.labelWord11.Size = new System.Drawing.Size(80, 22);
             this.labelWord11.TabIndex = 79;
+            this.labelWord11.Text = "Word11";
+            this.labelWord11.MouseLeave += new System.EventHandler(this.labelWord11_MouseLeave);
+            this.labelWord11.MouseHover += new System.EventHandler(this.labelWord11_MouseHover);
             // 
             // labelWord10
             // 
@@ -708,8 +737,11 @@
             this.labelWord10.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelWord10.Location = new System.Drawing.Point(24, 352);
             this.labelWord10.Name = "labelWord10";
-            this.labelWord10.Size = new System.Drawing.Size(0, 22);
+            this.labelWord10.Size = new System.Drawing.Size(80, 22);
             this.labelWord10.TabIndex = 78;
+            this.labelWord10.Text = "Word10";
+            this.labelWord10.MouseLeave += new System.EventHandler(this.labelWord10_MouseLeave);
+            this.labelWord10.MouseHover += new System.EventHandler(this.labelWord10_MouseHover);
             // 
             // labelWord9
             // 
@@ -719,8 +751,11 @@
             this.labelWord9.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelWord9.Location = new System.Drawing.Point(24, 313);
             this.labelWord9.Name = "labelWord9";
-            this.labelWord9.Size = new System.Drawing.Size(0, 22);
+            this.labelWord9.Size = new System.Drawing.Size(69, 22);
             this.labelWord9.TabIndex = 77;
+            this.labelWord9.Text = "Word9";
+            this.labelWord9.MouseLeave += new System.EventHandler(this.labelWord9_MouseLeave);
+            this.labelWord9.MouseHover += new System.EventHandler(this.labelWord9_MouseHover);
             // 
             // labelWord8
             // 
@@ -730,8 +765,11 @@
             this.labelWord8.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelWord8.Location = new System.Drawing.Point(24, 274);
             this.labelWord8.Name = "labelWord8";
-            this.labelWord8.Size = new System.Drawing.Size(0, 22);
+            this.labelWord8.Size = new System.Drawing.Size(69, 22);
             this.labelWord8.TabIndex = 76;
+            this.labelWord8.Text = "Word8";
+            this.labelWord8.MouseLeave += new System.EventHandler(this.labelWord8_MouseLeave);
+            this.labelWord8.MouseHover += new System.EventHandler(this.labelWord8_MouseHover);
             // 
             // labelWord7
             // 
@@ -741,8 +779,11 @@
             this.labelWord7.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelWord7.Location = new System.Drawing.Point(24, 235);
             this.labelWord7.Name = "labelWord7";
-            this.labelWord7.Size = new System.Drawing.Size(0, 22);
+            this.labelWord7.Size = new System.Drawing.Size(69, 22);
             this.labelWord7.TabIndex = 75;
+            this.labelWord7.Text = "Word7";
+            this.labelWord7.MouseLeave += new System.EventHandler(this.labelWord7_MouseLeave);
+            this.labelWord7.MouseHover += new System.EventHandler(this.labelWord7_MouseHover);
             // 
             // labelWord6
             // 
@@ -752,8 +793,11 @@
             this.labelWord6.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelWord6.Location = new System.Drawing.Point(24, 196);
             this.labelWord6.Name = "labelWord6";
-            this.labelWord6.Size = new System.Drawing.Size(0, 22);
+            this.labelWord6.Size = new System.Drawing.Size(69, 22);
             this.labelWord6.TabIndex = 74;
+            this.labelWord6.Text = "Word6";
+            this.labelWord6.MouseLeave += new System.EventHandler(this.labelWord6_MouseLeave);
+            this.labelWord6.MouseHover += new System.EventHandler(this.labelWord6_MouseHover);
             // 
             // labelWord5
             // 
@@ -763,8 +807,11 @@
             this.labelWord5.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelWord5.Location = new System.Drawing.Point(24, 157);
             this.labelWord5.Name = "labelWord5";
-            this.labelWord5.Size = new System.Drawing.Size(0, 22);
+            this.labelWord5.Size = new System.Drawing.Size(69, 22);
             this.labelWord5.TabIndex = 73;
+            this.labelWord5.Text = "Word5";
+            this.labelWord5.MouseLeave += new System.EventHandler(this.labelWord5_MouseLeave);
+            this.labelWord5.MouseHover += new System.EventHandler(this.labelWord5_MouseHover);
             // 
             // labelWord4
             // 
@@ -774,8 +821,11 @@
             this.labelWord4.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelWord4.Location = new System.Drawing.Point(24, 118);
             this.labelWord4.Name = "labelWord4";
-            this.labelWord4.Size = new System.Drawing.Size(0, 22);
+            this.labelWord4.Size = new System.Drawing.Size(69, 22);
             this.labelWord4.TabIndex = 72;
+            this.labelWord4.Text = "Word4";
+            this.labelWord4.MouseLeave += new System.EventHandler(this.labelWord4_MouseLeave);
+            this.labelWord4.MouseHover += new System.EventHandler(this.labelWord4_MouseHover);
             // 
             // labelWord3
             // 
@@ -785,8 +835,11 @@
             this.labelWord3.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelWord3.Location = new System.Drawing.Point(24, 79);
             this.labelWord3.Name = "labelWord3";
-            this.labelWord3.Size = new System.Drawing.Size(0, 22);
+            this.labelWord3.Size = new System.Drawing.Size(69, 22);
             this.labelWord3.TabIndex = 71;
+            this.labelWord3.Text = "Word3";
+            this.labelWord3.MouseLeave += new System.EventHandler(this.labelWord3_MouseLeave);
+            this.labelWord3.MouseHover += new System.EventHandler(this.labelWord3_MouseHover);
             // 
             // labelMeaning13
             // 
@@ -1372,8 +1425,11 @@
             this.labelWord2.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelWord2.Location = new System.Drawing.Point(24, 40);
             this.labelWord2.Name = "labelWord2";
-            this.labelWord2.Size = new System.Drawing.Size(0, 22);
+            this.labelWord2.Size = new System.Drawing.Size(69, 22);
             this.labelWord2.TabIndex = 31;
+            this.labelWord2.Text = "Word2";
+            this.labelWord2.MouseLeave += new System.EventHandler(this.labelWord2_MouseLeave);
+            this.labelWord2.MouseHover += new System.EventHandler(this.labelWord2_MouseHover);
             // 
             // panel2
             // 
@@ -1525,23 +1581,6 @@
             this.label1.Size = new System.Drawing.Size(106, 24);
             this.label1.TabIndex = 33;
             this.label1.Text = "Alphabet";
-            // 
-            // iconButtonExcel
-            // 
-            this.iconButtonExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonExcel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.iconButtonExcel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
-            this.iconButtonExcel.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.iconButtonExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonExcel.IconSize = 30;
-            this.iconButtonExcel.Location = new System.Drawing.Point(585, 505);
-            this.iconButtonExcel.Name = "iconButtonExcel";
-            this.iconButtonExcel.Rotation = 0D;
-            this.iconButtonExcel.Size = new System.Drawing.Size(35, 33);
-            this.iconButtonExcel.TabIndex = 116;
-            this.iconButtonExcel.UseVisualStyleBackColor = true;
-            this.iconButtonExcel.Click += new System.EventHandler(this.iconButtonExcel_Click);
             // 
             // Bookmark
             // 

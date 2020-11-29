@@ -910,6 +910,136 @@ namespace Dictionary_user
                 MessageBox.Show("File was created");
             }   
         }
+
+        private void labelWord1_MouseHover(object sender, EventArgs e)
+        {
+            labelWord1.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void labelWord2_MouseHover(object sender, EventArgs e)
+        {
+            labelWord2.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void labelWord3_MouseHover(object sender, EventArgs e)
+        {
+            labelWord3.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void labelWord4_MouseHover(object sender, EventArgs e)
+        {
+            labelWord4.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void labelWord5_MouseHover(object sender, EventArgs e)
+        {
+            labelWord5.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void labelWord6_MouseHover(object sender, EventArgs e)
+        {
+            labelWord6.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void labelWord7_MouseHover(object sender, EventArgs e)
+        {
+            labelWord7.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void labelWord8_MouseHover(object sender, EventArgs e)
+        {
+            labelWord8.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void labelWord9_MouseHover(object sender, EventArgs e)
+        {
+            labelWord9.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void labelWord10_MouseHover(object sender, EventArgs e)
+        {
+            labelWord10.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void labelWord11_MouseHover(object sender, EventArgs e)
+        {
+            labelWord11.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void labelWord12_MouseHover(object sender, EventArgs e)
+        {
+            labelWord12.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void labelWord13_MouseHover(object sender, EventArgs e)
+        {
+            labelWord13.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void labelWord1_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord1.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord2_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord2.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord3_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord3.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord4_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord4.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord5_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord5.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord6_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord6.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord7_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord7.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord8_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord8.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord9_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord9.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord10_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord10.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord11_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord11.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord12_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord12.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord13_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord13.ForeColor = Color.Gainsboro;
+        }
     }
 }
      
