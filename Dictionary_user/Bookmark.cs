@@ -1436,8 +1436,8 @@ namespace Dictionary_user
         private void labelMeaning9_Click(object sender, EventArgs e)
         {
             Database.acction = "clickFromBookmark";
-            Database.word = labelWord8.Text;
-            if (language8 == "English")
+            Database.word = labelWord9.Text;
+            if (language9 == "English")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1446,8 +1446,8 @@ namespace Dictionary_user
         private void labelMeaning10_Click(object sender, EventArgs e)
         {
             Database.acction = "clickFromBookmark";
-            Database.word = labelWord9.Text;
-            if (language9 == "English")
+            Database.word = labelWord10.Text;
+            if (language10 == "English")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1456,8 +1456,8 @@ namespace Dictionary_user
         private void labelMeaning11_Click(object sender, EventArgs e)
         {
             Database.acction = "clickFromBookmark";
-            Database.word = labelWord9.Text;
-            if (language9 == "English")
+            Database.word = labelWord11.Text;
+            if (language11 == "English")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
