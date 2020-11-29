@@ -575,7 +575,7 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language9 == "English")
+            if (language9 == "English") 
                 synth.Speak(labelWord9.Text);
             else synth.Speak(labelMeaning9.Text);
         }

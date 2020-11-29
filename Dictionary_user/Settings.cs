@@ -16,5 +16,29 @@ namespace Dictionary_user
         {
             InitializeComponent();
         }
+
+        private void iconButtonHistory_Click(object sender, EventArgs e)
+        {
+            string message = "Do you want to delete all history";
+            string title = "Delete History";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                Database.deleteHistory("delete from historysearch");
+            }
+        }
+
+        private void iconButtonBookmark_Click(object sender, EventArgs e)
+        {
+            string message = "Do you want to delete all history";
+            string title = "Delete History";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                Database.deleteBookmark("delete from bookmark");
+            }
+        }
     }
 }
