@@ -12,7 +12,6 @@ using System.Windows.Forms;
 using Bunifu.Framework.UI;
 using FontAwesome.Sharp;
 using System.Speech.Synthesis;
-using System.Data;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 //////
@@ -167,6 +166,21 @@ namespace Dictionary_user
                 {
                     ktBookmark = false;
                     bookmarkButton.IconColor = Color.Gainsboro;
+                }
+                if (bookmarkButton.IconColor == RGBColors.color7)
+                {
+                    if (hint == "English")
+                        Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                    else
+                        Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                }
+                if (bookmarkButton.IconColor == Color.Gainsboro)
+                {
+
+                    if (hint == "English")
+                        Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                    else
+                        Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
                 }
             }
             if (Database.nowForm==2)

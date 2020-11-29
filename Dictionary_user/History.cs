@@ -20,5 +20,16 @@ namespace Dictionary_user
             bunifuCustomDataGrid1.DefaultCellStyle.Format = "dd/MM/yyyy";
             bunifuCustomDataGrid1.DataSource = Database.loadData;
         }
+
+        private void bunifuCustomDataGrid1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (bunifuCustomDataGrid1.SelectedRows.Count == 0)
+            {
+              //  TextBox1.Value = bunifuCustomDataGrid1.SelectedRows(0).Cells(0).Value;
+              //  TextBox2.Value = bunifuCustomDataGrid1.SelectedRows(0).Cells(1).Value;
+             //   TextBox3.Value = bunifuCustomDataGrid1.SelectedRows(0).Cells(2).Value;
+             //   TextBox4.Value = bunifuCustomDataGrid1.SelectedRows(0).Cells(3).Value;
+            }
+        }
     }
 }
