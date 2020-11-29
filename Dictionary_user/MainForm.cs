@@ -137,7 +137,7 @@ namespace Dictionary_user
                     btnPlay.Visible = true;
                     btnPlay2.Visible = false;
                 }
-                if (textboxSearch.HintText == "Search VietNamese")
+                else
                 {
                     command = " SELECT English from mytable where VieMeaning = " + "\"" + textboxSearch.Text.ToString() + "\"";
                     Database.load(command);
@@ -197,6 +197,8 @@ namespace Dictionary_user
             {
                 pictureBoxFlagLeft.Image = Properties.Resources.vietnam;
                 pictureBoxFlagRight.Image = Properties.Resources.united_kingdom;
+                textboxSearch.HintText = "Search VietNamese";
+                textboxSearch.Text = "Search VietNamese";
                 coloumn = "English";
                 hint = "VieMeaning";
             }

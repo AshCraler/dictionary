@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Excel
 {
@@ -18,7 +19,8 @@ namespace Excel
         /// <param name="worksheetName"></param>
         /// <param name="saveAsLocation"></param>
         /// <returns></returns>
-        public bool WriteDataTableToExcel(System.Data.DataTable dataTable, string worksheetName, string saveAsLocation, string ReporType)
+        public string time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
+        public bool WriteDataTableToExcel(DataTable dataTable, string worksheetName, string saveAsLocation, string ReporType)
         {
             Microsoft.Office.Interop.Excel.Application excel;
             Microsoft.Office.Interop.Excel.Workbook excelworkBook;
@@ -95,11 +97,24 @@ namespace Excel
 
                 //now save the workbook and exit Excel
 
+                 int count = 1;
 
-                excelworkBook.SaveAs(saveAsLocation); ;
-                excelworkBook.Close();
-                excel.Quit();
-                return true;
+                string fileNameOnly = Path.GetFileNameWithoutExtension(saveAsLocation);
+                string extension = Path.GetExtension(saveAsLocation);
+                string path = Path.GetDirectoryName(saveAsLocation);
+                string newFullPath = saveAsLocation;
+
+                
+                    while (File.Exists(newFullPath))
+                    {
+                        string tempFileName = string.Format("{0}({1})", fileNameOnly, count++);
+                        newFullPath = Path.Combine(path, tempFileName + extension);
+                    }
+                    excelworkBook.SaveAs(newFullPath); ;
+                    excelworkBook.Close();
+                    excel.Quit();
+                    return true;
+                
             }
             catch (Exception ex)
             {

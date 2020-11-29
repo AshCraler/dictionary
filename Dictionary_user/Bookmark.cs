@@ -897,9 +897,19 @@ namespace Dictionary_user
 
         private void iconButtonExcel_Click(object sender, EventArgs e)
         {
-            Excel.ExcelUtlity obj = new Excel.ExcelUtlity();
-            obj.WriteDataTableToExcel(Database.loadData, "Person Details", "D:\\Bookmark", "Details");
-            MessageBox.Show("Excel created at D:\\Bookmark.xlsx");
+            DataView view = new DataView(Database.loadData);
+            DataTable selected = view.ToTable(false, "word", "meaning", "savedtime");   
+            var folderBrowserDialog1 = new FolderBrowserDialog();
+            // Show the FolderBrowserDialog.
+            DialogResult result = folderBrowserDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                Excel.ExcelUtlity obj = new Excel.ExcelUtlity();
+                string folderName = folderBrowserDialog1.SelectedPath;
+                obj.WriteDataTableToExcel(selected, "Bookmark List", folderName +"BookmarkList.xlsx", "BookmarkList");
+                MessageBox.Show("File was created");
+            }   
         }
     }
 }
+     
