@@ -38,6 +38,12 @@ namespace Dictionary_user
             DialogResult result = MessageBox.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
+                Database.load("Select word from bookmark");
+                for (int i = 0; i < Database.loadData.Rows.Count; i++)
+                {
+                    string remove = Database.loadData.Rows[i]["word"].ToString();
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " +"'"+ remove+"'");
+                }
                 Database.deleteBookmark("delete from bookmark");
                 MessageBox.Show("Your bookmarks were deleted");
             }
