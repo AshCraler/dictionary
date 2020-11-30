@@ -8,13 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Dictionary_user
+namespace Dictionary_host
 {
-    public partial class Help : Form
+    public partial class Setting : Form
     {
-        public Help()
+        public Setting()
         {
             InitializeComponent();
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DictionaryDTO;
 using DataAccessTier;
+using System.Data;
 
 namespace BusinessLogicTier
 {
-    public class Connection_BUS
+    public class FeedBack_BUS
     {
-        public DBConnection objConn = new DBConnection();
+        public FeedBackDAO objFeedBack = new FeedBackDAO();
 
         public bool feedBack(FeedBack fb)
         {
-            if (objConn.pushFeedBack(fb) == false)
+            if (objFeedBack.pushFeedBack(fb) == false)
             {
                 MessageBox.Show("FeedBack failed");
                 return false;
@@ -25,9 +26,10 @@ namespace BusinessLogicTier
                 
         }
 
-        public void getHelp()
+        public DataTable allFeedBacks()
         {
-            
+            return objFeedBack.getAllFeedBacks();
         }
+
     }
 }

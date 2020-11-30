@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="EN_VN_Word.cs" />
     <Compile Include="FeedBack.cs" />
+    <Compile Include="VN_EN_History.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VN_EN_Word.cs" />
   </ItemGroup>

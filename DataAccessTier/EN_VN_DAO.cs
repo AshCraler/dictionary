@@ -11,10 +11,11 @@ namespace DataAccessTier
 {
     public class EN_VN_DAO : DBConnection
     {
-        private string getEnWordCommand = "SELECT FROM tbAnhViet WHERE ENKey = @ENKey";
-        private string bookMarkCommand = "INSERT INTO tbENBookMark VALUES(@ENKey, @Pronounciation, @WordType, @VNMean, @Example)";
+        private string getEnWordCommand = "SELECT * FROM tbAnhViet WHERE ENKey = @ENKey";
+        private string bookMarkCommand = "INSERT INTO tbENBookMark VALUES(@ENKey, @Pronounciation, @WordType, @VNMeans, @Example)";
         private string unMarkCommand = "DELETE FROM tbENBookMark WHERE ENKey = @ENKey";
-        private string saveWordCommand = "INSERT INTO tbENHistory VALUES (@Time, @ENKey, @Pronounciation, @WordType, @VNMean, @Example)";
+        private string saveWordCommand = "INSERT INTO tbENHistory VALUES (@Time, @ENKey, @Pronounciation, @WordType, @VNMeans, @Example)";
+        private string addWordCommand = "INSERT INTO tbAnhViet VALUES (@ENKey, @Pronounciation, @WordType, @VNMeans, @Example)";
         private string deleteHistoryCommand = "DELETE FROM tbENHistory";
 
         public EN_VN_DAO() : base() { }
@@ -34,17 +35,18 @@ namespace DataAccessTier
 
                     SqlDataReader sdr = cmd.ExecuteReader();
 
-                    if(sdr.Read())
+                    if (sdr.Read())
                     {
                         w = new EN_VN_Word();
+
                         w.ENKey = sdr["ENKey"].ToString();
                         w.Pronounciation = sdr["Pronounciation"].ToString();
                         w.WordType = sdr["WordType"].ToString();
-                        w.Means = sdr["VNMean"].ToString();
+                        w.Means = sdr["VNMeans"].ToString();
                         w.Example = sdr["Example"].ToString();
-
-                        sdr.Close();
                     }
+                        sdr.Close();
+                    
                  }
             }
             catch(Exception e)
@@ -68,7 +70,7 @@ namespace DataAccessTier
                     cmd.Parameters.Add("@ENKey", SqlDbType.VarChar).Value = w.ENKey;
                     cmd.Parameters.Add("@Pronounciation", SqlDbType.NVarChar).Value = w.Pronounciation;
                     cmd.Parameters.Add("@WordType", SqlDbType.NVarChar).Value = w.WordType;
-                    cmd.Parameters.Add("@VNMean", SqlDbType.NText).Value = w.Means;
+                    cmd.Parameters.Add("@VNMeans", SqlDbType.NText).Value = w.Means;
                     cmd.Parameters.Add("@Example", SqlDbType.NText).Value = w.Example;
 
                     cmd.ExecuteNonQuery();
@@ -118,7 +120,7 @@ namespace DataAccessTier
                     cmd.Parameters.Add("@ENKey", SqlDbType.VarChar).Value = w.ENKey;
                     cmd.Parameters.Add("@Pronounciation", SqlDbType.NVarChar).Value = w.Pronounciation;
                     cmd.Parameters.Add("@WordType", SqlDbType.NVarChar).Value = w.WordType;
-                    cmd.Parameters.Add("@VNMean", SqlDbType.NText).Value = w.Means;
+                    cmd.Parameters.Add("@VNMeans", SqlDbType.NText).Value = w.Means;
                     cmd.Parameters.Add("@Example", SqlDbType.NText).Value = w.Example;
 
                     cmd.ExecuteNonQuery();
@@ -150,5 +152,26 @@ namespace DataAccessTier
             }
         }
 
+        public void addWord(EN_VN_Word w)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(saveWordCommand, conn))
+                {
+                    cmd.Parameters.Add("ENKey", SqlDbType.VarChar).Value = w.ENKey;
+                    cmd.Parameters.Add("@Pronounciation", SqlDbType.NVarChar).Value = w.Pronounciation;
+                    cmd.Parameters.Add("@WordType", SqlDbType.NVarChar).Value = w.WordType;
+                    cmd.Parameters.Add("@VNMeans", SqlDbType.NText).Value = w.Means;
+                    cmd.Parameters.Add("@Example", SqlDbType.NText).Value = w.Example;
+                }
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

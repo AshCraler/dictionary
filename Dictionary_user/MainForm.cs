@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using Bunifu.Framework.UI;
 using FontAwesome.Sharp;
 using System.Speech.Synthesis;
+using BusinessLogicTier;
+using DictionaryDTO;
 //////
 namespace Dictionary_user
 {
@@ -30,7 +32,7 @@ namespace Dictionary_user
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private struct RGBColors // Struct các mã màu 
+        public struct RGBColors // Struct các mã màu 
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
             public static Color color2 = Color.FromArgb(238, 26, 74);
@@ -40,7 +42,12 @@ namespace Dictionary_user
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.FromArgb(255, 244, 79);
         }
-        
+
+        //new object
+        private EN_VN_BUS EVDict = new EN_VN_BUS();
+        private VN_EN_BUS VEDict = new VN_EN_BUS();
+
+        private Label pronunciationLabel = new Label();
 
         #endregion
 
@@ -102,7 +109,7 @@ namespace Dictionary_user
         }
         private void activateSearchButton() // Kích hoạt searchButton
         {
-            WordData result = myDictionary.Item.Data.Find(x => x.Key == textboxSearch.Text);
+            /*WordData result = myDictionary.Item.Data.Find(x => x.Key == textboxSearch.Text);
             if (result == null)
             {
                 MessageBox.Show("No words found! I'm sorry.");
@@ -114,7 +121,64 @@ namespace Dictionary_user
                 labelResult.Visible = true;
                 btnPlay.Visible = true;
                 bookmarkButton.Visible = true;
+            }*/
+
+            
+            if(ktSwitch == false) // đang là Anh - Viet
+            {
+                DictionaryDTO.EN_VN_Word w = EVDict.searchWord(textboxSearch.Text);
+                if (w == null)
+                {
+                    MessageBox.Show("No words found! I'm sorry.");
+                }
+                else
+                {
+                    typedWord.Visible = true;
+                    typedWord.Text = w.Means;
+
+                    if (w.Pronounciation != null)
+                    {
+                        panelResult.Controls.Add(pronunciationLabel);
+                        pronunciationLabel.Visible = true;
+                        pronunciationLabel.Location = new Point(430, 65);
+                        pronunciationLabel.AutoSize = true;
+                        pronunciationLabel.Text = w.Pronounciation;
+                        pronunciationLabel.Font = new Font(new FontFamily("Microsoft Sans Serif"), 12);
+                        pronunciationLabel.ForeColor = Color.White;
+                        
+
+                        btnPlay.Location = new Point(pronunciationLabel.Location.X + pronunciationLabel.Size.Width + 10,
+                        pronunciationLabel.Location.Y - 5);
+                    }
+                    labelResult.Visible = true;
+
+                    btnPlay.Visible = true;
+                    
+
+                    bookmarkButton.Visible = true;
+                }
             }
+            else //đang là Viet - Anh
+            {
+                DictionaryDTO.VN_EN_Word w = VEDict.searchWord(textboxSearch.Text);
+                if (w == null)
+                {
+                    MessageBox.Show("Không tìm thấy từ được nhập!\nHex: " + HexadecimalEncoding.ToHexString(textboxSearch.Text));
+                }
+                else
+                {
+                    typedWord.Visible = true;
+                    typedWord.Text = w.Means;
+
+                    labelResult.Visible = true;
+                    btnPlay.Visible = true;
+                    bookmarkButton.Visible = true;
+                }
+                    
+
+                
+            }
+
         }
         private void activateSwitchButton() // Kích hoạt switchButton 
         {
@@ -160,6 +224,7 @@ namespace Dictionary_user
             leftBorderBtn.Size = new Size(7, 34);
             panelMenu.Controls.Add(leftBorderBtn);
             activateMenuButton(iconButton1, RGBColors.color1);
+            this.DoubleBuffered = true;
 
             // Initialize Database
             myDictionary = new DictionaryManager();
@@ -266,7 +331,7 @@ namespace Dictionary_user
         private void btnFeedback_Click(object sender, EventArgs e) // Khi click vào feedbackButton
         {
             activateMenuButton(sender, RGBColors.color6);
-            openChildForm(new Feedback());
+            openChildForm(new Dictionary_user.Feedback());
             hideSearch();
             hideSwitch();
         }
@@ -522,7 +587,6 @@ namespace Dictionary_user
 
 
         #endregion Search_Result
-
     }
 }
 

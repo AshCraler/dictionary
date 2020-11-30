@@ -11,10 +11,10 @@ namespace DataAccessTier
 {
     public class VN_EN_DAO : DBConnection
     {
-        private string getVnWordCommand = "SELECT FROM tbVietAnh WHERE VNKey = @VNKey";
-        private string bookMarkCommand = "INSERT INTO tbVNBookMarked VALUES (@VNKey, @VNSuggestion, @WordType, @ENMean, @Example)";
+        private string getVnWordCommand = "SELECT * FROM tbVietAnh WHERE VNKey = @VNKey";
+        private string bookMarkCommand = "INSERT INTO tbVNBookMarked VALUES (@VNKey, @VNSuggestion, @WordType, @ENMeans, @Example)";
         private string unMarkCommand = "DELETE FROM tbVNBookMarked WHERE VNKey = @VNKey";
-        private string saveWordCommand = "INSERT INTO tbVNHistory VALUES (@Time, @VNKey, @VNSuggestion, @WordType, @ENMean, @Example)";
+        private string saveWordCommand = "INSERT INTO tbVNHistory VALUES (@Time, @VNKey, @VNSuggestion, @WordType, @ENMeans, @Example)";
         private string deleteHistoryCommand = "DELETE FROM tbVNHistory";
 
         public VN_EN_DAO() : base() { }
@@ -30,22 +30,39 @@ namespace DataAccessTier
 
                 using (SqlCommand cmd = new SqlCommand(getVnWordCommand, conn))
                 {
-                    cmd.Parameters.Add("@VNKey", SqlDbType.NVarChar).Value = key;
+                    cmd.Parameters.Add("@VNKey", SqlDbType.NVarChar).Value = HexadecimalEncoding.ToHexString(key + " \r");
 
                     SqlDataReader sdr = cmd.ExecuteReader();
+
+                    if (sdr.Read())
+                    {
+                        w = new VN_EN_Word();
+
+                        w.VNKey = HexadecimalEncoding.FromHexString(sdr["VNKey"].ToString());
+                        w.VNSuggestion = sdr["VNSuggestion"].ToString();
+                        w.WordType = sdr["WordType"].ToString();
+                        w.Means = sdr["ENMeans"].ToString();
+                        w.Example = sdr["Example"].ToString();
+                    }
+                    else
+                        sdr.Close();
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add("@VNKey", SqlDbType.NVarChar).Value = HexadecimalEncoding.ToHexString(key + "\r");
+                    sdr = cmd.ExecuteReader();
 
                     if(sdr.Read())
                     {
                         w = new VN_EN_Word();
 
-                        w.VNKey = sdr["VNKey"].ToString();
+                        w.VNKey = HexadecimalEncoding.FromHexString(sdr["VNKey"].ToString());
                         w.VNSuggestion = sdr["VNSuggestion"].ToString();
                         w.WordType = sdr["WordType"].ToString();
-                        w.Means = sdr["ENMean"].ToString();
+                        w.Means = sdr["ENMeans"].ToString();
                         w.Example = sdr["Example"].ToString();
-
-                        sdr.Close();
                     }
+                    sdr.Close();
+                    
                 }
             }
             catch(Exception e)
@@ -69,7 +86,7 @@ namespace DataAccessTier
                     cmd.Parameters.Add("@VNKey", SqlDbType.NVarChar).Value = w.VNKey;
                     cmd.Parameters.Add("@VNSuggestion", SqlDbType.NVarChar).Value = w.VNSuggestion;
                     cmd.Parameters.Add("@WordType", SqlDbType.NVarChar).Value = w.WordType;
-                    cmd.Parameters.Add("@ENMean", SqlDbType.NText).Value = w.Means;
+                    cmd.Parameters.Add("@ENMeans", SqlDbType.NText).Value = w.Means;
                     cmd.Parameters.Add("@Example", SqlDbType.NText).Value = w.Example;
 
                     cmd.ExecuteNonQuery();
@@ -119,7 +136,7 @@ namespace DataAccessTier
                     cmd.Parameters.Add("@VNKey", SqlDbType.NVarChar).Value = w.VNKey;
                     cmd.Parameters.Add("@VNSuggestion", SqlDbType.NVarChar).Value = w.VNSuggestion;
                     cmd.Parameters.Add("@WordType", SqlDbType.NVarChar).Value = w.WordType;
-                    cmd.Parameters.Add("@ENMean", SqlDbType.NText).Value = w.Means;
+                    cmd.Parameters.Add("@ENMeans", SqlDbType.NText).Value = w.Means;
                     cmd.Parameters.Add("@Example", SqlDbType.NText).Value = w.Example;
 
                     cmd.ExecuteNonQuery();

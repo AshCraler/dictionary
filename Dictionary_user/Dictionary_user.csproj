@@ -170,6 +170,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="bin\Debug\maindata.xml" />
+    <Content Include="bin\Debug\VN_EN_History.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Resources\calendar.png" />
     <None Include="Resources\date.png" />
     <None Include="Resources\cubes.png" />
@@ -190,6 +193,10 @@
     <None Include="Resources\loupe.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\dictionary_Thuan\Dictionary_host\Dictionary_host.csproj">
+      <Project>{881a789e-790b-4176-81ee-5efa8acdc040}</Project>
+      <Name>Dictionary_host</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusinessLogicTier\BusinessLogicTier.csproj">
       <Project>{707ff483-5ab8-4cff-84d3-559c14887457}</Project>
       <Name>BusinessLogicTier</Name>
@@ -201,10 +208,6 @@
     <ProjectReference Include="..\DictionaryDTO\DictionaryDTO.csproj">
       <Project>{b91dc873-4e27-4627-a1c1-5ec2eb613d61}</Project>
       <Name>DictionaryDTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Dictionary_host\Dictionary_host.csproj">
-      <Project>{881a789e-790b-4176-81ee-5efa8acdc040}</Project>
-      <Name>Dictionary_host</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

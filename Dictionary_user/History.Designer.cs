@@ -37,8 +37,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Word = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Meaning = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Example = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBoxFlagLeft = new System.Windows.Forms.PictureBox();
@@ -67,9 +68,10 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.ForeColor = System.Drawing.SystemColors.Control;
-            this.panel1.Location = new System.Drawing.Point(-2, -4);
+            this.panel1.Location = new System.Drawing.Point(-4, -8);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(802, 762);
+            this.panel1.Size = new System.Drawing.Size(1604, 1465);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -77,16 +79,17 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.panel3.Controls.Add(this.bunifuCustomDataGrid1);
-            this.panel3.Location = new System.Drawing.Point(3, 84);
+            this.panel3.Location = new System.Drawing.Point(6, 162);
+            this.panel3.Margin = new System.Windows.Forms.Padding(6);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(804, 674);
+            this.panel3.Size = new System.Drawing.Size(1608, 1296);
             this.panel3.TabIndex = 38;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // bunifuCustomDataGrid1
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
@@ -98,7 +101,7 @@
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumPurple;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -107,12 +110,13 @@
             this.bunifuCustomDataGrid1.ColumnHeadersHeight = 50;
             this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Word,
+            this.Type,
             this.Meaning,
-            this.Date,
+            this.Example,
             this.Remove});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkViolet;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Gainsboro;
@@ -123,40 +127,58 @@
             this.bunifuCustomDataGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(13, 0);
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(26, 0);
+            this.bunifuCustomDataGrid1.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
+            this.bunifuCustomDataGrid1.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid1.RowHeadersVisible = false;
             this.bunifuCustomDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(788, 671);
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(1576, 1290);
             this.bunifuCustomDataGrid1.TabIndex = 0;
-            this.bunifuCustomDataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellContentClick);
+            this.bunifuCustomDataGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellClick);
             // 
             // Word
             // 
+            this.Word.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Word.HeaderText = "Word";
             this.Word.Name = "Word";
+            this.Word.ReadOnly = true;
+            this.Word.Width = 163;
+            // 
+            // Type
+            // 
+            this.Type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Type.HeaderText = "Type";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            this.Type.Width = 156;
             // 
             // Meaning
             // 
             this.Meaning.HeaderText = "Meaning";
             this.Meaning.Name = "Meaning";
+            this.Meaning.ReadOnly = true;
             // 
-            // Date
+            // Example
             // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
+            this.Example.HeaderText = "Example";
+            this.Example.Name = "Example";
+            this.Example.ReadOnly = true;
             // 
             // Remove
             // 
+            this.Remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.Remove.DefaultCellStyle = dataGridViewCellStyle3;
             this.Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Remove.HeaderText = "Remove";
             this.Remove.Name = "Remove";
+            this.Remove.ReadOnly = true;
             this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Remove.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Remove.Width = 218;
             // 
             // panel2
             // 
@@ -171,17 +193,19 @@
             this.panel2.Controls.Add(this.btnPlay);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Location = new System.Drawing.Point(6, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(791, 75);
+            this.panel2.Size = new System.Drawing.Size(1582, 144);
             this.panel2.TabIndex = 37;
             // 
             // pictureBoxFlagLeft
             // 
             this.pictureBoxFlagLeft.Image = global::Dictionary_user.Properties.Resources.cubes;
-            this.pictureBoxFlagLeft.Location = new System.Drawing.Point(658, 20);
+            this.pictureBoxFlagLeft.Location = new System.Drawing.Point(1316, 38);
+            this.pictureBoxFlagLeft.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxFlagLeft.Name = "pictureBoxFlagLeft";
-            this.pictureBoxFlagLeft.Size = new System.Drawing.Size(46, 32);
+            this.pictureBoxFlagLeft.Size = new System.Drawing.Size(92, 62);
             this.pictureBoxFlagLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFlagLeft.TabIndex = 43;
             this.pictureBoxFlagLeft.TabStop = false;
@@ -189,9 +213,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Dictionary_user.Properties.Resources.calendar;
-            this.pictureBox1.Location = new System.Drawing.Point(419, 20);
+            this.pictureBox1.Location = new System.Drawing.Point(838, 38);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 32);
+            this.pictureBox1.Size = new System.Drawing.Size(92, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
@@ -205,10 +230,11 @@
             this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(138)))), ((int)(((byte)(114)))));
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 35;
-            this.iconButton3.Location = new System.Drawing.Point(751, 23);
+            this.iconButton3.Location = new System.Drawing.Point(1502, 44);
+            this.iconButton3.Margin = new System.Windows.Forms.Padding(6);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Rotation = 0D;
-            this.iconButton3.Size = new System.Drawing.Size(35, 32);
+            this.iconButton3.Size = new System.Drawing.Size(70, 62);
             this.iconButton3.TabIndex = 40;
             this.iconButton3.UseVisualStyleBackColor = true;
             // 
@@ -221,10 +247,11 @@
             this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(138)))), ((int)(((byte)(114)))));
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 35;
-            this.iconButton2.Location = new System.Drawing.Point(710, 23);
+            this.iconButton2.Location = new System.Drawing.Point(1420, 44);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(6);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Rotation = 0D;
-            this.iconButton2.Size = new System.Drawing.Size(35, 32);
+            this.iconButton2.Size = new System.Drawing.Size(70, 62);
             this.iconButton2.TabIndex = 39;
             this.iconButton2.UseVisualStyleBackColor = true;
             // 
@@ -232,10 +259,11 @@
             // 
             this.labelHint.AutoSize = true;
             this.labelHint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelHint.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHint.Location = new System.Drawing.Point(11, 23);
+            this.labelHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHint.Location = new System.Drawing.Point(22, 44);
+            this.labelHint.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelHint.Name = "labelHint";
-            this.labelHint.Size = new System.Drawing.Size(124, 24);
+            this.labelHint.Size = new System.Drawing.Size(243, 48);
             this.labelHint.TabIndex = 28;
             this.labelHint.Text = "Your history";
             // 
@@ -248,19 +276,21 @@
             this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(138)))), ((int)(((byte)(114)))));
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 35;
-            this.iconButton1.Location = new System.Drawing.Point(503, 23);
+            this.iconButton1.Location = new System.Drawing.Point(1006, 44);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(6);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(26, 32);
+            this.iconButton1.Size = new System.Drawing.Size(52, 62);
             this.iconButton1.TabIndex = 36;
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Dictionary_user.Properties.Resources.history;
-            this.pictureBox2.Location = new System.Drawing.Point(133, 20);
+            this.pictureBox2.Location = new System.Drawing.Point(266, 38);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(36, 28);
+            this.pictureBox2.Size = new System.Drawing.Size(72, 54);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 27;
             this.pictureBox2.TabStop = false;
@@ -274,10 +304,11 @@
             this.btnPlay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(138)))), ((int)(((byte)(114)))));
             this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPlay.IconSize = 35;
-            this.btnPlay.Location = new System.Drawing.Point(471, 23);
+            this.btnPlay.Location = new System.Drawing.Point(942, 44);
+            this.btnPlay.Margin = new System.Windows.Forms.Padding(6);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Rotation = 0D;
-            this.btnPlay.Size = new System.Drawing.Size(26, 32);
+            this.btnPlay.Size = new System.Drawing.Size(52, 62);
             this.btnPlay.TabIndex = 35;
             this.btnPlay.UseVisualStyleBackColor = true;
             // 
@@ -285,10 +316,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(363, 24);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(726, 46);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 24);
+            this.label2.Size = new System.Drawing.Size(108, 48);
             this.label2.TabIndex = 26;
             this.label2.Text = "Date";
             // 
@@ -296,10 +328,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(554, 24);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1108, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.Size = new System.Drawing.Size(185, 48);
             this.label1.TabIndex = 33;
             this.label1.Text = "Alphabet";
             // 
@@ -310,11 +343,12 @@
             // 
             // History
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 749);
+            this.ClientSize = new System.Drawing.Size(1600, 1440);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "History";
             this.Text = "History";
             this.Shown += new System.EventHandler(this.History_Shown);
@@ -345,10 +379,11 @@
         private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBoxFlagLeft;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Word;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Meaning;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewButtonColumn Remove;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Word;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Meaning;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Example;
+        private System.Windows.Forms.DataGridViewButtonColumn Remove;
     }
 }
