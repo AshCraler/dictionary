@@ -47,11 +47,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(16, 86);
+            this.label1.Location = new System.Drawing.Point(33, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(557, 25);
+            this.label1.Size = new System.Drawing.Size(216, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Mọi sự thắc mắc xin liên hệ về số điện thoại 0945094870";
+            this.label1.Text = "How can we help you";
             // 
             // Help
             // 
