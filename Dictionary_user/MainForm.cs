@@ -366,6 +366,8 @@ namespace Dictionary_user
                 ktBookmark = true;
             }
         }
+       
+        
         public MainForm() // Kích hoạt MainForm
         {
             //Initial GUI
@@ -377,13 +379,6 @@ namespace Dictionary_user
             loadRecently();
             Database.nowForm = 1;
         }
-
-        protected override void OnLoad(EventArgs e)  //On Load
-        {
-            base.OnLoad(e);
-            this.BeginInvoke(new MethodInvoker(delegate () { iconButton1.PerformClick(); }));
-        }
-
         private void textboxSearch_OnValueChanged(object sender, EventArgs e) // Khi thay đổi giá trị textboxSearch 
         {
             if (textboxSearch.Text != string.Empty)
@@ -427,7 +422,6 @@ namespace Dictionary_user
                 labelHint3.Text = "";
 
         }
-
         private void buttonSearch_Click(object sender, EventArgs e) // Khi click vào searchButton
         {
             if (textboxSearch.Text == "")
@@ -439,7 +433,6 @@ namespace Dictionary_user
                 activateSearchButton();
             }
         }
-
         private void buttonSwitch_Click(object sender, EventArgs e) // Khi click vào switchButton
         {
             if (ktSwitch == false)
@@ -522,7 +515,6 @@ namespace Dictionary_user
             hideSwitch();
         }
 
-        public void trigger() { }
         #endregion
 
         #region Suggestion, History, Bookmark
@@ -536,7 +528,7 @@ namespace Dictionary_user
 
         private void labelHint1_MouseLeave(object sender, EventArgs e)
         {
-            labelHint1.ForeColor = System.Drawing.Color.Gainsboro;
+            labelHint1.ForeColor = Color.Gainsboro;
         }
 
         private void labelHint1_Click(object sender, EventArgs e)
@@ -552,7 +544,7 @@ namespace Dictionary_user
 
         private void labelHint2_MouseLeave(object sender, EventArgs e)
         {
-            labelHint2.ForeColor = System.Drawing.Color.Gainsboro;
+            labelHint2.ForeColor = Color.Gainsboro;
         }
 
         private void labelHint2_Click(object sender, EventArgs e)
@@ -568,7 +560,7 @@ namespace Dictionary_user
 
         private void labelHint3_MouseLeave(object sender, EventArgs e)
         {
-            labelHint4.ForeColor = System.Drawing.Color.Gainsboro;
+            labelHint4.ForeColor = Color.Gainsboro;
         }
 
         private void labelHint3_Click(object sender, EventArgs e)
@@ -584,7 +576,7 @@ namespace Dictionary_user
 
         private void labelHint4_MouseLeave(object sender, EventArgs e)
         {
-            labelHint3.ForeColor = System.Drawing.Color.Gainsboro;
+            labelHint3.ForeColor = Color.Gainsboro;
         }
 
         private void labelHint4_Click(object sender, EventArgs e)

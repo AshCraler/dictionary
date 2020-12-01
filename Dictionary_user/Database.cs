@@ -160,9 +160,5 @@ namespace Dictionary_user
             }
         }
         
-        public static void trigger()
-        {
-            
-        }
     }
 }
