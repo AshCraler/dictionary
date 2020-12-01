@@ -52,7 +52,6 @@ namespace Dictionary_user
         #endregion
 
         #region Menu and Titlebar
-
        
         private void displaySearch() // Hiển thị chức năng tìm kiếm
         {
@@ -116,6 +115,13 @@ namespace Dictionary_user
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
+        private void reloadRecentHistory()
+        {
+            labelHistory4.Text = labelHistory3.Text;
+            labelHistory3.Text = labelHistory2.Text;
+            labelHistory2.Text = labelHistory1.Text;
+            labelHistory1.Text = typedWord.Text;
+        }
         private void activateSearchButton() // Kích hoạt searchButton
         {
             
@@ -148,12 +154,8 @@ namespace Dictionary_user
                     Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Vie-Eng");
                     btnPlay2.Visible = true;
                     btnPlay.Visible = false;
-                }      
-                labelHistory4.Text = labelHistory3.Text;
-                labelHistory3.Text = labelHistory2.Text;
-                labelHistory2.Text = labelHistory1.Text;
-                labelHistory1.Text = typedWord.Text;
-    
+                }
+                reloadRecentHistory();
                 //Bookmark
                 command = " SELECT meaning from bookmark where word = " + "\"" + textboxSearch.Text.ToString() + "\""+"and languages= "+"'"+hint+"'";
                 Database.load(command);
@@ -229,24 +231,12 @@ namespace Dictionary_user
             loadRecentlyHistory();
             loadRecentlyBookmark();
         }
-        private void openChildForm(Form childForm) // Mở childForm mới
+        private void closeChildForm(Form childForm)
         {
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
-            currentChildForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(childForm);
-            panelDesktop.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            childForm.FormClosed +=new FormClosedEventHandler(Form_Closed);
+            childForm.FormClosed += new FormClosedEventHandler(Form_Closed);
             void Form_Closed(object sender, FormClosedEventArgs e)
             {
-               if (Database.acction=="clickFromBookmark")
+                if (Database.acction == "clickFromBookmark")
                 {
                     activateMenuButton(iconButton1, RGBColors.color1);
                     displaySwitch();
@@ -269,7 +259,7 @@ namespace Dictionary_user
                     }
                     if (bookmarkButton.IconColor == Color.Gainsboro)
                     {
-        
+
                         if (hint == "English")
                             Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
                         else
@@ -277,6 +267,22 @@ namespace Dictionary_user
                     }
                 }
             }
+        }
+        private void openChildForm(Form childForm) // Mở childForm mới
+        {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(childForm);
+            panelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            closeChildForm(childForm);
         }
         private void loadRecentlyBookmark()
         {
@@ -348,12 +354,12 @@ namespace Dictionary_user
             else
                 labelHistory4.Text = "";
         }
-        private void loadRecently()
+        private void loadRecently()// Load recently history and recently bookmark
         {   
             loadRecentlyHistory();
             loadRecentlyBookmark();
-        }
-        private void checkBookMark()
+        } 
+        private void checkBookMark() // Check and Set color to iconButtonBookmark
         {
             if (labelBookmark1.Text != typedWord.Text)
             {
@@ -365,7 +371,7 @@ namespace Dictionary_user
                 bookmarkButton.IconColor = RGBColors.color7;
                 ktBookmark = true;
             }
-        }
+        }  
        
         
         public MainForm() // Kích hoạt MainForm
@@ -379,6 +385,7 @@ namespace Dictionary_user
             loadRecently();
             Database.nowForm = 1;
         }
+        
         private void textboxSearch_OnValueChanged(object sender, EventArgs e) // Khi thay đổi giá trị textboxSearch 
         {
             if (textboxSearch.Text != string.Empty)
@@ -422,6 +429,7 @@ namespace Dictionary_user
                 labelHint3.Text = "";
 
         }
+        
         private void buttonSearch_Click(object sender, EventArgs e) // Khi click vào searchButton
         {
             if (textboxSearch.Text == "")
@@ -433,6 +441,7 @@ namespace Dictionary_user
                 activateSearchButton();
             }
         }
+        
         private void buttonSwitch_Click(object sender, EventArgs e) // Khi click vào switchButton
         {
             if (ktSwitch == false)

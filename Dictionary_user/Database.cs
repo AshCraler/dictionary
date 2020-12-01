@@ -40,7 +40,7 @@ namespace Dictionary_user
                 if (connection != null)
                     connection.Close();
             }
-        }
+        } // Load dữ liệu từ Database
         public static void insertHistory(string word,string meaning,string date,string check,string translate)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
