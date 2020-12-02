@@ -356,6 +356,7 @@
             this.textboxSearch.TabIndex = 14;
             this.textboxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textboxSearch.OnValueChanged += new System.EventHandler(this.textboxSearch_OnValueChanged);
+            this.textboxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxSearch_KeyPress);
             // 
             // buttonSearch
             // 
@@ -384,7 +385,6 @@
             this.pictureBoxFlagLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFlagLeft.TabIndex = 12;
             this.pictureBoxFlagLeft.TabStop = false;
-            this.pictureBoxFlagLeft.Visible = false;
             // 
             // pictureBoxFlagRight
             // 
@@ -395,7 +395,6 @@
             this.pictureBoxFlagRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFlagRight.TabIndex = 13;
             this.pictureBoxFlagRight.TabStop = false;
-            this.pictureBoxFlagRight.Visible = false;
             // 
             // buttonSwitch
             // 
@@ -412,7 +411,6 @@
             this.buttonSwitch.Size = new System.Drawing.Size(37, 31);
             this.buttonSwitch.TabIndex = 16;
             this.buttonSwitch.UseVisualStyleBackColor = true;
-            this.buttonSwitch.Visible = false;
             this.buttonSwitch.Click += new System.EventHandler(this.buttonSwitch_Click);
             // 
             // panelDesktop
@@ -779,7 +777,6 @@
             // 
             // pictureBoxResult
             // 
-           
             this.pictureBoxResult.Image = global::Dictionary_user.Properties.Resources.analysis;
             this.pictureBoxResult.Location = new System.Drawing.Point(159, 29);
             this.pictureBoxResult.Name = "pictureBoxResult";

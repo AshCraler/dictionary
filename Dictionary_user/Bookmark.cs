@@ -80,7 +80,6 @@ namespace Dictionary_user
                 pageInfo.Visible = true;
             pageInfo.Text = (page * 13 + 1).ToString() + " - " + max + " / " + Database.loadData.Rows.Count.ToString() + " Vocalbulary";
         }
-
         private void loadData()
         {   
             loadImageSource();

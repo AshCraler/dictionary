@@ -253,15 +253,34 @@ namespace Dictionary_user
         private void loadResult()
         {
             if (textboxSearch.HintText == "Search English")
-           
+            {
                 command = " SELECT VieMeaning from mytable where English = " + "\"" + textboxSearch.Text.ToString() + "\"";
-              
+                Database.load(command);
+                typedWord.Text = textboxSearch.Text;
+                if (Database.loadData.Rows.Count > 0)
+                    wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
+                else
+                    wordMeaning.Text = "Not Found";
+                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Eng-Vie");
+                btnPlay.Visible = true;
+                btnPlay2.Visible = false;
+            }
             else
-                command = " SELECT English from mytable where VieMeaning = " + "\"" + textboxSearch.Text.ToString() + "\"";   
+            {
+                command = " SELECT English from mytable where VieMeaning = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                Database.load(command);
+                typedWord.Text = textboxSearch.Text;
+                if (Database.loadData.Rows.Count > 0)
+                    wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
+                else
+                    wordMeaning.Text = "Not Found";
+                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Vie-Eng");
+                btnPlay2.Visible = true;
+                btnPlay.Visible = false;
+            }
         }
         private void activateSearchButton() // Kích hoạt searchButton
-        {
-            
+        {          
             if (Database.nowForm == 1)
             {
                 Database.acction = "Translate";
@@ -795,9 +814,23 @@ namespace Dictionary_user
 
 
 
+
         #endregion Search_Result
 
-       
+        private void textboxSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                if (textboxSearch.Text == "")
+                {
+                    MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
+                }
+                else
+                {
+                    activateSearchButton();
+                }
+            }
+        }
     }
 }
 
