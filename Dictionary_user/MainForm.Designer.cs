@@ -356,6 +356,7 @@
             this.textboxSearch.TabIndex = 14;
             this.textboxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textboxSearch.OnValueChanged += new System.EventHandler(this.textboxSearch_OnValueChanged);
+            this.textboxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textboxSearch_KeyDown);
             this.textboxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxSearch_KeyPress);
             // 
             // buttonSearch

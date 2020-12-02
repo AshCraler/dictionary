@@ -162,6 +162,13 @@ namespace Dictionary_user
             labelHint3.Text = "";
             labelHint4.Text = "";
         }
+        private void resetSuggestionColor()
+        {
+            labelHint1.ForeColor = Color.Gainsboro;
+            labelHint2.ForeColor = Color.Gainsboro;
+            labelHint3.ForeColor = Color.Gainsboro;
+            labelHint4.ForeColor = Color.Gainsboro;
+        }
         private void loadRecentlyBookmark()
         {
             command = "SELECT Word from bookmark where languages=" + "'" + hint + "'" + " ORDER BY id DESC";
@@ -396,6 +403,7 @@ namespace Dictionary_user
         
         private void textboxSearch_OnValueChanged(object sender, EventArgs e) // Khi thay đổi giá trị textboxSearch 
         {
+            resetSuggestionColor();
             if (textboxSearch.Text != string.Empty)
             {
                 textboxSearch.LineIdleColor = RGBColors.color1;
@@ -447,6 +455,21 @@ namespace Dictionary_user
             else
             {
                 activateSearchButton();
+            }
+        }
+        
+        private void textboxSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                if (textboxSearch.Text == "")
+                {
+                    MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
+                }
+                else
+                {
+                    activateSearchButton();
+                }
             }
         }
         
@@ -817,18 +840,15 @@ namespace Dictionary_user
 
         #endregion Search_Result
 
-        private void textboxSearch_KeyPress(object sender, KeyPressEventArgs e)
+        private void textboxSearch_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar == (char)13)
+            if (e.KeyCode==Keys.Down)
             {
-                if (textboxSearch.Text == "")
+                if ((labelHint1.ForeColor == Color.Gainsboro) && (labelHint2.ForeColor == Color.Gainsboro) && (labelHint3.ForeColor == Color.Gainsboro) && (labelHint4.ForeColor == Color.Gainsboro))
                 {
-                    MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
+                    labelHint1.ForeColor = RGBColors.color7;
                 }
-                else
-                {
-                    activateSearchButton();
-                }
+                
             }
         }
     }
