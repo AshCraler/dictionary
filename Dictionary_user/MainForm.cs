@@ -28,6 +28,8 @@ namespace Dictionary_user
         private Form currentChildForm; // Child form đang được mở hiện tại 
         private bool ktSwitch = false; // Kiểm tra chế độ Anh Việt hay Việt Anh
         private bool ktBookmark = false; // Kiểm tra bookmark hay chưa
+        private int hintColor = 0;
+        //private object[] suggestion = new object[4];
         private string coloumn="VieMeaning";
         private string hint = "English";
         private string command = "";
@@ -169,6 +171,13 @@ namespace Dictionary_user
             labelHint3.ForeColor = Color.Gainsboro;
             labelHint4.ForeColor = Color.Gainsboro;
         }
+      /*  private void initSuggestion()
+        {
+            suggestion[0] = labelHint3;
+            suggestion[1] = labelHint1;
+            suggestion[2] = labelHint2;
+            suggestion[3] = labelHint4;
+        }*/
         private void loadRecentlyBookmark()
         {
             command = "SELECT Word from bookmark where languages=" + "'" + hint + "'" + " ORDER BY id DESC";
@@ -397,6 +406,7 @@ namespace Dictionary_user
             leftBorderBtn.Size = new Size(7, 34);
             panelMenu.Controls.Add(leftBorderBtn);
             activateMenuButton(iconButton1, RGBColors.color1);
+            //initSuggestion();
             loadRecently();
             Database.nowForm = 1;
         }
@@ -404,6 +414,7 @@ namespace Dictionary_user
         private void textboxSearch_OnValueChanged(object sender, EventArgs e) // Khi thay đổi giá trị textboxSearch 
         {
             resetSuggestionColor();
+            hintColor = 0;
             if (textboxSearch.Text != string.Empty)
             {
                 textboxSearch.LineIdleColor = RGBColors.color1;
@@ -468,6 +479,14 @@ namespace Dictionary_user
                 }
                 else
                 {
+                    if (labelHint1.ForeColor ==RGBColors.color7)
+                        textboxSearch.Text = labelHint1.Text;
+                    if (labelHint2.ForeColor == RGBColors.color7)
+                        textboxSearch.Text = labelHint2.Text;
+                    if (labelHint4.ForeColor == RGBColors.color7)
+                        textboxSearch.Text = labelHint4.Text;
+                    if (labelHint3.ForeColor == RGBColors.color7)
+                        textboxSearch.Text = labelHint3.Text;
                     activateSearchButton();
                 }
             }
@@ -844,11 +863,17 @@ namespace Dictionary_user
         {
             if (e.KeyCode==Keys.Down)
             {
-                if ((labelHint1.ForeColor == Color.Gainsboro) && (labelHint2.ForeColor == Color.Gainsboro) && (labelHint3.ForeColor == Color.Gainsboro) && (labelHint4.ForeColor == Color.Gainsboro))
-                {
+                resetSuggestionColor();
+                hintColor++;
+                hintColor = hintColor % 4;
+                if (hintColor == 1)
                     labelHint1.ForeColor = RGBColors.color7;
-                }
-                
+                if (hintColor == 2)
+                    labelHint2.ForeColor = RGBColors.color7;
+                if (hintColor == 3)
+                    labelHint4.ForeColor = RGBColors.color7;
+                if (hintColor == 0)
+                    labelHint3.ForeColor = RGBColors.color7;
             }
         }
     }

@@ -33,12 +33,16 @@
             this.labelHistory = new System.Windows.Forms.Label();
             this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
             this.iconButtonBookmark = new FontAwesome.Sharp.IconButton();
+            this.Update = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panel1.Controls.Add(this.iconButton1);
+            this.panel1.Controls.Add(this.Update);
             this.panel1.Controls.Add(this.labelBookmark);
             this.panel1.Controls.Add(this.labelHistory);
             this.panel1.Controls.Add(this.iconButtonHistory);
@@ -106,6 +110,34 @@
             this.iconButtonBookmark.UseVisualStyleBackColor = true;
             this.iconButtonBookmark.Click += new System.EventHandler(this.iconButtonBookmark_Click);
             // 
+            // Update
+            // 
+            this.Update.AutoSize = true;
+            this.Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Update.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Update.Location = new System.Drawing.Point(35, 178);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(183, 22);
+            this.Update.TabIndex = 93;
+            this.Update.Text = "Update word data";
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Download;
+            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(77)))), ((int)(((byte)(221)))));
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 32;
+            this.iconButton1.Location = new System.Drawing.Point(383, 175);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Rotation = 0D;
+            this.iconButton1.Size = new System.Drawing.Size(43, 33);
+            this.iconButton1.TabIndex = 94;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,5 +159,7 @@
         private FontAwesome.Sharp.IconButton iconButtonBookmark;
         private System.Windows.Forms.Label labelBookmark;
         private System.Windows.Forms.Label labelHistory;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Label Update;
     }
 }
