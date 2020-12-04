@@ -29,16 +29,30 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelResult = new System.Windows.Forms.Panel();
+            this.panelSuggestion = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelLanguage = new System.Windows.Forms.Label();
             this.labelBookmark = new System.Windows.Forms.Label();
             this.labelHistory = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonSwitch = new FontAwesome.Sharp.IconButton();
+            this.pictureBoxFlagRight = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFlagLeft = new System.Windows.Forms.PictureBox();
             this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
             this.iconButtonBookmark = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
+            this.panelSuggestion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagLeft)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panel1.Controls.Add(this.panelResult);
+            this.panel1.Controls.Add(this.panelSuggestion);
             this.panel1.Controls.Add(this.labelBookmark);
             this.panel1.Controls.Add(this.labelHistory);
             this.panel1.Controls.Add(this.iconButtonHistory);
@@ -47,6 +61,52 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(811, 840);
             this.panel1.TabIndex = 1;
+            // 
+            // panelResult
+            // 
+            this.panelResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.panelResult.Location = new System.Drawing.Point(16, 460);
+            this.panelResult.Name = "panelResult";
+            this.panelResult.Size = new System.Drawing.Size(781, 365);
+            this.panelResult.TabIndex = 94;
+            // 
+            // panelSuggestion
+            // 
+            this.panelSuggestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
+            this.panelSuggestion.Controls.Add(this.pictureBox1);
+            this.panelSuggestion.Controls.Add(this.label1);
+            this.panelSuggestion.Controls.Add(this.buttonSwitch);
+            this.panelSuggestion.Controls.Add(this.pictureBoxFlagRight);
+            this.panelSuggestion.Controls.Add(this.pictureBoxFlagLeft);
+            this.panelSuggestion.Controls.Add(this.labelLanguage);
+            this.panelSuggestion.Location = new System.Drawing.Point(16, 159);
+            this.panelSuggestion.Name = "panelSuggestion";
+            this.panelSuggestion.Size = new System.Drawing.Size(781, 295);
+            this.panelSuggestion.TabIndex = 93;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(449, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 24);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Bookmark time";
+            // 
+            // labelLanguage
+            // 
+            this.labelLanguage.AutoSize = true;
+            this.labelLanguage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelLanguage.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLanguage.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelLanguage.Location = new System.Drawing.Point(56, 26);
+            this.labelLanguage.Name = "labelLanguage";
+            this.labelLanguage.Size = new System.Drawing.Size(194, 24);
+            this.labelLanguage.TabIndex = 18;
+            this.labelLanguage.Text = "Vietnamese idiom";
             // 
             // labelBookmark
             // 
@@ -71,6 +131,53 @@
             this.labelHistory.Size = new System.Drawing.Size(123, 22);
             this.labelHistory.TabIndex = 91;
             this.labelHistory.Text = "Clear History";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Dictionary_user.Properties.Resources.clock;
+            this.pictureBox1.Location = new System.Drawing.Point(407, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
+            // buttonSwitch
+            // 
+            this.buttonSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSwitch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.buttonSwitch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
+            this.buttonSwitch.IconChar = FontAwesome.Sharp.IconChar.Redo;
+            this.buttonSwitch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(98)))), ((int)(((byte)(121)))));
+            this.buttonSwitch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonSwitch.IconSize = 25;
+            this.buttonSwitch.Location = new System.Drawing.Point(677, 23);
+            this.buttonSwitch.Name = "buttonSwitch";
+            this.buttonSwitch.Rotation = 0D;
+            this.buttonSwitch.Size = new System.Drawing.Size(37, 31);
+            this.buttonSwitch.TabIndex = 21;
+            this.buttonSwitch.UseVisualStyleBackColor = true;
+            this.buttonSwitch.Click += new System.EventHandler(this.buttonSwitch_Click);
+            // 
+            // pictureBoxFlagRight
+            // 
+            this.pictureBoxFlagRight.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.pictureBoxFlagRight.Location = new System.Drawing.Point(720, 22);
+            this.pictureBoxFlagRight.Name = "pictureBoxFlagRight";
+            this.pictureBoxFlagRight.Size = new System.Drawing.Size(46, 32);
+            this.pictureBoxFlagRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxFlagRight.TabIndex = 20;
+            this.pictureBoxFlagRight.TabStop = false;
+            // 
+            // pictureBoxFlagLeft
+            // 
+            this.pictureBoxFlagLeft.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.pictureBoxFlagLeft.Location = new System.Drawing.Point(8, 22);
+            this.pictureBoxFlagLeft.Name = "pictureBoxFlagLeft";
+            this.pictureBoxFlagLeft.Size = new System.Drawing.Size(49, 32);
+            this.pictureBoxFlagLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxFlagLeft.TabIndex = 19;
+            this.pictureBoxFlagLeft.TabStop = false;
             // 
             // iconButtonHistory
             // 
@@ -114,6 +221,11 @@
             this.Text = "Idiom";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelSuggestion.ResumeLayout(false);
+            this.panelSuggestion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagLeft)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -125,5 +237,13 @@
         private System.Windows.Forms.Label labelHistory;
         private FontAwesome.Sharp.IconButton iconButtonHistory;
         private FontAwesome.Sharp.IconButton iconButtonBookmark;
+        private System.Windows.Forms.Panel panelSuggestion;
+        private System.Windows.Forms.Panel panelResult;
+        private System.Windows.Forms.Label labelLanguage;
+        private System.Windows.Forms.PictureBox pictureBoxFlagLeft;
+        private System.Windows.Forms.PictureBox pictureBoxFlagRight;
+        private FontAwesome.Sharp.IconButton buttonSwitch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
