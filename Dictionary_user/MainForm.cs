@@ -171,13 +171,6 @@ namespace Dictionary_user
             labelHint3.ForeColor = Color.Gainsboro;
             labelHint4.ForeColor = Color.Gainsboro;
         }
-        /*  private void initSuggestion()
-          {
-              suggestion[0] = labelHint3;
-              suggestion[1] = labelHint1;
-              suggestion[2] = labelHint2;
-              suggestion[3] = labelHint4;
-          }*/
         private void loadRecentlyBookmark()
         {
             command = "SELECT Word from bookmark where languages=" + "'" + hint + "'" + " ORDER BY id DESC";
@@ -297,6 +290,7 @@ namespace Dictionary_user
         }
         private void activateSearchButton() // Kích hoạt searchButton
         {
+            textboxSearch.Focus();
             if (Database.nowForm == 1)
             {
                 Database.acction = "Translate";
