@@ -81,6 +81,12 @@
     <Compile Include="History.Designer.cs">
       <DependentUpon>History.cs</DependentUpon>
     </Compile>
+    <Compile Include="Idiom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Idiom.Designer.cs">
+      <DependentUpon>Idiom.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="History.resx">
       <DependentUpon>History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Idiom.resx">
+      <DependentUpon>Idiom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

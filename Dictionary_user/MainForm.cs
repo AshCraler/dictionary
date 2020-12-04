@@ -291,6 +291,8 @@ namespace Dictionary_user
         private void activateSearchButton() // Kích hoạt searchButton
         {
             textboxSearch.Focus();
+            textboxSearch.BackColor = Color.FromArgb(26, 25, 62);
+            textboxSearch.ForeColor = Color.Gainsboro;
             if (Database.nowForm == 1)
             {
                 Database.acction = "Translate";
@@ -882,6 +884,40 @@ namespace Dictionary_user
                 if (hintColorAbs == 0)
                     labelHint3.ForeColor = RGBColors.color7;
             }
+        }
+
+        private void textboxSearch_Enter(object sender, EventArgs e)
+        {
+            textboxSearch.BackColor = Color.FromArgb(26, 25, 62);
+            textboxSearch.ForeColor = Color.Gainsboro;
+        }
+
+        private void textboxSearch_Leave(object sender, EventArgs e)
+        {
+            textboxSearch.BackColor = Color.FromArgb(26, 25, 62);
+            textboxSearch.ForeColor = Color.Gainsboro;
+        }
+
+        private void textboxSearch_Validating(object sender, CancelEventArgs e)
+        {
+            textboxSearch.BackColor = Color.FromArgb(26, 25, 62);
+            textboxSearch.ForeColor = Color.Gainsboro;
+        }
+
+        private void iconIdiom_Click(object sender, EventArgs e)
+        {
+            Color.FromArgb(242, 98, 121);
+            hideSwitch();
+            displaySearch();
+            textboxSearch.HintText = "Search Idiom";
+            textboxSearch.Text = textboxSearch.HintText;
+            textboxSearch.LineFocusedColor = Color.FromArgb(242, 98, 121); ;
+            textboxSearch.LineMouseHoverColor = Color.FromArgb(242, 98, 121); ;
+            buttonSearch.IconColor = Color.FromArgb(242, 98, 121); ;
+            Database.nowForm = 10;
+            Database.acction = "showIdiomList";
+            activateMenuButton(sender, Color.FromArgb(242, 98, 121));
+            openChildForm(new Idiom());
         }
     }
 }

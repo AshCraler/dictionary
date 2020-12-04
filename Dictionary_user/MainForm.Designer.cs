@@ -31,74 +31,75 @@
             this.components = new System.ComponentModel.Container();
             this.illustrationImageList = new System.Windows.Forms.ImageList(this.components);
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnFeedback = new FontAwesome.Sharp.IconButton();
-            this.btnHelp = new FontAwesome.Sharp.IconButton();
-            this.btn_Bookmark = new FontAwesome.Sharp.IconButton();
-            this.btnSettings = new FontAwesome.Sharp.IconButton();
-            this.btnHistory = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelDictionary = new System.Windows.Forms.Label();
-            this.btnHome = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.labelTitleChildForm = new System.Windows.Forms.Label();
-            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.textboxSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.buttonSearch = new FontAwesome.Sharp.IconButton();
-            this.pictureBoxFlagLeft = new System.Windows.Forms.PictureBox();
-            this.pictureBoxFlagRight = new System.Windows.Forms.PictureBox();
-            this.buttonSwitch = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelSuggestion = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelHint = new System.Windows.Forms.Label();
             this.labelHint3 = new System.Windows.Forms.Label();
             this.labelHint4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelHint1 = new System.Windows.Forms.Label();
             this.labelHint2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelHistory4 = new System.Windows.Forms.Label();
             this.labelHistory3 = new System.Windows.Forms.Label();
             this.labelHistory1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelHistory2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.labelBookmark4 = new System.Windows.Forms.Label();
             this.labelBookmark3 = new System.Windows.Forms.Label();
             this.labelBookmark1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.labelBookmark2 = new System.Windows.Forms.Label();
             this.panelResult = new System.Windows.Forms.Panel();
-            this.btnPlay2 = new FontAwesome.Sharp.IconButton();
             this.wordMeaning = new System.Windows.Forms.Label();
-            this.bookmarkButton = new FontAwesome.Sharp.IconButton();
             this.typedWord = new System.Windows.Forms.Label();
+            this.labelResult = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnPlay2 = new FontAwesome.Sharp.IconButton();
+            this.bookmarkButton = new FontAwesome.Sharp.IconButton();
             this.pictureBoxResult = new System.Windows.Forms.PictureBox();
             this.btnPlay = new FontAwesome.Sharp.IconButton();
-            this.labelResult = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelEnglish = new System.Windows.Forms.Label();
+            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
+            this.buttonSearch = new FontAwesome.Sharp.IconButton();
+            this.pictureBoxFlagLeft = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFlagRight = new System.Windows.Forms.PictureBox();
+            this.buttonSwitch = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnFeedback = new FontAwesome.Sharp.IconButton();
+            this.btnHelp = new FontAwesome.Sharp.IconButton();
+            this.btn_Bookmark = new FontAwesome.Sharp.IconButton();
+            this.btnSettings = new FontAwesome.Sharp.IconButton();
+            this.btnHistory = new FontAwesome.Sharp.IconButton();
+            this.btnHome = new System.Windows.Forms.PictureBox();
+            this.iconIdiom = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelTitleBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagRight)).BeginInit();
             this.panelDesktop.SuspendLayout();
             this.panelSuggestion.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelResult.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.SuspendLayout();
             // 
             // illustrationImageList
@@ -110,6 +111,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.iconIdiom);
             this.panelMenu.Controls.Add(this.iconButton1);
             this.panelMenu.Controls.Add(this.btnFeedback);
             this.panelMenu.Controls.Add(this.btnHelp);
@@ -122,150 +124,6 @@
             this.panelMenu.Padding = new System.Windows.Forms.Padding(15, 0, 25, 0);
             this.panelMenu.Size = new System.Drawing.Size(190, 718);
             this.panelMenu.TabIndex = 10;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.GlobeAsia;
-            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 32;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(6, 124);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(182, 34);
-            this.iconButton1.TabIndex = 11;
-            this.iconButton1.Text = "Translate";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // btnFeedback
-            // 
-            this.btnFeedback.FlatAppearance.BorderSize = 0;
-            this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFeedback.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnFeedback.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFeedback.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnFeedback.IconChar = FontAwesome.Sharp.IconChar.CommentAlt;
-            this.btnFeedback.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnFeedback.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnFeedback.IconSize = 32;
-            this.btnFeedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFeedback.Location = new System.Drawing.Point(8, 324);
-            this.btnFeedback.Name = "btnFeedback";
-            this.btnFeedback.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
-            this.btnFeedback.Rotation = 0D;
-            this.btnFeedback.Size = new System.Drawing.Size(182, 34);
-            this.btnFeedback.TabIndex = 17;
-            this.btnFeedback.Text = "Feedback";
-            this.btnFeedback.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFeedback.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFeedback.UseVisualStyleBackColor = true;
-            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
-            // 
-            // btnHelp
-            // 
-            this.btnHelp.FlatAppearance.BorderSize = 0;
-            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHelp.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnHelp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHelp.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnHelp.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
-            this.btnHelp.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnHelp.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHelp.IconSize = 32;
-            this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(6, 284);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
-            this.btnHelp.Rotation = 0D;
-            this.btnHelp.Size = new System.Drawing.Size(182, 34);
-            this.btnHelp.TabIndex = 12;
-            this.btnHelp.Text = "Help ";
-            this.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHelp.UseVisualStyleBackColor = true;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
-            // 
-            // btn_Bookmark
-            // 
-            this.btn_Bookmark.FlatAppearance.BorderSize = 0;
-            this.btn_Bookmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Bookmark.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btn_Bookmark.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Bookmark.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_Bookmark.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
-            this.btn_Bookmark.IconColor = System.Drawing.Color.Gainsboro;
-            this.btn_Bookmark.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_Bookmark.IconSize = 32;
-            this.btn_Bookmark.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Bookmark.Location = new System.Drawing.Point(6, 204);
-            this.btn_Bookmark.Name = "btn_Bookmark";
-            this.btn_Bookmark.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
-            this.btn_Bookmark.Rotation = 0D;
-            this.btn_Bookmark.Size = new System.Drawing.Size(182, 34);
-            this.btn_Bookmark.TabIndex = 16;
-            this.btn_Bookmark.Text = "Bookmark";
-            this.btn_Bookmark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Bookmark.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Bookmark.UseVisualStyleBackColor = true;
-            this.btn_Bookmark.Click += new System.EventHandler(this.btn_Bookmark_Click);
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnSettings.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSettings.IconChar = FontAwesome.Sharp.IconChar.Tools;
-            this.btnSettings.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSettings.IconSize = 32;
-            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(8, 244);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
-            this.btnSettings.Rotation = 0D;
-            this.btnSettings.Size = new System.Drawing.Size(182, 34);
-            this.btnSettings.TabIndex = 15;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            // 
-            // btnHistory
-            // 
-            this.btnHistory.FlatAppearance.BorderSize = 0;
-            this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistory.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnHistory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistory.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnHistory.IconChar = FontAwesome.Sharp.IconChar.History;
-            this.btnHistory.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHistory.IconSize = 32;
-            this.btnHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistory.Location = new System.Drawing.Point(6, 164);
-            this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
-            this.btnHistory.Rotation = 0D;
-            this.btnHistory.Size = new System.Drawing.Size(182, 34);
-            this.btnHistory.TabIndex = 12;
-            this.btnHistory.Text = "History";
-            this.btnHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHistory.UseVisualStyleBackColor = true;
-            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // panel2
             // 
@@ -287,16 +145,6 @@
             this.labelDictionary.Size = new System.Drawing.Size(135, 28);
             this.labelDictionary.TabIndex = 1;
             this.labelDictionary.Text = "Dictionary";
-            // 
-            // btnHome
-            // 
-            this.btnHome.Image = global::Dictionary_user.Properties.Resources.languages;
-            this.btnHome.Location = new System.Drawing.Point(32, 16);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(112, 66);
-            this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnHome.TabIndex = 0;
-            this.btnHome.TabStop = false;
             // 
             // panelTitleBar
             // 
@@ -323,20 +171,6 @@
             this.labelTitleChildForm.TabIndex = 1;
             this.labelTitleChildForm.Text = "Translate";
             // 
-            // iconCurrentChildForm
-            // 
-            this.iconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.iconCurrentChildForm.ForeColor = System.Drawing.Color.MediumPurple;
-            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.GlobeAsia;
-            this.iconCurrentChildForm.IconColor = System.Drawing.Color.MediumPurple;
-            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCurrentChildForm.IconSize = 35;
-            this.iconCurrentChildForm.Location = new System.Drawing.Point(17, 23);
-            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
-            this.iconCurrentChildForm.Size = new System.Drawing.Size(39, 35);
-            this.iconCurrentChildForm.TabIndex = 0;
-            this.iconCurrentChildForm.TabStop = false;
-            // 
             // textboxSearch
             // 
             this.textboxSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -356,63 +190,11 @@
             this.textboxSearch.TabIndex = 14;
             this.textboxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textboxSearch.OnValueChanged += new System.EventHandler(this.textboxSearch_OnValueChanged);
+            this.textboxSearch.Enter += new System.EventHandler(this.textboxSearch_Enter);
             this.textboxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textboxSearch_KeyDown);
             this.textboxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxSearch_KeyPress);
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSearch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.buttonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.buttonSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.buttonSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.buttonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buttonSearch.IconSize = 30;
-            this.buttonSearch.Location = new System.Drawing.Point(559, 24);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Rotation = 0D;
-            this.buttonSearch.Size = new System.Drawing.Size(39, 38);
-            this.buttonSearch.TabIndex = 15;
-            this.buttonSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
-            // pictureBoxFlagLeft
-            // 
-            this.pictureBoxFlagLeft.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.pictureBoxFlagLeft.Location = new System.Drawing.Point(625, 23);
-            this.pictureBoxFlagLeft.Name = "pictureBoxFlagLeft";
-            this.pictureBoxFlagLeft.Size = new System.Drawing.Size(46, 32);
-            this.pictureBoxFlagLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxFlagLeft.TabIndex = 12;
-            this.pictureBoxFlagLeft.TabStop = false;
-            // 
-            // pictureBoxFlagRight
-            // 
-            this.pictureBoxFlagRight.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.pictureBoxFlagRight.Location = new System.Drawing.Point(667, 23);
-            this.pictureBoxFlagRight.Name = "pictureBoxFlagRight";
-            this.pictureBoxFlagRight.Size = new System.Drawing.Size(49, 32);
-            this.pictureBoxFlagRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxFlagRight.TabIndex = 13;
-            this.pictureBoxFlagRight.TabStop = false;
-            // 
-            // buttonSwitch
-            // 
-            this.buttonSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSwitch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.buttonSwitch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.buttonSwitch.IconChar = FontAwesome.Sharp.IconChar.ExchangeAlt;
-            this.buttonSwitch.IconColor = System.Drawing.Color.Gainsboro;
-            this.buttonSwitch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buttonSwitch.IconSize = 25;
-            this.buttonSwitch.Location = new System.Drawing.Point(722, 24);
-            this.buttonSwitch.Name = "buttonSwitch";
-            this.buttonSwitch.Rotation = 0D;
-            this.buttonSwitch.Size = new System.Drawing.Size(37, 31);
-            this.buttonSwitch.TabIndex = 16;
-            this.buttonSwitch.UseVisualStyleBackColor = true;
-            this.buttonSwitch.Click += new System.EventHandler(this.buttonSwitch_Click);
+            this.textboxSearch.Leave += new System.EventHandler(this.textboxSearch_Leave);
+            this.textboxSearch.Validating += new System.ComponentModel.CancelEventHandler(this.textboxSearch_Validating);
             // 
             // panelDesktop
             // 
@@ -490,16 +272,6 @@
             this.labelHint4.MouseLeave += new System.EventHandler(this.labelHint3_MouseLeave);
             this.labelHint4.MouseHover += new System.EventHandler(this.labelHint3_MouseHover);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Dictionary_user.Properties.Resources.idea;
-            this.pictureBox1.Location = new System.Drawing.Point(129, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
-            // 
             // labelHint1
             // 
             this.labelHint1.AutoSize = true;
@@ -539,16 +311,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(218, 204);
             this.panel3.TabIndex = 27;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Dictionary_user.Properties.Resources.history;
-            this.pictureBox2.Location = new System.Drawing.Point(180, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 33);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 25;
-            this.pictureBox2.TabStop = false;
             // 
             // labelHistory4
             // 
@@ -626,16 +388,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(264, 204);
             this.panel4.TabIndex = 29;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Dictionary_user.Properties.Resources.bookmark__1_;
-            this.pictureBox3.Location = new System.Drawing.Point(214, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 26;
-            this.pictureBox3.TabStop = false;
             // 
             // labelBookmark4
             // 
@@ -716,6 +468,71 @@
             this.panelResult.Size = new System.Drawing.Size(781, 433);
             this.panelResult.TabIndex = 33;
             // 
+            // wordMeaning
+            // 
+            this.wordMeaning.AutoSize = true;
+            this.wordMeaning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.wordMeaning.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wordMeaning.Location = new System.Drawing.Point(24, 120);
+            this.wordMeaning.Name = "wordMeaning";
+            this.wordMeaning.Size = new System.Drawing.Size(98, 23);
+            this.wordMeaning.TabIndex = 36;
+            this.wordMeaning.Text = "NotFound";
+            this.wordMeaning.Visible = false;
+            // 
+            // typedWord
+            // 
+            this.typedWord.AutoSize = true;
+            this.typedWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.typedWord.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typedWord.Location = new System.Drawing.Point(24, 75);
+            this.typedWord.Name = "typedWord";
+            this.typedWord.Size = new System.Drawing.Size(133, 23);
+            this.typedWord.TabIndex = 30;
+            this.typedWord.Text = "Search English";
+            this.typedWord.Visible = false;
+            // 
+            // labelResult
+            // 
+            this.labelResult.AutoSize = true;
+            this.labelResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelResult.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResult.Location = new System.Drawing.Point(13, 30);
+            this.labelResult.Name = "labelResult";
+            this.labelResult.Size = new System.Drawing.Size(140, 24);
+            this.labelResult.TabIndex = 31;
+            this.labelResult.Text = "Search result";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Dictionary_user.Properties.Resources.idea;
+            this.pictureBox1.Location = new System.Drawing.Point(129, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Dictionary_user.Properties.Resources.history;
+            this.pictureBox2.Location = new System.Drawing.Point(180, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 25;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Dictionary_user.Properties.Resources.bookmark__1_;
+            this.pictureBox3.Location = new System.Drawing.Point(214, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 26;
+            this.pictureBox3.TabStop = false;
+            // 
             // btnPlay2
             // 
             this.btnPlay2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -734,18 +551,6 @@
             this.btnPlay2.Visible = false;
             this.btnPlay2.Click += new System.EventHandler(this.btnPlay2_Click);
             // 
-            // wordMeaning
-            // 
-            this.wordMeaning.AutoSize = true;
-            this.wordMeaning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.wordMeaning.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wordMeaning.Location = new System.Drawing.Point(24, 120);
-            this.wordMeaning.Name = "wordMeaning";
-            this.wordMeaning.Size = new System.Drawing.Size(98, 23);
-            this.wordMeaning.TabIndex = 36;
-            this.wordMeaning.Text = "NotFound";
-            this.wordMeaning.Visible = false;
-            // 
             // bookmarkButton
             // 
             this.bookmarkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -763,18 +568,6 @@
             this.bookmarkButton.UseVisualStyleBackColor = true;
             this.bookmarkButton.Visible = false;
             this.bookmarkButton.Click += new System.EventHandler(this.bookmarkButton_Click);
-            // 
-            // typedWord
-            // 
-            this.typedWord.AutoSize = true;
-            this.typedWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.typedWord.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typedWord.Location = new System.Drawing.Point(24, 75);
-            this.typedWord.Name = "typedWord";
-            this.typedWord.Size = new System.Drawing.Size(133, 23);
-            this.typedWord.TabIndex = 30;
-            this.typedWord.Text = "Search English";
-            this.typedWord.Visible = false;
             // 
             // pictureBoxResult
             // 
@@ -803,17 +596,6 @@
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Visible = false;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
-            // 
-            // labelResult
-            // 
-            this.labelResult.AutoSize = true;
-            this.labelResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelResult.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResult.Location = new System.Drawing.Point(13, 30);
-            this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(140, 24);
-            this.labelResult.TabIndex = 31;
-            this.labelResult.Text = "Search result";
             // 
             // label13
             // 
@@ -851,6 +633,253 @@
             this.labelEnglish.TabIndex = 11;
             this.labelEnglish.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // iconCurrentChildForm
+            // 
+            this.iconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.iconCurrentChildForm.ForeColor = System.Drawing.Color.MediumPurple;
+            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.GlobeAsia;
+            this.iconCurrentChildForm.IconColor = System.Drawing.Color.MediumPurple;
+            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconCurrentChildForm.IconSize = 35;
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(17, 23);
+            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
+            this.iconCurrentChildForm.Size = new System.Drawing.Size(39, 35);
+            this.iconCurrentChildForm.TabIndex = 0;
+            this.iconCurrentChildForm.TabStop = false;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.buttonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.buttonSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.buttonSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.buttonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonSearch.IconSize = 30;
+            this.buttonSearch.Location = new System.Drawing.Point(559, 24);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Rotation = 0D;
+            this.buttonSearch.Size = new System.Drawing.Size(39, 38);
+            this.buttonSearch.TabIndex = 15;
+            this.buttonSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // pictureBoxFlagLeft
+            // 
+            this.pictureBoxFlagLeft.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
+            this.pictureBoxFlagLeft.Location = new System.Drawing.Point(625, 23);
+            this.pictureBoxFlagLeft.Name = "pictureBoxFlagLeft";
+            this.pictureBoxFlagLeft.Size = new System.Drawing.Size(46, 32);
+            this.pictureBoxFlagLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxFlagLeft.TabIndex = 12;
+            this.pictureBoxFlagLeft.TabStop = false;
+            // 
+            // pictureBoxFlagRight
+            // 
+            this.pictureBoxFlagRight.Image = global::Dictionary_user.Properties.Resources.vietnam;
+            this.pictureBoxFlagRight.Location = new System.Drawing.Point(667, 23);
+            this.pictureBoxFlagRight.Name = "pictureBoxFlagRight";
+            this.pictureBoxFlagRight.Size = new System.Drawing.Size(49, 32);
+            this.pictureBoxFlagRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxFlagRight.TabIndex = 13;
+            this.pictureBoxFlagRight.TabStop = false;
+            // 
+            // buttonSwitch
+            // 
+            this.buttonSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSwitch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.buttonSwitch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.buttonSwitch.IconChar = FontAwesome.Sharp.IconChar.ExchangeAlt;
+            this.buttonSwitch.IconColor = System.Drawing.Color.Gainsboro;
+            this.buttonSwitch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonSwitch.IconSize = 25;
+            this.buttonSwitch.Location = new System.Drawing.Point(722, 24);
+            this.buttonSwitch.Name = "buttonSwitch";
+            this.buttonSwitch.Rotation = 0D;
+            this.buttonSwitch.Size = new System.Drawing.Size(37, 31);
+            this.buttonSwitch.TabIndex = 16;
+            this.buttonSwitch.UseVisualStyleBackColor = true;
+            this.buttonSwitch.Click += new System.EventHandler(this.buttonSwitch_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.GlobeAsia;
+            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 32;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(6, 124);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
+            this.iconButton1.Rotation = 0D;
+            this.iconButton1.Size = new System.Drawing.Size(182, 34);
+            this.iconButton1.TabIndex = 11;
+            this.iconButton1.Text = "Translate";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // btnFeedback
+            // 
+            this.btnFeedback.FlatAppearance.BorderSize = 0;
+            this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeedback.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnFeedback.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeedback.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnFeedback.IconChar = FontAwesome.Sharp.IconChar.CommentAlt;
+            this.btnFeedback.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnFeedback.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFeedback.IconSize = 32;
+            this.btnFeedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFeedback.Location = new System.Drawing.Point(6, 364);
+            this.btnFeedback.Name = "btnFeedback";
+            this.btnFeedback.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
+            this.btnFeedback.Rotation = 0D;
+            this.btnFeedback.Size = new System.Drawing.Size(182, 34);
+            this.btnFeedback.TabIndex = 17;
+            this.btnFeedback.Text = "Feedback";
+            this.btnFeedback.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFeedback.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFeedback.UseVisualStyleBackColor = true;
+            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.FlatAppearance.BorderSize = 0;
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelp.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnHelp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnHelp.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
+            this.btnHelp.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnHelp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHelp.IconSize = 32;
+            this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHelp.Location = new System.Drawing.Point(6, 324);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
+            this.btnHelp.Rotation = 0D;
+            this.btnHelp.Size = new System.Drawing.Size(182, 34);
+            this.btnHelp.TabIndex = 12;
+            this.btnHelp.Text = "Help ";
+            this.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHelp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
+            // btn_Bookmark
+            // 
+            this.btn_Bookmark.FlatAppearance.BorderSize = 0;
+            this.btn_Bookmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Bookmark.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btn_Bookmark.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Bookmark.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_Bookmark.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.btn_Bookmark.IconColor = System.Drawing.Color.Gainsboro;
+            this.btn_Bookmark.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Bookmark.IconSize = 32;
+            this.btn_Bookmark.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Bookmark.Location = new System.Drawing.Point(6, 244);
+            this.btn_Bookmark.Name = "btn_Bookmark";
+            this.btn_Bookmark.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
+            this.btn_Bookmark.Rotation = 0D;
+            this.btn_Bookmark.Size = new System.Drawing.Size(182, 34);
+            this.btn_Bookmark.TabIndex = 16;
+            this.btn_Bookmark.Text = "Bookmark";
+            this.btn_Bookmark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Bookmark.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Bookmark.UseVisualStyleBackColor = true;
+            this.btn_Bookmark.Click += new System.EventHandler(this.btn_Bookmark_Click);
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnSettings.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSettings.IconChar = FontAwesome.Sharp.IconChar.Tools;
+            this.btnSettings.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSettings.IconSize = 32;
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.Location = new System.Drawing.Point(6, 284);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
+            this.btnSettings.Rotation = 0D;
+            this.btnSettings.Size = new System.Drawing.Size(182, 34);
+            this.btnSettings.TabIndex = 15;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnHistory
+            // 
+            this.btnHistory.FlatAppearance.BorderSize = 0;
+            this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistory.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnHistory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnHistory.IconChar = FontAwesome.Sharp.IconChar.History;
+            this.btnHistory.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHistory.IconSize = 32;
+            this.btnHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHistory.Location = new System.Drawing.Point(6, 204);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
+            this.btnHistory.Rotation = 0D;
+            this.btnHistory.Size = new System.Drawing.Size(182, 34);
+            this.btnHistory.TabIndex = 12;
+            this.btnHistory.Text = "History";
+            this.btnHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // 
+            // btnHome
+            // 
+            this.btnHome.Image = global::Dictionary_user.Properties.Resources.languages;
+            this.btnHome.Location = new System.Drawing.Point(32, 16);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(112, 66);
+            this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnHome.TabIndex = 0;
+            this.btnHome.TabStop = false;
+            // 
+            // iconIdiom
+            // 
+            this.iconIdiom.FlatAppearance.BorderSize = 0;
+            this.iconIdiom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconIdiom.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconIdiom.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconIdiom.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconIdiom.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.iconIdiom.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconIdiom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconIdiom.IconSize = 32;
+            this.iconIdiom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconIdiom.Location = new System.Drawing.Point(6, 164);
+            this.iconIdiom.Name = "iconIdiom";
+            this.iconIdiom.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
+            this.iconIdiom.Rotation = 0D;
+            this.iconIdiom.Size = new System.Drawing.Size(182, 34);
+            this.iconIdiom.TabIndex = 18;
+            this.iconIdiom.Text = "Idiom";
+            this.iconIdiom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconIdiom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconIdiom.UseVisualStyleBackColor = true;
+            this.iconIdiom.Click += new System.EventHandler(this.iconIdiom_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -873,27 +902,27 @@
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagRight)).EndInit();
             this.panelDesktop.ResumeLayout(false);
             this.panelDesktop.PerformLayout();
             this.panelSuggestion.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelResult.ResumeLayout(false);
             this.panelResult.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -952,6 +981,7 @@
         private FontAwesome.Sharp.IconButton bookmarkButton;
         private System.Windows.Forms.Label wordMeaning;
         private FontAwesome.Sharp.IconButton btnPlay2;
+        private FontAwesome.Sharp.IconButton iconIdiom;
     }
 }
 
