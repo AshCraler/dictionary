@@ -409,48 +409,54 @@ namespace Dictionary_user
 
         private void textboxSearch_OnValueChanged(object sender, EventArgs e) // Khi thay đổi giá trị textboxSearch 
         {
-            resetSuggestionColor();
-            hintColor = 0;
-            if (textboxSearch.Text != string.Empty)
+            if (Database.nowForm == 10)
             {
-                textboxSearch.LineIdleColor = RGBColors.color1;
+                Database.textboxSearchText = textboxSearch.Text;
             }
-            if (textboxSearch.Text == string.Empty)
-            {
-                textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
-            }
-            command = "Use sql_invoicing; SELECT " + hint + " from mytable where " + hint + " like " + "'" + textboxSearch.Text + "%'";
-            Database.load(command);
-            int num = Database.loadData.Rows.Count;
-            if (num > 0)
-                labelHint1.Text = Database.loadData.Rows[0][hint].ToString();
             else
             {
-                labelHint1.Text = "";
-                labelHint2.Text = "";
-                labelHint4.Text = "";
-                labelHint3.Text = "";
+                resetSuggestionColor();
+                hintColor = 0;
+                if (textboxSearch.Text != string.Empty)
+                {
+                    textboxSearch.LineIdleColor = RGBColors.color1;
+                }
+                if (textboxSearch.Text == string.Empty)
+                {
+                    textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
+                }
+                command = "Use sql_invoicing; SELECT " + hint + " from mytable where " + hint + " like " + "'" + textboxSearch.Text + "%'";
+                Database.load(command);
+                int num = Database.loadData.Rows.Count;
+                if (num > 0)
+                    labelHint1.Text = Database.loadData.Rows[0][hint].ToString();
+                else
+                {
+                    labelHint1.Text = "";
+                    labelHint2.Text = "";
+                    labelHint4.Text = "";
+                    labelHint3.Text = "";
+                }
+                if (num > 1)
+                    labelHint2.Text = Database.loadData.Rows[1][hint].ToString();
+                else
+                {
+                    labelHint2.Text = "";
+                    labelHint4.Text = "";
+                    labelHint3.Text = "";
+                }
+                if (num > 2)
+                    labelHint4.Text = Database.loadData.Rows[2][hint].ToString();
+                else
+                {
+                    labelHint4.Text = "";
+                    labelHint3.Text = "";
+                }
+                if (num > 3)
+                    labelHint3.Text = Database.loadData.Rows[3][hint].ToString();
+                else
+                    labelHint3.Text = "";
             }
-            if (num > 1)
-                labelHint2.Text = Database.loadData.Rows[1][hint].ToString();
-            else
-            {
-                labelHint2.Text = "";
-                labelHint4.Text = "";
-                labelHint3.Text = "";
-            }
-            if (num > 2)
-                labelHint4.Text = Database.loadData.Rows[2][hint].ToString();
-            else
-            {
-                labelHint4.Text = "";
-                labelHint3.Text = "";
-            }
-            if (num > 3)
-                labelHint3.Text = Database.loadData.Rows[3][hint].ToString();
-            else
-                labelHint3.Text = "";
-
         }
 
         private void buttonSearch_Click(object sender, EventArgs e) // Khi click vào searchButton

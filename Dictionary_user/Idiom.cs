@@ -12,10 +12,12 @@ namespace Dictionary_user
 {
     public partial class Idiom : Form
     {
+        
         private bool ktSwitch = false;
         public Idiom()
         {
             InitializeComponent();
+            Database.loadLabel();
         }
 
         private void buttonSwitch_Click(object sender, EventArgs e)
@@ -35,6 +37,7 @@ namespace Dictionary_user
                 labelLanguage.Text = "English idiom";
             }
         }
+
 
        
     }
