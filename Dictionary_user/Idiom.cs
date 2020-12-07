@@ -17,7 +17,7 @@ namespace Dictionary_user
         public Idiom()
         {
             InitializeComponent();
-            Database.loadLabel();
+         //   Database.loadLabel();
         }
 
         private void buttonSwitch_Click(object sender, EventArgs e)
