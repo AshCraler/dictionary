@@ -29,7 +29,7 @@ namespace Dictionary_user
         private bool ktSwitch = false; // Kiểm tra chế độ Anh Việt hay Việt Anh
         private bool ktBookmark = false; // Kiểm tra bookmark hay chưa
         private int hintColor = 0;
-        //private object[] suggestion = new object[4];
+
         private string coloumn = "VieMeaning";
         private string hint = "English";
         private string command = "";
