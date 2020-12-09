@@ -36,9 +36,6 @@ namespace Dictionary_user
                 pictureBoxFlagRight.Image = Properties.Resources.vietnam;
                 labelLanguage.Text = "English idiom";
             }
-        }
-
-
-       
+        }       
     }
 }
