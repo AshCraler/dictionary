@@ -915,11 +915,7 @@ namespace Dictionary_user
             Color.FromArgb(242, 98, 121);
             hideSwitch();
             displaySearch();
-            textboxSearch.HintText = "Search Idiom";
-            textboxSearch.Text = textboxSearch.HintText;
-            textboxSearch.LineFocusedColor = Color.FromArgb(242, 98, 121); ;
-            textboxSearch.LineMouseHoverColor = Color.FromArgb(242, 98, 121); ;
-            buttonSearch.IconColor = Color.FromArgb(242, 98, 121); ;
+            hideSearch();
             Database.nowForm = 10;
             Database.acction = "showIdiomList";
             activateMenuButton(sender, Color.FromArgb(242, 98, 121));

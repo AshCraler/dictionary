@@ -75,6 +75,7 @@
             this.pictureBoxFlagLeft = new System.Windows.Forms.PictureBox();
             this.pictureBoxFlagRight = new System.Windows.Forms.PictureBox();
             this.buttonSwitch = new FontAwesome.Sharp.IconButton();
+            this.iconIdiom = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnFeedback = new FontAwesome.Sharp.IconButton();
             this.btnHelp = new FontAwesome.Sharp.IconButton();
@@ -82,7 +83,6 @@
             this.btnSettings = new FontAwesome.Sharp.IconButton();
             this.btnHistory = new FontAwesome.Sharp.IconButton();
             this.btnHome = new System.Windows.Forms.PictureBox();
-            this.iconIdiom = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -702,6 +702,30 @@
             this.buttonSwitch.UseVisualStyleBackColor = true;
             this.buttonSwitch.Click += new System.EventHandler(this.buttonSwitch_Click);
             // 
+            // iconIdiom
+            // 
+            this.iconIdiom.FlatAppearance.BorderSize = 0;
+            this.iconIdiom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconIdiom.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconIdiom.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconIdiom.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconIdiom.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.iconIdiom.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconIdiom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconIdiom.IconSize = 32;
+            this.iconIdiom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconIdiom.Location = new System.Drawing.Point(6, 244);
+            this.iconIdiom.Name = "iconIdiom";
+            this.iconIdiom.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
+            this.iconIdiom.Rotation = 0D;
+            this.iconIdiom.Size = new System.Drawing.Size(182, 34);
+            this.iconIdiom.TabIndex = 18;
+            this.iconIdiom.Text = "Idiom";
+            this.iconIdiom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconIdiom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconIdiom.UseVisualStyleBackColor = true;
+            this.iconIdiom.Click += new System.EventHandler(this.iconIdiom_Click);
+            // 
             // iconButton1
             // 
             this.iconButton1.FlatAppearance.BorderSize = 0;
@@ -786,7 +810,7 @@
             this.btn_Bookmark.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Bookmark.IconSize = 32;
             this.btn_Bookmark.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Bookmark.Location = new System.Drawing.Point(6, 244);
+            this.btn_Bookmark.Location = new System.Drawing.Point(6, 204);
             this.btn_Bookmark.Name = "btn_Bookmark";
             this.btn_Bookmark.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.btn_Bookmark.Rotation = 0D;
@@ -834,7 +858,7 @@
             this.btnHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHistory.IconSize = 32;
             this.btnHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistory.Location = new System.Drawing.Point(6, 204);
+            this.btnHistory.Location = new System.Drawing.Point(6, 164);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.btnHistory.Rotation = 0D;
@@ -855,30 +879,6 @@
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnHome.TabIndex = 0;
             this.btnHome.TabStop = false;
-            // 
-            // iconIdiom
-            // 
-            this.iconIdiom.FlatAppearance.BorderSize = 0;
-            this.iconIdiom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconIdiom.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconIdiom.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconIdiom.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconIdiom.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.iconIdiom.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconIdiom.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconIdiom.IconSize = 32;
-            this.iconIdiom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconIdiom.Location = new System.Drawing.Point(6, 164);
-            this.iconIdiom.Name = "iconIdiom";
-            this.iconIdiom.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
-            this.iconIdiom.Rotation = 0D;
-            this.iconIdiom.Size = new System.Drawing.Size(182, 34);
-            this.iconIdiom.TabIndex = 18;
-            this.iconIdiom.Text = "Idiom";
-            this.iconIdiom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconIdiom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconIdiom.UseVisualStyleBackColor = true;
-            this.iconIdiom.Click += new System.EventHandler(this.iconIdiom_Click);
             // 
             // MainForm
             // 
