@@ -157,6 +157,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Bunifu_UI_v1.52.dll" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\seo.png" />
+    <None Include="Resources\dictionary.png" />
     <None Include="Resources\clock.png" />
     <None Include="Resources\calendar %281%29.png" />
     <None Include="Resources\calendar.png" />

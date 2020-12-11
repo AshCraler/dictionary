@@ -123,6 +123,16 @@ namespace Dictionary_user.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dictionary {
+            get {
+                object obj = ResourceManager.GetObject("dictionary", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap history {
             get {
                 object obj = ResourceManager.GetObject("history", resourceCulture);
@@ -146,6 +156,26 @@ namespace Dictionary_user.Properties {
         internal static System.Drawing.Bitmap languages {
             get {
                 object obj = ResourceManager.GetObject("languages", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap report {
+            get {
+                object obj = ResourceManager.GetObject("report", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seo {
+            get {
+                object obj = ResourceManager.GetObject("seo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

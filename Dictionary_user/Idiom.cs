@@ -52,12 +52,11 @@ namespace Dictionary_user
         }
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            labelBookmarkTime.Visible = true;
-            labelBookmarkRes.Visible = true;
             iconBookmark.Visible = true;
-            pictureBoxBookmarkTime.Visible= true;
             textBoxResult.Visible = true;
             textBoxMeaning.Visible = true;
+            pictureBoxSearched.Visible = true;
+            pictureBoxMeaning.Visible = true;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -71,6 +70,11 @@ namespace Dictionary_user
         }
 
         private void textboxSearch_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxResult_TextChanged(object sender, EventArgs e)
         {
 
         }
