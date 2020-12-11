@@ -8,18 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Dictionary_user
 {
     public partial class Idiom : Form
     {
         
         private bool ktSwitch = false;
+        
         public Idiom()
         {
             InitializeComponent();
-         //   Database.loadLabel();
-        }
+            textBoxResult.Cursor = Cursors.Arrow;
+            textBox1.Cursor = Cursors.Arrow;
+            textBox1.GotFocus += textBox_GotFocus;
+            textBoxResult.GotFocus += textBox_GotFocus; 
 
+        }
+        private void textBox_GotFocus(object sender, EventArgs e)
+        {
+            ((TextBox)sender).Parent.Focus();
+        }
         private void buttonSwitch_Click(object sender, EventArgs e)
         {
             if (ktSwitch == true)
@@ -27,15 +36,43 @@ namespace Dictionary_user
                 ktSwitch = false;
                 pictureBoxFlagLeft.Image = Properties.Resources.vietnam;
                 pictureBoxFlagRight.Image = Properties.Resources.united_kingdom;
-                labelLanguage.Text = "Vietnamese idiom";
+                labelLanguage.Text = "Vietnamese Idiom";
             }
             else
             {
                 ktSwitch = true;
                 pictureBoxFlagLeft.Image = Properties.Resources.united_kingdom;
                 pictureBoxFlagRight.Image = Properties.Resources.vietnam;
-                labelLanguage.Text = "English idiom";
+                labelLanguage.Text = "English Idiom";
             }
-        }       
+        }
+        private void panelSuggestion_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            labelBookmarkTime.Visible = true;
+            labelBookmarkRes.Visible = true;
+            iconBookmark.Visible = true;
+            pictureBoxBookmarkTime.Visible= true;
+            textBoxResult.Visible = true;
+            textBoxMeaning.Visible = true;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("Clicked");
+        }
+
+        private void textboxSearch_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
