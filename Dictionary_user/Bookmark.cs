@@ -61,16 +61,13 @@ namespace Dictionary_user
             vieFlag11.Image = Properties.Resources.vietnam;
             vieFlag12.Image = Properties.Resources.vietnam;
             vieFlag13.Image = Properties.Resources.vietnam;
-        }
-        
+        }      
         private void loadDatabase(string cmd)
         {
-            if (Database.acction == "showBookmarkList")
-                Database.load(cmd);
+            Database.load(cmd);
             for (int i = 0; i < 100000; i++)
                 check[i] = true;
-        }
-        
+        }      
         private void loadPageInfo()
         {
             string max;
@@ -83,7 +80,6 @@ namespace Dictionary_user
                 pageInfo.Visible = true;
             pageInfo.Text = (page * 13 + 1).ToString() + " - " + max + " / " + Database.loadData.Rows.Count.ToString() + " Vocalbulary";
         }
-
         private void loadData()
         {   
             loadImageSource();
@@ -481,22 +477,15 @@ namespace Dictionary_user
             }
         }
         
-        private void loadSearch()
-        {
-            for (int i = 0; i < 100000; i++)
-                check[i] = true;
-            loadData();
-        }
         public Bookmark()
         {
             InitializeComponent();
             if (Database.acction != "searchBookmark")
-            {
                 command = "select * from bookmark order by id DESC";
-                loadDatabase(command);
-                loadData();
-            }
-            else loadSearch();
+            else 
+                command = "select * from Bookmark Where word = " + "\"" + Database.textboxSearchText.ToString() + "\"" + " or meaning = " + "\"" + Database.textboxSearchText.ToString() + "\"";
+            loadDatabase(command);
+            loadData();
         }
 
         private void speaker1_Click(object sender, EventArgs e)

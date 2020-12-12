@@ -12,17 +12,26 @@ namespace Dictionary_user
 {
     public partial class History : Form
     {
+        private string command;
+        private string word;
+        private string translate;
+        
+        private void loadDatabase()
+        {
+            if (Database.acction == "searchHistory")
+                command = "select Word, Meaning, Translate,TimeSearch,Bookmark from historysearch Where word = " + "\"" + Database.textboxSearchText.ToString() + "\"" + " or meaning = " + "\"" + Database.textboxSearchText.ToString() + "\"";
+            if (Database.acction == "showHistoryList")
+                command = "SELECT Word,Meaning,Translate,TimeSearch AS Date ,Bookmark from historysearch ORDER BY id DESC";
+            Database.load(command);
+        }
+       
         public History()
         {
             InitializeComponent();
-            if (Database.acction == "showHistoryList")
-                Database.load("SELECT Word,Meaning,Translate,TimeSearch AS Date ,Bookmark from historysearch ORDER BY id DESC");
+            loadDatabase();
             bunifuCustomDataGrid1.DefaultCellStyle.Format = "dd/MM/yyyy";
             bunifuCustomDataGrid1.DataSource = Database.loadData;
         }
-        private string word;
-        private string translate;
-        private string bookmark;
         private void bunifuCustomDataGrid1_SelectionChanged(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in bunifuCustomDataGrid1.SelectedRows)
@@ -31,7 +40,6 @@ namespace Dictionary_user
                 translate = row.Cells[2].Value.ToString();
             }
         }
-
         private void bunifuCustomDataGrid1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;

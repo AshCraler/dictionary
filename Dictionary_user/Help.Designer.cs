@@ -39,7 +39,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-4, -14);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(805, 653);
+            this.panel1.Size = new System.Drawing.Size(830, 653);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -57,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 621);
+            this.ClientSize = new System.Drawing.Size(825, 621);
             this.Controls.Add(this.panel1);
             this.Name = "Help";
             this.Text = "Help";

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.illustrationImageList = new System.Windows.Forms.ImageList(this.components);
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.iconIdiom = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnFeedback = new FontAwesome.Sharp.IconButton();
             this.btnHelp = new FontAwesome.Sharp.IconButton();
@@ -110,6 +111,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.iconIdiom);
             this.panelMenu.Controls.Add(this.iconButton1);
             this.panelMenu.Controls.Add(this.btnFeedback);
             this.panelMenu.Controls.Add(this.btnHelp);
@@ -122,6 +124,30 @@
             this.panelMenu.Padding = new System.Windows.Forms.Padding(15, 0, 25, 0);
             this.panelMenu.Size = new System.Drawing.Size(190, 718);
             this.panelMenu.TabIndex = 10;
+            // 
+            // iconIdiom
+            // 
+            this.iconIdiom.FlatAppearance.BorderSize = 0;
+            this.iconIdiom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconIdiom.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconIdiom.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconIdiom.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconIdiom.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.iconIdiom.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconIdiom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconIdiom.IconSize = 32;
+            this.iconIdiom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconIdiom.Location = new System.Drawing.Point(6, 244);
+            this.iconIdiom.Name = "iconIdiom";
+            this.iconIdiom.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
+            this.iconIdiom.Rotation = 0D;
+            this.iconIdiom.Size = new System.Drawing.Size(182, 34);
+            this.iconIdiom.TabIndex = 18;
+            this.iconIdiom.Text = "Idiom";
+            this.iconIdiom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconIdiom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconIdiom.UseVisualStyleBackColor = true;
+            this.iconIdiom.Click += new System.EventHandler(this.iconIdiom_Click);
             // 
             // iconButton1
             // 
@@ -159,7 +185,7 @@
             this.btnFeedback.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnFeedback.IconSize = 32;
             this.btnFeedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFeedback.Location = new System.Drawing.Point(8, 324);
+            this.btnFeedback.Location = new System.Drawing.Point(6, 364);
             this.btnFeedback.Name = "btnFeedback";
             this.btnFeedback.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.btnFeedback.Rotation = 0D;
@@ -183,7 +209,7 @@
             this.btnHelp.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHelp.IconSize = 32;
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(6, 284);
+            this.btnHelp.Location = new System.Drawing.Point(6, 324);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.btnHelp.Rotation = 0D;
@@ -231,7 +257,7 @@
             this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSettings.IconSize = 32;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(8, 244);
+            this.btnSettings.Location = new System.Drawing.Point(6, 284);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.btnSettings.Rotation = 0D;
@@ -309,7 +335,7 @@
             this.panelTitleBar.Controls.Add(this.buttonSwitch);
             this.panelTitleBar.Location = new System.Drawing.Point(190, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(784, 72);
+            this.panelTitleBar.Size = new System.Drawing.Size(796, 72);
             this.panelTitleBar.TabIndex = 11;
             // 
             // labelTitleChildForm
@@ -356,6 +382,11 @@
             this.textboxSearch.TabIndex = 14;
             this.textboxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textboxSearch.OnValueChanged += new System.EventHandler(this.textboxSearch_OnValueChanged);
+            this.textboxSearch.Enter += new System.EventHandler(this.textboxSearch_Enter);
+            this.textboxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textboxSearch_KeyDown);
+            this.textboxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxSearch_KeyPress);
+            this.textboxSearch.Leave += new System.EventHandler(this.textboxSearch_Leave);
+            this.textboxSearch.Validating += new System.ComponentModel.CancelEventHandler(this.textboxSearch_Validating);
             // 
             // buttonSearch
             // 
@@ -384,7 +415,6 @@
             this.pictureBoxFlagLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFlagLeft.TabIndex = 12;
             this.pictureBoxFlagLeft.TabStop = false;
-            this.pictureBoxFlagLeft.Visible = false;
             // 
             // pictureBoxFlagRight
             // 
@@ -395,7 +425,6 @@
             this.pictureBoxFlagRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFlagRight.TabIndex = 13;
             this.pictureBoxFlagRight.TabStop = false;
-            this.pictureBoxFlagRight.Visible = false;
             // 
             // buttonSwitch
             // 
@@ -412,7 +441,6 @@
             this.buttonSwitch.Size = new System.Drawing.Size(37, 31);
             this.buttonSwitch.TabIndex = 16;
             this.buttonSwitch.UseVisualStyleBackColor = true;
-            this.buttonSwitch.Visible = false;
             this.buttonSwitch.Click += new System.EventHandler(this.buttonSwitch_Click);
             // 
             // panelDesktop
@@ -427,7 +455,7 @@
             this.panelDesktop.ForeColor = System.Drawing.Color.Gainsboro;
             this.panelDesktop.Location = new System.Drawing.Point(190, 68);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(784, 650);
+            this.panelDesktop.Size = new System.Drawing.Size(810, 650);
             this.panelDesktop.TabIndex = 12;
             // 
             // panelSuggestion
@@ -438,7 +466,7 @@
             this.panelSuggestion.Controls.Add(this.panel4);
             this.panelSuggestion.Location = new System.Drawing.Point(0, 3);
             this.panelSuggestion.Name = "panelSuggestion";
-            this.panelSuggestion.Size = new System.Drawing.Size(781, 224);
+            this.panelSuggestion.Size = new System.Drawing.Size(796, 224);
             this.panelSuggestion.TabIndex = 34;
             // 
             // panel1
@@ -714,7 +742,7 @@
             this.panelResult.Controls.Add(this.labelResult);
             this.panelResult.Location = new System.Drawing.Point(0, 214);
             this.panelResult.Name = "panelResult";
-            this.panelResult.Size = new System.Drawing.Size(781, 433);
+            this.panelResult.Size = new System.Drawing.Size(796, 433);
             this.panelResult.TabIndex = 33;
             // 
             // btnPlay2
@@ -779,7 +807,6 @@
             // 
             // pictureBoxResult
             // 
-           
             this.pictureBoxResult.Image = global::Dictionary_user.Properties.Resources.analysis;
             this.pictureBoxResult.Location = new System.Drawing.Point(159, 29);
             this.pictureBoxResult.Name = "pictureBoxResult";
@@ -859,7 +886,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.ClientSize = new System.Drawing.Size(980, 721);
+            this.ClientSize = new System.Drawing.Size(968, 721);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -954,6 +981,7 @@
         private FontAwesome.Sharp.IconButton bookmarkButton;
         private System.Windows.Forms.Label wordMeaning;
         private FontAwesome.Sharp.IconButton btnPlay2;
+        private FontAwesome.Sharp.IconButton iconIdiom;
     }
 }
 
