@@ -19,11 +19,8 @@ namespace Dictionary_user
         public Idiom()
         {
             InitializeComponent();
-            textBoxResult.Cursor = Cursors.Arrow;
             textBox1.Cursor = Cursors.Arrow;
             textBox1.GotFocus += textBox_GotFocus;
-            textBoxResult.GotFocus += textBox_GotFocus; 
-
         }
         private void textBox_GotFocus(object sender, EventArgs e)
         {

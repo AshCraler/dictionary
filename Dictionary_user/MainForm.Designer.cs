@@ -83,6 +83,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelEnglish = new System.Windows.Forms.Label();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuDropdownTranslate = new Bunifu.Framework.UI.BunifuDropdown();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -326,6 +328,7 @@
             // 
             // panelTitleBar
             // 
+            this.panelTitleBar.Controls.Add(this.bunifuDropdownTranslate);
             this.panelTitleBar.Controls.Add(this.labelTitleChildForm);
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
             this.panelTitleBar.Controls.Add(this.textboxSearch);
@@ -375,10 +378,10 @@
             this.textboxSearch.LineIdleColor = System.Drawing.Color.Gainsboro;
             this.textboxSearch.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.textboxSearch.LineThickness = 2;
-            this.textboxSearch.Location = new System.Drawing.Point(139, 19);
+            this.textboxSearch.Location = new System.Drawing.Point(134, 19);
             this.textboxSearch.Margin = new System.Windows.Forms.Padding(4);
             this.textboxSearch.Name = "textboxSearch";
-            this.textboxSearch.Size = new System.Drawing.Size(422, 39);
+            this.textboxSearch.Size = new System.Drawing.Size(337, 39);
             this.textboxSearch.TabIndex = 14;
             this.textboxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textboxSearch.OnValueChanged += new System.EventHandler(this.textboxSearch_OnValueChanged);
@@ -397,7 +400,7 @@
             this.buttonSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.buttonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buttonSearch.IconSize = 30;
-            this.buttonSearch.Location = new System.Drawing.Point(559, 24);
+            this.buttonSearch.Location = new System.Drawing.Point(463, 23);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Rotation = 0D;
             this.buttonSearch.Size = new System.Drawing.Size(39, 38);
@@ -409,7 +412,7 @@
             // pictureBoxFlagLeft
             // 
             this.pictureBoxFlagLeft.Image = global::Dictionary_user.Properties.Resources.united_kingdom;
-            this.pictureBoxFlagLeft.Location = new System.Drawing.Point(625, 23);
+            this.pictureBoxFlagLeft.Location = new System.Drawing.Point(508, 23);
             this.pictureBoxFlagLeft.Name = "pictureBoxFlagLeft";
             this.pictureBoxFlagLeft.Size = new System.Drawing.Size(46, 32);
             this.pictureBoxFlagLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -419,7 +422,7 @@
             // pictureBoxFlagRight
             // 
             this.pictureBoxFlagRight.Image = global::Dictionary_user.Properties.Resources.vietnam;
-            this.pictureBoxFlagRight.Location = new System.Drawing.Point(667, 23);
+            this.pictureBoxFlagRight.Location = new System.Drawing.Point(550, 23);
             this.pictureBoxFlagRight.Name = "pictureBoxFlagRight";
             this.pictureBoxFlagRight.Size = new System.Drawing.Size(49, 32);
             this.pictureBoxFlagRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -435,7 +438,7 @@
             this.buttonSwitch.IconColor = System.Drawing.Color.Gainsboro;
             this.buttonSwitch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buttonSwitch.IconSize = 25;
-            this.buttonSwitch.Location = new System.Drawing.Point(722, 24);
+            this.buttonSwitch.Location = new System.Drawing.Point(605, 24);
             this.buttonSwitch.Name = "buttonSwitch";
             this.buttonSwitch.Rotation = 0D;
             this.buttonSwitch.Size = new System.Drawing.Size(37, 31);
@@ -880,6 +883,29 @@
             this.labelEnglish.TabIndex = 11;
             this.labelEnglish.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = null;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuDropdownTranslate
+            // 
+            this.bunifuDropdownTranslate.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdownTranslate.BorderRadius = 3;
+            this.bunifuDropdownTranslate.ForeColor = System.Drawing.Color.White;
+            this.bunifuDropdownTranslate.Items = new string[] {
+        "English",
+        "Idiom"};
+            this.bunifuDropdownTranslate.Location = new System.Drawing.Point(648, 23);
+            this.bunifuDropdownTranslate.Name = "bunifuDropdownTranslate";
+            this.bunifuDropdownTranslate.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.bunifuDropdownTranslate.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.bunifuDropdownTranslate.selectedIndex = 0;
+            this.bunifuDropdownTranslate.Size = new System.Drawing.Size(125, 32);
+            this.bunifuDropdownTranslate.TabIndex = 17;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -982,6 +1008,8 @@
         private System.Windows.Forms.Label wordMeaning;
         private FontAwesome.Sharp.IconButton btnPlay2;
         private FontAwesome.Sharp.IconButton iconIdiom;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdownTranslate;
     }
 }
 

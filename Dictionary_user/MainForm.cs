@@ -916,6 +916,8 @@ namespace Dictionary_user
             hideSwitch();
             displaySearch();
             hideSearch();
+            bunifuDropdownTranslate.RemoveItem("English");
+            bunifuDropdownTranslate.selectedIndex = 0;
             Database.nowForm = 10;
             Database.acction = "showIdiomList";
             activateMenuButton(sender, Color.FromArgb(242, 98, 121));
