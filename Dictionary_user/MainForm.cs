@@ -29,7 +29,6 @@ namespace Dictionary_user
         private bool ktSwitch = false; // Kiểm tra chế độ Anh Việt hay Việt Anh
         private bool ktBookmark = false; // Kiểm tra bookmark hay chưa
         private int hintColor = 0;
-
         private string coloumn = "VieMeaning";
         private string hint = "English";
         private string command = "";
@@ -45,7 +44,7 @@ namespace Dictionary_user
             public static Color color2 = Color.FromArgb(238, 26, 74);
             public static Color color3 = Color.FromArgb(253, 138, 114);
             public static Color color4 = Color.FromArgb(95, 77, 221);
-            public static Color color5 = Color.FromArgb(249, 88, 155);
+            public static Color color5 = Color.FromArgb(65,179,247);
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.FromArgb(255, 244, 79);
         }
@@ -922,6 +921,16 @@ namespace Dictionary_user
             Database.acction = "showIdiomList";
             activateMenuButton(sender, Color.FromArgb(242, 98, 121));
             openChildForm(new Idiom());
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            Color.FromArgb(48,129,238);
+            hideSwitch();
+            displaySearch();
+            hideSearch();
+            activateMenuButton(sender, Color.FromArgb(48,129,238));
+            openChildForm(new About());
         }
     }
 }

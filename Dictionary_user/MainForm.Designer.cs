@@ -42,6 +42,7 @@
             this.labelDictionary = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.bunifuDropdownTranslate = new Bunifu.Framework.UI.BunifuDropdown();
             this.labelTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.textboxSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -84,7 +85,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.labelEnglish = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuDropdownTranslate = new Bunifu.Framework.UI.BunifuDropdown();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -113,6 +114,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.iconButton2);
             this.panelMenu.Controls.Add(this.iconIdiom);
             this.panelMenu.Controls.Add(this.iconButton1);
             this.panelMenu.Controls.Add(this.btnFeedback);
@@ -340,6 +342,22 @@
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(796, 72);
             this.panelTitleBar.TabIndex = 11;
+            // 
+            // bunifuDropdownTranslate
+            // 
+            this.bunifuDropdownTranslate.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdownTranslate.BorderRadius = 3;
+            this.bunifuDropdownTranslate.ForeColor = System.Drawing.Color.White;
+            this.bunifuDropdownTranslate.Items = new string[] {
+        "English",
+        "Idiom"};
+            this.bunifuDropdownTranslate.Location = new System.Drawing.Point(648, 23);
+            this.bunifuDropdownTranslate.Name = "bunifuDropdownTranslate";
+            this.bunifuDropdownTranslate.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.bunifuDropdownTranslate.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.bunifuDropdownTranslate.selectedIndex = 0;
+            this.bunifuDropdownTranslate.Size = new System.Drawing.Size(125, 32);
+            this.bunifuDropdownTranslate.TabIndex = 17;
             // 
             // labelTitleChildForm
             // 
@@ -890,21 +908,29 @@
             this.bunifuDragControl1.TargetControl = null;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // bunifuDropdownTranslate
+            // iconButton2
             // 
-            this.bunifuDropdownTranslate.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdownTranslate.BorderRadius = 3;
-            this.bunifuDropdownTranslate.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdownTranslate.Items = new string[] {
-        "English",
-        "Idiom"};
-            this.bunifuDropdownTranslate.Location = new System.Drawing.Point(648, 23);
-            this.bunifuDropdownTranslate.Name = "bunifuDropdownTranslate";
-            this.bunifuDropdownTranslate.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.bunifuDropdownTranslate.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.bunifuDropdownTranslate.selectedIndex = 0;
-            this.bunifuDropdownTranslate.Size = new System.Drawing.Size(125, 32);
-            this.bunifuDropdownTranslate.TabIndex = 17;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 32;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.Location = new System.Drawing.Point(6, 404);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
+            this.iconButton2.Rotation = 0D;
+            this.iconButton2.Size = new System.Drawing.Size(182, 34);
+            this.iconButton2.TabIndex = 19;
+            this.iconButton2.Text = "About us";
+            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // MainForm
             // 
@@ -1010,6 +1036,7 @@
         private FontAwesome.Sharp.IconButton iconIdiom;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuDropdown bunifuDropdownTranslate;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }
 
