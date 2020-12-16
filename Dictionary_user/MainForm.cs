@@ -556,13 +556,7 @@ namespace Dictionary_user
             hideSwitch();
         }
 
-        private void btnHelp_Click(object sender, EventArgs e) // Khi click vào helpButton
-        {
-            activateMenuButton(sender, RGBColors.color5);
-            openChildForm(new Help());
-            hideSearch();
-            hideSwitch();
-        }
+       
 
         private void btnFeedback_Click(object sender, EventArgs e) // Khi click vào feedbackButton
         {

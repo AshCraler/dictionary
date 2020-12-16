@@ -57,7 +57,6 @@ namespace Dictionary_user
             {
                 Console.WriteLine("\t" + line);
             }
-
         }
     }
 }
