@@ -80,7 +80,6 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconIdiom = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnFeedback = new FontAwesome.Sharp.IconButton();
             this.btn_Bookmark = new FontAwesome.Sharp.IconButton();
             this.btnSettings = new FontAwesome.Sharp.IconButton();
             this.btnHistory = new FontAwesome.Sharp.IconButton();
@@ -116,7 +115,6 @@
             this.panelMenu.Controls.Add(this.iconButton2);
             this.panelMenu.Controls.Add(this.iconIdiom);
             this.panelMenu.Controls.Add(this.iconButton1);
-            this.panelMenu.Controls.Add(this.btnFeedback);
             this.panelMenu.Controls.Add(this.btn_Bookmark);
             this.panelMenu.Controls.Add(this.btnSettings);
             this.panelMenu.Controls.Add(this.btnHistory);
@@ -740,7 +738,7 @@
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 32;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(8, 364);
+            this.iconButton2.Location = new System.Drawing.Point(6, 324);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.iconButton2.Rotation = 0D;
@@ -799,30 +797,6 @@
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // btnFeedback
-            // 
-            this.btnFeedback.FlatAppearance.BorderSize = 0;
-            this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFeedback.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnFeedback.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFeedback.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnFeedback.IconChar = FontAwesome.Sharp.IconChar.CommentAlt;
-            this.btnFeedback.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnFeedback.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnFeedback.IconSize = 32;
-            this.btnFeedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFeedback.Location = new System.Drawing.Point(8, 324);
-            this.btnFeedback.Name = "btnFeedback";
-            this.btnFeedback.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
-            this.btnFeedback.Rotation = 0D;
-            this.btnFeedback.Size = new System.Drawing.Size(182, 34);
-            this.btnFeedback.TabIndex = 17;
-            this.btnFeedback.Text = "Feedback";
-            this.btnFeedback.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFeedback.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFeedback.UseVisualStyleBackColor = true;
-            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
             // 
             // btn_Bookmark
             // 
@@ -960,7 +934,6 @@
         private FontAwesome.Sharp.IconButton btn_Bookmark;
         private FontAwesome.Sharp.IconButton btnSettings;
         private FontAwesome.Sharp.IconButton btnHistory;
-        private FontAwesome.Sharp.IconButton btnFeedback;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Panel panelTitleBar;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;

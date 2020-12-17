@@ -558,13 +558,6 @@ namespace Dictionary_user
 
        
 
-        private void btnFeedback_Click(object sender, EventArgs e) // Khi click vào feedbackButton
-        {
-            activateMenuButton(sender, RGBColors.color6);
-            openChildForm(new Feedback());
-            hideSearch();
-            hideSwitch();
-        }
 
         #endregion
 
