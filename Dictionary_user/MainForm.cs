@@ -32,12 +32,15 @@ namespace Dictionary_user
         private string coloumn = "VieMeaning";
         private string hint = "English";
         private string command = "";
+        private int id = 0;
         public string date = DateTime.Now.ToString("yyyy.MM.dd");
         public string time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private List<string> arr;
+        private Random r = new Random();
         private struct RGBColors // Struct các mã màu 
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -391,8 +394,30 @@ namespace Dictionary_user
             childForm.Show();
             closeChildForm(childForm);
         }
-
-
+        private void random()
+        {
+            arr = new List<string>();
+            for (int i=0;i<8;i++)
+            {
+                id = r.Next(1, 1800);
+                command = "select " + hint + " from mytable where id=" + "'" + id.ToString() + "'";
+                Database.load(command);
+                arr.Add(Database.loadData.Rows[0][hint].ToString());
+            }      
+        }
+        private void loadVolcabulary()
+        { 
+            random();
+            labelWord1.Text = arr[0];
+            labelWord2.Text= arr[1];
+            labelWord3.Text = arr[2];
+            labelWord4.Text = arr[3];
+            labelWord5.Text = arr[4];
+            labelWord6.Text = arr[5];
+            labelWord7.Text = arr[6];
+            labelWord8.Text = arr[7];
+        }
+        
         public MainForm() // Kích hoạt MainForm
         {
             //Initial GUI
@@ -404,8 +429,8 @@ namespace Dictionary_user
             //initSuggestion();
             loadRecently();
             Database.nowForm = 1;
+            loadVolcabulary();
         }
-
         private void textboxSearch_OnValueChanged(object sender, EventArgs e) // Khi thay đổi giá trị textboxSearch 
         {
             if (Database.nowForm == 10)
@@ -498,6 +523,7 @@ namespace Dictionary_user
             setVisibleResult(false);
             loadRecentlyBookmark();
             activateSwitchButton();
+            loadVolcabulary();
         }
 
         private void iconButton1_Click(object sender, EventArgs e) // Khi click vào translateButton
@@ -918,6 +944,11 @@ namespace Dictionary_user
             hideSearch();
             activateMenuButton(sender, Color.FromArgb(48,129,238));
             openChildForm(new About());
+        }
+
+        private void Reload_Click(object sender, EventArgs e)
+        {
+            loadVolcabulary();
         }
     }
 }
