@@ -51,8 +51,8 @@ namespace Dictionary_user
 
         private void iconButtonUpdateData_Click(object sender, EventArgs e)
         {
-            string[] lines = System.IO.File.ReadAllLines(@"D:\WriteLines2.txt");
-            System.Console.WriteLine("Contents of WriteLines2.txt = ");
+            string[] lines = System.IO.File.ReadAllLines(@"D:\Update.txt");
+            System.Console.WriteLine("Contents of Update.txt = ");
             foreach (string line in lines)
             {
                 Console.WriteLine("\t" + line);

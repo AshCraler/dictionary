@@ -19,13 +19,9 @@ namespace Dictionary_user
         public Idiom()
         {
             InitializeComponent();
-            textBox1.Cursor = Cursors.Arrow;
-            textBox1.GotFocus += textBox_GotFocus;
+          
         }
-        private void textBox_GotFocus(object sender, EventArgs e)
-        {
-            ((TextBox)sender).Parent.Focus();
-        }
+       
         private void buttonSwitch_Click(object sender, EventArgs e)
         {
             if (ktSwitch == true)
@@ -63,7 +59,7 @@ namespace Dictionary_user
 
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show("Clicked");
+            textboxSearch.Text = textBox1.Text;
         }
 
         private void textboxSearch_OnValueChanged(object sender, EventArgs e)
@@ -74,6 +70,71 @@ namespace Dictionary_user
         private void textBoxResult_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = textBox2.Text;
+        }
+
+        private void textBox3_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = textBox3.Text;
+        }
+
+        private void textBox4_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = textBox4.Text;
+        }
+
+        private void textBox6_Click(object sender, EventArgs e)
+        {
+            textboxBookmark.Text = textBox6.Text;
+        }
+
+        private void textBox7_Click(object sender, EventArgs e)
+        {
+            textboxBookmark.Text = textBox7.Text;
+        }
+
+        private void textBox8_Click(object sender, EventArgs e)
+        {
+            textboxBookmark.Text = textBox8.Text;
+        }
+
+        private void textBox9_Click(object sender, EventArgs e)
+        {
+            textboxBookmark.Text = textBox9.Text;
+        }
+
+        private void textBox11_Click(object sender, EventArgs e)
+        {
+            textboxHistory.Text = textBox11.Text;
+        }
+
+        private void textBox12_Click(object sender, EventArgs e)
+        {
+            textboxHistory.Text = textBox12.Text;
+        }
+
+        private void textBox13_Click(object sender, EventArgs e)
+        {
+            textboxHistory.Text = textBox13.Text;
+        }
+
+        private void textBox14_Click(object sender, EventArgs e)
+        {
+            textboxHistory.Text = textBox14.Text;
+        }
+
+        private void textBox15_Click(object sender, EventArgs e)
+        {
+            textboxHistory.Text = textBox15.Text;
+        }
+
+        private void textBox16_Click(object sender, EventArgs e)
+        {
+            textboxHistory.Text = textBox16.Text;
         }
     }
 }
