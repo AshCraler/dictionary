@@ -327,6 +327,14 @@ namespace Dictionary_user
                 textboxSearch.Text = "Search VietNamese";
                 coloumn = "English";
                 hint = "VieMeaning";
+                iconButtonSpeaker1.Visible = false;
+                iconButtonSpeaker2.Visible = false;
+                iconButtonSpeaker3.Visible = false;
+                iconButtonSpeaker4.Visible = false;
+                iconButtonSpeaker5.Visible = false;
+                iconButtonSpeaker6.Visible = false;
+                iconButtonSpeaker7.Visible = false;
+                iconButtonSpeaker8.Visible = false;
             }
             else
             {
@@ -334,6 +342,14 @@ namespace Dictionary_user
                 pictureBoxFlagRight.Image = Properties.Resources.vietnam;
                 textboxSearch.HintText = "Search English";
                 textboxSearch.Text = "Search English";
+                iconButtonSpeaker1.Visible = true;
+                iconButtonSpeaker2.Visible = true;
+                iconButtonSpeaker3.Visible = true;
+                iconButtonSpeaker4.Visible = true;
+                iconButtonSpeaker5.Visible = true;
+                iconButtonSpeaker6.Visible = true;
+                iconButtonSpeaker7.Visible = true;
+                iconButtonSpeaker8.Visible = true;
                 coloumn = "VieMeaning";
                 hint = "English";
             }
@@ -541,6 +557,7 @@ namespace Dictionary_user
             textboxSearch.LineMouseHoverColor = RGBColors.color1;
             buttonSearch.IconColor = RGBColors.color1;
             Database.nowForm = 1;
+            bunifuDropdownTranslate.Visible = false;
             checkBookMark();
         }
 
@@ -556,6 +573,7 @@ namespace Dictionary_user
             Database.nowForm = 2;
             Database.acction = "showHistoryList";
             activateMenuButton(sender, RGBColors.color3);
+            bunifuDropdownTranslate.Visible = false;
             openChildForm(new History());
         }
 
@@ -571,6 +589,7 @@ namespace Dictionary_user
             Database.nowForm = 3;
             Database.acction = "showBookmarkList";
             activateMenuButton(sender, RGBColors.color2);
+            bunifuDropdownTranslate.Visible = false;
             openChildForm(new Bookmark());
         }
 
@@ -580,6 +599,7 @@ namespace Dictionary_user
             openChildForm(new Settings());
             hideSearch();
             hideSwitch();
+            bunifuDropdownTranslate.Visible = false;
         }
 
        
@@ -932,6 +952,7 @@ namespace Dictionary_user
             bunifuDropdownTranslate.selectedIndex = 0;
             Database.nowForm = 10;
             Database.acction = "showIdiomList";
+            bunifuDropdownTranslate.Visible = true;
             activateMenuButton(sender, Color.FromArgb(242, 98, 121));
             openChildForm(new Idiom());
         }
@@ -944,6 +965,7 @@ namespace Dictionary_user
             hideSearch();
             activateMenuButton(sender, Color.FromArgb(48,129,238));
             openChildForm(new About());
+            bunifuDropdownTranslate.Visible = false;
         }
 
         private void Reload_Click(object sender, EventArgs e)
@@ -1077,6 +1099,102 @@ namespace Dictionary_user
         private void labelWord8_MouseLeave(object sender, EventArgs e)
         {
             labelWord8.ForeColor = Color.Gainsboro;
+        }
+
+        private void iconButtonSpeaker1_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord1.Text);
+        }
+
+        private void iconButtonSpeaker2_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord2.Text);
+        }
+
+        private void iconButtonSpeaker3_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord3.Text);
+        }
+
+        private void iconButtonSpeaker4_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord4.Text);
+        }
+
+        private void iconButtonSpeaker5_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord5.Text);
+        }
+
+        private void iconButtonSpeaker6_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord6.Text);
+        }
+
+        private void iconButtonSpeaker7_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord7.Text);
+        }
+
+        private void iconButtonSpeaker8_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord8.Text);
         }
     }
 }
