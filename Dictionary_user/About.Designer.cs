@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labeLink = new System.Windows.Forms.Label();
             this.labelBookmark = new System.Windows.Forms.Label();
             this.labelHistory = new System.Windows.Forms.Label();
             this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
@@ -39,6 +40,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panel1.Controls.Add(this.labeLink);
             this.panel1.Controls.Add(this.labelBookmark);
             this.panel1.Controls.Add(this.labelHistory);
             this.panel1.Controls.Add(this.iconButtonHistory);
@@ -47,6 +49,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(900, 800);
             this.panel1.TabIndex = 1;
+            // 
+            // labeLink
+            // 
+            this.labeLink.AutoSize = true;
+            this.labeLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labeLink.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeLink.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labeLink.Location = new System.Drawing.Point(46, 198);
+            this.labeLink.Name = "labeLink";
+            this.labeLink.Size = new System.Drawing.Size(380, 22);
+            this.labeLink.TabIndex = 93;
+            this.labeLink.Text = "https://github.com/AshCraler/dictionary";
+            this.labeLink.Click += new System.EventHandler(this.labeLink_Click);
+            this.labeLink.MouseLeave += new System.EventHandler(this.labeLink_MouseLeave);
+            this.labeLink.MouseHover += new System.EventHandler(this.labeLink_MouseHover);
             // 
             // labelBookmark
             // 
@@ -125,5 +142,6 @@
         private System.Windows.Forms.Label labelHistory;
         private FontAwesome.Sharp.IconButton iconButtonHistory;
         private FontAwesome.Sharp.IconButton iconButtonBookmark;
+        private System.Windows.Forms.Label labeLink;
     }
 }
