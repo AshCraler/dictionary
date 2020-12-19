@@ -950,6 +950,134 @@ namespace Dictionary_user
         {
             loadVolcabulary();
         }
+
+        private void labelWord1_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord1.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord2_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord2.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord3_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord3.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord4_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord4.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord5_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord5.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord6_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord6.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord7_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord7.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord8_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord8.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord1_MouseHover(object sender, EventArgs e)
+        {
+            labelWord1.ForeColor = RGBColors.color7;
+        }
+
+        private void labelWord1_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord1.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord2_MouseHover(object sender, EventArgs e)
+        {
+            labelWord2.ForeColor = RGBColors.color7;
+        }
+
+        private void labelWord2_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord2.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord3_MouseHover(object sender, EventArgs e)
+        {
+            labelWord3.ForeColor = RGBColors.color7;
+        }
+
+        private void labelWord3_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord3.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord4_MouseHover(object sender, EventArgs e)
+        {
+            labelWord4.ForeColor = RGBColors.color7;
+        }
+
+        private void labelWord4_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord4.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord5_MouseHover(object sender, EventArgs e)
+        {
+            labelWord5.ForeColor = RGBColors.color7;
+        }
+
+        private void labelWord5_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord5.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord6_MouseHover(object sender, EventArgs e)
+        {
+            labelWord6.ForeColor = RGBColors.color7;
+        }
+
+        private void labelWord6_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord6.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord7_MouseHover(object sender, EventArgs e)
+        {
+            labelWord7.ForeColor = RGBColors.color7;
+        }
+
+        private void labelWord7_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord7.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord8_MouseHover(object sender, EventArgs e)
+        {
+            labelWord8.ForeColor = RGBColors.color7;
+        }
+
+        private void labelWord8_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord8.ForeColor = Color.Gainsboro;
+        }
     }
 }
 
