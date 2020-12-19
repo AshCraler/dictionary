@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Dictionary_user
 {
-    public partial class Feedback : Form
+    public partial class About : Form
     {
-        public Feedback()
+        public About()
         {
             InitializeComponent();
         }
