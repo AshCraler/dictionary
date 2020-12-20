@@ -168,6 +168,8 @@
             this.textBox16.TabIndex = 109;
             this.textBox16.Text = "Nói một đường làm một nẻo";
             this.textBox16.Click += new System.EventHandler(this.textBox16_Click);
+            this.textBox16.MouseLeave += new System.EventHandler(this.textBox16_MouseLeave);
+            this.textBox16.MouseHover += new System.EventHandler(this.textBox16_MouseHover);
             // 
             // textBox15
             // 
@@ -182,6 +184,8 @@
             this.textBox15.TabIndex = 108;
             this.textBox15.Text = "Thương cho roi cho vọt";
             this.textBox15.Click += new System.EventHandler(this.textBox15_Click);
+            this.textBox15.MouseLeave += new System.EventHandler(this.textBox15_MouseLeave);
+            this.textBox15.MouseHover += new System.EventHandler(this.textBox15_MouseHover);
             // 
             // textBox14
             // 
@@ -196,6 +200,8 @@
             this.textBox14.TabIndex = 107;
             this.textBox14.Text = "Tốt gỗ hơn tốt nước sơn";
             this.textBox14.Click += new System.EventHandler(this.textBox14_Click);
+            this.textBox14.MouseLeave += new System.EventHandler(this.textBox14_MouseLeave);
+            this.textBox14.MouseHover += new System.EventHandler(this.textBox14_MouseHover);
             // 
             // textBox13
             // 
@@ -210,6 +216,8 @@
             this.textBox13.TabIndex = 106;
             this.textBox13.Text = "Gừng càng già càng cay";
             this.textBox13.Click += new System.EventHandler(this.textBox13_Click);
+            this.textBox13.MouseLeave += new System.EventHandler(this.textBox13_MouseLeave);
+            this.textBox13.MouseHover += new System.EventHandler(this.textBox13_MouseHover);
             // 
             // textBox12
             // 
@@ -224,6 +232,8 @@
             this.textBox12.TabIndex = 105;
             this.textBox12.Text = "Cái nết đánh chết cái đẹp";
             this.textBox12.Click += new System.EventHandler(this.textBox12_Click);
+            this.textBox12.MouseLeave += new System.EventHandler(this.textBox12_MouseLeave);
+            this.textBox12.MouseHover += new System.EventHandler(this.textBox12_MouseHover);
             // 
             // textBox11
             // 
@@ -238,6 +248,8 @@
             this.textBox11.TabIndex = 104;
             this.textBox11.Text = "Nồi nào úp vung nấy";
             this.textBox11.Click += new System.EventHandler(this.textBox11_Click);
+            this.textBox11.MouseLeave += new System.EventHandler(this.textBox11_MouseLeave);
+            this.textBox11.MouseHover += new System.EventHandler(this.textBox11_MouseHover);
             // 
             // iconButton12
             // 
@@ -658,6 +670,8 @@
             this.textBox9.TabIndex = 50;
             this.textBox9.Text = "Thương cho roi cho vọt";
             this.textBox9.Click += new System.EventHandler(this.textBox9_Click);
+            this.textBox9.MouseLeave += new System.EventHandler(this.textBox9_MouseLeave);
+            this.textBox9.MouseHover += new System.EventHandler(this.textBox9_MouseHover);
             // 
             // textBox8
             // 
@@ -672,6 +686,8 @@
             this.textBox8.TabIndex = 49;
             this.textBox8.Text = "Xa mặt cách lòng";
             this.textBox8.Click += new System.EventHandler(this.textBox8_Click);
+            this.textBox8.MouseLeave += new System.EventHandler(this.textBox8_MouseLeave);
+            this.textBox8.MouseHover += new System.EventHandler(this.textBox8_MouseHover);
             // 
             // textBox7
             // 
@@ -687,6 +703,8 @@
             this.textBox7.TabIndex = 48;
             this.textBox7.Text = "Nói một đường làm một nẻo";
             this.textBox7.Click += new System.EventHandler(this.textBox7_Click);
+            this.textBox7.MouseLeave += new System.EventHandler(this.textBox7_MouseLeave);
+            this.textBox7.MouseHover += new System.EventHandler(this.textBox7_MouseHover);
             // 
             // textBox6
             // 
@@ -701,6 +719,8 @@
             this.textBox6.TabIndex = 47;
             this.textBox6.Text = "Nồi nào úp vung nấy";
             this.textBox6.Click += new System.EventHandler(this.textBox6_Click);
+            this.textBox6.MouseLeave += new System.EventHandler(this.textBox6_MouseLeave);
+            this.textBox6.MouseHover += new System.EventHandler(this.textBox6_MouseHover);
             // 
             // iconButton4
             // 
@@ -828,6 +848,8 @@
             this.textBox4.TabIndex = 42;
             this.textBox4.Text = "Hoạn nạn mới biết bạn hiền";
             this.textBox4.Click += new System.EventHandler(this.textBox4_Click);
+            this.textBox4.MouseLeave += new System.EventHandler(this.textBox4_MouseLeave);
+            this.textBox4.MouseHover += new System.EventHandler(this.textBox4_MouseHover);
             // 
             // textBox3
             // 
@@ -842,6 +864,8 @@
             this.textBox3.TabIndex = 41;
             this.textBox3.Text = "Cái nết đánh chết cái đẹp";
             this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
+            this.textBox3.MouseLeave += new System.EventHandler(this.textBox3_MouseLeave);
+            this.textBox3.MouseHover += new System.EventHandler(this.textBox3_MouseHover);
             // 
             // textBox2
             // 
@@ -856,6 +880,8 @@
             this.textBox2.TabIndex = 40;
             this.textBox2.Text = "Gừng càng già càng cay";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
+            this.textBox2.MouseLeave += new System.EventHandler(this.textBox2_MouseLeave);
+            this.textBox2.MouseHover += new System.EventHandler(this.textBox2_MouseHover);
             // 
             // textBox1
             // 
@@ -871,6 +897,8 @@
             this.textBox1.Text = "Tốt gỗ hơn tốt nước sơn";
             this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseClick);
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
+            this.textBox1.MouseHover += new System.EventHandler(this.textBox1_MouseHover);
             // 
             // pictureBox2
             // 

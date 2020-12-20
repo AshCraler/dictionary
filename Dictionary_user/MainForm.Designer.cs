@@ -189,7 +189,7 @@
             this.iconIdiom.Rotation = 0D;
             this.iconIdiom.Size = new System.Drawing.Size(182, 34);
             this.iconIdiom.TabIndex = 18;
-            this.iconIdiom.Text = "Idiom";
+            this.iconIdiom.Text = "Book and more";
             this.iconIdiom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconIdiom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconIdiom.UseVisualStyleBackColor = true;

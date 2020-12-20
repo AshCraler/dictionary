@@ -136,5 +136,145 @@ namespace Dictionary_user
         {
             textboxHistory.Text = textBox16.Text;
         }
+
+        private void textBox1_MouseHover(object sender, EventArgs e)
+        {
+            textBox1.ForeColor = Color.FromArgb(255, 244, 79);
+        }
+
+        private void textBox1_MouseLeave(object sender, EventArgs e)
+        {
+            textBox1.ForeColor = Color.Gainsboro;
+        }
+
+        private void textBox2_MouseHover(object sender, EventArgs e)
+        {
+            textBox2.ForeColor = Color.FromArgb(255, 244, 79);
+        }
+
+        private void textBox2_MouseLeave(object sender, EventArgs e)
+        {
+            textBox2.ForeColor = Color.Gainsboro;
+        }
+
+        private void textBox3_MouseHover(object sender, EventArgs e)
+        {
+            textBox3.ForeColor = Color.FromArgb(255, 244, 79);
+        }
+
+        private void textBox3_MouseLeave(object sender, EventArgs e)
+        {
+            textBox3.ForeColor = Color.Gainsboro;
+        }
+
+        private void textBox4_MouseHover(object sender, EventArgs e)
+        {
+            textBox4.ForeColor = Color.FromArgb(255, 244, 79);
+        }
+
+        private void textBox4_MouseLeave(object sender, EventArgs e)
+        {
+            textBox4.ForeColor = Color.Gainsboro;
+        }
+
+        private void textBox6_MouseHover(object sender, EventArgs e)
+        {
+            textBox6.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void textBox6_MouseLeave(object sender, EventArgs e)
+        {
+            textBox6.ForeColor = Color.Gainsboro;
+        }
+
+        private void textBox7_MouseHover(object sender, EventArgs e)
+        {
+            textBox7.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void textBox7_MouseLeave(object sender, EventArgs e)
+        {
+            textBox7.ForeColor = Color.Gainsboro;
+        }
+
+        private void textBox8_MouseHover(object sender, EventArgs e)
+        {
+            textBox8.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void textBox8_MouseLeave(object sender, EventArgs e)
+        {
+            textBox8.ForeColor = Color.Gainsboro;
+        }
+
+        private void textBox9_MouseHover(object sender, EventArgs e)
+        {
+            textBox9.ForeColor = Color.FromArgb(238, 26, 74);
+        }
+
+        private void textBox9_MouseLeave(object sender, EventArgs e)
+        {
+            textBox9.ForeColor = Color.Gainsboro;
+        }
+
+        private void textBox11_MouseHover(object sender, EventArgs e)
+        {
+            textBox11.ForeColor = Color.FromArgb(242, 98, 121);
+        }
+
+        private void textBox11_MouseLeave(object sender, EventArgs e)
+        {
+            textBox11.ForeColor = Color.Gainsboro;
+        }
+
+        private void textBox12_MouseHover(object sender, EventArgs e)
+        {
+            textBox12.ForeColor = Color.FromArgb(242, 98, 121);
+        }
+
+        private void textBox12_MouseLeave(object sender, EventArgs e)
+        {
+            textBox12.ForeColor = Color.Gainsboro;
+        }
+
+        private void textBox13_MouseHover(object sender, EventArgs e)
+        {
+            textBox13.ForeColor = Color.FromArgb(242, 98, 121);
+        }
+
+        private void textBox13_MouseLeave(object sender, EventArgs e)
+        {
+            textBox13.ForeColor = Color.Gainsboro;
+        }
+
+        private void textBox14_MouseHover(object sender, EventArgs e)
+        {
+            textBox14.ForeColor = Color.FromArgb(242, 98, 121);
+        }
+
+        private void textBox14_MouseLeave(object sender, EventArgs e)
+        {
+            textBox14.ForeColor = Color.Gainsboro;
+        }
+
+        private void textBox15_MouseHover(object sender, EventArgs e)
+        {
+            textBox15.ForeColor = Color.FromArgb(242, 98, 121);
+        }
+
+        private void textBox15_MouseLeave(object sender, EventArgs e)
+        {
+            textBox15.ForeColor = Color.Gainsboro;
+        }
+
+        private void textBox16_MouseHover(object sender, EventArgs e)
+        {
+            textBox16.ForeColor = Color.FromArgb(242, 98, 121);
+        }
+
+        private void textBox16_MouseLeave(object sender, EventArgs e)
+        {
+            textBox16.ForeColor = Color.Gainsboro;
+        }
     }
 }
