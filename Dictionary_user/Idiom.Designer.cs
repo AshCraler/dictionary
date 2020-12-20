@@ -31,12 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelResult = new System.Windows.Forms.Panel();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.iconButton12 = new FontAwesome.Sharp.IconButton();
             this.iconButton11 = new FontAwesome.Sharp.IconButton();
             this.iconButton10 = new FontAwesome.Sharp.IconButton();
@@ -45,7 +45,7 @@
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.pictureBoxBookmarkTime = new System.Windows.Forms.PictureBox();
-            this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.textboxHistory = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBoxMeaning = new System.Windows.Forms.PictureBox();
             this.pictureBoxSearched = new System.Windows.Forms.PictureBox();
             this.textBoxMeaning = new System.Windows.Forms.TextBox();
@@ -62,7 +62,7 @@
             this.pageInfo = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.textboxBookmark = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -127,12 +127,12 @@
             // panelResult
             // 
             this.panelResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.panelResult.Controls.Add(this.textBox16);
+            this.panelResult.Controls.Add(this.textBox15);
             this.panelResult.Controls.Add(this.textBox14);
             this.panelResult.Controls.Add(this.textBox13);
             this.panelResult.Controls.Add(this.textBox12);
             this.panelResult.Controls.Add(this.textBox11);
-            this.panelResult.Controls.Add(this.textBox10);
-            this.panelResult.Controls.Add(this.textBox5);
             this.panelResult.Controls.Add(this.iconButton12);
             this.panelResult.Controls.Add(this.iconButton11);
             this.panelResult.Controls.Add(this.iconButton10);
@@ -141,7 +141,7 @@
             this.panelResult.Controls.Add(this.iconButton7);
             this.panelResult.Controls.Add(this.iconButton6);
             this.panelResult.Controls.Add(this.pictureBoxBookmarkTime);
-            this.panelResult.Controls.Add(this.bunifuMaterialTextbox2);
+            this.panelResult.Controls.Add(this.textboxHistory);
             this.panelResult.Controls.Add(this.pictureBoxMeaning);
             this.panelResult.Controls.Add(this.pictureBoxSearched);
             this.panelResult.Controls.Add(this.textBoxMeaning);
@@ -154,19 +154,54 @@
             this.panelResult.Size = new System.Drawing.Size(846, 397);
             this.panelResult.TabIndex = 94;
             // 
+            // textBox16
+            // 
+            this.textBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox16.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox16.ForeColor = System.Drawing.Color.Gainsboro;
+            this.textBox16.Location = new System.Drawing.Point(436, 294);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.ReadOnly = true;
+            this.textBox16.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox16.Size = new System.Drawing.Size(302, 25);
+            this.textBox16.TabIndex = 109;
+            this.textBox16.Text = "Nói một đường làm một nẻo";
+            this.textBox16.Click += new System.EventHandler(this.textBox16_Click);
+            this.textBox16.MouseLeave += new System.EventHandler(this.textBox16_MouseLeave);
+            this.textBox16.MouseHover += new System.EventHandler(this.textBox16_MouseHover);
+            // 
+            // textBox15
+            // 
+            this.textBox15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
+            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox15.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox15.ForeColor = System.Drawing.Color.Gainsboro;
+            this.textBox15.Location = new System.Drawing.Point(436, 247);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
+            this.textBox15.Size = new System.Drawing.Size(302, 25);
+            this.textBox15.TabIndex = 108;
+            this.textBox15.Text = "Thương cho roi cho vọt";
+            this.textBox15.Click += new System.EventHandler(this.textBox15_Click);
+            this.textBox15.MouseLeave += new System.EventHandler(this.textBox15_MouseLeave);
+            this.textBox15.MouseHover += new System.EventHandler(this.textBox15_MouseHover);
+            // 
             // textBox14
             // 
             this.textBox14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox14.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox14.ForeColor = System.Drawing.Color.Gainsboro;
-            this.textBox14.Location = new System.Drawing.Point(436, 294);
+            this.textBox14.Location = new System.Drawing.Point(436, 200);
             this.textBox14.Name = "textBox14";
             this.textBox14.ReadOnly = true;
-            this.textBox14.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox14.Size = new System.Drawing.Size(302, 25);
-            this.textBox14.TabIndex = 109;
-            this.textBox14.Text = "Nói một đường làm một nẻo";
+            this.textBox14.TabIndex = 107;
+            this.textBox14.Text = "Tốt gỗ hơn tốt nước sơn";
+            this.textBox14.Click += new System.EventHandler(this.textBox14_Click);
+            this.textBox14.MouseLeave += new System.EventHandler(this.textBox14_MouseLeave);
+            this.textBox14.MouseHover += new System.EventHandler(this.textBox14_MouseHover);
             // 
             // textBox13
             // 
@@ -174,12 +209,15 @@
             this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox13.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox13.ForeColor = System.Drawing.Color.Gainsboro;
-            this.textBox13.Location = new System.Drawing.Point(436, 247);
+            this.textBox13.Location = new System.Drawing.Point(436, 153);
             this.textBox13.Name = "textBox13";
             this.textBox13.ReadOnly = true;
             this.textBox13.Size = new System.Drawing.Size(302, 25);
-            this.textBox13.TabIndex = 108;
-            this.textBox13.Text = "Thương cho roi cho vọt";
+            this.textBox13.TabIndex = 106;
+            this.textBox13.Text = "Gừng càng già càng cay";
+            this.textBox13.Click += new System.EventHandler(this.textBox13_Click);
+            this.textBox13.MouseLeave += new System.EventHandler(this.textBox13_MouseLeave);
+            this.textBox13.MouseHover += new System.EventHandler(this.textBox13_MouseHover);
             // 
             // textBox12
             // 
@@ -187,12 +225,15 @@
             this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox12.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox12.ForeColor = System.Drawing.Color.Gainsboro;
-            this.textBox12.Location = new System.Drawing.Point(436, 200);
+            this.textBox12.Location = new System.Drawing.Point(436, 107);
             this.textBox12.Name = "textBox12";
             this.textBox12.ReadOnly = true;
             this.textBox12.Size = new System.Drawing.Size(302, 25);
-            this.textBox12.TabIndex = 107;
-            this.textBox12.Text = "Tốt gỗ hơn tốt nước sơn";
+            this.textBox12.TabIndex = 105;
+            this.textBox12.Text = "Cái nết đánh chết cái đẹp";
+            this.textBox12.Click += new System.EventHandler(this.textBox12_Click);
+            this.textBox12.MouseLeave += new System.EventHandler(this.textBox12_MouseLeave);
+            this.textBox12.MouseHover += new System.EventHandler(this.textBox12_MouseHover);
             // 
             // textBox11
             // 
@@ -200,38 +241,15 @@
             this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox11.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox11.ForeColor = System.Drawing.Color.Gainsboro;
-            this.textBox11.Location = new System.Drawing.Point(436, 153);
+            this.textBox11.Location = new System.Drawing.Point(436, 60);
             this.textBox11.Name = "textBox11";
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(302, 25);
-            this.textBox11.TabIndex = 106;
-            this.textBox11.Text = "Gừng càng già càng cay";
-            // 
-            // textBox10
-            // 
-            this.textBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.ForeColor = System.Drawing.Color.Gainsboro;
-            this.textBox10.Location = new System.Drawing.Point(436, 107);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(302, 25);
-            this.textBox10.TabIndex = 105;
-            this.textBox10.Text = "Cái nết đánh chết cái đẹp";
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.textBox5.Location = new System.Drawing.Point(436, 60);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(302, 25);
-            this.textBox5.TabIndex = 104;
-            this.textBox5.Text = "Nồi nào úp vung nấy";
+            this.textBox11.TabIndex = 104;
+            this.textBox11.Text = "Nồi nào úp vung nấy";
+            this.textBox11.Click += new System.EventHandler(this.textBox11_Click);
+            this.textBox11.MouseLeave += new System.EventHandler(this.textBox11_MouseLeave);
+            this.textBox11.MouseHover += new System.EventHandler(this.textBox11_MouseHover);
             // 
             // iconButton12
             // 
@@ -356,24 +374,24 @@
             this.pictureBoxBookmarkTime.TabIndex = 96;
             this.pictureBoxBookmarkTime.TabStop = false;
             // 
-            // bunifuMaterialTextbox2
+            // textboxHistory
             // 
-            this.bunifuMaterialTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox2.HintText = "Search History";
-            this.bunifuMaterialTextbox2.isPassword = false;
-            this.bunifuMaterialTextbox2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(98)))), ((int)(((byte)(121)))));
-            this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(98)))), ((int)(((byte)(121)))));
-            this.bunifuMaterialTextbox2.LineThickness = 2;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(436, 7);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(268, 39);
-            this.bunifuMaterialTextbox2.TabIndex = 52;
-            this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textboxHistory.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textboxHistory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxHistory.ForeColor = System.Drawing.Color.Gainsboro;
+            this.textboxHistory.HintForeColor = System.Drawing.Color.Gainsboro;
+            this.textboxHistory.HintText = "Search History";
+            this.textboxHistory.isPassword = false;
+            this.textboxHistory.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(98)))), ((int)(((byte)(121)))));
+            this.textboxHistory.LineIdleColor = System.Drawing.Color.Gainsboro;
+            this.textboxHistory.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(98)))), ((int)(((byte)(121)))));
+            this.textboxHistory.LineThickness = 2;
+            this.textboxHistory.Location = new System.Drawing.Point(436, 7);
+            this.textboxHistory.Margin = new System.Windows.Forms.Padding(4);
+            this.textboxHistory.Name = "textboxHistory";
+            this.textboxHistory.Size = new System.Drawing.Size(268, 39);
+            this.textboxHistory.TabIndex = 52;
+            this.textboxHistory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // pictureBoxMeaning
             // 
@@ -480,7 +498,7 @@
             this.panelSuggestion.Controls.Add(this.pageInfo);
             this.panelSuggestion.Controls.Add(this.pictureBox3);
             this.panelSuggestion.Controls.Add(this.iconButton5);
-            this.panelSuggestion.Controls.Add(this.bunifuMaterialTextbox1);
+            this.panelSuggestion.Controls.Add(this.textboxBookmark);
             this.panelSuggestion.Controls.Add(this.textBox9);
             this.panelSuggestion.Controls.Add(this.textBox8);
             this.panelSuggestion.Controls.Add(this.textBox7);
@@ -620,24 +638,24 @@
             this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.iconButton5.UseVisualStyleBackColor = true;
             // 
-            // bunifuMaterialTextbox1
+            // textboxBookmark
             // 
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox1.HintText = "Search Bookmark";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
-            this.bunifuMaterialTextbox1.LineThickness = 2;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(436, 15);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(268, 39);
-            this.bunifuMaterialTextbox1.TabIndex = 51;
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textboxBookmark.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textboxBookmark.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxBookmark.ForeColor = System.Drawing.Color.Gainsboro;
+            this.textboxBookmark.HintForeColor = System.Drawing.Color.Gainsboro;
+            this.textboxBookmark.HintText = "Search Bookmark";
+            this.textboxBookmark.isPassword = false;
+            this.textboxBookmark.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.textboxBookmark.LineIdleColor = System.Drawing.Color.Gainsboro;
+            this.textboxBookmark.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.textboxBookmark.LineThickness = 2;
+            this.textboxBookmark.Location = new System.Drawing.Point(436, 15);
+            this.textboxBookmark.Margin = new System.Windows.Forms.Padding(4);
+            this.textboxBookmark.Name = "textboxBookmark";
+            this.textboxBookmark.Size = new System.Drawing.Size(268, 39);
+            this.textboxBookmark.TabIndex = 51;
+            this.textboxBookmark.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // textBox9
             // 
@@ -651,6 +669,9 @@
             this.textBox9.Size = new System.Drawing.Size(302, 25);
             this.textBox9.TabIndex = 50;
             this.textBox9.Text = "Thương cho roi cho vọt";
+            this.textBox9.Click += new System.EventHandler(this.textBox9_Click);
+            this.textBox9.MouseLeave += new System.EventHandler(this.textBox9_MouseLeave);
+            this.textBox9.MouseHover += new System.EventHandler(this.textBox9_MouseHover);
             // 
             // textBox8
             // 
@@ -664,6 +685,9 @@
             this.textBox8.Size = new System.Drawing.Size(302, 25);
             this.textBox8.TabIndex = 49;
             this.textBox8.Text = "Xa mặt cách lòng";
+            this.textBox8.Click += new System.EventHandler(this.textBox8_Click);
+            this.textBox8.MouseLeave += new System.EventHandler(this.textBox8_MouseLeave);
+            this.textBox8.MouseHover += new System.EventHandler(this.textBox8_MouseHover);
             // 
             // textBox7
             // 
@@ -678,6 +702,9 @@
             this.textBox7.Size = new System.Drawing.Size(302, 25);
             this.textBox7.TabIndex = 48;
             this.textBox7.Text = "Nói một đường làm một nẻo";
+            this.textBox7.Click += new System.EventHandler(this.textBox7_Click);
+            this.textBox7.MouseLeave += new System.EventHandler(this.textBox7_MouseLeave);
+            this.textBox7.MouseHover += new System.EventHandler(this.textBox7_MouseHover);
             // 
             // textBox6
             // 
@@ -691,6 +718,9 @@
             this.textBox6.Size = new System.Drawing.Size(302, 25);
             this.textBox6.TabIndex = 47;
             this.textBox6.Text = "Nồi nào úp vung nấy";
+            this.textBox6.Click += new System.EventHandler(this.textBox6_Click);
+            this.textBox6.MouseLeave += new System.EventHandler(this.textBox6_MouseLeave);
+            this.textBox6.MouseHover += new System.EventHandler(this.textBox6_MouseHover);
             // 
             // iconButton4
             // 
@@ -817,6 +847,9 @@
             this.textBox4.Size = new System.Drawing.Size(302, 25);
             this.textBox4.TabIndex = 42;
             this.textBox4.Text = "Hoạn nạn mới biết bạn hiền";
+            this.textBox4.Click += new System.EventHandler(this.textBox4_Click);
+            this.textBox4.MouseLeave += new System.EventHandler(this.textBox4_MouseLeave);
+            this.textBox4.MouseHover += new System.EventHandler(this.textBox4_MouseHover);
             // 
             // textBox3
             // 
@@ -830,6 +863,9 @@
             this.textBox3.Size = new System.Drawing.Size(302, 25);
             this.textBox3.TabIndex = 41;
             this.textBox3.Text = "Cái nết đánh chết cái đẹp";
+            this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
+            this.textBox3.MouseLeave += new System.EventHandler(this.textBox3_MouseLeave);
+            this.textBox3.MouseHover += new System.EventHandler(this.textBox3_MouseHover);
             // 
             // textBox2
             // 
@@ -843,6 +879,9 @@
             this.textBox2.Size = new System.Drawing.Size(302, 25);
             this.textBox2.TabIndex = 40;
             this.textBox2.Text = "Gừng càng già càng cay";
+            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
+            this.textBox2.MouseLeave += new System.EventHandler(this.textBox2_MouseLeave);
+            this.textBox2.MouseHover += new System.EventHandler(this.textBox2_MouseHover);
             // 
             // textBox1
             // 
@@ -858,6 +897,8 @@
             this.textBox1.Text = "Tốt gỗ hơn tốt nước sơn";
             this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseClick);
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
+            this.textBox1.MouseHover += new System.EventHandler(this.textBox1_MouseHover);
             // 
             // pictureBox2
             // 
@@ -1035,7 +1076,7 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textboxBookmark;
         private FontAwesome.Sharp.IconButton iconButton5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel2;
@@ -1047,7 +1088,7 @@
         private FontAwesome.Sharp.IconButton iconButtonExcel;
         private System.Windows.Forms.PictureBox pictureBoxSearched;
         private System.Windows.Forms.PictureBox pictureBoxMeaning;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox2;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textboxHistory;
         private FontAwesome.Sharp.IconButton iconButton6;
         private System.Windows.Forms.PictureBox pictureBoxBookmarkTime;
         private FontAwesome.Sharp.IconButton iconButton12;
@@ -1056,12 +1097,12 @@
         private FontAwesome.Sharp.IconButton iconButton9;
         private FontAwesome.Sharp.IconButton iconButton8;
         private FontAwesome.Sharp.IconButton iconButton7;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox5;
         //public System.Windows.Forms.Label labelIdiom1;
     }
 }

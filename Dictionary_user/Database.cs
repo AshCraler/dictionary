@@ -17,7 +17,7 @@ namespace Dictionary_user
         public static DataTable loadData;
         public static bool setLanguages;
         public static string textboxSearchText;
-        public static System.Windows.Forms.Label labelIdiom;
+        public static int BookandMore;
         public static void load(string command)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";

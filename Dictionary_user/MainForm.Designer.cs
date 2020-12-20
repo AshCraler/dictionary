@@ -51,23 +51,15 @@
             this.buttonSwitch = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.iconButton17 = new FontAwesome.Sharp.IconButton();
-            this.iconButton16 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSpeaker8 = new FontAwesome.Sharp.IconButton();
             this.labelWord8 = new System.Windows.Forms.Label();
-            this.iconButton15 = new FontAwesome.Sharp.IconButton();
-            this.iconButton14 = new FontAwesome.Sharp.IconButton();
-            this.iconButton13 = new FontAwesome.Sharp.IconButton();
-            this.iconButton12 = new FontAwesome.Sharp.IconButton();
-            this.iconButton11 = new FontAwesome.Sharp.IconButton();
-            this.iconButton10 = new FontAwesome.Sharp.IconButton();
-            this.Bookmark6 = new FontAwesome.Sharp.IconButton();
-            this.iconButton9 = new FontAwesome.Sharp.IconButton();
-            this.iconButton8 = new FontAwesome.Sharp.IconButton();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSpeaker1 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSpeaker2 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSpeaker7 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSpeaker6 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSpeaker5 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSpeaker4 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSpeaker3 = new FontAwesome.Sharp.IconButton();
             this.Reload = new FontAwesome.Sharp.IconButton();
             this.labelWord7 = new System.Windows.Forms.Label();
             this.labelWord6 = new System.Windows.Forms.Label();
@@ -197,7 +189,7 @@
             this.iconIdiom.Rotation = 0D;
             this.iconIdiom.Size = new System.Drawing.Size(182, 34);
             this.iconIdiom.TabIndex = 18;
-            this.iconIdiom.Text = "Idiom";
+            this.iconIdiom.Text = "Book and more";
             this.iconIdiom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconIdiom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconIdiom.UseVisualStyleBackColor = true;
@@ -351,15 +343,18 @@
             this.bunifuDropdownTranslate.BorderRadius = 3;
             this.bunifuDropdownTranslate.ForeColor = System.Drawing.Color.White;
             this.bunifuDropdownTranslate.Items = new string[] {
-        "English",
-        "Idiom"};
+        "Books",
+        "Idioms",
+        "Luminaries"};
             this.bunifuDropdownTranslate.Location = new System.Drawing.Point(648, 23);
             this.bunifuDropdownTranslate.Name = "bunifuDropdownTranslate";
             this.bunifuDropdownTranslate.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.bunifuDropdownTranslate.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.bunifuDropdownTranslate.selectedIndex = 0;
+            this.bunifuDropdownTranslate.selectedIndex = -1;
             this.bunifuDropdownTranslate.Size = new System.Drawing.Size(125, 32);
             this.bunifuDropdownTranslate.TabIndex = 17;
+            this.bunifuDropdownTranslate.Visible = false;
+            this.bunifuDropdownTranslate.onItemSelected += new System.EventHandler(this.bunifuDropdownTranslate_onItemSelected);
             // 
             // labelTitleChildForm
             // 
@@ -485,23 +480,15 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.panel5.Controls.Add(this.iconButton17);
-            this.panel5.Controls.Add(this.iconButton16);
+            this.panel5.Controls.Add(this.iconButtonSpeaker8);
             this.panel5.Controls.Add(this.labelWord8);
-            this.panel5.Controls.Add(this.iconButton15);
-            this.panel5.Controls.Add(this.iconButton14);
-            this.panel5.Controls.Add(this.iconButton13);
-            this.panel5.Controls.Add(this.iconButton12);
-            this.panel5.Controls.Add(this.iconButton11);
-            this.panel5.Controls.Add(this.iconButton10);
-            this.panel5.Controls.Add(this.Bookmark6);
-            this.panel5.Controls.Add(this.iconButton9);
-            this.panel5.Controls.Add(this.iconButton8);
-            this.panel5.Controls.Add(this.iconButton7);
-            this.panel5.Controls.Add(this.iconButton6);
-            this.panel5.Controls.Add(this.iconButton5);
-            this.panel5.Controls.Add(this.iconButton4);
-            this.panel5.Controls.Add(this.iconButton3);
+            this.panel5.Controls.Add(this.iconButtonSpeaker1);
+            this.panel5.Controls.Add(this.iconButtonSpeaker2);
+            this.panel5.Controls.Add(this.iconButtonSpeaker7);
+            this.panel5.Controls.Add(this.iconButtonSpeaker6);
+            this.panel5.Controls.Add(this.iconButtonSpeaker5);
+            this.panel5.Controls.Add(this.iconButtonSpeaker4);
+            this.panel5.Controls.Add(this.iconButtonSpeaker3);
             this.panel5.Controls.Add(this.Reload);
             this.panel5.Controls.Add(this.labelWord7);
             this.panel5.Controls.Add(this.labelWord6);
@@ -517,37 +504,22 @@
             this.panel5.Size = new System.Drawing.Size(369, 436);
             this.panel5.TabIndex = 38;
             // 
-            // iconButton17
+            // iconButtonSpeaker8
             // 
-            this.iconButton17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton17.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton17.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
-            this.iconButton17.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton17.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton17.IconSize = 32;
-            this.iconButton17.Location = new System.Drawing.Point(299, 384);
-            this.iconButton17.Name = "iconButton17";
-            this.iconButton17.Rotation = 0D;
-            this.iconButton17.Size = new System.Drawing.Size(43, 33);
-            this.iconButton17.TabIndex = 110;
-            this.iconButton17.UseVisualStyleBackColor = true;
-            // 
-            // iconButton16
-            // 
-            this.iconButton16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton16.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton16.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton16.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.iconButton16.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton16.IconSize = 35;
-            this.iconButton16.Location = new System.Drawing.Point(230, 384);
-            this.iconButton16.Name = "iconButton16";
-            this.iconButton16.Rotation = 0D;
-            this.iconButton16.Size = new System.Drawing.Size(43, 33);
-            this.iconButton16.TabIndex = 109;
-            this.iconButton16.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSpeaker8.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonSpeaker8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
+            this.iconButtonSpeaker8.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
+            this.iconButtonSpeaker8.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.iconButtonSpeaker8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSpeaker8.IconSize = 35;
+            this.iconButtonSpeaker8.Location = new System.Drawing.Point(303, 384);
+            this.iconButtonSpeaker8.Name = "iconButtonSpeaker8";
+            this.iconButtonSpeaker8.Rotation = 0D;
+            this.iconButtonSpeaker8.Size = new System.Drawing.Size(43, 33);
+            this.iconButtonSpeaker8.TabIndex = 109;
+            this.iconButtonSpeaker8.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker8.Click += new System.EventHandler(this.iconButtonSpeaker8_Click);
             // 
             // labelWord8
             // 
@@ -564,229 +536,124 @@
             this.labelWord8.MouseLeave += new System.EventHandler(this.labelWord8_MouseLeave);
             this.labelWord8.MouseHover += new System.EventHandler(this.labelWord8_MouseHover);
             // 
-            // iconButton15
+            // iconButtonSpeaker1
             // 
-            this.iconButton15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton15.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton15.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
-            this.iconButton15.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton15.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton15.IconSize = 32;
-            this.iconButton15.Location = new System.Drawing.Point(300, 339);
-            this.iconButton15.Name = "iconButton15";
-            this.iconButton15.Rotation = 0D;
-            this.iconButton15.Size = new System.Drawing.Size(43, 33);
-            this.iconButton15.TabIndex = 107;
-            this.iconButton15.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSpeaker1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonSpeaker1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
+            this.iconButtonSpeaker1.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
+            this.iconButtonSpeaker1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.iconButtonSpeaker1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSpeaker1.IconSize = 35;
+            this.iconButtonSpeaker1.Location = new System.Drawing.Point(302, 69);
+            this.iconButtonSpeaker1.Name = "iconButtonSpeaker1";
+            this.iconButtonSpeaker1.Rotation = 0D;
+            this.iconButtonSpeaker1.Size = new System.Drawing.Size(43, 33);
+            this.iconButtonSpeaker1.TabIndex = 100;
+            this.iconButtonSpeaker1.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker1.Click += new System.EventHandler(this.iconButtonSpeaker1_Click);
             // 
-            // iconButton14
+            // iconButtonSpeaker2
             // 
-            this.iconButton14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton14.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton14.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
-            this.iconButton14.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton14.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton14.IconSize = 32;
-            this.iconButton14.Location = new System.Drawing.Point(300, 294);
-            this.iconButton14.Name = "iconButton14";
-            this.iconButton14.Rotation = 0D;
-            this.iconButton14.Size = new System.Drawing.Size(43, 33);
-            this.iconButton14.TabIndex = 106;
-            this.iconButton14.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSpeaker2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonSpeaker2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
+            this.iconButtonSpeaker2.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
+            this.iconButtonSpeaker2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.iconButtonSpeaker2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSpeaker2.IconSize = 35;
+            this.iconButtonSpeaker2.Location = new System.Drawing.Point(303, 114);
+            this.iconButtonSpeaker2.Name = "iconButtonSpeaker2";
+            this.iconButtonSpeaker2.Rotation = 0D;
+            this.iconButtonSpeaker2.Size = new System.Drawing.Size(43, 33);
+            this.iconButtonSpeaker2.TabIndex = 99;
+            this.iconButtonSpeaker2.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker2.Click += new System.EventHandler(this.iconButtonSpeaker2_Click);
             // 
-            // iconButton13
+            // iconButtonSpeaker7
             // 
-            this.iconButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton13.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton13.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
-            this.iconButton13.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton13.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton13.IconSize = 32;
-            this.iconButton13.Location = new System.Drawing.Point(300, 249);
-            this.iconButton13.Name = "iconButton13";
-            this.iconButton13.Rotation = 0D;
-            this.iconButton13.Size = new System.Drawing.Size(43, 33);
-            this.iconButton13.TabIndex = 105;
-            this.iconButton13.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSpeaker7.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonSpeaker7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
+            this.iconButtonSpeaker7.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
+            this.iconButtonSpeaker7.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.iconButtonSpeaker7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSpeaker7.IconSize = 35;
+            this.iconButtonSpeaker7.Location = new System.Drawing.Point(303, 339);
+            this.iconButtonSpeaker7.Name = "iconButtonSpeaker7";
+            this.iconButtonSpeaker7.Rotation = 0D;
+            this.iconButtonSpeaker7.Size = new System.Drawing.Size(43, 33);
+            this.iconButtonSpeaker7.TabIndex = 98;
+            this.iconButtonSpeaker7.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker7.Click += new System.EventHandler(this.iconButtonSpeaker7_Click);
             // 
-            // iconButton12
+            // iconButtonSpeaker6
             // 
-            this.iconButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton12.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton12.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
-            this.iconButton12.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton12.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton12.IconSize = 32;
-            this.iconButton12.Location = new System.Drawing.Point(300, 204);
-            this.iconButton12.Name = "iconButton12";
-            this.iconButton12.Rotation = 0D;
-            this.iconButton12.Size = new System.Drawing.Size(43, 33);
-            this.iconButton12.TabIndex = 104;
-            this.iconButton12.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSpeaker6.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonSpeaker6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
+            this.iconButtonSpeaker6.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
+            this.iconButtonSpeaker6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.iconButtonSpeaker6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSpeaker6.IconSize = 35;
+            this.iconButtonSpeaker6.Location = new System.Drawing.Point(303, 294);
+            this.iconButtonSpeaker6.Name = "iconButtonSpeaker6";
+            this.iconButtonSpeaker6.Rotation = 0D;
+            this.iconButtonSpeaker6.Size = new System.Drawing.Size(43, 33);
+            this.iconButtonSpeaker6.TabIndex = 97;
+            this.iconButtonSpeaker6.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker6.Click += new System.EventHandler(this.iconButtonSpeaker6_Click);
             // 
-            // iconButton11
+            // iconButtonSpeaker5
             // 
-            this.iconButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton11.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton11.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
-            this.iconButton11.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton11.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton11.IconSize = 32;
-            this.iconButton11.Location = new System.Drawing.Point(300, 159);
-            this.iconButton11.Name = "iconButton11";
-            this.iconButton11.Rotation = 0D;
-            this.iconButton11.Size = new System.Drawing.Size(43, 33);
-            this.iconButton11.TabIndex = 103;
-            this.iconButton11.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSpeaker5.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonSpeaker5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
+            this.iconButtonSpeaker5.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
+            this.iconButtonSpeaker5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.iconButtonSpeaker5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSpeaker5.IconSize = 35;
+            this.iconButtonSpeaker5.Location = new System.Drawing.Point(303, 249);
+            this.iconButtonSpeaker5.Name = "iconButtonSpeaker5";
+            this.iconButtonSpeaker5.Rotation = 0D;
+            this.iconButtonSpeaker5.Size = new System.Drawing.Size(43, 33);
+            this.iconButtonSpeaker5.TabIndex = 96;
+            this.iconButtonSpeaker5.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker5.Click += new System.EventHandler(this.iconButtonSpeaker5_Click);
             // 
-            // iconButton10
+            // iconButtonSpeaker4
             // 
-            this.iconButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton10.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton10.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
-            this.iconButton10.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton10.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton10.IconSize = 32;
-            this.iconButton10.Location = new System.Drawing.Point(300, 114);
-            this.iconButton10.Name = "iconButton10";
-            this.iconButton10.Rotation = 0D;
-            this.iconButton10.Size = new System.Drawing.Size(43, 33);
-            this.iconButton10.TabIndex = 102;
-            this.iconButton10.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSpeaker4.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonSpeaker4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
+            this.iconButtonSpeaker4.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
+            this.iconButtonSpeaker4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.iconButtonSpeaker4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSpeaker4.IconSize = 35;
+            this.iconButtonSpeaker4.Location = new System.Drawing.Point(302, 204);
+            this.iconButtonSpeaker4.Name = "iconButtonSpeaker4";
+            this.iconButtonSpeaker4.Rotation = 0D;
+            this.iconButtonSpeaker4.Size = new System.Drawing.Size(43, 33);
+            this.iconButtonSpeaker4.TabIndex = 95;
+            this.iconButtonSpeaker4.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker4.Click += new System.EventHandler(this.iconButtonSpeaker4_Click);
             // 
-            // Bookmark6
+            // iconButtonSpeaker3
             // 
-            this.Bookmark6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bookmark6.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.Bookmark6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.Bookmark6.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
-            this.Bookmark6.IconColor = System.Drawing.Color.Gainsboro;
-            this.Bookmark6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Bookmark6.IconSize = 32;
-            this.Bookmark6.Location = new System.Drawing.Point(300, 69);
-            this.Bookmark6.Name = "Bookmark6";
-            this.Bookmark6.Rotation = 0D;
-            this.Bookmark6.Size = new System.Drawing.Size(43, 33);
-            this.Bookmark6.TabIndex = 101;
-            this.Bookmark6.UseVisualStyleBackColor = true;
-            // 
-            // iconButton9
-            // 
-            this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton9.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton9.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton9.IconSize = 35;
-            this.iconButton9.Location = new System.Drawing.Point(230, 69);
-            this.iconButton9.Name = "iconButton9";
-            this.iconButton9.Rotation = 0D;
-            this.iconButton9.Size = new System.Drawing.Size(43, 33);
-            this.iconButton9.TabIndex = 100;
-            this.iconButton9.UseVisualStyleBackColor = true;
-            // 
-            // iconButton8
-            // 
-            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton8.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton8.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton8.IconSize = 35;
-            this.iconButton8.Location = new System.Drawing.Point(230, 114);
-            this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Rotation = 0D;
-            this.iconButton8.Size = new System.Drawing.Size(43, 33);
-            this.iconButton8.TabIndex = 99;
-            this.iconButton8.UseVisualStyleBackColor = true;
-            // 
-            // iconButton7
-            // 
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton7.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 35;
-            this.iconButton7.Location = new System.Drawing.Point(230, 339);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Rotation = 0D;
-            this.iconButton7.Size = new System.Drawing.Size(43, 33);
-            this.iconButton7.TabIndex = 98;
-            this.iconButton7.UseVisualStyleBackColor = true;
-            // 
-            // iconButton6
-            // 
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 35;
-            this.iconButton6.Location = new System.Drawing.Point(230, 294);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Rotation = 0D;
-            this.iconButton6.Size = new System.Drawing.Size(43, 33);
-            this.iconButton6.TabIndex = 97;
-            this.iconButton6.UseVisualStyleBackColor = true;
-            // 
-            // iconButton5
-            // 
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 35;
-            this.iconButton5.Location = new System.Drawing.Point(230, 249);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Rotation = 0D;
-            this.iconButton5.Size = new System.Drawing.Size(43, 33);
-            this.iconButton5.TabIndex = 96;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 35;
-            this.iconButton4.Location = new System.Drawing.Point(230, 204);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Rotation = 0D;
-            this.iconButton4.Size = new System.Drawing.Size(43, 33);
-            this.iconButton4.TabIndex = 95;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
-            this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 35;
-            this.iconButton3.Location = new System.Drawing.Point(230, 159);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Rotation = 0D;
-            this.iconButton3.Size = new System.Drawing.Size(43, 33);
-            this.iconButton3.TabIndex = 94;
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSpeaker3.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonSpeaker3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(79)))));
+            this.iconButtonSpeaker3.IconChar = FontAwesome.Sharp.IconChar.VolumeUp;
+            this.iconButtonSpeaker3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.iconButtonSpeaker3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSpeaker3.IconSize = 35;
+            this.iconButtonSpeaker3.Location = new System.Drawing.Point(302, 159);
+            this.iconButtonSpeaker3.Name = "iconButtonSpeaker3";
+            this.iconButtonSpeaker3.Rotation = 0D;
+            this.iconButtonSpeaker3.Size = new System.Drawing.Size(43, 33);
+            this.iconButtonSpeaker3.TabIndex = 94;
+            this.iconButtonSpeaker3.UseVisualStyleBackColor = true;
+            this.iconButtonSpeaker3.Click += new System.EventHandler(this.iconButtonSpeaker3_Click);
             // 
             // Reload
             // 
@@ -797,7 +664,7 @@
             this.Reload.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.Reload.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Reload.IconSize = 30;
-            this.Reload.Location = new System.Drawing.Point(303, 29);
+            this.Reload.Location = new System.Drawing.Point(306, 29);
             this.Reload.Name = "Reload";
             this.Reload.Rotation = 0D;
             this.Reload.Size = new System.Drawing.Size(35, 33);
@@ -1470,23 +1337,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label labelWord7;
-        private FontAwesome.Sharp.IconButton iconButton9;
-        private FontAwesome.Sharp.IconButton iconButton8;
-        private FontAwesome.Sharp.IconButton iconButton7;
-        private FontAwesome.Sharp.IconButton iconButton6;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton iconButtonSpeaker1;
+        private FontAwesome.Sharp.IconButton iconButtonSpeaker2;
+        private FontAwesome.Sharp.IconButton iconButtonSpeaker7;
+        private FontAwesome.Sharp.IconButton iconButtonSpeaker6;
+        private FontAwesome.Sharp.IconButton iconButtonSpeaker5;
+        private FontAwesome.Sharp.IconButton iconButtonSpeaker4;
+        private FontAwesome.Sharp.IconButton iconButtonSpeaker3;
         private FontAwesome.Sharp.IconButton Reload;
-        private FontAwesome.Sharp.IconButton iconButton15;
-        private FontAwesome.Sharp.IconButton iconButton14;
-        private FontAwesome.Sharp.IconButton iconButton13;
-        private FontAwesome.Sharp.IconButton iconButton12;
-        private FontAwesome.Sharp.IconButton iconButton11;
-        private FontAwesome.Sharp.IconButton iconButton10;
-        private FontAwesome.Sharp.IconButton Bookmark6;
-        private FontAwesome.Sharp.IconButton iconButton17;
-        private FontAwesome.Sharp.IconButton iconButton16;
+        private FontAwesome.Sharp.IconButton iconButtonSpeaker8;
         private System.Windows.Forms.Label labelWord8;
         private System.Windows.Forms.Label labelWord6;
         private System.Windows.Forms.Label labelWord5;

@@ -16,5 +16,20 @@ namespace Dictionary_user
         {
             InitializeComponent();
         }
+
+        private void labeLink_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/AshCraler/dictionary");
+        }
+
+        private void labeLink_MouseHover(object sender, EventArgs e)
+        {
+            labeLink.ForeColor = Color.FromArgb(24, 161, 251);
+        }
+
+        private void labeLink_MouseLeave(object sender, EventArgs e)
+        {
+            labeLink.ForeColor = Color.Gainsboro;
+        }
     }
 }
