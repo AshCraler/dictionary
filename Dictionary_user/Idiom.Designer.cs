@@ -380,7 +380,7 @@
             this.textboxHistory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxHistory.ForeColor = System.Drawing.Color.Gainsboro;
             this.textboxHistory.HintForeColor = System.Drawing.Color.Gainsboro;
-            this.textboxHistory.HintText = "Search History";
+            this.textboxHistory.HintText = "Search history";
             this.textboxHistory.isPassword = false;
             this.textboxHistory.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(98)))), ((int)(((byte)(121)))));
             this.textboxHistory.LineIdleColor = System.Drawing.Color.Gainsboro;
@@ -644,7 +644,7 @@
             this.textboxBookmark.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxBookmark.ForeColor = System.Drawing.Color.Gainsboro;
             this.textboxBookmark.HintForeColor = System.Drawing.Color.Gainsboro;
-            this.textboxBookmark.HintText = "Search Bookmark";
+            this.textboxBookmark.HintText = "Search bookmark";
             this.textboxBookmark.isPassword = false;
             this.textboxBookmark.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.textboxBookmark.LineIdleColor = System.Drawing.Color.Gainsboro;
@@ -805,9 +805,9 @@
             this.labelLanguage.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelLanguage.Location = new System.Drawing.Point(43, 240);
             this.labelLanguage.Name = "labelLanguage";
-            this.labelLanguage.Size = new System.Drawing.Size(175, 22);
+            this.labelLanguage.Size = new System.Drawing.Size(125, 22);
             this.labelLanguage.TabIndex = 18;
-            this.labelLanguage.Text = "Vietnamese Idiom";
+            this.labelLanguage.Text = "Vietnamese ";
             // 
             // iconButton1
             // 
@@ -945,7 +945,7 @@
             this.textboxSearch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxSearch.ForeColor = System.Drawing.Color.Gainsboro;
             this.textboxSearch.HintForeColor = System.Drawing.Color.Gainsboro;
-            this.textboxSearch.HintText = "Search Idiom";
+            this.textboxSearch.HintText = "Search book";
             this.textboxSearch.isPassword = false;
             this.textboxSearch.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.textboxSearch.LineIdleColor = System.Drawing.Color.Gainsboro;

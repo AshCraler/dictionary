@@ -13,15 +13,31 @@ namespace Dictionary_user
 {
     public partial class Idiom : Form
     {
-        
+
         private bool ktSwitch = false;
-        
+        private string mode = "Book";
         public Idiom()
         {
             InitializeComponent();
-          
+            if (Database.BookandMore == 0)
+            {
+                mode = "book";
+            }
+            if (Database.BookandMore == 1)
+            {
+                mode = "idiom";
+            }
+            if (Database.BookandMore == 2)
+            {
+                mode = "luminary";
+                labelLanguage.Text = "Vietnam ";
+            }
+            textboxSearch.HintText = "Search " + mode;
+            textboxSearch.Text = "";
+            textBoxResult.Text = "Searched " + mode;
+            labelLanguage.Text = labelLanguage.Text.ToString() + mode;
         }
-       
+
         private void buttonSwitch_Click(object sender, EventArgs e)
         {
             if (ktSwitch == true)
@@ -29,14 +45,18 @@ namespace Dictionary_user
                 ktSwitch = false;
                 pictureBoxFlagLeft.Image = Properties.Resources.vietnam;
                 pictureBoxFlagRight.Image = Properties.Resources.united_kingdom;
-                labelLanguage.Text = "Vietnamese Idiom";
+                labelLanguage.Text = "Vietnamese "+mode;
+                if (Database.BookandMore == 2)
+                    labelLanguage.Text = "Vietnam luminary";
             }
             else
             {
                 ktSwitch = true;
                 pictureBoxFlagLeft.Image = Properties.Resources.united_kingdom;
                 pictureBoxFlagRight.Image = Properties.Resources.vietnam;
-                labelLanguage.Text = "English Idiom";
+                labelLanguage.Text = "English "+mode;
+                if (Database.BookandMore == 2)
+                    labelLanguage.Text = "World luminary";
             }
         }
         private void panelSuggestion_Paint(object sender, PaintEventArgs e)
