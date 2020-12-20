@@ -354,6 +354,7 @@
             this.bunifuDropdownTranslate.Size = new System.Drawing.Size(125, 32);
             this.bunifuDropdownTranslate.TabIndex = 17;
             this.bunifuDropdownTranslate.Visible = false;
+            this.bunifuDropdownTranslate.onItemSelected += new System.EventHandler(this.bunifuDropdownTranslate_onItemSelected);
             // 
             // labelTitleChildForm
             // 

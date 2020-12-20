@@ -1196,6 +1196,26 @@ namespace Dictionary_user
             // Speak a string.  
             synth.Speak(labelWord8.Text);
         }
+
+        private void bunifuDropdownTranslate_onItemSelected(object sender, EventArgs e)
+        {
+            if (bunifuDropdownTranslate.selectedIndex == 0)
+            {
+                Database.BookandMore = 0;
+                openChildForm(new Idiom());
+            }
+            if (bunifuDropdownTranslate.selectedIndex==1)
+            {
+                Database.BookandMore = 1;
+                openChildForm(new Idiom());
+            }
+            if (bunifuDropdownTranslate.selectedIndex == 2)
+            {
+                Database.BookandMore = 2;
+                openChildForm(new Idiom());
+            }
+        }
     }
 }
 
+    

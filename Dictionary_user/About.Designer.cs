@@ -34,12 +34,14 @@
             this.labelHistory = new System.Windows.Forms.Label();
             this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
             this.iconButtonBookmark = new FontAwesome.Sharp.IconButton();
+            this.labelResult = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panel1.Controls.Add(this.labelResult);
             this.panel1.Controls.Add(this.labeLink);
             this.panel1.Controls.Add(this.labelBookmark);
             this.panel1.Controls.Add(this.labelHistory);
@@ -56,7 +58,7 @@
             this.labeLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labeLink.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeLink.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labeLink.Location = new System.Drawing.Point(46, 198);
+            this.labeLink.Location = new System.Drawing.Point(214, 206);
             this.labeLink.Name = "labeLink";
             this.labeLink.Size = new System.Drawing.Size(380, 22);
             this.labeLink.TabIndex = 93;
@@ -121,6 +123,18 @@
             this.iconButtonBookmark.TabIndex = 89;
             this.iconButtonBookmark.UseVisualStyleBackColor = true;
             // 
+            // labelResult
+            // 
+            this.labelResult.AutoSize = true;
+            this.labelResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelResult.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(138)))), ((int)(((byte)(114)))));
+            this.labelResult.Location = new System.Drawing.Point(35, 204);
+            this.labelResult.Name = "labelResult";
+            this.labelResult.Size = new System.Drawing.Size(173, 24);
+            this.labelResult.TabIndex = 94;
+            this.labelResult.Text = "Our information:";
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,5 +157,6 @@
         private FontAwesome.Sharp.IconButton iconButtonHistory;
         private FontAwesome.Sharp.IconButton iconButtonBookmark;
         private System.Windows.Forms.Label labeLink;
+        private System.Windows.Forms.Label labelResult;
     }
 }
