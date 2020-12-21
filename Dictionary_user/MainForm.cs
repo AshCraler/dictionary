@@ -503,7 +503,7 @@ namespace Dictionary_user
         {
             if (textboxSearch.Text == "")
             {
-                MessageBox.Show("Please insert the word that needs to be translated!");
+                MessageBox.Show("Please insert the word that needs to be translated !");
             }
             else
             {
