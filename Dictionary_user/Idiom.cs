@@ -13,15 +13,50 @@ namespace Dictionary_user
 {
     public partial class Idiom : Form
     {
-        
+
         private bool ktSwitch = false;
-        
+        private string mode = "Book";
+        private string command;
+        private struct RGBColors // Struct các mã màu 
+        {
+            public static Color color1 = Color.FromArgb(172, 126, 241);
+            public static Color color2 = Color.FromArgb(238, 26, 74);
+            public static Color color3 = Color.FromArgb(253, 138, 114);
+            public static Color color4 = Color.FromArgb(95, 77, 221);
+            public static Color color5 = Color.FromArgb(65, 179, 247);
+            public static Color color6 = Color.FromArgb(24, 161, 251);
+            public static Color color7 = Color.FromArgb(255, 244, 79);
+        }
+
         public Idiom()
         {
             InitializeComponent();
-          
+            if (Database.BookandMore == 0)
+            {
+                mode = "book";
+            }
+            if (Database.BookandMore == 1)
+            {
+                mode = "idiom";
+            }
+            if (Database.BookandMore == 2)
+            {
+                mode = "luminary";
+                labelLanguage.Text = "Vietnam ";
+            }
+            textboxSearch.HintText = "Search " + mode;
+            textboxSearch.Text = "";
+            textBoxResult.Text = "Searched " + mode;
+            labelLanguage.Text = labelLanguage.Text.ToString() + mode;
         }
-       
+        
+        private void resetSuggestionColor()
+        {
+            textBox1.ForeColor = Color.Gainsboro;
+            textBox2.ForeColor = Color.Gainsboro;
+            textBox3.ForeColor = Color.Gainsboro;
+            textBox4.ForeColor = Color.Gainsboro;
+        }
         private void buttonSwitch_Click(object sender, EventArgs e)
         {
             if (ktSwitch == true)
@@ -29,14 +64,18 @@ namespace Dictionary_user
                 ktSwitch = false;
                 pictureBoxFlagLeft.Image = Properties.Resources.vietnam;
                 pictureBoxFlagRight.Image = Properties.Resources.united_kingdom;
-                labelLanguage.Text = "Vietnamese Idiom";
+                labelLanguage.Text = "Vietnamese "+mode;
+                if (Database.BookandMore == 2)
+                    labelLanguage.Text = "Vietnam luminary";
             }
             else
             {
                 ktSwitch = true;
                 pictureBoxFlagLeft.Image = Properties.Resources.united_kingdom;
                 pictureBoxFlagRight.Image = Properties.Resources.vietnam;
-                labelLanguage.Text = "English Idiom";
+                labelLanguage.Text = "English "+mode;
+                if (Database.BookandMore == 2)
+                    labelLanguage.Text = "World luminary";
             }
         }
         private void panelSuggestion_Paint(object sender, PaintEventArgs e)
@@ -45,13 +84,31 @@ namespace Dictionary_user
         }
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            iconBookmark.Visible = true;
-            textBoxResult.Visible = true;
-            textBoxMeaning.Visible = true;
-            pictureBoxSearched.Visible = true;
-            pictureBoxMeaning.Visible = true;
+            if (textboxSearch.Text == "")
+            {
+                MessageBox.Show("Please insert the "+mode+ " that needs to be searched !");
+            }
+            else
+            {
+                iconBookmark.Visible = true;
+                textBoxResult.Visible = true;
+                textBoxMeaning.Visible = true;
+                pictureBoxSearched.Visible = true;
+                pictureBoxMeaning.Visible = true;
+                command = "SELECT * from viebook where book= " + "'" + textboxSearch.Text.ToString() + "'";
+                Database.load(command);
+                if (Database.loadData.Rows.Count > 0)
+                {
+                    textBoxResult.Text = Database.loadData.Rows[0]["book"].ToString();
+                    textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
+                }
+                else
+                {
+                    textBoxResult.Text = textboxSearch.Text;
+                    textBoxMeaning.Text = "Not Found";
+                }
+            }
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -64,9 +121,48 @@ namespace Dictionary_user
 
         private void textboxSearch_OnValueChanged(object sender, EventArgs e)
         {
-
+            resetSuggestionColor();
+            if (textboxSearch.Text != string.Empty)
+            {
+                textboxSearch.LineIdleColor = RGBColors.color1;
+            }
+            if (textboxSearch.Text == string.Empty)
+            {
+                textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
+            }
+            command = "Use sql_invoicing; SELECT " + mode + " from viebook where " + mode + " like " + "'" + textboxSearch.Text + "%'";
+            Database.load(command);
+            int num = Database.loadData.Rows.Count;
+            if (num > 0)
+                textBox1.Text = Database.loadData.Rows[0][mode].ToString();
+            else
+            {
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox4.Text = "";
+                textBox3.Text = "";
+            }
+            if (num > 1)
+                textBox2.Text = Database.loadData.Rows[1][mode].ToString();
+            else
+            {
+                textBox2.Text = "";
+                textBox4.Text = "";
+                textBox3.Text = "";
+            }
+            if (num > 2)
+                textBox4.Text = Database.loadData.Rows[2][mode].ToString();
+            else
+            {
+                textBox4.Text = "";
+                textBox3.Text = "";
+            }
+            if (num > 3)
+                textBox3.Text = Database.loadData.Rows[3][mode].ToString();
+            else
+                textBox3.Text = "";
         }
-
+   
         private void textBoxResult_TextChanged(object sender, EventArgs e)
         {
 
@@ -275,6 +371,21 @@ namespace Dictionary_user
         private void textBox16_MouseLeave(object sender, EventArgs e)
         {
             textBox16.ForeColor = Color.Gainsboro;
+        }
+
+        private void textBoxMeaning_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(textBoxMeaning.Text.ToString());
+        }
+
+        private void textBoxMeaning_MouseHover(object sender, EventArgs e)
+        {
+            textBoxMeaning.ForeColor = Color.FromArgb(24, 161, 251);
+        }
+
+        private void textBoxMeaning_MouseLeave(object sender, EventArgs e)
+        {
+            textBoxMeaning.ForeColor = Color.Gainsboro;
         }
     }
 }

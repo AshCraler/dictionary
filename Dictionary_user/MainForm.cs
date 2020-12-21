@@ -33,8 +33,8 @@ namespace Dictionary_user
         private string hint = "English";
         private string command = "";
         private int id = 0;
-        public string date = DateTime.Now.ToString("yyyy.MM.dd");
-        public string time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
+        private string date = DateTime.Now.ToString("yyyy.MM.dd");
+        private string time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -503,7 +503,7 @@ namespace Dictionary_user
         {
             if (textboxSearch.Text == "")
             {
-                MessageBox.Show("Please insert the word that needs to be translated!");
+                MessageBox.Show("Please insert the word that needs to be translated !");
             }
             else
             {

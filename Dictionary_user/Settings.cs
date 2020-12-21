@@ -12,9 +12,11 @@ namespace Dictionary_user
 {
     public partial class Settings : Form
     {
+        private string time=DateTime.Now.ToString("yyyy'-'MM'-'dd  hh':'mm':'ss.ff");
         public Settings()
         {
             InitializeComponent();
+            labelTime.Text = time;
         }
 
         private void iconButtonHistory_Click(object sender, EventArgs e)
@@ -57,6 +59,8 @@ namespace Dictionary_user
             {
                 Console.WriteLine("\t" + line);
             }
+            time = DateTime.Now.ToString("yyyy'-'MM'-'dd  hh':'mm':'ss.ff");
+            labelTime.Text = time;
         }
     }
 }
