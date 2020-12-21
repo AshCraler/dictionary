@@ -61,7 +61,7 @@
             this.Preview = new FontAwesome.Sharp.IconButton();
             this.pageInfo = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSearchBookmark = new FontAwesome.Sharp.IconButton();
             this.textboxBookmark = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -467,6 +467,7 @@
             this.iconBookmark.TabIndex = 36;
             this.iconBookmark.UseVisualStyleBackColor = true;
             this.iconBookmark.Visible = false;
+            this.iconBookmark.Click += new System.EventHandler(this.iconBookmark_Click);
             // 
             // pictureBoxResult
             // 
@@ -500,7 +501,7 @@
             this.panelSuggestion.Controls.Add(this.Preview);
             this.panelSuggestion.Controls.Add(this.pageInfo);
             this.panelSuggestion.Controls.Add(this.pictureBox3);
-            this.panelSuggestion.Controls.Add(this.iconButton5);
+            this.panelSuggestion.Controls.Add(this.iconButtonSearchBookmark);
             this.panelSuggestion.Controls.Add(this.textboxBookmark);
             this.panelSuggestion.Controls.Add(this.textBox9);
             this.panelSuggestion.Controls.Add(this.textBox8);
@@ -624,22 +625,23 @@
             this.pictureBox3.TabIndex = 40;
             this.pictureBox3.TabStop = false;
             // 
-            // iconButton5
+            // iconButtonSearchBookmark
             // 
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.iconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 30;
-            this.iconButton5.Location = new System.Drawing.Point(711, 20);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Rotation = 0D;
-            this.iconButton5.Size = new System.Drawing.Size(39, 38);
-            this.iconButton5.TabIndex = 52;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButton5.UseVisualStyleBackColor = true;
+            this.iconButtonSearchBookmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSearchBookmark.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonSearchBookmark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
+            this.iconButtonSearchBookmark.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconButtonSearchBookmark.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButtonSearchBookmark.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSearchBookmark.IconSize = 30;
+            this.iconButtonSearchBookmark.Location = new System.Drawing.Point(711, 20);
+            this.iconButtonSearchBookmark.Name = "iconButtonSearchBookmark";
+            this.iconButtonSearchBookmark.Rotation = 0D;
+            this.iconButtonSearchBookmark.Size = new System.Drawing.Size(39, 38);
+            this.iconButtonSearchBookmark.TabIndex = 52;
+            this.iconButtonSearchBookmark.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.iconButtonSearchBookmark.UseVisualStyleBackColor = true;
+            this.iconButtonSearchBookmark.Click += new System.EventHandler(this.iconButtonSearchBookmark_Click);
             // 
             // textboxBookmark
             // 
@@ -659,6 +661,7 @@
             this.textboxBookmark.Size = new System.Drawing.Size(268, 39);
             this.textboxBookmark.TabIndex = 51;
             this.textboxBookmark.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textboxBookmark.OnValueChanged += new System.EventHandler(this.textboxBookmark_OnValueChanged);
             // 
             // textBox9
             // 
@@ -740,6 +743,7 @@
             this.iconButton4.Size = new System.Drawing.Size(43, 41);
             this.iconButton4.TabIndex = 40;
             this.iconButton4.UseVisualStyleBackColor = true;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // buttonSwitch
             // 
@@ -783,6 +787,7 @@
             this.iconButton3.Size = new System.Drawing.Size(43, 41);
             this.iconButton3.TabIndex = 45;
             this.iconButton3.UseVisualStyleBackColor = true;
+            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // iconButton2
             // 
@@ -799,6 +804,7 @@
             this.iconButton2.Size = new System.Drawing.Size(43, 41);
             this.iconButton2.TabIndex = 40;
             this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // labelLanguage
             // 
@@ -827,6 +833,7 @@
             this.iconButton1.Size = new System.Drawing.Size(43, 41);
             this.iconButton1.TabIndex = 44;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // pictureBoxFlagLeft
             // 
@@ -1080,7 +1087,7 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textboxBookmark;
-        private FontAwesome.Sharp.IconButton iconButton5;
+        private FontAwesome.Sharp.IconButton iconButtonSearchBookmark;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label pageInfo;

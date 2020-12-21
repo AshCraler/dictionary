@@ -160,6 +160,30 @@ namespace Dictionary_user
                     connection.Close();
             }
         }
-    
+        public static void insertBookBookmark(string book, string link, string savedtime)
+        {
+            string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
+
+            MySqlConnection connection = null;
+            try
+            {
+                connection = new MySqlConnection(connectionString);
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = "INSERT INTO bookbookmark(id,book,link,savedtime) VALUES(@id,@book,@link,@savedtime);";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@id", 0);
+                cmd.Parameters.AddWithValue("@book", book);
+                cmd.Parameters.AddWithValue("@link", link);
+                cmd.Parameters.AddWithValue("@savedtime", savedtime);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
+        }
     }
 }
