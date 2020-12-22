@@ -216,7 +216,7 @@ namespace Dictionary_user
             if (ktSwitch == false)
                 ktSwitch = true;
             else ktSwitch = false;
-            setVisibleResult(false);
+            setSearchResult_visible(false);
             loadRecentlyBookmark();
             activateSwitchButton();
             loadVolcabulary();
@@ -829,23 +829,23 @@ namespace Dictionary_user
         }
         #endregion
 
-        //Cleaning code, create new Regions
+        //Cleaning code, create new regions
 
         #region Search
         
-        private void displaySearch() // Hiển thị chức năng tìm kiếm
+        private void displaySearchbar() // Hiển thị chức năng tìm kiếm
         {
             textboxSearch.Visible = true;
             buttonSearch.Visible = true;
         }
         
-        private void hideSearch() // Ẩn chức năng tìm kiếm
+        private void hideSearchbar() // Ẩn chức năng tìm kiếm
         {
             textboxSearch.Visible = false;
             buttonSearch.Visible = false;
         }
        
-        private void setVisibleResult(bool set)
+        private void setSearchResult_visible(bool set)
         {
             typedWord.Visible = set;
             bookmarkButton.Visible = set;
@@ -854,7 +854,7 @@ namespace Dictionary_user
             btnPlay2.Visible = set;
         }
         
-        private void loadResult()
+        private void loadSearchResult()
         {
             if (textboxSearch.HintText == "Search English")
             {
@@ -890,8 +890,8 @@ namespace Dictionary_user
             if (Database.nowForm == 1)
             {
                 Database.acction = "Translate";
-                setVisibleResult(true);
-                loadResult();
+                setSearchResult_visible(true);
+                loadSearchResult();
                 reloadRecentHistory();
                 loadBookmark();
                 updateBookmarkHistory();
@@ -1112,7 +1112,7 @@ namespace Dictionary_user
                     displaySwitch();
                     ktSwitch = Database.setLanguages;
                     activateSwitchButton();
-                    displaySearch();
+                    displaySearchbar();
                     textboxSearch.LineFocusedColor = RGBColors.color1;
                     textboxSearch.LineMouseHoverColor = RGBColors.color1;
                     buttonSearch.IconColor = RGBColors.color1;
@@ -1166,7 +1166,7 @@ namespace Dictionary_user
             activateMenuButton(sender, RGBColors.color1);
             displaySwitch();
             activateSwitchButton();
-            displaySearch();
+            displaySearchbar();
             textboxSearch.LineFocusedColor = RGBColors.color1;
             textboxSearch.LineMouseHoverColor = RGBColors.color1;
             buttonSearch.IconColor = RGBColors.color1;
@@ -1178,7 +1178,7 @@ namespace Dictionary_user
         private void btnHistory_Click(object sender, EventArgs e) // Khi click vào historyButton
         {
             hideSwitch();
-            displaySearch();
+            displaySearchbar();
             textboxSearch.HintText = "Search history";
             textboxSearch.Text = textboxSearch.HintText;
             textboxSearch.LineFocusedColor = RGBColors.color3;
@@ -1194,7 +1194,7 @@ namespace Dictionary_user
         private void btn_Bookmark_Click(object sender, EventArgs e) // Khi click vào bookmarkButton
         {
             hideSwitch();
-            displaySearch();
+            displaySearchbar();
             textboxSearch.HintText = "Search bookmark";
             textboxSearch.Text = textboxSearch.HintText;
             textboxSearch.LineFocusedColor = RGBColors.color2;
@@ -1211,7 +1211,7 @@ namespace Dictionary_user
         {
             activateMenuButton(sender, RGBColors.color4);
             openChildForm(new Settings());
-            hideSearch();
+            hideSearchbar();
             hideSwitch();
             bunifuDropdownTranslate.Visible = false;
         }
@@ -1220,8 +1220,8 @@ namespace Dictionary_user
         {
             Color.FromArgb(242, 98, 121);
             hideSwitch();
-            displaySearch();
-            hideSearch();
+            displaySearchbar();
+            hideSearchbar();
             bunifuDropdownTranslate.RemoveItem("English");
             bunifuDropdownTranslate.selectedIndex = 0;
             Database.nowForm = 10;
@@ -1235,8 +1235,8 @@ namespace Dictionary_user
         {
             Color.FromArgb(48, 129, 238);
             hideSwitch();
-            displaySearch();
-            hideSearch();
+            displaySearchbar();
+            hideSearchbar();
             activateMenuButton(sender, Color.FromArgb(48, 129, 238));
             openChildForm(new About());
             bunifuDropdownTranslate.Visible = false;

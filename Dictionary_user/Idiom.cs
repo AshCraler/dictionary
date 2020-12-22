@@ -42,7 +42,7 @@ namespace Dictionary_user
             page = 0;
             command = "select * from bookbookmark order by id DESC";
             loadDatabase(command);
-            loadSuggestionBookmark();
+            loadSearchSuggestionBookmark();
             loadPageInfo();
         }
         private void loadDatabase(string cmd)
@@ -73,7 +73,102 @@ namespace Dictionary_user
             iconButton4.IconColor = RGBColors.color2;
         }
 
-        private void loadSuggestion()
+        private void loadDefaultSuggestion()
+        {
+            textboxSearch.HintText = "Search " + mode;
+            textboxSearch.Text = "";
+            textBoxResult.Text = "Searched " + mode;
+            labelLanguage.Text = labelLanguage.Text.ToString() + mode;
+        }
+        
+        private void loadBookmark()
+        {
+            command = " SELECT book from bookbookmark where book = " + "\"" + textBoxResult.Text.ToString() + "\""; //+ "and languages= " + "'" + hint + "'";
+            Database.load(command);
+            if (Database.loadData.Rows.Count > 0)
+            {
+                ktBookmark = true;
+                iconBookmark.IconColor = RGBColors.color7;
+            }
+            else
+            {
+                ktBookmark = false;
+                iconBookmark.IconColor = Color.Gainsboro;
+            }
+        }
+
+        private void loadPageInfo()
+        {
+            string max;
+            if ((page + 1) * 4 < Database.loadData.Rows.Count)
+                max = ((page + 1) * 4).ToString();
+            else max = Database.loadData.Rows.Count.ToString();
+            if (Database.loadData.Rows.Count == 0)
+                pageInfo.Visible = false;
+            else
+                pageInfo.Visible = true;
+            pageInfo.Text = (page * 4 + 1).ToString() + " - " + max + " / " + Database.loadData.Rows.Count.ToString() + " " + mode;
+        }
+        
+        public Idiom()
+        {
+            InitializeComponent();
+            reloadBookmark();
+            if (Database.BookandMore == 0)
+            {
+                mode = "book";
+            }
+            if (Database.BookandMore == 1)
+            {
+                mode = "idiom";
+            }
+            if (Database.BookandMore == 2)
+            {
+                mode = "luminary";
+                labelLanguage.Text = "Vietnam ";
+            }
+            loadDefaultSuggestion();
+            suggestionRowCount = Database.loadData.Rows.Count;
+            loadSearchSuggestionBookmark();
+            bookmarkRowCount = Database.loadData.Rows.Count;
+        }
+               
+        private void textBoxMeaning_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(textBoxMeaning.Text.ToString());
+        }
+
+
+        //Cleaning code
+
+        #region Search
+
+        private void buttonSwitch_Click(object sender, EventArgs e)
+        {
+            if (ktSwitch == true)
+            {
+                ktSwitch = false;
+                pictureBoxFlagLeft.Image = Properties.Resources.vietnam;
+                pictureBoxFlagRight.Image = Properties.Resources.united_kingdom;
+                labelLanguage.Text = "Vietnamese " + mode;
+                language = "vie";
+                if (Database.BookandMore == 2)
+                    labelLanguage.Text = "Vietnam luminary";
+            }
+            else
+            {
+                ktSwitch = true;
+                pictureBoxFlagLeft.Image = Properties.Resources.united_kingdom;
+                pictureBoxFlagRight.Image = Properties.Resources.vietnam;
+                labelLanguage.Text = "English " + mode;
+                language = "eng";
+                if (Database.BookandMore == 2)
+                    labelLanguage.Text = "World luminary";
+            }
+            loadSearchSuggestion();
+        }
+
+        private void loadSearchSuggestion()
         {
             if (textboxSearch.Text != string.Empty)
             {
@@ -128,15 +223,7 @@ namespace Dictionary_user
                 textBox4.Visible = false;
         }
         
-        private void loadDefaultSuggestion()
-        {
-            textboxSearch.HintText = "Search " + mode;
-            textboxSearch.Text = "";
-            textBoxResult.Text = "Searched " + mode;
-            labelLanguage.Text = labelLanguage.Text.ToString() + mode;
-        }
-        
-        private void loadSuggestionBookmark()
+        private void loadSearchSuggestionBookmark()
         {
             if (textboxSearch.Text != string.Empty)
             {
@@ -149,12 +236,12 @@ namespace Dictionary_user
             command = "Use sql_invoicing; SELECT * from bookbookmark where " + mode + " like " + "\"" + textboxBookmark.Text + "%\"";
             Database.load(command);
             int num = Database.loadData.Rows.Count;
-            if (num > 0+4*page)
+            if (num > 0 + 4 * page)
             {
                 iconButton1.Visible = true;
                 textBox6.Visible = true;
-                textBox6.Text = Database.loadData.Rows[page*4][mode].ToString();
-                link1 = Database.loadData.Rows[page*4]["link"].ToString();
+                textBox6.Text = Database.loadData.Rows[page * 4][mode].ToString();
+                link1 = Database.loadData.Rows[page * 4]["link"].ToString();
             }
             else
             {
@@ -167,12 +254,12 @@ namespace Dictionary_user
                 textBox8.Visible = false;
                 textBox9.Visible = false;
             }
-            if (num > 1+4*page)
+            if (num > 1 + 4 * page)
             {
                 iconButton2.Visible = true;
                 textBox7.Visible = true;
-                textBox7.Text = Database.loadData.Rows[page*4+1][mode].ToString();
-                link2 = Database.loadData.Rows[page*4+1]["link"].ToString();
+                textBox7.Text = Database.loadData.Rows[page * 4 + 1][mode].ToString();
+                link2 = Database.loadData.Rows[page * 4 + 1]["link"].ToString();
             }
             else
             {
@@ -183,27 +270,27 @@ namespace Dictionary_user
                 textBox8.Visible = false;
                 textBox9.Visible = false;
             }
-            if (num > 2+4*page)
+            if (num > 2 + 4 * page)
             {
                 iconButton3.Visible = true;
                 textBox8.Visible = true;
-                textBox8.Text = Database.loadData.Rows[page*4+2][mode].ToString();
-                link3 = Database.loadData.Rows[page*4+2]["link"].ToString();
+                textBox8.Text = Database.loadData.Rows[page * 4 + 2][mode].ToString();
+                link3 = Database.loadData.Rows[page * 4 + 2]["link"].ToString();
             }
             else
             {
                 iconButton3.Visible = false;
                 iconButton4.Visible = false;
-                textBox8.Visible=false;
-                textBox9.Visible=false;
+                textBox8.Visible = false;
+                textBox9.Visible = false;
             }
-            if (num > 3+4*page)
+            if (num > 3 + 4 * page)
             {
 
                 iconButton4.Visible = true;
                 textBox9.Visible = true;
-                textBox9.Text = Database.loadData.Rows[page*4+3][mode].ToString();
-                link4 = Database.loadData.Rows[page*4+3]["link"].ToString();
+                textBox9.Text = Database.loadData.Rows[page * 4 + 3][mode].ToString();
+                link4 = Database.loadData.Rows[page * 4 + 3]["link"].ToString();
             }
             else
             {
@@ -212,94 +299,25 @@ namespace Dictionary_user
             }
         }
 
-        private void loadBookmark()
+        private void textboxBookmark_OnValueChanged(object sender, EventArgs e)
         {
-            command = " SELECT book from bookbookmark where book = " + "\"" + textBoxResult.Text.ToString() + "\""; //+ "and languages= " + "'" + hint + "'";
-            Database.load(command);
-            if (Database.loadData.Rows.Count > 0)
-            {
-                ktBookmark = true;
-                iconBookmark.IconColor = RGBColors.color7;
-            }
-            else
-            {
-                ktBookmark = false;
-                iconBookmark.IconColor = Color.Gainsboro;
-            }
+            loadSearchSuggestionBookmark();
+            resetSuggestionBookmarkColor();
+            reseticonButtonSuggestionBookmarkColor();
+            loadPageInfo();
+        }
+        
+        private void textboxSearch_OnValueChanged(object sender, EventArgs e)
+        {
+            resetSuggestionColor();
+            loadSearchSuggestion();
         }
 
-        private void loadPageInfo()
+        private void iconButtonSearchBookmark_Click(object sender, EventArgs e)
         {
-            string max;
-            if ((page + 1) * 4 < Database.loadData.Rows.Count)
-                max = ((page + 1) * 4).ToString();
-            else max = Database.loadData.Rows.Count.ToString();
-            if (Database.loadData.Rows.Count == 0)
-                pageInfo.Visible = false;
-            else
-                pageInfo.Visible = true;
-            pageInfo.Text = (page * 4 + 1).ToString() + " - " + max + " / " + Database.loadData.Rows.Count.ToString() + " " + mode;
-        }
-        
-
-        public Idiom()
-        {
-            InitializeComponent();
-            reloadBookmark();
-            if (Database.BookandMore == 0)
+            if (textboxBookmark.Text == "")
             {
-                mode = "book";
-            }
-            if (Database.BookandMore == 1)
-            {
-                mode = "idiom";
-            }
-            if (Database.BookandMore == 2)
-            {
-                mode = "luminary";
-                labelLanguage.Text = "Vietnam ";
-            }
-            loadDefaultSuggestion();
-            suggestionRowCount = Database.loadData.Rows.Count;
-            loadSuggestionBookmark();
-            bookmarkRowCount = Database.loadData.Rows.Count;
-        }
-        
-        private void buttonSwitch_Click(object sender, EventArgs e)
-        {
-            if (ktSwitch == true)
-            {
-                ktSwitch = false;
-                pictureBoxFlagLeft.Image = Properties.Resources.vietnam;
-                pictureBoxFlagRight.Image = Properties.Resources.united_kingdom;
-                labelLanguage.Text = "Vietnamese "+mode;
-                language = "vie";
-                if (Database.BookandMore == 2)
-                    labelLanguage.Text = "Vietnam luminary";
-            }
-            else
-            {
-                ktSwitch = true;
-                pictureBoxFlagLeft.Image = Properties.Resources.united_kingdom;
-                pictureBoxFlagRight.Image = Properties.Resources.vietnam;
-                labelLanguage.Text = "English "+mode;
-                language = "eng";
-                if (Database.BookandMore == 2)
-                    labelLanguage.Text = "World luminary";
-            }
-            loadSuggestion();
-        }
-        
-        private void panelSuggestion_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        
-        private void buttonSearch_Click(object sender, EventArgs e)
-        {
-            if (textboxSearch.Text == "")
-            {
-                MessageBox.Show("Please insert the "+mode+ " that needs to be searched !");
+                MessageBox.Show("Please insert the " + mode + " that needs to be searched !");
             }
             else
             {
@@ -308,7 +326,36 @@ namespace Dictionary_user
                 textBoxMeaning.Visible = true;
                 pictureBoxSearched.Visible = true;
                 pictureBoxMeaning.Visible = true;
-                command = "SELECT * from "+language+"book where book= " + "\"" + textboxSearch.Text.ToString() + "\"";
+                command = "SELECT * from bookbookmark where book= " + "\"" + textboxBookmark.Text.ToString() + "\"";
+                Database.load(command);
+                if (Database.loadData.Rows.Count > 0)
+                {
+                    textBoxResult.Text = Database.loadData.Rows[0]["book"].ToString();
+                    textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
+                }
+                else
+                {
+                    textBoxResult.Text = textboxBookmark.Text;
+                    textBoxMeaning.Text = "Not Found";
+                }
+                loadBookmark();
+            }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            if (textboxSearch.Text == "")
+            {
+                MessageBox.Show("Please insert the " + mode + " that needs to be searched !");
+            }
+            else
+            {
+                iconBookmark.Visible = true;
+                textBoxResult.Visible = true;
+                textBoxMeaning.Visible = true;
+                pictureBoxSearched.Visible = true;
+                pictureBoxMeaning.Visible = true;
+                command = "SELECT * from " + language + "book where book= " + "\"" + textboxSearch.Text.ToString() + "\"";
                 Database.load(command);
                 if (Database.loadData.Rows.Count > 0)
                 {
@@ -323,26 +370,10 @@ namespace Dictionary_user
             }
             loadBookmark();
         }
-        
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void textBox1_MouseClick(object sender, MouseEventArgs e)
+        private void textBox1_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = textBox1.Text;
-        }
-
-        private void textboxSearch_OnValueChanged(object sender, EventArgs e)
-        {
-            resetSuggestionColor();
-            loadSuggestion();
-        }
-   
-        private void textBoxResult_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox2_Click(object sender, EventArgs e)
@@ -409,6 +440,139 @@ namespace Dictionary_user
         {
             textboxHistory.Text = textBox16.Text;
         }
+
+        #endregion
+
+        #region Bookmark
+
+        private void iconBookmark_Click(object sender, EventArgs e)
+        {
+            time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
+            if (ktBookmark == false)
+            {
+                ktBookmark = true;
+                iconBookmark.IconColor = RGBColors.color7;
+                Database.insertBookBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
+                //   if (hint == "English")
+                //       Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                //   else
+                //       Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                //   loadRecentlyBookmark();
+            }
+            else
+            {
+                ktBookmark = false;
+                iconBookmark.IconColor = Color.Gainsboro;
+                command = "delete from bookbookmark where " + mode + "=" + "'" + textBoxResult.Text + "'";//+ "AND languages=" + "'" + hint + "'";
+                Database.deleteBookmark(command);
+                //  if (hint == "English")
+                //      Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                //  else
+                //      Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                //  loadRecentlyBookmark();
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
+            if (iconButton1.IconColor == Color.FromArgb(238, 26, 74))
+            {
+                command = "delete from bookbookmark where book =" + "\"" + textBox6.Text + "\"";
+                Database.deleteBookmark(command);
+                iconButton1.IconColor = Color.Gainsboro;
+                //check[page * 13 + 1] = false;
+            }
+            else
+            {
+                iconButton1.IconColor = Color.FromArgb(238, 26, 74);
+                Database.insertBookBookmark(textBox6.Text, link1, time);
+                // check[page * 13 + 1] = true;
+            }
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
+            if (iconButton2.IconColor == Color.FromArgb(238, 26, 74))
+            {
+                command = "delete from bookbookmark where book =" + "\"" + textBox7.Text + "\"";
+                Database.deleteBookmark(command);
+                iconButton2.IconColor = Color.Gainsboro;
+                //check[page * 13 + 1] = false;
+            }
+            else
+            {
+                iconButton2.IconColor = Color.FromArgb(238, 26, 74);
+                Database.insertBookBookmark(textBox7.Text, link2, time);
+                // check[page * 13 + 1] = true;
+            }
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
+            if (iconButton3.IconColor == Color.FromArgb(238, 26, 74))
+            {
+                command = "delete from bookbookmark where book =" + "\"" + textBox8.Text + "\"";
+                Database.deleteBookmark(command);
+                iconButton3.IconColor = Color.Gainsboro;
+                //check[page * 13 + 1] = false;
+            }
+            else
+            {
+                iconButton3.IconColor = Color.FromArgb(238, 26, 74);
+                Database.insertBookBookmark(textBox8.Text, link3, time);
+                // check[page * 13 + 1] = true;
+            }
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
+            if (iconButton4.IconColor == Color.FromArgb(238, 26, 74))
+            {
+                command = "delete from bookbookmark where book =" + "\"" + textBox9.Text + "\"";
+                Database.deleteBookmark(command);
+                iconButton4.IconColor = Color.Gainsboro;
+                //check[page * 13 + 1] = false;
+            }
+            else
+            {
+                iconButton4.IconColor = Color.FromArgb(238, 26, 74);
+                Database.insertBookBookmark(textBox9.Text, link4, time);
+                // check[page * 13 + 1] = true;
+            }
+        }
+
+        private void Next_Click(object sender, EventArgs e)
+        {
+            if ((page + 1) * 4 < bookmarkRowCount)
+            {
+                page = page + 1;
+                loadPageInfo();
+                loadSearchSuggestionBookmark();
+            }
+        }
+
+        private void Preview_Click(object sender, EventArgs e)
+        {
+            if (page > 0)
+            {
+                page = page - 1;
+                loadPageInfo();
+                loadSearchSuggestionBookmark();
+            }
+        }
+
+        private void Reload_Click(object sender, EventArgs e)
+        {
+            reloadBookmark();
+        }
+
+        #endregion
+
+        #region Text UI
 
         private void textBox1_MouseHover(object sender, EventArgs e)
         {
@@ -550,11 +714,6 @@ namespace Dictionary_user
             textBox16.ForeColor = Color.Gainsboro;
         }
 
-        private void textBoxMeaning_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start(textBoxMeaning.Text.ToString());
-        }
-
         private void textBoxMeaning_MouseHover(object sender, EventArgs e)
         {
             textBoxMeaning.ForeColor = Color.FromArgb(24, 161, 251);
@@ -565,166 +724,6 @@ namespace Dictionary_user
             textBoxMeaning.ForeColor = Color.Gainsboro;
         }
 
-        private void iconBookmark_Click(object sender, EventArgs e)
-        {
-            time=DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
-            if (ktBookmark == false)
-            {
-                ktBookmark = true;
-                iconBookmark.IconColor = RGBColors.color7;
-                Database.insertBookBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
-             //   if (hint == "English")
-             //       Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
-             //   else
-             //       Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
-             //   loadRecentlyBookmark();
-            }
-            else
-            {
-                ktBookmark = false;
-                iconBookmark.IconColor = Color.Gainsboro;
-                command = "delete from bookbookmark where "+mode +"=" + "'" + textBoxResult.Text + "'";//+ "AND languages=" + "'" + hint + "'";
-                Database.deleteBookmark(command);
-              //  if (hint == "English")
-              //      Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
-              //  else
-              //      Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
-              //  loadRecentlyBookmark();
-            }
-        }
-
-        private void textboxBookmark_OnValueChanged(object sender, EventArgs e)
-        {
-            loadSuggestionBookmark();
-            resetSuggestionBookmarkColor();
-            reseticonButtonSuggestionBookmarkColor();
-            loadPageInfo();
-        }
-
-        private void iconButtonSearchBookmark_Click(object sender, EventArgs e)
-        {
-            if (textboxBookmark.Text == "")
-            {
-                MessageBox.Show("Please insert the " + mode + " that needs to be searched !");
-            }
-            else
-            {
-                iconBookmark.Visible = true;
-                textBoxResult.Visible = true;
-                textBoxMeaning.Visible = true;
-                pictureBoxSearched.Visible = true;
-                pictureBoxMeaning.Visible = true;
-                command = "SELECT * from bookbookmark where book= " + "\"" + textboxBookmark.Text.ToString() + "\"";
-                Database.load(command);
-                if (Database.loadData.Rows.Count > 0)
-                {
-                    textBoxResult.Text = Database.loadData.Rows[0]["book"].ToString();
-                    textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
-                }
-                else
-                {
-                    textBoxResult.Text = textboxBookmark.Text;
-                    textBoxMeaning.Text = "Not Found";
-                }
-                loadBookmark();
-            }
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            time= DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
-            if (iconButton1.IconColor == Color.FromArgb(238, 26, 74))
-            {
-                command = "delete from bookbookmark where book =" + "\"" + textBox6.Text + "\"";
-                Database.deleteBookmark(command);
-                iconButton1.IconColor = Color.Gainsboro;
-                //check[page * 13 + 1] = false;
-            }
-            else
-            {
-                iconButton1.IconColor = Color.FromArgb(238, 26, 74);
-                Database.insertBookBookmark(textBox6.Text,link1 , time);
-               // check[page * 13 + 1] = true;
-            }
-        }
-
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
-            if (iconButton2.IconColor == Color.FromArgb(238, 26, 74))
-            {
-                command = "delete from bookbookmark where book =" + "\"" + textBox7.Text + "\"";
-                Database.deleteBookmark(command);
-                iconButton2.IconColor = Color.Gainsboro;
-                //check[page * 13 + 1] = false;
-            }
-            else
-            {
-                iconButton2.IconColor = Color.FromArgb(238, 26, 74);
-                Database.insertBookBookmark(textBox7.Text, link2, time);
-                // check[page * 13 + 1] = true;
-            }
-        }
-
-        private void iconButton3_Click(object sender, EventArgs e)
-        {
-            time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
-            if (iconButton3.IconColor == Color.FromArgb(238, 26, 74))
-            {
-                command = "delete from bookbookmark where book =" + "\"" + textBox8.Text + "\"";
-                Database.deleteBookmark(command);
-                iconButton3.IconColor = Color.Gainsboro;
-                //check[page * 13 + 1] = false;
-            }
-            else
-            {
-                iconButton3.IconColor = Color.FromArgb(238, 26, 74);
-                Database.insertBookBookmark(textBox8.Text, link3, time);
-                // check[page * 13 + 1] = true;
-            }
-        }
-
-        private void iconButton4_Click(object sender, EventArgs e)
-        {
-            time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
-            if (iconButton4.IconColor == Color.FromArgb(238, 26, 74))
-            {
-                command = "delete from bookbookmark where book =" + "\"" + textBox9.Text + "\"";
-                Database.deleteBookmark(command);
-                iconButton4.IconColor = Color.Gainsboro;
-                //check[page * 13 + 1] = false;
-            }
-            else
-            {
-                iconButton4.IconColor = Color.FromArgb(238, 26, 74);
-                Database.insertBookBookmark(textBox9.Text, link4, time);
-                // check[page * 13 + 1] = true;
-            }
-        }
-
-        private void Next_Click(object sender, EventArgs e)
-        {
-            if ((page + 1) * 4 < bookmarkRowCount)
-            {
-                page = page + 1;
-                loadPageInfo();
-                loadSuggestionBookmark();
-            }
-        }
-
-        private void Preview_Click(object sender, EventArgs e)
-        {
-            if (page > 0)
-            {
-                page = page - 1;
-                loadPageInfo();
-                loadSuggestionBookmark();
-            }
-        }
-
-        private void Reload_Click(object sender, EventArgs e)
-        {
-            reloadBookmark();
-        }
+        #endregion
     }
 }

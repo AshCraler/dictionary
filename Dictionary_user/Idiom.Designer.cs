@@ -449,7 +449,6 @@
             this.textBoxResult.TabIndex = 38;
             this.textBoxResult.Text = "Searched Idiom";
             this.textBoxResult.Visible = false;
-            this.textBoxResult.TextChanged += new System.EventHandler(this.textBoxResult_TextChanged);
             // 
             // iconBookmark
             // 
@@ -527,7 +526,6 @@
             this.panelSuggestion.Name = "panelSuggestion";
             this.panelSuggestion.Size = new System.Drawing.Size(846, 274);
             this.panelSuggestion.TabIndex = 93;
-            this.panelSuggestion.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSuggestion_Paint);
             // 
             // iconButtonExcel
             // 
@@ -908,8 +906,7 @@
             this.textBox1.Size = new System.Drawing.Size(302, 25);
             this.textBox1.TabIndex = 39;
             this.textBox1.Text = "Tốt gỗ hơn tốt nước sơn";
-            this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseClick);
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
             this.textBox1.MouseHover += new System.EventHandler(this.textBox1_MouseHover);
             // 
