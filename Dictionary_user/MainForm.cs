@@ -891,6 +891,7 @@ namespace Dictionary_user
 
         #endregion Search_Result
 
+        #region Keyboard
         private void textboxSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (hintColor == 0)
@@ -943,6 +944,28 @@ namespace Dictionary_user
             textboxSearch.ForeColor = Color.Gainsboro;
         }
 
+        #endregion
+
+        #region Book and more Feature
+        private void bunifuDropdownTranslate_onItemSelected(object sender, EventArgs e)
+        {
+            if (bunifuDropdownTranslate.selectedIndex == 0)
+            {
+                Database.BookandMore = 0;
+                openChildForm(new Idiom());
+            }
+            if (bunifuDropdownTranslate.selectedIndex == 1)
+            {
+                Database.BookandMore = 1;
+                openChildForm(new Idiom());
+            }
+            if (bunifuDropdownTranslate.selectedIndex == 2)
+            {
+                Database.BookandMore = 2;
+                openChildForm(new Idiom());
+            }
+        }
+        
         private void iconIdiom_Click(object sender, EventArgs e)
         {
             Color.FromArgb(242, 98, 121);
@@ -969,6 +992,9 @@ namespace Dictionary_user
             bunifuDropdownTranslate.Visible = false;
         }
 
+        #endregion
+
+        #region Volcabulary
         private void Reload_Click(object sender, EventArgs e)
         {
             loadVolcabulary();
@@ -1197,25 +1223,7 @@ namespace Dictionary_user
             // Speak a string.  
             synth.Speak(labelWord8.Text);
         }
-
-        private void bunifuDropdownTranslate_onItemSelected(object sender, EventArgs e)
-        {
-            if (bunifuDropdownTranslate.selectedIndex == 0)
-            {
-                Database.BookandMore = 0;
-                openChildForm(new Idiom());
-            }
-            if (bunifuDropdownTranslate.selectedIndex==1)
-            {
-                Database.BookandMore = 1;
-                openChildForm(new Idiom());
-            }
-            if (bunifuDropdownTranslate.selectedIndex == 2)
-            {
-                Database.BookandMore = 2;
-                openChildForm(new Idiom());
-            }
-        }
+        #endregion
     }
 }
 
