@@ -21,7 +21,11 @@ namespace Dictionary_user
         private string command;
         private bool ktBookmark;
         private string link1, link2, link3, link4;
-
+        private int page = 0;
+        private bool[] check = new bool[100000];
+        private int suggestionRowCount;
+        private int bookmarkRowCount;
+        private int historyRowCount;
         private struct RGBColors // Struct các mã màu 
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -32,30 +36,20 @@ namespace Dictionary_user
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.FromArgb(255, 244, 79);
         }
-
-        public Idiom()
+        private void reloadBookmark()
         {
-            InitializeComponent();
-            if (Database.BookandMore == 0)
-            {
-                mode = "book";
-            }
-            if (Database.BookandMore == 1)
-            {
-                mode = "idiom";
-            }
-            if (Database.BookandMore == 2)
-            {
-                mode = "luminary";
-                labelLanguage.Text = "Vietnam ";
-            }
-            textboxSearch.HintText = "Search " + mode;
-            textboxSearch.Text = "";
-            textBoxResult.Text = "Searched " + mode;
-            labelLanguage.Text = labelLanguage.Text.ToString() + mode; 
+            page = 0;
+            command = "select * from bookbookmark order by id DESC";
+            loadDatabase(command);
             loadSuggestionBookmark();
+            loadPageInfo();
         }
-        
+        private void loadDatabase(string cmd)
+        {
+            Database.load(cmd);
+            for (int i = 0; i < 100000; i++)
+                check[i] = true;
+        }
         private void resetSuggestionColor()
         {
             textBox1.ForeColor = Color.Gainsboro;
@@ -132,6 +126,15 @@ namespace Dictionary_user
             else
                 textBox4.Visible = false;
         }
+        
+        private void loadDefaultSuggestion()
+        {
+            textboxSearch.HintText = "Search " + mode;
+            textboxSearch.Text = "";
+            textBoxResult.Text = "Searched " + mode;
+            labelLanguage.Text = labelLanguage.Text.ToString() + mode;
+        }
+        
         private void loadSuggestionBookmark()
         {
             if (textboxSearch.Text != string.Empty)
@@ -145,12 +148,12 @@ namespace Dictionary_user
             command = "Use sql_invoicing; SELECT * from bookbookmark where " + mode + " like " + "\"" + textboxBookmark.Text + "%\"";
             Database.load(command);
             int num = Database.loadData.Rows.Count;
-            if (num > 0)
+            if (num > 0+4*page)
             {
                 iconButton1.Visible = true;
                 textBox6.Visible = true;
-                textBox6.Text = Database.loadData.Rows[0][mode].ToString();
-                link1 = Database.loadData.Rows[0]["link"].ToString();
+                textBox6.Text = Database.loadData.Rows[page*4][mode].ToString();
+                link1 = Database.loadData.Rows[page*4]["link"].ToString();
             }
             else
             {
@@ -163,12 +166,12 @@ namespace Dictionary_user
                 textBox8.Visible = false;
                 textBox9.Visible = false;
             }
-            if (num > 1)
+            if (num > 1+4*page)
             {
                 iconButton2.Visible = true;
                 textBox7.Visible = true;
-                textBox7.Text = Database.loadData.Rows[1][mode].ToString();
-                link2 = Database.loadData.Rows[0]["link"].ToString();
+                textBox7.Text = Database.loadData.Rows[page*4+1][mode].ToString();
+                link2 = Database.loadData.Rows[page*4+1]["link"].ToString();
             }
             else
             {
@@ -179,12 +182,12 @@ namespace Dictionary_user
                 textBox8.Visible = false;
                 textBox9.Visible = false;
             }
-            if (num > 2)
+            if (num > 2+4*page)
             {
                 iconButton3.Visible = true;
                 textBox8.Visible = true;
-                textBox8.Text = Database.loadData.Rows[2][mode].ToString();
-                link3 = Database.loadData.Rows[0]["link"].ToString();
+                textBox8.Text = Database.loadData.Rows[page*4+2][mode].ToString();
+                link3 = Database.loadData.Rows[page*4+2]["link"].ToString();
             }
             else
             {
@@ -193,13 +196,13 @@ namespace Dictionary_user
                 textBox8.Visible=false;
                 textBox9.Visible=false;
             }
-            if (num > 3)
+            if (num > 3+4*page)
             {
 
                 iconButton4.Visible = true;
                 textBox9.Visible = true;
-                textBox9.Text = Database.loadData.Rows[3][mode].ToString();
-                link4 = Database.loadData.Rows[0]["link"].ToString();
+                textBox9.Text = Database.loadData.Rows[page*4+3][mode].ToString();
+                link4 = Database.loadData.Rows[page*4+3]["link"].ToString();
             }
             else
             {
@@ -222,6 +225,43 @@ namespace Dictionary_user
                 ktBookmark = false;
                 iconBookmark.IconColor = Color.Gainsboro;
             }
+        }
+
+        private void loadPageInfo()
+        {
+            string max;
+            if ((page + 1) * 4 < Database.loadData.Rows.Count)
+                max = ((page + 1) * 4).ToString();
+            else max = Database.loadData.Rows.Count.ToString();
+            if (Database.loadData.Rows.Count == 0)
+                pageInfo.Visible = false;
+            else
+                pageInfo.Visible = true;
+            pageInfo.Text = (page * 4 + 1).ToString() + " - " + max + " / " + Database.loadData.Rows.Count.ToString() + " " + mode;
+        }
+        
+
+        public Idiom()
+        {
+            InitializeComponent();
+            reloadBookmark();
+            if (Database.BookandMore == 0)
+            {
+                mode = "book";
+            }
+            if (Database.BookandMore == 1)
+            {
+                mode = "idiom";
+            }
+            if (Database.BookandMore == 2)
+            {
+                mode = "luminary";
+                labelLanguage.Text = "Vietnam ";
+            }
+            loadDefaultSuggestion();
+            suggestionRowCount = Database.loadData.Rows.Count;
+            loadSuggestionBookmark();
+            bookmarkRowCount = Database.loadData.Rows.Count;
         }
         
         private void buttonSwitch_Click(object sender, EventArgs e)
@@ -557,6 +597,7 @@ namespace Dictionary_user
             loadSuggestionBookmark();
             resetSuggestionBookmarkColor();
             reseticonButtonSuggestionBookmarkColor();
+            loadPageInfo();
         }
 
         private void iconButtonSearchBookmark_Click(object sender, EventArgs e)
@@ -658,6 +699,31 @@ namespace Dictionary_user
                 Database.insertBookBookmark(textBox9.Text, link4, time);
                 // check[page * 13 + 1] = true;
             }
+        }
+
+        private void Next_Click(object sender, EventArgs e)
+        {
+            if ((page + 1) * 4 < bookmarkRowCount)
+            {
+                page = page + 1;
+                loadPageInfo();
+                loadSuggestionBookmark();
+            }
+        }
+
+        private void Preview_Click(object sender, EventArgs e)
+        {
+            if (page > 0)
+            {
+                page = page - 1;
+                loadPageInfo();
+                loadSuggestionBookmark();
+            }
+        }
+
+        private void Reload_Click(object sender, EventArgs e)
+        {
+            reloadBookmark();
         }
     }
 }

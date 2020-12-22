@@ -560,6 +560,7 @@
             this.Reload.Size = new System.Drawing.Size(35, 33);
             this.Reload.TabIndex = 90;
             this.Reload.UseVisualStyleBackColor = true;
+            this.Reload.Click += new System.EventHandler(this.Reload_Click);
             // 
             // pictureBox1
             // 
@@ -586,6 +587,7 @@
             this.Next.Size = new System.Drawing.Size(34, 33);
             this.Next.TabIndex = 83;
             this.Next.UseVisualStyleBackColor = true;
+            this.Next.Click += new System.EventHandler(this.Next_Click);
             // 
             // Preview
             // 
@@ -602,6 +604,7 @@
             this.Preview.Size = new System.Drawing.Size(35, 33);
             this.Preview.TabIndex = 86;
             this.Preview.UseVisualStyleBackColor = true;
+            this.Preview.Click += new System.EventHandler(this.Preview_Click);
             // 
             // pageInfo
             // 
