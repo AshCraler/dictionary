@@ -57,16 +57,7 @@ namespace Dictionary_user
 
         #region Menu and Titlebar
 
-        private void displaySearch() // Hiển thị chức năng tìm kiếm
-        {
-            textboxSearch.Visible = true;
-            buttonSearch.Visible = true;
-        }
-        private void hideSearch() // Ẩn chức năng tìm kiếm
-        {
-            textboxSearch.Visible = false;
-            buttonSearch.Visible = false;
-        }
+       
         private void displaySwitch() // Hiển thị chức năng chuyển ngôn ngữ
         {
             buttonSwitch.Visible = true;
@@ -78,15 +69,7 @@ namespace Dictionary_user
             pictureBoxFlagLeft.Visible = false;
             pictureBoxFlagRight.Visible = false;
             buttonSwitch.Visible = false;
-        }
-        private void setVisibleResult(bool set)
-        {
-            typedWord.Visible = set;
-            bookmarkButton.Visible = set;
-            wordMeaning.Visible = set;
-            btnPlay.Visible = set;
-            btnPlay2.Visible = set;
-        }
+        }     
         private void activateMenuButton(object senderBtn, Color color) // Kích hoạt menuButton 
         {
             disableMenuButton();
@@ -118,47 +101,7 @@ namespace Dictionary_user
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
-        }
-        private void reloadRecentHistory()
-        {
-            labelHistory4.Text = labelHistory3.Text;
-            labelHistory3.Text = labelHistory2.Text;
-            labelHistory2.Text = labelHistory1.Text;
-            labelHistory1.Text = typedWord.Text;
-        }
-        private void updateHistoryBookmark()
-        {
-            if (bookmarkButton.IconColor == RGBColors.color7)
-            {
-                if (hint == "English")
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
-                else
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
-            }
-            else
-            {
-
-                if (hint == "English")
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
-                else
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
-            }
-        }
-        private void loadBookmark()
-        {
-            command = " SELECT meaning from bookmark where word = " + "\"" + textboxSearch.Text.ToString() + "\"" + "and languages= " + "'" + hint + "'";
-            Database.load(command);
-            if (Database.loadData.Rows.Count > 0)
-            {
-                ktBookmark = true;
-                bookmarkButton.IconColor = RGBColors.color7;
-            }
-            else
-            {
-                ktBookmark = false;
-                bookmarkButton.IconColor = Color.Gainsboro;
-            }
-        }
+        }   
         private void resetSuggestion()
         {
             labelHint1.Text = "";
@@ -172,77 +115,7 @@ namespace Dictionary_user
             labelHint2.ForeColor = Color.Gainsboro;
             labelHint3.ForeColor = Color.Gainsboro;
             labelHint4.ForeColor = Color.Gainsboro;
-        }
-        private void loadRecentlyBookmark()
-        {
-            command = "SELECT Word from bookmark where languages=" + "'" + hint + "'" + " ORDER BY id DESC";
-            Database.load(command);
-            if (Database.loadData.Rows.Count > 0)
-                labelBookmark1.Text = Database.loadData.Rows[0]["Word"].ToString();
-            else
-            {
-                labelBookmark1.Text = "";
-                labelBookmark2.Text = "";
-                labelBookmark3.Text = "";
-                labelBookmark4.Text = "";
-            }
-            if (Database.loadData.Rows.Count > 1)
-                labelBookmark2.Text = Database.loadData.Rows[1]["Word"].ToString();
-            else
-            {
-                labelBookmark2.Text = "";
-                labelBookmark3.Text = "";
-                labelBookmark4.Text = "";
-            }
-            if (Database.loadData.Rows.Count > 2)
-                labelBookmark3.Text = Database.loadData.Rows[2]["Word"].ToString();
-            else
-            {
-                labelBookmark3.Text = "";
-                labelBookmark4.Text = "";
-            }
-            if (Database.loadData.Rows.Count > 3)
-                labelBookmark4.Text = Database.loadData.Rows[3]["Word"].ToString();
-            else
-                labelBookmark4.Text = "";
-        }
-        private void loadRecentlyHistory()
-        {
-
-            if (hint == "English")
-                command = "SELECT Word from historysearch where Translate='Eng-Vie' ORDER BY id DESC";
-            else
-                command = "SELECT Word from historysearch where Translate='Vie-Eng' ORDER BY id DESC";
-            Database.load(command);
-            if (Database.loadData.Rows.Count > 0)
-                labelHistory1.Text = Database.loadData.Rows[0]["Word"].ToString();
-            else
-            {
-                labelHistory1.Text = "";
-                labelHistory2.Text = "";
-                labelHistory3.Text = "";
-                labelHistory4.Text = "";
-            }
-            if (Database.loadData.Rows.Count > 1)
-                labelHistory2.Text = Database.loadData.Rows[1]["Word"].ToString();
-            else
-            {
-                labelHistory2.Text = "";
-                labelHistory3.Text = "";
-                labelHistory4.Text = "";
-            }
-            if (Database.loadData.Rows.Count > 2)
-                labelHistory3.Text = Database.loadData.Rows[2]["Word"].ToString();
-            else
-            {
-                labelHistory3.Text = "";
-                labelHistory4.Text = "";
-            }
-            if (Database.loadData.Rows.Count > 3)
-                labelHistory4.Text = Database.loadData.Rows[3]["Word"].ToString();
-            else
-                labelHistory4.Text = "";
-        }
+        }        
         private void loadRecently()// Load recently history and recently bookmark
         {
             loadRecentlyHistory();
@@ -260,62 +133,6 @@ namespace Dictionary_user
                 bookmarkButton.IconColor = RGBColors.color7;
                 ktBookmark = true;
             }
-        }
-        private void loadResult()
-        {
-            if (textboxSearch.HintText == "Search English")
-            {
-                command = " SELECT VieMeaning from mytable where English = " + "\"" + textboxSearch.Text.ToString() + "\"";
-                Database.load(command);
-                typedWord.Text = textboxSearch.Text;
-                if (Database.loadData.Rows.Count > 0)
-                    wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
-                else
-                    wordMeaning.Text = "Not Found";
-                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Eng-Vie");
-                btnPlay.Visible = true;
-                btnPlay2.Visible = false;
-            }
-            else
-            {
-                command = " SELECT English from mytable where VieMeaning = " + "\"" + textboxSearch.Text.ToString() + "\"";
-                Database.load(command);
-                typedWord.Text = textboxSearch.Text;
-                if (Database.loadData.Rows.Count > 0)
-                    wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
-                else
-                    wordMeaning.Text = "Not Found";
-                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Vie-Eng");
-                btnPlay2.Visible = true;
-                btnPlay.Visible = false;
-            }
-        }
-        private void activateSearchButton() // Kích hoạt searchButton
-        {
-            textboxSearch.Focus();
-            textboxSearch.BackColor = Color.FromArgb(26, 25, 62);
-            textboxSearch.ForeColor = Color.Gainsboro;
-            if (Database.nowForm == 1)
-            {
-                Database.acction = "Translate";
-                setVisibleResult(true);
-                loadResult();
-                reloadRecentHistory();
-                loadBookmark();
-                updateHistoryBookmark();
-            }
-            if (Database.nowForm == 2)
-            {
-                Database.acction = "searchHistory";
-                Database.textboxSearchText = textboxSearch.Text;
-                openChildForm(new History());
-            }// Search History 
-            if (Database.nowForm == 3)
-            {
-                Database.acction = "searchBookmark";
-                Database.textboxSearchText = textboxSearch.Text;
-                openChildForm(new Bookmark());
-            } // Search Bookmark
         }
         private void activateSwitchButton() // Kích hoạt switchButton 
         {
@@ -357,59 +174,6 @@ namespace Dictionary_user
             loadRecentlyHistory();
             loadRecentlyBookmark();
         }
-        private void closeChildForm(Form childForm)
-        {
-            childForm.FormClosed += new FormClosedEventHandler(Form_Closed);
-            void Form_Closed(object sender, FormClosedEventArgs e)
-            {
-                if (Database.acction == "clickFromBookmark")
-                {
-                    activateMenuButton(iconButton1, RGBColors.color1);
-                    displaySwitch();
-                    ktSwitch = Database.setLanguages;
-                    activateSwitchButton();
-                    displaySearch();
-                    textboxSearch.LineFocusedColor = RGBColors.color1;
-                    textboxSearch.LineMouseHoverColor = RGBColors.color1;
-                    buttonSearch.IconColor = RGBColors.color1;
-                    Database.nowForm = 1;
-                    checkBookMark();
-                    textboxSearch.Text = Database.word;
-                    activateSearchButton();
-                    if (bookmarkButton.IconColor == RGBColors.color7)
-                    {
-                        if (hint == "English")
-                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
-                        else
-                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
-                    }
-                    if (bookmarkButton.IconColor == Color.Gainsboro)
-                    {
-
-                        if (hint == "English")
-                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
-                        else
-                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
-                    }
-                }
-            }
-        }
-        private void openChildForm(Form childForm) // Mở childForm mới
-        {
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
-            currentChildForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(childForm);
-            panelDesktop.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            closeChildForm(childForm);
-        }
         private void random()
         {
             arr = new List<string>();
@@ -447,90 +211,6 @@ namespace Dictionary_user
             Database.nowForm = 1;
             loadVolcabulary();
         }
-        private void textboxSearch_OnValueChanged(object sender, EventArgs e) // Khi thay đổi giá trị textboxSearch 
-        {
-            if (Database.nowForm == 10)
-            {
-                Database.textboxSearchText = textboxSearch.Text;
-            }
-            else
-            {
-                resetSuggestionColor();
-                hintColor = 0;
-                if (textboxSearch.Text != string.Empty)
-                {
-                    textboxSearch.LineIdleColor = RGBColors.color1;
-                }
-                if (textboxSearch.Text == string.Empty)
-                {
-                    textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
-                }
-                command = "Use sql_invoicing; SELECT " + hint + " from mytable where " + hint + " like " + "'" + textboxSearch.Text + "%'";
-                Database.load(command);
-                int num = Database.loadData.Rows.Count;
-                if (num > 0)
-                    labelHint1.Text = Database.loadData.Rows[0][hint].ToString();
-                else
-                {
-                    labelHint1.Text = "";
-                    labelHint2.Text = "";
-                    labelHint4.Text = "";
-                    labelHint3.Text = "";
-                }
-                if (num > 1)
-                    labelHint2.Text = Database.loadData.Rows[1][hint].ToString();
-                else
-                {
-                    labelHint2.Text = "";
-                    labelHint4.Text = "";
-                    labelHint3.Text = "";
-                }
-                if (num > 2)
-                    labelHint4.Text = Database.loadData.Rows[2][hint].ToString();
-                else
-                {
-                    labelHint4.Text = "";
-                    labelHint3.Text = "";
-                }
-                if (num > 3)
-                    labelHint3.Text = Database.loadData.Rows[3][hint].ToString();
-                else
-                    labelHint3.Text = "";
-            }
-        }
-
-        private void buttonSearch_Click(object sender, EventArgs e) // Khi click vào searchButton
-        {
-            if (textboxSearch.Text == "")
-            {
-                MessageBox.Show("Please insert the word that needs to be translated !");
-            }
-            else
-            {
-                activateSearchButton();
-            }
-        }
-
-        private void textboxSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                e.Handled = true;
-                if (labelHint1.ForeColor == RGBColors.color7)
-                    textboxSearch.Text = labelHint1.Text;
-                if (labelHint2.ForeColor == RGBColors.color7)
-                    textboxSearch.Text = labelHint2.Text;
-                if (labelHint4.ForeColor == RGBColors.color7)
-                    textboxSearch.Text = labelHint4.Text;
-                if (labelHint3.ForeColor == RGBColors.color7)
-                    textboxSearch.Text = labelHint3.Text;
-                if (textboxSearch.Text != "") 
-                    activateSearchButton();
-                if (textboxSearch.Text == "")
-                    MessageBox.Show("Please insert the word that needs to be translated!");
-            }
-        }
-
         private void buttonSwitch_Click(object sender, EventArgs e) // Khi click vào switchButton
         {
             if (ktSwitch == false)
@@ -542,65 +222,7 @@ namespace Dictionary_user
             loadVolcabulary();
         }
 
-        private void iconButton1_Click(object sender, EventArgs e) // Khi click vào translateButton
-        {
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-                currentChildForm = null;
-            }
-            activateMenuButton(sender, RGBColors.color1);
-            displaySwitch();
-            activateSwitchButton();
-            displaySearch();
-            textboxSearch.LineFocusedColor = RGBColors.color1;
-            textboxSearch.LineMouseHoverColor = RGBColors.color1;
-            buttonSearch.IconColor = RGBColors.color1;
-            Database.nowForm = 1;
-            bunifuDropdownTranslate.Visible = false;
-            checkBookMark();
-        }
-
-        private void btnHistory_Click(object sender, EventArgs e) // Khi click vào historyButton
-        {
-            hideSwitch();
-            displaySearch();
-            textboxSearch.HintText = "Search history";
-            textboxSearch.Text = textboxSearch.HintText;
-            textboxSearch.LineFocusedColor = RGBColors.color3;
-            textboxSearch.LineMouseHoverColor = RGBColors.color3;
-            buttonSearch.IconColor = RGBColors.color3;
-            Database.nowForm = 2;
-            Database.acction = "showHistoryList";
-            activateMenuButton(sender, RGBColors.color3);
-            bunifuDropdownTranslate.Visible = false;
-            openChildForm(new History());
-        }
-
-        private void btn_Bookmark_Click(object sender, EventArgs e) // Khi click vào bookmarkButton
-        {
-            hideSwitch();
-            displaySearch();
-            textboxSearch.HintText = "Search bookmark";
-            textboxSearch.Text = textboxSearch.HintText;
-            textboxSearch.LineFocusedColor = RGBColors.color2;
-            textboxSearch.LineMouseHoverColor = RGBColors.color2;
-            buttonSearch.IconColor = RGBColors.color2;
-            Database.nowForm = 3;
-            Database.acction = "showBookmarkList";
-            activateMenuButton(sender, RGBColors.color2);
-            bunifuDropdownTranslate.Visible = false;
-            openChildForm(new Bookmark());
-        }
-
-        private void btnSettings_Click(object sender, EventArgs e) // Khi click vào settingsButton
-        {
-            activateMenuButton(sender, RGBColors.color4);
-            openChildForm(new Settings());
-            hideSearch();
-            hideSwitch();
-            bunifuDropdownTranslate.Visible = false;
-        }
+       
 
        
 
@@ -931,19 +553,27 @@ namespace Dictionary_user
             textboxSearch.BackColor = Color.FromArgb(26, 25, 62);
             textboxSearch.ForeColor = Color.Gainsboro;
         }
-
-        private void textboxSearch_Leave(object sender, EventArgs e)
+  
+        private void textboxSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            textboxSearch.BackColor = Color.FromArgb(26, 25, 62);
-            textboxSearch.ForeColor = Color.Gainsboro;
+            if (e.KeyChar == (char)13)
+            {
+                e.Handled = true;
+                if (labelHint1.ForeColor == RGBColors.color7)
+                    textboxSearch.Text = labelHint1.Text;
+                if (labelHint2.ForeColor == RGBColors.color7)
+                    textboxSearch.Text = labelHint2.Text;
+                if (labelHint4.ForeColor == RGBColors.color7)
+                    textboxSearch.Text = labelHint4.Text;
+                if (labelHint3.ForeColor == RGBColors.color7)
+                    textboxSearch.Text = labelHint3.Text;
+                if (textboxSearch.Text != "")
+                    activateSearchButton();
+                if (textboxSearch.Text == "")
+                    MessageBox.Show("Please insert the word that needs to be translated!");
+            }
         }
-
-        private void textboxSearch_Validating(object sender, CancelEventArgs e)
-        {
-            textboxSearch.BackColor = Color.FromArgb(26, 25, 62);
-            textboxSearch.ForeColor = Color.Gainsboro;
-        }
-
+        
         #endregion
 
         #region Book and more Feature
@@ -966,32 +596,6 @@ namespace Dictionary_user
             }
         }
         
-        private void iconIdiom_Click(object sender, EventArgs e)
-        {
-            Color.FromArgb(242, 98, 121);
-            hideSwitch();
-            displaySearch();
-            hideSearch();
-            bunifuDropdownTranslate.RemoveItem("English");
-            bunifuDropdownTranslate.selectedIndex = 0;
-            Database.nowForm = 10;
-            Database.acction = "showIdiomList";
-            bunifuDropdownTranslate.Visible = true;
-            activateMenuButton(sender, Color.FromArgb(242, 98, 121));
-            openChildForm(new Idiom());
-        }
-
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            Color.FromArgb(48,129,238);
-            hideSwitch();
-            displaySearch();
-            hideSearch();
-            activateMenuButton(sender, Color.FromArgb(48,129,238));
-            openChildForm(new About());
-            bunifuDropdownTranslate.Visible = false;
-        }
-
         #endregion
 
         #region Volcabulary
@@ -1224,7 +828,423 @@ namespace Dictionary_user
             synth.Speak(labelWord8.Text);
         }
         #endregion
+
+        //Cleaning code, create new Regions
+
+        #region Search
+        
+        private void displaySearch() // Hiển thị chức năng tìm kiếm
+        {
+            textboxSearch.Visible = true;
+            buttonSearch.Visible = true;
+        }
+        
+        private void hideSearch() // Ẩn chức năng tìm kiếm
+        {
+            textboxSearch.Visible = false;
+            buttonSearch.Visible = false;
+        }
+       
+        private void setVisibleResult(bool set)
+        {
+            typedWord.Visible = set;
+            bookmarkButton.Visible = set;
+            wordMeaning.Visible = set;
+            btnPlay.Visible = set;
+            btnPlay2.Visible = set;
+        }
+        
+        private void loadResult()
+        {
+            if (textboxSearch.HintText == "Search English")
+            {
+                command = " SELECT VieMeaning from mytable where English = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                Database.load(command);
+                typedWord.Text = textboxSearch.Text;
+                if (Database.loadData.Rows.Count > 0)
+                    wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
+                else
+                    wordMeaning.Text = "Not Found";
+                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Eng-Vie");
+                btnPlay.Visible = true;
+                btnPlay2.Visible = false;
+            }
+            else
+            {
+                command = " SELECT English from mytable where VieMeaning = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                Database.load(command);
+                typedWord.Text = textboxSearch.Text;
+                if (Database.loadData.Rows.Count > 0)
+                    wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
+                else
+                    wordMeaning.Text = "Not Found";
+                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Vie-Eng");
+                btnPlay2.Visible = true;
+                btnPlay.Visible = false;
+            }
+        }
+    
+        private void activateSearchButton() // Kích hoạt searchButton
+        {
+            textboxSearch.Focus();
+            if (Database.nowForm == 1)
+            {
+                Database.acction = "Translate";
+                setVisibleResult(true);
+                loadResult();
+                reloadRecentHistory();
+                loadBookmark();
+                updateBookmarkHistory();
+            }// Translate
+            if (Database.nowForm == 2)
+            {
+                Database.acction = "searchHistory";
+                Database.textboxSearchText = textboxSearch.Text;
+                openChildForm(new History());
+            }// Search History 
+            if (Database.nowForm == 3)
+            {
+                Database.acction = "searchBookmark";
+                Database.textboxSearchText = textboxSearch.Text;
+                openChildForm(new Bookmark());
+            } // Search Bookmark
+        }
+        
+        private void buttonSearch_Click(object sender, EventArgs e) // Khi click vào searchButton
+        {
+            if (textboxSearch.Text == "")
+            {
+                MessageBox.Show("Please insert the word that needs to be translated !");
+            }
+            else
+            {
+                activateSearchButton();
+            }
+        }
+
+        private void textboxSearch_OnValueChanged(object sender, EventArgs e) // Khi thay đổi giá trị textboxSearch 
+        {
+            if (Database.nowForm == 10)
+            {
+                Database.textboxSearchText = textboxSearch.Text;
+            }
+            else
+            {
+                resetSuggestionColor();
+                hintColor = 0;
+                if (textboxSearch.Text != string.Empty)
+                {
+                    textboxSearch.LineIdleColor = RGBColors.color1;
+                }
+                if (textboxSearch.Text == string.Empty)
+                {
+                    textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
+                }
+                command = "Use sql_invoicing; SELECT " + hint + " from mytable where " + hint + " like " + "'" + textboxSearch.Text + "%'";
+                Database.load(command);
+                int num = Database.loadData.Rows.Count;
+                if (num > 0)
+                    labelHint1.Text = Database.loadData.Rows[0][hint].ToString();
+                else
+                {
+                    labelHint1.Text = "";
+                    labelHint2.Text = "";
+                    labelHint4.Text = "";
+                    labelHint3.Text = "";
+                }
+                if (num > 1)
+                    labelHint2.Text = Database.loadData.Rows[1][hint].ToString();
+                else
+                {
+                    labelHint2.Text = "";
+                    labelHint4.Text = "";
+                    labelHint3.Text = "";
+                }
+                if (num > 2)
+                    labelHint4.Text = Database.loadData.Rows[2][hint].ToString();
+                else
+                {
+                    labelHint4.Text = "";
+                    labelHint3.Text = "";
+                }
+                if (num > 3)
+                    labelHint3.Text = Database.loadData.Rows[3][hint].ToString();
+                else
+                    labelHint3.Text = "";
+            }
+        }
+        
+        #endregion
+
+        #region History
+
+        private void reloadRecentHistory()
+        {
+            labelHistory4.Text = labelHistory3.Text;
+            labelHistory3.Text = labelHistory2.Text;
+            labelHistory2.Text = labelHistory1.Text;
+            labelHistory1.Text = typedWord.Text;
+        }
+
+        private void updateBookmarkHistory()
+        {
+            if (bookmarkButton.IconColor == RGBColors.color7)
+            {
+                if (hint == "English")
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                else
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+            }
+            else
+            {
+
+                if (hint == "English")
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                else
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+            }
+        }
+
+        private void loadRecentlyHistory()
+        {
+
+            if (hint == "English")
+                command = "SELECT Word from historysearch where Translate='Eng-Vie' ORDER BY id DESC";
+            else
+                command = "SELECT Word from historysearch where Translate='Vie-Eng' ORDER BY id DESC";
+            Database.load(command);
+            if (Database.loadData.Rows.Count > 0)
+                labelHistory1.Text = Database.loadData.Rows[0]["Word"].ToString();
+            else
+            {
+                labelHistory1.Text = "";
+                labelHistory2.Text = "";
+                labelHistory3.Text = "";
+                labelHistory4.Text = "";
+            }
+            if (Database.loadData.Rows.Count > 1)
+                labelHistory2.Text = Database.loadData.Rows[1]["Word"].ToString();
+            else
+            {
+                labelHistory2.Text = "";
+                labelHistory3.Text = "";
+                labelHistory4.Text = "";
+            }
+            if (Database.loadData.Rows.Count > 2)
+                labelHistory3.Text = Database.loadData.Rows[2]["Word"].ToString();
+            else
+            {
+                labelHistory3.Text = "";
+                labelHistory4.Text = "";
+            }
+            if (Database.loadData.Rows.Count > 3)
+                labelHistory4.Text = Database.loadData.Rows[3]["Word"].ToString();
+            else
+                labelHistory4.Text = "";
+        }
+        
+        #endregion
+
+        #region Bookmark
+
+        private void loadBookmark()
+        {
+            command = " SELECT meaning from bookmark where word = " + "\"" + textboxSearch.Text.ToString() + "\"" + "and languages= " + "'" + hint + "'";
+            Database.load(command);
+            if (Database.loadData.Rows.Count > 0)
+            {
+                ktBookmark = true;
+                bookmarkButton.IconColor = RGBColors.color7;
+            }
+            else
+            {
+                ktBookmark = false;
+                bookmarkButton.IconColor = Color.Gainsboro;
+            }
+        }
+
+        private void loadRecentlyBookmark()
+        {
+            command = "SELECT Word from bookmark where languages=" + "'" + hint + "'" + " ORDER BY id DESC";
+            Database.load(command);
+            if (Database.loadData.Rows.Count > 0)
+                labelBookmark1.Text = Database.loadData.Rows[0]["Word"].ToString();
+            else
+            {
+                labelBookmark1.Text = "";
+                labelBookmark2.Text = "";
+                labelBookmark3.Text = "";
+                labelBookmark4.Text = "";
+            }
+            if (Database.loadData.Rows.Count > 1)
+                labelBookmark2.Text = Database.loadData.Rows[1]["Word"].ToString();
+            else
+            {
+                labelBookmark2.Text = "";
+                labelBookmark3.Text = "";
+                labelBookmark4.Text = "";
+            }
+            if (Database.loadData.Rows.Count > 2)
+                labelBookmark3.Text = Database.loadData.Rows[2]["Word"].ToString();
+            else
+            {
+                labelBookmark3.Text = "";
+                labelBookmark4.Text = "";
+            }
+            if (Database.loadData.Rows.Count > 3)
+                labelBookmark4.Text = Database.loadData.Rows[3]["Word"].ToString();
+            else
+                labelBookmark4.Text = "";
+        }
+
+        #endregion
+
+        #region Open other form
+        
+        private void closeChildForm(Form childForm)
+        {
+            childForm.FormClosed += new FormClosedEventHandler(Form_Closed);
+            void Form_Closed(object sender, FormClosedEventArgs e)
+            {
+                if (Database.acction == "clickFromBookmark")
+                {
+                    activateMenuButton(iconButton1, RGBColors.color1);
+                    displaySwitch();
+                    ktSwitch = Database.setLanguages;
+                    activateSwitchButton();
+                    displaySearch();
+                    textboxSearch.LineFocusedColor = RGBColors.color1;
+                    textboxSearch.LineMouseHoverColor = RGBColors.color1;
+                    buttonSearch.IconColor = RGBColors.color1;
+                    Database.nowForm = 1;
+                    checkBookMark();
+                    textboxSearch.Text = Database.word;
+                    activateSearchButton();
+                    if (bookmarkButton.IconColor == RGBColors.color7)
+                    {
+                        if (hint == "English")
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                        else
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                    }
+                    if (bookmarkButton.IconColor == Color.Gainsboro)
+                    {
+
+                        if (hint == "English")
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                        else
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                    }
+                }
+            }
+        }
+        
+        private void openChildForm(Form childForm) // Mở childForm mới
+        {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(childForm);
+            panelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            closeChildForm(childForm);
+        }
+        
+        private void iconButton1_Click(object sender, EventArgs e) // Khi click vào translateButton
+        {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+                currentChildForm = null;
+            }
+            activateMenuButton(sender, RGBColors.color1);
+            displaySwitch();
+            activateSwitchButton();
+            displaySearch();
+            textboxSearch.LineFocusedColor = RGBColors.color1;
+            textboxSearch.LineMouseHoverColor = RGBColors.color1;
+            buttonSearch.IconColor = RGBColors.color1;
+            Database.nowForm = 1;
+            bunifuDropdownTranslate.Visible = false;
+            checkBookMark();
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e) // Khi click vào historyButton
+        {
+            hideSwitch();
+            displaySearch();
+            textboxSearch.HintText = "Search history";
+            textboxSearch.Text = textboxSearch.HintText;
+            textboxSearch.LineFocusedColor = RGBColors.color3;
+            textboxSearch.LineMouseHoverColor = RGBColors.color3;
+            buttonSearch.IconColor = RGBColors.color3;
+            Database.nowForm = 2;
+            Database.acction = "showHistoryList";
+            activateMenuButton(sender, RGBColors.color3);
+            bunifuDropdownTranslate.Visible = false;
+            openChildForm(new History());
+        }
+
+        private void btn_Bookmark_Click(object sender, EventArgs e) // Khi click vào bookmarkButton
+        {
+            hideSwitch();
+            displaySearch();
+            textboxSearch.HintText = "Search bookmark";
+            textboxSearch.Text = textboxSearch.HintText;
+            textboxSearch.LineFocusedColor = RGBColors.color2;
+            textboxSearch.LineMouseHoverColor = RGBColors.color2;
+            buttonSearch.IconColor = RGBColors.color2;
+            Database.nowForm = 3;
+            Database.acction = "showBookmarkList";
+            activateMenuButton(sender, RGBColors.color2);
+            bunifuDropdownTranslate.Visible = false;
+            openChildForm(new Bookmark());
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e) // Khi click vào settingsButton
+        {
+            activateMenuButton(sender, RGBColors.color4);
+            openChildForm(new Settings());
+            hideSearch();
+            hideSwitch();
+            bunifuDropdownTranslate.Visible = false;
+        }
+
+        private void iconIdiom_Click(object sender, EventArgs e)
+        {
+            Color.FromArgb(242, 98, 121);
+            hideSwitch();
+            displaySearch();
+            hideSearch();
+            bunifuDropdownTranslate.RemoveItem("English");
+            bunifuDropdownTranslate.selectedIndex = 0;
+            Database.nowForm = 10;
+            Database.acction = "showIdiomList";
+            bunifuDropdownTranslate.Visible = true;
+            activateMenuButton(sender, Color.FromArgb(242, 98, 121));
+            openChildForm(new Idiom());
+        } // Book and more
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            Color.FromArgb(48, 129, 238);
+            hideSwitch();
+            displaySearch();
+            hideSearch();
+            activateMenuButton(sender, Color.FromArgb(48, 129, 238));
+            openChildForm(new About());
+            bunifuDropdownTranslate.Visible = false;
+        } // About us
+
+        #endregion
     }
 }
+
 
     

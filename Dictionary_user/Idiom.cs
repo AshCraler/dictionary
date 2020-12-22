@@ -26,6 +26,7 @@ namespace Dictionary_user
         private int suggestionRowCount;
         private int bookmarkRowCount;
         private int historyRowCount;
+
         private struct RGBColors // Struct các mã màu 
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
