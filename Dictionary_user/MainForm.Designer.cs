@@ -403,8 +403,6 @@
             this.textboxSearch.Enter += new System.EventHandler(this.textboxSearch_Enter);
             this.textboxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textboxSearch_KeyDown);
             this.textboxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxSearch_KeyPress);
-            this.textboxSearch.Leave += new System.EventHandler(this.textboxSearch_Leave);
-            this.textboxSearch.Validating += new System.ComponentModel.CancelEventHandler(this.textboxSearch_Validating);
             // 
             // buttonSearch
             // 
