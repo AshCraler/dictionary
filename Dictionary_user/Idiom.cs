@@ -13,9 +13,10 @@ namespace Dictionary_user
 {
     public partial class Idiom : Form
     {
-
+        #region declaration
+        
         private bool ktSwitch = false;
-        private string mode = "book";
+        private string mode = "Book";
         private string language = "vie";
         private string time;
         private string command;
@@ -26,7 +27,6 @@ namespace Dictionary_user
         private int suggestionRowCount;
         private int bookmarkRowCount;
         private int historyRowCount;
-
         private struct RGBColors // Struct các mã màu 
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -37,94 +37,31 @@ namespace Dictionary_user
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.FromArgb(255, 244, 79);
         }
-        private void reloadBookmark()
-        {
-            page = 0;
-            command = "select * from bookbookmark order by id DESC";
-            loadDatabase(command);
-            loadSearchSuggestionBookmark();
-            loadPageInfo();
-        }
+
+        #endregion
+        
         private void loadDatabase(string cmd)
         {
             Database.load(cmd);
             for (int i = 0; i < 100000; i++)
                 check[i] = true;
         }
-        private void resetSuggestionColor()
-        {
-            textBox1.ForeColor = Color.Gainsboro;
-            textBox2.ForeColor = Color.Gainsboro;
-            textBox3.ForeColor = Color.Gainsboro;
-            textBox4.ForeColor = Color.Gainsboro;
-        }
-        private void resetSuggestionBookmarkColor()
-        {
-            textBox6.ForeColor = Color.Gainsboro;
-            textBox7.ForeColor = Color.Gainsboro;
-            textBox8.ForeColor = Color.Gainsboro;
-            textBox9.ForeColor = Color.Gainsboro;
-        }
-        private void reseticonButtonSuggestionBookmarkColor()
-        {
-            iconButton1.IconColor= RGBColors.color2;
-            iconButton2.IconColor = RGBColors.color2;
-            iconButton3.IconColor = RGBColors.color2;
-            iconButton4.IconColor = RGBColors.color2;
-        }
-
-        private void loadDefaultSuggestion()
-        {
-            textboxSearch.HintText = "Search " + mode;
-            textboxSearch.Text = "";
-            textBoxResult.Text = "Searched " + mode;
-            labelLanguage.Text = labelLanguage.Text.ToString() + mode;
-        }
-        
-        private void loadBookmark()
-        {
-            command = " SELECT book from bookbookmark where book = " + "\"" + textBoxResult.Text.ToString() + "\""; //+ "and languages= " + "'" + hint + "'";
-            Database.load(command);
-            if (Database.loadData.Rows.Count > 0)
-            {
-                ktBookmark = true;
-                iconBookmark.IconColor = RGBColors.color7;
-            }
-            else
-            {
-                ktBookmark = false;
-                iconBookmark.IconColor = Color.Gainsboro;
-            }
-        }
-
-        private void loadPageInfo()
-        {
-            string max;
-            if ((page + 1) * 4 < Database.loadData.Rows.Count)
-                max = ((page + 1) * 4).ToString();
-            else max = Database.loadData.Rows.Count.ToString();
-            if (Database.loadData.Rows.Count == 0)
-                pageInfo.Visible = false;
-            else
-                pageInfo.Visible = true;
-            pageInfo.Text = (page * 4 + 1).ToString() + " - " + max + " / " + Database.loadData.Rows.Count.ToString() + " " + mode;
-        }
-        
+               
         public Idiom()
         {
             InitializeComponent();
             reloadBookmark();
             if (Database.BookandMore == 0)
             {
-                mode = "book";
+                mode = "Book";
             }
             if (Database.BookandMore == 1)
             {
-                mode = "idiom";
+                mode = "Idiom";
             }
             if (Database.BookandMore == 2)
             {
-                mode = "luminary";
+                mode = "Luminary";
                 labelLanguage.Text = "Vietnam ";
             }
             loadDefaultSuggestion();
@@ -138,11 +75,34 @@ namespace Dictionary_user
             System.Diagnostics.Process.Start(textBoxMeaning.Text.ToString());
         }
 
-
         //Cleaning code
 
         #region Search
 
+        private void resetSuggestionColor()
+        {
+            textBox1.ForeColor = Color.Gainsboro;
+            textBox2.ForeColor = Color.Gainsboro;
+            textBox3.ForeColor = Color.Gainsboro;
+            textBox4.ForeColor = Color.Gainsboro;
+        }
+
+        private void resetSuggestionBookmarkColor()
+        {
+            textBox6.ForeColor = Color.Gainsboro;
+            textBox7.ForeColor = Color.Gainsboro;
+            textBox8.ForeColor = Color.Gainsboro;
+            textBox9.ForeColor = Color.Gainsboro;
+        }
+      
+        private void reseticonButtonSuggestionBookmarkColor()
+        {
+            iconButton1.IconColor = RGBColors.color2;
+            iconButton2.IconColor = RGBColors.color2;
+            iconButton3.IconColor = RGBColors.color2;
+            iconButton4.IconColor = RGBColors.color2;
+        }
+        
         private void buttonSwitch_Click(object sender, EventArgs e)
         {
             if (ktSwitch == true)
@@ -299,6 +259,14 @@ namespace Dictionary_user
             }
         }
 
+        private void loadDefaultSuggestion()
+        {
+            textboxSearch.HintText = "Search " + mode;
+            textboxSearch.Text = "";
+            textBoxResult.Text = "Searched " + mode;
+            labelLanguage.Text = labelLanguage.Text.ToString() + mode;
+        }
+
         private void textboxBookmark_OnValueChanged(object sender, EventArgs e)
         {
             loadSearchSuggestionBookmark();
@@ -445,6 +413,109 @@ namespace Dictionary_user
 
         #region Bookmark
 
+        private void loadBookmarkData()
+        {
+            loadPageInfo();
+            if (Database.loadData.Rows.Count > 0 + 4 * page)
+            {
+                textBox6.Visible = true;
+                textBox6.Text = Database.loadData.Rows[page * 4]["book"].ToString();
+                iconButton1.Visible = true;
+                if (check[page * 4 + 1] == true)
+                    iconButton1.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    iconButton1.IconColor = Color.Gainsboro;
+            }
+            else
+            {
+                textBox6.Visible = false;
+                iconButton1.Visible = false;
+            }
+            if (Database.loadData.Rows.Count > 1 + 4 * page)
+            {
+                textBox7.Visible = true;
+                textBox7.Text = Database.loadData.Rows[page * 4+1]["book"].ToString();
+                iconButton2.Visible = true;
+                if (check[page * 4 + 2] == true)
+                    iconButton2.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    iconButton2.IconColor = Color.Gainsboro;
+            }
+            else
+            {
+                textBox7.Visible = false;
+                iconButton2.Visible = false;
+            }
+            if (Database.loadData.Rows.Count > 2 + 4 * page)
+            {
+                textBox8.Visible = true;
+                textBox8.Text = Database.loadData.Rows[page * 4+2]["book"].ToString();
+                iconButton3.Visible = true;
+                if (check[page * 4 + 3] == true)
+                    iconButton3.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    iconButton3.IconColor = Color.Gainsboro;
+            }
+            else
+            {
+                textBox8.Visible = false;
+                iconButton3.Visible = false;
+            }
+            if (Database.loadData.Rows.Count > 3 + 4 * page)
+            {
+                textBox9.Visible = true;
+                textBox9.Text = Database.loadData.Rows[page * 4+3]["book"].ToString();
+                iconButton4.Visible = true;
+                if (check[page * 4 + 4] == true)
+                    iconButton4.IconColor = Color.FromArgb(238, 26, 74);
+                else
+                    iconButton4.IconColor = Color.Gainsboro;
+            }
+            else
+            {
+                textBox9.Visible = false;
+                iconButton4.Visible = false;
+            }
+        }
+
+        private void loadBookmark()
+        {
+            command = " SELECT book from bookbookmark where book = " + "\"" + textBoxResult.Text.ToString() + "\""; //+ "and languages= " + "'" + hint + "'";
+            Database.load(command);
+            if (Database.loadData.Rows.Count > 0)
+            {
+                ktBookmark = true;
+                iconBookmark.IconColor = RGBColors.color7;
+            }
+            else
+            {
+                ktBookmark = false;
+                iconBookmark.IconColor = Color.Gainsboro;
+            }
+        }
+
+        private void loadPageInfo()
+        {
+            string max;
+            if ((page + 1) * 4 < Database.loadData.Rows.Count)
+                max = ((page + 1) * 4).ToString();
+            else max = Database.loadData.Rows.Count.ToString();
+            if (Database.loadData.Rows.Count == 0)
+                pageInfo.Visible = false;
+            else
+                pageInfo.Visible = true;
+            pageInfo.Text = (page * 4 + 1).ToString() + " - " + max + " / " + Database.loadData.Rows.Count.ToString() + " " + mode;
+        }
+
+        private void reloadBookmark()
+        {
+            page = 0;
+            command = "select * from bookbookmark order by id DESC";
+            loadDatabase(command);
+            loadSearchSuggestionBookmark();
+            loadPageInfo();
+        }
+
         private void iconBookmark_Click(object sender, EventArgs e)
         {
             time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
@@ -453,6 +524,9 @@ namespace Dictionary_user
                 ktBookmark = true;
                 iconBookmark.IconColor = RGBColors.color7;
                 Database.insertBookBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
+                command = "select * from bookbookmark order by id DESC";
+                loadDatabase(command);
+                loadBookmarkData();
                 //   if (hint == "English")
                 //       Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
                 //   else
@@ -550,8 +624,7 @@ namespace Dictionary_user
             if ((page + 1) * 4 < bookmarkRowCount)
             {
                 page = page + 1;
-                loadPageInfo();
-                loadSearchSuggestionBookmark();
+                loadBookmarkData();
             }
         }
 
@@ -560,14 +633,16 @@ namespace Dictionary_user
             if (page > 0)
             {
                 page = page - 1;
-                loadPageInfo();
-                loadSearchSuggestionBookmark();
+                loadBookmarkData();
             }
         }
 
         private void Reload_Click(object sender, EventArgs e)
         {
-            reloadBookmark();
+            page = 0;
+            command = "select * from bookbookmark order by id DESC";
+            loadDatabase(command);
+            loadBookmarkData();
         }
 
         #endregion

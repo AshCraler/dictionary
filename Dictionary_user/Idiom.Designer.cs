@@ -166,7 +166,7 @@
             this.textBox16.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox16.Size = new System.Drawing.Size(302, 25);
             this.textBox16.TabIndex = 109;
-            this.textBox16.Text = "Nói một đường làm một nẻo";
+            this.textBox16.Text = "Điều kỳ diệu";
             this.textBox16.Click += new System.EventHandler(this.textBox16_Click);
             this.textBox16.MouseLeave += new System.EventHandler(this.textBox16_MouseLeave);
             this.textBox16.MouseHover += new System.EventHandler(this.textBox16_MouseHover);
@@ -182,7 +182,7 @@
             this.textBox15.ReadOnly = true;
             this.textBox15.Size = new System.Drawing.Size(302, 25);
             this.textBox15.TabIndex = 108;
-            this.textBox15.Text = "Thương cho roi cho vọt";
+            this.textBox15.Text = "Đèn không hắt bóng";
             this.textBox15.Click += new System.EventHandler(this.textBox15_Click);
             this.textBox15.MouseLeave += new System.EventHandler(this.textBox15_MouseLeave);
             this.textBox15.MouseHover += new System.EventHandler(this.textBox15_MouseHover);
@@ -198,7 +198,7 @@
             this.textBox14.ReadOnly = true;
             this.textBox14.Size = new System.Drawing.Size(302, 25);
             this.textBox14.TabIndex = 107;
-            this.textBox14.Text = "Tốt gỗ hơn tốt nước sơn";
+            this.textBox14.Text = "Ngày mai";
             this.textBox14.Click += new System.EventHandler(this.textBox14_Click);
             this.textBox14.MouseLeave += new System.EventHandler(this.textBox14_MouseLeave);
             this.textBox14.MouseHover += new System.EventHandler(this.textBox14_MouseHover);
@@ -214,7 +214,7 @@
             this.textBox13.ReadOnly = true;
             this.textBox13.Size = new System.Drawing.Size(302, 25);
             this.textBox13.TabIndex = 106;
-            this.textBox13.Text = "Gừng càng già càng cay";
+            this.textBox13.Text = "Tôi là Bê tô";
             this.textBox13.Click += new System.EventHandler(this.textBox13_Click);
             this.textBox13.MouseLeave += new System.EventHandler(this.textBox13_MouseLeave);
             this.textBox13.MouseHover += new System.EventHandler(this.textBox13_MouseHover);
@@ -230,7 +230,7 @@
             this.textBox12.ReadOnly = true;
             this.textBox12.Size = new System.Drawing.Size(302, 25);
             this.textBox12.TabIndex = 105;
-            this.textBox12.Text = "Cái nết đánh chết cái đẹp";
+            this.textBox12.Text = "Tôi thấy hoa vàng trên cỏ xanh";
             this.textBox12.Click += new System.EventHandler(this.textBox12_Click);
             this.textBox12.MouseLeave += new System.EventHandler(this.textBox12_MouseLeave);
             this.textBox12.MouseHover += new System.EventHandler(this.textBox12_MouseHover);
@@ -246,7 +246,7 @@
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(302, 25);
             this.textBox11.TabIndex = 104;
-            this.textBox11.Text = "Nồi nào úp vung nấy";
+            this.textBox11.Text = "1Q84";
             this.textBox11.Click += new System.EventHandler(this.textBox11_Click);
             this.textBox11.MouseLeave += new System.EventHandler(this.textBox11_MouseLeave);
             this.textBox11.MouseHover += new System.EventHandler(this.textBox11_MouseHover);

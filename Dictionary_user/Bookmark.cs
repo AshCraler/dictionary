@@ -488,130 +488,7 @@ namespace Dictionary_user
             loadData();
         }
 
-        private void speaker1_Click(object sender, EventArgs e)
-        {
-            SpeechSynthesizer synth = new SpeechSynthesizer();  
-            synth.SetOutputToDefaultAudioDevice();
-            if (language1 == "English")
-                synth.Speak(labelWord1.Text);
-            else synth.Speak(labelMeaning1.Text);       
-        }
-
-        private void speaker2_Click(object sender, EventArgs e)
-        {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            if (language2 == "English")
-                synth.Speak(labelWord2.Text);
-            else synth.Speak(labelMeaning2.Text);
-        }
-
-        private void speaker3_Click(object sender, EventArgs e)
-        {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            if (language3 == "English")
-                synth.Speak(labelWord3.Text);
-            else synth.Speak(labelMeaning3.Text);
-        }
-
-        private void speaker4_Click(object sender, EventArgs e)
-        {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            if (language4 == "English")
-                synth.Speak(labelWord4.Text);
-            else synth.Speak(labelMeaning4.Text);
-        }
-
-        private void speaker5_Click(object sender, EventArgs e)
-        {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            if (language5 == "English")
-                synth.Speak(labelWord5.Text);
-            else synth.Speak(labelMeaning5.Text);
-        }
-
-        private void speaker6_Click(object sender, EventArgs e)
-        {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            if (language6 == "English")
-                synth.Speak(labelWord6.Text);
-            else synth.Speak(labelMeaning6.Text);
-        }
-
-        private void speaker7_Click(object sender, EventArgs e)
-        {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            if (language7 == "English")
-                synth.Speak(labelWord7.Text);
-            else synth.Speak(labelMeaning7.Text);
-        }
-
-        private void speaker8_Click(object sender, EventArgs e)
-        {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            if (language8 == "English")
-                synth.Speak(labelWord8.Text);
-            else synth.Speak(labelMeaning8.Text);
-        }
-
-        private void speaker9_Click(object sender, EventArgs e)
-        {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            if (language9 == "English") 
-                synth.Speak(labelWord9.Text);
-            else synth.Speak(labelMeaning9.Text);
-        }
-
-        private void speaker10_Click(object sender, EventArgs e)
-        {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            if (language10 == "English")
-                synth.Speak(labelWord10.Text);
-            else synth.Speak(labelMeaning10.Text);
-        }
-
-        private void speaker11_Click(object sender, EventArgs e)
-        {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            if (language11 == "English")
-                synth.Speak(labelWord11.Text);
-            else synth.Speak(labelMeaning11.Text);
-        }
-
-        private void speaker12_Click(object sender, EventArgs e)
-        {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            if (language12 == "English")
-                synth.Speak(labelWord12.Text);
-            else synth.Speak(labelMeaning12.Text);
-        } 
-
-        private void speaker13_Click(object sender, EventArgs e)
-        {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            if (language13 == "English")
-                synth.Speak(labelWord13.Text);
-            else synth.Speak(labelMeaning13.Text);
-        }
-
-        private void Reload_Click(object sender, EventArgs e)
-        {
-            page = 0;
-            command = "select * from bookmark order by id DESC";
-            loadDatabase(command);
-            loadData();
-        }
+        #region Bookmark
 
         private void Bookmark1_Click(object sender, EventArgs e)
         {
@@ -624,7 +501,7 @@ namespace Dictionary_user
             }
             else
             {
-                Bookmark1.IconColor= Color.FromArgb(238, 26, 74);
+                Bookmark1.IconColor = Color.FromArgb(238, 26, 74);
                 Database.insertBookmark(labelWord1.Text, labelMeaning1.Text, language1, time);
                 check[page * 13 + 1] = true;
             }
@@ -852,6 +729,132 @@ namespace Dictionary_user
             }
         }
 
+        #endregion
+        private void speaker1_Click(object sender, EventArgs e)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();  
+            synth.SetOutputToDefaultAudioDevice();
+            if (language1 == "English")
+                synth.Speak(labelWord1.Text);
+            else synth.Speak(labelMeaning1.Text);       
+        }
+
+        private void speaker2_Click(object sender, EventArgs e)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            if (language2 == "English")
+                synth.Speak(labelWord2.Text);
+            else synth.Speak(labelMeaning2.Text);
+        }
+
+        private void speaker3_Click(object sender, EventArgs e)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            if (language3 == "English")
+                synth.Speak(labelWord3.Text);
+            else synth.Speak(labelMeaning3.Text);
+        }
+
+        private void speaker4_Click(object sender, EventArgs e)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            if (language4 == "English")
+                synth.Speak(labelWord4.Text);
+            else synth.Speak(labelMeaning4.Text);
+        }
+
+        private void speaker5_Click(object sender, EventArgs e)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            if (language5 == "English")
+                synth.Speak(labelWord5.Text);
+            else synth.Speak(labelMeaning5.Text);
+        }
+
+        private void speaker6_Click(object sender, EventArgs e)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            if (language6 == "English")
+                synth.Speak(labelWord6.Text);
+            else synth.Speak(labelMeaning6.Text);
+        }
+
+        private void speaker7_Click(object sender, EventArgs e)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            if (language7 == "English")
+                synth.Speak(labelWord7.Text);
+            else synth.Speak(labelMeaning7.Text);
+        }
+
+        private void speaker8_Click(object sender, EventArgs e)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            if (language8 == "English")
+                synth.Speak(labelWord8.Text);
+            else synth.Speak(labelMeaning8.Text);
+        }
+
+        private void speaker9_Click(object sender, EventArgs e)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            if (language9 == "English") 
+                synth.Speak(labelWord9.Text);
+            else synth.Speak(labelMeaning9.Text);
+        }
+
+        private void speaker10_Click(object sender, EventArgs e)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            if (language10 == "English")
+                synth.Speak(labelWord10.Text);
+            else synth.Speak(labelMeaning10.Text);
+        }
+
+        private void speaker11_Click(object sender, EventArgs e)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            if (language11 == "English")
+                synth.Speak(labelWord11.Text);
+            else synth.Speak(labelMeaning11.Text);
+        }
+
+        private void speaker12_Click(object sender, EventArgs e)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            if (language12 == "English")
+                synth.Speak(labelWord12.Text);
+            else synth.Speak(labelMeaning12.Text);
+        } 
+
+        private void speaker13_Click(object sender, EventArgs e)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            if (language13 == "English")
+                synth.Speak(labelWord13.Text);
+            else synth.Speak(labelMeaning13.Text);
+        }
+
+        private void Reload_Click(object sender, EventArgs e)
+        {
+            page = 0;
+            command = "select * from bookmark order by id DESC";
+            loadDatabase(command);
+            loadData();
+        }
+       
         private void buttonDateDesc_Click(object sender, EventArgs e)
         {
             page = 0;
@@ -1471,6 +1474,8 @@ namespace Dictionary_user
             else Database.setLanguages = true;
             this.Close();
         }
+
+       
     }
 }
      
