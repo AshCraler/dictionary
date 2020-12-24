@@ -281,6 +281,35 @@ namespace Dictionary_user
             loadSearchSuggestion();
         }
 
+        private void iconButtonSearchHistory_Click(object sender, EventArgs e)
+        {
+            if (textboxHistory.Text == "")
+            {
+                MessageBox.Show("Please insert the " + mode + " that needs to be searched !");
+            }
+            else
+            {
+                iconBookmark.Visible = true;
+                textBoxResult.Visible = true;
+                textBoxMeaning.Visible = true;
+                pictureBoxSearched.Visible = true;
+                pictureBoxMeaning.Visible = true;
+                command = "SELECT * from " + language + "book where book= " + "\"" + textboxHistory.Text.ToString() + "\"";
+                Database.load(command);
+                if (Database.loadData.Rows.Count > 0)
+                {
+                    textBoxResult.Text = Database.loadData.Rows[0]["book"].ToString();
+                    textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
+                }
+                else
+                {
+                    textBoxResult.Text = textboxHistory.Text;
+                    textBoxMeaning.Text = "Not Found";
+                }
+                loadBookmark();
+            }
+        }
+
         private void iconButtonSearchBookmark_Click(object sender, EventArgs e)
         {
             if (textboxBookmark.Text == "")
@@ -621,7 +650,7 @@ namespace Dictionary_user
 
         private void Next_Click(object sender, EventArgs e)
         {
-            if ((page + 1) * 4 < bookmarkRowCount)
+            if ((page + 1) * 4 < Database.loadData.Rows.Count)
             {
                 page = page + 1;
                 loadBookmarkData();
@@ -644,6 +673,41 @@ namespace Dictionary_user
             loadDatabase(command);
             loadBookmarkData();
         }
+
+        #endregion
+
+        #region History
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton12_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         #endregion
 
@@ -771,6 +835,7 @@ namespace Dictionary_user
         private void textBox11_MouseHover(object sender, EventArgs e)
         {
             textBox11.ForeColor = Color.FromArgb(242, 98, 121);
+            toolTip1.SetToolTip(textBox11, textBox11.Text);
         }
 
         private void textBox11_MouseLeave(object sender, EventArgs e)

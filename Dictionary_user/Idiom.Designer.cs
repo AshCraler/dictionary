@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelResult = new System.Windows.Forms.Panel();
@@ -43,7 +44,7 @@
             this.iconButton9 = new FontAwesome.Sharp.IconButton();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSearchHistory = new FontAwesome.Sharp.IconButton();
             this.pictureBoxBookmarkTime = new System.Windows.Forms.PictureBox();
             this.textboxHistory = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBoxMeaning = new System.Windows.Forms.PictureBox();
@@ -87,6 +88,7 @@
             this.labelHistory = new System.Windows.Forms.Label();
             this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
             this.iconButtonBookmark = new FontAwesome.Sharp.IconButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panelResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBookmarkTime)).BeginInit();
@@ -139,7 +141,7 @@
             this.panelResult.Controls.Add(this.iconButton9);
             this.panelResult.Controls.Add(this.iconButton8);
             this.panelResult.Controls.Add(this.iconButton7);
-            this.panelResult.Controls.Add(this.iconButton6);
+            this.panelResult.Controls.Add(this.iconButtonSearchHistory);
             this.panelResult.Controls.Add(this.pictureBoxBookmarkTime);
             this.panelResult.Controls.Add(this.textboxHistory);
             this.panelResult.Controls.Add(this.pictureBoxMeaning);
@@ -231,6 +233,7 @@
             this.textBox12.Size = new System.Drawing.Size(302, 25);
             this.textBox12.TabIndex = 105;
             this.textBox12.Text = "Tôi thấy hoa vàng trên cỏ xanh";
+            this.toolTip1.SetToolTip(this.textBox12, "How are you");
             this.textBox12.Click += new System.EventHandler(this.textBox12_Click);
             this.textBox12.MouseLeave += new System.EventHandler(this.textBox12_MouseLeave);
             this.textBox12.MouseHover += new System.EventHandler(this.textBox12_MouseHover);
@@ -247,6 +250,7 @@
             this.textBox11.Size = new System.Drawing.Size(302, 25);
             this.textBox11.TabIndex = 104;
             this.textBox11.Text = "1Q84";
+            this.toolTip1.SetToolTip(this.textBox11, "Hello");
             this.textBox11.Click += new System.EventHandler(this.textBox11_Click);
             this.textBox11.MouseLeave += new System.EventHandler(this.textBox11_MouseLeave);
             this.textBox11.MouseHover += new System.EventHandler(this.textBox11_MouseHover);
@@ -266,6 +270,7 @@
             this.iconButton12.Size = new System.Drawing.Size(43, 41);
             this.iconButton12.TabIndex = 103;
             this.iconButton12.UseVisualStyleBackColor = true;
+            this.iconButton12.Click += new System.EventHandler(this.iconButton12_Click);
             // 
             // iconButton11
             // 
@@ -282,6 +287,7 @@
             this.iconButton11.Size = new System.Drawing.Size(43, 41);
             this.iconButton11.TabIndex = 102;
             this.iconButton11.UseVisualStyleBackColor = true;
+            this.iconButton11.Click += new System.EventHandler(this.iconButton11_Click);
             // 
             // iconButton10
             // 
@@ -298,6 +304,7 @@
             this.iconButton10.Size = new System.Drawing.Size(43, 41);
             this.iconButton10.TabIndex = 101;
             this.iconButton10.UseVisualStyleBackColor = true;
+            this.iconButton10.Click += new System.EventHandler(this.iconButton10_Click);
             // 
             // iconButton9
             // 
@@ -314,6 +321,7 @@
             this.iconButton9.Size = new System.Drawing.Size(43, 41);
             this.iconButton9.TabIndex = 100;
             this.iconButton9.UseVisualStyleBackColor = true;
+            this.iconButton9.Click += new System.EventHandler(this.iconButton9_Click);
             // 
             // iconButton8
             // 
@@ -330,6 +338,7 @@
             this.iconButton8.Size = new System.Drawing.Size(43, 41);
             this.iconButton8.TabIndex = 99;
             this.iconButton8.UseVisualStyleBackColor = true;
+            this.iconButton8.Click += new System.EventHandler(this.iconButton8_Click);
             // 
             // iconButton7
             // 
@@ -346,23 +355,25 @@
             this.iconButton7.Size = new System.Drawing.Size(43, 41);
             this.iconButton7.TabIndex = 98;
             this.iconButton7.UseVisualStyleBackColor = true;
+            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
             // 
-            // iconButton6
+            // iconButtonSearchHistory
             // 
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.iconButton6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(98)))), ((int)(((byte)(121)))));
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 30;
-            this.iconButton6.Location = new System.Drawing.Point(711, 14);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Rotation = 0D;
-            this.iconButton6.Size = new System.Drawing.Size(39, 38);
-            this.iconButton6.TabIndex = 97;
-            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButton6.UseVisualStyleBackColor = true;
+            this.iconButtonSearchHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSearchHistory.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonSearchHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
+            this.iconButtonSearchHistory.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconButtonSearchHistory.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(98)))), ((int)(((byte)(121)))));
+            this.iconButtonSearchHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSearchHistory.IconSize = 30;
+            this.iconButtonSearchHistory.Location = new System.Drawing.Point(711, 14);
+            this.iconButtonSearchHistory.Name = "iconButtonSearchHistory";
+            this.iconButtonSearchHistory.Rotation = 0D;
+            this.iconButtonSearchHistory.Size = new System.Drawing.Size(39, 38);
+            this.iconButtonSearchHistory.TabIndex = 97;
+            this.iconButtonSearchHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.iconButtonSearchHistory.UseVisualStyleBackColor = true;
+            this.iconButtonSearchHistory.Click += new System.EventHandler(this.iconButtonSearchHistory_Click);
             // 
             // pictureBoxBookmarkTime
             // 
@@ -1025,6 +1036,11 @@
             this.iconButtonBookmark.TabIndex = 89;
             this.iconButtonBookmark.UseVisualStyleBackColor = true;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Saved time";
+            // 
             // Idiom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1100,7 +1116,7 @@
         private System.Windows.Forms.PictureBox pictureBoxSearched;
         private System.Windows.Forms.PictureBox pictureBoxMeaning;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textboxHistory;
-        private FontAwesome.Sharp.IconButton iconButton6;
+        private FontAwesome.Sharp.IconButton iconButtonSearchHistory;
         private System.Windows.Forms.PictureBox pictureBoxBookmarkTime;
         private FontAwesome.Sharp.IconButton iconButton12;
         private FontAwesome.Sharp.IconButton iconButton11;
@@ -1114,6 +1130,7 @@
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.ToolTip toolTip1;
         //public System.Windows.Forms.Label labelIdiom1;
     }
 }
