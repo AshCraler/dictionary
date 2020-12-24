@@ -39,7 +39,7 @@ namespace Dictionary_user
         }
 
         #endregion
-        
+
         private void loadDatabase(string cmd)
         {
             Database.load(cmd);
@@ -648,6 +648,45 @@ namespace Dictionary_user
         #endregion
 
         #region Text UI
+
+        private void Idiom_Load(object sender, EventArgs e)
+        {
+            textBox1.Cursor = Cursors.Hand;
+            textBox1.GotFocus += textBox_GotFocus;
+            textBox2.Cursor = Cursors.Hand;
+            textBox2.GotFocus += textBox_GotFocus;
+            textBox3.Cursor = Cursors.Hand;
+            textBox3.GotFocus += textBox_GotFocus;
+            textBox4.Cursor = Cursors.Hand;
+            textBox4.GotFocus += textBox_GotFocus;
+            textBox6.Cursor = Cursors.Hand;
+            textBox6.GotFocus += textBox_GotFocus;
+            textBox7.Cursor = Cursors.Hand;
+            textBox7.GotFocus += textBox_GotFocus;
+            textBox8.Cursor = Cursors.Hand;
+            textBox8.GotFocus += textBox_GotFocus;
+            textBox9.Cursor = Cursors.Hand;
+            textBox9.GotFocus += textBox_GotFocus;
+            textBox11.Cursor = Cursors.Hand;
+            textBox11.GotFocus += textBox_GotFocus;
+            textBox12.Cursor = Cursors.Hand;
+            textBox12.GotFocus += textBox_GotFocus;
+            textBox13.Cursor = Cursors.Hand;
+            textBox13.GotFocus += textBox_GotFocus;
+            textBox14.Cursor = Cursors.Hand;
+            textBox14.GotFocus += textBox_GotFocus;
+            textBox15.Cursor = Cursors.Hand;
+            textBox15.GotFocus += textBox_GotFocus;
+            textBox16.Cursor = Cursors.Hand;
+            textBox16.GotFocus += textBox_GotFocus;
+            textBoxMeaning.Cursor = Cursors.Hand;
+            textBoxMeaning.GotFocus += textBox_GotFocus;
+        }
+
+        private void textBox_GotFocus(object sender, EventArgs e)
+        {
+            ((TextBox)sender).Parent.Focus();
+        }
 
         private void textBox1_MouseHover(object sender, EventArgs e)
         {

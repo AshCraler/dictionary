@@ -1033,6 +1033,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Idiom";
             this.Text = "Idiom";
+            this.Load += new System.EventHandler(this.Idiom_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelResult.ResumeLayout(false);
