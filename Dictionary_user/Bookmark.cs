@@ -730,6 +730,7 @@ namespace Dictionary_user
         }
 
         #endregion
+        
         private void speaker1_Click(object sender, EventArgs e)
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();  
@@ -903,6 +904,8 @@ namespace Dictionary_user
             }   
         }
 
+        #region TextUI
+
         private void labelWord1_MouseHover(object sender, EventArgs e)
         {
             labelWord1.ForeColor = Color.FromArgb(238, 26, 74);
@@ -1058,6 +1061,8 @@ namespace Dictionary_user
             labelWord13.ForeColor = Color.Gainsboro;
             labelMeaning13.ForeColor = Color.Gainsboro;
         }
+
+        #endregion
 
         private void labelWord1_Click(object sender, EventArgs e)
         {
@@ -1344,7 +1349,7 @@ namespace Dictionary_user
             labelWord13.ForeColor = Color.Gainsboro;
             labelMeaning13.ForeColor = Color.Gainsboro;
         }
-
+        
         private void labelMeaning1_Click(object sender, EventArgs e)
         {
             Database.acction = "clickFromBookmark";
@@ -1473,9 +1478,7 @@ namespace Dictionary_user
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
-        }
-
-       
+        }       
     }
 }
      

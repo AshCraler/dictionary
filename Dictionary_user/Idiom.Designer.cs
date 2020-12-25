@@ -169,6 +169,7 @@
             this.textBox16.Size = new System.Drawing.Size(302, 25);
             this.textBox16.TabIndex = 109;
             this.textBox16.Text = "Điều kỳ diệu";
+            this.textBox16.Visible = false;
             this.textBox16.Click += new System.EventHandler(this.textBox16_Click);
             this.textBox16.MouseLeave += new System.EventHandler(this.textBox16_MouseLeave);
             this.textBox16.MouseHover += new System.EventHandler(this.textBox16_MouseHover);
@@ -185,6 +186,7 @@
             this.textBox15.Size = new System.Drawing.Size(302, 25);
             this.textBox15.TabIndex = 108;
             this.textBox15.Text = "Đèn không hắt bóng";
+            this.textBox15.Visible = false;
             this.textBox15.Click += new System.EventHandler(this.textBox15_Click);
             this.textBox15.MouseLeave += new System.EventHandler(this.textBox15_MouseLeave);
             this.textBox15.MouseHover += new System.EventHandler(this.textBox15_MouseHover);
@@ -201,6 +203,7 @@
             this.textBox14.Size = new System.Drawing.Size(302, 25);
             this.textBox14.TabIndex = 107;
             this.textBox14.Text = "Ngày mai";
+            this.textBox14.Visible = false;
             this.textBox14.Click += new System.EventHandler(this.textBox14_Click);
             this.textBox14.MouseLeave += new System.EventHandler(this.textBox14_MouseLeave);
             this.textBox14.MouseHover += new System.EventHandler(this.textBox14_MouseHover);
@@ -217,6 +220,7 @@
             this.textBox13.Size = new System.Drawing.Size(302, 25);
             this.textBox13.TabIndex = 106;
             this.textBox13.Text = "Tôi là Bê tô";
+            this.textBox13.Visible = false;
             this.textBox13.Click += new System.EventHandler(this.textBox13_Click);
             this.textBox13.MouseLeave += new System.EventHandler(this.textBox13_MouseLeave);
             this.textBox13.MouseHover += new System.EventHandler(this.textBox13_MouseHover);
@@ -234,6 +238,7 @@
             this.textBox12.TabIndex = 105;
             this.textBox12.Text = "Tôi thấy hoa vàng trên cỏ xanh";
             this.toolTip1.SetToolTip(this.textBox12, "How are you");
+            this.textBox12.Visible = false;
             this.textBox12.Click += new System.EventHandler(this.textBox12_Click);
             this.textBox12.MouseLeave += new System.EventHandler(this.textBox12_MouseLeave);
             this.textBox12.MouseHover += new System.EventHandler(this.textBox12_MouseHover);
@@ -251,6 +256,7 @@
             this.textBox11.TabIndex = 104;
             this.textBox11.Text = "1Q84";
             this.toolTip1.SetToolTip(this.textBox11, "Hello");
+            this.textBox11.Visible = false;
             this.textBox11.Click += new System.EventHandler(this.textBox11_Click);
             this.textBox11.MouseLeave += new System.EventHandler(this.textBox11_MouseLeave);
             this.textBox11.MouseHover += new System.EventHandler(this.textBox11_MouseHover);
@@ -270,6 +276,7 @@
             this.iconButton12.Size = new System.Drawing.Size(43, 41);
             this.iconButton12.TabIndex = 103;
             this.iconButton12.UseVisualStyleBackColor = true;
+            this.iconButton12.Visible = false;
             this.iconButton12.Click += new System.EventHandler(this.iconButton12_Click);
             // 
             // iconButton11
@@ -287,6 +294,7 @@
             this.iconButton11.Size = new System.Drawing.Size(43, 41);
             this.iconButton11.TabIndex = 102;
             this.iconButton11.UseVisualStyleBackColor = true;
+            this.iconButton11.Visible = false;
             this.iconButton11.Click += new System.EventHandler(this.iconButton11_Click);
             // 
             // iconButton10
@@ -304,6 +312,7 @@
             this.iconButton10.Size = new System.Drawing.Size(43, 41);
             this.iconButton10.TabIndex = 101;
             this.iconButton10.UseVisualStyleBackColor = true;
+            this.iconButton10.Visible = false;
             this.iconButton10.Click += new System.EventHandler(this.iconButton10_Click);
             // 
             // iconButton9
@@ -321,6 +330,7 @@
             this.iconButton9.Size = new System.Drawing.Size(43, 41);
             this.iconButton9.TabIndex = 100;
             this.iconButton9.UseVisualStyleBackColor = true;
+            this.iconButton9.Visible = false;
             this.iconButton9.Click += new System.EventHandler(this.iconButton9_Click);
             // 
             // iconButton8
@@ -338,6 +348,7 @@
             this.iconButton8.Size = new System.Drawing.Size(43, 41);
             this.iconButton8.TabIndex = 99;
             this.iconButton8.UseVisualStyleBackColor = true;
+            this.iconButton8.Visible = false;
             this.iconButton8.Click += new System.EventHandler(this.iconButton8_Click);
             // 
             // iconButton7
@@ -355,13 +366,14 @@
             this.iconButton7.Size = new System.Drawing.Size(43, 41);
             this.iconButton7.TabIndex = 98;
             this.iconButton7.UseVisualStyleBackColor = true;
+            this.iconButton7.Visible = false;
             this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
             // 
             // iconButtonSearchHistory
             // 
             this.iconButtonSearchHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonSearchHistory.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonSearchHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
+            this.iconButtonSearchHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.iconButtonSearchHistory.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.iconButtonSearchHistory.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(98)))), ((int)(((byte)(121)))));
             this.iconButtonSearchHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -403,6 +415,7 @@
             this.textboxHistory.Size = new System.Drawing.Size(268, 39);
             this.textboxHistory.TabIndex = 52;
             this.textboxHistory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textboxHistory.OnValueChanged += new System.EventHandler(this.textboxHistory_OnValueChanged);
             // 
             // pictureBoxMeaning
             // 
@@ -553,6 +566,7 @@
             this.iconButtonExcel.Size = new System.Drawing.Size(35, 33);
             this.iconButtonExcel.TabIndex = 117;
             this.iconButtonExcel.UseVisualStyleBackColor = true;
+            this.iconButtonExcel.Click += new System.EventHandler(this.iconButtonExcel_Click);
             // 
             // Reload
             // 
@@ -641,7 +655,7 @@
             // 
             this.iconButtonSearchBookmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonSearchBookmark.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonSearchBookmark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
+            this.iconButtonSearchBookmark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(76)))));
             this.iconButtonSearchBookmark.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.iconButtonSearchBookmark.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
             this.iconButtonSearchBookmark.IconFont = FontAwesome.Sharp.IconFont.Auto;
