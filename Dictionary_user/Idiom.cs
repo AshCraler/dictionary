@@ -39,9 +39,15 @@ namespace Dictionary_user
         }
 
         #endregion
-               
+
         #region Search
 
+        private string historytime11;
+        private string historytime12;
+        private string historytime13;
+        private string historytime14;
+        private string historytime15;
+        private string historytime16;
         private void textBoxMeaning_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(textBoxMeaning.Text.ToString());
@@ -253,6 +259,7 @@ namespace Dictionary_user
             if (num > 0)
             {
                 textBox11.Text = Database.loadData.Rows[0][mode].ToString();
+                historytime11 = Database.loadData.Rows[0]["Time"].ToString();
                 textBox11.Visible = true;
                 iconButton7.Visible = true;
             }
@@ -274,6 +281,7 @@ namespace Dictionary_user
             if (num > 1)
             {
                 textBox12.Visible = true;
+                historytime12 = Database.loadData.Rows[1]["Time"].ToString();
                 textBox12.Text = Database.loadData.Rows[1][mode].ToString();
                 iconButton8.Visible = true;
             }
@@ -293,6 +301,7 @@ namespace Dictionary_user
             if (num > 2)
             {
                 textBox13.Visible = true;
+                historytime13 = Database.loadData.Rows[2]["Time"].ToString();
                 textBox13.Text = Database.loadData.Rows[2][mode].ToString();
                 iconButton9.Visible = true;
             }
@@ -311,6 +320,7 @@ namespace Dictionary_user
             {
                 textBox14.Visible = true;
                 textBox14.Text = Database.loadData.Rows[3][mode].ToString();
+                historytime14 = Database.loadData.Rows[3]["Time"].ToString();
                 iconButton10.Visible = true;
             }
             else
@@ -326,6 +336,7 @@ namespace Dictionary_user
             {
                 textBox15.Visible = true;
                 textBox15.Text = Database.loadData.Rows[4][mode].ToString();
+                historytime15 = Database.loadData.Rows[4]["Time"].ToString();
                 iconButton11.Visible = true;
             }
             else
@@ -339,6 +350,7 @@ namespace Dictionary_user
             {
                 textBox16.Visible = true;
                 textBox16.Text = Database.loadData.Rows[5][mode].ToString();
+                historytime16 = Database.loadData.Rows[5]["Time"].ToString();
                 iconButton12.Visible = true;
             }
             else
@@ -671,7 +683,7 @@ namespace Dictionary_user
             time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
             if (iconButton1.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookbookmark where book =" + "\"" + textBox6.Text + "\"";
+                command = "delete from bookbookmark where "+mode+" "+" =" + "\"" + textBox6.Text + "\"";
                 Database.deleteBookmark(command);
                 iconButton1.IconColor = Color.Gainsboro;
                 check[page * 4 + 1] = false;
@@ -795,32 +807,50 @@ namespace Dictionary_user
 
         private void iconButton7_Click(object sender, EventArgs e)
         {
-
+            command = "delete from bookhistory where " + mode + " " + " =" + "\"" + textBox11.Text + "\"";
+            Database.deleteHistory(command);
+            resetSuggestionHistoryColor();
+            loadSearchSuggestionHistory();
         }
 
         private void iconButton8_Click(object sender, EventArgs e)
         {
-
+            command = "delete from bookhistory where " + mode + " " + " =" + "\"" + textBox12.Text + "\"";
+            Database.deleteHistory(command);
+            resetSuggestionHistoryColor();
+            loadSearchSuggestionHistory();
         }
 
         private void iconButton9_Click(object sender, EventArgs e)
         {
-
+            command = "delete from bookhistory where " + mode + " " + " =" + "\"" + textBox13.Text + "\"";
+            Database.deleteHistory(command);
+            resetSuggestionHistoryColor();
+            loadSearchSuggestionHistory();
         }
 
         private void iconButton10_Click(object sender, EventArgs e)
         {
-
+            command = "delete from bookhistory where " + mode + " " + " =" + "\"" + textBox14.Text + "\"";
+            Database.deleteHistory(command);
+            resetSuggestionHistoryColor();
+            loadSearchSuggestionHistory();
         }
 
         private void iconButton11_Click(object sender, EventArgs e)
         {
-
+            command = "delete from bookhistory where " + mode + " " + " =" + "\"" + textBox15.Text + "\"";
+            Database.deleteHistory(command);
+            resetSuggestionHistoryColor();
+            loadSearchSuggestionHistory();
         }
 
         private void iconButton12_Click(object sender, EventArgs e)
         {
-
+            command = "delete from bookhistory where " + mode + " " + " =" + "\"" + textBox16.Text + "\"";
+            Database.deleteHistory(command);
+            resetSuggestionHistoryColor();
+            loadSearchSuggestionHistory();
         }
 
 
@@ -950,7 +980,7 @@ namespace Dictionary_user
         private void textBox11_MouseHover(object sender, EventArgs e)
         {
             textBox11.ForeColor = Color.FromArgb(242, 98, 121);
-            toolTip1.SetToolTip(textBox11, textBox11.Text);
+            toolTip1.SetToolTip(textBox11, historytime11);
         }
 
         private void textBox11_MouseLeave(object sender, EventArgs e)
@@ -961,6 +991,7 @@ namespace Dictionary_user
         private void textBox12_MouseHover(object sender, EventArgs e)
         {
             textBox12.ForeColor = Color.FromArgb(242, 98, 121);
+            toolTip1.SetToolTip(textBox12, historytime12);
         }
 
         private void textBox12_MouseLeave(object sender, EventArgs e)
@@ -971,6 +1002,7 @@ namespace Dictionary_user
         private void textBox13_MouseHover(object sender, EventArgs e)
         {
             textBox13.ForeColor = Color.FromArgb(242, 98, 121);
+            toolTip1.SetToolTip(textBox13, historytime13);
         }
 
         private void textBox13_MouseLeave(object sender, EventArgs e)
@@ -981,6 +1013,7 @@ namespace Dictionary_user
         private void textBox14_MouseHover(object sender, EventArgs e)
         {
             textBox14.ForeColor = Color.FromArgb(242, 98, 121);
+            toolTip1.SetToolTip(textBox14, historytime14);
         }
 
         private void textBox14_MouseLeave(object sender, EventArgs e)
@@ -991,6 +1024,7 @@ namespace Dictionary_user
         private void textBox15_MouseHover(object sender, EventArgs e)
         {
             textBox15.ForeColor = Color.FromArgb(242, 98, 121);
+            toolTip1.SetToolTip(textBox15, historytime15);
         }
 
         private void textBox15_MouseLeave(object sender, EventArgs e)
@@ -1001,6 +1035,7 @@ namespace Dictionary_user
         private void textBox16_MouseHover(object sender, EventArgs e)
         {
             textBox16.ForeColor = Color.FromArgb(242, 98, 121);
+            toolTip1.SetToolTip(textBox16, historytime16);
         }
 
         private void textBox16_MouseLeave(object sender, EventArgs e)
