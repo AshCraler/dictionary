@@ -122,7 +122,7 @@ namespace Dictionary_user
             {
                 textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
             }
-            command = "Use sql_invoicing; SELECT " + mode + " from " + language + "book where " + mode + " like " + "\"" + textboxSearch.Text + "%\"";
+            command = "Use sql_invoicing; SELECT " + mode + " from " + language + mode +" where " + mode + " like " + "\"" + textboxSearch.Text + "%\"";
             Database.load(command);
             int num = Database.loadData.Rows.Count;
             if (num > 0)
@@ -177,7 +177,7 @@ namespace Dictionary_user
             {
                 textboxBookmark.LineIdleColor = textboxSearch.HintForeColor;
             }
-            command = "Use sql_invoicing; SELECT * from bookbookmark where " + mode + " like " + "\"" + textboxBookmark.Text + "%\"";
+            command = "Use sql_invoicing; SELECT * from "+mode+"bookmark "+ "where " + mode + " like " + "\"" + textboxBookmark.Text + "%\"";
             Database.load(command);
             int num = Database.loadData.Rows.Count;
             if (num > 0 + 4 * page)
@@ -253,7 +253,7 @@ namespace Dictionary_user
             {
                 textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
             }
-            command = "Use sql_invoicing; SELECT * from bookhistory where " + mode + " like " + "\"" + textboxHistory.Text + "%\"";
+            command = "Use sql_invoicing; SELECT * from "+ mode +"history where " + mode + " like " + "\"" + textboxHistory.Text + "%\"";
             Database.load(command);
             int num = Database.loadData.Rows.Count;
             if (num > 0)
@@ -454,11 +454,11 @@ namespace Dictionary_user
                 textBoxMeaning.Visible = true;
                 pictureBoxSearched.Visible = true;
                 pictureBoxMeaning.Visible = true;
-                command = "SELECT * from " + language + "book where book= " + "\"" + textboxSearch.Text.ToString() + "\"";
+                command = "SELECT * from " + language +mode+ " where "+mode+" = " + "\"" + textboxSearch.Text.ToString() + "\"";
                 Database.load(command);
                 if (Database.loadData.Rows.Count > 0)
                 {
-                    textBoxResult.Text = Database.loadData.Rows[0]["book"].ToString();
+                    textBoxResult.Text = Database.loadData.Rows[0][mode].ToString();
                     textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
                 }
                 else
@@ -467,7 +467,10 @@ namespace Dictionary_user
                     textBoxMeaning.Text = "Not Found";
                 }
                 time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
-                Database.insertBookhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode=="Book")
+                    Database.insertBookhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode=="Idiom")
+                    Database.insertIdiomhistory(textBoxResult.Text, textBoxMeaning.Text, time);
             }
             loadBookmark();
         }

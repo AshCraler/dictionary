@@ -210,5 +210,30 @@ namespace Dictionary_user
                     connection.Close();
             }
         }
+        public static void insertIdiomhistory(string idiom, string link, string Time)
+        {
+            string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
+
+            MySqlConnection connection = null;
+            try
+            {
+                connection = new MySqlConnection(connectionString);
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = "INSERT INTO Idiomhistory(id,idiom,link,Time) VALUES(@id,@idiom,@link,@Time);";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@id", 0);
+                cmd.Parameters.AddWithValue("@idiom", idiom);
+                cmd.Parameters.AddWithValue("@link", link);
+                cmd.Parameters.AddWithValue("@Time", Time);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
+        }
     }
 }
