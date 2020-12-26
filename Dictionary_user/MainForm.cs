@@ -28,13 +28,12 @@ namespace Dictionary_user
         private Form currentChildForm; // Child form đang được mở hiện tại 
         private bool ktSwitch = false; // Kiểm tra chế độ Anh Việt hay Việt Anh
         private bool ktBookmark = false; // Kiểm tra bookmark hay chưa
-        private int hintColor = 0;
         private string coloumn = "VieMeaning";
         private string hint = "English";
         private string command = "";
         private int id = 0;
         private string date = DateTime.Now.ToString("yyyy.MM.dd");
-        private string time; 
+        private string time;
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -47,7 +46,7 @@ namespace Dictionary_user
             public static Color color2 = Color.FromArgb(238, 26, 74);
             public static Color color3 = Color.FromArgb(253, 138, 114);
             public static Color color4 = Color.FromArgb(95, 77, 221);
-            public static Color color5 = Color.FromArgb(65,179,247);
+            public static Color color5 = Color.FromArgb(65, 179, 247);
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.FromArgb(255, 244, 79);
         }
@@ -57,7 +56,7 @@ namespace Dictionary_user
 
         #region Menu and Titlebar
 
-       
+
         private void displaySwitch() // Hiển thị chức năng chuyển ngôn ngữ
         {
             buttonSwitch.Visible = true;
@@ -69,7 +68,7 @@ namespace Dictionary_user
             pictureBoxFlagLeft.Visible = false;
             pictureBoxFlagRight.Visible = false;
             buttonSwitch.Visible = false;
-        }     
+        }
         private void activateMenuButton(object senderBtn, Color color) // Kích hoạt menuButton 
         {
             disableMenuButton();
@@ -101,7 +100,7 @@ namespace Dictionary_user
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
-        }   
+        }
         private void resetSuggestion()
         {
             labelHint1.Text = "";
@@ -115,7 +114,7 @@ namespace Dictionary_user
             labelHint2.ForeColor = Color.Gainsboro;
             labelHint3.ForeColor = Color.Gainsboro;
             labelHint4.ForeColor = Color.Gainsboro;
-        }        
+        }
         private void loadRecently()// Load recently history and recently bookmark
         {
             loadRecentlyHistory();
@@ -177,19 +176,19 @@ namespace Dictionary_user
         private void random()
         {
             arr = new List<string>();
-            for (int i=0;i<8;i++)
+            for (int i = 0; i < 8; i++)
             {
                 id = r.Next(1, 1800);
                 command = "select " + hint + " from mytable where id=" + "'" + id.ToString() + "'";
                 Database.load(command);
                 arr.Add(Database.loadData.Rows[0][hint].ToString());
-            }      
+            }
         }
         private void loadVolcabulary()
-        { 
+        {
             random();
             labelWord1.Text = arr[0];
-            labelWord2.Text= arr[1];
+            labelWord2.Text = arr[1];
             labelWord3.Text = arr[2];
             labelWord4.Text = arr[3];
             labelWord5.Text = arr[4];
@@ -197,7 +196,7 @@ namespace Dictionary_user
             labelWord7.Text = arr[6];
             labelWord8.Text = arr[7];
         }
-        
+
         public MainForm() // Kích hoạt MainForm
         {
             //Initial GUI
@@ -222,9 +221,9 @@ namespace Dictionary_user
             loadVolcabulary();
         }
 
-       
 
-       
+
+
 
 
         #endregion
@@ -236,6 +235,7 @@ namespace Dictionary_user
         private void labelHint1_MouseHover(object sender, EventArgs e)
         {
             labelHint1.ForeColor = RGBColors.color7;
+            labelHint1.Cursor = Cursors.Hand;
         }
 
         private void labelHint1_MouseLeave(object sender, EventArgs e)
@@ -252,6 +252,7 @@ namespace Dictionary_user
         private void labelHint2_MouseHover(object sender, EventArgs e)
         {
             labelHint2.ForeColor = RGBColors.color7;
+            labelHint2.Cursor = Cursors.Hand;
         }
 
         private void labelHint2_MouseLeave(object sender, EventArgs e)
@@ -268,6 +269,7 @@ namespace Dictionary_user
         private void labelHint3_MouseHover(object sender, EventArgs e)
         {
             labelHint4.ForeColor = RGBColors.color7;
+            labelHint4.Cursor = Cursors.Hand;
         }
 
         private void labelHint3_MouseLeave(object sender, EventArgs e)
@@ -284,6 +286,7 @@ namespace Dictionary_user
         private void labelHint4_MouseHover(object sender, EventArgs e)
         {
             labelHint3.ForeColor = RGBColors.color7;
+            labelHint3.Cursor = Cursors.Hand;
         }
 
         private void labelHint4_MouseLeave(object sender, EventArgs e)
@@ -305,6 +308,7 @@ namespace Dictionary_user
         private void labelHistory1_MouseHover(object sender, EventArgs e)
         {
             labelHistory1.ForeColor = RGBColors.color3;
+            labelHistory1.Cursor = Cursors.Hand;
         }
 
         private void labelHistory1_MouseLeave(object sender, EventArgs e)
@@ -321,6 +325,7 @@ namespace Dictionary_user
         private void labelHistory2_MouseHover(object sender, EventArgs e)
         {
             labelHistory2.ForeColor = RGBColors.color3;
+            labelHistory2.Cursor = Cursors.Hand;
         }
 
         private void labelHistory2_MouseLeave(object sender, EventArgs e)
@@ -337,6 +342,7 @@ namespace Dictionary_user
         private void labelHistory3_MouseHover(object sender, EventArgs e)
         {
             labelHistory3.ForeColor = RGBColors.color3;
+            labelHistory3.Cursor = Cursors.Hand;
         }
 
         private void labelHistory3_MouseLeave(object sender, EventArgs e)
@@ -353,6 +359,7 @@ namespace Dictionary_user
         private void labelHistory4_MouseHover(object sender, EventArgs e)
         {
             labelHistory4.ForeColor = RGBColors.color3;
+            labelHistory4.Cursor = Cursors.Hand;
         }
 
         private void labelHistory4_MouseLeave(object sender, EventArgs e)
@@ -374,6 +381,7 @@ namespace Dictionary_user
         private void labelBookmark1_MouseHover(object sender, EventArgs e)
         {
             labelBookmark1.ForeColor = RGBColors.color2;
+            labelBookmark1.Cursor = Cursors.Hand;
         }
 
         private void labelBookmark1_MouseLeave(object sender, EventArgs e)
@@ -390,6 +398,8 @@ namespace Dictionary_user
         private void labelBookmark2_MouseHover(object sender, EventArgs e)
         {
             labelBookmark2.ForeColor = RGBColors.color2;
+            labelBookmark2.Cursor = Cursors.Hand;
+        
         }
 
         private void labelBookmark2_MouseLeave(object sender, EventArgs e)
@@ -406,8 +416,9 @@ namespace Dictionary_user
         private void labelBookmark3_MouseHover(object sender, EventArgs e)
         {
             labelBookmark3.ForeColor = RGBColors.color2;
+            labelBookmark3.Cursor = Cursors.Hand;
         }
-
+    
         private void labelBookmark3_MouseLeave(object sender, EventArgs e)
         {
             labelBookmark3.ForeColor = System.Drawing.Color.Gainsboro;
@@ -422,6 +433,7 @@ namespace Dictionary_user
         private void labelBookmark4_MouseHover(object sender, EventArgs e)
         {
             labelBookmark4.ForeColor = RGBColors.color2;
+            labelBookmark4.Cursor = Cursors.Hand;
         }
 
         private void labelBookmark4_MouseLeave(object sender, EventArgs e)
@@ -482,7 +494,7 @@ namespace Dictionary_user
 
         private void bookmarkButton_Click(object sender, EventArgs e)
         {
-            time= DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
+            time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
             if (ktBookmark == false)
             {
                 ktBookmark = true;
@@ -514,6 +526,9 @@ namespace Dictionary_user
         #endregion Search_Result
 
         #region Keyboard
+
+        private int hintColor = 0;
+
         private void textboxSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (hintColor == 0)
@@ -548,12 +563,6 @@ namespace Dictionary_user
             }
         }
 
-        private void textboxSearch_Enter(object sender, EventArgs e)
-        {
-            textboxSearch.BackColor = Color.FromArgb(26, 25, 62);
-            textboxSearch.ForeColor = Color.Gainsboro;
-        }
-  
         private void textboxSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
@@ -573,7 +582,18 @@ namespace Dictionary_user
                     MessageBox.Show("Please insert the word that needs to be translated!");
             }
         }
-        
+
+        private void btnHistory_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Tab)
+            {
+                if (e.Modifiers == Keys.Shift)
+                    this.ProcessTabKey(false);
+                else
+                    this.ProcessTabKey(true);
+            }
+        }
+
         #endregion
 
         #region Book and more Feature
@@ -595,7 +615,7 @@ namespace Dictionary_user
                 openChildForm(new Idiom());
             }
         }
-        
+
         #endregion
 
         #region Volcabulary
@@ -655,6 +675,7 @@ namespace Dictionary_user
         private void labelWord1_MouseHover(object sender, EventArgs e)
         {
             labelWord1.ForeColor = RGBColors.color7;
+            labelWord1.Cursor = Cursors.Hand;
         }
 
         private void labelWord1_MouseLeave(object sender, EventArgs e)
@@ -665,6 +686,7 @@ namespace Dictionary_user
         private void labelWord2_MouseHover(object sender, EventArgs e)
         {
             labelWord2.ForeColor = RGBColors.color7;
+            labelWord2.Cursor = Cursors.Hand;
         }
 
         private void labelWord2_MouseLeave(object sender, EventArgs e)
@@ -675,6 +697,7 @@ namespace Dictionary_user
         private void labelWord3_MouseHover(object sender, EventArgs e)
         {
             labelWord3.ForeColor = RGBColors.color7;
+            labelWord3.Cursor = Cursors.Hand;
         }
 
         private void labelWord3_MouseLeave(object sender, EventArgs e)
@@ -685,6 +708,7 @@ namespace Dictionary_user
         private void labelWord4_MouseHover(object sender, EventArgs e)
         {
             labelWord4.ForeColor = RGBColors.color7;
+            labelWord4.Cursor = Cursors.Hand;
         }
 
         private void labelWord4_MouseLeave(object sender, EventArgs e)
@@ -695,6 +719,7 @@ namespace Dictionary_user
         private void labelWord5_MouseHover(object sender, EventArgs e)
         {
             labelWord5.ForeColor = RGBColors.color7;
+            labelWord5.Cursor = Cursors.Hand;
         }
 
         private void labelWord5_MouseLeave(object sender, EventArgs e)
@@ -705,6 +730,7 @@ namespace Dictionary_user
         private void labelWord6_MouseHover(object sender, EventArgs e)
         {
             labelWord6.ForeColor = RGBColors.color7;
+            labelWord6.Cursor = Cursors.Hand;
         }
 
         private void labelWord6_MouseLeave(object sender, EventArgs e)
@@ -715,6 +741,7 @@ namespace Dictionary_user
         private void labelWord7_MouseHover(object sender, EventArgs e)
         {
             labelWord7.ForeColor = RGBColors.color7;
+            labelWord7.Cursor = Cursors.Hand;
         }
 
         private void labelWord7_MouseLeave(object sender, EventArgs e)
@@ -725,6 +752,7 @@ namespace Dictionary_user
         private void labelWord8_MouseHover(object sender, EventArgs e)
         {
             labelWord8.ForeColor = RGBColors.color7;
+            labelWord8.Cursor = Cursors.Hand;
         }
 
         private void labelWord8_MouseLeave(object sender, EventArgs e)
@@ -832,19 +860,19 @@ namespace Dictionary_user
         //Cleaning code, create new regions
 
         #region Search
-        
+
         private void displaySearchbar() // Hiển thị chức năng tìm kiếm
         {
             textboxSearch.Visible = true;
             buttonSearch.Visible = true;
         }
-        
+
         private void hideSearchbar() // Ẩn chức năng tìm kiếm
         {
             textboxSearch.Visible = false;
             buttonSearch.Visible = false;
         }
-       
+
         private void setSearchResult_visible(bool set)
         {
             typedWord.Visible = set;
@@ -853,7 +881,7 @@ namespace Dictionary_user
             btnPlay.Visible = set;
             btnPlay2.Visible = set;
         }
-        
+
         private void loadSearchResult()
         {
             if (textboxSearch.HintText == "Search English")
@@ -883,7 +911,7 @@ namespace Dictionary_user
                 btnPlay.Visible = false;
             }
         }
-    
+
         private void activateSearchButton() // Kích hoạt searchButton
         {
             textboxSearch.Focus();
@@ -909,7 +937,7 @@ namespace Dictionary_user
                 openChildForm(new Bookmark());
             } // Search Bookmark
         }
-        
+
         private void buttonSearch_Click(object sender, EventArgs e) // Khi click vào searchButton
         {
             if (textboxSearch.Text == "")
@@ -973,7 +1001,7 @@ namespace Dictionary_user
                     labelHint3.Text = "";
             }
         }
-        
+
         #endregion
 
         #region History
@@ -1042,7 +1070,7 @@ namespace Dictionary_user
             else
                 labelHistory4.Text = "";
         }
-        
+
         #endregion
 
         #region Bookmark
@@ -1100,7 +1128,7 @@ namespace Dictionary_user
         #endregion
 
         #region Open other form
-        
+
         private void closeChildForm(Form childForm)
         {
             childForm.FormClosed += new FormClosedEventHandler(Form_Closed);
@@ -1138,7 +1166,7 @@ namespace Dictionary_user
                 }
             }
         }
-        
+
         private void openChildForm(Form childForm) // Mở childForm mới
         {
             if (currentChildForm != null)
@@ -1155,7 +1183,7 @@ namespace Dictionary_user
             childForm.Show();
             closeChildForm(childForm);
         }
-        
+
         private void iconButton1_Click(object sender, EventArgs e) // Khi click vào translateButton
         {
             if (currentChildForm != null)
@@ -1243,8 +1271,9 @@ namespace Dictionary_user
         } // About us
 
         #endregion
+
+   
     }
 }
 
 
-    

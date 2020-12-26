@@ -53,14 +53,7 @@ namespace Dictionary_user
 
         private void iconButtonUpdateData_Click(object sender, EventArgs e)
         {
-            string[] lines = System.IO.File.ReadAllLines(@"D:\Update.txt");
-            System.Console.WriteLine("Contents of Update.txt = ");
-            foreach (string line in lines)
-            {
-                Console.WriteLine("\t" + line);
-            }
-            time = DateTime.Now.ToString("yyyy'-'MM'-'dd  hh':'mm':'ss.ff");
-            labelTime.Text = time;
+            MessageBox.Show("No update available");
         }
     }
 }

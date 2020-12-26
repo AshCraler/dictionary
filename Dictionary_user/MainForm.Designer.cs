@@ -164,7 +164,7 @@
             this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.iconButton2.Rotation = 0D;
             this.iconButton2.Size = new System.Drawing.Size(182, 34);
-            this.iconButton2.TabIndex = 19;
+            this.iconButton2.TabIndex = 6;
             this.iconButton2.Text = "About us";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -188,7 +188,7 @@
             this.iconIdiom.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.iconIdiom.Rotation = 0D;
             this.iconIdiom.Size = new System.Drawing.Size(182, 34);
-            this.iconIdiom.TabIndex = 18;
+            this.iconIdiom.TabIndex = 4;
             this.iconIdiom.Text = "Book and more";
             this.iconIdiom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconIdiom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -212,7 +212,7 @@
             this.iconButton1.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.iconButton1.Rotation = 0D;
             this.iconButton1.Size = new System.Drawing.Size(182, 34);
-            this.iconButton1.TabIndex = 11;
+            this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Translate";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -236,7 +236,7 @@
             this.btn_Bookmark.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.btn_Bookmark.Rotation = 0D;
             this.btn_Bookmark.Size = new System.Drawing.Size(182, 34);
-            this.btn_Bookmark.TabIndex = 16;
+            this.btn_Bookmark.TabIndex = 3;
             this.btn_Bookmark.Text = "Bookmark";
             this.btn_Bookmark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Bookmark.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -260,7 +260,7 @@
             this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.btnSettings.Rotation = 0D;
             this.btnSettings.Size = new System.Drawing.Size(182, 34);
-            this.btnSettings.TabIndex = 15;
+            this.btnSettings.TabIndex = 5;
             this.btnSettings.Text = "Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -284,12 +284,13 @@
             this.btnHistory.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.btnHistory.Rotation = 0D;
             this.btnHistory.Size = new System.Drawing.Size(182, 34);
-            this.btnHistory.TabIndex = 12;
+            this.btnHistory.TabIndex = 2;
             this.btnHistory.Text = "History";
             this.btnHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHistory.UseVisualStyleBackColor = true;
             this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            this.btnHistory.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnHistory_KeyDown);
             // 
             // panel2
             // 
@@ -352,7 +353,7 @@
             this.bunifuDropdownTranslate.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
             this.bunifuDropdownTranslate.selectedIndex = -1;
             this.bunifuDropdownTranslate.Size = new System.Drawing.Size(125, 32);
-            this.bunifuDropdownTranslate.TabIndex = 17;
+            this.bunifuDropdownTranslate.TabIndex = 9;
             this.bunifuDropdownTranslate.Visible = false;
             this.bunifuDropdownTranslate.onItemSelected += new System.EventHandler(this.bunifuDropdownTranslate_onItemSelected);
             // 
@@ -397,10 +398,9 @@
             this.textboxSearch.Margin = new System.Windows.Forms.Padding(4);
             this.textboxSearch.Name = "textboxSearch";
             this.textboxSearch.Size = new System.Drawing.Size(337, 39);
-            this.textboxSearch.TabIndex = 14;
+            this.textboxSearch.TabIndex = 7;
             this.textboxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textboxSearch.OnValueChanged += new System.EventHandler(this.textboxSearch_OnValueChanged);
-            this.textboxSearch.Enter += new System.EventHandler(this.textboxSearch_Enter);
             this.textboxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textboxSearch_KeyDown);
             this.textboxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxSearch_KeyPress);
             // 
@@ -417,7 +417,7 @@
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Rotation = 0D;
             this.buttonSearch.Size = new System.Drawing.Size(39, 38);
-            this.buttonSearch.TabIndex = 15;
+            this.buttonSearch.TabIndex = 8;
             this.buttonSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
@@ -455,7 +455,7 @@
             this.buttonSwitch.Name = "buttonSwitch";
             this.buttonSwitch.Rotation = 0D;
             this.buttonSwitch.Size = new System.Drawing.Size(37, 31);
-            this.buttonSwitch.TabIndex = 16;
+            this.buttonSwitch.TabIndex = 8;
             this.buttonSwitch.UseVisualStyleBackColor = true;
             this.buttonSwitch.Click += new System.EventHandler(this.buttonSwitch_Click);
             // 
@@ -474,6 +474,7 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(810, 650);
             this.panelDesktop.TabIndex = 12;
+            this.panelDesktop.TabStop = true;
             // 
             // panel5
             // 
@@ -515,7 +516,7 @@
             this.iconButtonSpeaker8.Name = "iconButtonSpeaker8";
             this.iconButtonSpeaker8.Rotation = 0D;
             this.iconButtonSpeaker8.Size = new System.Drawing.Size(43, 33);
-            this.iconButtonSpeaker8.TabIndex = 109;
+            this.iconButtonSpeaker8.TabIndex = 18;
             this.iconButtonSpeaker8.UseVisualStyleBackColor = true;
             this.iconButtonSpeaker8.Click += new System.EventHandler(this.iconButtonSpeaker8_Click);
             // 
@@ -547,7 +548,7 @@
             this.iconButtonSpeaker1.Name = "iconButtonSpeaker1";
             this.iconButtonSpeaker1.Rotation = 0D;
             this.iconButtonSpeaker1.Size = new System.Drawing.Size(43, 33);
-            this.iconButtonSpeaker1.TabIndex = 100;
+            this.iconButtonSpeaker1.TabIndex = 11;
             this.iconButtonSpeaker1.UseVisualStyleBackColor = true;
             this.iconButtonSpeaker1.Click += new System.EventHandler(this.iconButtonSpeaker1_Click);
             // 
@@ -564,7 +565,7 @@
             this.iconButtonSpeaker2.Name = "iconButtonSpeaker2";
             this.iconButtonSpeaker2.Rotation = 0D;
             this.iconButtonSpeaker2.Size = new System.Drawing.Size(43, 33);
-            this.iconButtonSpeaker2.TabIndex = 99;
+            this.iconButtonSpeaker2.TabIndex = 12;
             this.iconButtonSpeaker2.UseVisualStyleBackColor = true;
             this.iconButtonSpeaker2.Click += new System.EventHandler(this.iconButtonSpeaker2_Click);
             // 
@@ -581,7 +582,7 @@
             this.iconButtonSpeaker7.Name = "iconButtonSpeaker7";
             this.iconButtonSpeaker7.Rotation = 0D;
             this.iconButtonSpeaker7.Size = new System.Drawing.Size(43, 33);
-            this.iconButtonSpeaker7.TabIndex = 98;
+            this.iconButtonSpeaker7.TabIndex = 17;
             this.iconButtonSpeaker7.UseVisualStyleBackColor = true;
             this.iconButtonSpeaker7.Click += new System.EventHandler(this.iconButtonSpeaker7_Click);
             // 
@@ -598,7 +599,7 @@
             this.iconButtonSpeaker6.Name = "iconButtonSpeaker6";
             this.iconButtonSpeaker6.Rotation = 0D;
             this.iconButtonSpeaker6.Size = new System.Drawing.Size(43, 33);
-            this.iconButtonSpeaker6.TabIndex = 97;
+            this.iconButtonSpeaker6.TabIndex = 16;
             this.iconButtonSpeaker6.UseVisualStyleBackColor = true;
             this.iconButtonSpeaker6.Click += new System.EventHandler(this.iconButtonSpeaker6_Click);
             // 
@@ -615,7 +616,7 @@
             this.iconButtonSpeaker5.Name = "iconButtonSpeaker5";
             this.iconButtonSpeaker5.Rotation = 0D;
             this.iconButtonSpeaker5.Size = new System.Drawing.Size(43, 33);
-            this.iconButtonSpeaker5.TabIndex = 96;
+            this.iconButtonSpeaker5.TabIndex = 15;
             this.iconButtonSpeaker5.UseVisualStyleBackColor = true;
             this.iconButtonSpeaker5.Click += new System.EventHandler(this.iconButtonSpeaker5_Click);
             // 
@@ -632,7 +633,7 @@
             this.iconButtonSpeaker4.Name = "iconButtonSpeaker4";
             this.iconButtonSpeaker4.Rotation = 0D;
             this.iconButtonSpeaker4.Size = new System.Drawing.Size(43, 33);
-            this.iconButtonSpeaker4.TabIndex = 95;
+            this.iconButtonSpeaker4.TabIndex = 14;
             this.iconButtonSpeaker4.UseVisualStyleBackColor = true;
             this.iconButtonSpeaker4.Click += new System.EventHandler(this.iconButtonSpeaker4_Click);
             // 
@@ -649,7 +650,7 @@
             this.iconButtonSpeaker3.Name = "iconButtonSpeaker3";
             this.iconButtonSpeaker3.Rotation = 0D;
             this.iconButtonSpeaker3.Size = new System.Drawing.Size(43, 33);
-            this.iconButtonSpeaker3.TabIndex = 94;
+            this.iconButtonSpeaker3.TabIndex = 13;
             this.iconButtonSpeaker3.UseVisualStyleBackColor = true;
             this.iconButtonSpeaker3.Click += new System.EventHandler(this.iconButtonSpeaker3_Click);
             // 
@@ -666,7 +667,7 @@
             this.Reload.Name = "Reload";
             this.Reload.Rotation = 0D;
             this.Reload.Size = new System.Drawing.Size(35, 33);
-            this.Reload.TabIndex = 93;
+            this.Reload.TabIndex = 10;
             this.Reload.UseVisualStyleBackColor = true;
             this.Reload.Click += new System.EventHandler(this.Reload_Click);
             // 
@@ -1237,6 +1238,7 @@
             this.Controls.Add(this.panelMenu);
             this.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.HelpButton = true;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);

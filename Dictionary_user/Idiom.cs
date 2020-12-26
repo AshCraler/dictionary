@@ -52,6 +52,7 @@ namespace Dictionary_user
 
         private void activateButtonSearch()
         {
+            textboxSearch.Focus();
             if (textboxSearch.Text == "")
             {
                 MessageBox.Show("Please insert the " + mode + " that needs to be searched !");
@@ -90,6 +91,7 @@ namespace Dictionary_user
         
         private void activateIconButtonSearchBookmark()
         {
+            textboxBookmark.Focus();
             if (textboxBookmark.Text == "")
             {
                 MessageBox.Show("Please insert the " + mode + " that needs to be searched !");
@@ -128,6 +130,7 @@ namespace Dictionary_user
         
         private void activateIconButtonSearchHistory()
         {
+            textboxHistory.Focus();
             if (textboxHistory.Text == "")
             {
                 MessageBox.Show("Please insert the " + mode + " that needs to be searched !");
@@ -474,13 +477,15 @@ namespace Dictionary_user
             loadSearchSuggestionBookmark();
             resetSuggestionBookmarkColor();
             reseticonButtonSuggestionBookmarkColor();
-            loadPageInfo();    
+            loadPageInfo();
+            bookmarkColor = 0;
         }
         
         private void textboxSearch_OnValueChanged(object sender, EventArgs e)
         {
             resetSuggestionColor();
             loadSearchSuggestion();
+            hintColor = 0;
         }
 
         private void iconButtonSearchHistory_Click(object sender, EventArgs e)
@@ -896,6 +901,7 @@ namespace Dictionary_user
         {
             resetSuggestionHistoryColor();
             loadSearchSuggestionHistory();
+            historyColor = 0;
         }
 
         private void iconButton7_Click(object sender, EventArgs e)
@@ -983,6 +989,8 @@ namespace Dictionary_user
             textBox16.GotFocus += textBox_GotFocus;
             textBoxMeaning.Cursor = Cursors.Hand;
             textBoxMeaning.GotFocus += textBox_GotFocus;
+            textBoxResult.Cursor = Cursors.Arrow;
+            textBoxResult.GotFocus += textBox_GotFocus;
         }
 
         private void textBox_GotFocus(object sender, EventArgs e)
@@ -1148,6 +1156,189 @@ namespace Dictionary_user
 
         #endregion
 
+        #region Keyboard
+
+        private int hintColor = 0;
+
+        private int bookmarkColor = 0;
+
+        private int historyColor = 0;
+
+        private void textboxBookmark_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (bookmarkColor == 0)
+                bookmarkColor = 4 * 1000;
+            if (e.KeyCode == Keys.Down)
+            {
+                bookmarkColor++;
+                resetSuggestionBookmarkColor();
+                int bookmarkColorAbs = Math.Abs(bookmarkColor % 4);
+                if (bookmarkColorAbs == 1)
+                    textBox6.ForeColor = RGBColors.color2;
+                if (bookmarkColorAbs == 2)
+                    textBox7.ForeColor = RGBColors.color2;
+                if (bookmarkColorAbs == 3)
+                    textBox8.ForeColor = RGBColors.color2;
+                if (bookmarkColorAbs == 0)
+                    textBox9.ForeColor = RGBColors.color2;
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                bookmarkColor--;
+                resetSuggestionBookmarkColor();
+                int bookmarkColorAbs = Math.Abs(bookmarkColor % 4);
+                if (bookmarkColorAbs == 1)
+                    textBox6.ForeColor = RGBColors.color2;
+                if (bookmarkColorAbs == 2)
+                    textBox7.ForeColor = RGBColors.color2;
+                if (bookmarkColorAbs == 3)
+                    textBox8.ForeColor = RGBColors.color2;
+                if (bookmarkColorAbs == 0)
+                    textBox9.ForeColor = RGBColors.color2;
+            }
+        }
+
+        private void textboxBookmark_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                e.Handled = true;
+                if (textBox6.ForeColor == RGBColors.color2)
+                    textboxBookmark.Text = textBox6.Text;
+                if (textBox7.ForeColor == RGBColors.color2)
+                    textboxBookmark.Text = textBox7.Text;
+                if (textBox8.ForeColor == RGBColors.color2)
+                    textboxBookmark.Text = textBox8.Text;
+                if (textBox9.ForeColor == RGBColors.color2)
+                    textboxBookmark.Text = textBox9.Text;
+                if (textboxBookmark.Text != "")
+                    activateIconButtonSearchBookmark();
+                if (textboxBookmark.Text == "")
+                    MessageBox.Show("Searchbar is empty!");
+            }
+        }
+
+        private void textboxHistory_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (historyColor == 0)
+                historyColor = 6 * 1000;
+            if (e.KeyCode == Keys.Down)
+            {
+                historyColor++;
+                resetSuggestionHistoryColor();
+                int historyColorAbs = Math.Abs(historyColor % 6);
+                if (historyColorAbs == 1)
+                    textBox11.ForeColor = Color.FromArgb(242, 98, 121);
+                if (historyColorAbs == 2)
+                    textBox12.ForeColor = Color.FromArgb(242, 98, 121);
+                if (historyColorAbs == 3)
+                    textBox13.ForeColor = Color.FromArgb(242, 98, 121);
+                if (historyColorAbs == 4)
+                    textBox14.ForeColor = Color.FromArgb(242, 98, 121);
+                if (historyColorAbs == 5)
+                    textBox15.ForeColor = Color.FromArgb(242, 98, 121);
+                if (historyColorAbs == 0)
+                    textBox16.ForeColor = Color.FromArgb(242, 98, 121);
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                historyColor--;
+                resetSuggestionHistoryColor();
+                int historyColorAbs = Math.Abs(historyColor % 6);
+                if (historyColorAbs == 1)
+                    textBox11.ForeColor = Color.FromArgb(242, 98, 121);
+                if (historyColorAbs == 2)
+                    textBox12.ForeColor = Color.FromArgb(242, 98, 121);
+                if (historyColorAbs == 3)
+                    textBox13.ForeColor = Color.FromArgb(242, 98, 121);
+                if (historyColorAbs == 4)
+                    textBox14.ForeColor = Color.FromArgb(242, 98, 121);
+                if (historyColorAbs == 5)
+                    textBox15.ForeColor = Color.FromArgb(242, 98, 121);
+                if (historyColorAbs == 0)
+                    textBox16.ForeColor = Color.FromArgb(242, 98, 121);
+            }
+        }
+
+        private void textboxHistory_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                e.Handled = true;
+                if (textBox11.ForeColor == Color.FromArgb(242, 98, 121))
+                    textboxHistory.Text = textBox11.Text;
+                if (textBox12.ForeColor == Color.FromArgb(242, 98, 121))
+                    textboxHistory.Text = textBox12.Text;
+                if (textBox13.ForeColor == Color.FromArgb(242, 98, 121))
+                    textboxHistory.Text = textBox13.Text;
+                if (textBox14.ForeColor == Color.FromArgb(242, 98, 121))
+                    textboxHistory.Text = textBox14.Text;
+                if (textBox15.ForeColor == Color.FromArgb(242, 98, 121))
+                    textboxHistory.Text = textBox15.Text;
+                if (textBox16.ForeColor == Color.FromArgb(242, 98, 121))
+                    textboxHistory.Text = textBox16.Text;
+                if (textboxHistory.Text != "")
+                    activateIconButtonSearchHistory();
+                if (textboxHistory.Text == "")
+                    MessageBox.Show("Searchbar is empty!");
+            }
+        }
+
+        private void textboxSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                e.Handled = true;
+                if (textBox1.ForeColor == RGBColors.color7)
+                    textboxSearch.Text = textBox1.Text;
+                if (textBox2.ForeColor == RGBColors.color7)
+                    textboxSearch.Text =textBox2.Text;
+                if (textBox3.ForeColor == RGBColors.color7)
+                    textboxSearch.Text = textBox3.Text;
+                if (textBox4.ForeColor == RGBColors.color7)
+                    textboxSearch.Text = textBox4.Text;
+                if (textboxSearch.Text != "")
+                    activateButtonSearch();
+                if (textboxSearch.Text == "")
+                    MessageBox.Show("Searchbar is empty!");
+            }
+        }
+
+        private void textboxSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (hintColor == 0)
+                hintColor = 4 * 1000;
+            if (e.KeyCode == Keys.Down)
+            {
+                hintColor++;
+                resetSuggestionColor();
+                int hintColorAbs = Math.Abs(hintColor % 4);
+                if (hintColorAbs == 1)
+                    textBox1.ForeColor = RGBColors.color7;
+                if (hintColorAbs == 2)
+                    textBox2.ForeColor = RGBColors.color7;
+                if (hintColorAbs == 3)
+                    textBox3.ForeColor = RGBColors.color7;
+                if (hintColorAbs == 0)
+                    textBox4.ForeColor = RGBColors.color7;
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                hintColor--;
+                resetSuggestionColor();
+                int hintColorAbs = Math.Abs(hintColor % 4);
+                if (hintColorAbs == 1)
+                    textBox1.ForeColor = RGBColors.color7;
+                if (hintColorAbs == 2)
+                    textBox2.ForeColor = RGBColors.color7;
+                if (hintColorAbs == 3)
+                    textBox3.ForeColor = RGBColors.color7;
+                if (hintColorAbs == 0)
+                    textBox4.ForeColor = RGBColors.color7;
+            }
+        }
+
+        #endregion
         public Idiom()
         {
             InitializeComponent();
@@ -1179,5 +1370,17 @@ namespace Dictionary_user
             for (int i = 0; i < 100000; i++)
                 check[i] = true;
         }
+
+        private void Idiom_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Tab)
+            {
+                if (e.Modifiers == Keys.Shift)
+                    this.ProcessTabKey(false);
+                else
+                    this.ProcessTabKey(true);
+            }
+        }
+
     }
 }

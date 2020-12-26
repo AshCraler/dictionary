@@ -908,78 +908,91 @@ namespace Dictionary_user
 
         private void labelWord1_MouseHover(object sender, EventArgs e)
         {
+            labelWord1.Cursor = Cursors.Hand;
             labelWord1.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning1.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord2_MouseHover(object sender, EventArgs e)
         {
+            labelWord2.Cursor = Cursors.Hand;
             labelWord2.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning2.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord3_MouseHover(object sender, EventArgs e)
         {
+            labelWord3.Cursor = Cursors.Hand;
             labelWord3.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning3.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord4_MouseHover(object sender, EventArgs e)
         {
+            labelWord4.Cursor = Cursors.Hand;
             labelWord4.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning4.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord5_MouseHover(object sender, EventArgs e)
         {
+            labelWord5.Cursor = Cursors.Hand;
             labelWord5.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning5.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord6_MouseHover(object sender, EventArgs e)
         {
+            labelWord6.Cursor = Cursors.Hand;
             labelWord6.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning6.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord7_MouseHover(object sender, EventArgs e)
         {
+            labelWord7.Cursor = Cursors.Hand;
             labelWord7.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning7.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord8_MouseHover(object sender, EventArgs e)
         {
+            labelWord8.Cursor = Cursors.Hand;
             labelWord8.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning8.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord9_MouseHover(object sender, EventArgs e)
         {
+            labelWord9.Cursor = Cursors.Hand;
             labelWord9.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning9.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord10_MouseHover(object sender, EventArgs e)
         {
+            labelWord10.Cursor = Cursors.Hand;
             labelWord10.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning10.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord11_MouseHover(object sender, EventArgs e)
         {
+            labelWord11.Cursor = Cursors.Hand;
             labelWord11.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning11.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord12_MouseHover(object sender, EventArgs e)
         {
+            labelWord12.Cursor = Cursors.Hand;
             labelWord12.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning12.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord13_MouseHover(object sender, EventArgs e)
         {
+            labelWord13.Cursor = Cursors.Hand;
             labelWord13.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning13.ForeColor = Color.FromArgb(238, 26, 74);
         }
