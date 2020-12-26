@@ -50,6 +50,130 @@ namespace Dictionary_user
         private string historytime15;
         private string historytime16;
 
+        private void activateButtonSearch()
+        {
+            if (textboxSearch.Text == "")
+            {
+                MessageBox.Show("Please insert the " + mode + " that needs to be searched !");
+            }
+            else
+            {
+                iconBookmark.Visible = true;
+                textBoxResult.Visible = true;
+                textBoxMeaning.Visible = true;
+                pictureBoxSearched.Visible = true;
+                pictureBoxMeaning.Visible = true;
+                command = "SELECT * from " + language + mode + " where " + mode + " = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                Database.load(command);
+                if (Database.loadData.Rows.Count > 0)
+                {
+                    textBoxResult.Text = Database.loadData.Rows[0][mode].ToString();
+                    textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
+                }
+                else
+                {
+                    textBoxResult.Text = textboxSearch.Text;
+                    textBoxMeaning.Text = "Not Found";
+                }
+                time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
+                if (mode == "Book")
+                    Database.insertBookhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Idiom")
+                    Database.insertIdiomhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Luminary")
+                    Database.insertLuminaryhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+            }
+            loadBookmark();
+            textboxBookmark.Text = "";
+            textboxHistory.Text = "";
+        }
+        
+        private void activateIconButtonSearchBookmark()
+        {
+            if (textboxBookmark.Text == "")
+            {
+                MessageBox.Show("Please insert the " + mode + " that needs to be searched !");
+            }
+            else
+            {
+                iconBookmark.Visible = true;
+                textBoxResult.Visible = true;
+                textBoxMeaning.Visible = true;
+                pictureBoxSearched.Visible = true;
+                pictureBoxMeaning.Visible = true;
+                command = "SELECT * from " + mode + "bookmark where " + mode + "= " + "\"" + textboxBookmark.Text.ToString() + "\"";
+                Database.load(command);
+                if (Database.loadData.Rows.Count > 0)
+                {
+                    textBoxResult.Text = Database.loadData.Rows[0][mode].ToString();
+                    textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
+                }
+                else
+                {
+                    textBoxResult.Text = textboxBookmark.Text;
+                    textBoxMeaning.Text = "Not Found";
+                }
+                time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
+                if (mode == "Book")
+                    Database.insertBookhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Idiom")
+                    Database.insertIdiomhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Luminary")
+                    Database.insertLuminaryhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                loadBookmark();
+                textboxSearch.Text = "";
+                textboxHistory.Text = "";
+            }
+        }
+        
+        private void activateIconButtonSearchHistory()
+        {
+            if (textboxHistory.Text == "")
+            {
+                MessageBox.Show("Please insert the " + mode + " that needs to be searched !");
+            }
+            else
+            {
+                iconBookmark.Visible = true;
+                textBoxResult.Visible = true;
+                textBoxMeaning.Visible = true;
+                pictureBoxSearched.Visible = true;
+                pictureBoxMeaning.Visible = true;
+                command = "SELECT * from " + "eng" + mode + " where " + mode + "= " + "\"" + textboxHistory.Text.ToString() + "\"";
+                Database.load(command);
+                if (Database.loadData.Rows.Count > 0)
+                {
+                    textBoxResult.Text = Database.loadData.Rows[0][mode].ToString();
+                    textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
+                }
+                else
+                {
+                    command = "SELECT * from " + "vie" + mode + " where " + mode + "= " + "\"" + textboxHistory.Text.ToString() + "\"";
+                    Database.load(command);
+                    if (Database.loadData.Rows.Count > 0)
+                    {
+                        textBoxResult.Text = Database.loadData.Rows[0][mode].ToString();
+                        textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
+                    }
+                    else
+                    {
+                        textBoxResult.Text = textboxHistory.Text;
+                        textBoxMeaning.Text = "Not Found";
+                    }
+                }
+                loadBookmark();
+                time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
+                if (mode == "Book")
+                    Database.insertBookhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Idiom")
+                    Database.insertIdiomhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Luminary")
+                    Database.insertLuminaryhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                textboxSearch.Text = "";
+                textboxBookmark.Text = "";
+            }
+        }
+        
         private void resetSuggestionColor()
         {
             textBox1.ForeColor = Color.Gainsboro;
@@ -226,7 +350,7 @@ namespace Dictionary_user
             {
                 textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
             }
-            command = "Use sql_invoicing; SELECT * from "+ mode +"history where " + mode + " like " + "\"" + textboxHistory.Text + "%\"";
+            command = "Use sql_invoicing; SELECT * from "+ mode +"history where " + mode + " like " + "\"" + textboxHistory.Text + "%\""+"order by id desc";
             Database.load(command);
             int num = Database.loadData.Rows.Count;
             if (num > 0)
@@ -361,106 +485,17 @@ namespace Dictionary_user
 
         private void iconButtonSearchHistory_Click(object sender, EventArgs e)
         {
-            if (textboxHistory.Text == "")
-            {
-                MessageBox.Show("Please insert the " + mode + " that needs to be searched !");
-            }
-            else
-            {
-                iconBookmark.Visible = true;
-                textBoxResult.Visible = true;
-                textBoxMeaning.Visible = true;
-                pictureBoxSearched.Visible = true;
-                pictureBoxMeaning.Visible = true;
-                command = "SELECT * from " + "eng" + mode+" where "+mode+"= " + "\"" + textboxHistory.Text.ToString() + "\"";
-                Database.load(command);
-                if (Database.loadData.Rows.Count > 0)
-                {
-                    textBoxResult.Text = Database.loadData.Rows[0][mode].ToString();
-                    textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
-                }
-                else
-                {
-                    command = "SELECT * from " + "vie" + mode + " where " + mode + "= " + "\"" + textboxHistory.Text.ToString() + "\"";
-                    Database.load(command);
-                    if (Database.loadData.Rows.Count > 0)
-                    {
-                        textBoxResult.Text = Database.loadData.Rows[0][mode].ToString();
-                        textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
-                    }
-                    else
-                    {
-                        textBoxResult.Text = textboxHistory.Text;
-                        textBoxMeaning.Text = "Not Found";
-                    }
-                }
-                loadBookmark();
-            }
+            activateIconButtonSearchHistory();
         }
 
         private void iconButtonSearchBookmark_Click(object sender, EventArgs e)
         {
-            if (textboxBookmark.Text == "")
-            {
-                MessageBox.Show("Please insert the " + mode + " that needs to be searched !");
-            }
-            else
-            {
-                iconBookmark.Visible = true;
-                textBoxResult.Visible = true;
-                textBoxMeaning.Visible = true;
-                pictureBoxSearched.Visible = true;
-                pictureBoxMeaning.Visible = true;
-                command = "SELECT * from "+mode+"bookmark where "+mode+"= " + "\"" + textboxBookmark.Text.ToString() + "\"";
-                Database.load(command);
-                if (Database.loadData.Rows.Count > 0)
-                {
-                    textBoxResult.Text = Database.loadData.Rows[0][mode].ToString();
-                    textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
-                }
-                else
-                {
-                    textBoxResult.Text = textboxBookmark.Text;
-                    textBoxMeaning.Text = "Not Found";
-                }
-                loadBookmark();
-            }
+            activateIconButtonSearchBookmark();
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            if (textboxSearch.Text == "")
-            {
-                MessageBox.Show("Please insert the " + mode + " that needs to be searched !");
-            }
-            else
-            {
-                iconBookmark.Visible = true;
-                textBoxResult.Visible = true;
-                textBoxMeaning.Visible = true;
-                pictureBoxSearched.Visible = true;
-                pictureBoxMeaning.Visible = true;
-                command = "SELECT * from " + language +mode+ " where "+mode+" = " + "\"" + textboxSearch.Text.ToString() + "\"";
-                Database.load(command);
-                if (Database.loadData.Rows.Count > 0)
-                {
-                    textBoxResult.Text = Database.loadData.Rows[0][mode].ToString();
-                    textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
-                }
-                else
-                {
-                    textBoxResult.Text = textboxSearch.Text;
-                    textBoxMeaning.Text = "Not Found";
-                }
-                time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
-                if (mode=="Book")
-                    Database.insertBookhistory(textBoxResult.Text, textBoxMeaning.Text, time);
-                if (mode=="Idiom")
-                    Database.insertIdiomhistory(textBoxResult.Text, textBoxMeaning.Text, time);
-                if (mode == "Luminary")
-                    Database.insertLuminaryhistory(textBoxResult.Text, textBoxMeaning.Text, time);
-            }
-            loadBookmark();
+            activateButtonSearch();
         }
 
         private void buttonSwitch_Click(object sender, EventArgs e)
@@ -497,71 +532,85 @@ namespace Dictionary_user
         private void textBox1_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = textBox1.Text;
+            activateButtonSearch();
         }
 
         private void textBox2_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = textBox2.Text;
+            activateButtonSearch();
         }
-
+    
         private void textBox3_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = textBox3.Text;
+            activateButtonSearch();
         }
 
         private void textBox4_Click(object sender, EventArgs e)
         {
             textboxSearch.Text = textBox4.Text;
+            activateButtonSearch();
         }
 
         private void textBox6_Click(object sender, EventArgs e)
         {
             textboxBookmark.Text = textBox6.Text;
+            activateIconButtonSearchBookmark();
         }
 
         private void textBox7_Click(object sender, EventArgs e)
         {
             textboxBookmark.Text = textBox7.Text;
+            activateIconButtonSearchBookmark();
         }
 
         private void textBox8_Click(object sender, EventArgs e)
         {
             textboxBookmark.Text = textBox8.Text;
+            activateIconButtonSearchBookmark();
         }
 
         private void textBox9_Click(object sender, EventArgs e)
         {
             textboxBookmark.Text = textBox9.Text;
+            activateIconButtonSearchBookmark();
         }
 
         private void textBox11_Click(object sender, EventArgs e)
         {
             textboxHistory.Text = textBox11.Text;
+            activateIconButtonSearchHistory();
         }
 
         private void textBox12_Click(object sender, EventArgs e)
         {
             textboxHistory.Text = textBox12.Text;
+            activateIconButtonSearchHistory();
         }
 
         private void textBox13_Click(object sender, EventArgs e)
         {
             textboxHistory.Text = textBox13.Text;
+            activateIconButtonSearchHistory();
         }
 
         private void textBox14_Click(object sender, EventArgs e)
         {
             textboxHistory.Text = textBox14.Text;
+            activateIconButtonSearchHistory();
         }
 
         private void textBox15_Click(object sender, EventArgs e)
         {
             textboxHistory.Text = textBox15.Text;
+            activateIconButtonSearchHistory();
         }
 
         private void textBox16_Click(object sender, EventArgs e)
         {
             textboxHistory.Text = textBox16.Text;
+            activateIconButtonSearchHistory();
         }
 
         #endregion
@@ -669,6 +718,16 @@ namespace Dictionary_user
             pageInfo.Text = (page * 4 + 1).ToString() + " - " + max + " / " + bookmarkRowCount.ToString() + " " + mode;
         }
 
+        private void activateReloadButton()
+        {
+            page = 0;
+            command = "select * from " + mode + "bookmark order by id DESC";
+            loadDatabase(command);
+            bookmarkRowCount = Database.loadData.Rows.Count;
+            bookmarkData = Database.loadData;
+            loadBookmarkData();
+        }
+
         private void iconBookmark_Click(object sender, EventArgs e)
         {
             time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
@@ -685,11 +744,6 @@ namespace Dictionary_user
                 command = "select * from "+mode+"bookmark order by id DESC";
                 loadDatabase(command);
                 loadBookmarkData();
-                //   if (hint == "English")
-                //       Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
-                //   else
-                //       Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
-                //   loadRecentlyBookmark();
             }
             else
             {
@@ -697,12 +751,8 @@ namespace Dictionary_user
                 iconBookmark.IconColor = Color.Gainsboro;
                 command = "delete from "+mode+"bookmark where " + mode + "=" + "'" + textBoxResult.Text + "'";//+ "AND languages=" + "'" + hint + "'";
                 Database.deleteBookmark(command);
-                //  if (hint == "English")
-                //      Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
-                //  else
-                //      Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
-                //  loadRecentlyBookmark();
             }
+            activateReloadButton();
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -817,12 +867,7 @@ namespace Dictionary_user
 
         private void Reload_Click(object sender, EventArgs e)
         {
-            page = 0;
-            command = "select * from "+mode+"bookmark order by id DESC";
-            loadDatabase(command);
-            bookmarkRowCount = Database.loadData.Rows.Count;
-            bookmarkData = Database.loadData;
-            loadBookmarkData();
+            activateReloadButton();
         }
 
         private void iconButtonExcel_Click(object sender, EventArgs e)
@@ -855,7 +900,7 @@ namespace Dictionary_user
 
         private void iconButton7_Click(object sender, EventArgs e)
         {
-            command = "delete from bookhistory where " + mode + " " + " =" + "\"" + textBox11.Text + "\"";
+            command = "delete from "+mode+"history where " + mode + " " + " =" + "\"" + textBox11.Text + "\"";
             Database.deleteHistory(command);
             resetSuggestionHistoryColor();
             loadSearchSuggestionHistory();
@@ -863,7 +908,7 @@ namespace Dictionary_user
 
         private void iconButton8_Click(object sender, EventArgs e)
         {
-            command = "delete from bookhistory where " + mode + " " + " =" + "\"" + textBox12.Text + "\"";
+            command = "delete from "+mode+"history where " + mode + " " + " =" + "\"" + textBox12.Text + "\"";
             Database.deleteHistory(command);
             resetSuggestionHistoryColor();
             loadSearchSuggestionHistory();
@@ -871,7 +916,7 @@ namespace Dictionary_user
 
         private void iconButton9_Click(object sender, EventArgs e)
         {
-            command = "delete from bookhistory where " + mode + " " + " =" + "\"" + textBox13.Text + "\"";
+            command = "delete from "+mode+"history where " + mode + " " + " =" + "\"" + textBox13.Text + "\"";
             Database.deleteHistory(command);
             resetSuggestionHistoryColor();
             loadSearchSuggestionHistory();
@@ -879,7 +924,7 @@ namespace Dictionary_user
 
         private void iconButton10_Click(object sender, EventArgs e)
         {
-            command = "delete from bookhistory where " + mode + " " + " =" + "\"" + textBox14.Text + "\"";
+            command = "delete from "+mode+"history where " + mode + " " + " =" + "\"" + textBox14.Text + "\"";
             Database.deleteHistory(command);
             resetSuggestionHistoryColor();
             loadSearchSuggestionHistory();
@@ -887,7 +932,7 @@ namespace Dictionary_user
 
         private void iconButton11_Click(object sender, EventArgs e)
         {
-            command = "delete from bookhistory where " + mode + " " + " =" + "\"" + textBox15.Text + "\"";
+            command = "delete from "+mode+"history where " + mode + " " + " =" + "\"" + textBox15.Text + "\"";
             Database.deleteHistory(command);
             resetSuggestionHistoryColor();
             loadSearchSuggestionHistory();
@@ -895,7 +940,7 @@ namespace Dictionary_user
 
         private void iconButton12_Click(object sender, EventArgs e)
         {
-            command = "delete from bookhistory where " + mode + " " + " =" + "\"" + textBox16.Text + "\"";
+            command = "delete from "+mode+"history where " + mode + " " + " =" + "\"" + textBox16.Text + "\"";
             Database.deleteHistory(command);
             resetSuggestionHistoryColor();
             loadSearchSuggestionHistory();
@@ -1127,8 +1172,8 @@ namespace Dictionary_user
             bookmarkRowCount = Database.loadData.Rows.Count;
             bookmarkData = Database.loadData;
             loadSearchSuggestionBookmark();
-
             loadPageInfo();
+
             loadSearchSuggestionHistory();
             historyRowCount = Database.loadData.Rows.Count;
             for (int i = 0; i < 100000; i++)
