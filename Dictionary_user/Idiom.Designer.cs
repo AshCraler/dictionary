@@ -1053,7 +1053,7 @@
             // toolTip1
             // 
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "Saved time";
+            this.toolTip1.ToolTipTitle = "Searched time";
             // 
             // Idiom
             // 

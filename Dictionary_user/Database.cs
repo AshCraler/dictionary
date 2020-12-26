@@ -18,6 +18,7 @@ namespace Dictionary_user
         public static bool setLanguages;
         public static string textboxSearchText;
         public static int BookandMore;
+        
         public static void load(string command)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
@@ -42,6 +43,7 @@ namespace Dictionary_user
                     connection.Close();
             }
         } // Load dữ liệu từ Database
+        
         public static void insertHistory(string word,string meaning,string date,string check,string translate)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
@@ -69,6 +71,7 @@ namespace Dictionary_user
                     connection.Close();
             }
         }
+        
         public static void updateHistory(string command)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
@@ -96,6 +99,7 @@ namespace Dictionary_user
                     conn.Close();
             }
         }
+        
         public static void deleteHistory(string command)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
@@ -115,6 +119,7 @@ namespace Dictionary_user
                     connection.Close();
             }
         }
+        
         public static void insertBookmark(string word, string meaning, string languages, string savedtime)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
@@ -141,6 +146,7 @@ namespace Dictionary_user
                     connection.Close();
             }
         }
+        
         public static void deleteBookmark(string command)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
@@ -160,6 +166,7 @@ namespace Dictionary_user
                     connection.Close();
             }
         }
+        
         public static void insertBookBookmark(string book, string link, string savedtime)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
@@ -185,6 +192,59 @@ namespace Dictionary_user
                     connection.Close();
             }
         }
+        
+        public static void insertIdiomBookmark(string idiom, string link, string savedtime)
+        {
+            string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
+
+            MySqlConnection connection = null;
+            try
+            {
+                connection = new MySqlConnection(connectionString);
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = "INSERT INTO Idiombookmark(id,idiom,link,savedtime) VALUES(@id,@idiom,@link,@savedtime);";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@id", 0);
+                cmd.Parameters.AddWithValue("@idiom", idiom);
+                cmd.Parameters.AddWithValue("@link", link);
+                cmd.Parameters.AddWithValue("@savedtime", savedtime);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
+        }
+
+        public static void insertLuminaryBookmark(string luminary, string link, string savedtime)
+        {
+            string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
+
+            MySqlConnection connection = null;
+            try
+            {
+                connection = new MySqlConnection(connectionString);
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = "INSERT INTO Luminarybookmark(id,luminary,link,savedtime) VALUES(@id,@luminary,@link,@savedtime);";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@id", 0);
+                cmd.Parameters.AddWithValue("@luminary", luminary);
+                cmd.Parameters.AddWithValue("@link", link);
+                cmd.Parameters.AddWithValue("@savedtime", savedtime);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
+        }
+
         public static void insertBookhistory(string book, string link, string savedtime)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
@@ -210,6 +270,7 @@ namespace Dictionary_user
                     connection.Close();
             }
         }
+        
         public static void insertIdiomhistory(string idiom, string link, string Time)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
@@ -225,6 +286,32 @@ namespace Dictionary_user
                 cmd.Prepare();
                 cmd.Parameters.AddWithValue("@id", 0);
                 cmd.Parameters.AddWithValue("@idiom", idiom);
+                cmd.Parameters.AddWithValue("@link", link);
+                cmd.Parameters.AddWithValue("@Time", Time);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
+        }
+
+        public static void insertLuminaryhistory(string luminary, string link, string Time)
+        {
+            string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
+
+            MySqlConnection connection = null;
+            try
+            {
+                connection = new MySqlConnection(connectionString);
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = "INSERT INTO Luminaryhistory(id,luminary,link,Time) VALUES(@id,@luminary,@link,@Time);";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@id", 0);
+                cmd.Parameters.AddWithValue("@luminary", luminary);
                 cmd.Parameters.AddWithValue("@link", link);
                 cmd.Parameters.AddWithValue("@Time", Time);
                 cmd.ExecuteNonQuery();

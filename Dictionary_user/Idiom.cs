@@ -471,6 +471,8 @@ namespace Dictionary_user
                     Database.insertBookhistory(textBoxResult.Text, textBoxMeaning.Text, time);
                 if (mode=="Idiom")
                     Database.insertIdiomhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Luminary")
+                    Database.insertLuminaryhistory(textBoxResult.Text, textBoxMeaning.Text, time);
             }
             loadBookmark();
         }
@@ -562,7 +564,7 @@ namespace Dictionary_user
             if (Database.loadData.Rows.Count > 0 + 4 * page)
             {
                 textBox6.Visible = true;
-                textBox6.Text = Database.loadData.Rows[page * 4]["book"].ToString();
+                textBox6.Text = Database.loadData.Rows[page * 4][mode].ToString();
                 iconButton1.Visible = true;
                 if (check[page * 4 + 1] == true)
                     iconButton1.IconColor = Color.FromArgb(238, 26, 74);
@@ -577,7 +579,7 @@ namespace Dictionary_user
             if (Database.loadData.Rows.Count > 1 + 4 * page)
             {
                 textBox7.Visible = true;
-                textBox7.Text = Database.loadData.Rows[page * 4+1]["book"].ToString();
+                textBox7.Text = Database.loadData.Rows[page * 4+1][mode].ToString();
                 iconButton2.Visible = true;
                 if (check[page * 4 + 2] == true)
                     iconButton2.IconColor = Color.FromArgb(238, 26, 74);
@@ -592,7 +594,7 @@ namespace Dictionary_user
             if (Database.loadData.Rows.Count > 2 + 4 * page)
             {
                 textBox8.Visible = true;
-                textBox8.Text = Database.loadData.Rows[page * 4+2]["book"].ToString();
+                textBox8.Text = Database.loadData.Rows[page * 4+2][mode].ToString();
                 iconButton3.Visible = true;
                 if (check[page * 4 + 3] == true)
                     iconButton3.IconColor = Color.FromArgb(238, 26, 74);
@@ -607,7 +609,7 @@ namespace Dictionary_user
             if (Database.loadData.Rows.Count > 3 + 4 * page)
             {
                 textBox9.Visible = true;
-                textBox9.Text = Database.loadData.Rows[page * 4+3]["book"].ToString();
+                textBox9.Text = Database.loadData.Rows[page * 4+3][mode].ToString();
                 iconButton4.Visible = true;
                 if (check[page * 4 + 4] == true)
                     iconButton4.IconColor = Color.FromArgb(238, 26, 74);
@@ -657,8 +659,13 @@ namespace Dictionary_user
             {
                 ktBookmark = true;
                 iconBookmark.IconColor = RGBColors.color7;
-                Database.insertBookBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
-                command = "select * from bookbookmark order by id DESC";
+                if (mode=="Book")
+                    Database.insertBookBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode=="Idiom")
+                    Database.insertIdiomBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Luminary")
+                    Database.insertLuminaryBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
+                command = "select * from "+mode+"bookmark order by id DESC";
                 loadDatabase(command);
                 loadBookmarkData();
                 //   if (hint == "English")
@@ -671,7 +678,7 @@ namespace Dictionary_user
             {
                 ktBookmark = false;
                 iconBookmark.IconColor = Color.Gainsboro;
-                command = "delete from bookbookmark where " + mode + "=" + "'" + textBoxResult.Text + "'";//+ "AND languages=" + "'" + hint + "'";
+                command = "delete from "+mode+"bookmark where " + mode + "=" + "'" + textBoxResult.Text + "'";//+ "AND languages=" + "'" + hint + "'";
                 Database.deleteBookmark(command);
                 //  if (hint == "English")
                 //      Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
@@ -686,7 +693,7 @@ namespace Dictionary_user
             time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
             if (iconButton1.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookbookmark where "+mode+" "+" =" + "\"" + textBox6.Text + "\"";
+                command = "delete from "+mode+"bookmark where "+mode+" "+" =" + "\"" + textBox6.Text + "\"";
                 Database.deleteBookmark(command);
                 iconButton1.IconColor = Color.Gainsboro;
                 check[page * 4 + 1] = false;
@@ -694,7 +701,12 @@ namespace Dictionary_user
             else
             {
                 iconButton1.IconColor = Color.FromArgb(238, 26, 74);
-                Database.insertBookBookmark(textBox6.Text, link1, time);
+                if (mode=="Book")
+                    Database.insertBookBookmark(textBox6.Text, link1, time);
+                if (mode=="Idiom")
+                    Database.insertIdiomBookmark(textBox6.Text, link1, time);
+                if (mode == "Luminary")
+                    Database.insertLuminaryBookmark(textBox6.Text, link1, time);
                 check[page * 4 + 1] = true;
             }
         }
@@ -704,7 +716,7 @@ namespace Dictionary_user
             time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
             if (iconButton2.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookbookmark where book =" + "\"" + textBox7.Text + "\"";
+                command = "delete from "+mode+"bookmark where book =" + "\"" + textBox7.Text + "\"";
                 Database.deleteBookmark(command);
                 iconButton2.IconColor = Color.Gainsboro;
                 check[page * 13 + 2] = false;
@@ -712,7 +724,12 @@ namespace Dictionary_user
             else
             {
                 iconButton2.IconColor = Color.FromArgb(238, 26, 74);
-                Database.insertBookBookmark(textBox7.Text, link2, time);
+                if (mode == "Book")
+                    Database.insertBookBookmark(textBox7.Text, link2, time);
+                if (mode == "Idiom")
+                    Database.insertIdiomBookmark(textBox7.Text, link2, time);
+                if (mode == "Luminary")
+                    Database.insertLuminaryBookmark(textBox7.Text, link2, time);
                 check[page * 13 + 2] = true;
             }
         }
@@ -722,7 +739,7 @@ namespace Dictionary_user
             time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
             if (iconButton3.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookbookmark where book =" + "\"" + textBox8.Text + "\"";
+                command = "delete from "+mode+"bookmark where book =" + "\"" + textBox8.Text + "\"";
                 Database.deleteBookmark(command);
                 iconButton3.IconColor = Color.Gainsboro;
                 check[page * 4 + 3] = false;
@@ -730,7 +747,12 @@ namespace Dictionary_user
             else
             {
                 iconButton3.IconColor = Color.FromArgb(238, 26, 74);
-                Database.insertBookBookmark(textBox8.Text, link3, time);
+                if (mode == "Book")
+                    Database.insertBookBookmark(textBox8.Text, link3, time);
+                if (mode == "Idiom")
+                    Database.insertIdiomBookmark(textBox8.Text, link3, time);
+                if (mode == "Luminary")
+                    Database.insertLuminaryBookmark(textBox8.Text, link3, time);
                 check[page * 4 + 3] = true;
             }
         }
@@ -740,7 +762,7 @@ namespace Dictionary_user
             time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
             if (iconButton4.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookbookmark where book =" + "\"" + textBox9.Text + "\"";
+                command = "delete from "+mode+"bookmark where book =" + "\"" + textBox9.Text + "\"";
                 Database.deleteBookmark(command);
                 iconButton4.IconColor = Color.Gainsboro;
                 check[page * 4 + 4] = false;
@@ -748,7 +770,12 @@ namespace Dictionary_user
             else
             {
                 iconButton4.IconColor = Color.FromArgb(238, 26, 74);
-                Database.insertBookBookmark(textBox9.Text, link4, time);
+                if (mode == "Book")
+                    Database.insertBookBookmark(textBox9.Text, link4, time);
+                if (mode == "Idiom")
+                    Database.insertIdiomBookmark(textBox9.Text, link4, time);
+                if (mode == "Luminary")
+                    Database.insertLuminaryBookmark(textBox9.Text, link4, time);
                 check[page * 4 + 4] = true;
             }
         }
@@ -774,7 +801,7 @@ namespace Dictionary_user
         private void Reload_Click(object sender, EventArgs e)
         {
             page = 0;
-            command = "select * from bookbookmark order by id DESC";
+            command = "select * from "+mode+"bookmark order by id DESC";
             loadDatabase(command);
             bookmarkRowCount = Database.loadData.Rows.Count;
             loadBookmarkData();
@@ -782,7 +809,7 @@ namespace Dictionary_user
 
         private void iconButtonExcel_Click(object sender, EventArgs e)
         {
-            command = "select * from bookbookmark order by id DESC";
+            command = "select * from "+mode+"bookmark order by id DESC";
             loadDatabase(command);
             DataView view = new DataView(Database.loadData);
             DataTable selected = view.ToTable(false, "book", "link", "savedtime");
