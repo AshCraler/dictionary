@@ -14,7 +14,7 @@ namespace Dictionary_user
     public partial class Idiom : Form
     {
         #region Declaration
-        
+
         private bool ktSwitch = false;
         private string mode = "Book";
         private string language = "vie";
@@ -27,6 +27,7 @@ namespace Dictionary_user
         private int suggestionRowCount;
         private int bookmarkRowCount;
         private int historyRowCount;
+        private DataTable bookmarkData;
         private struct RGBColors // Struct các mã màu 
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -48,10 +49,6 @@ namespace Dictionary_user
         private string historytime14;
         private string historytime15;
         private string historytime16;
-        private void textBoxMeaning_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start(textBoxMeaning.Text.ToString());
-        }
 
         private void resetSuggestionColor()
         {
@@ -68,7 +65,7 @@ namespace Dictionary_user
             textBox8.ForeColor = Color.Gainsboro;
             textBox9.ForeColor = Color.Gainsboro;
         }
-      
+
         private void reseticonButtonSuggestionBookmarkColor()
         {
             iconButton1.IconColor = RGBColors.color2;
@@ -76,7 +73,7 @@ namespace Dictionary_user
             iconButton3.IconColor = RGBColors.color2;
             iconButton4.IconColor = RGBColors.color2;
         }
-      
+
         private void resetSuggestionHistoryColor()
         {
             textBox11.ForeColor = Color.Gainsboro;
@@ -85,31 +82,6 @@ namespace Dictionary_user
             textBox14.ForeColor = Color.Gainsboro;
             textBox15.ForeColor = Color.Gainsboro;
             textBox16.ForeColor = Color.Gainsboro;
-        }
-
-        private void buttonSwitch_Click(object sender, EventArgs e)
-        {
-            if (ktSwitch == true)
-            {
-                ktSwitch = false;
-                pictureBoxFlagLeft.Image = Properties.Resources.vietnam;
-                pictureBoxFlagRight.Image = Properties.Resources.united_kingdom;
-                labelLanguage.Text = "Vietnamese " + mode;
-                language = "vie";
-                if (Database.BookandMore == 2)
-                    labelLanguage.Text = "Vietnam luminary";
-            }
-            else
-            {
-                ktSwitch = true;
-                pictureBoxFlagLeft.Image = Properties.Resources.united_kingdom;
-                pictureBoxFlagRight.Image = Properties.Resources.vietnam;
-                labelLanguage.Text = "English " + mode;
-                language = "eng";
-                if (Database.BookandMore == 2)
-                    labelLanguage.Text = "World luminary";
-            }
-            loadSearchSuggestion();
         }
 
         private void loadSearchSuggestion()
@@ -122,7 +94,7 @@ namespace Dictionary_user
             {
                 textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
             }
-            command = "Use sql_invoicing; SELECT " + mode + " from " + language + mode +" where " + mode + " like " + "\"" + textboxSearch.Text + "%\"";
+            command = "Use sql_invoicing; SELECT " + mode + " from " + language + mode + " where " + mode + " like " + "\"" + textboxSearch.Text + "%\"";
             Database.load(command);
             int num = Database.loadData.Rows.Count;
             if (num > 0)
@@ -166,7 +138,7 @@ namespace Dictionary_user
             else
                 textBox4.Visible = false;
         }
-        
+
         private void loadSearchSuggestionBookmark()
         {
             if (textboxSearch.Text != string.Empty)
@@ -177,15 +149,13 @@ namespace Dictionary_user
             {
                 textboxBookmark.LineIdleColor = textboxSearch.HintForeColor;
             }
-            command = "Use sql_invoicing; SELECT * from "+mode+"bookmark "+ "where " + mode + " like " + "\"" + textboxBookmark.Text + "%\"";
-            Database.load(command);
-            int num = Database.loadData.Rows.Count;
+            int num = bookmarkRowCount;
             if (num > 0 + 4 * page)
             {
                 iconButton1.Visible = true;
                 textBox6.Visible = true;
-                textBox6.Text = Database.loadData.Rows[page * 4][mode].ToString();
-                link1 = Database.loadData.Rows[page * 4]["link"].ToString();
+                textBox6.Text =bookmarkData.Rows[page * 4][mode].ToString();
+                link1 = bookmarkData.Rows[page * 4]["link"].ToString();
             }
             else
             {
@@ -202,9 +172,11 @@ namespace Dictionary_user
             {
                 iconButton2.Visible = true;
                 textBox7.Visible = true;
-                textBox7.Text = Database.loadData.Rows[page * 4 + 1][mode].ToString();
-                link2 = Database.loadData.Rows[page * 4 + 1]["link"].ToString();
+                textBox7.Text = bookmarkData.Rows[page * 4 + 1][mode].ToString();
+                link2 = bookmarkData.Rows[page * 4 + 1]["link"].ToString();
             }
+
+
             else
             {
                 iconButton2.Visible = false;
@@ -218,8 +190,8 @@ namespace Dictionary_user
             {
                 iconButton3.Visible = true;
                 textBox8.Visible = true;
-                textBox8.Text = Database.loadData.Rows[page * 4 + 2][mode].ToString();
-                link3 = Database.loadData.Rows[page * 4 + 2]["link"].ToString();
+                textBox8.Text = bookmarkData.Rows[page * 4 + 2][mode].ToString();
+                link3 = bookmarkData.Rows[page * 4 + 2]["link"].ToString();
             }
             else
             {
@@ -233,14 +205,15 @@ namespace Dictionary_user
 
                 iconButton4.Visible = true;
                 textBox9.Visible = true;
-                textBox9.Text = Database.loadData.Rows[page * 4 + 3][mode].ToString();
-                link4 = Database.loadData.Rows[page * 4 + 3]["link"].ToString();
+                textBox9.Text = bookmarkData.Rows[page * 4 + 3][mode].ToString();
+                link4 = bookmarkData.Rows[page * 4 + 3]["link"].ToString();
             }
             else
             {
                 textBox9.Visible = false;
                 iconButton4.Visible = false;
             }
+        
         }
 
         private void loadSearchSuggestionHistory()
@@ -370,10 +343,13 @@ namespace Dictionary_user
 
         private void textboxBookmark_OnValueChanged(object sender, EventArgs e)
         {
+            command = "Use sql_invoicing; SELECT * from " + mode + "bookmark " + "where " + mode + " like " + "\"" + textboxBookmark.Text + "%\""+"order by id desc";
+            Database.load(command);
+            bookmarkRowCount = Database.loadData.Rows.Count;
+            bookmarkData = Database.loadData;
             loadSearchSuggestionBookmark();
             resetSuggestionBookmarkColor();
             reseticonButtonSuggestionBookmarkColor();
-            bookmarkRowCount = Database.loadData.Rows.Count;
             loadPageInfo();    
         }
         
@@ -396,17 +372,27 @@ namespace Dictionary_user
                 textBoxMeaning.Visible = true;
                 pictureBoxSearched.Visible = true;
                 pictureBoxMeaning.Visible = true;
-                command = "SELECT * from " + language + "book where book= " + "\"" + textboxHistory.Text.ToString() + "\"";
+                command = "SELECT * from " + "eng" + mode+" where "+mode+"= " + "\"" + textboxHistory.Text.ToString() + "\"";
                 Database.load(command);
                 if (Database.loadData.Rows.Count > 0)
                 {
-                    textBoxResult.Text = Database.loadData.Rows[0]["book"].ToString();
+                    textBoxResult.Text = Database.loadData.Rows[0][mode].ToString();
                     textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
                 }
                 else
                 {
-                    textBoxResult.Text = textboxHistory.Text;
-                    textBoxMeaning.Text = "Not Found";
+                    command = "SELECT * from " + "vie" + mode + " where " + mode + "= " + "\"" + textboxHistory.Text.ToString() + "\"";
+                    Database.load(command);
+                    if (Database.loadData.Rows.Count > 0)
+                    {
+                        textBoxResult.Text = Database.loadData.Rows[0][mode].ToString();
+                        textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
+                    }
+                    else
+                    {
+                        textBoxResult.Text = textboxHistory.Text;
+                        textBoxMeaning.Text = "Not Found";
+                    }
                 }
                 loadBookmark();
             }
@@ -425,11 +411,11 @@ namespace Dictionary_user
                 textBoxMeaning.Visible = true;
                 pictureBoxSearched.Visible = true;
                 pictureBoxMeaning.Visible = true;
-                command = "SELECT * from bookbookmark where book= " + "\"" + textboxBookmark.Text.ToString() + "\"";
+                command = "SELECT * from "+mode+"bookmark where "+mode+"= " + "\"" + textboxBookmark.Text.ToString() + "\"";
                 Database.load(command);
                 if (Database.loadData.Rows.Count > 0)
                 {
-                    textBoxResult.Text = Database.loadData.Rows[0]["book"].ToString();
+                    textBoxResult.Text = Database.loadData.Rows[0][mode].ToString();
                     textBoxMeaning.Text = Database.loadData.Rows[0]["link"].ToString();
                 }
                 else
@@ -475,6 +461,37 @@ namespace Dictionary_user
                     Database.insertLuminaryhistory(textBoxResult.Text, textBoxMeaning.Text, time);
             }
             loadBookmark();
+        }
+
+        private void buttonSwitch_Click(object sender, EventArgs e)
+        {
+            if (ktSwitch == true)
+            {
+                ktSwitch = false;
+                pictureBoxFlagLeft.Image = Properties.Resources.vietnam;
+                pictureBoxFlagRight.Image = Properties.Resources.united_kingdom;
+                labelLanguage.Text = "Vietnamese " + mode;
+                language = "vie";
+                if (Database.BookandMore == 2)
+                    labelLanguage.Text = "Vietnam luminary";
+            }
+            else
+            {
+                ktSwitch = true;
+                pictureBoxFlagLeft.Image = Properties.Resources.united_kingdom;
+                pictureBoxFlagRight.Image = Properties.Resources.vietnam;
+                labelLanguage.Text = "English " + mode;
+                language = "eng";
+                if (Database.BookandMore == 2)
+                    labelLanguage.Text = "World luminary";
+            }
+            loadSearchSuggestion();
+        }
+
+        private void textBoxMeaning_Click(object sender, EventArgs e)
+        {
+            if (mode!="Idiom")
+                System.Diagnostics.Process.Start(textBoxMeaning.Text.ToString());
         }
 
         private void textBox1_Click(object sender, EventArgs e)
@@ -561,10 +578,10 @@ namespace Dictionary_user
         private void loadBookmarkData()
         {
             loadPageInfo();
-            if (Database.loadData.Rows.Count > 0 + 4 * page)
+            if (bookmarkRowCount > 0 + 4 * page)
             {
                 textBox6.Visible = true;
-                textBox6.Text = Database.loadData.Rows[page * 4][mode].ToString();
+                textBox6.Text = bookmarkData.Rows[page * 4][mode].ToString();
                 iconButton1.Visible = true;
                 if (check[page * 4 + 1] == true)
                     iconButton1.IconColor = Color.FromArgb(238, 26, 74);
@@ -576,10 +593,10 @@ namespace Dictionary_user
                 textBox6.Visible = false;
                 iconButton1.Visible = false;
             }
-            if (Database.loadData.Rows.Count > 1 + 4 * page)
+            if (bookmarkRowCount > 1 + 4 * page)
             {
                 textBox7.Visible = true;
-                textBox7.Text = Database.loadData.Rows[page * 4+1][mode].ToString();
+                textBox7.Text = bookmarkData.Rows[page * 4+1][mode].ToString();
                 iconButton2.Visible = true;
                 if (check[page * 4 + 2] == true)
                     iconButton2.IconColor = Color.FromArgb(238, 26, 74);
@@ -591,10 +608,10 @@ namespace Dictionary_user
                 textBox7.Visible = false;
                 iconButton2.Visible = false;
             }
-            if (Database.loadData.Rows.Count > 2 + 4 * page)
+            if (bookmarkRowCount > 2 + 4 * page)
             {
                 textBox8.Visible = true;
-                textBox8.Text = Database.loadData.Rows[page * 4+2][mode].ToString();
+                textBox8.Text = bookmarkData.Rows[page * 4+2][mode].ToString();
                 iconButton3.Visible = true;
                 if (check[page * 4 + 3] == true)
                     iconButton3.IconColor = Color.FromArgb(238, 26, 74);
@@ -606,10 +623,10 @@ namespace Dictionary_user
                 textBox8.Visible = false;
                 iconButton3.Visible = false;
             }
-            if (Database.loadData.Rows.Count > 3 + 4 * page)
+            if (bookmarkRowCount > 3 + 4 * page)
             {
                 textBox9.Visible = true;
-                textBox9.Text = Database.loadData.Rows[page * 4+3][mode].ToString();
+                textBox9.Text = bookmarkData.Rows[page * 4+3][mode].ToString();
                 iconButton4.Visible = true;
                 if (check[page * 4 + 4] == true)
                     iconButton4.IconColor = Color.FromArgb(238, 26, 74);
@@ -625,7 +642,7 @@ namespace Dictionary_user
 
         private void loadBookmark()
         {
-            command = " SELECT book from bookbookmark where book = " + "\"" + textBoxResult.Text.ToString() + "\""; //+ "and languages= " + "'" + hint + "'";
+            command = " SELECT "+mode+" from "+mode+"bookmark where "+mode+" = " + "\"" + textBoxResult.Text.ToString() + "\""; //+ "and languages= " + "'" + hint + "'";
             Database.load(command);
             if (Database.loadData.Rows.Count > 0)
             {
@@ -804,6 +821,7 @@ namespace Dictionary_user
             command = "select * from "+mode+"bookmark order by id DESC";
             loadDatabase(command);
             bookmarkRowCount = Database.loadData.Rows.Count;
+            bookmarkData = Database.loadData;
             loadBookmarkData();
         }
 
@@ -1103,11 +1121,18 @@ namespace Dictionary_user
             }
             loadDefaultSuggestion();
             suggestionRowCount = Database.loadData.Rows.Count;
-            loadSearchSuggestionBookmark();
+            
+            command = "Use sql_invoicing; SELECT * from " + mode + "bookmark " + "where " + mode + " like " + "\"" + textboxBookmark.Text + "%\""+"order by id desc";
+            Database.load(command);
             bookmarkRowCount = Database.loadData.Rows.Count;
+            bookmarkData = Database.loadData;
+            loadSearchSuggestionBookmark();
+
             loadPageInfo();
             loadSearchSuggestionHistory();
             historyRowCount = Database.loadData.Rows.Count;
+            for (int i = 0; i < 100000; i++)
+                check[i] = true;
         }
     }
 }

@@ -960,7 +960,7 @@
             // 
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.buttonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
+            this.buttonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(76)))));
             this.buttonSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.buttonSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.buttonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
