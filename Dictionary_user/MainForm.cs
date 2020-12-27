@@ -40,6 +40,8 @@ namespace Dictionary_user
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         private List<string> arr;
         private Random r = new Random();
+        private string language;
+        private PictureBox pictureLanguage = new PictureBox();
         private struct RGBColors // Struct các mã màu 
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -55,7 +57,6 @@ namespace Dictionary_user
         #endregion
 
         #region Menu and Titlebar
-
 
         private void displaySwitch() // Hiển thị chức năng chuyển ngôn ngữ
         {
@@ -120,25 +121,12 @@ namespace Dictionary_user
             loadRecentlyHistory();
             loadRecentlyBookmark();
         }
-        private void checkBookMark() // Check and Set color to iconButtonBookmark
-        {
-            if (labelBookmark1.Text != typedWord.Text)
-            {
-                bookmarkButton.IconColor = Color.Gainsboro;
-                ktBookmark = false;
-            }
-            else
-            {
-                bookmarkButton.IconColor = RGBColors.color7;
-                ktBookmark = true;
-            }
-        }
         private void activateSwitchButton() // Kích hoạt switchButton 
         {
             if (ktSwitch == true)
             {
                 pictureBoxFlagLeft.Image = Properties.Resources.vietnam;
-                pictureBoxFlagRight.Image = Properties.Resources.united_kingdom;
+                pictureBoxFlagRight.Image = pictureLanguage.Image;
                 textboxSearch.HintText = "Search VietNamese";
                 textboxSearch.Text = "Search VietNamese";
                 coloumn = "English";
@@ -154,10 +142,10 @@ namespace Dictionary_user
             }
             else
             {
-                pictureBoxFlagLeft.Image = Properties.Resources.united_kingdom;
+                pictureBoxFlagLeft.Image = pictureLanguage.Image;
                 pictureBoxFlagRight.Image = Properties.Resources.vietnam;
-                textboxSearch.HintText = "Search English";
-                textboxSearch.Text = "Search English";
+                textboxSearch.HintText = "Search "+language;
+                textboxSearch.Text = "Search "+language;
                 iconButtonSpeaker1.Visible = true;
                 iconButtonSpeaker2.Visible = true;
                 iconButtonSpeaker3.Visible = true;
@@ -173,30 +161,6 @@ namespace Dictionary_user
             loadRecentlyHistory();
             loadRecentlyBookmark();
         }
-        private void random()
-        {
-            arr = new List<string>();
-            for (int i = 0; i < 8; i++)
-            {
-                id = r.Next(1, 1800);
-                command = "select " + hint + " from mytable where id=" + "'" + id.ToString() + "'";
-                Database.load(command);
-                arr.Add(Database.loadData.Rows[0][hint].ToString());
-            }
-        }
-        private void loadVolcabulary()
-        {
-            random();
-            labelWord1.Text = arr[0];
-            labelWord2.Text = arr[1];
-            labelWord3.Text = arr[2];
-            labelWord4.Text = arr[3];
-            labelWord5.Text = arr[4];
-            labelWord6.Text = arr[5];
-            labelWord7.Text = arr[6];
-            labelWord8.Text = arr[7];
-        }
-
         public MainForm() // Kích hoạt MainForm
         {
             //Initial GUI
@@ -205,9 +169,11 @@ namespace Dictionary_user
             leftBorderBtn.Size = new Size(7, 34);
             panelMenu.Controls.Add(leftBorderBtn);
             activateMenuButton(iconButton1, RGBColors.color1);
-            //initSuggestion();
+            bunifuDropdownTranslate.selectedIndex = 0;
             loadRecently();
             Database.nowForm = 1;
+            language = "English";
+            pictureLanguage.Image = Properties.Resources.united_kingdom;
             loadVolcabulary();
         }
         private void buttonSwitch_Click(object sender, EventArgs e) // Khi click vào switchButton
@@ -220,10 +186,6 @@ namespace Dictionary_user
             activateSwitchButton();
             loadVolcabulary();
         }
-
-
-
-
 
 
         #endregion
@@ -452,7 +414,7 @@ namespace Dictionary_user
 
         #endregion Suggestion, History, Bookmark
 
-        #region Search_Result
+        #region Sound
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
@@ -492,38 +454,102 @@ namespace Dictionary_user
             }
         }
 
-        private void bookmarkButton_Click(object sender, EventArgs e)
+        private void iconButtonSpeaker1_Click(object sender, EventArgs e)
         {
-            time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
-            if (ktBookmark == false)
-            {
-                ktBookmark = true;
-                bookmarkButton.IconColor = RGBColors.color7;
-                Database.insertBookmark(typedWord.Text, wordMeaning.Text, hint, time);
-                if (hint == "English")
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
-                else
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
-                loadRecentlyBookmark();
-            }
-            else
-            {
-                ktBookmark = false;
-                bookmarkButton.IconColor = Color.Gainsboro;
-                command = "delete from bookmark where word =" + "'" + typedWord.Text + "'" + "AND languages=" + "'" + hint + "'";
-                Database.deleteBookmark(command);
-                if (hint == "English")
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
-                else
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
-                loadRecentlyBookmark();
-            }
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord1.Text);
         }
 
+        private void iconButtonSpeaker2_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
 
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
 
+            // Speak a string.  
+            synth.Speak(labelWord2.Text);
+        }
 
-        #endregion Search_Result
+        private void iconButtonSpeaker3_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord3.Text);
+        }
+
+        private void iconButtonSpeaker4_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord4.Text);
+        }
+
+        private void iconButtonSpeaker5_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord5.Text);
+        }
+
+        private void iconButtonSpeaker6_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord6.Text);
+        }
+
+        private void iconButtonSpeaker7_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord7.Text);
+        }
+
+        private void iconButtonSpeaker8_Click(object sender, EventArgs e)
+        {
+            // Initialize a new instance of the SpeechSynthesizer.  
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(labelWord8.Text);
+        }
+        #endregion 
 
         #region Keyboard
 
@@ -596,23 +622,47 @@ namespace Dictionary_user
 
         #endregion
 
-        #region Book and more Feature
+        #region Combobox
         private void bunifuDropdownTranslate_onItemSelected(object sender, EventArgs e)
         {
-            if (bunifuDropdownTranslate.selectedIndex == 0)
+            if (Database.nowForm==1)
             {
-                Database.BookandMore = 0;
-                openChildForm(new Idiom());
+                if (bunifuDropdownTranslate.selectedIndex == 0)
+                {
+                    language = "English";
+                    pictureLanguage.Image = Properties.Resources.united_kingdom;
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 1)
+                {
+                    language = "French";
+                    pictureLanguage.Image = Properties.Resources.france;
+                }
+                if (textboxSearch.HintText == "Search VietNamese")
+                    pictureBoxFlagRight.Image = pictureLanguage.Image;
+                else
+                {
+                    pictureBoxFlagLeft.Image = pictureLanguage.Image;
+                    textboxSearch.HintText = "Search " + language;
+                    textboxSearch.Text = "";
+                }
             }
-            if (bunifuDropdownTranslate.selectedIndex == 1)
+            if (Database.nowForm == 10)
             {
-                Database.BookandMore = 1;
-                openChildForm(new Idiom());
-            }
-            if (bunifuDropdownTranslate.selectedIndex == 2)
-            {
-                Database.BookandMore = 2;
-                openChildForm(new Idiom());
+                if (bunifuDropdownTranslate.selectedIndex == 0)
+                {
+                    Database.BookandMore = 0;
+                    openChildForm(new Idiom());
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 1)
+                {
+                    Database.BookandMore = 1;
+                    openChildForm(new Idiom());
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 2)
+                {
+                    Database.BookandMore = 2;
+                    openChildForm(new Idiom());
+                }
             }
         }
 
@@ -760,101 +810,31 @@ namespace Dictionary_user
             labelWord8.ForeColor = Color.Gainsboro;
         }
 
-        private void iconButtonSpeaker1_Click(object sender, EventArgs e)
+        private void random()
         {
-            // Initialize a new instance of the SpeechSynthesizer.  
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-
-            // Configure the audio output.   
-            synth.SetOutputToDefaultAudioDevice();
-
-            // Speak a string.  
-            synth.Speak(labelWord1.Text);
+            arr = new List<string>();
+            for (int i = 0; i < 8; i++)
+            {
+                id = r.Next(1, 1800);
+                command = "select " + hint + " from englishdata where id=" + "'" + id.ToString() + "'";
+                Database.load(command);
+                arr.Add(Database.loadData.Rows[0][hint].ToString());
+            }
         }
-
-        private void iconButtonSpeaker2_Click(object sender, EventArgs e)
+        
+        private void loadVolcabulary()
         {
-            // Initialize a new instance of the SpeechSynthesizer.  
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-
-            // Configure the audio output.   
-            synth.SetOutputToDefaultAudioDevice();
-
-            // Speak a string.  
-            synth.Speak(labelWord2.Text);
+            random();
+            labelWord1.Text = arr[0];
+            labelWord2.Text = arr[1];
+            labelWord3.Text = arr[2];
+            labelWord4.Text = arr[3];
+            labelWord5.Text = arr[4];
+            labelWord6.Text = arr[5];
+            labelWord7.Text = arr[6];
+            labelWord8.Text = arr[7];
         }
-
-        private void iconButtonSpeaker3_Click(object sender, EventArgs e)
-        {
-            // Initialize a new instance of the SpeechSynthesizer.  
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-
-            // Configure the audio output.   
-            synth.SetOutputToDefaultAudioDevice();
-
-            // Speak a string.  
-            synth.Speak(labelWord3.Text);
-        }
-
-        private void iconButtonSpeaker4_Click(object sender, EventArgs e)
-        {
-            // Initialize a new instance of the SpeechSynthesizer.  
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-
-            // Configure the audio output.   
-            synth.SetOutputToDefaultAudioDevice();
-
-            // Speak a string.  
-            synth.Speak(labelWord4.Text);
-        }
-
-        private void iconButtonSpeaker5_Click(object sender, EventArgs e)
-        {
-            // Initialize a new instance of the SpeechSynthesizer.  
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-
-            // Configure the audio output.   
-            synth.SetOutputToDefaultAudioDevice();
-
-            // Speak a string.  
-            synth.Speak(labelWord5.Text);
-        }
-
-        private void iconButtonSpeaker6_Click(object sender, EventArgs e)
-        {
-            // Initialize a new instance of the SpeechSynthesizer.  
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-
-            // Configure the audio output.   
-            synth.SetOutputToDefaultAudioDevice();
-
-            // Speak a string.  
-            synth.Speak(labelWord6.Text);
-        }
-
-        private void iconButtonSpeaker7_Click(object sender, EventArgs e)
-        {
-            // Initialize a new instance of the SpeechSynthesizer.  
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-
-            // Configure the audio output.   
-            synth.SetOutputToDefaultAudioDevice();
-
-            // Speak a string.  
-            synth.Speak(labelWord7.Text);
-        }
-
-        private void iconButtonSpeaker8_Click(object sender, EventArgs e)
-        {
-            // Initialize a new instance of the SpeechSynthesizer.  
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-
-            // Configure the audio output.   
-            synth.SetOutputToDefaultAudioDevice();
-
-            // Speak a string.  
-            synth.Speak(labelWord8.Text);
-        }
+        
         #endregion
 
         //Cleaning code, create new regions
@@ -886,7 +866,7 @@ namespace Dictionary_user
         {
             if (textboxSearch.HintText == "Search English")
             {
-                command = " SELECT VieMeaning from mytable where English = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                command = " SELECT VieMeaning from englishdata where English = " + "\"" + textboxSearch.Text.ToString() + "\"";
                 Database.load(command);
                 typedWord.Text = textboxSearch.Text;
                 if (Database.loadData.Rows.Count > 0)
@@ -899,7 +879,7 @@ namespace Dictionary_user
             }
             else
             {
-                command = " SELECT English from mytable where VieMeaning = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                command = " SELECT English from englishdata where VieMeaning = " + "\"" + textboxSearch.Text.ToString() + "\"";
                 Database.load(command);
                 typedWord.Text = textboxSearch.Text;
                 if (Database.loadData.Rows.Count > 0)
@@ -968,7 +948,7 @@ namespace Dictionary_user
                 {
                     textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
                 }
-                command = "Use sql_invoicing; SELECT " + hint + " from mytable where " + hint + " like " + "'" + textboxSearch.Text + "%'";
+                command = "Use sql_invoicing; SELECT " + hint + " from englishdata where " + hint + " like " + "'" + textboxSearch.Text + "%'";
                 Database.load(command);
                 int num = Database.loadData.Rows.Count;
                 if (num > 0)
@@ -1125,6 +1105,48 @@ namespace Dictionary_user
                 labelBookmark4.Text = "";
         }
 
+        private void bookmarkButton_Click(object sender, EventArgs e)
+        {
+            time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
+            if (ktBookmark == false)
+            {
+                ktBookmark = true;
+                bookmarkButton.IconColor = RGBColors.color7;
+                Database.insertBookmark(typedWord.Text, wordMeaning.Text, hint, time);
+                if (hint == "English")
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                else
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                loadRecentlyBookmark();
+            }
+            else
+            {
+                ktBookmark = false;
+                bookmarkButton.IconColor = Color.Gainsboro;
+                command = "delete from bookmark where word =" + "'" + typedWord.Text + "'" + "AND languages=" + "'" + hint + "'";
+                Database.deleteBookmark(command);
+                if (hint == "English")
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                else
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                loadRecentlyBookmark();
+            }
+        }
+
+        private void checkBookMark() // Check and Set color to iconButtonBookmark
+        {
+            if (labelBookmark1.Text != typedWord.Text)
+            {
+                bookmarkButton.IconColor = Color.Gainsboro;
+                ktBookmark = false;
+            }
+            else
+            {
+                bookmarkButton.IconColor = RGBColors.color7;
+                ktBookmark = true;
+            }
+        }
+        
         #endregion
 
         #region Open other form
@@ -1199,7 +1221,11 @@ namespace Dictionary_user
             textboxSearch.LineMouseHoverColor = RGBColors.color1;
             buttonSearch.IconColor = RGBColors.color1;
             Database.nowForm = 1;
-            bunifuDropdownTranslate.Visible = false;
+            bunifuDropdownTranslate.Visible = true;
+            bunifuDropdownTranslate.Clear();
+            bunifuDropdownTranslate.AddItem("English");
+            bunifuDropdownTranslate.AddItem("French");
+            bunifuDropdownTranslate.selectedIndex = 0;
             checkBookMark();
         }
 
@@ -1250,7 +1276,10 @@ namespace Dictionary_user
             hideSwitch();
             displaySearchbar();
             hideSearchbar();
-            bunifuDropdownTranslate.RemoveItem("English");
+            bunifuDropdownTranslate.Clear();
+            bunifuDropdownTranslate.AddItem("Books");
+            bunifuDropdownTranslate.AddItem("Idioms");
+            bunifuDropdownTranslate.AddItem("Luminaries");
             bunifuDropdownTranslate.selectedIndex = 0;
             Database.nowForm = 10;
             Database.acction = "showIdiomList";
@@ -1271,8 +1300,7 @@ namespace Dictionary_user
         } // About us
 
         #endregion
-
-   
+ 
     }
 }
 
