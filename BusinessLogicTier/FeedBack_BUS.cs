@@ -14,7 +14,7 @@ namespace BusinessLogicTier
     {
         public FeedBackDAO objFeedBack = new FeedBackDAO();
 
-        public bool feedBack(FeedBack fb)
+        public bool feedBack(FeedBackDTO fb)
         {
             if (objFeedBack.pushFeedBack(fb) == false)
             {
@@ -29,6 +29,18 @@ namespace BusinessLogicTier
         public DataTable allFeedBacks()
         {
             return objFeedBack.getAllFeedBacks();
+        }
+
+        public bool removeFeedBack(FeedBackDTO fb)
+        {
+            DialogResult result = MessageBox.Show("Are you sure want to delete this FeedBack?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button2);
+
+            if (result == DialogResult.Yes)
+            {
+                return objFeedBack.deleteFeedBack(fb);
+            }
+            else
+                return false;
         }
 
     }

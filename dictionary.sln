@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicTier", "Busine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dictionary_host", "..\..\dictionary_Thuan\Dictionary_host\Dictionary_host.csproj", "{881A789E-790B-4176-81EE-5EFA8ACDC040}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI_Element", "WindowsFormsApplication1\GUI_Element.csproj", "{B5DD2426-316F-4432-976D-747A5B3B20C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{881A789E-790B-4176-81EE-5EFA8ACDC040}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{881A789E-790B-4176-81EE-5EFA8ACDC040}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{881A789E-790B-4176-81EE-5EFA8ACDC040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5DD2426-316F-4432-976D-747A5B3B20C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5DD2426-316F-4432-976D-747A5B3B20C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5DD2426-316F-4432-976D-747A5B3B20C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5DD2426-316F-4432-976D-747A5B3B20C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

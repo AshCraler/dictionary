@@ -9,7 +9,7 @@ namespace Dictionary_user
 {
     static class Database
     {
-        private static int now;
+        //private static int now;
         public static string connString = @"DESKTOP-I4FVPU0\E:\Data.sql;Database=Data;User Id=sa;Password=123456789;";
         public static void connect()
         {

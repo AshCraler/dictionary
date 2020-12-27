@@ -166,6 +166,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Bunifu_UI_v1.52.dll" />
     <Content Include="bin\Debug\data.xml">
       <SubType>Designer</SubType>
     </Content>

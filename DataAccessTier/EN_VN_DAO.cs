@@ -159,13 +159,15 @@ namespace DataAccessTier
                 if (conn.State != ConnectionState.Open)
                     conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand(saveWordCommand, conn))
+                using (SqlCommand cmd = new SqlCommand(addWordCommand, conn))
                 {
                     cmd.Parameters.Add("ENKey", SqlDbType.VarChar).Value = w.ENKey;
                     cmd.Parameters.Add("@Pronounciation", SqlDbType.NVarChar).Value = w.Pronounciation;
                     cmd.Parameters.Add("@WordType", SqlDbType.NVarChar).Value = w.WordType;
                     cmd.Parameters.Add("@VNMeans", SqlDbType.NText).Value = w.Means;
                     cmd.Parameters.Add("@Example", SqlDbType.NText).Value = w.Example;
+
+                    cmd.ExecuteNonQuery();
                 }
             }
             catch

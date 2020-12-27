@@ -16,7 +16,7 @@ namespace Dictionary_user
     public partial class Feedback : Form
     {
         public FeedBack_BUS objFeedBack = new FeedBack_BUS();
-        private DictionaryDTO.FeedBack fb = new DictionaryDTO.FeedBack();
+        private DictionaryDTO.FeedBackDTO fb = new DictionaryDTO.FeedBackDTO();
 
         private IconButton currentButton; //button đang được chọn hiện tại   
         private Bunifu.Framework.UI.BunifuRating rating = new Bunifu.Framework.UI.BunifuRating();

@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace DictionaryDTO
 {
-    public class FeedBack
+    public class FeedBackDTO
     {
+        public DateTime time;
+        public string title;
         public string email;
         public string fullName;
         public string phoneNumber;
         public string content;
 
-        public FeedBack() { }
+        public FeedBackDTO() { }
 
-        public FeedBack(string e, string name, string number, string cont)
+        public FeedBackDTO(DateTime tim, string t,string e, string name, string number, string cont)
         {
+            time = tim;
+            title = t;
             email = e;
             fullName = name;
             phoneNumber = number;

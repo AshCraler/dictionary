@@ -15,9 +15,9 @@ namespace DataAccessTier
 
 
         private string pushFeedBackCommand = "INSERT INTO tbFeedBack VALUES (@Email, @FullName, @PhoneNumber, @Content)";
-        private string getAllFeedBacksCommand = "SELECT * FROM tbFeedBack ORDER BY Time ASC";
-
-        public bool pushFeedBack(FeedBack fb)
+        private string getAllFeedBacksCommand = "SELECT * FROM tbFeedBack ORDER BY FeedBackTime DESC";
+        private string deleteFeedBackCommand = "DELETE FROM tbFeedBack WHERE FeedBackTime = @time AND FullName = @name";
+        public bool pushFeedBack(FeedBackDTO fb)
         {
             try
             {
@@ -66,6 +66,29 @@ namespace DataAccessTier
                 throw e;
             }
            
+        }
+
+        public bool deleteFeedBack(FeedBackDTO fb)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(deleteFeedBackCommand, conn))
+                {
+                    cmd.Parameters.Add("@time", SqlDbType.SmallDateTime).Value = fb.time;
+                    cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = fb.fullName;
+
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch(Exception e)
+            {
+                conn.Close();
+                throw e;
+            }
         }
     }
 }
