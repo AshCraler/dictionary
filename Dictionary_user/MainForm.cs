@@ -172,22 +172,31 @@ namespace Dictionary_user
             activateMenuButton(iconButton1, RGBColors.color1);
             bunifuDropdownTranslate.selectedIndex = 0;      
             Database.nowForm = 1;
+            Database.acction = "Translate";
             language = "English";
             pictureLanguage.Image = Properties.Resources.united_kingdom;
             bunifuDropdownTranslate.selectedIndex = 0;
             Database.selectedIndex = 0;
             loadRecently();
             loadVolcabulary();
+            
             Database.flag = new Dictionary<string, PictureBox>();
             PictureBox English = new PictureBox();
             English.Image = Properties.Resources.united_kingdom;
             Database.flag.Add("English", English);
+            
             PictureBox French = new PictureBox();
             French.Image = Properties.Resources.france;
             Database.flag.Add("French", French);
+            
             PictureBox German = new PictureBox();
             German.Image = Properties.Resources.germany;
             Database.flag.Add("German", German);
+            
+            PictureBox Spanish = new PictureBox();
+            Spanish.Image = Properties.Resources.spain;
+            Database.flag.Add("Spanish", Spanish);
+            
             PictureBox VieMeaning = new PictureBox();
             VieMeaning.Image = Properties.Resources.vietnam;
             Database.flag.Add("VieMeaning", VieMeaning);
@@ -642,7 +651,7 @@ namespace Dictionary_user
         #region Combobox
         private void bunifuDropdownTranslate_onItemSelected(object sender, EventArgs e)
         {
-            if (Database.nowForm==1)
+            if (Database.nowForm == 1)
             {
                 if (bunifuDropdownTranslate.selectedIndex == 0)
                 {
@@ -658,9 +667,15 @@ namespace Dictionary_user
                 }
                 if (bunifuDropdownTranslate.selectedIndex == 2)
                 {
-                    Database.selectedIndex = 0;
+                    Database.selectedIndex = 2;
                     language = "German";
                     pictureLanguage.Image = Properties.Resources.germany;
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 3)
+                {
+                    Database.selectedIndex = 2;
+                    language = "Spanish";
+                    pictureLanguage.Image = Properties.Resources.spain;
                 }
                 if (textboxSearch.HintText == "Search VietNamese")
                 {
@@ -1191,32 +1206,35 @@ namespace Dictionary_user
             {
                 if (Database.acction == "clickFromBookmark")
                 {
+                    Database.nowForm = 1;
                     activateMenuButton(iconButton1, RGBColors.color1);
                     displaySwitch();
+                    bunifuDropdownTranslate.Visible = true;
                     ktSwitch = Database.setLanguages;
+                    Database.setIndex();
+                    bunifuDropdownTranslate.selectedIndex = Database.selectedIndex;
                     activateSwitchButton();
                     displaySearchbar();
                     textboxSearch.LineFocusedColor = RGBColors.color1;
                     textboxSearch.LineMouseHoverColor = RGBColors.color1;
                     buttonSearch.IconColor = RGBColors.color1;
-                    Database.nowForm = 1;
-                    checkBookMark();
                     textboxSearch.Text = Database.word;
                     activateSearchButton();
+                    checkBookMark();
                     if (bookmarkButton.IconColor == RGBColors.color7)
                     {
                         if (hint != "VieMeaning")
-                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= "+"'" + language+"-VietNamese" + "'");
                         else
-                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + "VietNamese-"+language + "'");
                     }
                     if (bookmarkButton.IconColor == Color.Gainsboro)
                     {
 
                         if (hint != "VieMeaning")
-                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + language + "-VietNamese" + "'");
                         else
-                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + "VietNamese-" + language+"'");
                     }
                 }
             }
@@ -1241,6 +1259,8 @@ namespace Dictionary_user
 
         private void iconButton1_Click(object sender, EventArgs e) // Khi click vào translateButton
         {
+            Database.nowForm = 1;
+            Database.acction="Translate";
             if (currentChildForm != null)
             {
                 currentChildForm.Close();
@@ -1248,18 +1268,18 @@ namespace Dictionary_user
             }
             activateMenuButton(sender, RGBColors.color1);
             displaySwitch();
-            activateSwitchButton();
             displaySearchbar();
             textboxSearch.LineFocusedColor = RGBColors.color1;
             textboxSearch.LineMouseHoverColor = RGBColors.color1;
             buttonSearch.IconColor = RGBColors.color1;
-            Database.nowForm = 1;
             bunifuDropdownTranslate.Visible = true;
             bunifuDropdownTranslate.Clear();
             bunifuDropdownTranslate.AddItem("English");
             bunifuDropdownTranslate.AddItem("French");
             bunifuDropdownTranslate.AddItem("German");
+            bunifuDropdownTranslate.AddItem("Spanish");
             bunifuDropdownTranslate.selectedIndex = Database.selectedIndex;
+            activateSwitchButton();
             checkBookMark();
         }
 
@@ -1297,6 +1317,7 @@ namespace Dictionary_user
 
         private void btnSettings_Click(object sender, EventArgs e) // Khi click vào settingsButton
         {
+            Database.acction = "Settings";
             activateMenuButton(sender, RGBColors.color4);
             openChildForm(new Settings());
             hideSearchbar();
@@ -1306,7 +1327,11 @@ namespace Dictionary_user
 
         private void iconIdiom_Click(object sender, EventArgs e)
         {
-            Color.FromArgb(242, 98, 121);
+            Database.nowForm = 10;
+            Database.acction = "showIdiomList";
+            bunifuDropdownTranslate.Visible = true;
+            activateMenuButton(sender, Color.FromArgb(242, 98, 121));
+            openChildForm(new Idiom());
             hideSwitch();
             displaySearchbar();
             hideSearchbar();
@@ -1315,15 +1340,12 @@ namespace Dictionary_user
             bunifuDropdownTranslate.AddItem("Idioms");
             bunifuDropdownTranslate.AddItem("Luminaries");
             bunifuDropdownTranslate.selectedIndex = 0;
-            Database.nowForm = 10;
-            Database.acction = "showIdiomList";
-            bunifuDropdownTranslate.Visible = true;
-            activateMenuButton(sender, Color.FromArgb(242, 98, 121));
-            openChildForm(new Idiom());
+           
         } // Book and more
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
+            Database.acction = "Info";
             Color.FromArgb(48, 129, 238);
             hideSwitch();
             displaySearchbar();
@@ -1334,7 +1356,8 @@ namespace Dictionary_user
         } // About us
 
         #endregion
- 
+
+      
     }
 }
 

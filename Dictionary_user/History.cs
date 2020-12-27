@@ -15,7 +15,30 @@ namespace Dictionary_user
         private string command;
         private string word;
         private string translate;
-        
+        private string pic1, pic2;
+        private void loadpicture(string s)
+        {
+            string s1, s2;
+            int j = 0;
+            s1 = "";
+            s2 = "";
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] != '-')
+                    s1 = s1 + s[i];
+                else
+                {
+                    j = i;
+                    break;
+                }
+            }
+            for (int i = j + 1; i < s.Length; i++)
+            {
+                s2 = s2 + s[i];
+            }
+            pic1 = s1;
+            pic2 = s2;
+        }
         private void loadDatabase()
         {
             if (Database.acction == "searchHistory")
@@ -49,9 +72,17 @@ namespace Dictionary_user
             {
                 Database.acction = "clickFromBookmark";
                 Database.word = word;
-                if (translate == "Eng-Vie")
+                loadpicture(translate);
+                if (pic1 != "VieMeaning")
+                {
                     Database.setLanguages = false;
-                else Database.setLanguages = true;
+                    Database.language = pic1;
+                }
+                else
+                {
+                    Database.setLanguages = true;
+                    Database.language = pic2;
+                }
                 this.Close();
             }
         }

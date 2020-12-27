@@ -19,7 +19,24 @@ namespace Dictionary_user
         public static string textboxSearchText;
         public static int BookandMore;
         public static int selectedIndex;
-        public static Dictionary<string,PictureBox> flag; 
+        public static Dictionary<string,PictureBox> flag;
+        public static string language;
+        
+        public static void setIndex()
+        {
+            if (language == "English")
+                selectedIndex = 0;
+
+            if (language == "French")
+                selectedIndex = 1;
+
+            if (language == "German")
+                selectedIndex = 2;
+            
+            if (language == "Spanish")
+                selectedIndex = 3;
+        }
+
         public static void load(string command)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";

@@ -706,7 +706,8 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();  
             synth.SetOutputToDefaultAudioDevice();
-            if (language1 != "VieMeaning")
+            loadpicture(language1);
+            if (pic1 != "VieMeaning")
                 synth.Speak(labelWord1.Text);
             else synth.Speak(labelMeaning1.Text);       
         }
@@ -715,7 +716,8 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language2 != "VieMeaning")
+            loadpicture(language2);
+            if (pic1 != "VieMeaning")
                 synth.Speak(labelWord2.Text);
             else synth.Speak(labelMeaning2.Text);
         }
@@ -724,7 +726,8 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language3 != "VieMeaning")
+            loadpicture(language3);
+            if (pic1 != "VieMeaning")
                 synth.Speak(labelWord3.Text);
             else synth.Speak(labelMeaning3.Text);
         }
@@ -733,7 +736,8 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language4 != "VieMeaning")
+            loadpicture(language4);
+            if (pic1 != "VieMeaning")
                 synth.Speak(labelWord4.Text);
             else synth.Speak(labelMeaning4.Text);
         }
@@ -742,7 +746,8 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language5 != "VieMeaning")
+            loadpicture(language5);
+            if (pic1 != "VieMeaning")
                 synth.Speak(labelWord5.Text);
             else synth.Speak(labelMeaning5.Text);
         }
@@ -751,7 +756,8 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language6 != "VieMeaning")
+            loadpicture(language6);
+            if (pic1 != "VieMeaning")
                 synth.Speak(labelWord6.Text);
             else synth.Speak(labelMeaning6.Text);
         }
@@ -760,7 +766,8 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language7 != "VieMeaning")
+            loadpicture(language7);
+            if (pic1 != "VieMeaning")
                 synth.Speak(labelWord7.Text);
             else synth.Speak(labelMeaning7.Text);
         }
@@ -769,7 +776,8 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language8 != "VieMeaning")
+            loadpicture(language8);
+            if (pic1 != "VieMeaning")
                 synth.Speak(labelWord8.Text);
             else synth.Speak(labelMeaning8.Text);
         }
@@ -778,7 +786,8 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language9 != "VieMeaning") 
+            loadpicture(language9);
+            if (pic1 != "VieMeaning")
                 synth.Speak(labelWord9.Text);
             else synth.Speak(labelMeaning9.Text);
         }
@@ -787,7 +796,8 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language10 != "VieMeaning")
+            loadpicture(language10);
+            if (pic1 != "VieMeaning")
                 synth.Speak(labelWord10.Text);
             else synth.Speak(labelMeaning10.Text);
         }
@@ -796,7 +806,8 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language11 != "VieMeaning")
+            loadpicture(language11);
+            if (pic1 != "VieMeaning")    
                 synth.Speak(labelWord11.Text);
             else synth.Speak(labelMeaning11.Text);
         }
@@ -805,7 +816,8 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language12 != "VieMeaning")
+            loadpicture(language12);
+            if (pic1 != "VieMeaning")
                 synth.Speak(labelWord12.Text);
             else synth.Speak(labelMeaning12.Text);
         } 
@@ -814,7 +826,8 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language13 != "VieMeaning")
+            loadpicture(language13);
+            if (pic1 != "VieMeaning")
                 synth.Speak(labelWord13.Text);
             else synth.Speak(labelMeaning13.Text);
         }
@@ -1052,9 +1065,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord1.Text;
-            if (language1 != "VieMeaning")
+            loadpicture(language1);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1062,9 +1083,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord2.Text;
-            if (language2 != "VieMeaning")
+            loadpicture(language2);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1072,9 +1101,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord3.Text;
-            if (language3 != "VieMeaning")
+            loadpicture(language3);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1082,9 +1119,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord4.Text;
-            if (language4 != "VieMeaning")
+            loadpicture(language4);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1092,9 +1137,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord5.Text;
-            if (language5 != "VieMeaning")
+            loadpicture(language5);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1102,9 +1155,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord6.Text;
-            if (language6 != "VieMeaning")
+            loadpicture(language6);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1112,9 +1173,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord7.Text;
-            if (language7 != "VieMeaning")
+            loadpicture(language7);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1122,9 +1191,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord8.Text;
-            if (language8 != "VieMeaning")
+            loadpicture(language8);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1132,9 +1209,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord9.Text;
-            if (language9 != "VieMeaning")
+            loadpicture(language9);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1142,9 +1227,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord10.Text;
-            if (language10 != "VieMeaning")
+            loadpicture(language10);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1152,9 +1245,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord11.Text;
-            if (language11 != "VieMeaning")
+            loadpicture(language11);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1162,9 +1263,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord12.Text;
-            if (language12 != "VieMeaning")
+            loadpicture(language12);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1172,9 +1281,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord13.Text;
-            if (language13 != "VieMeaning")
+            loadpicture(language13);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1338,9 +1455,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord1.Text;
-            if (language1 != "VieMeaning")
+            loadpicture(language1);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1348,9 +1473,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord2.Text;
-            if (language2 != "VieMeaning")
+            loadpicture(language2);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1358,9 +1491,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord3.Text;
-            if (language3 != "VieMeaning")
+            loadpicture(language3);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1368,9 +1509,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord4.Text;
-            if (language4 != "VieMeaning")
+            loadpicture(language4);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1378,9 +1527,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord5.Text;
-            if (language5 != "VieMeaning")
+            loadpicture(language5);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1388,9 +1545,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord6.Text;
-            if (language6 != "VieMeaning")
+            loadpicture(language6);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1398,9 +1563,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord7.Text;
-            if (language7 != "VieMeaning")
+            loadpicture(language7);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1408,9 +1581,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord8.Text;
-            if (language8 != "VieMeaning")
+            loadpicture(language8);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1418,9 +1599,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord9.Text;
-            if (language9 != "VieMeaning")
+            loadpicture(language9);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1428,9 +1617,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord10.Text;
-            if (language10 != "VieMeaning")
+            loadpicture(language10);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1438,9 +1635,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord11.Text;
-            if (language11 != "VieMeaning")
+            loadpicture(language11);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1448,9 +1653,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord12.Text;
-            if (language12 != "VieMeaning")
+            loadpicture(language12);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }
 
@@ -1458,9 +1671,17 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord13.Text;
-            if (language13 != "VieMeaning")
+            loadpicture(language13);
+            if (pic1 != "VieMeaning")
+            {
                 Database.setLanguages = false;
-            else Database.setLanguages = true;
+                Database.language = pic1;
+            }
+            else
+            {
+                Database.setLanguages = true;
+                Database.language = pic2;
+            }
             this.Close();
         }       
     }
