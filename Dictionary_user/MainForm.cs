@@ -201,6 +201,15 @@ namespace Dictionary_user
             Portuguese.Image = Properties.Resources.portugal;
             Database.flag.Add("Portuguese", Portuguese);
 
+            PictureBox Russian = new PictureBox();
+            Russian.Image = Properties.Resources.russia;
+            Database.flag.Add("Russian", Russian);
+
+
+            PictureBox Chinese = new PictureBox();
+            Chinese.Image = Properties.Resources.china;
+            Database.flag.Add("Chinese", Chinese);
+
             PictureBox VieMeaning = new PictureBox();
             VieMeaning.Image = Properties.Resources.vietnam;
             Database.flag.Add("VieMeaning", VieMeaning);
@@ -448,12 +457,7 @@ namespace Dictionary_user
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            if (textboxSearch.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
-            }
-            else
-            {
+            
                 // Initialize a new instance of the SpeechSynthesizer.  
                 SpeechSynthesizer synth = new SpeechSynthesizer();
 
@@ -462,17 +466,13 @@ namespace Dictionary_user
 
                 // Speak a string.  
                 synth.Speak(typedWord.Text);
-            }
+            
         }
 
         private void btnPlay2_Click(object sender, EventArgs e)
         {
-            if (textboxSearch.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
-            }
-            else
-            {
+            
+          
                 // Initialize a new instance of the SpeechSynthesizer.  
                 SpeechSynthesizer synth = new SpeechSynthesizer();
 
@@ -481,7 +481,7 @@ namespace Dictionary_user
 
                 // Speak a string.  
                 synth.Speak(wordMeaning.Text);
-            }
+            
         }
 
         private void iconButtonSpeaker1_Click(object sender, EventArgs e)
@@ -662,6 +662,8 @@ namespace Dictionary_user
             bunifuDropdownTranslate.AddItem("German");
             bunifuDropdownTranslate.AddItem("Spanish");
             bunifuDropdownTranslate.AddItem("Portuguese");
+            bunifuDropdownTranslate.AddItem("Russian");
+            bunifuDropdownTranslate.AddItem("Chinese");
             bunifuDropdownTranslate.selectedIndex = Database.selectedIndex;
         }
         private void bunifuDropdownTranslate_onItemSelected(object sender, EventArgs e)
@@ -697,6 +699,18 @@ namespace Dictionary_user
                     Database.selectedIndex = 4;
                     language = "Portuguese";
                     pictureLanguage.Image = Properties.Resources.portugal;
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 5)
+                {
+                    Database.selectedIndex = 5;
+                    language = "Russian";
+                    pictureLanguage.Image = Properties.Resources.russia;
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 6)
+                {
+                    Database.selectedIndex = 6;
+                    language = "Chinese";
+                    pictureLanguage.Image = Properties.Resources.china;
                 }
                 if (textboxSearch.HintText == "Search VietNamese")
                 {
@@ -1401,7 +1415,8 @@ namespace Dictionary_user
         #endregion
 
 
-       
+
+        
     }
 }
 

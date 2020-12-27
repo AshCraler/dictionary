@@ -146,6 +146,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Bunifu_UI_v1.52.dll" />
+    <None Include="Resources\china.png" />
+    <None Include="Resources\russia.png" />
     <None Include="Resources\portugal.png" />
     <None Include="Resources\spain.png" />
     <None Include="Resources\germany.png" />
