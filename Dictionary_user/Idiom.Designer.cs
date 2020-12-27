@@ -105,7 +105,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(75)))));
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panelResult);
             this.panel1.Controls.Add(this.panelSuggestion);
@@ -121,9 +121,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(78)))));
-            this.panel2.Location = new System.Drawing.Point(16, 421);
+            this.panel2.Location = new System.Drawing.Point(12, 421);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(846, 14);
+            this.panel2.Size = new System.Drawing.Size(863, 14);
             this.panel2.TabIndex = 95;
             // 
             // panelResult
@@ -151,9 +151,9 @@
             this.panelResult.Controls.Add(this.iconBookmark);
             this.panelResult.Controls.Add(this.pictureBoxResult);
             this.panelResult.Controls.Add(this.labelResult);
-            this.panelResult.Location = new System.Drawing.Point(16, 428);
+            this.panelResult.Location = new System.Drawing.Point(12, 428);
             this.panelResult.Name = "panelResult";
-            this.panelResult.Size = new System.Drawing.Size(846, 397);
+            this.panelResult.Size = new System.Drawing.Size(863, 397);
             this.panelResult.TabIndex = 94;
             // 
             // textBox16
@@ -416,6 +416,8 @@
             this.textboxHistory.TabIndex = 52;
             this.textboxHistory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textboxHistory.OnValueChanged += new System.EventHandler(this.textboxHistory_OnValueChanged);
+            this.textboxHistory.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textboxHistory_KeyDown);
+            this.textboxHistory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxHistory_KeyPress);
             // 
             // pictureBoxMeaning
             // 
@@ -546,9 +548,9 @@
             this.panelSuggestion.Controls.Add(this.labelHint);
             this.panelSuggestion.Controls.Add(this.buttonSearch);
             this.panelSuggestion.Controls.Add(this.textboxSearch);
-            this.panelSuggestion.Location = new System.Drawing.Point(16, 148);
+            this.panelSuggestion.Location = new System.Drawing.Point(12, 148);
             this.panelSuggestion.Name = "panelSuggestion";
-            this.panelSuggestion.Size = new System.Drawing.Size(846, 274);
+            this.panelSuggestion.Size = new System.Drawing.Size(863, 274);
             this.panelSuggestion.TabIndex = 93;
             // 
             // iconButtonExcel
@@ -688,6 +690,8 @@
             this.textboxBookmark.TabIndex = 51;
             this.textboxBookmark.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textboxBookmark.OnValueChanged += new System.EventHandler(this.textboxBookmark_OnValueChanged);
+            this.textboxBookmark.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textboxBookmark_KeyDown);
+            this.textboxBookmark.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxBookmark_KeyPress);
             // 
             // textBox9
             // 
@@ -993,6 +997,8 @@
             this.textboxSearch.TabIndex = 22;
             this.textboxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textboxSearch.OnValueChanged += new System.EventHandler(this.textboxSearch_OnValueChanged);
+            this.textboxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textboxSearch_KeyDown);
+            this.textboxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxSearch_KeyPress);
             // 
             // labelBookmark
             // 
@@ -1061,9 +1067,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 670);
             this.Controls.Add(this.panel1);
+            this.KeyPreview = true;
             this.Name = "Idiom";
             this.Text = "Idiom";
             this.Load += new System.EventHandler(this.Idiom_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Idiom_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelResult.ResumeLayout(false);

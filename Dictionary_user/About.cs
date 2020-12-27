@@ -25,6 +25,7 @@ namespace Dictionary_user
         private void labeLink_MouseHover(object sender, EventArgs e)
         {
             labeLink.ForeColor = Color.FromArgb(24, 161, 251);
+            labeLink.Cursor = Cursors.Hand;
         }
 
         private void labeLink_MouseLeave(object sender, EventArgs e)

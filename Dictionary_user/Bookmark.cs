@@ -29,39 +29,11 @@ namespace Dictionary_user
         private string language12;
         private string language13;
         private string command;
+        private string pic1, pic2;
         public string time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
         private bool[] check = new bool[100000];
         #endregion
-        private void loadImageSource()
-        {
-            engFlag1.Image = Properties.Resources.united_kingdom;
-            engFlag2.Image = Properties.Resources.united_kingdom;
-            engFlag3.Image = Properties.Resources.united_kingdom;
-            engFlag4.Image = Properties.Resources.united_kingdom;
-            engFlag5.Image = Properties.Resources.united_kingdom;
-            engFlag6.Image = Properties.Resources.united_kingdom;
-            engFlag7.Image = Properties.Resources.united_kingdom;
-            engFlag8.Image = Properties.Resources.united_kingdom;
-            engFlag9.Image = Properties.Resources.united_kingdom;
-            engFlag10.Image = Properties.Resources.united_kingdom;
-            engFlag11.Image = Properties.Resources.united_kingdom;
-            engFlag12.Image = Properties.Resources.united_kingdom;
-            engFlag13.Image = Properties.Resources.united_kingdom;
-
-            vieFlag1.Image = Properties.Resources.vietnam;
-            vieFlag2.Image = Properties.Resources.vietnam;
-            vieFlag3.Image = Properties.Resources.vietnam;
-            vieFlag4.Image = Properties.Resources.vietnam;
-            vieFlag5.Image = Properties.Resources.vietnam;
-            vieFlag6.Image = Properties.Resources.vietnam;
-            vieFlag7.Image = Properties.Resources.vietnam;
-            vieFlag8.Image = Properties.Resources.vietnam;
-            vieFlag9.Image = Properties.Resources.vietnam;
-            vieFlag10.Image = Properties.Resources.vietnam;
-            vieFlag11.Image = Properties.Resources.vietnam;
-            vieFlag12.Image = Properties.Resources.vietnam;
-            vieFlag13.Image = Properties.Resources.vietnam;
-        }      
+       
         private void loadDatabase(string cmd)
         {
             Database.load(cmd);
@@ -80,9 +52,33 @@ namespace Dictionary_user
                 pageInfo.Visible = true;
             pageInfo.Text = (page * 13 + 1).ToString() + " - " + max + " / " + Database.loadData.Rows.Count.ToString() + " Vocalbulary";
         }
+        
+        private void loadpicture(string s)
+        {
+            string s1, s2;
+            int j=0;
+            s1 = "";
+            s2 = "";
+            for (int i=0;i<s.Length;i++)
+            {
+                if (s[i] != '-')
+                    s1 = s1 + s[i];
+                else
+                {
+                    j = i;
+                    break;
+                }
+            }
+            for (int i = j+1; i < s.Length; i++)
+            {
+                s2 = s2 + s[i];
+            }
+            pic1 = s1;
+            pic2 = s2;
+        }
+
         private void loadData()
         {   
-            loadImageSource();
             loadPageInfo();
             if (Database.loadData.Rows.Count > 0 + 13 * page)
             {
@@ -99,11 +95,10 @@ namespace Dictionary_user
                     Bookmark1.IconColor = Color.Gainsboro;
                 engFlag1.Visible = true;
                 vieFlag1.Visible = true;
-                if (language1!="English")
-                {
-                    engFlag1.Image = Properties.Resources.vietnam;
-                    vieFlag1.Image = Properties.Resources.united_kingdom;
-                }
+                loadpicture(language1);
+                engFlag1.Image = Database.flag[pic1].Image;
+                vieFlag1.Image = Database.flag[pic2].Image;
+                
             }
             else
             {
@@ -129,11 +124,9 @@ namespace Dictionary_user
                 speaker2.Visible = true;
                 engFlag2.Visible = true;
                 vieFlag2.Visible = true;
-                if (language2 != "English")
-                {
-                    engFlag2.Image = Properties.Resources.vietnam;
-                    vieFlag2.Image = Properties.Resources.united_kingdom;
-                }
+                loadpicture(language2);
+                engFlag2.Image = Database.flag[pic1].Image;
+                vieFlag2.Image = Database.flag[pic2].Image;
             }
             else
             {
@@ -159,11 +152,9 @@ namespace Dictionary_user
                 speaker3.Visible = true;
                 engFlag3.Visible = true;
                 vieFlag3.Visible = true;
-                if (language3 != "English")
-                {
-                    engFlag3.Image = Properties.Resources.vietnam;
-                    vieFlag3.Image = Properties.Resources.united_kingdom;
-                }
+                loadpicture(language3);
+                engFlag3.Image = Database.flag[pic1].Image;
+                vieFlag3.Image = Database.flag[pic2].Image;
             }
             else
             {
@@ -190,11 +181,9 @@ namespace Dictionary_user
                 speaker4.Visible = true;
                 engFlag4.Visible = true;
                 vieFlag4.Visible = true;
-                if (language4 != "English")
-                {
-                    engFlag4.Image = Properties.Resources.vietnam;
-                    vieFlag4.Image = Properties.Resources.united_kingdom;
-                }
+                loadpicture(language4);
+                engFlag4.Image = Database.flag[pic1].Image;
+                vieFlag4.Image = Database.flag[pic2].Image;
             }
             else
             {
@@ -220,11 +209,9 @@ namespace Dictionary_user
                 speaker5.Visible = true;
                 engFlag5.Visible = true;
                 vieFlag5.Visible = true;
-                if (language5 != "English")
-                {
-                    engFlag5.Image = Properties.Resources.vietnam;
-                    vieFlag5.Image = Properties.Resources.united_kingdom;
-                }
+                loadpicture(language5);
+                engFlag5.Image = Database.flag[pic1].Image;
+                vieFlag5.Image = Database.flag[pic2].Image;
             }
             else
             {
@@ -250,11 +237,9 @@ namespace Dictionary_user
                 speaker6.Visible = true;
                 engFlag6.Visible = true;
                 vieFlag6.Visible = true;
-                if (language6 != "English")
-                {
-                    engFlag6.Image = Properties.Resources.vietnam;
-                    vieFlag6.Image = Properties.Resources.united_kingdom;
-                }
+                loadpicture(language6);
+                engFlag6.Image = Database.flag[pic1].Image;
+                vieFlag6.Image = Database.flag[pic2].Image;
             }
             else
             {
@@ -280,11 +265,9 @@ namespace Dictionary_user
                 speaker7.Visible = true;
                 engFlag7.Visible = true;
                 vieFlag7.Visible = true;
-                if (language7 != "English")
-                {
-                    engFlag7.Image = Properties.Resources.vietnam;
-                    vieFlag7.Image = Properties.Resources.united_kingdom;
-                }
+                loadpicture(language7);
+                engFlag7.Image = Database.flag[pic1].Image;
+                vieFlag7.Image = Database.flag[pic2].Image;
             }
             else
             {
@@ -310,11 +293,9 @@ namespace Dictionary_user
                 speaker8.Visible = true;
                 engFlag8.Visible = true;
                 vieFlag8.Visible = true;
-                if (language8 != "English")
-                {
-                    engFlag8.Image = Properties.Resources.vietnam;
-                    vieFlag8.Image = Properties.Resources.united_kingdom;
-                }
+                loadpicture(language8);
+                engFlag8.Image = Database.flag[pic1].Image;
+                vieFlag8.Image = Database.flag[pic2].Image;
             }
             else
             {
@@ -340,11 +321,9 @@ namespace Dictionary_user
                 speaker9.Visible = true;
                 engFlag9.Visible = true;
                 vieFlag9.Visible = true;
-                if (language9 != "English")
-                {
-                    engFlag9.Image = Properties.Resources.vietnam;
-                    vieFlag9.Image = Properties.Resources.united_kingdom;
-                }
+                loadpicture(language9);
+                engFlag9.Image = Database.flag[pic1].Image;
+                vieFlag9.Image = Database.flag[pic2].Image;
             }
             else
             {
@@ -370,11 +349,9 @@ namespace Dictionary_user
                 speaker10.Visible = true;
                 engFlag10.Visible = true;
                 vieFlag10.Visible = true;
-                if (language10 != "English")
-                {
-                    engFlag10.Image = Properties.Resources.vietnam;
-                    vieFlag10.Image = Properties.Resources.united_kingdom;
-                }
+                loadpicture(language10);
+                engFlag10.Image = Database.flag[pic1].Image;
+                vieFlag10.Image = Database.flag[pic2].Image;
             }
             else
             {
@@ -400,11 +377,9 @@ namespace Dictionary_user
                 speaker11.Visible = true;
                 engFlag11.Visible = true;
                 vieFlag11.Visible = true;
-                if (language11 != "English")
-                {
-                    engFlag11.Image = Properties.Resources.vietnam;
-                    vieFlag11.Image = Properties.Resources.united_kingdom;
-                }
+                loadpicture(language11);
+                engFlag11.Image = Database.flag[pic1].Image;
+                vieFlag11.Image = Database.flag[pic2].Image;
             }
             else
             {
@@ -430,11 +405,9 @@ namespace Dictionary_user
                 speaker12.Visible = true;
                 engFlag12.Visible = true;
                 vieFlag12.Visible = true;
-                if (language12 != "English")
-                {
-                    engFlag12.Image = Properties.Resources.vietnam;
-                    vieFlag12.Image = Properties.Resources.united_kingdom;
-                }
+                loadpicture(language12);
+                engFlag12.Image = Database.flag[pic1].Image;
+                vieFlag12.Image = Database.flag[pic2].Image;
             }
             else
             {
@@ -460,11 +433,9 @@ namespace Dictionary_user
                 speaker13.Visible = true;
                 engFlag13.Visible = true;
                 vieFlag13.Visible = true;
-                if (language13 != "English")
-                {
-                    engFlag13.Image = Properties.Resources.vietnam;
-                    vieFlag13.Image = Properties.Resources.united_kingdom;
-                }
+                loadpicture(language13);
+                engFlag13.Image = Database.flag[pic1].Image;
+                vieFlag13.Image = Database.flag[pic2].Image;
             }
             else
             {
@@ -494,7 +465,7 @@ namespace Dictionary_user
         {
             if (Bookmark1.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookmark where word =" + "'" + labelWord1.Text + "'" + "AND languages=" + "'" + language1 + "'";
+                command = "delete from bookmark where word =" + "\"" + labelWord1.Text + "\"" + "AND languages=" + "'" + language1 + "'";
                 Database.deleteBookmark(command);
                 Bookmark1.IconColor = Color.Gainsboro;
                 check[page * 13 + 1] = false;
@@ -511,7 +482,7 @@ namespace Dictionary_user
         {
             if (Bookmark2.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookmark where word =" + "'" + labelWord2.Text + "'" + "AND languages=" + "'" + language2 + "'";
+                command = "delete from bookmark where word =" + "\"" + labelWord2.Text + "\"" + "AND languages=" + "'" + language2 + "'";
                 Database.deleteBookmark(command);
                 Bookmark2.IconColor = Color.Gainsboro;
                 check[page * 13 + 2] = false;
@@ -528,7 +499,7 @@ namespace Dictionary_user
         {
             if (Bookmark3.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookmark where word =" + "'" + labelWord3.Text + "'" + "AND languages=" + "'" + language3 + "'";
+                command = "delete from bookmark where word =" + "\"" + labelWord3.Text + "\"" + "AND languages=" + "'" + language3 + "'";
                 Database.deleteBookmark(command);
                 Bookmark3.IconColor = Color.Gainsboro;
                 check[page * 13 + 3] = false;
@@ -545,7 +516,7 @@ namespace Dictionary_user
         {
             if (Bookmark4.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookmark where word =" + "'" + labelWord4.Text + "'" + "AND languages=" + "'" + language4 + "'";
+                command = "delete from bookmark where word =" + "\"" + labelWord4.Text + "\"" + "AND languages=" + "'" + language4 + "'";
                 Database.deleteBookmark(command);
                 Bookmark4.IconColor = Color.Gainsboro;
                 check[page * 13 + 4] = false;
@@ -562,7 +533,7 @@ namespace Dictionary_user
         {
             if (Bookmark5.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookmark where word =" + "'" + labelWord5.Text + "'" + "AND languages=" + "'" + language5 + "'";
+                command = "delete from bookmark where word =" + "\"" + labelWord5.Text + "\"" + "AND languages=" + "'" + language5 + "'";
                 Database.deleteBookmark(command);
                 Bookmark5.IconColor = Color.Gainsboro;
                 check[page * 13 + 5] = false;
@@ -579,7 +550,7 @@ namespace Dictionary_user
         {
             if (Bookmark6.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookmark where word =" + "'" + labelWord6.Text + "'" + "AND languages=" + "'" + language6 + "'";
+                command = "delete from bookmark where word =" + "\"" + labelWord6.Text + "\"" + "AND languages=" + "'" + language6 + "'";
                 Database.deleteBookmark(command);
                 Bookmark6.IconColor = Color.Gainsboro;
                 check[page * 13 + 6] = false;
@@ -596,7 +567,7 @@ namespace Dictionary_user
         {
             if (Bookmark7.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookmark where word =" + "'" + labelWord7.Text + "'" + "AND languages=" + "'" + language7 + "'";
+                command = "delete from bookmark where word =" + "\"" + labelWord7.Text + "\"" + "AND languages=" + "'" + language7 + "'";
                 Database.deleteBookmark(command);
                 Bookmark7.IconColor = Color.Gainsboro;
                 check[page * 13 + 7] = false;
@@ -613,7 +584,7 @@ namespace Dictionary_user
         {
             if (Bookmark8.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookmark where word =" + "'" + labelWord8.Text + "'" + "AND languages=" + "'" + language8 + "'";
+                command = "delete from bookmark where word =" + "\"" + labelWord8.Text + "\"" + "AND languages=" + "'" + language8 + "'";
                 Database.deleteBookmark(command);
                 Bookmark8.IconColor = Color.Gainsboro;
                 check[page * 13 + 8] = false;
@@ -630,7 +601,7 @@ namespace Dictionary_user
         {
             if (Bookmark9.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookmark where word =" + "'" + labelWord9.Text + "'" + "AND languages=" + "'" + language9 + "'";
+                command = "delete from bookmark where word =" + "\"" + labelWord9.Text + "\"" + "AND languages=" + "'" + language9 + "'";
                 Database.deleteBookmark(command);
                 Bookmark9.IconColor = Color.Gainsboro;
                 check[page * 13 + 9] = false;
@@ -647,7 +618,7 @@ namespace Dictionary_user
         {
             if (Bookmark10.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookmark where word =" + "'" + labelWord10.Text + "'" + "AND languages=" + "'" + language10 + "'";
+                command = "delete from bookmark where word =" + "\"" + labelWord10.Text + "\"" + "AND languages=" + "'" + language10 + "'";
                 Database.deleteBookmark(command);
                 Bookmark10.IconColor = Color.Gainsboro;
                 check[page * 13 + 10] = false;
@@ -664,7 +635,7 @@ namespace Dictionary_user
         {
             if (Bookmark11.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookmark where word =" + "'" + labelWord11.Text + "'" + "AND languages=" + "'" + language11 + "'";
+                command = "delete from bookmark where word =" + "\"" + labelWord11.Text + "\"" + "AND languages=" + "'" + language11 + "'";
                 Database.deleteBookmark(command);
                 Bookmark11.IconColor = Color.Gainsboro;
                 check[page * 13 + 11] = false;
@@ -681,7 +652,7 @@ namespace Dictionary_user
         {
             if (Bookmark12.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookmark where word =" + "'" + labelWord12.Text + "'" + "AND languages=" + "'" + language12 + "'";
+                command = "delete from bookmark where word =" + "\"" + labelWord12.Text + "\"" + "AND languages=" + "'" + language12 + "'";
                 Database.deleteBookmark(command);
                 Bookmark12.IconColor = Color.Gainsboro;
                 check[page * 13 + 12] = false;
@@ -698,7 +669,7 @@ namespace Dictionary_user
         {
             if (Bookmark13.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from bookmark where word =" + "'" + labelWord13.Text + "'" + "AND languages=" + "'" + language13 + "'";
+                command = "delete from bookmark where word =" + "\"" + labelWord13.Text + "\"" + "AND languages=" + "'" + language13 + "'";
                 Database.deleteBookmark(command);
                 Bookmark13.IconColor = Color.Gainsboro;
                 check[page * 13 + 13] = false;
@@ -735,7 +706,7 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();  
             synth.SetOutputToDefaultAudioDevice();
-            if (language1 == "English")
+            if (language1 != "VieMeaning")
                 synth.Speak(labelWord1.Text);
             else synth.Speak(labelMeaning1.Text);       
         }
@@ -744,7 +715,7 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language2 == "English")
+            if (language2 != "VieMeaning")
                 synth.Speak(labelWord2.Text);
             else synth.Speak(labelMeaning2.Text);
         }
@@ -753,7 +724,7 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language3 == "English")
+            if (language3 != "VieMeaning")
                 synth.Speak(labelWord3.Text);
             else synth.Speak(labelMeaning3.Text);
         }
@@ -762,7 +733,7 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language4 == "English")
+            if (language4 != "VieMeaning")
                 synth.Speak(labelWord4.Text);
             else synth.Speak(labelMeaning4.Text);
         }
@@ -771,7 +742,7 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language5 == "English")
+            if (language5 != "VieMeaning")
                 synth.Speak(labelWord5.Text);
             else synth.Speak(labelMeaning5.Text);
         }
@@ -780,7 +751,7 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language6 == "English")
+            if (language6 != "VieMeaning")
                 synth.Speak(labelWord6.Text);
             else synth.Speak(labelMeaning6.Text);
         }
@@ -789,7 +760,7 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language7 == "English")
+            if (language7 != "VieMeaning")
                 synth.Speak(labelWord7.Text);
             else synth.Speak(labelMeaning7.Text);
         }
@@ -798,7 +769,7 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language8 == "English")
+            if (language8 != "VieMeaning")
                 synth.Speak(labelWord8.Text);
             else synth.Speak(labelMeaning8.Text);
         }
@@ -807,7 +778,7 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language9 == "English") 
+            if (language9 != "VieMeaning") 
                 synth.Speak(labelWord9.Text);
             else synth.Speak(labelMeaning9.Text);
         }
@@ -816,7 +787,7 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language10 == "English")
+            if (language10 != "VieMeaning")
                 synth.Speak(labelWord10.Text);
             else synth.Speak(labelMeaning10.Text);
         }
@@ -825,7 +796,7 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language11 == "English")
+            if (language11 != "VieMeaning")
                 synth.Speak(labelWord11.Text);
             else synth.Speak(labelMeaning11.Text);
         }
@@ -834,7 +805,7 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language12 == "English")
+            if (language12 != "VieMeaning")
                 synth.Speak(labelWord12.Text);
             else synth.Speak(labelMeaning12.Text);
         } 
@@ -843,7 +814,7 @@ namespace Dictionary_user
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (language13 == "English")
+            if (language13 != "VieMeaning")
                 synth.Speak(labelWord13.Text);
             else synth.Speak(labelMeaning13.Text);
         }
@@ -908,78 +879,91 @@ namespace Dictionary_user
 
         private void labelWord1_MouseHover(object sender, EventArgs e)
         {
+            labelWord1.Cursor = Cursors.Hand;
             labelWord1.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning1.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord2_MouseHover(object sender, EventArgs e)
         {
+            labelWord2.Cursor = Cursors.Hand;
             labelWord2.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning2.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord3_MouseHover(object sender, EventArgs e)
         {
+            labelWord3.Cursor = Cursors.Hand;
             labelWord3.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning3.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord4_MouseHover(object sender, EventArgs e)
         {
+            labelWord4.Cursor = Cursors.Hand;
             labelWord4.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning4.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord5_MouseHover(object sender, EventArgs e)
         {
+            labelWord5.Cursor = Cursors.Hand;
             labelWord5.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning5.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord6_MouseHover(object sender, EventArgs e)
         {
+            labelWord6.Cursor = Cursors.Hand;
             labelWord6.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning6.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord7_MouseHover(object sender, EventArgs e)
         {
+            labelWord7.Cursor = Cursors.Hand;
             labelWord7.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning7.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord8_MouseHover(object sender, EventArgs e)
         {
+            labelWord8.Cursor = Cursors.Hand;
             labelWord8.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning8.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord9_MouseHover(object sender, EventArgs e)
         {
+            labelWord9.Cursor = Cursors.Hand;
             labelWord9.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning9.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord10_MouseHover(object sender, EventArgs e)
         {
+            labelWord10.Cursor = Cursors.Hand;
             labelWord10.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning10.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord11_MouseHover(object sender, EventArgs e)
         {
+            labelWord11.Cursor = Cursors.Hand;
             labelWord11.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning11.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord12_MouseHover(object sender, EventArgs e)
         {
+            labelWord12.Cursor = Cursors.Hand;
             labelWord12.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning12.ForeColor = Color.FromArgb(238, 26, 74);
         }
 
         private void labelWord13_MouseHover(object sender, EventArgs e)
         {
+            labelWord13.Cursor = Cursors.Hand;
             labelWord13.ForeColor = Color.FromArgb(238, 26, 74);
             labelMeaning13.ForeColor = Color.FromArgb(238, 26, 74);
         }
@@ -1068,7 +1052,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord1.Text;
-            if (language1 == "English")
+            if (language1 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1078,7 +1062,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord2.Text;
-            if (language2 == "English")
+            if (language2 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1088,7 +1072,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord3.Text;
-            if (language3 == "English")
+            if (language3 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1098,7 +1082,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord4.Text;
-            if (language4 == "English")
+            if (language4 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1108,7 +1092,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord5.Text;
-            if (language5 == "English")
+            if (language5 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1118,7 +1102,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord6.Text;
-            if (language6 == "English")
+            if (language6 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1128,7 +1112,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord7.Text;
-            if (language7 == "English")
+            if (language7 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1138,7 +1122,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord8.Text;
-            if (language8 == "English")
+            if (language8 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1148,7 +1132,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord9.Text;
-            if (language9 == "English")
+            if (language9 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1158,7 +1142,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord10.Text;
-            if (language10 == "English")
+            if (language10 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1168,7 +1152,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord11.Text;
-            if (language11 == "English")
+            if (language11 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1178,7 +1162,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord12.Text;
-            if (language12 == "English")
+            if (language12 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1188,7 +1172,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord13.Text;
-            if (language13 == "English")
+            if (language13 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1354,7 +1338,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord1.Text;
-            if (language1 == "English")
+            if (language1 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1364,7 +1348,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord2.Text;
-            if (language2 == "English")
+            if (language2 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1374,7 +1358,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord3.Text;
-            if (language3 == "English")
+            if (language3 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1384,7 +1368,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord4.Text;
-            if (language4 == "English")
+            if (language4 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1394,7 +1378,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord5.Text;
-            if (language5 == "English")
+            if (language5 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1404,7 +1388,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord6.Text;
-            if (language6 == "English")
+            if (language6 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1414,7 +1398,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord7.Text;
-            if (language7 == "English")
+            if (language7 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1424,7 +1408,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord8.Text;
-            if (language8 == "English")
+            if (language8 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1434,7 +1418,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord9.Text;
-            if (language9 == "English")
+            if (language9 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1444,7 +1428,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord10.Text;
-            if (language10 == "English")
+            if (language10 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1454,7 +1438,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord11.Text;
-            if (language11 == "English")
+            if (language11 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1464,7 +1448,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord12.Text;
-            if (language12 == "English")
+            if (language12 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();
@@ -1474,7 +1458,7 @@ namespace Dictionary_user
         {
             Database.acction = "clickFromBookmark";
             Database.word = labelWord13.Text;
-            if (language13 == "English")
+            if (language13 != "VieMeaning")
                 Database.setLanguages = false;
             else Database.setLanguages = true;
             this.Close();

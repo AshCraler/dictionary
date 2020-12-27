@@ -28,26 +28,27 @@ namespace Dictionary_user
         private Form currentChildForm; // Child form đang được mở hiện tại 
         private bool ktSwitch = false; // Kiểm tra chế độ Anh Việt hay Việt Anh
         private bool ktBookmark = false; // Kiểm tra bookmark hay chưa
-        private int hintColor = 0;
         private string coloumn = "VieMeaning";
         private string hint = "English";
         private string command = "";
         private int id = 0;
         private string date = DateTime.Now.ToString("yyyy.MM.dd");
-        private string time; 
+        private string time;
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         private List<string> arr;
         private Random r = new Random();
+        private string language;
+        private PictureBox pictureLanguage = new PictureBox();
         private struct RGBColors // Struct các mã màu 
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
             public static Color color2 = Color.FromArgb(238, 26, 74);
             public static Color color3 = Color.FromArgb(253, 138, 114);
             public static Color color4 = Color.FromArgb(95, 77, 221);
-            public static Color color5 = Color.FromArgb(65,179,247);
+            public static Color color5 = Color.FromArgb(65, 179, 247);
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.FromArgb(255, 244, 79);
         }
@@ -57,7 +58,6 @@ namespace Dictionary_user
 
         #region Menu and Titlebar
 
-       
         private void displaySwitch() // Hiển thị chức năng chuyển ngôn ngữ
         {
             buttonSwitch.Visible = true;
@@ -69,7 +69,7 @@ namespace Dictionary_user
             pictureBoxFlagLeft.Visible = false;
             pictureBoxFlagRight.Visible = false;
             buttonSwitch.Visible = false;
-        }     
+        }
         private void activateMenuButton(object senderBtn, Color color) // Kích hoạt menuButton 
         {
             disableMenuButton();
@@ -101,7 +101,7 @@ namespace Dictionary_user
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
-        }   
+        }
         private void resetSuggestion()
         {
             labelHint1.Text = "";
@@ -115,34 +115,21 @@ namespace Dictionary_user
             labelHint2.ForeColor = Color.Gainsboro;
             labelHint3.ForeColor = Color.Gainsboro;
             labelHint4.ForeColor = Color.Gainsboro;
-        }        
+        }
         private void loadRecently()// Load recently history and recently bookmark
         {
             loadRecentlyHistory();
             loadRecentlyBookmark();
-        }
-        private void checkBookMark() // Check and Set color to iconButtonBookmark
-        {
-            if (labelBookmark1.Text != typedWord.Text)
-            {
-                bookmarkButton.IconColor = Color.Gainsboro;
-                ktBookmark = false;
-            }
-            else
-            {
-                bookmarkButton.IconColor = RGBColors.color7;
-                ktBookmark = true;
-            }
         }
         private void activateSwitchButton() // Kích hoạt switchButton 
         {
             if (ktSwitch == true)
             {
                 pictureBoxFlagLeft.Image = Properties.Resources.vietnam;
-                pictureBoxFlagRight.Image = Properties.Resources.united_kingdom;
+                pictureBoxFlagRight.Image = pictureLanguage.Image;
                 textboxSearch.HintText = "Search VietNamese";
                 textboxSearch.Text = "Search VietNamese";
-                coloumn = "English";
+                coloumn = language;
                 hint = "VieMeaning";
                 iconButtonSpeaker1.Visible = false;
                 iconButtonSpeaker2.Visible = false;
@@ -155,10 +142,10 @@ namespace Dictionary_user
             }
             else
             {
-                pictureBoxFlagLeft.Image = Properties.Resources.united_kingdom;
+                pictureBoxFlagLeft.Image = pictureLanguage.Image;
                 pictureBoxFlagRight.Image = Properties.Resources.vietnam;
-                textboxSearch.HintText = "Search English";
-                textboxSearch.Text = "Search English";
+                textboxSearch.HintText = "Search "+language;
+                textboxSearch.Text = "Search "+language;
                 iconButtonSpeaker1.Visible = true;
                 iconButtonSpeaker2.Visible = true;
                 iconButtonSpeaker3.Visible = true;
@@ -168,34 +155,11 @@ namespace Dictionary_user
                 iconButtonSpeaker7.Visible = true;
                 iconButtonSpeaker8.Visible = true;
                 coloumn = "VieMeaning";
-                hint = "English";
+                hint = language;
             }
             resetSuggestion();
             loadRecentlyHistory();
             loadRecentlyBookmark();
-        }
-        private void random()
-        {
-            arr = new List<string>();
-            for (int i=0;i<8;i++)
-            {
-                id = r.Next(1, 1800);
-                command = "select " + hint + " from mytable where id=" + "'" + id.ToString() + "'";
-                Database.load(command);
-                arr.Add(Database.loadData.Rows[0][hint].ToString());
-            }      
-        }
-        private void loadVolcabulary()
-        { 
-            random();
-            labelWord1.Text = arr[0];
-            labelWord2.Text= arr[1];
-            labelWord3.Text = arr[2];
-            labelWord4.Text = arr[3];
-            labelWord5.Text = arr[4];
-            labelWord6.Text = arr[5];
-            labelWord7.Text = arr[6];
-            labelWord8.Text = arr[7];
         }
         
         public MainForm() // Kích hoạt MainForm
@@ -206,11 +170,29 @@ namespace Dictionary_user
             leftBorderBtn.Size = new Size(7, 34);
             panelMenu.Controls.Add(leftBorderBtn);
             activateMenuButton(iconButton1, RGBColors.color1);
-            //initSuggestion();
-            loadRecently();
+            bunifuDropdownTranslate.selectedIndex = 0;      
             Database.nowForm = 1;
+            language = "English";
+            pictureLanguage.Image = Properties.Resources.united_kingdom;
+            bunifuDropdownTranslate.selectedIndex = 0;
+            Database.selectedIndex = 0;
+            loadRecently();
             loadVolcabulary();
+            Database.flag = new Dictionary<string, PictureBox>();
+            PictureBox English = new PictureBox();
+            English.Image = Properties.Resources.united_kingdom;
+            Database.flag.Add("English", English);
+            PictureBox French = new PictureBox();
+            French.Image = Properties.Resources.france;
+            Database.flag.Add("French", French);
+            PictureBox German = new PictureBox();
+            German.Image = Properties.Resources.germany;
+            Database.flag.Add("German", German);
+            PictureBox VieMeaning = new PictureBox();
+            VieMeaning.Image = Properties.Resources.vietnam;
+            Database.flag.Add("VieMeaning", VieMeaning);
         }
+       
         private void buttonSwitch_Click(object sender, EventArgs e) // Khi click vào switchButton
         {
             if (ktSwitch == false)
@@ -222,10 +204,6 @@ namespace Dictionary_user
             loadVolcabulary();
         }
 
-       
-
-       
-
 
         #endregion
 
@@ -236,6 +214,7 @@ namespace Dictionary_user
         private void labelHint1_MouseHover(object sender, EventArgs e)
         {
             labelHint1.ForeColor = RGBColors.color7;
+            labelHint1.Cursor = Cursors.Hand;
         }
 
         private void labelHint1_MouseLeave(object sender, EventArgs e)
@@ -252,6 +231,7 @@ namespace Dictionary_user
         private void labelHint2_MouseHover(object sender, EventArgs e)
         {
             labelHint2.ForeColor = RGBColors.color7;
+            labelHint2.Cursor = Cursors.Hand;
         }
 
         private void labelHint2_MouseLeave(object sender, EventArgs e)
@@ -268,6 +248,7 @@ namespace Dictionary_user
         private void labelHint3_MouseHover(object sender, EventArgs e)
         {
             labelHint4.ForeColor = RGBColors.color7;
+            labelHint4.Cursor = Cursors.Hand;
         }
 
         private void labelHint3_MouseLeave(object sender, EventArgs e)
@@ -284,6 +265,7 @@ namespace Dictionary_user
         private void labelHint4_MouseHover(object sender, EventArgs e)
         {
             labelHint3.ForeColor = RGBColors.color7;
+            labelHint3.Cursor = Cursors.Hand;
         }
 
         private void labelHint4_MouseLeave(object sender, EventArgs e)
@@ -305,6 +287,7 @@ namespace Dictionary_user
         private void labelHistory1_MouseHover(object sender, EventArgs e)
         {
             labelHistory1.ForeColor = RGBColors.color3;
+            labelHistory1.Cursor = Cursors.Hand;
         }
 
         private void labelHistory1_MouseLeave(object sender, EventArgs e)
@@ -321,6 +304,7 @@ namespace Dictionary_user
         private void labelHistory2_MouseHover(object sender, EventArgs e)
         {
             labelHistory2.ForeColor = RGBColors.color3;
+            labelHistory2.Cursor = Cursors.Hand;
         }
 
         private void labelHistory2_MouseLeave(object sender, EventArgs e)
@@ -337,6 +321,7 @@ namespace Dictionary_user
         private void labelHistory3_MouseHover(object sender, EventArgs e)
         {
             labelHistory3.ForeColor = RGBColors.color3;
+            labelHistory3.Cursor = Cursors.Hand;
         }
 
         private void labelHistory3_MouseLeave(object sender, EventArgs e)
@@ -353,6 +338,7 @@ namespace Dictionary_user
         private void labelHistory4_MouseHover(object sender, EventArgs e)
         {
             labelHistory4.ForeColor = RGBColors.color3;
+            labelHistory4.Cursor = Cursors.Hand;
         }
 
         private void labelHistory4_MouseLeave(object sender, EventArgs e)
@@ -374,6 +360,7 @@ namespace Dictionary_user
         private void labelBookmark1_MouseHover(object sender, EventArgs e)
         {
             labelBookmark1.ForeColor = RGBColors.color2;
+            labelBookmark1.Cursor = Cursors.Hand;
         }
 
         private void labelBookmark1_MouseLeave(object sender, EventArgs e)
@@ -390,6 +377,8 @@ namespace Dictionary_user
         private void labelBookmark2_MouseHover(object sender, EventArgs e)
         {
             labelBookmark2.ForeColor = RGBColors.color2;
+            labelBookmark2.Cursor = Cursors.Hand;
+        
         }
 
         private void labelBookmark2_MouseLeave(object sender, EventArgs e)
@@ -406,8 +395,9 @@ namespace Dictionary_user
         private void labelBookmark3_MouseHover(object sender, EventArgs e)
         {
             labelBookmark3.ForeColor = RGBColors.color2;
+            labelBookmark3.Cursor = Cursors.Hand;
         }
-
+    
         private void labelBookmark3_MouseLeave(object sender, EventArgs e)
         {
             labelBookmark3.ForeColor = System.Drawing.Color.Gainsboro;
@@ -422,6 +412,7 @@ namespace Dictionary_user
         private void labelBookmark4_MouseHover(object sender, EventArgs e)
         {
             labelBookmark4.ForeColor = RGBColors.color2;
+            labelBookmark4.Cursor = Cursors.Hand;
         }
 
         private void labelBookmark4_MouseLeave(object sender, EventArgs e)
@@ -440,7 +431,7 @@ namespace Dictionary_user
 
         #endregion Suggestion, History, Bookmark
 
-        #region Search_Result
+        #region Sound
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
@@ -478,258 +469,6 @@ namespace Dictionary_user
                 // Speak a string.  
                 synth.Speak(wordMeaning.Text);
             }
-        }
-
-        private void bookmarkButton_Click(object sender, EventArgs e)
-        {
-            time= DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
-            if (ktBookmark == false)
-            {
-                ktBookmark = true;
-                bookmarkButton.IconColor = RGBColors.color7;
-                Database.insertBookmark(typedWord.Text, wordMeaning.Text, hint, time);
-                if (hint == "English")
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
-                else
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
-                loadRecentlyBookmark();
-            }
-            else
-            {
-                ktBookmark = false;
-                bookmarkButton.IconColor = Color.Gainsboro;
-                command = "delete from bookmark where word =" + "'" + typedWord.Text + "'" + "AND languages=" + "'" + hint + "'";
-                Database.deleteBookmark(command);
-                if (hint == "English")
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
-                else
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
-                loadRecentlyBookmark();
-            }
-        }
-
-
-
-
-        #endregion Search_Result
-
-        #region Keyboard
-        private void textboxSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (hintColor == 0)
-                hintColor = 4 * 1000;
-            if (e.KeyCode == Keys.Down)
-            {
-                hintColor++;
-                resetSuggestionColor();
-                int hintColorAbs = Math.Abs(hintColor % 4);
-                if (hintColorAbs == 1)
-                    labelHint1.ForeColor = RGBColors.color7;
-                if (hintColorAbs == 2)
-                    labelHint2.ForeColor = RGBColors.color7;
-                if (hintColorAbs == 3)
-                    labelHint4.ForeColor = RGBColors.color7;
-                if (hintColorAbs == 0)
-                    labelHint3.ForeColor = RGBColors.color7;
-            }
-            if (e.KeyCode == Keys.Up)
-            {
-                hintColor--;
-                resetSuggestionColor();
-                int hintColorAbs = Math.Abs(hintColor % 4);
-                if (hintColorAbs == 1)
-                    labelHint1.ForeColor = RGBColors.color7;
-                if (hintColorAbs == 2)
-                    labelHint2.ForeColor = RGBColors.color7;
-                if (hintColorAbs == 3)
-                    labelHint4.ForeColor = RGBColors.color7;
-                if (hintColorAbs == 0)
-                    labelHint3.ForeColor = RGBColors.color7;
-            }
-        }
-
-        private void textboxSearch_Enter(object sender, EventArgs e)
-        {
-            textboxSearch.BackColor = Color.FromArgb(26, 25, 62);
-            textboxSearch.ForeColor = Color.Gainsboro;
-        }
-  
-        private void textboxSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                e.Handled = true;
-                if (labelHint1.ForeColor == RGBColors.color7)
-                    textboxSearch.Text = labelHint1.Text;
-                if (labelHint2.ForeColor == RGBColors.color7)
-                    textboxSearch.Text = labelHint2.Text;
-                if (labelHint4.ForeColor == RGBColors.color7)
-                    textboxSearch.Text = labelHint4.Text;
-                if (labelHint3.ForeColor == RGBColors.color7)
-                    textboxSearch.Text = labelHint3.Text;
-                if (textboxSearch.Text != "")
-                    activateSearchButton();
-                if (textboxSearch.Text == "")
-                    MessageBox.Show("Please insert the word that needs to be translated!");
-            }
-        }
-        
-        #endregion
-
-        #region Book and more Feature
-        private void bunifuDropdownTranslate_onItemSelected(object sender, EventArgs e)
-        {
-            if (bunifuDropdownTranslate.selectedIndex == 0)
-            {
-                Database.BookandMore = 0;
-                openChildForm(new Idiom());
-            }
-            if (bunifuDropdownTranslate.selectedIndex == 1)
-            {
-                Database.BookandMore = 1;
-                openChildForm(new Idiom());
-            }
-            if (bunifuDropdownTranslate.selectedIndex == 2)
-            {
-                Database.BookandMore = 2;
-                openChildForm(new Idiom());
-            }
-        }
-        
-        #endregion
-
-        #region Volcabulary
-        private void Reload_Click(object sender, EventArgs e)
-        {
-            loadVolcabulary();
-        }
-
-        private void labelWord1_Click(object sender, EventArgs e)
-        {
-            textboxSearch.Text = labelWord1.Text;
-            activateSearchButton();
-        }
-
-        private void labelWord2_Click(object sender, EventArgs e)
-        {
-            textboxSearch.Text = labelWord2.Text;
-            activateSearchButton();
-        }
-
-        private void labelWord3_Click(object sender, EventArgs e)
-        {
-            textboxSearch.Text = labelWord3.Text;
-            activateSearchButton();
-        }
-
-        private void labelWord4_Click(object sender, EventArgs e)
-        {
-            textboxSearch.Text = labelWord4.Text;
-            activateSearchButton();
-        }
-
-        private void labelWord5_Click(object sender, EventArgs e)
-        {
-            textboxSearch.Text = labelWord5.Text;
-            activateSearchButton();
-        }
-
-        private void labelWord6_Click(object sender, EventArgs e)
-        {
-            textboxSearch.Text = labelWord6.Text;
-            activateSearchButton();
-        }
-
-        private void labelWord7_Click(object sender, EventArgs e)
-        {
-            textboxSearch.Text = labelWord7.Text;
-            activateSearchButton();
-        }
-
-        private void labelWord8_Click(object sender, EventArgs e)
-        {
-            textboxSearch.Text = labelWord8.Text;
-            activateSearchButton();
-        }
-
-        private void labelWord1_MouseHover(object sender, EventArgs e)
-        {
-            labelWord1.ForeColor = RGBColors.color7;
-        }
-
-        private void labelWord1_MouseLeave(object sender, EventArgs e)
-        {
-            labelWord1.ForeColor = Color.Gainsboro;
-        }
-
-        private void labelWord2_MouseHover(object sender, EventArgs e)
-        {
-            labelWord2.ForeColor = RGBColors.color7;
-        }
-
-        private void labelWord2_MouseLeave(object sender, EventArgs e)
-        {
-            labelWord2.ForeColor = Color.Gainsboro;
-        }
-
-        private void labelWord3_MouseHover(object sender, EventArgs e)
-        {
-            labelWord3.ForeColor = RGBColors.color7;
-        }
-
-        private void labelWord3_MouseLeave(object sender, EventArgs e)
-        {
-            labelWord3.ForeColor = Color.Gainsboro;
-        }
-
-        private void labelWord4_MouseHover(object sender, EventArgs e)
-        {
-            labelWord4.ForeColor = RGBColors.color7;
-        }
-
-        private void labelWord4_MouseLeave(object sender, EventArgs e)
-        {
-            labelWord4.ForeColor = Color.Gainsboro;
-        }
-
-        private void labelWord5_MouseHover(object sender, EventArgs e)
-        {
-            labelWord5.ForeColor = RGBColors.color7;
-        }
-
-        private void labelWord5_MouseLeave(object sender, EventArgs e)
-        {
-            labelWord5.ForeColor = Color.Gainsboro;
-        }
-
-        private void labelWord6_MouseHover(object sender, EventArgs e)
-        {
-            labelWord6.ForeColor = RGBColors.color7;
-        }
-
-        private void labelWord6_MouseLeave(object sender, EventArgs e)
-        {
-            labelWord6.ForeColor = Color.Gainsboro;
-        }
-
-        private void labelWord7_MouseHover(object sender, EventArgs e)
-        {
-            labelWord7.ForeColor = RGBColors.color7;
-        }
-
-        private void labelWord7_MouseLeave(object sender, EventArgs e)
-        {
-            labelWord7.ForeColor = Color.Gainsboro;
-        }
-
-        private void labelWord8_MouseHover(object sender, EventArgs e)
-        {
-            labelWord8.ForeColor = RGBColors.color7;
-        }
-
-        private void labelWord8_MouseLeave(object sender, EventArgs e)
-        {
-            labelWord8.ForeColor = Color.Gainsboro;
         }
 
         private void iconButtonSpeaker1_Click(object sender, EventArgs e)
@@ -827,24 +566,326 @@ namespace Dictionary_user
             // Speak a string.  
             synth.Speak(labelWord8.Text);
         }
+        #endregion 
+
+        #region Keyboard
+
+        private int hintColor = 0;
+
+        private void textboxSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (hintColor == 0)
+                hintColor = 4 * 1000;
+            if (e.KeyCode == Keys.Down)
+            {
+                hintColor++;
+                resetSuggestionColor();
+                int hintColorAbs = Math.Abs(hintColor % 4);
+                if (hintColorAbs == 1)
+                    labelHint1.ForeColor = RGBColors.color7;
+                if (hintColorAbs == 2)
+                    labelHint2.ForeColor = RGBColors.color7;
+                if (hintColorAbs == 3)
+                    labelHint4.ForeColor = RGBColors.color7;
+                if (hintColorAbs == 0)
+                    labelHint3.ForeColor = RGBColors.color7;
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                hintColor--;
+                resetSuggestionColor();
+                int hintColorAbs = Math.Abs(hintColor % 4);
+                if (hintColorAbs == 1)
+                    labelHint1.ForeColor = RGBColors.color7;
+                if (hintColorAbs == 2)
+                    labelHint2.ForeColor = RGBColors.color7;
+                if (hintColorAbs == 3)
+                    labelHint4.ForeColor = RGBColors.color7;
+                if (hintColorAbs == 0)
+                    labelHint3.ForeColor = RGBColors.color7;
+            }
+        }
+
+        private void textboxSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                e.Handled = true;
+                if (labelHint1.ForeColor == RGBColors.color7)
+                    textboxSearch.Text = labelHint1.Text;
+                if (labelHint2.ForeColor == RGBColors.color7)
+                    textboxSearch.Text = labelHint2.Text;
+                if (labelHint4.ForeColor == RGBColors.color7)
+                    textboxSearch.Text = labelHint4.Text;
+                if (labelHint3.ForeColor == RGBColors.color7)
+                    textboxSearch.Text = labelHint3.Text;
+                if (textboxSearch.Text != "")
+                    activateSearchButton();
+                if (textboxSearch.Text == "")
+                    MessageBox.Show("Please insert the word that needs to be translated!");
+            }
+        }
+
+        private void btnHistory_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Tab)
+            {
+                if (e.Modifiers == Keys.Shift)
+                    this.ProcessTabKey(false);
+                else
+                    this.ProcessTabKey(true);
+            }
+        }
+
+        #endregion
+
+        #region Combobox
+        private void bunifuDropdownTranslate_onItemSelected(object sender, EventArgs e)
+        {
+            if (Database.nowForm==1)
+            {
+                if (bunifuDropdownTranslate.selectedIndex == 0)
+                {
+                    Database.selectedIndex = 0;
+                    language = "English";
+                    pictureLanguage.Image = Properties.Resources.united_kingdom;
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 1)
+                {
+                    Database.selectedIndex = 1;
+                    language = "French";
+                    pictureLanguage.Image = Properties.Resources.france;
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 2)
+                {
+                    Database.selectedIndex = 0;
+                    language = "German";
+                    pictureLanguage.Image = Properties.Resources.germany;
+                }
+                if (textboxSearch.HintText == "Search VietNamese")
+                {
+                    pictureBoxFlagRight.Image = pictureLanguage.Image;
+                    hint = "VieMeaning";
+                    coloumn = language;
+                }
+                else
+                {
+                    hint = language;
+                    coloumn = "VieMeaning";
+                    pictureBoxFlagLeft.Image = pictureLanguage.Image;
+                    textboxSearch.HintText = "Search " + language;
+                    textboxSearch.Text = "";
+                }
+                activateSwitchButton();
+                loadVolcabulary();
+            }
+            if (Database.nowForm == 10)
+            {
+                if (bunifuDropdownTranslate.selectedIndex == 0)
+                {
+                    Database.BookandMore = 0;
+                    openChildForm(new Idiom());
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 1)
+                {
+                    Database.BookandMore = 1;
+                    openChildForm(new Idiom());
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 2)
+                {
+                    Database.BookandMore = 2;
+                    openChildForm(new Idiom());
+                }
+            }
+        }
+
+        #endregion
+
+        #region Volcabulary
+        private void Reload_Click(object sender, EventArgs e)
+        {
+            loadVolcabulary();
+        }
+
+        private void labelWord1_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord1.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord2_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord2.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord3_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord3.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord4_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord4.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord5_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord5.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord6_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord6.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord7_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord7.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord8_Click(object sender, EventArgs e)
+        {
+            textboxSearch.Text = labelWord8.Text;
+            activateSearchButton();
+        }
+
+        private void labelWord1_MouseHover(object sender, EventArgs e)
+        {
+            labelWord1.ForeColor = RGBColors.color7;
+            labelWord1.Cursor = Cursors.Hand;
+        }
+
+        private void labelWord1_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord1.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord2_MouseHover(object sender, EventArgs e)
+        {
+            labelWord2.ForeColor = RGBColors.color7;
+            labelWord2.Cursor = Cursors.Hand;
+        }
+
+        private void labelWord2_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord2.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord3_MouseHover(object sender, EventArgs e)
+        {
+            labelWord3.ForeColor = RGBColors.color7;
+            labelWord3.Cursor = Cursors.Hand;
+        }
+
+        private void labelWord3_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord3.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord4_MouseHover(object sender, EventArgs e)
+        {
+            labelWord4.ForeColor = RGBColors.color7;
+            labelWord4.Cursor = Cursors.Hand;
+        }
+
+        private void labelWord4_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord4.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord5_MouseHover(object sender, EventArgs e)
+        {
+            labelWord5.ForeColor = RGBColors.color7;
+            labelWord5.Cursor = Cursors.Hand;
+        }
+
+        private void labelWord5_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord5.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord6_MouseHover(object sender, EventArgs e)
+        {
+            labelWord6.ForeColor = RGBColors.color7;
+            labelWord6.Cursor = Cursors.Hand;
+        }
+
+        private void labelWord6_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord6.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord7_MouseHover(object sender, EventArgs e)
+        {
+            labelWord7.ForeColor = RGBColors.color7;
+            labelWord7.Cursor = Cursors.Hand;
+        }
+
+        private void labelWord7_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord7.ForeColor = Color.Gainsboro;
+        }
+
+        private void labelWord8_MouseHover(object sender, EventArgs e)
+        {
+            labelWord8.ForeColor = RGBColors.color7;
+            labelWord8.Cursor = Cursors.Hand;
+        }
+
+        private void labelWord8_MouseLeave(object sender, EventArgs e)
+        {
+            labelWord8.ForeColor = Color.Gainsboro;
+        }
+
+        private void random()
+        {
+            arr = new List<string>();
+            for (int i = 0; i < 8; i++)
+            {
+                id = r.Next(1, 2440);
+                command = "select " + hint + " from "+language+"data where id=" + "'" + id.ToString() + "'";
+                Database.load(command);
+                arr.Add(Database.loadData.Rows[0][hint].ToString());
+            }
+        }
+        
+        private void loadVolcabulary()
+        {
+            random();
+            labelWord1.Text = arr[0];
+            labelWord2.Text = arr[1];
+            labelWord3.Text = arr[2];
+            labelWord4.Text = arr[3];
+            labelWord5.Text = arr[4];
+            labelWord6.Text = arr[5];
+            labelWord7.Text = arr[6];
+            labelWord8.Text = arr[7];
+        }
+        
         #endregion
 
         //Cleaning code, create new regions
 
         #region Search
-        
+
         private void displaySearchbar() // Hiển thị chức năng tìm kiếm
         {
             textboxSearch.Visible = true;
             buttonSearch.Visible = true;
         }
-        
+
         private void hideSearchbar() // Ẩn chức năng tìm kiếm
         {
             textboxSearch.Visible = false;
             buttonSearch.Visible = false;
         }
-       
+
         private void setSearchResult_visible(bool set)
         {
             typedWord.Visible = set;
@@ -853,37 +894,37 @@ namespace Dictionary_user
             btnPlay.Visible = set;
             btnPlay2.Visible = set;
         }
-        
+
         private void loadSearchResult()
         {
-            if (textboxSearch.HintText == "Search English")
+            if (textboxSearch.HintText != "Search VietNamese")
             {
-                command = " SELECT VieMeaning from mytable where English = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                command = " SELECT VieMeaning from "+language+"data where "+language+" = " + "\"" + textboxSearch.Text.ToString() + "\"";
                 Database.load(command);
                 typedWord.Text = textboxSearch.Text;
                 if (Database.loadData.Rows.Count > 0)
                     wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
                 else
                     wordMeaning.Text = "Not Found";
-                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Eng-Vie");
+                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", language+"-VietNamese");
                 btnPlay.Visible = true;
                 btnPlay2.Visible = false;
             }
             else
             {
-                command = " SELECT English from mytable where VieMeaning = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                command = " SELECT "+language+" from "+language+"data where VieMeaning = " + "\"" + textboxSearch.Text.ToString() + "\"";
                 Database.load(command);
                 typedWord.Text = textboxSearch.Text;
                 if (Database.loadData.Rows.Count > 0)
                     wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
                 else
                     wordMeaning.Text = "Not Found";
-                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Vie-Eng");
+                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "VietNamese-"+language);
                 btnPlay2.Visible = true;
                 btnPlay.Visible = false;
             }
         }
-    
+
         private void activateSearchButton() // Kích hoạt searchButton
         {
             textboxSearch.Focus();
@@ -909,7 +950,7 @@ namespace Dictionary_user
                 openChildForm(new Bookmark());
             } // Search Bookmark
         }
-        
+
         private void buttonSearch_Click(object sender, EventArgs e) // Khi click vào searchButton
         {
             if (textboxSearch.Text == "")
@@ -940,7 +981,7 @@ namespace Dictionary_user
                 {
                     textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
                 }
-                command = "Use sql_invoicing; SELECT " + hint + " from mytable where " + hint + " like " + "'" + textboxSearch.Text + "%'";
+                command = "Use sql_invoicing; SELECT " + hint + " from " +language+"data where " + hint + " like " + "\"" + textboxSearch.Text + "%\"";
                 Database.load(command);
                 int num = Database.loadData.Rows.Count;
                 if (num > 0)
@@ -973,7 +1014,7 @@ namespace Dictionary_user
                     labelHint3.Text = "";
             }
         }
-        
+
         #endregion
 
         #region History
@@ -990,28 +1031,28 @@ namespace Dictionary_user
         {
             if (bookmarkButton.IconColor == RGBColors.color7)
             {
-                if (hint == "English")
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                if (hint != "VieMeaning")
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= "+"'"+language+"-VietNamese"+"'");
                 else
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= "+"'"+"VietNamese-"+language+"'");
             }
             else
             {
 
-                if (hint == "English")
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                if (hint != "VieMeaning")
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + language + "-VietNamese" + "'");
                 else
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + "VietNamese-" + language + "'");
             }
         }
 
         private void loadRecentlyHistory()
         {
 
-            if (hint == "English")
-                command = "SELECT Word from historysearch where Translate='Eng-Vie' ORDER BY id DESC";
+            if (hint != "VieMeaning")
+                command = "SELECT Word from historysearch where Translate= " + "'" +language+ "-VietNamese"  + "'"+" ORDER BY id DESC";
             else
-                command = "SELECT Word from historysearch where Translate='Vie-Eng' ORDER BY id DESC";
+                command = "SELECT Word from historysearch where Translate= " + "'" + "VietNamese-" + language + "'" +"ORDER BY id DESC";
             Database.load(command);
             if (Database.loadData.Rows.Count > 0)
                 labelHistory1.Text = Database.loadData.Rows[0]["Word"].ToString();
@@ -1042,14 +1083,14 @@ namespace Dictionary_user
             else
                 labelHistory4.Text = "";
         }
-        
+
         #endregion
 
         #region Bookmark
 
         private void loadBookmark()
         {
-            command = " SELECT meaning from bookmark where word = " + "\"" + textboxSearch.Text.ToString() + "\"" + "and languages= " + "'" + hint + "'";
+            command = " SELECT meaning from bookmark where word = " + "\"" + textboxSearch.Text.ToString() + "\"" + "and languages= " + "'" + hint+"-"+coloumn + "'";
             Database.load(command);
             if (Database.loadData.Rows.Count > 0)
             {
@@ -1065,7 +1106,7 @@ namespace Dictionary_user
 
         private void loadRecentlyBookmark()
         {
-            command = "SELECT Word from bookmark where languages=" + "'" + hint + "'" + " ORDER BY id DESC";
+            command = "SELECT Word from bookmark where languages=" + "'" + hint+"-"+coloumn + "'" + " ORDER BY id DESC";
             Database.load(command);
             if (Database.loadData.Rows.Count > 0)
                 labelBookmark1.Text = Database.loadData.Rows[0]["Word"].ToString();
@@ -1097,10 +1138,52 @@ namespace Dictionary_user
                 labelBookmark4.Text = "";
         }
 
+        private void bookmarkButton_Click(object sender, EventArgs e)
+        {
+            time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
+            if (ktBookmark == false)
+            {
+                ktBookmark = true;
+                bookmarkButton.IconColor = RGBColors.color7;
+                Database.insertBookmark(typedWord.Text, wordMeaning.Text, hint+"-"+coloumn, time);
+                if (hint != "VieMeaning")
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "\"" + typedWord.Text + "\"" + "AND Translate= "+"'"+language+"-VietNamese"+"'");
+                else
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "\"" + typedWord.Text + "\"" + "AND Translate= "+"'"+"VietNamese-"+language+"'");
+                loadRecentlyBookmark();
+            }
+            else
+            {
+                ktBookmark = false;
+                bookmarkButton.IconColor = Color.Gainsboro;
+                command = "delete from bookmark where word =" + "\"" + typedWord.Text + "\"" + "AND languages=" + "'" + hint + "'";
+                Database.deleteBookmark(command);
+                if (hint != "VieMeaning")
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + language+"-VietNamese" + "'");
+                else
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + "VietNamese-" + language + "'");
+                loadRecentlyBookmark();
+            }
+        }
+
+        private void checkBookMark() // Check and Set color to iconButtonBookmark
+        {
+            if (labelBookmark1.Text != typedWord.Text)
+            {
+                bookmarkButton.IconColor = Color.Gainsboro;
+                ktBookmark = false;
+            }
+            else
+            {
+                bookmarkButton.IconColor = RGBColors.color7;
+                ktBookmark = true;
+            }
+        }
+        
         #endregion
 
         #region Open other form
-        
+
         private void closeChildForm(Form childForm)
         {
             childForm.FormClosed += new FormClosedEventHandler(Form_Closed);
@@ -1122,7 +1205,7 @@ namespace Dictionary_user
                     activateSearchButton();
                     if (bookmarkButton.IconColor == RGBColors.color7)
                     {
-                        if (hint == "English")
+                        if (hint != "VieMeaning")
                             Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
                         else
                             Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
@@ -1130,7 +1213,7 @@ namespace Dictionary_user
                     if (bookmarkButton.IconColor == Color.Gainsboro)
                     {
 
-                        if (hint == "English")
+                        if (hint != "VieMeaning")
                             Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
                         else
                             Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
@@ -1138,7 +1221,7 @@ namespace Dictionary_user
                 }
             }
         }
-        
+
         private void openChildForm(Form childForm) // Mở childForm mới
         {
             if (currentChildForm != null)
@@ -1155,7 +1238,7 @@ namespace Dictionary_user
             childForm.Show();
             closeChildForm(childForm);
         }
-        
+
         private void iconButton1_Click(object sender, EventArgs e) // Khi click vào translateButton
         {
             if (currentChildForm != null)
@@ -1171,7 +1254,12 @@ namespace Dictionary_user
             textboxSearch.LineMouseHoverColor = RGBColors.color1;
             buttonSearch.IconColor = RGBColors.color1;
             Database.nowForm = 1;
-            bunifuDropdownTranslate.Visible = false;
+            bunifuDropdownTranslate.Visible = true;
+            bunifuDropdownTranslate.Clear();
+            bunifuDropdownTranslate.AddItem("English");
+            bunifuDropdownTranslate.AddItem("French");
+            bunifuDropdownTranslate.AddItem("German");
+            bunifuDropdownTranslate.selectedIndex = Database.selectedIndex;
             checkBookMark();
         }
 
@@ -1222,7 +1310,10 @@ namespace Dictionary_user
             hideSwitch();
             displaySearchbar();
             hideSearchbar();
-            bunifuDropdownTranslate.RemoveItem("English");
+            bunifuDropdownTranslate.Clear();
+            bunifuDropdownTranslate.AddItem("Books");
+            bunifuDropdownTranslate.AddItem("Idioms");
+            bunifuDropdownTranslate.AddItem("Luminaries");
             bunifuDropdownTranslate.selectedIndex = 0;
             Database.nowForm = 10;
             Database.acction = "showIdiomList";
@@ -1243,8 +1334,8 @@ namespace Dictionary_user
         } // About us
 
         #endregion
+ 
     }
 }
 
 
-    
