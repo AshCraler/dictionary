@@ -210,6 +210,15 @@ namespace Dictionary_user
             Chinese.Image = Properties.Resources.china;
             Database.flag.Add("Chinese", Chinese);
 
+            PictureBox Japanese = new PictureBox();
+            Japanese.Image = Properties.Resources.japan;
+            Database.flag.Add("Japanese", Japanese);
+
+            PictureBox Korean = new PictureBox();
+            Korean.Image = Properties.Resources.south_korea;
+            Database.flag.Add("Korean", Korean);
+
+
             PictureBox VieMeaning = new PictureBox();
             VieMeaning.Image = Properties.Resources.vietnam;
             Database.flag.Add("VieMeaning", VieMeaning);
@@ -664,6 +673,8 @@ namespace Dictionary_user
             bunifuDropdownTranslate.AddItem("Portuguese");
             bunifuDropdownTranslate.AddItem("Russian");
             bunifuDropdownTranslate.AddItem("Chinese");
+            bunifuDropdownTranslate.AddItem("Japanese");
+            bunifuDropdownTranslate.AddItem("Korean");
             bunifuDropdownTranslate.selectedIndex = Database.selectedIndex;
         }
         private void bunifuDropdownTranslate_onItemSelected(object sender, EventArgs e)
@@ -712,6 +723,18 @@ namespace Dictionary_user
                     language = "Chinese";
                     pictureLanguage.Image = Properties.Resources.china;
                 }
+                if (bunifuDropdownTranslate.selectedIndex == 7)
+                {
+                    Database.selectedIndex = 7;
+                    language = "Japanese";
+                    pictureLanguage.Image = Properties.Resources.japan;
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 8)
+                {
+                    Database.selectedIndex = 8;
+                    language = "Korean";
+                    pictureLanguage.Image = Properties.Resources.south_korea;
+                }
                 if (textboxSearch.HintText == "Search VietNamese")
                 {
                     pictureBoxFlagRight.Image = pictureLanguage.Image;
@@ -728,6 +751,8 @@ namespace Dictionary_user
                 }
                 activateSwitchButton();
                 loadVolcabulary();
+                setSearchResult_visible(false);
+                
             }
             if (Database.nowForm == 10)
             {
@@ -1416,7 +1441,8 @@ namespace Dictionary_user
 
 
 
-        
+
+       
     }
 }
 

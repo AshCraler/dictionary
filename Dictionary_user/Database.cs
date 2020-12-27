@@ -44,6 +44,10 @@ namespace Dictionary_user
 
             if (language == "Chinese")
                 selectedIndex = 6;
+            
+            if (language == "Japanese")
+                selectedIndex = 7;
+
         }
 
         public static void load(string command)

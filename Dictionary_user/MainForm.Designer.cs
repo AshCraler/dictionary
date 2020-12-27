@@ -350,7 +350,9 @@
         "Spainish",
         "Portuguese",
         "Russia",
-        "Chinese"};
+        "Chinese",
+        "Japanese",
+        "Korean"};
             this.bunifuDropdownTranslate.Location = new System.Drawing.Point(639, 23);
             this.bunifuDropdownTranslate.Name = "bunifuDropdownTranslate";
             this.bunifuDropdownTranslate.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
@@ -505,6 +507,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(369, 436);
             this.panel5.TabIndex = 38;
+          
             // 
             // iconButtonSpeaker8
             // 
