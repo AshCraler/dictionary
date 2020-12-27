@@ -129,7 +129,7 @@ namespace Dictionary_user
                 pictureBoxFlagRight.Image = pictureLanguage.Image;
                 textboxSearch.HintText = "Search VietNamese";
                 textboxSearch.Text = "Search VietNamese";
-                coloumn = "English";
+                coloumn = language;
                 hint = "VieMeaning";
                 iconButtonSpeaker1.Visible = false;
                 iconButtonSpeaker2.Visible = false;
@@ -155,12 +155,13 @@ namespace Dictionary_user
                 iconButtonSpeaker7.Visible = true;
                 iconButtonSpeaker8.Visible = true;
                 coloumn = "VieMeaning";
-                hint = "English";
+                hint = language;
             }
             resetSuggestion();
             loadRecentlyHistory();
             loadRecentlyBookmark();
         }
+        
         public MainForm() // Kích hoạt MainForm
         {
             //Initial GUI
@@ -169,13 +170,29 @@ namespace Dictionary_user
             leftBorderBtn.Size = new Size(7, 34);
             panelMenu.Controls.Add(leftBorderBtn);
             activateMenuButton(iconButton1, RGBColors.color1);
-            bunifuDropdownTranslate.selectedIndex = 0;
-            loadRecently();
+            bunifuDropdownTranslate.selectedIndex = 0;      
             Database.nowForm = 1;
             language = "English";
             pictureLanguage.Image = Properties.Resources.united_kingdom;
+            bunifuDropdownTranslate.selectedIndex = 0;
+            Database.selectedIndex = 0;
+            loadRecently();
             loadVolcabulary();
+            Database.flag = new Dictionary<string, PictureBox>();
+            PictureBox English = new PictureBox();
+            English.Image = Properties.Resources.united_kingdom;
+            Database.flag.Add("English", English);
+            PictureBox French = new PictureBox();
+            French.Image = Properties.Resources.france;
+            Database.flag.Add("French", French);
+            PictureBox German = new PictureBox();
+            German.Image = Properties.Resources.germany;
+            Database.flag.Add("German", German);
+            PictureBox VieMeaning = new PictureBox();
+            VieMeaning.Image = Properties.Resources.vietnam;
+            Database.flag.Add("VieMeaning", VieMeaning);
         }
+       
         private void buttonSwitch_Click(object sender, EventArgs e) // Khi click vào switchButton
         {
             if (ktSwitch == false)
@@ -629,22 +646,38 @@ namespace Dictionary_user
             {
                 if (bunifuDropdownTranslate.selectedIndex == 0)
                 {
+                    Database.selectedIndex = 0;
                     language = "English";
                     pictureLanguage.Image = Properties.Resources.united_kingdom;
                 }
                 if (bunifuDropdownTranslate.selectedIndex == 1)
                 {
+                    Database.selectedIndex = 1;
                     language = "French";
                     pictureLanguage.Image = Properties.Resources.france;
                 }
+                if (bunifuDropdownTranslate.selectedIndex == 2)
+                {
+                    Database.selectedIndex = 0;
+                    language = "German";
+                    pictureLanguage.Image = Properties.Resources.germany;
+                }
                 if (textboxSearch.HintText == "Search VietNamese")
+                {
                     pictureBoxFlagRight.Image = pictureLanguage.Image;
+                    hint = "VieMeaning";
+                    coloumn = language;
+                }
                 else
                 {
+                    hint = language;
+                    coloumn = "VieMeaning";
                     pictureBoxFlagLeft.Image = pictureLanguage.Image;
                     textboxSearch.HintText = "Search " + language;
                     textboxSearch.Text = "";
                 }
+                activateSwitchButton();
+                loadVolcabulary();
             }
             if (Database.nowForm == 10)
             {
@@ -815,8 +848,8 @@ namespace Dictionary_user
             arr = new List<string>();
             for (int i = 0; i < 8; i++)
             {
-                id = r.Next(1, 1800);
-                command = "select " + hint + " from englishdata where id=" + "'" + id.ToString() + "'";
+                id = r.Next(1, 2440);
+                command = "select " + hint + " from "+language+"data where id=" + "'" + id.ToString() + "'";
                 Database.load(command);
                 arr.Add(Database.loadData.Rows[0][hint].ToString());
             }
@@ -864,29 +897,29 @@ namespace Dictionary_user
 
         private void loadSearchResult()
         {
-            if (textboxSearch.HintText == "Search English")
+            if (textboxSearch.HintText != "Search VietNamese")
             {
-                command = " SELECT VieMeaning from englishdata where English = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                command = " SELECT VieMeaning from "+language+"data where "+language+" = " + "\"" + textboxSearch.Text.ToString() + "\"";
                 Database.load(command);
                 typedWord.Text = textboxSearch.Text;
                 if (Database.loadData.Rows.Count > 0)
                     wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
                 else
                     wordMeaning.Text = "Not Found";
-                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Eng-Vie");
+                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", language+"-VietNamese");
                 btnPlay.Visible = true;
                 btnPlay2.Visible = false;
             }
             else
             {
-                command = " SELECT English from englishdata where VieMeaning = " + "\"" + textboxSearch.Text.ToString() + "\"";
+                command = " SELECT "+language+" from "+language+"data where VieMeaning = " + "\"" + textboxSearch.Text.ToString() + "\"";
                 Database.load(command);
                 typedWord.Text = textboxSearch.Text;
                 if (Database.loadData.Rows.Count > 0)
                     wordMeaning.Text = Database.loadData.Rows[0][coloumn].ToString();
                 else
                     wordMeaning.Text = "Not Found";
-                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "Vie-Eng");
+                Database.insertHistory(textboxSearch.Text, wordMeaning.Text, date, "No", "VietNamese-"+language);
                 btnPlay2.Visible = true;
                 btnPlay.Visible = false;
             }
@@ -948,7 +981,7 @@ namespace Dictionary_user
                 {
                     textboxSearch.LineIdleColor = textboxSearch.HintForeColor;
                 }
-                command = "Use sql_invoicing; SELECT " + hint + " from englishdata where " + hint + " like " + "'" + textboxSearch.Text + "%'";
+                command = "Use sql_invoicing; SELECT " + hint + " from " +language+"data where " + hint + " like " + "\"" + textboxSearch.Text + "%\"";
                 Database.load(command);
                 int num = Database.loadData.Rows.Count;
                 if (num > 0)
@@ -998,28 +1031,28 @@ namespace Dictionary_user
         {
             if (bookmarkButton.IconColor == RGBColors.color7)
             {
-                if (hint == "English")
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                if (hint != "VieMeaning")
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= "+"'"+language+"-VietNamese"+"'");
                 else
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= "+"'"+"VietNamese-"+language+"'");
             }
             else
             {
 
-                if (hint == "English")
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                if (hint != "VieMeaning")
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + language + "-VietNamese" + "'");
                 else
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + "VietNamese-" + language + "'");
             }
         }
 
         private void loadRecentlyHistory()
         {
 
-            if (hint == "English")
-                command = "SELECT Word from historysearch where Translate='Eng-Vie' ORDER BY id DESC";
+            if (hint != "VieMeaning")
+                command = "SELECT Word from historysearch where Translate= " + "'" +language+ "-VietNamese"  + "'"+" ORDER BY id DESC";
             else
-                command = "SELECT Word from historysearch where Translate='Vie-Eng' ORDER BY id DESC";
+                command = "SELECT Word from historysearch where Translate= " + "'" + "VietNamese-" + language + "'" +"ORDER BY id DESC";
             Database.load(command);
             if (Database.loadData.Rows.Count > 0)
                 labelHistory1.Text = Database.loadData.Rows[0]["Word"].ToString();
@@ -1057,7 +1090,7 @@ namespace Dictionary_user
 
         private void loadBookmark()
         {
-            command = " SELECT meaning from bookmark where word = " + "\"" + textboxSearch.Text.ToString() + "\"" + "and languages= " + "'" + hint + "'";
+            command = " SELECT meaning from bookmark where word = " + "\"" + textboxSearch.Text.ToString() + "\"" + "and languages= " + "'" + hint+"-"+coloumn + "'";
             Database.load(command);
             if (Database.loadData.Rows.Count > 0)
             {
@@ -1073,7 +1106,7 @@ namespace Dictionary_user
 
         private void loadRecentlyBookmark()
         {
-            command = "SELECT Word from bookmark where languages=" + "'" + hint + "'" + " ORDER BY id DESC";
+            command = "SELECT Word from bookmark where languages=" + "'" + hint+"-"+coloumn + "'" + " ORDER BY id DESC";
             Database.load(command);
             if (Database.loadData.Rows.Count > 0)
                 labelBookmark1.Text = Database.loadData.Rows[0]["Word"].ToString();
@@ -1112,23 +1145,23 @@ namespace Dictionary_user
             {
                 ktBookmark = true;
                 bookmarkButton.IconColor = RGBColors.color7;
-                Database.insertBookmark(typedWord.Text, wordMeaning.Text, hint, time);
-                if (hint == "English")
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                Database.insertBookmark(typedWord.Text, wordMeaning.Text, hint+"-"+coloumn, time);
+                if (hint != "VieMeaning")
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "\"" + typedWord.Text + "\"" + "AND Translate= "+"'"+language+"-VietNamese"+"'");
                 else
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "\"" + typedWord.Text + "\"" + "AND Translate= "+"'"+"VietNamese-"+language+"'");
                 loadRecentlyBookmark();
             }
             else
             {
                 ktBookmark = false;
                 bookmarkButton.IconColor = Color.Gainsboro;
-                command = "delete from bookmark where word =" + "'" + typedWord.Text + "'" + "AND languages=" + "'" + hint + "'";
+                command = "delete from bookmark where word =" + "\"" + typedWord.Text + "\"" + "AND languages=" + "'" + hint + "'";
                 Database.deleteBookmark(command);
-                if (hint == "English")
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
+                if (hint != "VieMeaning")
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + language+"-VietNamese" + "'");
                 else
-                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + "VietNamese-" + language + "'");
                 loadRecentlyBookmark();
             }
         }
@@ -1172,7 +1205,7 @@ namespace Dictionary_user
                     activateSearchButton();
                     if (bookmarkButton.IconColor == RGBColors.color7)
                     {
-                        if (hint == "English")
+                        if (hint != "VieMeaning")
                             Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
                         else
                             Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
@@ -1180,7 +1213,7 @@ namespace Dictionary_user
                     if (bookmarkButton.IconColor == Color.Gainsboro)
                     {
 
-                        if (hint == "English")
+                        if (hint != "VieMeaning")
                             Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Eng-Vie'");
                         else
                             Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate='Vie-Eng'");
@@ -1225,7 +1258,8 @@ namespace Dictionary_user
             bunifuDropdownTranslate.Clear();
             bunifuDropdownTranslate.AddItem("English");
             bunifuDropdownTranslate.AddItem("French");
-            bunifuDropdownTranslate.selectedIndex = 0;
+            bunifuDropdownTranslate.AddItem("German");
+            bunifuDropdownTranslate.selectedIndex = Database.selectedIndex;
             checkBookMark();
         }
 

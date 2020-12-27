@@ -788,7 +788,7 @@ namespace Dictionary_user
             time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
             if (iconButton2.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from "+mode+"bookmark where book =" + "\"" + textBox7.Text + "\"";
+                command = "delete from "+mode+"bookmark where "+mode+" =" + "\"" + textBox7.Text + "\"";
                 Database.deleteBookmark(command);
                 iconButton2.IconColor = Color.Gainsboro;
                 check[page * 13 + 2] = false;
@@ -811,7 +811,7 @@ namespace Dictionary_user
             time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
             if (iconButton3.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from "+mode+"bookmark where book =" + "\"" + textBox8.Text + "\"";
+                command = "delete from "+mode+"bookmark where "+mode+" =" + "\"" + textBox8.Text + "\"";
                 Database.deleteBookmark(command);
                 iconButton3.IconColor = Color.Gainsboro;
                 check[page * 4 + 3] = false;
@@ -834,7 +834,7 @@ namespace Dictionary_user
             time = DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss.ff");
             if (iconButton4.IconColor == Color.FromArgb(238, 26, 74))
             {
-                command = "delete from "+mode+"bookmark where book =" + "\"" + textBox9.Text + "\"";
+                command = "delete from "+mode+"bookmark where "+mode+" =" + "\"" + textBox9.Text + "\"";
                 Database.deleteBookmark(command);
                 iconButton4.IconColor = Color.Gainsboro;
                 check[page * 4 + 4] = false;

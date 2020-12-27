@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using MySql.Data.MySqlClient;
-
+using System.Windows.Forms;
 namespace Dictionary_user
 {
     static class Database
@@ -18,7 +18,8 @@ namespace Dictionary_user
         public static bool setLanguages;
         public static string textboxSearchText;
         public static int BookandMore;
-        
+        public static int selectedIndex;
+        public static Dictionary<string,PictureBox> flag; 
         public static void load(string command)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
