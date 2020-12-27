@@ -196,7 +196,11 @@ namespace Dictionary_user
             PictureBox Spanish = new PictureBox();
             Spanish.Image = Properties.Resources.spain;
             Database.flag.Add("Spanish", Spanish);
-            
+
+            PictureBox Portuguese = new PictureBox();
+            Portuguese.Image = Properties.Resources.portugal;
+            Database.flag.Add("Portuguese", Portuguese);
+
             PictureBox VieMeaning = new PictureBox();
             VieMeaning.Image = Properties.Resources.vietnam;
             Database.flag.Add("VieMeaning", VieMeaning);
@@ -649,6 +653,17 @@ namespace Dictionary_user
         #endregion
 
         #region Combobox
+        private void loadLanguageComboBox()
+        {
+            bunifuDropdownTranslate.Visible = true;
+            bunifuDropdownTranslate.Clear();
+            bunifuDropdownTranslate.AddItem("English");
+            bunifuDropdownTranslate.AddItem("French");
+            bunifuDropdownTranslate.AddItem("German");
+            bunifuDropdownTranslate.AddItem("Spanish");
+            bunifuDropdownTranslate.AddItem("Portuguese");
+            bunifuDropdownTranslate.selectedIndex = Database.selectedIndex;
+        }
         private void bunifuDropdownTranslate_onItemSelected(object sender, EventArgs e)
         {
             if (Database.nowForm == 1)
@@ -673,9 +688,15 @@ namespace Dictionary_user
                 }
                 if (bunifuDropdownTranslate.selectedIndex == 3)
                 {
-                    Database.selectedIndex = 2;
+                    Database.selectedIndex = 3;
                     language = "Spanish";
                     pictureLanguage.Image = Properties.Resources.spain;
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 4)
+                {
+                    Database.selectedIndex = 4;
+                    language = "Portuguese";
+                    pictureLanguage.Image = Properties.Resources.portugal;
                 }
                 if (textboxSearch.HintText == "Search VietNamese")
                 {
@@ -1161,17 +1182,17 @@ namespace Dictionary_user
                 ktBookmark = true;
                 bookmarkButton.IconColor = RGBColors.color7;
                 Database.insertBookmark(typedWord.Text, wordMeaning.Text, hint+"-"+coloumn, time);
+                loadRecentlyBookmark();
                 if (hint != "VieMeaning")
                     Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "\"" + typedWord.Text + "\"" + "AND Translate= "+"'"+language+"-VietNamese"+"'");
                 else
                     Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "\"" + typedWord.Text + "\"" + "AND Translate= "+"'"+"VietNamese-"+language+"'");
-                loadRecentlyBookmark();
             }
             else
             {
                 ktBookmark = false;
                 bookmarkButton.IconColor = Color.Gainsboro;
-                command = "delete from bookmark where word =" + "\"" + typedWord.Text + "\"" + "AND languages=" + "'" + hint + "'";
+                command = "delete from bookmark where word =" + "\"" + typedWord.Text + "\"" + "AND languages=" + "'" + hint +"-"+coloumn+ "'";
                 Database.deleteBookmark(command);
                 if (hint != "VieMeaning")
                     Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + language+"-VietNamese" + "'");
@@ -1209,10 +1230,9 @@ namespace Dictionary_user
                     Database.nowForm = 1;
                     activateMenuButton(iconButton1, RGBColors.color1);
                     displaySwitch();
-                    bunifuDropdownTranslate.Visible = true;
                     ktSwitch = Database.setLanguages;
                     Database.setIndex();
-                    bunifuDropdownTranslate.selectedIndex = Database.selectedIndex;
+                    loadLanguageComboBox();
                     activateSwitchButton();
                     displaySearchbar();
                     textboxSearch.LineFocusedColor = RGBColors.color1;
@@ -1220,7 +1240,6 @@ namespace Dictionary_user
                     buttonSearch.IconColor = RGBColors.color1;
                     textboxSearch.Text = Database.word;
                     activateSearchButton();
-                    checkBookMark();
                     if (bookmarkButton.IconColor == RGBColors.color7)
                     {
                         if (hint != "VieMeaning")
@@ -1235,6 +1254,37 @@ namespace Dictionary_user
                             Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + language + "-VietNamese" + "'");
                         else
                             Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + "VietNamese-" + language+"'");
+                    }
+                }
+                if (Database.acction == "clickFromHistory")
+                {
+                    Database.nowForm = 1;
+                    activateMenuButton(iconButton1, RGBColors.color1);
+                    displaySwitch();
+                    ktSwitch = Database.setLanguages;
+                    Database.setIndex();
+                    loadLanguageComboBox();
+                    activateSwitchButton();
+                    displaySearchbar();
+                    textboxSearch.LineFocusedColor = RGBColors.color1;
+                    textboxSearch.LineMouseHoverColor = RGBColors.color1;
+                    buttonSearch.IconColor = RGBColors.color1;
+                    textboxSearch.Text = Database.word;
+                    activateSearchButton();
+                    if (bookmarkButton.IconColor == RGBColors.color7)
+                    {
+                        if (hint != "VieMeaning")
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + language + "-VietNamese" + "'");
+                        else
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + "VietNamese-" + language + "'");
+                    }
+                    if (bookmarkButton.IconColor == Color.Gainsboro)
+                    {
+
+                        if (hint != "VieMeaning")
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + language + "-VietNamese" + "'");
+                        else
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + "VietNamese-" + language + "'");
                     }
                 }
             }
@@ -1272,15 +1322,8 @@ namespace Dictionary_user
             textboxSearch.LineFocusedColor = RGBColors.color1;
             textboxSearch.LineMouseHoverColor = RGBColors.color1;
             buttonSearch.IconColor = RGBColors.color1;
-            bunifuDropdownTranslate.Visible = true;
-            bunifuDropdownTranslate.Clear();
-            bunifuDropdownTranslate.AddItem("English");
-            bunifuDropdownTranslate.AddItem("French");
-            bunifuDropdownTranslate.AddItem("German");
-            bunifuDropdownTranslate.AddItem("Spanish");
-            bunifuDropdownTranslate.selectedIndex = Database.selectedIndex;
+            loadLanguageComboBox();
             activateSwitchButton();
-            checkBookMark();
         }
 
         private void btnHistory_Click(object sender, EventArgs e) // Khi click vào historyButton
@@ -1357,7 +1400,8 @@ namespace Dictionary_user
 
         #endregion
 
-      
+
+       
     }
 }
 

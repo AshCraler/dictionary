@@ -347,7 +347,8 @@
         "English",
         "French",
         "German",
-        "Spainish"};
+        "Spainish",
+        "Portuguese"};
             this.bunifuDropdownTranslate.Location = new System.Drawing.Point(639, 23);
             this.bunifuDropdownTranslate.Name = "bunifuDropdownTranslate";
             this.bunifuDropdownTranslate.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));

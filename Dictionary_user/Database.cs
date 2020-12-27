@@ -35,6 +35,9 @@ namespace Dictionary_user
             
             if (language == "Spanish")
                 selectedIndex = 3;
+
+            if (language == "Portuguese")
+                selectedIndex = 4;
         }
 
         public static void load(string command)
