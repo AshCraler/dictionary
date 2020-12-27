@@ -179,16 +179,24 @@ namespace Dictionary_user
             Database.selectedIndex = 0;
             loadRecently();
             loadVolcabulary();
+            
             Database.flag = new Dictionary<string, PictureBox>();
             PictureBox English = new PictureBox();
             English.Image = Properties.Resources.united_kingdom;
             Database.flag.Add("English", English);
+            
             PictureBox French = new PictureBox();
             French.Image = Properties.Resources.france;
             Database.flag.Add("French", French);
+            
             PictureBox German = new PictureBox();
             German.Image = Properties.Resources.germany;
             Database.flag.Add("German", German);
+            
+            PictureBox Spanish = new PictureBox();
+            Spanish.Image = Properties.Resources.spain;
+            Database.flag.Add("Spanish", Spanish);
+            
             PictureBox VieMeaning = new PictureBox();
             VieMeaning.Image = Properties.Resources.vietnam;
             Database.flag.Add("VieMeaning", VieMeaning);
@@ -662,6 +670,12 @@ namespace Dictionary_user
                     Database.selectedIndex = 2;
                     language = "German";
                     pictureLanguage.Image = Properties.Resources.germany;
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 3)
+                {
+                    Database.selectedIndex = 2;
+                    language = "Spanish";
+                    pictureLanguage.Image = Properties.Resources.spain;
                 }
                 if (textboxSearch.HintText == "Search VietNamese")
                 {
@@ -1263,6 +1277,7 @@ namespace Dictionary_user
             bunifuDropdownTranslate.AddItem("English");
             bunifuDropdownTranslate.AddItem("French");
             bunifuDropdownTranslate.AddItem("German");
+            bunifuDropdownTranslate.AddItem("Spanish");
             bunifuDropdownTranslate.selectedIndex = Database.selectedIndex;
             activateSwitchButton();
             checkBookMark();
@@ -1341,7 +1356,8 @@ namespace Dictionary_user
         } // About us
 
         #endregion
- 
+
+      
     }
 }
 
