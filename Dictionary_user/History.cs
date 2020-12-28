@@ -70,10 +70,10 @@ namespace Dictionary_user
                 return;
             if (dgv.CurrentRow.Selected)
             {
-                Database.acction = "clickFromBookmark";
+                Database.acction = "clickFromHistory";
                 Database.word = word;
                 loadpicture(translate);
-                if (pic1 != "VieMeaning")
+                if (pic1 != "VietNamese")
                 {
                     Database.setLanguages = false;
                     Database.language = pic1;

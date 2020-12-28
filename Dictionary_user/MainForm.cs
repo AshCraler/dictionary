@@ -196,7 +196,29 @@ namespace Dictionary_user
             PictureBox Spanish = new PictureBox();
             Spanish.Image = Properties.Resources.spain;
             Database.flag.Add("Spanish", Spanish);
-            
+
+            PictureBox Portuguese = new PictureBox();
+            Portuguese.Image = Properties.Resources.portugal;
+            Database.flag.Add("Portuguese", Portuguese);
+
+            PictureBox Russian = new PictureBox();
+            Russian.Image = Properties.Resources.russia;
+            Database.flag.Add("Russian", Russian);
+
+
+            PictureBox Chinese = new PictureBox();
+            Chinese.Image = Properties.Resources.china;
+            Database.flag.Add("Chinese", Chinese);
+
+            PictureBox Japanese = new PictureBox();
+            Japanese.Image = Properties.Resources.japan;
+            Database.flag.Add("Japanese", Japanese);
+
+            PictureBox Korean = new PictureBox();
+            Korean.Image = Properties.Resources.south_korea;
+            Database.flag.Add("Korean", Korean);
+
+
             PictureBox VieMeaning = new PictureBox();
             VieMeaning.Image = Properties.Resources.vietnam;
             Database.flag.Add("VieMeaning", VieMeaning);
@@ -444,12 +466,7 @@ namespace Dictionary_user
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            if (textboxSearch.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
-            }
-            else
-            {
+            
                 // Initialize a new instance of the SpeechSynthesizer.  
                 SpeechSynthesizer synth = new SpeechSynthesizer();
 
@@ -458,17 +475,13 @@ namespace Dictionary_user
 
                 // Speak a string.  
                 synth.Speak(typedWord.Text);
-            }
+            
         }
 
         private void btnPlay2_Click(object sender, EventArgs e)
         {
-            if (textboxSearch.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập từ cần tra vào chỗ trống!\nPlease insert the word that needs to be translated!");
-            }
-            else
-            {
+            
+          
                 // Initialize a new instance of the SpeechSynthesizer.  
                 SpeechSynthesizer synth = new SpeechSynthesizer();
 
@@ -477,7 +490,7 @@ namespace Dictionary_user
 
                 // Speak a string.  
                 synth.Speak(wordMeaning.Text);
-            }
+            
         }
 
         private void iconButtonSpeaker1_Click(object sender, EventArgs e)
@@ -649,6 +662,21 @@ namespace Dictionary_user
         #endregion
 
         #region Combobox
+        private void loadLanguageComboBox()
+        {
+            bunifuDropdownTranslate.Visible = true;
+            bunifuDropdownTranslate.Clear();
+            bunifuDropdownTranslate.AddItem("English");
+            bunifuDropdownTranslate.AddItem("French");
+            bunifuDropdownTranslate.AddItem("German");
+            bunifuDropdownTranslate.AddItem("Spanish");
+            bunifuDropdownTranslate.AddItem("Portuguese");
+            bunifuDropdownTranslate.AddItem("Russian");
+            bunifuDropdownTranslate.AddItem("Chinese");
+            bunifuDropdownTranslate.AddItem("Japanese");
+            bunifuDropdownTranslate.AddItem("Korean");
+            bunifuDropdownTranslate.selectedIndex = Database.selectedIndex;
+        }
         private void bunifuDropdownTranslate_onItemSelected(object sender, EventArgs e)
         {
             if (Database.nowForm == 1)
@@ -673,9 +701,39 @@ namespace Dictionary_user
                 }
                 if (bunifuDropdownTranslate.selectedIndex == 3)
                 {
-                    Database.selectedIndex = 2;
+                    Database.selectedIndex = 3;
                     language = "Spanish";
                     pictureLanguage.Image = Properties.Resources.spain;
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 4)
+                {
+                    Database.selectedIndex = 4;
+                    language = "Portuguese";
+                    pictureLanguage.Image = Properties.Resources.portugal;
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 5)
+                {
+                    Database.selectedIndex = 5;
+                    language = "Russian";
+                    pictureLanguage.Image = Properties.Resources.russia;
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 6)
+                {
+                    Database.selectedIndex = 6;
+                    language = "Chinese";
+                    pictureLanguage.Image = Properties.Resources.china;
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 7)
+                {
+                    Database.selectedIndex = 7;
+                    language = "Japanese";
+                    pictureLanguage.Image = Properties.Resources.japan;
+                }
+                if (bunifuDropdownTranslate.selectedIndex == 8)
+                {
+                    Database.selectedIndex = 8;
+                    language = "Korean";
+                    pictureLanguage.Image = Properties.Resources.south_korea;
                 }
                 if (textboxSearch.HintText == "Search VietNamese")
                 {
@@ -693,6 +751,8 @@ namespace Dictionary_user
                 }
                 activateSwitchButton();
                 loadVolcabulary();
+                setSearchResult_visible(false);
+                
             }
             if (Database.nowForm == 10)
             {
@@ -1161,17 +1221,17 @@ namespace Dictionary_user
                 ktBookmark = true;
                 bookmarkButton.IconColor = RGBColors.color7;
                 Database.insertBookmark(typedWord.Text, wordMeaning.Text, hint+"-"+coloumn, time);
+                loadRecentlyBookmark();
                 if (hint != "VieMeaning")
                     Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "\"" + typedWord.Text + "\"" + "AND Translate= "+"'"+language+"-VietNamese"+"'");
                 else
                     Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "\"" + typedWord.Text + "\"" + "AND Translate= "+"'"+"VietNamese-"+language+"'");
-                loadRecentlyBookmark();
             }
             else
             {
                 ktBookmark = false;
                 bookmarkButton.IconColor = Color.Gainsboro;
-                command = "delete from bookmark where word =" + "\"" + typedWord.Text + "\"" + "AND languages=" + "'" + hint + "'";
+                command = "delete from bookmark where word =" + "\"" + typedWord.Text + "\"" + "AND languages=" + "'" + hint +"-"+coloumn+ "'";
                 Database.deleteBookmark(command);
                 if (hint != "VieMeaning")
                     Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + language+"-VietNamese" + "'");
@@ -1209,10 +1269,9 @@ namespace Dictionary_user
                     Database.nowForm = 1;
                     activateMenuButton(iconButton1, RGBColors.color1);
                     displaySwitch();
-                    bunifuDropdownTranslate.Visible = true;
                     ktSwitch = Database.setLanguages;
                     Database.setIndex();
-                    bunifuDropdownTranslate.selectedIndex = Database.selectedIndex;
+                    loadLanguageComboBox();
                     activateSwitchButton();
                     displaySearchbar();
                     textboxSearch.LineFocusedColor = RGBColors.color1;
@@ -1220,7 +1279,6 @@ namespace Dictionary_user
                     buttonSearch.IconColor = RGBColors.color1;
                     textboxSearch.Text = Database.word;
                     activateSearchButton();
-                    checkBookMark();
                     if (bookmarkButton.IconColor == RGBColors.color7)
                     {
                         if (hint != "VieMeaning")
@@ -1235,6 +1293,37 @@ namespace Dictionary_user
                             Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + language + "-VietNamese" + "'");
                         else
                             Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + "VietNamese-" + language+"'");
+                    }
+                }
+                if (Database.acction == "clickFromHistory")
+                {
+                    Database.nowForm = 1;
+                    activateMenuButton(iconButton1, RGBColors.color1);
+                    displaySwitch();
+                    ktSwitch = Database.setLanguages;
+                    Database.setIndex();
+                    loadLanguageComboBox();
+                    activateSwitchButton();
+                    displaySearchbar();
+                    textboxSearch.LineFocusedColor = RGBColors.color1;
+                    textboxSearch.LineMouseHoverColor = RGBColors.color1;
+                    buttonSearch.IconColor = RGBColors.color1;
+                    textboxSearch.Text = Database.word;
+                    activateSearchButton();
+                    if (bookmarkButton.IconColor == RGBColors.color7)
+                    {
+                        if (hint != "VieMeaning")
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + language + "-VietNamese" + "'");
+                        else
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "Yes" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + "VietNamese-" + language + "'");
+                    }
+                    if (bookmarkButton.IconColor == Color.Gainsboro)
+                    {
+
+                        if (hint != "VieMeaning")
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + language + "-VietNamese" + "'");
+                        else
+                            Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " + "'" + typedWord.Text + "'" + "AND Translate= " + "'" + "VietNamese-" + language + "'");
                     }
                 }
             }
@@ -1272,15 +1361,8 @@ namespace Dictionary_user
             textboxSearch.LineFocusedColor = RGBColors.color1;
             textboxSearch.LineMouseHoverColor = RGBColors.color1;
             buttonSearch.IconColor = RGBColors.color1;
-            bunifuDropdownTranslate.Visible = true;
-            bunifuDropdownTranslate.Clear();
-            bunifuDropdownTranslate.AddItem("English");
-            bunifuDropdownTranslate.AddItem("French");
-            bunifuDropdownTranslate.AddItem("German");
-            bunifuDropdownTranslate.AddItem("Spanish");
-            bunifuDropdownTranslate.selectedIndex = Database.selectedIndex;
+            loadLanguageComboBox();
             activateSwitchButton();
-            checkBookMark();
         }
 
         private void btnHistory_Click(object sender, EventArgs e) // Khi click vào historyButton
@@ -1357,7 +1439,10 @@ namespace Dictionary_user
 
         #endregion
 
-      
+
+
+
+       
     }
 }
 
