@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelMenuButton = new System.Windows.Forms.Panel();
+            this.btnUpdateWord = new FontAwesome.Sharp.IconButton();
             this.label6 = new System.Windows.Forms.Label();
             this.panelResult = new System.Windows.Forms.Panel();
             this.wordMeaning = new System.Windows.Forms.Label();
@@ -38,34 +39,37 @@
             this.pictureBoxResult = new System.Windows.Forms.PictureBox();
             this.btnPlay = new FontAwesome.Sharp.IconButton();
             this.labelResult = new System.Windows.Forms.Label();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.btnAddNewWord = new FontAwesome.Sharp.IconButton();
+            this.btnFeedBack = new FontAwesome.Sharp.IconButton();
+            this.btnSetting = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.bunifuMaterialTextbox5 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.iconButton12 = new FontAwesome.Sharp.IconButton();
-            this.bunifuMaterialTextbox4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.iconButton8 = new FontAwesome.Sharp.IconButton();
-            this.bunifuMaterialTextbox3 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.iconButton11 = new FontAwesome.Sharp.IconButton();
-            this.iconButton10 = new FontAwesome.Sharp.IconButton();
-            this.iconButton9 = new FontAwesome.Sharp.IconButton();
-            this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.btnAdd = new FontAwesome.Sharp.IconButton();
+            this.btnClear = new FontAwesome.Sharp.IconButton();
+            this.labelExample = new System.Windows.Forms.Label();
+            this.labelMeaning = new System.Windows.Forms.Label();
+            this.labelWordType = new System.Windows.Forms.Label();
+            this.labelPronunciation = new System.Windows.Forms.Label();
+            this.labelKeyWord = new System.Windows.Forms.Label();
+            this.textBoxExample = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.textBoxMean = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.textBoxWordType = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.textBoxPronunciation = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.textBoxKey = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.iconButton13 = new FontAwesome.Sharp.IconButton();
+            this.buttonSearch = new FontAwesome.Sharp.IconButton();
+            this.textboxSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.labelScreenName = new System.Windows.Forms.Label();
             this.labelTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.pictureBoxFlagLeft = new System.Windows.Forms.PictureBox();
             this.pictureBoxFlagRight = new System.Windows.Forms.PictureBox();
             this.buttonSwitch = new FontAwesome.Sharp.IconButton();
-            this.panel1.SuspendLayout();
+            this.panelMenuButton.SuspendLayout();
             this.panelResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
             this.panel3.SuspendLayout();
@@ -79,30 +83,58 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlagRight)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelMenuButton
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.panelResult);
-            this.panel1.Controls.Add(this.iconButton2);
-            this.panel1.Controls.Add(this.iconButton3);
-            this.panel1.Controls.Add(this.iconButton7);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(0, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(15, 0, 25, 0);
-            this.panel1.Size = new System.Drawing.Size(190, 718);
-            this.panel1.TabIndex = 11;
+            this.panelMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenuButton.Controls.Add(this.btnUpdateWord);
+            this.panelMenuButton.Controls.Add(this.label6);
+            this.panelMenuButton.Controls.Add(this.panelResult);
+            this.panelMenuButton.Controls.Add(this.btnAddNewWord);
+            this.panelMenuButton.Controls.Add(this.btnFeedBack);
+            this.panelMenuButton.Controls.Add(this.btnSetting);
+            this.panelMenuButton.Controls.Add(this.panel3);
+            this.panelMenuButton.Location = new System.Drawing.Point(0, 2);
+            this.panelMenuButton.Margin = new System.Windows.Forms.Padding(6);
+            this.panelMenuButton.Name = "panelMenuButton";
+            this.panelMenuButton.Padding = new System.Windows.Forms.Padding(30, 0, 50, 0);
+            this.panelMenuButton.Size = new System.Drawing.Size(380, 1380);
+            this.panelMenuButton.TabIndex = 11;
+            // 
+            // btnUpdateWord
+            // 
+            this.btnUpdateWord.FlatAppearance.BorderSize = 0;
+            this.btnUpdateWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateWord.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnUpdateWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateWord.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnUpdateWord.IconChar = FontAwesome.Sharp.IconChar.GlobeAsia;
+            this.btnUpdateWord.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnUpdateWord.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUpdateWord.IconSize = 32;
+            this.btnUpdateWord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateWord.Location = new System.Drawing.Point(12, 315);
+            this.btnUpdateWord.Margin = new System.Windows.Forms.Padding(6);
+            this.btnUpdateWord.Name = "btnUpdateWord";
+            this.btnUpdateWord.Padding = new System.Windows.Forms.Padding(16, 0, 30, 0);
+            this.btnUpdateWord.Rotation = 0D;
+            this.btnUpdateWord.Size = new System.Drawing.Size(364, 65);
+            this.btnUpdateWord.TabIndex = 36;
+            this.btnUpdateWord.Text = "UpdateWord";
+            this.btnUpdateWord.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateWord.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdateWord.UseVisualStyleBackColor = true;
+            this.btnUpdateWord.Click += new System.EventHandler(this.btnUpdateWord_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(50)))));
-            this.label6.Location = new System.Drawing.Point(12, 384);
+            this.label6.Location = new System.Drawing.Point(24, 738);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(171, 28);
+            this.label6.Size = new System.Drawing.Size(306, 55);
             this.label6.TabIndex = 35;
             this.label6.Text = "Administrator";
             // 
@@ -115,9 +147,10 @@
             this.panelResult.Controls.Add(this.pictureBoxResult);
             this.panelResult.Controls.Add(this.btnPlay);
             this.panelResult.Controls.Add(this.labelResult);
-            this.panelResult.Location = new System.Drawing.Point(194, 204);
+            this.panelResult.Location = new System.Drawing.Point(388, 392);
+            this.panelResult.Margin = new System.Windows.Forms.Padding(6);
             this.panelResult.Name = "panelResult";
-            this.panelResult.Size = new System.Drawing.Size(781, 433);
+            this.panelResult.Size = new System.Drawing.Size(1562, 833);
             this.panelResult.TabIndex = 34;
             // 
             // wordMeaning
@@ -125,9 +158,10 @@
             this.wordMeaning.AutoSize = true;
             this.wordMeaning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.wordMeaning.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wordMeaning.Location = new System.Drawing.Point(24, 120);
+            this.wordMeaning.Location = new System.Drawing.Point(48, 231);
+            this.wordMeaning.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.wordMeaning.Name = "wordMeaning";
-            this.wordMeaning.Size = new System.Drawing.Size(133, 23);
+            this.wordMeaning.Size = new System.Drawing.Size(262, 48);
             this.wordMeaning.TabIndex = 36;
             this.wordMeaning.Text = "Word meaning";
             this.wordMeaning.Visible = false;
@@ -141,10 +175,11 @@
             this.bookmarkButton.IconColor = System.Drawing.Color.Gainsboro;
             this.bookmarkButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.bookmarkButton.IconSize = 35;
-            this.bookmarkButton.Location = new System.Drawing.Point(625, 68);
+            this.bookmarkButton.Location = new System.Drawing.Point(1250, 131);
+            this.bookmarkButton.Margin = new System.Windows.Forms.Padding(6);
             this.bookmarkButton.Name = "bookmarkButton";
             this.bookmarkButton.Rotation = 0D;
-            this.bookmarkButton.Size = new System.Drawing.Size(43, 41);
+            this.bookmarkButton.Size = new System.Drawing.Size(86, 79);
             this.bookmarkButton.TabIndex = 33;
             this.bookmarkButton.UseVisualStyleBackColor = true;
             this.bookmarkButton.Visible = false;
@@ -154,18 +189,20 @@
             this.typedWord.AutoSize = true;
             this.typedWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.typedWord.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typedWord.Location = new System.Drawing.Point(24, 75);
+            this.typedWord.Location = new System.Drawing.Point(48, 144);
+            this.typedWord.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.typedWord.Name = "typedWord";
-            this.typedWord.Size = new System.Drawing.Size(99, 23);
+            this.typedWord.Size = new System.Drawing.Size(203, 48);
             this.typedWord.TabIndex = 30;
             this.typedWord.Text = "typedWord";
             this.typedWord.Visible = false;
             // 
             // pictureBoxResult
             // 
-            this.pictureBoxResult.Location = new System.Drawing.Point(159, 29);
+            this.pictureBoxResult.Location = new System.Drawing.Point(318, 56);
+            this.pictureBoxResult.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxResult.Name = "pictureBoxResult";
-            this.pictureBoxResult.Size = new System.Drawing.Size(35, 25);
+            this.pictureBoxResult.Size = new System.Drawing.Size(70, 48);
             this.pictureBoxResult.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxResult.TabIndex = 32;
             this.pictureBoxResult.TabStop = false;
@@ -179,10 +216,11 @@
             this.btnPlay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
             this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPlay.IconSize = 35;
-            this.btnPlay.Location = new System.Drawing.Point(247, 72);
+            this.btnPlay.Location = new System.Drawing.Point(494, 138);
+            this.btnPlay.Margin = new System.Windows.Forms.Padding(6);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Rotation = 0D;
-            this.btnPlay.Size = new System.Drawing.Size(43, 33);
+            this.btnPlay.Size = new System.Drawing.Size(86, 63);
             this.btnPlay.TabIndex = 10;
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Visible = false;
@@ -191,81 +229,88 @@
             // 
             this.labelResult.AutoSize = true;
             this.labelResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelResult.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResult.Location = new System.Drawing.Point(13, 30);
+            this.labelResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResult.Location = new System.Drawing.Point(26, 58);
+            this.labelResult.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(140, 24);
+            this.labelResult.Size = new System.Drawing.Size(266, 48);
             this.labelResult.TabIndex = 31;
             this.labelResult.Text = "Search result";
             // 
-            // iconButton2
+            // btnAddNewWord
             // 
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.GlobeAsia;
-            this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 32;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(6, 124);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.iconButton2.Rotation = 0D;
-            this.iconButton2.Size = new System.Drawing.Size(182, 34);
-            this.iconButton2.TabIndex = 11;
-            this.iconButton2.Text = "Add New Word";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.btnAddNewWord.FlatAppearance.BorderSize = 0;
+            this.btnAddNewWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewWord.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnAddNewWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewWord.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAddNewWord.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAddNewWord.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnAddNewWord.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddNewWord.IconSize = 32;
+            this.btnAddNewWord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddNewWord.Location = new System.Drawing.Point(12, 240);
+            this.btnAddNewWord.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAddNewWord.Name = "btnAddNewWord";
+            this.btnAddNewWord.Padding = new System.Windows.Forms.Padding(16, 0, 30, 0);
+            this.btnAddNewWord.Rotation = 0D;
+            this.btnAddNewWord.Size = new System.Drawing.Size(364, 65);
+            this.btnAddNewWord.TabIndex = 11;
+            this.btnAddNewWord.Text = "Add New Word";
+            this.btnAddNewWord.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddNewWord.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddNewWord.UseVisualStyleBackColor = true;
+            this.btnAddNewWord.Click += new System.EventHandler(this.btnAddNewWord_Click);
             // 
-            // iconButton3
+            // btnFeedBack
             // 
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.CommentAlt;
-            this.iconButton3.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 32;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(6, 204);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
-            this.iconButton3.Rotation = 0D;
-            this.iconButton3.Size = new System.Drawing.Size(182, 34);
-            this.iconButton3.TabIndex = 17;
-            this.iconButton3.Text = "Feedback";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.btnFeedBack.FlatAppearance.BorderSize = 0;
+            this.btnFeedBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeedBack.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnFeedBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeedBack.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnFeedBack.IconChar = FontAwesome.Sharp.IconChar.CommentAlt;
+            this.btnFeedBack.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnFeedBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFeedBack.IconSize = 32;
+            this.btnFeedBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFeedBack.Location = new System.Drawing.Point(12, 395);
+            this.btnFeedBack.Margin = new System.Windows.Forms.Padding(6);
+            this.btnFeedBack.Name = "btnFeedBack";
+            this.btnFeedBack.Padding = new System.Windows.Forms.Padding(20, 0, 30, 0);
+            this.btnFeedBack.Rotation = 0D;
+            this.btnFeedBack.Size = new System.Drawing.Size(364, 65);
+            this.btnFeedBack.TabIndex = 17;
+            this.btnFeedBack.Text = "Feedback";
+            this.btnFeedBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFeedBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFeedBack.UseVisualStyleBackColor = true;
+            this.btnFeedBack.Click += new System.EventHandler(this.btnFeedBack_Click);
             // 
-            // iconButton7
+            // btnSetting
             // 
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.History;
-            this.iconButton7.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 32;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(6, 164);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
-            this.iconButton7.Rotation = 0D;
-            this.iconButton7.Size = new System.Drawing.Size(182, 34);
-            this.iconButton7.TabIndex = 12;
-            this.iconButton7.Text = "History";
-            this.iconButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton7.UseVisualStyleBackColor = true;
+            this.btnSetting.FlatAppearance.BorderSize = 0;
+            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetting.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetting.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSetting.IconChar = FontAwesome.Sharp.IconChar.History;
+            this.btnSetting.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnSetting.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSetting.IconSize = 32;
+            this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSetting.Location = new System.Drawing.Point(12, 470);
+            this.btnSetting.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Padding = new System.Windows.Forms.Padding(20, 0, 30, 0);
+            this.btnSetting.Rotation = 0D;
+            this.btnSetting.Size = new System.Drawing.Size(364, 65);
+            this.btnSetting.TabIndex = 12;
+            this.btnSetting.Text = "Settings";
+            this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // panel3
             // 
@@ -274,8 +319,9 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(6);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(190, 122);
+            this.panel3.Size = new System.Drawing.Size(380, 235);
             this.panel3.TabIndex = 0;
             // 
             // iconPictureBox2
@@ -285,18 +331,21 @@
             this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconPictureBox2.IconColor = System.Drawing.Color.DarkSlateBlue;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.Location = new System.Drawing.Point(109, 43);
+            this.iconPictureBox2.IconSize = 62;
+            this.iconPictureBox2.Location = new System.Drawing.Point(218, 83);
+            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(6);
             this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox2.Size = new System.Drawing.Size(64, 62);
             this.iconPictureBox2.TabIndex = 2;
             this.iconPictureBox2.TabStop = false;
             // 
             // btnHome
             // 
             this.btnHome.Image = global::Dictionary_host.Properties.Resources.languages;
-            this.btnHome.Location = new System.Drawing.Point(32, 16);
+            this.btnHome.Location = new System.Drawing.Point(64, 31);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(6);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(112, 66);
+            this.btnHome.Size = new System.Drawing.Size(224, 127);
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnHome.TabIndex = 1;
             this.btnHome.TabStop = false;
@@ -305,19 +354,21 @@
             // 
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(50)))));
-            this.label2.Location = new System.Drawing.Point(27, 85);
+            this.label2.Location = new System.Drawing.Point(54, 163);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 28);
+            this.label2.Size = new System.Drawing.Size(237, 55);
             this.label2.TabIndex = 1;
             this.label2.Text = "Dictionary";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(32, 16);
+            this.pictureBox2.Location = new System.Drawing.Point(64, 31);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(112, 66);
+            this.pictureBox2.Size = new System.Drawing.Size(224, 127);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -325,299 +376,298 @@
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
-            this.panelChildForm.Controls.Add(this.iconButton1);
-            this.panelChildForm.Controls.Add(this.bunifuMaterialTextbox5);
-            this.panelChildForm.Controls.Add(this.iconButton12);
-            this.panelChildForm.Controls.Add(this.bunifuMaterialTextbox4);
-            this.panelChildForm.Controls.Add(this.iconButton8);
-            this.panelChildForm.Controls.Add(this.bunifuMaterialTextbox3);
-            this.panelChildForm.Controls.Add(this.iconButton11);
-            this.panelChildForm.Controls.Add(this.iconButton10);
-            this.panelChildForm.Controls.Add(this.iconButton9);
-            this.panelChildForm.Controls.Add(this.bunifuMaterialTextbox2);
-            this.panelChildForm.Controls.Add(this.bunifuMaterialTextbox1);
-            this.panelChildForm.Location = new System.Drawing.Point(191, 66);
+            this.panelChildForm.Controls.Add(this.btnAdd);
+            this.panelChildForm.Controls.Add(this.btnClear);
+            this.panelChildForm.Controls.Add(this.labelExample);
+            this.panelChildForm.Controls.Add(this.labelMeaning);
+            this.panelChildForm.Controls.Add(this.labelWordType);
+            this.panelChildForm.Controls.Add(this.labelPronunciation);
+            this.panelChildForm.Controls.Add(this.labelKeyWord);
+            this.panelChildForm.Controls.Add(this.textBoxExample);
+            this.panelChildForm.Controls.Add(this.textBoxMean);
+            this.panelChildForm.Controls.Add(this.textBoxWordType);
+            this.panelChildForm.Controls.Add(this.textBoxPronunciation);
+            this.panelChildForm.Controls.Add(this.textBoxKey);
+            this.panelChildForm.Location = new System.Drawing.Point(382, 140);
+            this.panelChildForm.Margin = new System.Windows.Forms.Padding(6);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1185, 634);
+            this.panelChildForm.Size = new System.Drawing.Size(1580, 1135);
             this.panelChildForm.TabIndex = 38;
             // 
-            // iconButton1
+            // btnAdd
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.DarkOrange;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(209, 468);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(157, 38);
-            this.iconButton1.TabIndex = 51;
-            this.iconButton1.Text = "Add New";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.btnAdd.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAdd.IconSize = 40;
+            this.btnAdd.Location = new System.Drawing.Point(418, 900);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Rotation = 0D;
+            this.btnAdd.Size = new System.Drawing.Size(252, 73);
+            this.btnAdd.TabIndex = 58;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // bunifuMaterialTextbox5
+            // btnClear
             // 
-            this.bunifuMaterialTextbox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox5.HintForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox5.HintText = "Ex: Swap the Table";
-            this.bunifuMaterialTextbox5.isPassword = false;
-            this.bunifuMaterialTextbox5.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.bunifuMaterialTextbox5.LineIdleColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox5.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.bunifuMaterialTextbox5.LineThickness = 2;
-            this.bunifuMaterialTextbox5.Location = new System.Drawing.Point(209, 390);
-            this.bunifuMaterialTextbox5.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox5.Name = "bunifuMaterialTextbox5";
-            this.bunifuMaterialTextbox5.Size = new System.Drawing.Size(422, 39);
-            this.bunifuMaterialTextbox5.TabIndex = 50;
-            this.bunifuMaterialTextbox5.Text = "x: Swap the Table";
-            this.bunifuMaterialTextbox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btnClear.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnClear.IconSize = 40;
+            this.btnClear.Location = new System.Drawing.Point(837, 900);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(6);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Rotation = 0D;
+            this.btnClear.Size = new System.Drawing.Size(252, 73);
+            this.btnClear.TabIndex = 57;
+            this.btnClear.Text = "Clear";
+            this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // iconButton12
+            // labelExample
             // 
-            this.iconButton12.FlatAppearance.BorderSize = 0;
-            this.iconButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton12.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton12.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton12.IconChar = FontAwesome.Sharp.IconChar.FileCode;
-            this.iconButton12.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton12.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton12.IconSize = 32;
-            this.iconButton12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton12.Location = new System.Drawing.Point(12, 390);
-            this.iconButton12.Name = "iconButton12";
-            this.iconButton12.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.iconButton12.Rotation = 0D;
-            this.iconButton12.Size = new System.Drawing.Size(182, 34);
-            this.iconButton12.TabIndex = 49;
-            this.iconButton12.Text = "Example";
-            this.iconButton12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton12.UseVisualStyleBackColor = true;
+            this.labelExample.AutoSize = true;
+            this.labelExample.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExample.ForeColor = System.Drawing.Color.White;
+            this.labelExample.Location = new System.Drawing.Point(100, 794);
+            this.labelExample.Name = "labelExample";
+            this.labelExample.Size = new System.Drawing.Size(149, 37);
+            this.labelExample.TabIndex = 56;
+            this.labelExample.Text = "Example:";
             // 
-            // bunifuMaterialTextbox4
+            // labelMeaning
             // 
-            this.bunifuMaterialTextbox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox4.HintForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox4.HintText = "VD: Cái bàn,…";
-            this.bunifuMaterialTextbox4.isPassword = false;
-            this.bunifuMaterialTextbox4.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.bunifuMaterialTextbox4.LineIdleColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox4.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.bunifuMaterialTextbox4.LineThickness = 2;
-            this.bunifuMaterialTextbox4.Location = new System.Drawing.Point(211, 308);
-            this.bunifuMaterialTextbox4.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox4.Name = "bunifuMaterialTextbox4";
-            this.bunifuMaterialTextbox4.Size = new System.Drawing.Size(422, 39);
-            this.bunifuMaterialTextbox4.TabIndex = 48;
-            this.bunifuMaterialTextbox4.Text = "VD: ";
-            this.bunifuMaterialTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.labelMeaning.AutoSize = true;
+            this.labelMeaning.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMeaning.ForeColor = System.Drawing.Color.White;
+            this.labelMeaning.Location = new System.Drawing.Point(100, 636);
+            this.labelMeaning.Name = "labelMeaning";
+            this.labelMeaning.Size = new System.Drawing.Size(148, 37);
+            this.labelMeaning.TabIndex = 55;
+            this.labelMeaning.Text = "Meaning:";
             // 
-            // iconButton8
+            // labelWordType
             // 
-            this.iconButton8.FlatAppearance.BorderSize = 0;
-            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton8.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton8.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.iconButton8.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton8.IconSize = 32;
-            this.iconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton8.Location = new System.Drawing.Point(12, 308);
-            this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.iconButton8.Rotation = 0D;
-            this.iconButton8.Size = new System.Drawing.Size(182, 34);
-            this.iconButton8.TabIndex = 47;
-            this.iconButton8.Text = "VietNamese";
-            this.iconButton8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton8.UseVisualStyleBackColor = true;
+            this.labelWordType.AutoSize = true;
+            this.labelWordType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWordType.ForeColor = System.Drawing.Color.White;
+            this.labelWordType.Location = new System.Drawing.Point(100, 473);
+            this.labelWordType.Name = "labelWordType";
+            this.labelWordType.Size = new System.Drawing.Size(172, 37);
+            this.labelWordType.TabIndex = 54;
+            this.labelWordType.Text = "Word type:";
             // 
-            // bunifuMaterialTextbox3
+            // labelPronunciation
             // 
-            this.bunifuMaterialTextbox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox3.HintForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox3.HintText = "Ex: Noun,...";
-            this.bunifuMaterialTextbox3.isPassword = false;
-            this.bunifuMaterialTextbox3.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.bunifuMaterialTextbox3.LineIdleColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox3.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.bunifuMaterialTextbox3.LineThickness = 2;
-            this.bunifuMaterialTextbox3.Location = new System.Drawing.Point(211, 223);
-            this.bunifuMaterialTextbox3.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox3.Name = "bunifuMaterialTextbox3";
-            this.bunifuMaterialTextbox3.Size = new System.Drawing.Size(422, 39);
-            this.bunifuMaterialTextbox3.TabIndex = 46;
-            this.bunifuMaterialTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.labelPronunciation.AutoSize = true;
+            this.labelPronunciation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPronunciation.ForeColor = System.Drawing.Color.White;
+            this.labelPronunciation.Location = new System.Drawing.Point(100, 302);
+            this.labelPronunciation.Name = "labelPronunciation";
+            this.labelPronunciation.Size = new System.Drawing.Size(223, 37);
+            this.labelPronunciation.TabIndex = 53;
+            this.labelPronunciation.Text = "Pronunciation:";
             // 
-            // iconButton11
+            // labelKeyWord
             // 
-            this.iconButton11.FlatAppearance.BorderSize = 0;
-            this.iconButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton11.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton11.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton11.IconChar = FontAwesome.Sharp.IconChar.Wordpress;
-            this.iconButton11.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton11.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton11.IconSize = 32;
-            this.iconButton11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton11.Location = new System.Drawing.Point(12, 223);
-            this.iconButton11.Name = "iconButton11";
-            this.iconButton11.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.iconButton11.Rotation = 0D;
-            this.iconButton11.Size = new System.Drawing.Size(182, 34);
-            this.iconButton11.TabIndex = 45;
-            this.iconButton11.Text = "Word Type";
-            this.iconButton11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton11.UseVisualStyleBackColor = true;
+            this.labelKeyWord.AutoSize = true;
+            this.labelKeyWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKeyWord.ForeColor = System.Drawing.Color.White;
+            this.labelKeyWord.Location = new System.Drawing.Point(100, 115);
+            this.labelKeyWord.Name = "labelKeyWord";
+            this.labelKeyWord.Size = new System.Drawing.Size(79, 37);
+            this.labelKeyWord.TabIndex = 52;
+            this.labelKeyWord.Text = "Key:";
             // 
-            // iconButton10
+            // textBoxExample
             // 
-            this.iconButton10.FlatAppearance.BorderSize = 0;
-            this.iconButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton10.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton10.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton10.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.iconButton10.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton10.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton10.IconSize = 32;
-            this.iconButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton10.Location = new System.Drawing.Point(12, 134);
-            this.iconButton10.Name = "iconButton10";
-            this.iconButton10.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.iconButton10.Rotation = 0D;
-            this.iconButton10.Size = new System.Drawing.Size(182, 34);
-            this.iconButton10.TabIndex = 18;
-            this.iconButton10.Text = "Pronunciation";
-            this.iconButton10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton10.UseVisualStyleBackColor = true;
+            this.textBoxExample.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxExample.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxExample.ForeColor = System.Drawing.Color.White;
+            this.textBoxExample.HintForeColor = System.Drawing.Color.White;
+            this.textBoxExample.HintText = "Ex: Swap the Table";
+            this.textBoxExample.isPassword = false;
+            this.textBoxExample.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.textBoxExample.LineIdleColor = System.Drawing.Color.Gainsboro;
+            this.textBoxExample.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.textBoxExample.LineThickness = 2;
+            this.textBoxExample.Location = new System.Drawing.Point(418, 750);
+            this.textBoxExample.Margin = new System.Windows.Forms.Padding(8);
+            this.textBoxExample.Name = "textBoxExample";
+            this.textBoxExample.Size = new System.Drawing.Size(844, 81);
+            this.textBoxExample.TabIndex = 50;
+            this.textBoxExample.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // iconButton9
+            // textBoxMean
             // 
-            this.iconButton9.FlatAppearance.BorderSize = 0;
-            this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton9.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton9.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.GlobeAsia;
-            this.iconButton9.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton9.IconSize = 32;
-            this.iconButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton9.Location = new System.Drawing.Point(12, 43);
-            this.iconButton9.Name = "iconButton9";
-            this.iconButton9.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.iconButton9.Rotation = 0D;
-            this.iconButton9.Size = new System.Drawing.Size(182, 34);
-            this.iconButton9.TabIndex = 17;
-            this.iconButton9.Text = "Key";
-            this.iconButton9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton9.UseVisualStyleBackColor = true;
+            this.textBoxMean.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxMean.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMean.ForeColor = System.Drawing.Color.White;
+            this.textBoxMean.HintForeColor = System.Drawing.Color.White;
+            this.textBoxMean.HintText = "VD: Cái bàn,…";
+            this.textBoxMean.isPassword = false;
+            this.textBoxMean.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.textBoxMean.LineIdleColor = System.Drawing.Color.Gainsboro;
+            this.textBoxMean.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.textBoxMean.LineThickness = 2;
+            this.textBoxMean.Location = new System.Drawing.Point(422, 592);
+            this.textBoxMean.Margin = new System.Windows.Forms.Padding(8);
+            this.textBoxMean.Name = "textBoxMean";
+            this.textBoxMean.Size = new System.Drawing.Size(844, 81);
+            this.textBoxMean.TabIndex = 48;
+            this.textBoxMean.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuMaterialTextbox2
+            // textBoxWordType
             // 
-            this.bunifuMaterialTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox2.HintText = "//";
-            this.bunifuMaterialTextbox2.isPassword = false;
-            this.bunifuMaterialTextbox2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.bunifuMaterialTextbox2.LineThickness = 2;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(211, 134);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(422, 39);
-            this.bunifuMaterialTextbox2.TabIndex = 16;
-            this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWordType.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxWordType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxWordType.ForeColor = System.Drawing.Color.White;
+            this.textBoxWordType.HintForeColor = System.Drawing.Color.White;
+            this.textBoxWordType.HintText = "Ex: Noun,...";
+            this.textBoxWordType.isPassword = false;
+            this.textBoxWordType.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.textBoxWordType.LineIdleColor = System.Drawing.Color.Gainsboro;
+            this.textBoxWordType.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.textBoxWordType.LineThickness = 2;
+            this.textBoxWordType.Location = new System.Drawing.Point(422, 429);
+            this.textBoxWordType.Margin = new System.Windows.Forms.Padding(8);
+            this.textBoxWordType.Name = "textBoxWordType";
+            this.textBoxWordType.Size = new System.Drawing.Size(844, 81);
+            this.textBoxWordType.TabIndex = 46;
+            this.textBoxWordType.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuMaterialTextbox1
+            // textBoxPronunciation
             // 
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox1.HintText = "Ex: Table,...";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
-            this.bunifuMaterialTextbox1.LineThickness = 2;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(211, 38);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(422, 39);
-            this.bunifuMaterialTextbox1.TabIndex = 15;
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxPronunciation.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxPronunciation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPronunciation.ForeColor = System.Drawing.Color.White;
+            this.textBoxPronunciation.HintForeColor = System.Drawing.Color.White;
+            this.textBoxPronunciation.HintText = "//";
+            this.textBoxPronunciation.isPassword = false;
+            this.textBoxPronunciation.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.textBoxPronunciation.LineIdleColor = System.Drawing.Color.Gainsboro;
+            this.textBoxPronunciation.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.textBoxPronunciation.LineThickness = 2;
+            this.textBoxPronunciation.Location = new System.Drawing.Point(422, 258);
+            this.textBoxPronunciation.Margin = new System.Windows.Forms.Padding(8);
+            this.textBoxPronunciation.Name = "textBoxPronunciation";
+            this.textBoxPronunciation.Size = new System.Drawing.Size(844, 81);
+            this.textBoxPronunciation.TabIndex = 16;
+            this.textBoxPronunciation.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // textBoxKey
+            // 
+            this.textBoxKey.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxKey.ForeColor = System.Drawing.Color.White;
+            this.textBoxKey.HintForeColor = System.Drawing.Color.White;
+            this.textBoxKey.HintText = "Ex: Table,...";
+            this.textBoxKey.isPassword = false;
+            this.textBoxKey.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.textBoxKey.LineIdleColor = System.Drawing.Color.Gainsboro;
+            this.textBoxKey.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.textBoxKey.LineThickness = 2;
+            this.textBoxKey.Location = new System.Drawing.Point(422, 73);
+            this.textBoxKey.Margin = new System.Windows.Forms.Padding(8);
+            this.textBoxKey.Name = "textBoxKey";
+            this.textBoxKey.Size = new System.Drawing.Size(844, 81);
+            this.textBoxKey.TabIndex = 15;
+            this.textBoxKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // panelTitleBar
             // 
+            this.panelTitleBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.panelTitleBar.Controls.Add(this.iconButton13);
+            this.panelTitleBar.Controls.Add(this.buttonSearch);
+            this.panelTitleBar.Controls.Add(this.textboxSearch);
+            this.panelTitleBar.Controls.Add(this.labelScreenName);
             this.panelTitleBar.Controls.Add(this.labelTitleChildForm);
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
             this.panelTitleBar.Controls.Add(this.pictureBoxFlagLeft);
             this.panelTitleBar.Controls.Add(this.pictureBoxFlagRight);
             this.panelTitleBar.Controls.Add(this.buttonSwitch);
-            this.panelTitleBar.Location = new System.Drawing.Point(191, 1);
+            this.panelTitleBar.Location = new System.Drawing.Point(382, 0);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(6);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1188, 72);
+            this.panelTitleBar.Size = new System.Drawing.Size(1580, 140);
             this.panelTitleBar.TabIndex = 39;
             // 
-            // iconButton13
+            // buttonSearch
             // 
-            this.iconButton13.FlatAppearance.BorderSize = 0;
-            this.iconButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton13.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton13.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton13.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton13.IconChar = FontAwesome.Sharp.IconChar.Table;
-            this.iconButton13.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton13.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton13.IconSize = 32;
-            this.iconButton13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton13.Location = new System.Drawing.Point(226, 17);
-            this.iconButton13.Name = "iconButton13";
-            this.iconButton13.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.iconButton13.Rotation = 0D;
-            this.iconButton13.Size = new System.Drawing.Size(303, 38);
-            this.iconButton13.TabIndex = 17;
-            this.iconButton13.Text = "Add New Word";
-            this.iconButton13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton13.UseVisualStyleBackColor = true;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.buttonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.buttonSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.buttonSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.buttonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonSearch.IconSize = 30;
+            this.buttonSearch.Location = new System.Drawing.Point(1158, 33);
+            this.buttonSearch.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Rotation = 0D;
+            this.buttonSearch.Size = new System.Drawing.Size(78, 73);
+            this.buttonSearch.TabIndex = 19;
+            this.buttonSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // textboxSearch
+            // 
+            this.textboxSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textboxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxSearch.ForeColor = System.Drawing.Color.Gainsboro;
+            this.textboxSearch.HintForeColor = System.Drawing.Color.Gainsboro;
+            this.textboxSearch.HintText = "Search English";
+            this.textboxSearch.isPassword = false;
+            this.textboxSearch.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.textboxSearch.LineIdleColor = System.Drawing.Color.Gainsboro;
+            this.textboxSearch.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241)))));
+            this.textboxSearch.LineThickness = 2;
+            this.textboxSearch.Location = new System.Drawing.Point(300, 25);
+            this.textboxSearch.Margin = new System.Windows.Forms.Padding(8);
+            this.textboxSearch.Name = "textboxSearch";
+            this.textboxSearch.Size = new System.Drawing.Size(844, 81);
+            this.textboxSearch.TabIndex = 18;
+            this.textboxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textboxSearch.Visible = false;
+            // 
+            // labelScreenName
+            // 
+            this.labelScreenName.AutoSize = true;
+            this.labelScreenName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelScreenName.ForeColor = System.Drawing.Color.White;
+            this.labelScreenName.Location = new System.Drawing.Point(621, 44);
+            this.labelScreenName.Name = "labelScreenName";
+            this.labelScreenName.Size = new System.Drawing.Size(273, 44);
+            this.labelScreenName.TabIndex = 17;
+            this.labelScreenName.Text = "Add New Word";
             // 
             // labelTitleChildForm
             // 
             this.labelTitleChildForm.AutoSize = true;
-            this.labelTitleChildForm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleChildForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelTitleChildForm.Location = new System.Drawing.Point(51, 31);
+            this.labelTitleChildForm.Location = new System.Drawing.Point(102, 60);
+            this.labelTitleChildForm.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelTitleChildForm.Name = "labelTitleChildForm";
-            this.labelTitleChildForm.Size = new System.Drawing.Size(50, 17);
+            this.labelTitleChildForm.Size = new System.Drawing.Size(86, 30);
             this.labelTitleChildForm.TabIndex = 1;
             this.labelTitleChildForm.Text = "Admin";
             // 
@@ -628,19 +678,21 @@
             this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.GlobeAsia;
             this.iconCurrentChildForm.IconColor = System.Drawing.Color.MediumPurple;
             this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCurrentChildForm.IconSize = 35;
-            this.iconCurrentChildForm.Location = new System.Drawing.Point(17, 23);
+            this.iconCurrentChildForm.IconSize = 67;
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(34, 44);
+            this.iconCurrentChildForm.Margin = new System.Windows.Forms.Padding(6);
             this.iconCurrentChildForm.Name = "iconCurrentChildForm";
-            this.iconCurrentChildForm.Size = new System.Drawing.Size(39, 35);
+            this.iconCurrentChildForm.Size = new System.Drawing.Size(78, 67);
             this.iconCurrentChildForm.TabIndex = 0;
             this.iconCurrentChildForm.TabStop = false;
             // 
             // pictureBoxFlagLeft
             // 
             this.pictureBoxFlagLeft.Image = global::Dictionary_host.Properties.Resources.united_kingdom;
-            this.pictureBoxFlagLeft.Location = new System.Drawing.Point(625, 23);
+            this.pictureBoxFlagLeft.Location = new System.Drawing.Point(1250, 44);
+            this.pictureBoxFlagLeft.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxFlagLeft.Name = "pictureBoxFlagLeft";
-            this.pictureBoxFlagLeft.Size = new System.Drawing.Size(46, 32);
+            this.pictureBoxFlagLeft.Size = new System.Drawing.Size(92, 62);
             this.pictureBoxFlagLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFlagLeft.TabIndex = 12;
             this.pictureBoxFlagLeft.TabStop = false;
@@ -648,9 +700,10 @@
             // pictureBoxFlagRight
             // 
             this.pictureBoxFlagRight.Image = global::Dictionary_host.Properties.Resources.vietnam;
-            this.pictureBoxFlagRight.Location = new System.Drawing.Point(667, 23);
+            this.pictureBoxFlagRight.Location = new System.Drawing.Point(1334, 44);
+            this.pictureBoxFlagRight.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxFlagRight.Name = "pictureBoxFlagRight";
-            this.pictureBoxFlagRight.Size = new System.Drawing.Size(49, 32);
+            this.pictureBoxFlagRight.Size = new System.Drawing.Size(98, 62);
             this.pictureBoxFlagRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFlagRight.TabIndex = 13;
             this.pictureBoxFlagRight.TabStop = false;
@@ -664,26 +717,29 @@
             this.buttonSwitch.IconColor = System.Drawing.Color.Gainsboro;
             this.buttonSwitch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buttonSwitch.IconSize = 25;
-            this.buttonSwitch.Location = new System.Drawing.Point(722, 24);
+            this.buttonSwitch.Location = new System.Drawing.Point(1444, 46);
+            this.buttonSwitch.Margin = new System.Windows.Forms.Padding(6);
             this.buttonSwitch.Name = "buttonSwitch";
             this.buttonSwitch.Rotation = 0D;
-            this.buttonSwitch.Size = new System.Drawing.Size(37, 31);
+            this.buttonSwitch.Size = new System.Drawing.Size(74, 60);
             this.buttonSwitch.TabIndex = 16;
             this.buttonSwitch.UseVisualStyleBackColor = true;
             this.buttonSwitch.Click += new System.EventHandler(this.buttonSwitch_Click);
             // 
             // Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
+            this.ClientSize = new System.Drawing.Size(1964, 1269);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelChildForm);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelMenuButton);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Admin";
-            this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Text = "Dictionary";
+            this.panelMenuButton.ResumeLayout(false);
+            this.panelMenuButton.PerformLayout();
             this.panelResult.ResumeLayout(false);
             this.panelResult.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).EndInit();
@@ -693,6 +749,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelChildForm.ResumeLayout(false);
+            this.panelChildForm.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
@@ -706,10 +763,10 @@
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.PictureBox btnHome;
-        private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton7;
+        private System.Windows.Forms.Panel panelMenuButton;
+        private FontAwesome.Sharp.IconButton btnAddNewWord;
+        private FontAwesome.Sharp.IconButton btnFeedBack;
+        private FontAwesome.Sharp.IconButton btnSetting;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private System.Windows.Forms.Label label2;
@@ -729,18 +786,22 @@
         private System.Windows.Forms.PictureBox pictureBoxFlagRight;
         private FontAwesome.Sharp.IconButton buttonSwitch;
         private System.Windows.Forms.Label label6;
-        private FontAwesome.Sharp.IconButton iconButton13;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox5;
-        private FontAwesome.Sharp.IconButton iconButton12;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox4;
-        private FontAwesome.Sharp.IconButton iconButton8;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox3;
-        private FontAwesome.Sharp.IconButton iconButton11;
-        private FontAwesome.Sharp.IconButton iconButton10;
-        private FontAwesome.Sharp.IconButton iconButton9;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox2;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxWordType;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxPronunciation;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxKey;
+        private FontAwesome.Sharp.IconButton btnUpdateWord;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textboxSearch;
+        private System.Windows.Forms.Label labelScreenName;
+        private FontAwesome.Sharp.IconButton buttonSearch;
+        private System.Windows.Forms.Label labelExample;
+        private System.Windows.Forms.Label labelMeaning;
+        private System.Windows.Forms.Label labelWordType;
+        private System.Windows.Forms.Label labelPronunciation;
+        private System.Windows.Forms.Label labelKeyWord;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxExample;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxMean;
+        private FontAwesome.Sharp.IconButton btnClear;
+        private FontAwesome.Sharp.IconButton btnAdd;
     }
 }
 
