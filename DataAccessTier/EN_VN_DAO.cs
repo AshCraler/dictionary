@@ -17,6 +17,7 @@ namespace DataAccessTier
         private string saveWordCommand = "INSERT INTO tbENHistory VALUES (@Time, @ENKey, @Pronounciation, @WordType, @VNMeans, @Example)";
         private string addWordCommand = "INSERT INTO tbAnhViet VALUES (@ENKey, @Pronounciation, @WordType, @VNMeans, @Example)";
         private string deleteHistoryCommand = "DELETE FROM tbENHistory";
+        private string updateWordCommand = "UPDATE tbAnhViet SET ENKey = @ENKey, Pronounciation = @Pronounciation, WordType = @WordType, VNMeans = @VNMeans, Example = @Example WHERE ENKey = @key";
 
         public EN_VN_DAO() : base() { }
 
@@ -166,6 +167,31 @@ namespace DataAccessTier
                     cmd.Parameters.Add("@WordType", SqlDbType.NVarChar).Value = w.WordType;
                     cmd.Parameters.Add("@VNMeans", SqlDbType.NText).Value = w.Means;
                     cmd.Parameters.Add("@Example", SqlDbType.NText).Value = w.Example;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        public void updateWord(string key, EN_VN_Word w)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(updateWordCommand, conn))
+                {
+                    cmd.Parameters.Add("ENKey", SqlDbType.VarChar).Value = w.ENKey;
+                    cmd.Parameters.Add("@Pronounciation", SqlDbType.NVarChar).Value = w.Pronounciation;
+                    cmd.Parameters.Add("@WordType", SqlDbType.NVarChar).Value = w.WordType;
+                    cmd.Parameters.Add("@VNMeans", SqlDbType.NText).Value = w.Means;
+                    cmd.Parameters.Add("@Example", SqlDbType.NText).Value = w.Example;
+                    cmd.Parameters.Add("@key", SqlDbType.VarChar).Value = key;
 
                     cmd.ExecuteNonQuery();
                 }

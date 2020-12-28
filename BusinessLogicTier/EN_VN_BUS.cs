@@ -33,5 +33,15 @@ namespace BusinessLogicTier
             else
                 return;
         }
+
+        public void addWord(EN_VN_Word w)
+        {
+            objEN_VN.addWord(w);
+        }
+
+        public void updateWord(string key, EN_VN_Word w)
+        {
+            objEN_VN.updateWord(key, w);
+        }
     }
 }

@@ -15,7 +15,9 @@ namespace DataAccessTier
         private string bookMarkCommand = "INSERT INTO tbVNBookMarked VALUES (@VNKey, @VNSuggestion, @WordType, @ENMeans, @Example)";
         private string unMarkCommand = "DELETE FROM tbVNBookMarked WHERE VNKey = @VNKey";
         private string saveWordCommand = "INSERT INTO tbVNHistory VALUES (@Time, @VNKey, @VNSuggestion, @WordType, @ENMeans, @Example)";
+        private string addWordCommand = "INSERT INTO tbVietAnh VALUES (@VNKey, @VNSuggestion, @WordType, @ENMeans, @Example)";
         private string deleteHistoryCommand = "DELETE FROM tbVNHistory";
+        private string updateWordCommand = "UPDATE tbAnhViet SET VNKey = @VNKey, VNSuggestion = @VNSuggestion, WordType = @WordType, ENMeans = @ENMeans, Example = @Example WHERE VNKey = @key";
 
         public VN_EN_DAO() : base() { }
 
@@ -149,6 +151,29 @@ namespace DataAccessTier
             }
         }
 
+        public void addWord(VN_EN_Word w)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(addWordCommand, conn))
+                {
+                    cmd.Parameters.Add("VNKey", SqlDbType.NVarChar).Value = w.VNKey;
+                    cmd.Parameters.Add("@VNSuggestion", SqlDbType.NVarChar).Value = w.VNSuggestion;
+                    cmd.Parameters.Add("@WordType", SqlDbType.NVarChar).Value = w.WordType;
+                    cmd.Parameters.Add("@ENMeans", SqlDbType.NText).Value = w.Means;
+                    cmd.Parameters.Add("@Example", SqlDbType.NText).Value = w.Example;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            {
+
+            }
+        }
         //delete all history
         public void deleteHistory()
         {
@@ -166,6 +191,31 @@ namespace DataAccessTier
             {
                 conn.Close();
                 throw e;
+            }
+        }
+
+        public void updateWord(string key, VN_EN_Word w)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(addWordCommand, conn))
+                {
+                    cmd.Parameters.Add("VNKey", SqlDbType.NVarChar).Value = w.VNKey;
+                    cmd.Parameters.Add("@VNSuggestion", SqlDbType.NVarChar).Value = w.VNSuggestion;
+                    cmd.Parameters.Add("@WordType", SqlDbType.NVarChar).Value = w.WordType;
+                    cmd.Parameters.Add("@ENMeans", SqlDbType.NText).Value = w.Means;
+                    cmd.Parameters.Add("@Example", SqlDbType.NText).Value = w.Example;
+                    cmd.Parameters.Add("@key", SqlDbType.NVarChar).Value = key;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            {
+
             }
         }
     }
