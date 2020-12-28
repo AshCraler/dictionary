@@ -7,70 +7,83 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLogicTier;
-using DictionaryDTO;
 
 namespace Dictionary_user
 {
     public partial class History : Form
     {
-        private VN_EN_History_BUS objVnHistory = new VN_EN_History_BUS();
+        private string command;
+        private string word;
+        private string translate;
+        private string pic1, pic2;
+        private void loadpicture(string s)
+        {
+            string s1, s2;
+            int j = 0;
+            s1 = "";
+            s2 = "";
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] != '-')
+                    s1 = s1 + s[i];
+                else
+                {
+                    j = i;
+                    break;
+                }
+            }
+            for (int i = j + 1; i < s.Length; i++)
+            {
+                s2 = s2 + s[i];
+            }
+            pic1 = s1;
+            pic2 = s2;
+        }
+        private void loadDatabase()
+        {
+            if (Database.acction == "searchHistory")
+                command = "select Word, Meaning, Translate,TimeSearch,Bookmark from historysearch Where word = " + "\"" + Database.textboxSearchText.ToString() + "\"" + " or meaning = " + "\"" + Database.textboxSearchText.ToString() + "\"";
+            if (Database.acction == "showHistoryList")
+                command = "SELECT Word,Meaning,Translate,TimeSearch AS Date ,Bookmark from historysearch ORDER BY id DESC";
+            Database.load(command);
+        }
+       
         public History()
         {
             InitializeComponent();
+            loadDatabase();
+            bunifuCustomDataGrid1.DefaultCellStyle.Format = "dd/MM/yyyy";
+            bunifuCustomDataGrid1.DataSource = Database.loadData;
         }
-
-        private void Search_OnValueChanged(object sender, EventArgs e)
+        private void bunifuCustomDataGrid1_SelectionChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void History_Shown(object sender, EventArgs e)
-        {
-            /*bunifuCustomDataGrid1.Rows.Add(
-                new object[]
-                {
-                    "word1",
-                    "meaning",
-                    "22/11/2020"
-                }
-                );*/
-
-            foreach(VN_EN_Word w in objVnHistory.getHistory().data)
+            foreach (DataGridViewRow row in bunifuCustomDataGrid1.SelectedRows)
             {
-                bunifuCustomDataGrid1.Rows.Add(
-                    new object[]
-                    {
-                        w.VNKey,
-                        w.WordType,
-                        w.Means,
-                        w.Example
-                    }
-                    );
+                word = row.Cells[0].Value.ToString();
+                translate = row.Cells[2].Value.ToString();
             }
         }
-
-        private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void bunifuCustomDataGrid1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 4) //
+            DataGridView dgv = sender as DataGridView;
+            if (dgv == null)
+                return;
+            if (dgv.CurrentRow.Selected)
             {
-                if(objVnHistory.deleteSpecificItem(e.RowIndex))
-                    bunifuCustomDataGrid1.Rows.RemoveAt(e.RowIndex);
+                Database.acction = "clickFromBookmark";
+                Database.word = word;
+                loadpicture(translate);
+                if (pic1 != "VieMeaning")
+                {
+                    Database.setLanguages = false;
+                    Database.language = pic1;
+                }
+                else
+                {
+                    Database.setLanguages = true;
+                    Database.language = pic2;
+                }
+                this.Close();
             }
         }
     }

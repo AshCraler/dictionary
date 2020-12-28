@@ -19,7 +19,7 @@ namespace Dictionary_host.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -73,6 +73,16 @@ namespace Dictionary_host.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap analysis1 {
+            get {
+                object obj = ResourceManager.GetObject("analysis1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bookmark {
             get {
                 object obj = ResourceManager.GetObject("bookmark", resourceCulture);
@@ -85,7 +95,7 @@ namespace Dictionary_host.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap bookmark__1_ {
             get {
-                object obj = ResourceManager.GetObject("bookmark__1_", resourceCulture);
+                object obj = ResourceManager.GetObject("bookmark (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -105,7 +115,7 @@ namespace Dictionary_host.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap close_circular_button_symbol {
             get {
-                object obj = ResourceManager.GetObject("close_circular_button_symbol", resourceCulture);
+                object obj = ResourceManager.GetObject("close-circular-button-symbol", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,6 +223,16 @@ namespace Dictionary_host.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap statistics {
+            get {
+                object obj = ResourceManager.GetObject("statistics", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap time {
             get {
                 object obj = ResourceManager.GetObject("time", resourceCulture);
@@ -225,7 +245,7 @@ namespace Dictionary_host.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap united_kingdom {
             get {
-                object obj = ResourceManager.GetObject("united_kingdom", resourceCulture);
+                object obj = ResourceManager.GetObject("united-kingdom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

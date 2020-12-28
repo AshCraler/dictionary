@@ -36,11 +36,19 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.1\lib\net45\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Management" />
     <Reference Include="System.Speech" />
     <Reference Include="System.Xml.Linq" />
@@ -54,38 +62,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bookmark.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bookmark.Designer.cs">
       <DependentUpon>Bookmark.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomizeLinkLabel.cs" />
     <Compile Include="Database.cs" />
-    <Compile Include="DictionaryDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DictionaryDBDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DictionaryItem.cs" />
-    <Compile Include="DictionaryManager.cs" />
-    <Compile Include="Feedback.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Feedback.Designer.cs">
-      <DependentUpon>Feedback.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Help.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Help.Designer.cs">
-      <DependentUpon>Help.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Excel.cs" />
     <Compile Include="History.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="History.Designer.cs">
       <DependentUpon>History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Idiom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Idiom.Designer.cs">
+      <DependentUpon>Idiom.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -95,62 +96,40 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Speaker.cs" />
-    <Compile Include="Translate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Translate.Designer.cs">
-      <DependentUpon>Translate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WordData.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bookmark.resx">
       <DependentUpon>Bookmark.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Feedback.resx">
-      <DependentUpon>Feedback.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Help.resx">
-      <DependentUpon>Help.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="History.resx">
       <DependentUpon>History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Idiom.resx">
+      <DependentUpon>Idiom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Translate.resx">
-      <DependentUpon>Translate.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="DictionaryDBDataSet.xsc">
-      <DependentUpon>DictionaryDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DictionaryDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DictionaryDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DictionaryDBDataSet.xss">
-      <DependentUpon>DictionaryDBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -167,49 +146,53 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Bunifu_UI_v1.52.dll" />
-    <Content Include="bin\Debug\data.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="bin\Debug\maindata.xml" />
-    <Content Include="bin\Debug\VN_EN_History.xml">
-      <SubType>Designer</SubType>
-    </Content>
+    <None Include="Resources\spain.png" />
+    <None Include="Resources\germany.png" />
+    <None Include="Resources\france.png" />
+    <None Include="Resources\dictionary %281%29.png" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\seo.png" />
+    <None Include="Resources\dictionary.png" />
+    <None Include="Resources\clock.png" />
+    <None Include="Resources\calendar %281%29.png" />
     <None Include="Resources\calendar.png" />
-    <None Include="Resources\date.png" />
     <None Include="Resources\cubes.png" />
     <None Include="Resources\bookmark %281%29.png" />
-    <None Include="Resources\bookmark.png" />
     <None Include="Resources\history.png" />
-    <None Include="Resources\time.png" />
     <None Include="Resources\analysis.png" />
-    <None Include="Resources\examination.png" />
     <None Include="Resources\idea.png" />
     <None Include="Resources\vietnam.png" />
     <None Include="Resources\united-kingdom.png" />
-    <None Include="Resources\close-circular-button-symbol.png" />
     <None Include="Resources\languages.png" />
-    <None Include="Resources\vocabulary.png" />
-    <None Include="Resources\speakers.png" />
-    <None Include="Resources\CTBMMN.png" />
-    <None Include="Resources\loupe.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\dictionary_Thuan\Dictionary_host\Dictionary_host.csproj">
-      <Project>{881a789e-790b-4176-81ee-5efa8acdc040}</Project>
-      <Name>Dictionary_host</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BusinessLogicTier\BusinessLogicTier.csproj">
-      <Project>{707ff483-5ab8-4cff-84d3-559c14887457}</Project>
-      <Name>BusinessLogicTier</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataAccessTier\DataAccessTier.csproj">
-      <Project>{accb7e23-8477-4795-b1ef-3cffe5d5cf9a}</Project>
-      <Name>DataAccessTier</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DictionaryDTO\DictionaryDTO.csproj">
-      <Project>{b91dc873-4e27-4627-a1c1-5ec2eb613d61}</Project>
-      <Name>DictionaryDTO</Name>
-    </ProjectReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -29,130 +29,168 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelHint1 = new System.Windows.Forms.Label();
-            this.loginButton = new FontAwesome.Sharp.IconButton();
-            this.checkboxSound = new System.Windows.Forms.CheckBox();
-            this.accountTextBox = new System.Windows.Forms.TextBox();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.labelTime = new System.Windows.Forms.Label();
+            this.labelBookmarkTime = new System.Windows.Forms.Label();
+            this.pictureBoxBookmarkTime = new System.Windows.Forms.PictureBox();
+            this.iconButtonUpdateData = new FontAwesome.Sharp.IconButton();
+            this.Update = new System.Windows.Forms.Label();
+            this.labelBookmark = new System.Windows.Forms.Label();
+            this.labelHistory = new System.Windows.Forms.Label();
+            this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
+            this.iconButtonBookmark = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBookmarkTime)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel1.Controls.Add(this.passwordTextBox);
-            this.panel1.Controls.Add(this.accountTextBox);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.labelHint1);
-            this.panel1.Controls.Add(this.loginButton);
-            this.panel1.Controls.Add(this.checkboxSound);
-            this.panel1.Location = new System.Drawing.Point(-10, -12);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6);
+            this.panel1.Controls.Add(this.labelTime);
+            this.panel1.Controls.Add(this.labelBookmarkTime);
+            this.panel1.Controls.Add(this.pictureBoxBookmarkTime);
+            this.panel1.Controls.Add(this.iconButtonUpdateData);
+            this.panel1.Controls.Add(this.Update);
+            this.panel1.Controls.Add(this.labelBookmark);
+            this.panel1.Controls.Add(this.labelHistory);
+            this.panel1.Controls.Add(this.iconButtonHistory);
+            this.panel1.Controls.Add(this.iconButtonBookmark);
+            this.panel1.Location = new System.Drawing.Point(-5, -6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1616, 1442);
+            this.panel1.Size = new System.Drawing.Size(854, 750);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // labelTime
             // 
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(117, 178);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 37);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Account:";
+            this.labelTime.AutoSize = true;
+            this.labelTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelTime.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTime.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelTime.Location = new System.Drawing.Point(261, 233);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(86, 22);
+            this.labelTime.TabIndex = 97;
+            this.labelTime.Text = "00:00:00";
             // 
-            // labelHint1
+            // labelBookmarkTime
             // 
-            this.labelHint1.AutoSize = true;
-            this.labelHint1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelHint1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHint1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelHint1.Location = new System.Drawing.Point(93, 286);
-            this.labelHint1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.labelHint1.Name = "labelHint1";
-            this.labelHint1.Size = new System.Drawing.Size(167, 37);
-            this.labelHint1.TabIndex = 19;
-            this.labelHint1.Text = "Password:";
+            this.labelBookmarkTime.AutoSize = true;
+            this.labelBookmarkTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelBookmarkTime.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookmarkTime.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelBookmarkTime.Location = new System.Drawing.Point(35, 231);
+            this.labelBookmarkTime.Name = "labelBookmarkTime";
+            this.labelBookmarkTime.Size = new System.Drawing.Size(187, 24);
+            this.labelBookmarkTime.TabIndex = 96;
+            this.labelBookmarkTime.Text = "Last update time:";
             // 
-            // loginButton
+            // pictureBoxBookmarkTime
             // 
-            this.loginButton.FlatAppearance.BorderSize = 0;
-            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.loginButton.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
-            this.loginButton.IconColor = System.Drawing.Color.Gainsboro;
-            this.loginButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.loginButton.IconSize = 32;
-            this.loginButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.loginButton.Location = new System.Drawing.Point(337, 397);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(6);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Padding = new System.Windows.Forms.Padding(16, 0, 30, 0);
-            this.loginButton.Rotation = 0D;
-            this.loginButton.Size = new System.Drawing.Size(364, 65);
-            this.loginButton.TabIndex = 12;
-            this.loginButton.Text = "Login as Administrator";
-            this.loginButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.loginButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.pictureBoxBookmarkTime.Image = global::Dictionary_user.Properties.Resources.clock;
+            this.pictureBoxBookmarkTime.Location = new System.Drawing.Point(498, 223);
+            this.pictureBoxBookmarkTime.Name = "pictureBoxBookmarkTime";
+            this.pictureBoxBookmarkTime.Size = new System.Drawing.Size(46, 32);
+            this.pictureBoxBookmarkTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxBookmarkTime.TabIndex = 95;
+            this.pictureBoxBookmarkTime.TabStop = false;
             // 
-            // checkboxSound
+            // iconButtonUpdateData
             // 
-            this.checkboxSound.AutoSize = true;
-            this.checkboxSound.Checked = true;
-            this.checkboxSound.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkboxSound.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkboxSound.ForeColor = System.Drawing.Color.Gainsboro;
-            this.checkboxSound.Location = new System.Drawing.Point(34, 75);
-            this.checkboxSound.Margin = new System.Windows.Forms.Padding(6);
-            this.checkboxSound.Name = "checkboxSound";
-            this.checkboxSound.Size = new System.Drawing.Size(172, 52);
-            this.checkboxSound.TabIndex = 0;
-            this.checkboxSound.Text = "Sound";
-            this.checkboxSound.UseVisualStyleBackColor = true;
+            this.iconButtonUpdateData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonUpdateData.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonUpdateData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.iconButtonUpdateData.IconChar = FontAwesome.Sharp.IconChar.Download;
+            this.iconButtonUpdateData.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(77)))), ((int)(((byte)(221)))));
+            this.iconButtonUpdateData.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonUpdateData.IconSize = 32;
+            this.iconButtonUpdateData.Location = new System.Drawing.Point(498, 175);
+            this.iconButtonUpdateData.Name = "iconButtonUpdateData";
+            this.iconButtonUpdateData.Rotation = 0D;
+            this.iconButtonUpdateData.Size = new System.Drawing.Size(43, 33);
+            this.iconButtonUpdateData.TabIndex = 94;
+            this.iconButtonUpdateData.UseVisualStyleBackColor = true;
+            this.iconButtonUpdateData.Click += new System.EventHandler(this.iconButtonUpdateData_Click);
             // 
-            // accountTextBox
+            // Update
             // 
-            this.accountTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.accountTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accountTextBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.accountTextBox.Location = new System.Drawing.Point(293, 167);
-            this.accountTextBox.Multiline = true;
-            this.accountTextBox.Name = "accountTextBox";
-            this.accountTextBox.Size = new System.Drawing.Size(398, 47);
-            this.accountTextBox.TabIndex = 21;
+            this.Update.AutoSize = true;
+            this.Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Update.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Update.Location = new System.Drawing.Point(35, 178);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(183, 22);
+            this.Update.TabIndex = 93;
+            this.Update.Text = "Update word data";
             // 
-            // passwordTextBox
+            // labelBookmark
             // 
-            this.passwordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.passwordTextBox.Location = new System.Drawing.Point(293, 276);
-            this.passwordTextBox.Multiline = true;
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(398, 47);
-            this.passwordTextBox.TabIndex = 22;
+            this.labelBookmark.AutoSize = true;
+            this.labelBookmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelBookmark.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookmark.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelBookmark.Location = new System.Drawing.Point(35, 123);
+            this.labelBookmark.Name = "labelBookmark";
+            this.labelBookmark.Size = new System.Drawing.Size(197, 22);
+            this.labelBookmark.TabIndex = 92;
+            this.labelBookmark.Text = "Delete all Bookmarks";
+            // 
+            // labelHistory
+            // 
+            this.labelHistory.AutoSize = true;
+            this.labelHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelHistory.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHistory.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelHistory.Location = new System.Drawing.Point(35, 69);
+            this.labelHistory.Name = "labelHistory";
+            this.labelHistory.Size = new System.Drawing.Size(123, 22);
+            this.labelHistory.TabIndex = 91;
+            this.labelHistory.Text = "Clear History";
+            // 
+            // iconButtonHistory
+            // 
+            this.iconButtonHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonHistory.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.iconButtonHistory.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.iconButtonHistory.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(138)))), ((int)(((byte)(114)))));
+            this.iconButtonHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonHistory.IconSize = 32;
+            this.iconButtonHistory.Location = new System.Drawing.Point(498, 66);
+            this.iconButtonHistory.Name = "iconButtonHistory";
+            this.iconButtonHistory.Rotation = 0D;
+            this.iconButtonHistory.Size = new System.Drawing.Size(43, 33);
+            this.iconButtonHistory.TabIndex = 90;
+            this.iconButtonHistory.UseVisualStyleBackColor = true;
+            this.iconButtonHistory.Click += new System.EventHandler(this.iconButtonHistory_Click);
+            // 
+            // iconButtonBookmark
+            // 
+            this.iconButtonBookmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonBookmark.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonBookmark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.iconButtonBookmark.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.iconButtonBookmark.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(26)))), ((int)(((byte)(74)))));
+            this.iconButtonBookmark.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonBookmark.IconSize = 32;
+            this.iconButtonBookmark.Location = new System.Drawing.Point(498, 123);
+            this.iconButtonBookmark.Name = "iconButtonBookmark";
+            this.iconButtonBookmark.Rotation = 0D;
+            this.iconButtonBookmark.Size = new System.Drawing.Size(43, 33);
+            this.iconButtonBookmark.TabIndex = 89;
+            this.iconButtonBookmark.UseVisualStyleBackColor = true;
+            this.iconButtonBookmark.Click += new System.EventHandler(this.iconButtonBookmark_Click);
             // 
             // Settings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1600, 1398);
+            this.ClientSize = new System.Drawing.Size(844, 727);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Settings";
             this.Text = "Settings";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBookmarkTime)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -160,11 +198,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox checkboxSound;
-        private FontAwesome.Sharp.IconButton loginButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelHint1;
-        private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.TextBox accountTextBox;
+        private FontAwesome.Sharp.IconButton iconButtonHistory;
+        private FontAwesome.Sharp.IconButton iconButtonBookmark;
+        private System.Windows.Forms.Label labelBookmark;
+        private System.Windows.Forms.Label labelHistory;
+        private FontAwesome.Sharp.IconButton iconButtonUpdateData;
+        private System.Windows.Forms.Label Update;
+        private System.Windows.Forms.PictureBox pictureBoxBookmarkTime;
+        private System.Windows.Forms.Label labelBookmarkTime;
+        private System.Windows.Forms.Label labelTime;
     }
 }

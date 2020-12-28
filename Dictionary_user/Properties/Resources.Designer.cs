@@ -19,7 +19,7 @@ namespace Dictionary_user.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -73,16 +73,6 @@ namespace Dictionary_user.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bookmark {
-            get {
-                object obj = ResourceManager.GetObject("bookmark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bookmark__1_ {
             get {
                 object obj = ResourceManager.GetObject("bookmark (1)", resourceCulture);
@@ -103,9 +93,9 @@ namespace Dictionary_user.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap close_circular_button_symbol {
+        internal static System.Drawing.Bitmap calendar__1_ {
             get {
-                object obj = ResourceManager.GetObject("close-circular-button-symbol", resourceCulture);
+                object obj = ResourceManager.GetObject("calendar (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +103,9 @@ namespace Dictionary_user.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CTBMMN {
+        internal static System.Drawing.Bitmap clock {
             get {
-                object obj = ResourceManager.GetObject("CTBMMN", resourceCulture);
+                object obj = ResourceManager.GetObject("clock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +123,9 @@ namespace Dictionary_user.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap date {
+        internal static System.Drawing.Bitmap dictionary {
             get {
-                object obj = ResourceManager.GetObject("date", resourceCulture);
+                object obj = ResourceManager.GetObject("dictionary", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +133,29 @@ namespace Dictionary_user.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap examination {
+        internal static System.Drawing.Bitmap dictionary__1_ {
             get {
-                object obj = ResourceManager.GetObject("examination", resourceCulture);
+                object obj = ResourceManager.GetObject("dictionary (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap france {
+            get {
+                object obj = ResourceManager.GetObject("france", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap germany {
+            get {
+                object obj = ResourceManager.GetObject("germany", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +193,9 @@ namespace Dictionary_user.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loupe {
+        internal static System.Drawing.Bitmap report {
             get {
-                object obj = ResourceManager.GetObject("loupe", resourceCulture);
+                object obj = ResourceManager.GetObject("report", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +203,9 @@ namespace Dictionary_user.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap speakers {
+        internal static System.Drawing.Bitmap seo {
             get {
-                object obj = ResourceManager.GetObject("speakers", resourceCulture);
+                object obj = ResourceManager.GetObject("seo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +213,9 @@ namespace Dictionary_user.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap time {
+        internal static System.Drawing.Bitmap spain {
             get {
-                object obj = ResourceManager.GetObject("time", resourceCulture);
+                object obj = ResourceManager.GetObject("spain", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,16 +236,6 @@ namespace Dictionary_user.Properties {
         internal static System.Drawing.Bitmap vietnam {
             get {
                 object obj = ResourceManager.GetObject("vietnam", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap vocabulary {
-            get {
-                object obj = ResourceManager.GetObject("vocabulary", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panelSuggestion = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.panelSuggestion.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,18 +45,8 @@
             this.panelSuggestion.Controls.Add(this.label2);
             this.panelSuggestion.Location = new System.Drawing.Point(0, 0);
             this.panelSuggestion.Name = "panelSuggestion";
-            this.panelSuggestion.Size = new System.Drawing.Size(1195, 660);
+            this.panelSuggestion.Size = new System.Drawing.Size(1195, 511);
             this.panelSuggestion.TabIndex = 41;
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(329, 38);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(413, 140);
-            this.listView1.TabIndex = 23;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // label4
             // 
@@ -91,11 +81,21 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "Admin";
             // 
+            // listView1
+            // 
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(74)))));
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(329, 38);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(413, 140);
+            this.listView1.TabIndex = 23;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // FeedBack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.ClientSize = new System.Drawing.Size(948, 572);
             this.Controls.Add(this.panelSuggestion);
             this.Name = "FeedBack";
             this.Text = "FeedBack";

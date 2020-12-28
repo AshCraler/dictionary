@@ -12,21 +12,48 @@ namespace Dictionary_user
 {
     public partial class Settings : Form
     {
+        private string time=DateTime.Now.ToString("yyyy'-'MM'-'dd  hh':'mm':'ss.ff");
         public Settings()
         {
             InitializeComponent();
-            //passwordTextBox.isPassword = true;
-            
+            labelTime.Text = time;
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void iconButtonHistory_Click(object sender, EventArgs e)
         {
-            if(accountTextBox.Text == "admin" && passwordTextBox.Text == "123456")
+            string message = "Do you want to clear history";
+            string title = "Clear History";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
             {
-                this.Hide();
-                Dictionary_host.Admin adminForm = new Dictionary_host.Admin();
-                adminForm.Show();
+                Database.deleteHistory("delete from historysearch");
+                MessageBox.Show("Your history was cleared");
             }
+        }
+
+        private void iconButtonBookmark_Click(object sender, EventArgs e)
+        {
+            string message = "Do you want to delete all bookmarks";
+            string title = "Delete Bookmarks";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                Database.load("Select word from bookmark");
+                for (int i = 0; i < Database.loadData.Rows.Count; i++)
+                {
+                    string remove = Database.loadData.Rows[i]["word"].ToString();
+                    Database.updateHistory("update historysearch set bookmark = " + "'" + "No" + "'" + " where Word = " +"'"+ remove+"'");
+                }
+                Database.deleteBookmark("delete from bookmark");
+                MessageBox.Show("Your bookmarks were deleted");
+            }
+        }
+
+        private void iconButtonUpdateData_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("No update available");
         }
     }
 }
