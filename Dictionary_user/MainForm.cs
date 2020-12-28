@@ -1067,7 +1067,7 @@ namespace Dictionary_user
                     labelHint2.Text = "";
                     labelHint4.Text = "";
                     labelHint3.Text = "";
-                }
+                }/////adndasndnkjnkjasndkjnsad
                 if (num > 1)
                     labelHint2.Text = Database.loadData.Rows[1][hint].ToString();
                 else
