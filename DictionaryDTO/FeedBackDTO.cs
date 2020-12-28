@@ -8,6 +8,7 @@ namespace DictionaryDTO
 {
     public class FeedBackDTO
     {
+        public int Id;
         public DateTime time;
         public string title;
         public string email;
@@ -17,8 +18,9 @@ namespace DictionaryDTO
 
         public FeedBackDTO() { }
 
-        public FeedBackDTO(DateTime tim, string t,string e, string name, string number, string cont)
+        public FeedBackDTO(int id, DateTime tim, string t,string e, string name, string number, string cont)
         {
+            Id = id;
             time = tim;
             title = t;
             email = e;
