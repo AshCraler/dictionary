@@ -1,5 +1,7 @@
 ﻿namespace Dictionary_user
-{
+{/// <summary>
+/// //////////////ádsadád
+/// </summary>
     partial class MainForm
     {
         /// <summary>
