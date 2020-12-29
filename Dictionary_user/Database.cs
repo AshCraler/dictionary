@@ -102,7 +102,10 @@ namespace Dictionary_user
                     connection.Close();
             }
         }
-        
+        /// <summary>
+        /// ////////
+        /// </summary>
+        /// <param name="command"></param>
         public static void updateHistory(string command)
         {
             string connectionString = @"server=localhost;userid=root;password=MyNewPass;database=sql_invoicing";
