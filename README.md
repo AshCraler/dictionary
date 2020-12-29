@@ -21,11 +21,24 @@ Dictionary là ứng dụng dùng để tra cứu ngữ nghĩa từ vựng chín
 ---------------------------------
 
 CÁCH THỰC THI CHƯƠNG TRÌNH
-> *Đang chờ cập nhật*
+> - Học từ mới
+  - Ôn tập
+  - Ôn nhanh bằng Bookmark và History
+  - Tạo cách nhớ từ vựng riêng cho bản thân người học
+  - Tạo một danh sách từ vựng riêng cho bản thân người học
+  - Kiếm sách đọc
+  - Nghe phát âm từ vựng và loại từ
 ---------------------------------
 
 CÀI ĐẶT
-> *Đang chờ cập nhật*
+> - ### **Dành cho Developer**
+    - Clone mã nguồn của chương trình từ GITHUB với cmd bằng mã lệnh:
+        > git clone https://github.com/AshCraler/dictionary.git
+    - Cài đặt .NET Framework 4.7.2 (nếu chưa có).
+    - Mở mã nguồn bằng Visual Studio hoặc IDE khác có hỗ trợ.
+    - Build và chạy trên máy.
+- ### **Dành cho User**
+    - Chạy file ***.msi*** trong thư mục **install**.
 ---------------------------------
 
 THÔNG TIN LIÊN LẠC
