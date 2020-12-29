@@ -52,6 +52,9 @@
     <ApplicationIcon>IconDictionary.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
     <Reference Include="69024-bunifu_ui_v1.52">
       <HintPath>..\..\GitHub\dictionary\Dictionary_user\bin\Debug\69024-bunifu_ui_v1.52.dll</HintPath>
     </Reference>
@@ -76,6 +79,7 @@
     <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -140,6 +144,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+
+    <None Include="packages.config" />
+
     <EmbeddedResource Include="SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +156,7 @@
     <EmbeddedResource Include="ViewFeedBackForm.resx">
       <DependentUpon>ViewFeedBackForm.cs</DependentUpon>
     </EmbeddedResource>
+
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
