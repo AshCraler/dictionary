@@ -19,7 +19,9 @@ namespace Dictionary_user
 {
     public partial class MainForm : Form
     {
-
+        /// <summary>
+        /// ///////////////hjjj
+        /// </summary>
         #region Declaration 
 
 
