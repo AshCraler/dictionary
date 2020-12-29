@@ -474,10 +474,11 @@ namespace Dictionary_user
             Database.load(command);
             bookmarkRowCount = Database.loadData.Rows.Count;
             bookmarkData = Database.loadData;
+            page = 0;
+            loadPageInfo();
             loadSearchSuggestionBookmark();
             resetSuggestionBookmarkColor();
             reseticonButtonSuggestionBookmarkColor();
-            loadPageInfo();
             bookmarkColor = 0;
         }
         
@@ -713,14 +714,23 @@ namespace Dictionary_user
         private void loadPageInfo()
         {
             string max;
-            if ((page + 1) * 4 < bookmarkRowCount)
-                max = ((page + 1) * 4).ToString();
-            else max = bookmarkRowCount.ToString();
+            string min;
+            int maxpage = bookmarkRowCount / 4;
+            if (page < maxpage)
+            {
+                max = ((page+1)*4).ToString();
+                min = ((page * 4 + 1)).ToString();
+            }
+            else
+            {
+                max = bookmarkRowCount.ToString();
+                min = (bookmarkRowCount % 4+maxpage*4).ToString();
+            }
             if (bookmarkRowCount == 0)
                 pageInfo.Visible = false;
             else
                 pageInfo.Visible = true;
-            pageInfo.Text = (page * 4 + 1).ToString() + " - " + max + " / " + bookmarkRowCount.ToString() + " " + mode;
+            pageInfo.Text = min + " - " + max + " / " + bookmarkRowCount.ToString() + " " + mode;
         }
 
         private void activateReloadButton()
