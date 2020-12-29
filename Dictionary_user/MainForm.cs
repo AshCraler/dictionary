@@ -14,7 +14,7 @@ using FontAwesome.Sharp;
 using System.Speech.Synthesis;
 using MySql.Data;
 using MySql.Data.MySqlClient;
-//////////////ạdákdnnsadnsa
+//////
 namespace Dictionary_user
 {
     public partial class MainForm : Form
