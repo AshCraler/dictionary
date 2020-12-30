@@ -1349,6 +1349,7 @@ namespace Dictionary_user
         }
 
         #endregion
+        
         public Idiom()
         {
             InitializeComponent();
