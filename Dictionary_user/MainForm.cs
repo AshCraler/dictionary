@@ -30,8 +30,7 @@ namespace Dictionary_user
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private List<string> arr;
-        private Random r = new Random();
+       
         private string language;
         private PictureBox pictureLanguage = new PictureBox();
         private struct RGBColors // Struct các mã màu 
@@ -61,6 +60,7 @@ namespace Dictionary_user
             currentBtn.IconColor = color;
             currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
             currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+            
             //Left border button
             leftBorderBtn.BackColor = color;
             leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
@@ -247,7 +247,6 @@ namespace Dictionary_user
             bunifuDropdownTranslate.AddItem("Idioms");
             bunifuDropdownTranslate.AddItem("Luminaries");
             bunifuDropdownTranslate.selectedIndex = 0;
-
         } // Book and more
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -967,6 +966,10 @@ namespace Dictionary_user
         #endregion
 
         #region Volcabulary 
+        
+        private Random r = new Random();
+
+        private List<string> arr;
 
         private void random()
         {
@@ -1416,7 +1419,6 @@ namespace Dictionary_user
             PictureBox Korean = new PictureBox();
             Korean.Image = Properties.Resources.south_korea;
             Database.flag.Add("Korean", Korean);
-
 
             PictureBox VieMeaning = new PictureBox();
             VieMeaning.Image = Properties.Resources.vietnam;

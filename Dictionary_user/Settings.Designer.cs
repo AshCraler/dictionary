@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTime = new System.Windows.Forms.Label();
-            this.labelBookmarkTime = new System.Windows.Forms.Label();
             this.pictureBoxBookmarkTime = new System.Windows.Forms.PictureBox();
             this.iconButtonUpdateData = new FontAwesome.Sharp.IconButton();
             this.Update = new System.Windows.Forms.Label();
@@ -38,6 +37,7 @@
             this.labelHistory = new System.Windows.Forms.Label();
             this.iconButtonHistory = new FontAwesome.Sharp.IconButton();
             this.iconButtonBookmark = new FontAwesome.Sharp.IconButton();
+            this.labelBookmarkTime = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBookmarkTime)).BeginInit();
             this.SuspendLayout();
@@ -65,23 +65,12 @@
             this.labelTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelTime.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTime.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelTime.Location = new System.Drawing.Point(261, 233);
+            this.labelTime.Location = new System.Drawing.Point(241, 233);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(86, 22);
             this.labelTime.TabIndex = 97;
             this.labelTime.Text = "00:00:00";
-            // 
-            // labelBookmarkTime
-            // 
-            this.labelBookmarkTime.AutoSize = true;
-            this.labelBookmarkTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelBookmarkTime.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBookmarkTime.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelBookmarkTime.Location = new System.Drawing.Point(35, 231);
-            this.labelBookmarkTime.Name = "labelBookmarkTime";
-            this.labelBookmarkTime.Size = new System.Drawing.Size(187, 24);
-            this.labelBookmarkTime.TabIndex = 96;
-            this.labelBookmarkTime.Text = "Last update time:";
+            this.labelTime.Visible = false;
             // 
             // pictureBoxBookmarkTime
             // 
@@ -118,9 +107,9 @@
             this.Update.ForeColor = System.Drawing.Color.Gainsboro;
             this.Update.Location = new System.Drawing.Point(35, 178);
             this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(183, 22);
+            this.Update.Size = new System.Drawing.Size(154, 22);
             this.Update.TabIndex = 93;
-            this.Update.Text = "Update word data";
+            this.Update.Text = "Save your data";
             // 
             // labelBookmark
             // 
@@ -180,6 +169,18 @@
             this.iconButtonBookmark.UseVisualStyleBackColor = true;
             this.iconButtonBookmark.Click += new System.EventHandler(this.iconButtonBookmark_Click);
             // 
+            // labelBookmarkTime
+            // 
+            this.labelBookmarkTime.AutoSize = true;
+            this.labelBookmarkTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelBookmarkTime.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookmarkTime.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelBookmarkTime.Location = new System.Drawing.Point(35, 231);
+            this.labelBookmarkTime.Name = "labelBookmarkTime";
+            this.labelBookmarkTime.Size = new System.Drawing.Size(117, 24);
+            this.labelBookmarkTime.TabIndex = 96;
+            this.labelBookmarkTime.Text = "Save time:";
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,7 +206,7 @@
         private FontAwesome.Sharp.IconButton iconButtonUpdateData;
         private System.Windows.Forms.Label Update;
         private System.Windows.Forms.PictureBox pictureBoxBookmarkTime;
-        private System.Windows.Forms.Label labelBookmarkTime;
         private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Label labelBookmarkTime;
     }
 }
