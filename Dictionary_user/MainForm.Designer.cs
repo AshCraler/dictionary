@@ -159,7 +159,7 @@
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 32;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(6, 324);
+            this.iconButton2.Location = new System.Drawing.Point(6, 328);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.iconButton2.Rotation = 0D;
@@ -183,7 +183,7 @@
             this.iconIdiom.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconIdiom.IconSize = 32;
             this.iconIdiom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconIdiom.Location = new System.Drawing.Point(6, 244);
+            this.iconIdiom.Location = new System.Drawing.Point(6, 288);
             this.iconIdiom.Name = "iconIdiom";
             this.iconIdiom.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.iconIdiom.Rotation = 0D;
@@ -255,7 +255,7 @@
             this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSettings.IconSize = 32;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(6, 284);
+            this.btnSettings.Location = new System.Drawing.Point(6, 248);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.btnSettings.Rotation = 0D;
@@ -507,7 +507,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(369, 436);
             this.panel5.TabIndex = 38;
-          
             // 
             // iconButtonSpeaker8
             // 

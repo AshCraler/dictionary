@@ -537,6 +537,10 @@ namespace Dictionary_user
                 language = "eng";
                 if (Database.BookandMore == 2)
                     labelLanguage.Text = "World luminary";
+                if (Database.BookandMore == 3)
+                    labelLanguage.Text = "International music";
+                if (Database.BookandMore == 4)
+                    labelLanguage.Text = "International movie";
             }
             loadSearchSuggestion();
         }
