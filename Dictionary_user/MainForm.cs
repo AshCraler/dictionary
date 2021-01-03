@@ -246,6 +246,8 @@ namespace Dictionary_user
             bunifuDropdownTranslate.AddItem("Books");
             bunifuDropdownTranslate.AddItem("Idioms");
             bunifuDropdownTranslate.AddItem("Luminaries");
+            bunifuDropdownTranslate.AddItem("Musics");
+            bunifuDropdownTranslate.AddItem("Movies");
             bunifuDropdownTranslate.selectedIndex = 0;
         } // Book and more
 
@@ -958,6 +960,18 @@ namespace Dictionary_user
                 if (bunifuDropdownTranslate.selectedIndex == 2)
                 {
                     Database.BookandMore = 2;
+                    openChildForm(new Idiom());
+                }
+
+                if (bunifuDropdownTranslate.selectedIndex == 3)
+                {
+                    Database.BookandMore = 3;
+                    openChildForm(new Idiom());
+                }
+                
+                if (bunifuDropdownTranslate.selectedIndex == 4)
+                {
+                    Database.BookandMore = 4;
                     openChildForm(new Idiom());
                 }
             }

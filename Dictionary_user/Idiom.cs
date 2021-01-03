@@ -83,6 +83,10 @@ namespace Dictionary_user
                     Database.insertIdiomhistory(textBoxResult.Text, textBoxMeaning.Text, time);
                 if (mode == "Luminary")
                     Database.insertLuminaryhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Music")
+                    Database.insertMusichistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Movie")
+                    Database.insertMoviehistory(textBoxResult.Text, textBoxMeaning.Text, time);
             }
             loadBookmark();
             textboxBookmark.Text = "";
@@ -122,6 +126,10 @@ namespace Dictionary_user
                     Database.insertIdiomhistory(textBoxResult.Text, textBoxMeaning.Text, time);
                 if (mode == "Luminary")
                     Database.insertLuminaryhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Music")
+                    Database.insertMusichistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Movie")
+                    Database.insertMoviehistory(textBoxResult.Text, textBoxMeaning.Text, time);
                 loadBookmark();
                 textboxSearch.Text = "";
                 textboxHistory.Text = "";
@@ -172,6 +180,10 @@ namespace Dictionary_user
                     Database.insertIdiomhistory(textBoxResult.Text, textBoxMeaning.Text, time);
                 if (mode == "Luminary")
                     Database.insertLuminaryhistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Music")
+                    Database.insertMusichistory(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Movie")
+                    Database.insertMoviehistory(textBoxResult.Text, textBoxMeaning.Text, time);
                 textboxSearch.Text = "";
                 textboxBookmark.Text = "";
             }
@@ -756,6 +768,10 @@ namespace Dictionary_user
                     Database.insertIdiomBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
                 if (mode == "Luminary")
                     Database.insertLuminaryBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Music")
+                    Database.insertMusicBookmark (textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Movie")
+                    Database.insertMovieBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
                 command = "select * from "+mode+"bookmark order by id DESC";
                 loadDatabase(command);
                 loadBookmarkData();
@@ -789,6 +805,10 @@ namespace Dictionary_user
                     Database.insertIdiomBookmark(textBox6.Text, link1, time);
                 if (mode == "Luminary")
                     Database.insertLuminaryBookmark(textBox6.Text, link1, time);
+                if (mode == "Music")
+                    Database.insertMusicBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Movie")
+                    Database.insertMovieBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
                 check[page * 4 + 1] = true;
             }
         }
@@ -812,6 +832,10 @@ namespace Dictionary_user
                     Database.insertIdiomBookmark(textBox7.Text, link2, time);
                 if (mode == "Luminary")
                     Database.insertLuminaryBookmark(textBox7.Text, link2, time);
+                if (mode == "Music")
+                    Database.insertMusicBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Movie")
+                    Database.insertMovieBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
                 check[page * 13 + 2] = true;
             }
         }
@@ -835,6 +859,10 @@ namespace Dictionary_user
                     Database.insertIdiomBookmark(textBox8.Text, link3, time);
                 if (mode == "Luminary")
                     Database.insertLuminaryBookmark(textBox8.Text, link3, time);
+                if (mode == "Music")
+                    Database.insertMusicBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
+                if (mode == "Movie")
+                    Database.insertMovieBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
                 check[page * 4 + 3] = true;
             }
         }
@@ -858,6 +886,10 @@ namespace Dictionary_user
                     Database.insertIdiomBookmark(textBox9.Text, link4, time);
                 if (mode == "Luminary")
                     Database.insertLuminaryBookmark(textBox9.Text, link4, time);
+                if (mode == "Music")
+                    Database.insertMusicBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
+                 if (mode == "Movie")
+                    Database.insertMovieBookmark(textBoxResult.Text, textBoxMeaning.Text, time);
                 check[page * 4 + 4] = true;
             }
         }
@@ -1165,7 +1197,7 @@ namespace Dictionary_user
         }
 
         #endregion
-
+                
         #region Keyboard
 
         private int hintColor = 0;
@@ -1366,6 +1398,16 @@ namespace Dictionary_user
                 mode = "Luminary";
                 labelLanguage.Text = "Vietnam ";
             }
+            if (Database.BookandMore == 3)
+            {
+                mode = "Music";
+                labelLanguage.Text = "Vietnam ";
+            }
+            if (Database.BookandMore == 4)
+            {
+                mode = "Movie";
+                labelLanguage.Text = "Vietnam ";
+            }
             loadDefaultSuggestion();
             suggestionRowCount = Database.loadData.Rows.Count;
             
@@ -1380,17 +1422,6 @@ namespace Dictionary_user
             historyRowCount = Database.loadData.Rows.Count;
             for (int i = 0; i < 100000; i++)
                 check[i] = true;
-        }
-
-        private void Idiom_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Tab)
-            {
-                if (e.Modifiers == Keys.Shift)
-                    this.ProcessTabKey(false);
-                else
-                    this.ProcessTabKey(true);
-            }
         }
 
     }

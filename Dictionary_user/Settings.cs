@@ -13,6 +13,7 @@ namespace Dictionary_user
     public partial class Settings : Form
     {
         private string time=DateTime.Now.ToString("yyyy'-'MM'-'dd  hh':'mm':'ss.ff");
+        
         public Settings()
         {
             InitializeComponent();

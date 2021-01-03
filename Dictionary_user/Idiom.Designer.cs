@@ -1071,7 +1071,6 @@
             this.Name = "Idiom";
             this.Text = "Idiom";
             this.Load += new System.EventHandler(this.Idiom_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Idiom_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelResult.ResumeLayout(false);
