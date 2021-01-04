@@ -65,11 +65,12 @@
             this.labelTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelTime.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTime.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelTime.Location = new System.Drawing.Point(261, 233);
+            this.labelTime.Location = new System.Drawing.Point(241, 233);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(86, 22);
             this.labelTime.TabIndex = 97;
             this.labelTime.Text = "00:00:00";
+            this.labelTime.Visible = false;
             // 
             // labelBookmarkTime
             // 
@@ -79,9 +80,9 @@
             this.labelBookmarkTime.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelBookmarkTime.Location = new System.Drawing.Point(35, 231);
             this.labelBookmarkTime.Name = "labelBookmarkTime";
-            this.labelBookmarkTime.Size = new System.Drawing.Size(187, 24);
+            this.labelBookmarkTime.Size = new System.Drawing.Size(117, 24);
             this.labelBookmarkTime.TabIndex = 96;
-            this.labelBookmarkTime.Text = "Last update time:";
+            this.labelBookmarkTime.Text = "Save time:";
             // 
             // pictureBoxBookmarkTime
             // 
@@ -118,9 +119,9 @@
             this.Update.ForeColor = System.Drawing.Color.Gainsboro;
             this.Update.Location = new System.Drawing.Point(35, 178);
             this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(183, 22);
+            this.Update.Size = new System.Drawing.Size(208, 22);
             this.Update.TabIndex = 93;
-            this.Update.Text = "Update word data";
+            this.Update.Text = "Save Translated Data";
             // 
             // labelBookmark
             // 
@@ -205,7 +206,7 @@
         private FontAwesome.Sharp.IconButton iconButtonUpdateData;
         private System.Windows.Forms.Label Update;
         private System.Windows.Forms.PictureBox pictureBoxBookmarkTime;
-        private System.Windows.Forms.Label labelBookmarkTime;
         private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Label labelBookmarkTime;
     }
 }

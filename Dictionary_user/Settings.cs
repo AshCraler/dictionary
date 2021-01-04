@@ -13,6 +13,7 @@ namespace Dictionary_user
     public partial class Settings : Form
     {
         private string time=DateTime.Now.ToString("yyyy'-'MM'-'dd  hh':'mm':'ss.ff");
+        
         public Settings()
         {
             InitializeComponent();
@@ -53,7 +54,23 @@ namespace Dictionary_user
 
         private void iconButtonUpdateData_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("No update available");
+            var folderBrowserDialog1 = new FolderBrowserDialog();
+            // Show the FolderBrowserDialog.
+            DialogResult result = folderBrowserDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                labelTime.Visible = true;
+                
+                string command = "select * from " + "historysearch order by id DESC";
+                Database.load(command);
+                DataView view = new DataView(Database.loadData);
+                DataTable selected = view.ToTable(false, "Word", "Meaning", "TimeSearch","Bookmark","Translate");
+                Excel.ExcelUtlity obj = new Excel.ExcelUtlity();
+                string folderName = folderBrowserDialog1.SelectedPath;
+                obj.WriteDataTableToExcel(selected, "Saved Translated Data", folderName + "TranslatedList.xlsx", "TranslatedList");
+                
+                MessageBox.Show("Folder was created");
+            }
         }
     }
 }

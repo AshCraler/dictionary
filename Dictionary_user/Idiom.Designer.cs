@@ -562,7 +562,7 @@
             this.iconButtonExcel.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButtonExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonExcel.IconSize = 30;
-            this.iconButtonExcel.Location = new System.Drawing.Point(669, 237);
+            this.iconButtonExcel.Location = new System.Drawing.Point(683, 237);
             this.iconButtonExcel.Name = "iconButtonExcel";
             this.iconButtonExcel.Rotation = 0D;
             this.iconButtonExcel.Size = new System.Drawing.Size(35, 33);
@@ -579,7 +579,7 @@
             this.Reload.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.Reload.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Reload.IconSize = 30;
-            this.Reload.Location = new System.Drawing.Point(609, 237);
+            this.Reload.Location = new System.Drawing.Point(642, 237);
             this.Reload.Name = "Reload";
             this.Reload.Rotation = 0D;
             this.Reload.Size = new System.Drawing.Size(35, 33);
@@ -1071,7 +1071,6 @@
             this.Name = "Idiom";
             this.Text = "Idiom";
             this.Load += new System.EventHandler(this.Idiom_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Idiom_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelResult.ResumeLayout(false);
